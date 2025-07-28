@@ -1,0 +1,1 @@
+../../../../../../source/SwiftOverlay/UsdAttribute.h

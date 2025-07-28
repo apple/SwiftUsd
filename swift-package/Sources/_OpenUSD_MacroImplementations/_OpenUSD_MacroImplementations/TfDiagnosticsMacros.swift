@@ -1,0 +1,1 @@
+../../../../source/_OpenUSD_MacroImplementations/TfDiagnosticsMacros.swift

@@ -1,0 +1,28 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "UsdAbcAlembicFileFormat": {
+                        "bases": [
+                            "SdfFileFormat"
+                        ],
+                        "displayName": "USD Alembic File Format",
+                        "extensions": [
+                            "abc"
+                        ],
+                        "formatId": "abc",
+                        "primary": true,
+                        "target": "usd",
+                        "supportsEditing": false
+                    }
+                }
+            },
+            "LibraryPath": "usdAbc",
+            "Name": "usdAbc",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

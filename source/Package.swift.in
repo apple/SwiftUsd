@@ -1,0 +1,58 @@
+// swift-tools-version: 6.1
+
+@THIS_FILE_CAN_BE_EDITED_BY_HAND@
+
+import PackageDescription
+import CompilerPluginSupport
+
+let package = Package(
+    name: "OpenUSD",
+    platforms: [.macOS(.v14), .iOS(.v17)],
+    products: [
+        .library(name: "OpenUSD", targets: [
+            "_OpenUSD_SwiftBindingHelpers",
+            "OpenUSD"
+        ])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..<"602.0.0"),
+    ],
+    targets: [
+        .target(name: "OpenUSD",
+                dependencies: [
+                    "_OpenUSD_SwiftBindingHelpers",
+                    "_OpenUSD_MacroImplementations",
+                    .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                    .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+                ],
+                path: "${generated-package-prefix}Sources/OpenUSD",
+                swiftSettings: [
+                    .interoperabilityMode(.Cxx)
+                ]),
+
+        .macro(name: "_OpenUSD_MacroImplementations",
+               dependencies: [
+                   .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                   .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+               ],
+               path: "${generated-package-prefix}Sources/_OpenUSD_MacroImplementations"),
+                
+        .target(name: "_OpenUSD_SwiftBindingHelpers",
+                dependencies: cppTarget_dependencies(),
+                path: "${generated-package-prefix}Sources/_OpenUSD_SwiftBindingHelpers")
+                
+    ] + xcframeworkBinaryTargets(),
+    cxxLanguageStandard: .gnucxx17
+)
+
+
+
+// There are a lot of XCFrameworks that need to get wrapped,
+// so we list them after the package initializer
+func cppTarget_dependencies() -> [Target.Dependency] {
+@CPPTARGET_DEPENDENCIES@
+}
+
+func xcframeworkBinaryTargets() -> [Target] {
+@XCFRAMEWORKBINARYTARGETS@
+}

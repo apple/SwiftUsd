@@ -1,0 +1,708 @@
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/build_scripts/build_usd.py ./build_scripts/build_usd.py
+--- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2025-04-29 09:20:26
++++ ./build_scripts/build_usd.py	2025-05-20 10:23:41
+@@ -1599,12 +1599,8 @@
+ 
+ ############################################################
+ # Embree
+-# For MacOS we use version 3.13.3 to include a fix from Intel
+-# to build on Apple Silicon.
+-if MacOS():
+-    EMBREE_URL = "https://github.com/embree/embree/archive/v3.13.3.zip"
+-else:
+-    EMBREE_URL = "https://github.com/embree/embree/archive/v3.2.2.zip"
++
++EMBREE_URL = "https://github.com/embree/embree/archive/v4.4.0.zip"
+ 
+ def InstallEmbree(context, force, buildArgs):
+     with CurrentWorkingDirectory(DownloadURL(EMBREE_URL, context, force)):
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/cmake/modules/FindEmbree.cmake ./cmake/modules/FindEmbree.cmake
+--- /Users/maddyadams/OpenUSD/cmake/modules/FindEmbree.cmake	2024-07-25 13:27:40
++++ ./cmake/modules/FindEmbree.cmake	2025-05-20 10:24:36
+@@ -20,11 +20,11 @@
+ #=============================================================================
+ 
+ if (APPLE)
+-    set (EMBREE_LIB_NAME libembree3.dylib)
++    set (EMBREE_LIB_NAME libembree4.dylib)
+ elseif (UNIX)
+-    set (EMBREE_LIB_NAME libembree3.so)
++    set (EMBREE_LIB_NAME libembree4.so)
+ elseif (WIN32)
+-    set (EMBREE_LIB_NAME embree3.lib)
++    set (EMBREE_LIB_NAME embree4.lib)
+ endif()
+ 
+ find_library(EMBREE_LIBRARY
+@@ -39,7 +39,7 @@
+ )
+ 
+ find_path(EMBREE_INCLUDE_DIR
+-    embree3/rtcore.h
++    embree4/rtcore.h
+ HINTS
+     "${EMBREE_LOCATION}/include"
+     "$ENV{EMBREE_LOCATION}/include"
+@@ -47,12 +47,12 @@
+     "Embree headers path"
+ )
+ 
+-if (EMBREE_INCLUDE_DIR AND EXISTS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" )
+-    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MAJOR.*$")
++if (EMBREE_INCLUDE_DIR AND EXISTS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" )
++    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MAJOR.*$")
+     string(REGEX MATCHALL "[0-9]+" MAJOR ${TMP})
+-    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MINOR.*$")
++    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MINOR.*$")
+     string(REGEX MATCHALL "[0-9]+" MINOR ${TMP})
+-    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_PATCH.*$")
++    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_PATCH.*$")
+     string(REGEX MATCHALL "[0-9]+" PATCH ${TMP})
+ 
+     set (EMBREE_VERSION ${MAJOR}.${MINOR}.${PATCH})
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
+--- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2024-07-25 13:27:40
++++ ./pxr/base/arch/fileSystem.h	2025-05-20 10:25:11
+@@ -38,8 +38,6 @@
+ #include <stringapiset.h>
+ #endif
+ 
+-PXR_NAMESPACE_OPEN_SCOPE
+-
+ /// \addtogroup group_arch_SystemFunctions
+ ///@{
+ #if !defined(ARCH_OS_WINDOWS)
+@@ -59,6 +57,8 @@
+     #define W_OK    2       // Test for write permission.
+     #define R_OK    4       // Test for read permission.
+ #endif
++
++PXR_NAMESPACE_OPEN_SCOPE
+ 
+ #if defined(ARCH_OS_WINDOWS)
+     #define ARCH_GLOB_NOCHECK   1
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt ./pxr/base/tf/CMakeLists.txt
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-01-22 14:05:52
++++ ./pxr/base/tf/CMakeLists.txt	2025-05-20 10:45:29
+@@ -240,6 +240,7 @@
+         pxrTslRobinMap/robin_map.h
+         pxrTslRobinMap/robin_set.h
+         preprocessorUtilsLite.h
++        retainReleaseHelper.h
+         safeTypeCompare.h
+         span.h
+         staticData.h
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h ./pxr/base/tf/iterator.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h	2024-07-25 13:27:40
++++ ./pxr/base/tf/iterator.h	2025-05-20 10:25:53
+@@ -418,6 +418,7 @@
+     using pointer = typename ReverseIterator::pointer;
+     using difference_type = typename ReverseIterator::difference_type;
+ 
++    #if !__swift__
+     static_assert(!std::is_reference<reference>::value,
+                  "Tf_ProxyReferenceReverseIterator should only be used "
+                  "when the underlying iterator's reference type is a "
+@@ -427,6 +428,7 @@
+                                std::random_access_iterator_tag>::value,
+                  "Tf_ProxyReferenceReverseIterator must wrap a random "
+                  "access iterator.");
++    #endif // #if !__swift__
+ 
+     Tf_ProxyReferenceReverseIterator() = default;
+     explicit Tf_ProxyReferenceReverseIterator(UnderlyingIterator it) :
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h ./pxr/base/tf/notice.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2025-01-22 14:05:52
++++ ./pxr/base/tf/notice.h	2025-05-29 11:24:06
+@@ -263,6 +263,7 @@
+ 
+         friend class Tf_NoticeRegistry;
+         friend class TfNotice;
++        friend class SwiftKey;
+     };
+ 
+     /// A \c TfNotice::Key container.
+@@ -272,6 +273,16 @@
+     /// keys into a \c TfNotice::Keys then call \c Revoke() on it.
+     typedef std::vector<Key> Keys;
+ 
++    /// A key representing a listener registered from either Swift or C++
++    class SwiftKey;
++
++    /// A pxr::TfNotice::SwiftKey container.
++    ///
++    /// Many listeners listen for several notices and must revoke interest for
++    /// those several notices at once. These listeners can put all of the
++    /// keys into a `pxr::TfNotice::SwiftKeys` then call ``Revoke()`` on it.
++    typedef std::vector<SwiftKey> SwiftKeys;
++
+     /// Register a probe that will be invoked when notices are sent and
+     /// delivered.  
+     /// \see TfNotice::Probe
+@@ -382,7 +393,25 @@
+     ///
+     /// This revokes interest by the listener for the particular notice type
+     /// and call-back method for which this key was created.
++    /// `Revoke` will return a bool value indicating whether or not the key
++    /// was successfully revoked. Subsequent calls to `Revoke` with the same
++    /// key will return false.
++    TF_API
++    static bool Revoke(TfNotice::SwiftKey key);
++
++    /// Revoke interest by listeners.
+     ///
++    /// This revokes interest by the listeners for the particular
++    /// notice types and call-back methods for which the keys were
++    /// created. It then clears the keys container.
++    TF_API
++    static void Revoke(TfNotice::SwiftKeys* keys);
++
++    /// Revoke interest by a listener.
++    ///
++    /// This revokes interest by the listener for the particular notice type
++    /// and call-back method for which this key was created.
++    ///
+     /// \c Revoke will return a bool value indicating whether or not the key
+     /// was successfully revoked.  Subsequent calls to \c Revoke with the same
+     /// key will return false.  This will not return while any threads are
+@@ -398,7 +427,28 @@
+     /// while any threads are invoking any handlers.
+     TF_API
+     static void RevokeAndWait(TfNotice::Keys* keys);
++    
++    /// Revoke interest by a listener.
++    ///
++    /// This revokes interest by the listener for the particular notice type
++    /// and call-back method for which this key was created.
++    ///
++    /// \c Revoke will return a bool value indicating whether or not the key
++    /// was successfully revoked.  Subsequent calls to \c Revoke with the same
++    /// key will return false.  This will not return while any threads are
++    /// invoking the handler.
++    TF_API
++    static bool RevokeAndWait(TfNotice::SwiftKey key);
+ 
++    /// Revoke interest by listeners.
++    ///
++    /// This revokes interest by the listeners for the particular
++    /// notice types and call-back methods for which the keys were
++    /// created.  It then clears the keys container.  This will not return
++    /// while any threads are invoking any handlers.
++    TF_API
++    static void RevokeAndWait(TfNotice::SwiftKeys* keys);
++
+     /// Deliver the notice to interested listeners, returning the number
+     /// of interested listeners.  
+     ///
+@@ -611,8 +661,8 @@
+             typedef typename Derived::NoticeType NoticeType;
+             TfType ret = TfType::Find<NoticeType>();
+             if (ret.IsUnknown())
+-                TF_FATAL_ERROR("notice type " + ArchGetDemangled<NoticeType>() +
+-                               " undefined in the TfType system");
++                TF_FATAL_ERROR(("notice type " + ArchGetDemangled<NoticeType>() +
++                                " undefined in the TfType system").c_str());
+             return ret;
+         }
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h ./pxr/base/tf/refBase.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h	2024-10-25 14:14:15
++++ ./pxr/base/tf/refBase.h	2025-05-20 10:33:12
+@@ -125,6 +125,8 @@
+ 
+     template <typename T> friend TfRefPtr<T>
+     TfCreateRefPtrFromProtectedWeakPtr(TfWeakPtr<T> const &);
++
++    friend class Tf_RetainReleaseHelper;
+ };
+ 
+ /// \class TfSimpleRefBase
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h ./pxr/base/tf/refPtr.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h	2025-01-22 14:05:52
++++ ./pxr/base/tf/refPtr.h	2025-05-20 10:48:17
+@@ -423,6 +423,7 @@
+ #include <typeinfo>
+ #include <type_traits>
+ #include <cstddef>
++#include <swift/bridging>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+@@ -934,7 +935,7 @@
+     }
+ 
+     /// Dereferences the stored pointer.
+-    T& operator *() const {
++    T& operator *() const SWIFT_NAME(__operatorStar()) {
+         return *operator->();
+     }
+ 
+@@ -1090,6 +1091,10 @@
+         _Counter::AddRef(_refBase);
+     }
+ 
++    static void _AddRefStatic(TfRefBase* _refBase) {
++        _Counter::AddRef(_refBase);
++    }
++
+     void _RemoveRef(const TfRefBase* ptr) const {
+         if (_Counter::RemoveRef(ptr)) {
+             Tf_RefPtrTracker_LastRef(this, ptr, _NullT);
+@@ -1097,6 +1102,15 @@
+         }
+     }
+ 
++    static void _RemoveRefStatic(const TfRefBase* ptr) {
++        if (_Counter::RemoveRef(ptr)) {
++            Tf_RefPtrTracker_LastRef(nullptr,
++                                     reinterpret_cast<T*>(const_cast<TfRefBase*>(ptr)),
++                                     _NullT);
++            delete ptr;
++        }
++    }
++
+ #if ! defined(doxygen)
+     // doxygen is very confused by this. It declares all TfRefPtrs
+     // to be friends.
+@@ -1108,6 +1122,7 @@
+     friend TfRefPtr<U> TfCreateRefPtrFromProtectedWeakPtr(TfWeakPtr<U> const &);
+ #endif
+     friend class TfWeakBase;
++    friend class Tf_RetainReleaseHelper;
+ };
+ 
+ #if !defined(doxygen)
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h ./pxr/base/tf/retainReleaseHelper.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h	1969-12-31 16:00:00
++++ ./pxr/base/tf/retainReleaseHelper.h	2025-05-20 10:35:03
+@@ -0,0 +1,54 @@
++//
++//  retainReleaseHelper.h
++//
++//
++//  Created by Maddy Adams on 10/12/23.
++//
++
++#ifndef retainReleaseHelper_hpp
++#define retainReleaseHelper_hpp
++
++#include "pxr/pxr.h"
++#include "pxr/base/tf/refBase.h"
++#include "pxr/base/tf/refPtr.h"
++
++PXR_NAMESPACE_OPEN_SCOPE
++
++// This class exposes functions to manually manipulate the reference count of a TfRefBase.
++// Never call these functions directly; they are provided for the purposes of importing TfRefBase
++// with reference counting semantics into a language with automatic reference counting mechanisms.
++
++// TfRefPtr<TfRefBase> isn't supported, so we can't use the static member functions.
++// Instead, just use the no-unique-change-counter body
++class Tf_RetainReleaseHelper {
++public:
++    // Increments the reference count of the argument by 1.
++    template <class T>
++    inline static void retain(T* obj) {
++        if constexpr (std::is_same_v<pxr::TfRefBase, T>) {
++            pxr::Tf_RefPtr_Counter::AddRef(obj);
++        } else {
++            TfRefPtr<T>::_AddRefStatic(obj);
++        }
++    }
++
++    // Decrements the reference count of the argument by 1, deleting the argument
++    // if the reference count reaches 0.
++    template <class T>
++    inline static void release(T* obj) {
++        if constexpr (std::is_same_v<pxr::TfRefBase, T>) {
++            if (pxr::Tf_RefPtr_Counter::RemoveRef(obj)) {
++                pxr::Tf_RefPtrTracker_LastRef(nullptr,
++                                              reinterpret_cast<T*>(const_cast<TfRefBase*>(obj)),
++                                              nullptr);
++                delete obj;
++            }
++        } else{
++            TfRefPtr<T>::_RemoveRefStatic(obj);
++        }
++    }
++};
++
++PXR_NAMESPACE_CLOSE_SCOPE
++
++#endif /* retainReleaseHelper_h */
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h ./pxr/base/tf/weakPtrFacade.h
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2025-01-22 14:05:52
++++ ./pxr/base/tf/weakPtrFacade.h	2025-05-20 10:35:29
+@@ -17,6 +17,7 @@
+ #include "pxr/base/arch/demangle.h"
+ 
+ #include <type_traits>
++#include <swift/bridging>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+@@ -185,7 +186,7 @@
+             TF_CALL_CONTEXT, typeid(Derived).name());
+     }
+ 
+-    DataType &operator * () const {
++    DataType &operator * () const SWIFT_NAME(__operatorStar()) {
+         return * operator->();
+     }
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h ./pxr/base/vt/dictionary.h
+--- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2025-04-29 09:20:26
++++ ./pxr/base/vt/dictionary.h	2025-05-20 10:35:44
+@@ -439,8 +439,8 @@
+ {
+     VtDictionary::const_iterator i = dictionary.find(key);
+     if (ARCH_UNLIKELY(i == dictionary.end())) {
+-        TF_FATAL_ERROR("Attempted to get value for key '" + key +
+-                       "', which is not in the dictionary.");
++        TF_FATAL_ERROR(("Attempted to get value for key '" + key +
++                        "', which is not in the dictionary.").c_str());
+     }
+ 
+     return i->second.Get<T>();
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h ./pxr/imaging/hd/dependencySchema.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2024-07-25 13:27:40
++++ ./pxr/imaging/hd/dependencySchema.h	2025-05-20 10:36:21
+@@ -52,6 +52,9 @@
+     HdDependencySchema(HdContainerDataSourceHandle container)
+       : HdSchema(container) {}
+ 
++    // Swift default argument overspecialization fix
++    HdDependencySchema() : HdSchema() {}
++
+     /// @}
+ 
+ // --(BEGIN CUSTOM CODE: Schema Methods)--
+@@ -124,4 +127,4 @@
+ 
+ PXR_NAMESPACE_CLOSE_SCOPE
+ 
+-#endif
+\ No newline at end of file
++#endif
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h ./pxr/imaging/hd/schema.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2024-07-25 13:27:40
++++ ./pxr/imaging/hd/schema.h	2025-05-20 10:36:44
+@@ -28,6 +28,8 @@
+     HdSchema(HdContainerDataSourceHandle container)
+     : _container(container) {}
+ 
++    // Swift default argument overspecialization fix
++    HdSchema() {}
+ 
+     /// Returns the container data source that this schema is interpreting.
+     HD_API
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp ./pxr/imaging/hdsi/debuggingSceneIndex.cpp
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-04-29 09:20:26
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-05-20 10:37:10
+@@ -29,62 +29,6 @@
+ // It does produce a non-trivial data source for /foo.
+ const bool implicitlyAddedAncestorsHaveEmptyType = true;
+ 
+-// Per prim-info.
+-//
+-// We always store a prim info for all ancestors as well.
+-// In particular, we always store a prim info for the absolute root /.
+-//
+-struct _PrimInfo
+-{
+-    // Does a prim exist?
+-    //
+-    // Note that the HdSceneIndexBase does not specify whether a prim "exists".
+-    //
+-    // There are two notions of existence:
+-    // - The strong form is that GetPrim("/foo") returns a non-empty prim type
+-    //   or non-null data source handle.
+-    // - The weak form (existence in namespace) is that a prim exists at a path
+-    //   if (without a subsequent PrimRemovedEntry):
+-    //   * We have received a PrimAddedEntry for the path or a descendant path
+-    //   * GetPrim for path or a descendant path returned a non-empty prim type
+-    //     or non-null data source
+-    //   * GetChildPrimPaths for path or a descendant path was non-empty
+-    //   * path is in GetChildPrimPaths(parentPath)
+-    //
+-    // Here we assume the weaker form.
+-    //
+-    // If a prim exists (in namespace), there will be a prim-info for all its
+-    // ancestors which are also assumed to exist.
+-    //
+-    // Note that the debugging scene index (lazily) only queries GetPrim or
+-    // GetChildPrimPaths itself when the client calls that method.
+-    //
+-    // If we receive a PrimRemovedEntry, we set _PrimInfo::exists = false for
+-    // the corresponding prim info. Such a _PrimInfo has no descendants.
+-    //
+-    // Note that the implementation could be changed to just use a bool if
+-    // we were to use _PrimInfo::insert instead of _PrimInfo[].
+-    //
+-    std::optional<bool> existsInNamespace;
+-
+-    // Do we know all children of this prim?
+-    //
+-    // True if GetChildPrimPaths(path) was called or we received
+-    // PrimRemovedEntry(path).
+-    //
+-    bool allChildrenKnown = false;
+-
+-    // primType if known.
+-    std::optional<TfToken> primType;
+-
+-    // Does this prim have a non-null ptr data source?
+-    //
+-    // Future work might store more information about the data source and wrap
+-    // it so that we can track which values were returned to a client.
+-    //
+-    std::optional<bool> hasDataSource;
+-};
+-
+ void _EmitMessage(const std::string &message)
+ {
+     // Future work might throw an error/show a stack trace/...
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h ./pxr/imaging/hdsi/debuggingSceneIndex.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h	2025-04-29 09:20:26
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2025-05-20 10:37:37
+@@ -22,7 +22,61 @@
+ namespace HdsiDebuggingSceneIndex_Impl
+ {
+ 
+-struct _PrimInfo;
++// Per prim-info.
++//
++// We always store a prim info for all ancestors as well.
++// In particular, we always store a prim info for the absolute root /.
++//
++struct _PrimInfo
++{
++    // Does a prim exist?
++    //
++    // Note that the HdSceneIndexBase does not specify whether a prim "exists".
++    //
++    // There are two notions of existence:
++    // - The strong form is that GetPrim("/foo") returns a non-empty prim type
++    //   or non-null data source handle.
++    // - The weak form (existence in namespace) is that a prim exists at a path
++    //   if (without a subsequent PrimRemovedEntry):
++    //   * We have received a PrimAddedEntry for the path or a descendant path
++    //   * GetPrim for path or a descendant path returned a non-empty prim type
++    //     or non-null data source
++    //   * GetChildPrimPaths for path or a descendant path was non-empty
++    //   * path is in GetChildPrimPaths(parentPath)
++    //
++    // Here we assume the weaker form.
++    //
++    // If a prim exists (in namespace), there will be a prim-info for all its
++    // ancestors which are also assumed to exist.
++    //
++    // Note that the debugging scene index (lazily) only queries GetPrim or
++    // GetChildPrimPaths itself when the client calls that method.
++    //
++    // If we receive a PrimRemovedEntry, we set _PrimInfo::exists = false for
++    // the corresponding prim info. Such a _PrimInfo has no descendants.
++    //
++    // Note that the implementation could be changed to just use a bool if
++    // we were to use _PrimInfo::insert instead of _PrimInfo[].
++    //
++    std::optional<bool> existsInNamespace;
++
++    // Do we know all children of this prim?
++    //
++    // True if GetChildPrimPaths(path) was called or we received
++    // PrimRemovedEntry(path).
++    //
++    bool allChildrenKnown = false;
++
++    // primType if known.
++    std::optional<TfToken> primType;
++
++    // Does this prim have a non-null ptr data source?
++    //
++    // Future work might store more information about the data source and wrap
++    // it so that we can track which values were returned to a client.
++    //
++    std::optional<bool> hasDataSource;
++};
+ using _PrimInfoSharedPtr = std::shared_ptr<_PrimInfo>;
+ using _PrimMap = std::map<SdfPath, _PrimInfo>;
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/context.h ./pxr/imaging/plugin/hdEmbree/context.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/context.h	2024-07-25 13:27:41
++++ ./pxr/imaging/plugin/hdEmbree/context.h	2025-05-20 10:39:36
+@@ -14,7 +14,7 @@
+ #include "pxr/base/gf/matrix4f.h"
+ #include "pxr/base/vt/array.h"
+ 
+-#include <embree3/rtcore.h>
++#include <embree4/rtcore.h>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/mesh.h ./pxr/imaging/plugin/hdEmbree/mesh.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/mesh.h	2024-10-25 14:14:15
++++ ./pxr/imaging/plugin/hdEmbree/mesh.h	2025-05-20 10:39:49
+@@ -15,8 +15,8 @@
+ 
+ #include "pxr/imaging/plugin/hdEmbree/meshSamplers.h"
+ 
+-#include <embree3/rtcore.h>
+-#include <embree3/rtcore_ray.h>
++#include <embree4/rtcore.h>
++#include <embree4/rtcore_ray.h>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/meshSamplers.h ./pxr/imaging/plugin/hdEmbree/meshSamplers.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/meshSamplers.h	2024-07-25 13:27:41
++++ ./pxr/imaging/plugin/hdEmbree/meshSamplers.h	2025-05-20 10:40:02
+@@ -12,8 +12,8 @@
+ #include "pxr/imaging/hd/meshUtil.h"
+ #include "pxr/base/vt/types.h"
+ 
+-#include <embree3/rtcore.h>
+-#include <embree3/rtcore_geometry.h>
++#include <embree4/rtcore.h>
++#include <embree4/rtcore_geometry.h>
+ 
+ #include <bitset>
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/pch.h ./pxr/imaging/plugin/hdEmbree/pch.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/pch.h	2025-04-29 09:20:26
++++ ./pxr/imaging/plugin/hdEmbree/pch.h	2025-05-20 10:40:12
+@@ -76,9 +76,9 @@
+ #include <unordered_set>
+ #include <utility>
+ #include <vector>
+-#include <embree3/rtcore.h>
+-#include <embree3/rtcore_geometry.h>
+-#include <embree3/rtcore_ray.h>
++#include <embree4/rtcore.h>
++#include <embree4/rtcore_geometry.h>
++#include <embree4/rtcore_ray.h>
+ #include <tbb/blocked_range.h>
+ #include <tbb/cache_aligned_allocator.h>
+ #include <tbb/concurrent_hash_map.h>
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderDelegate.h ./pxr/imaging/plugin/hdEmbree/renderDelegate.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderDelegate.h	2024-10-25 14:14:15
++++ ./pxr/imaging/plugin/hdEmbree/renderDelegate.h	2025-05-20 10:40:21
+@@ -14,7 +14,7 @@
+ #include "pxr/base/tf/staticTokens.h"
+ 
+ #include <mutex>
+-#include <embree3/rtcore.h>
++#include <embree4/rtcore.h>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderParam.h ./pxr/imaging/plugin/hdEmbree/renderParam.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderParam.h	2024-07-25 13:27:41
++++ ./pxr/imaging/plugin/hdEmbree/renderParam.h	2025-05-20 10:40:29
+@@ -11,7 +11,7 @@
+ #include "pxr/imaging/hd/renderDelegate.h"
+ #include "pxr/imaging/hd/renderThread.h"
+ 
+-#include <embree3/rtcore.h>
++#include <embree4/rtcore.h>
+ 
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.cpp ./pxr/imaging/plugin/hdEmbree/renderer.cpp
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.cpp	2024-10-25 14:14:15
++++ ./pxr/imaging/plugin/hdEmbree/renderer.cpp	2025-05-20 10:41:11
+@@ -667,9 +667,9 @@
+     rayHit.ray.flags = 0;
+     _PopulateRayHit(&rayHit, origin, dir, 0.0f);
+     {
+-      RTCIntersectContext context;
+-      rtcInitIntersectContext(&context);
+-      rtcIntersect1(_scene, &context, &rayHit);
++      RTCIntersectArguments arguments;
++      rtcInitIntersectArguments(&arguments);
++      rtcIntersect1(_scene, &rayHit, &arguments);
+       //
+       // there is something odd about how this is used in Embree. Is it reversed
+       // here and then when it it used in
+@@ -1005,9 +1005,9 @@
+         shadow.flags = 0;
+         _PopulateRay(&shadow, position, shadowDir, 0.001f);
+         {
+-          RTCIntersectContext context;
+-          rtcInitIntersectContext(&context);
+-          rtcOccluded1(_scene,&context,&shadow);
++          RTCOccludedArguments arguments;
++          rtcInitOccludedArguments(&arguments);
++          rtcOccluded1(_scene,&shadow,&arguments);
+         }
+ 
+         // Record this AO ray's contribution to the occlusion factor: a
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.h ./pxr/imaging/plugin/hdEmbree/renderer.h
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.h	2024-10-25 14:14:15
++++ ./pxr/imaging/plugin/hdEmbree/renderer.h	2025-05-20 10:41:21
+@@ -15,8 +15,8 @@
+ #include "pxr/base/gf/matrix4d.h"
+ #include "pxr/base/gf/rect2i.h"
+ 
+-#include <embree3/rtcore.h>
+-#include <embree3/rtcore_ray.h>
++#include <embree4/rtcore.h>
++#include <embree4/rtcore_ray.h>
+ 
+ #include <random>
+ #include <atomic>
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp ./pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp
+--- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp	2024-07-25 13:27:41
++++ ./pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp	2025-05-20 10:41:30
+@@ -23,7 +23,7 @@
+ 
+ #include "pxr/base/tf/errorMark.h"
+ 
+-#include <embree3/rtcore.h>
++#include <embree4/rtcore.h>
+ #include <iostream>
+ 
+ PXR_NAMESPACE_USING_DIRECTIVE
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h ./pxr/usd/sdf/predicateProgram.h
+--- /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h	2024-07-25 13:27:41
++++ ./pxr/usd/sdf/predicateProgram.h	2025-05-20 10:41:44
+@@ -208,7 +208,7 @@
+ 
+     if (!errs.empty()) {
+         prog = {};
+-        TF_RUNTIME_ERROR(errs);
++        TF_RUNTIME_ERROR(errs.c_str());
+     }
+     return prog;
+ }
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp ./pxr/usd/usdMtlx/utils.cpp
+--- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-04-29 09:20:26
++++ ./pxr/usd/usdMtlx/utils.cpp	2025-05-28 09:47:06
+@@ -16,6 +16,8 @@
+ #include "pxr/usd/sdf/types.h"
+ #include "pxr/usd/sdr/shaderProperty.h"
+ #include "pxr/base/arch/fileSystem.h"
++#include "pxr/base/arch/symbols.h"
++#include "pxr/base/arch/systemInfo.h"
+ #include "pxr/base/gf/matrix3d.h"
+ #include "pxr/base/gf/matrix4d.h"
+ #include "pxr/base/gf/vec2f.h"
+@@ -180,6 +182,18 @@
+     stdlibSearchPaths =
+         _MergeSearchPaths(stdlibSearchPaths, { PXR_MATERIALX_STDLIB_DIR });
+ #endif
++    
++    std::string binaryPath;
++    ArchGetAddressInfo(reinterpret_cast<void*>(&_ComputeStdlibSearchPaths), &binaryPath,
++                       nullptr, nullptr, nullptr);
++    if (!binaryPath.empty()) {
++        // binaryPath: .../Usd_UsdMtlx.framework/Versions/A/Usd_UsdMtlx
++        // toAdd: .../Usd_UsdMtlx.framework/Versions/A/Resources/MaterialX_Libraries/libraries
++        // Make toAdd strongest, because app bundles with sandboxing pick up the build directory
++        // if it exists, then fail to load and don't continue to the next path
++        std::string toAdd = TfStringCatPaths(binaryPath, "../Resources/MaterialX_Libraries/libraries");
++        stdlibSearchPaths = _MergeSearchPaths({ toAdd }, stdlibSearchPaths);
++    }
+     return stdlibSearchPaths;
+ }
+ 

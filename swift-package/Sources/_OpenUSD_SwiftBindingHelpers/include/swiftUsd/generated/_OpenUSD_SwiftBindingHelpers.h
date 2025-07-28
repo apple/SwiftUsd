@@ -1,0 +1,1 @@
+../../../../../../source/generated/_OpenUSD_SwiftBindingHelpers.h

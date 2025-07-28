@@ -1,0 +1,9 @@
+.DS_Store
+.build
+.swiftpm
+openusd-builds
+openusd-source
+swift-package/.tmp
+Package.resolved
+.symbol-graphs
+SwiftUsd.docc/.docc-build

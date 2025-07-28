@@ -1,0 +1,20 @@
+{
+  "Plugins": [
+    {
+      "Info": {
+        "Types": {
+          "HioOIIO_Image" : {
+            "bases": ["HioImage"],
+            "imageTypes": ["tif", "tiff", "zfile", "tx"],
+            "precedence": 10
+          }
+        }
+      },
+      "LibraryPath": "hioOiio",
+      "Name": "hioOiio",
+      "ResourcePath": "Resources",
+      "Root": "..",
+      "Type": "library"
+    }
+  ]
+}

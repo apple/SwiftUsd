@@ -1,0 +1,22 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "UsdShadersDiscoveryPlugin" : {
+                        "bases": ["SdrDiscoveryPlugin"],
+                        "displayName": "USD-based shader definition discovery plugin."
+                    }
+                },
+                # Allow usdShaders/shaders to be accessible by hio/glslfx.cpp's 
+                #   ShaderResourceRegistry
+                "ShaderResources": "shaders"
+            },
+            "LibraryPath": "usdShaders",
+            "Name": "usdShaders",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

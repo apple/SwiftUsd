@@ -1,0 +1,28 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "HdEmbreeRendererPlugin": {
+                        "bases": [
+                            "HdRendererPlugin"
+                        ],
+                        "displayName": "Embree",
+                        "priority": 99
+                    },
+                    "HdEmbree_ImplicitSurfaceSceneIndexPlugin" : {
+                        "bases": ["HdSceneIndexPlugin"],
+                        "loadWithRenderer" : "Embree",
+                        "priority": 0,
+                        "displayName": "Scene Index to turn implicit surfaces into prims suitable for HdEmbree"
+                    }
+                }
+            },
+            "LibraryPath": "hdEmbree",
+            "Name": "hdEmbree",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

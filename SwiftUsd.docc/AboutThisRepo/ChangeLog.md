@@ -2,6 +2,12 @@
 
 Changes to SwiftUsd
 
+### 5.0.0
+Released 2025-08-06, based on OpenUSD v25.08
+- Move from OpenUSD v25.05.01 to v25.08
+- Added ImageIO to default macOS and iOS packages, and removed OpenImageIO from default macOS package
+- Added OpenVDB to default macOS package
+
 ### 4.1.1
 Released 2025-07-28, based on OpenUSD v25.05.01
 - Moved to final repo URLs for public release

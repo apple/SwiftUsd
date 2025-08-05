@@ -19,7 +19,6 @@ SwiftUsd is currently a work-in-progress. Here is a list of potential future imp
 - Simplify `Sequence`/`Collection` conformances, replacing with `CxxSequence` where possible
 - Can upstream warnings in SwiftUsd can be hidden from downstream clients?
 - Does API Notes support renaming extern variables, e.g. for `pxr::TfStaticData`?
-- ~~Investigate using relative paths for MaterialX to make changes to `pxr/usd/usdMtlx/utils.cpp` less invasive~~
 
 ### Medium items
 - Paper over `pxr::UsdSchemaBase::GetPrim()` by renaming the method and extending each subclass to have a definition of it. 

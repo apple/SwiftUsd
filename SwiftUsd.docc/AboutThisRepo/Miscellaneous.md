@@ -19,6 +19,9 @@ Miscellaneous details about this repo
 - `SwiftUsd/.build`  
 Swift Package Manager build directory from running `./scripts/build_symbol_graphs.zsh`. Only needed by advanced users. Not tracked by git.
 
+- `SwiftUsd/.spi.yml`  
+Swift Package Index Manifest file.
+
 - `SwiftUsd/.symbol-graphs`  
 Symbol graph directory from running `./scripts/build_symbol_graphs.zsh`. Only needed by advanced users. Not tracked by git.
 
@@ -61,7 +64,10 @@ Parent directory for utility scripts used while maintaining `SwiftUsd`. Only nee
     Script that sets up the Swift Package in `SwiftUsd` with a package manifest, headers, pre-built OpenUSD binaries, and sources. See [building locally](<doc:BuildingLocally>).
 
     - `SwiftUsd/scripts/patch-exploder.py`  
-    Script that explodes a unified diff into one file per file in the diff. 
+    Script that explodes a unified diff into one file per file in the diff.
+
+- `SwiftUsd/SECURITY.md`  
+Security disclosure file.
 
 - `SwiftUsd/source`  
 Parent directory for the Swift bindings for `SwiftUsd`. (The "source-of-truth" for the source code and resources provided by this package)

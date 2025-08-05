@@ -7,8 +7,8 @@ Learn how to use the TfNotice notification subsystem in Swift
 OpenUSD includes a notification subsystem based on `pxr::TfNotice` and `pxr::TfNotice::Register` for use in C++. SwiftUsd exposes this system to Swift with minor modifications.
 
 Like in C++, TfNotice registration in Swift comes in three main forms:
-- [`pxr.TfNotice.Register(_:_:)`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-olq9) to register for a particular notice type, regardless of sender
-- [`pxr.TfNotice.Register(_:_:_:)`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:_:)-u8ws) to register for a particular notice type from a specific sender, without retrieving the sender in the notification callback
+- [`pxr.TfNotice.Register(_:_:)`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-99j13) to register for a particular notice type, regardless of sender
+- [`pxr.TfNotice.Register(_:_:_:)`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:_:)-8j5mu) to register for a particular notice type from a specific sender, without retrieving the sender in the notification callback
 - [`pxr.TfNotice.Register(_:_:_:)`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:_:)-(_,_,(Notice,Sender)->())) to register for a particular notice type from a specific sender while retrieving the sender in the notification callback
 
 Example usage:
@@ -33,7 +33,7 @@ class StageWatcher {
 
 ## Downcasting and inheritance
 
-When registering for a notice type, your notification callback may be called if notices that derive from the notice type you registered for are sent. To support conditional casting of `TfNotice` values in the notification callback, SwiftUsd provides ``/OpenUSD/C++/pxr/TfNotice/NoticeCaster`` and three auxillary forms of [`pxr.TfNotice.Register()`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-olq9) that provide the [`NoticeCaster`](doc:/OpenUSD/C++/pxr/TfNotice/NoticeCaster) as a parameter to the notification callback:
+When registering for a notice type, your notification callback may be called if notices that derive from the notice type you registered for are sent. To support conditional casting of `TfNotice` values in the notification callback, SwiftUsd provides ``/OpenUSD/C++/pxr/TfNotice/NoticeCaster`` and three auxillary forms of [`pxr.TfNotice.Register()`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-99j13) that provide the [`NoticeCaster`](doc:/OpenUSD/C++/pxr/TfNotice/NoticeCaster) as a parameter to the notification callback:
 
 ```swift
 func registerWithDowncasting() {
@@ -50,7 +50,7 @@ func registerWithDowncasting() {
 
 ## Cancellation
 
-To cancel a notification callback, pass the return value from [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-olq9) to [`pxr.TfNotice.Revoke`](doc:/OpenUSD/Revoke-31sr0):
+To cancel a notification callback, pass the return value from [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-99j13) to [`pxr.TfNotice.Revoke`](doc:/OpenUSD/Revoke-31sr0):
 
 ```swift
 func registerWithRevoking(stage: pxr.UsdStage) {

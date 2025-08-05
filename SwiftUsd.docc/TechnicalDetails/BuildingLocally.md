@@ -11,11 +11,11 @@ SwiftUsd comes with pre-built OpenUSD binaries that make it easy to start using 
 git clone git@github.com:apple/SwiftUsd.git ~/SwiftUsd
 ```
 
-2. Clone OpenUSD v25.05.01
+2. Clone OpenUSD v25.08
 ```zsh
 git clone https://github.com/PixarAnimationStudios/OpenUSD.git ~/SwiftUsd/openusd-source
 cd ~/SwiftUsd/openusd-source
-git checkout v25.05.01
+git checkout v25.08
 ```
 
 3. Apply `openusd-source.patch` to it  
@@ -29,8 +29,9 @@ patch -p1 -i ~/SwiftUsd/openusd-patch.patch
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
     --embree \
-    --openimageio \
+    --imageio \
     --alembic \
+    --openvdb \
     --no-python \
     --ignore-homebrew \
     --build-target native \
@@ -38,6 +39,7 @@ python3 build_scripts/build_usd.py \
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
+    --imageio \
     --alembic \
     --no-python \
     --ignore-homebrew \

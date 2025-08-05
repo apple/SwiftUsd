@@ -10,19 +10,8 @@ This repo makes changes to OpenUSD to support Swift-Cxx interop and make Usd eas
 These changes are contained in `SwiftUsd/openusd-patch.patch`:  
 
 #### Usd-specific changes to OpenUSD before building  
-These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD  
-- Upgrade Embree version to 4.4.0 from https://github.com/PixarAnimationStudios/OpenUSD/pull/3635  
-    - Modified: `build_scripts/build_usd.py`
-    - Modified: `cmake/modules/FindEmbree.cmake`
-    - Modified: `pxr/imaging/plugin/hdEmbree/context.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/mesh.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/meshSamplers.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/pch.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/renderDelegate.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/renderer.cpp`
-    - Modified: `pxr/imaging/plugin/hdEmbree/renderer.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/renderParam.h`
-    - Modified: `pxr/imaging/plugin/hdEmbree/testEnv/testHdEmbree.cpp`
+These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD
+- None
 
 #### Swift-specific changes to OpenUSD before building
 These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-specific features, and work around issues in the Swift compiler.  
@@ -31,6 +20,8 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/base/tf/notice.h`
     - Modified: `pxr/base/vt/dictionary.h`
     - Modified: `pxr/usd/sdf/predicateProgram.h`
+    - Modified: `pxr/exec/vdf/parallelExecutorEngineBase.h`
+    - Modified: `pxr/exec/vdf/pullBasedExecutorEngine.h`
 
 - Support importing `pxr::TfRefBase` subclasses as reference types in Swift:
     - Modified: `pxr/base/tf/CMakeLists.txt`
@@ -58,7 +49,8 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/imaging/hd/schema.h`
 
 - [rdar://150456875: Forward declaring std::map's value causes an error for Swift but not C++ (Swift 6.1 regression)](rdar://150456875)
-    This issue is worked around by moving the definition of a type from a source file into a header file
+    This issue is worked around by moving the definition of a type from a source file into a header file, and by making a private header publig
+    - Modified: `pxr/exec/exec/CMakeLists.txt`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.cpp`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.h`
 

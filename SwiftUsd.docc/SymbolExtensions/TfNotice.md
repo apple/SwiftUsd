@@ -9,8 +9,8 @@
 
 ### Type Methods
 @Links(visualStyle: list) {
-    - ``Register(_:_:)-olq9``
-    - ``Register(_:_:_:)-u8ws``
+    - ``Register(_:_:)-99j13``
+    - ``Register(_:_:_:)-8j5mu``
     - ``Register(_:_:_:)-(_,_,(Notice,Sender)->())``
     - ``Register(_:_:)-(_,(Notice,pxr.TfNotice.NoticeCaster)->())``
     - ``Register(_:_:_:)-(_,_,(Notice,pxr.TfNotice.NoticeCaster)->())``

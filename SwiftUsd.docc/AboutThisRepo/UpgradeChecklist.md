@@ -27,7 +27,7 @@ python3 build_scripts/build_usd.py --no-python /opt/local/OpenUSD_no-python
 ```
 This build will be used by `ast-answerer` later
 
-## 2 Upgrade SwiftUsd/openusd-source
+## 2. Upgrade SwiftUsd/openusd-source
 1. Undo the old patch
 ```
 cd ~/SwiftUsd/openusd-source

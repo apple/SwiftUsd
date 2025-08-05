@@ -43,7 +43,7 @@ let numbers: pxr.VtIntArray = [1, 2, 3] // VtIntArray conforms to ExpressibleByA
 ```
 
 ### TfNotice support
-Swift code can register for `TfNotice` callbacks by using [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-olq9).
+Swift code can register for `TfNotice` callbacks by using [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-99j13).
 
 ```swift
 class StageWatcher {

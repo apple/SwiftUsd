@@ -2,7 +2,7 @@
 
 Name: _OpenUSD_SwiftBindingHelpers
 Namespaces:
-- Name: pxrInternal_v0_25_5__pxrReserved__
+- Name: pxrInternal_v0_25_8__pxrReserved__
   Tags:
   - Name: TfType
     SwiftImportAs: owned
@@ -306,20 +306,35 @@ Namespaces:
     SwiftRetainOp: __retain__ZN3pxr17SdfTextFileFormatE
     SwiftReleaseOp: __release__ZN3pxr17SdfTextFileFormatE
 
-  - Name: NdrDiscoveryPluginContext
+  - Name: SdfUsdFileFormat
     SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr25NdrDiscoveryPluginContextE
-    SwiftReleaseOp: __release__ZN3pxr25NdrDiscoveryPluginContextE
+    SwiftRetainOp: __retain__ZN3pxr16SdfUsdFileFormatE
+    SwiftReleaseOp: __release__ZN3pxr16SdfUsdFileFormatE
 
-  - Name: NdrDiscoveryPlugin
+  - Name: SdfUsdaData
     SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr18NdrDiscoveryPluginE
-    SwiftReleaseOp: __release__ZN3pxr18NdrDiscoveryPluginE
+    SwiftRetainOp: __retain__ZN3pxr11SdfUsdaDataE
+    SwiftReleaseOp: __release__ZN3pxr11SdfUsdaDataE
 
-  - Name: NdrNode
-    Methods:
-    - Name: GetInputNames
-      Availability: nonswift
+  - Name: SdfUsdaFileFormat
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr17SdfUsdaFileFormatE
+    SwiftReleaseOp: __release__ZN3pxr17SdfUsdaFileFormatE
+
+  - Name: SdfUsdcFileFormat
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr17SdfUsdcFileFormatE
+    SwiftReleaseOp: __release__ZN3pxr17SdfUsdcFileFormatE
+
+  - Name: SdfUsdzFileFormat
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr17SdfUsdzFileFormatE
+    SwiftReleaseOp: __release__ZN3pxr17SdfUsdzFileFormatE
+
+  - Name: SdfZipFile
+    Tags:
+    - Name: Iterator
+      SwiftName: pxrIterator
 
   - Name: SdrDiscoveryPluginContext
     SwiftImportAs: reference
@@ -432,31 +447,6 @@ Namespaces:
   - Name: UsdPrimRange
     SwiftImportAs: owned
 
-  - Name: UsdUsdFileFormat
-    SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr16UsdUsdFileFormatE
-    SwiftReleaseOp: __release__ZN3pxr16UsdUsdFileFormatE
-
-  - Name: UsdUsdaFileFormat
-    SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr17UsdUsdaFileFormatE
-    SwiftReleaseOp: __release__ZN3pxr17UsdUsdaFileFormatE
-
-  - Name: UsdUsdcFileFormat
-    SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr17UsdUsdcFileFormatE
-    SwiftReleaseOp: __release__ZN3pxr17UsdUsdcFileFormatE
-
-  - Name: UsdUsdzFileFormat
-    SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr17UsdUsdzFileFormatE
-    SwiftReleaseOp: __release__ZN3pxr17UsdUsdzFileFormatE
-
-  - Name: UsdZipFile
-    Tags:
-    - Name: Iterator
-      SwiftName: pxrIterator
-
   - Name: UsdGeomPrimvar
     SwiftImportAs: owned
 
@@ -492,6 +482,16 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr23UsdHydraDiscoveryPluginE
     SwiftReleaseOp: __release__ZN3pxr23UsdHydraDiscoveryPluginE
+
+  - Name: VdfExecutionTypeRegistry
+    SwiftImportAs: reference
+    SwiftRetainOp: immortal
+    SwiftReleaseOp: immortal
+
+  - Name: ExecTypeRegistry
+    SwiftImportAs: reference
+    SwiftRetainOp: immortal
+    SwiftReleaseOp: immortal
 
   - Name: GarchGLPlatformDebugContext
     SwiftImportAs: reference
@@ -581,6 +581,11 @@ Namespaces:
     SwiftRetainOp: __retain__ZN3pxr26HdNoticeBatchingSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr26HdNoticeBatchingSceneIndexE
 
+  - Name: HdCachingSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr19HdCachingSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr19HdCachingSceneIndexE
+
   - Name: HdDependencyForwardingSceneIndex
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr32HdDependencyForwardingSceneIndexE
@@ -640,6 +645,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr23HdsiDebuggingSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr23HdsiDebuggingSceneIndexE
+
+  - Name: HdsiDomeLightCameraVisibilitySceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE
 
   - Name: HdsiExtComputationDependencySceneIndex
     SwiftImportAs: reference
@@ -740,6 +750,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr31HdsiTetMeshConversionSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr31HdsiTetMeshConversionSceneIndexE
+
+  - Name: HdsiUnboundMaterialPruningSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE
 
   - Name: HdsiVelocityMotionResolvingSceneIndex
     SwiftImportAs: reference

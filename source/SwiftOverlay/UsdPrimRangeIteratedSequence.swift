@@ -40,7 +40,7 @@ extension Overlay {
 
                 /// Return true if the iterator points to a prim visited the second time
                 /// (in post order) for a pre- and post-order iterator, false otherwise.
-                // Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/primRange.h
+                // Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/primRange.h
                 public func IsPostVisit() -> Bool {
                     box.value.IsPostVisit()
                 }
@@ -48,7 +48,7 @@ extension Overlay {
                 /// Behave as if the current prim has no children when next advanced.
                 /// Issue an error if this is a pre- and post-order iterator that
                 /// IsPostVisit().
-                // Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/primRange.h
+                // Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/primRange.h
                 public func PruneChildren() {
                     box.value.PruneChildren()
                 }

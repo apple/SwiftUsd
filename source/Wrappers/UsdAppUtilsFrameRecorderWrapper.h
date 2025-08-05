@@ -6,7 +6,7 @@
 //
 
 // Original documentation for pxr::UsdAppUtilsFrameRecorder from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usdImaging/usdAppUtils/frameRecorder.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usdImaging/usdAppUtils/frameRecorder.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDAPPUTILSFRAMERECORDERWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDAPPUTILSFRAMERECORDERWRAPPER_H
@@ -39,9 +39,13 @@ namespace Overlay {
         /// plugin will be chosen depending on the value of \p gpuEnabled.
         /// The \p gpuEnabled argument determines if the UsdAppUtilsFrameRecorderWrapper
         /// instance will allow Hydra to use the GPU to produce images.
+        /// The \p enableUsdDrawModes argument determines whether the frame
+        /// recorder instance will respect USD draw modes as authored. Setting
+        /// this to false causes the frame recorder to ignore draw modes.
         UsdAppUtilsFrameRecorderWrapper(
                                         const pxr::TfToken& rendererPluginId = pxr::TfToken(),
-                                        bool gpuEnabled = true);
+                                        bool gpuEnabled = true,
+                                        bool enableUsdDrawModes = true);
         
         /// Gets the ID of the Hydra renderer plugin that will be used for
         /// recording.
@@ -104,6 +108,9 @@ namespace Overlay {
         /// to explicitly enumerate an alternate set of purposes to be
         /// included along with "default".
         void SetIncludedPurposes(const pxr::TfTokenVector& purposes);
+
+        /// Sets the primary camera prim path.
+        void SetPrimaryCameraPrimPath(const pxr::SdfPath& cameraPath);
         
         /// Records an image and writes the result to \p outputImagePath.
         ///

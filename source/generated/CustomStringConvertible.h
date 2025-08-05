@@ -82,6 +82,22 @@
 #include "pxr/base/vt/dictionary.h"
 #include "pxr/base/vt/types.h"
 #include "pxr/base/vt/value.h"
+#include "pxr/exec/ef/time.h"
+#include "pxr/exec/ef/timeInterval.h"
+#include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/vdf/dataManagerVector.h"
+#include "pxr/exec/vdf/executionStats.h"
+#include "pxr/exec/vdf/grapherOptions.h"
+#include "pxr/exec/vdf/indexedData.h"
+#include "pxr/exec/vdf/indexedWeights.h"
+#include "pxr/exec/vdf/indexedWeightsOperand.h"
+#include "pxr/exec/vdf/inputSpec.h"
+#include "pxr/exec/vdf/mask.h"
+#include "pxr/exec/vdf/maskedIterator.h"
+#include "pxr/exec/vdf/object.h"
+#include "pxr/exec/vdf/sparseInputTraverser.h"
+#include "pxr/exec/vdf/sparseVectorizedInputTraverser.h"
+#include "pxr/exec/vdf/vector.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/cameraUtil/conformWindow.h"
 #include "pxr/imaging/garch/glDebugWindow.h"
@@ -150,7 +166,6 @@
 #include "pxr/imaging/pxOsd/meshTopologyValidation.h"
 #include "pxr/imaging/pxOsd/subdivTags.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-#include "pxr/usd/ndr/declare.h"
 #include "pxr/usd/pcp/changes.h"
 #include "pxr/usd/pcp/dependency.h"
 #include "pxr/usd/pcp/errors.h"
@@ -357,6 +372,7 @@ namespace __Overlay {
   std::string to_string(const pxr::TsCurveType& x);
   std::string to_string(const pxr::TsExtrapMode& x);
   std::string to_string(const pxr::TsSplineSampleSource& x);
+  std::string to_string(const pxr::TsTangentAlgorithm& x);
   std::string to_string(const pxr::TsAntiRegressionMode& x);
   std::string to_string(const pxr::TsKnot& x);
   std::string to_string(const pxr::TsRegressionPreventer::InteractiveMode& x);
@@ -371,6 +387,7 @@ namespace __Overlay {
   std::string to_string(const pxr::SdfLengthUnit& x);
   std::string to_string(const pxr::SdfUnregisteredValue& x);
   std::string to_string(const pxr::SdfValueBlock& x);
+  std::string to_string(const pxr::SdfAnimationBlock& x);
   std::string to_string(const pxr::SdfHumanReadableValue& x);
   std::string to_string(const pxr::SdfAssetPath& x);
   std::string to_string(const pxr::SdfListOpType& x);
@@ -408,7 +425,6 @@ namespace __Overlay {
   std::string to_string(const pxr::SdfVariantSetSpec& x);
   std::string to_string(const pxr::SdfVariantSpecHandle& x);
   std::string to_string(const pxr::SdfVariantSpec& x);
-  std::string to_string(const pxr::NdrVersionFilter& x);
   std::string to_string(const pxr::SdrVersionFilter& x);
   std::string to_string(const pxr::PcpNodeRef& x);
   std::string to_string(const pxr::PcpArcType& x);
@@ -468,6 +484,23 @@ namespace __Overlay {
   std::string to_string(const pxr::UsdPhysicsObjectType& x);
   std::string to_string(const pxr::UsdPhysicsAxis& x);
   std::string to_string(const pxr::UsdPhysicsJointDOF& x);
+  std::string to_string(const pxr::VdfInputSpec::Access& x);
+  std::string to_string(const pxr::VdfMask& x);
+  std::string to_string(const pxr::VdfVector::ConstructBoxedCopyTag& x);
+  std::string to_string(const pxr::VdfVector::DebugPrintable& x);
+  std::string to_string(const pxr::VdfIndexedWeights& x);
+  std::string to_string(const pxr::VdfExecutionStats::EventType& x);
+  std::string to_string(const pxr::VdfMaskedIteratorMode& x);
+  std::string to_string(const pxr::VdfDataManagerDeallocationMode& x);
+  std::string to_string(const pxr::VdfGrapherOptions::DisplayStyle& x);
+  std::string to_string(const pxr::VdfObjectPtr& x);
+  std::string to_string(const pxr::VdfObjectPtr::Type& x);
+  std::string to_string(const pxr::VdfIndexedWeightsOperand::SetOperation& x);
+  std::string to_string(const pxr::VdfSparseInputTraverser::CallbackMode& x);
+  std::string to_string(const pxr::VdfSparseVectorizedInputTraverser::CallbackMode& x);
+  std::string to_string(const pxr::EfTime& x);
+  std::string to_string(const pxr::EfTimeInterval& x);
+  std::string to_string(const pxr::ExecProviderResolution::DynamicTraversal& x);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   std::string to_string(const pxr::GarchGLDebugWindow::Buttons& x);
   std::string to_string(const pxr::GarchGLDebugWindow::ModifierKeys& x);

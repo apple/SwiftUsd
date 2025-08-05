@@ -185,10 +185,13 @@ struct SwiftPackage {
                         // The X11 headers #define a bunch of normal identifiers like `Bool` and `Always`, which causes a bunch of incomprehensible errors.
                         continue
                     }
-                    
+
                     if relativePath.starts(with: "pxr/imaging/hdEmbree") {
-                        // The Embree4.0 patch doesn't currently update the includes within these files to not have `plugin` as a path component
-                        print("Note: Omitting Embree4 header from modulemap: \(relativePath)")
+                        // Headers are built to `pxr/imaging/hdEmbree/foo.h`, but
+                        // they use `#include "pxr/imaging/plugin/hdEmbree/bar.h"`,
+                        // which causes errors due to bad include paths. They live at
+                        // `pxr/imaging/plugin/hdEmbree` in the OpenUSD repo, so this
+                        // may be an issue that OpenUSD should fix. 
                         continue
                     }
                     

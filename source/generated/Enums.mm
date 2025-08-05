@@ -131,6 +131,10 @@ const pxr::TsSplineSampleSource Overlay::TsSourceKnotInterp = pxr::TsSourceKnotI
 const pxr::TsSplineSampleSource Overlay::TsSourcePostExtrap = pxr::TsSourcePostExtrap;
 const pxr::TsSplineSampleSource Overlay::TsSourcePostExtrapLoop = pxr::TsSourcePostExtrapLoop;
 
+const pxr::TsTangentAlgorithm Overlay::TsTangentAlgorithmNone = pxr::TsTangentAlgorithmNone;
+const pxr::TsTangentAlgorithm Overlay::TsTangentAlgorithmCustom = pxr::TsTangentAlgorithmCustom;
+const pxr::TsTangentAlgorithm Overlay::TsTangentAlgorithmAutoEase = pxr::TsTangentAlgorithmAutoEase;
+
 const pxr::TsAntiRegressionMode Overlay::TsAntiRegressionNone = pxr::TsAntiRegressionNone;
 const pxr::TsAntiRegressionMode Overlay::TsAntiRegressionContain = pxr::TsAntiRegressionContain;
 const pxr::TsAntiRegressionMode Overlay::TsAntiRegressionKeepRatio = pxr::TsAntiRegressionKeepRatio;
@@ -220,10 +224,6 @@ const pxr::SdfNamespaceEditDetail::Result Overlay::SdfNamespaceEditDetail::Okay 
 
 const pxr::SdfPredicateFunctionResult::Constancy Overlay::SdfPredicateFunctionResult::ConstantOverDescendants = pxr::SdfPredicateFunctionResult::ConstantOverDescendants;
 const pxr::SdfPredicateFunctionResult::Constancy Overlay::SdfPredicateFunctionResult::MayVaryOverDescendants = pxr::SdfPredicateFunctionResult::MayVaryOverDescendants;
-
-const pxr::NdrVersionFilter Overlay::NdrVersionFilterDefaultOnly = pxr::NdrVersionFilterDefaultOnly;
-const pxr::NdrVersionFilter Overlay::NdrVersionFilterAllVersions = pxr::NdrVersionFilterAllVersions;
-const pxr::NdrVersionFilter Overlay::NdrNumVersionFilters = pxr::NdrNumVersionFilters;
 
 const pxr::SdrVersionFilter Overlay::SdrVersionFilterDefaultOnly = pxr::SdrVersionFilterDefaultOnly;
 const pxr::SdrVersionFilter Overlay::SdrVersionFilterAllVersions = pxr::SdrVersionFilterAllVersions;
@@ -523,6 +523,50 @@ const pxr::UsdPhysicsJointDOF Overlay::UsdPhysicsJointDOF::RotX = pxr::UsdPhysic
 const pxr::UsdPhysicsJointDOF Overlay::UsdPhysicsJointDOF::RotY = pxr::UsdPhysicsJointDOF::RotY;
 const pxr::UsdPhysicsJointDOF Overlay::UsdPhysicsJointDOF::RotZ = pxr::UsdPhysicsJointDOF::RotZ;
 
+const pxr::VdfInputSpec::Access Overlay::VdfInputSpec::READ = pxr::VdfInputSpec::READ;
+const pxr::VdfInputSpec::Access Overlay::VdfInputSpec::READWRITE = pxr::VdfInputSpec::READWRITE;
+
+const pxr::VdfVector::ConstructBoxedCopyTag Overlay::VdfVector::ConstructBoxedCopy = pxr::VdfVector::ConstructBoxedCopy;
+
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::NodeEvaluateEvent = pxr::VdfExecutionStats::NodeEvaluateEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::NodePrepareEvent = pxr::VdfExecutionStats::NodePrepareEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::NodeRequiredInputsEvent = pxr::VdfExecutionStats::NodeRequiredInputsEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::NodeInputsTaskEvent = pxr::VdfExecutionStats::NodeInputsTaskEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::NodeDidComputeEvent = pxr::VdfExecutionStats::NodeDidComputeEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::ElementsCopiedEvent = pxr::VdfExecutionStats::ElementsCopiedEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::ElementsProcessedEvent = pxr::VdfExecutionStats::ElementsProcessedEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::RequestedOutputInSpeculationsEvent = pxr::VdfExecutionStats::RequestedOutputInSpeculationsEvent;
+const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::MaxEvent = pxr::VdfExecutionStats::MaxEvent;
+
+const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitUnset = pxr::VdfMaskedIteratorMode::VisitUnset;
+const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitSet = pxr::VdfMaskedIteratorMode::VisitSet;
+
+const pxr::VdfDataManagerDeallocationMode Overlay::VdfDataManagerDeallocationMode::Background = pxr::VdfDataManagerDeallocationMode::Background;
+const pxr::VdfDataManagerDeallocationMode Overlay::VdfDataManagerDeallocationMode::Immediate = pxr::VdfDataManagerDeallocationMode::Immediate;
+
+const pxr::VdfGrapherOptions::DisplayStyle Overlay::VdfGrapherOptions::DisplayStyleFull = pxr::VdfGrapherOptions::DisplayStyleFull;
+const pxr::VdfGrapherOptions::DisplayStyle Overlay::VdfGrapherOptions::DisplayStyleNoLabels = pxr::VdfGrapherOptions::DisplayStyleNoLabels;
+const pxr::VdfGrapherOptions::DisplayStyle Overlay::VdfGrapherOptions::DisplayStyleSummary = pxr::VdfGrapherOptions::DisplayStyleSummary;
+
+const pxr::VdfObjectPtr::Type Overlay::VdfObjectPtr::Undefined = pxr::VdfObjectPtr::Undefined;
+const pxr::VdfObjectPtr::Type Overlay::VdfObjectPtr::Node = pxr::VdfObjectPtr::Node;
+const pxr::VdfObjectPtr::Type Overlay::VdfObjectPtr::Connection = pxr::VdfObjectPtr::Connection;
+const pxr::VdfObjectPtr::Type Overlay::VdfObjectPtr::Input = pxr::VdfObjectPtr::Input;
+const pxr::VdfObjectPtr::Type Overlay::VdfObjectPtr::Output = pxr::VdfObjectPtr::Output;
+
+const pxr::VdfIndexedWeightsOperand::SetOperation Overlay::VdfIndexedWeightsOperand::Union = pxr::VdfIndexedWeightsOperand::Union;
+const pxr::VdfIndexedWeightsOperand::SetOperation Overlay::VdfIndexedWeightsOperand::Intersection = pxr::VdfIndexedWeightsOperand::Intersection;
+
+const pxr::VdfSparseInputTraverser::CallbackMode Overlay::VdfSparseInputTraverser::CallbackModeAllNodes = pxr::VdfSparseInputTraverser::CallbackModeAllNodes;
+const pxr::VdfSparseInputTraverser::CallbackMode Overlay::VdfSparseInputTraverser::CallbackModeTerminalNodes = pxr::VdfSparseInputTraverser::CallbackModeTerminalNodes;
+
+const pxr::VdfSparseVectorizedInputTraverser::CallbackMode Overlay::VdfSparseVectorizedInputTraverser::CallbackModeAllNodes = pxr::VdfSparseVectorizedInputTraverser::CallbackModeAllNodes;
+const pxr::VdfSparseVectorizedInputTraverser::CallbackMode Overlay::VdfSparseVectorizedInputTraverser::CallbackModeTerminalNodes = pxr::VdfSparseVectorizedInputTraverser::CallbackModeTerminalNodes;
+
+const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::Local = pxr::ExecProviderResolution::DynamicTraversal::Local;
+const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects = pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects;
+const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::NamespaceAncestor = pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor;
+
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 const pxr::GarchGLDebugWindow::Buttons Overlay::GarchGLDebugWindow::MyButton1 = pxr::GarchGLDebugWindow::MyButton1;
 const pxr::GarchGLDebugWindow::Buttons Overlay::GarchGLDebugWindow::MyButton2 = pxr::GarchGLDebugWindow::MyButton2;
@@ -675,6 +719,7 @@ const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsBasePrimi
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsPrimitiveIdEmulation = pxr::HgiDeviceCapabilitiesBitsPrimitiveIdEmulation;
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsIndirectCommandBuffers = pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers;
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsRoundPoints = pxr::HgiDeviceCapabilitiesBitsRoundPoints;
+const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays = pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays;
 
 const pxr::HgiTextureType Overlay::HgiTextureType1D = pxr::HgiTextureType1D;
 const pxr::HgiTextureType Overlay::HgiTextureType2D = pxr::HgiTextureType2D;

@@ -13,6 +13,9 @@
 
 #include "pxr/base/gf/colorSpace.h"
 #include "pxr/base/trace/reporter.h"
+#include "pxr/exec/ef/leafNode.h"
+#include "pxr/exec/execGeom/tokens.h"
+#include "pxr/exec/vdf/tokens.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/geomUtil/tokens.h"
 #include "pxr/imaging/glf/texture.h"
@@ -102,6 +105,7 @@
 #include "pxr/imaging/hdSt/drawTarget.h"
 #include "pxr/imaging/hdSt/tokens.h"
 #include "pxr/imaging/hdar/systemSchema.h"
+#include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
 #include "pxr/imaging/hdsi/lightLinkingSceneIndex.h"
 #include "pxr/imaging/hdsi/prefixPathPruningSceneIndex.h"
@@ -110,6 +114,7 @@
 #include "pxr/imaging/hdsi/primTypeNoticeBatchingSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypePruningSceneIndex.h"
 #include "pxr/imaging/hdsi/renderSettingsFilteringSceneIndex.h"
+#include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/velocityMotionResolvingSceneIndex.h"
 #include "pxr/imaging/hdx/pickTask.h"
 #include "pxr/imaging/hdx/tokens.h"
@@ -125,6 +130,10 @@
 #include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/tokens.h"
 #include "pxr/usd/sdf/types.h"
+#include "pxr/usd/sdf/usdFileFormat.h"
+#include "pxr/usd/sdf/usdaFileFormat.h"
+#include "pxr/usd/sdf/usdcFileFormat.h"
+#include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/sdr/shaderNode.h"
 #include "pxr/usd/sdr/shaderProperty.h"
 #include "pxr/usd/usd/clipsAPI.h"
@@ -195,6 +204,10 @@ namespace __Overlay {
     extern const pxr::SdfChildrenKeys_StaticTokenType* const SdfChildrenKeys;
     extern const pxr::SdfFileFormatTokens_StaticTokenType* const SdfFileFormatTokens;
     extern const pxr::SdfTextFileFormatTokens_StaticTokenType* const SdfTextFileFormatTokens;
+    extern const pxr::SdfUsdFileFormatTokens_StaticTokenType* const SdfUsdFileFormatTokens;
+    extern const pxr::SdfUsdaFileFormatTokens_StaticTokenType* const SdfUsdaFileFormatTokens;
+    extern const pxr::SdfUsdcFileFormatTokens_StaticTokenType* const SdfUsdcFileFormatTokens;
+    extern const pxr::SdfUsdzFileFormatTokens_StaticTokenType* const SdfUsdzFileFormatTokens;
     extern const pxr::SdrPropertyTypes_StaticTokenType* const SdrPropertyTypes;
     extern const pxr::SdrPropertyMetadata_StaticTokenType* const SdrPropertyMetadata;
     extern const pxr::SdrPropertyRole_StaticTokenType* const SdrPropertyRole;
@@ -231,6 +244,9 @@ namespace __Overlay {
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
     extern const pxr::UsdMtlxTokensType* const UsdMtlxTokens;
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+    extern const pxr::VdfTokens_StaticTokenType* const VdfTokens;
+    extern const pxr::EfLeafTokens_StaticTokenType* const EfLeafTokens;
+    extern const pxr::ExecGeomXformableTokens_StaticTokenType* const ExecGeomXformableTokens;
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
     extern const pxr::HioGlslfxTokens_StaticTokenType* const HioGlslfxTokens;
     extern const pxr::HioGlslfxResourceLayoutTokens_StaticTokenType* const HioGlslfxResourceLayoutTokens;
@@ -349,6 +365,7 @@ namespace __Overlay {
     extern const pxr::HdXformSchemaTokens_StaticTokenType* const HdXformSchemaTokens;
     extern const pxr::HdarSystemSchemaTokens_StaticTokenType* const HdarSystemSchemaTokens;
     extern const pxr::HdGpGenerativeProceduralTokens_StaticTokenType* const HdGpGenerativeProceduralTokens;
+    extern const pxr::HdsiDomeLightCameraVisibilitySceneIndexTokens_StaticTokenType* const HdsiDomeLightCameraVisibilitySceneIndexTokens;
     extern const pxr::HdsiImplicitSurfaceSceneIndexTokens_StaticTokenType* const HdsiImplicitSurfaceSceneIndexTokens;
     extern const pxr::HdsiLightLinkingSceneIndexTokens_StaticTokenType* const HdsiLightLinkingSceneIndexTokens;
     extern const pxr::HdsiPrefixPathPruningSceneIndexTokens_StaticTokenType* const HdsiPrefixPathPruningSceneIndexTokens;
@@ -357,6 +374,7 @@ namespace __Overlay {
     extern const pxr::HdsiPrimTypeNoticeBatchingSceneIndexTokens_StaticTokenType* const HdsiPrimTypeNoticeBatchingSceneIndexTokens;
     extern const pxr::HdsiPrimTypePruningSceneIndexTokens_StaticTokenType* const HdsiPrimTypePruningSceneIndexTokens;
     extern const pxr::HdsiRenderSettingsFilteringSceneIndexTokens_StaticTokenType* const HdsiRenderSettingsFilteringSceneIndexTokens;
+    extern const pxr::HdsiUnboundMaterialPruningSceneIndexTokens_StaticTokenType* const HdsiUnboundMaterialPruningSceneIndexTokens;
     extern const pxr::HdsiVelocityMotionResolvingSceneIndexTokens_StaticTokenType* const HdsiVelocityMotionResolvingSceneIndexTokens;
     extern const pxr::HdStDrawTargetTokens_StaticTokenType* const HdStDrawTargetTokens;
     extern const pxr::HdStGLSLProgramTokens_StaticTokenType* const HdStGLSLProgramTokens;

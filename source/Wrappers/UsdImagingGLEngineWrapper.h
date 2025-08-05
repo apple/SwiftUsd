@@ -6,7 +6,7 @@
 //
 
 // Original documentation for pxr::UsdImagingGLEngine from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usdImaging/usdImagingGL/engine.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usdImaging/usdImagingGL/engine.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
@@ -55,6 +55,9 @@ namespace Overlay {
             /// scene indices that asynchronous processing is allowed. Applications
             /// should periodically call PollForAsynchronousUpdates on the engine.
             bool allowAsynchronousSceneProcessing = false;
+            /// \p enableUsdDrawModes enables the UsdGeomModelAPI draw mode
+            /// feature.
+            bool enableUsdDrawModes = true;
         };
 
         // ---------------------------------------------------------------------
@@ -82,9 +85,10 @@ namespace Overlay {
                                   const pxr::SdfPath &sceneDelegateID = pxr::SdfPath::AbsoluteRootPath(),
                                   const pxr::HdDriver &driver = pxr::HdDriver(),
                                   const pxr::TfToken &rendererPluginId = pxr::TfToken(),
-                                  bool gpuEnabled = true,
-                                  bool displayUnloadedPrimsWithBounds = false,
-                                  bool allowAsynchronousSceneProcessing = false);
+                                  const bool gpuEnabled = true,
+                                  const bool displayUnloadedPrimsWithBounds = false,
+                                  const bool allowAsynchronousSceneProcessing = false,
+                                  const bool enableUsdDrawModes = true);
 
         /// @}
 

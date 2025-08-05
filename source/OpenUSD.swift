@@ -17,4 +17,4 @@
 // having to do the full typealias
 // use @_documentation(visibility: internal) to hide this
 // from showing up in DocC
-@_documentation(visibility: internal) public typealias pxr = pxrInternal_v0_25_5__pxrReserved__
+@_documentation(visibility: internal) public typealias pxr = pxrInternal_v0_25_8__pxrReserved__

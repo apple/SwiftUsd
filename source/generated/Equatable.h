@@ -75,6 +75,7 @@
 #include "pxr/base/tf/notice.h"
 #include "pxr/base/tf/refBase.h"
 #include "pxr/base/tf/refPtrTracker.h"
+#include "pxr/base/tf/smallVector.h"
 #include "pxr/base/tf/token.h"
 #include "pxr/base/tf/type.h"
 #include "pxr/base/tf/unicodeUtils.h"
@@ -96,9 +97,30 @@
 #include "pxr/base/ts/spline.h"
 #include "pxr/base/ts/types.h"
 #include "pxr/base/vt/array.h"
+#include "pxr/base/vt/arrayEdit.h"
 #include "pxr/base/vt/dictionary.h"
 #include "pxr/base/vt/types.h"
 #include "pxr/base/vt/value.h"
+#include "pxr/exec/ef/time.h"
+#include "pxr/exec/ef/timeInterval.h"
+#include "pxr/exec/esf/journal.h"
+#include "pxr/exec/exec/typeRegistry.h"
+#include "pxr/exec/vdf/connectorSpecs.h"
+#include "pxr/exec/vdf/executionTypeRegistry.h"
+#include "pxr/exec/vdf/grapherOptions.h"
+#include "pxr/exec/vdf/indexedData.h"
+#include "pxr/exec/vdf/indexedDataIterator.h"
+#include "pxr/exec/vdf/indexedWeights.h"
+#include "pxr/exec/vdf/inputSpec.h"
+#include "pxr/exec/vdf/linearMap.h"
+#include "pxr/exec/vdf/mask.h"
+#include "pxr/exec/vdf/maskedOutput.h"
+#include "pxr/exec/vdf/object.h"
+#include "pxr/exec/vdf/outputSpec.h"
+#include "pxr/exec/vdf/request.h"
+#include "pxr/exec/vdf/scheduler.h"
+#include "pxr/exec/vdf/testUtils.h"
+#include "pxr/exec/vdf/types.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/cameraUtil/framing.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -119,6 +141,7 @@
 #include "pxr/imaging/hd/aov.h"
 #include "pxr/imaging/hd/basisCurvesTopology.h"
 #include "pxr/imaging/hd/bufferSpec.h"
+#include "pxr/imaging/hd/cachingSceneIndex.h"
 #include "pxr/imaging/hd/dataSourceLocator.h"
 #include "pxr/imaging/hd/dependencyForwardingSceneIndex.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
@@ -150,6 +173,7 @@
 #include "pxr/imaging/hdSt/textureIdentifier.h"
 #include "pxr/imaging/hdsi/coordSysPrimSceneIndex.h"
 #include "pxr/imaging/hdsi/debuggingSceneIndex.h"
+#include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationDependencySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationPrimvarPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
@@ -170,6 +194,7 @@
 #include "pxr/imaging/hdsi/sceneGlobalsSceneIndex.h"
 #include "pxr/imaging/hdsi/switchingSceneIndex.h"
 #include "pxr/imaging/hdsi/tetMeshConversionSceneIndex.h"
+#include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/velocityMotionResolvingSceneIndex.h"
 #include "pxr/imaging/hdx/aovInputTask.h"
 #include "pxr/imaging/hdx/boundingBoxTask.h"
@@ -213,9 +238,6 @@
 #include "pxr/usd/ar/resolverContext.h"
 #include "pxr/usd/ar/timestamp.h"
 #include "pxr/usd/kind/registry.h"
-#include "pxr/usd/ndr/declare.h"
-#include "pxr/usd/ndr/discoveryPlugin.h"
-#include "pxr/usd/ndr/sdfTypeIndicator.h"
 #include "pxr/usd/pcp/dependency.h"
 #include "pxr/usd/pcp/expressionVariables.h"
 #include "pxr/usd/pcp/expressionVariablesSource.h"
@@ -234,6 +256,7 @@
 #include "pxr/usd/sdf/data.h"
 #include "pxr/usd/sdf/declareHandles.h"
 #include "pxr/usd/sdf/fileFormat.h"
+#include "pxr/usd/sdf/fileVersion.h"
 #include "pxr/usd/sdf/layer.h"
 #include "pxr/usd/sdf/layerOffset.h"
 #include "pxr/usd/sdf/layerStateDelegate.h"
@@ -259,13 +282,20 @@
 #include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
+#include "pxr/usd/sdf/usdFileFormat.h"
+#include "pxr/usd/sdf/usdaData.h"
+#include "pxr/usd/sdf/usdaFileFormat.h"
+#include "pxr/usd/sdf/usdcFileFormat.h"
+#include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/sdf/valueTypeName.h"
 #include "pxr/usd/sdf/variableExpression.h"
 #include "pxr/usd/sdf/variantSetSpec.h"
 #include "pxr/usd/sdf/variantSpec.h"
+#include "pxr/usd/sdf/zipFile.h"
 #include "pxr/usd/sdr/declare.h"
 #include "pxr/usd/sdr/discoveryPlugin.h"
 #include "pxr/usd/sdr/registry.h"
+#include "pxr/usd/sdr/sdfTypeIndicator.h"
 #include "pxr/usd/usd/attribute.h"
 #include "pxr/usd/usd/common.h"
 #include "pxr/usd/usd/editTarget.h"
@@ -281,11 +311,6 @@
 #include "pxr/usd/usd/stageLoadRules.h"
 #include "pxr/usd/usd/stagePopulationMask.h"
 #include "pxr/usd/usd/timeCode.h"
-#include "pxr/usd/usd/usdFileFormat.h"
-#include "pxr/usd/usd/usdaFileFormat.h"
-#include "pxr/usd/usd/usdcFileFormat.h"
-#include "pxr/usd/usd/usdzFileFormat.h"
-#include "pxr/usd/usd/zipFile.h"
 #include "pxr/usd/usdGeom/imageable.h"
 #include "pxr/usd/usdGeom/primvar.h"
 #include "pxr/usd/usdGeom/xformOp.h"
@@ -330,10 +355,16 @@ namespace __Overlay {
                             const pxr::TfNotice::WeakProbePtr& r);
   bool operatorEqualsEquals(const pxr::TfRefPtrTracker::WatchedCounts& l,
                             const pxr::TfRefPtrTracker::WatchedCounts& r);
+  bool operatorEqualsEquals(const pxr::VdfNodeToInputPtrVectorMap& l,
+                            const pxr::VdfNodeToInputPtrVectorMap& r);
   bool operatorEqualsEquals(const pxr::TfDiagnosticMgr& l,
                             const pxr::TfDiagnosticMgr& r);
   bool operatorEqualsEquals(const pxr::TfRefPtrTracker& l,
                             const pxr::TfRefPtrTracker& r);
+  bool operatorEqualsEquals(const pxr::VdfNodePtrSet& l,
+                            const pxr::VdfNodePtrSet& r);
+  bool operatorEqualsEquals(const pxr::VdfOutputPtrSet& l,
+                            const pxr::VdfOutputPtrSet& r);
   bool operatorEqualsEquals(const pxr::TraceAggregateTree::CounterMap& l,
                             const pxr::TraceAggregateTree::CounterMap& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -474,6 +505,100 @@ namespace __Overlay {
                             const pxr::VtUIntArray& r);
   bool operatorEqualsEquals(const pxr::VtUShortArray& l,
                             const pxr::VtUShortArray& r);
+  bool operatorEqualsEquals(const pxr::VtDualQuatdArrayEdit& l,
+                            const pxr::VtDualQuatdArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtDualQuatfArrayEdit& l,
+                            const pxr::VtDualQuatfArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtDualQuathArrayEdit& l,
+                            const pxr::VtDualQuathArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtHalfArrayEdit& l,
+                            const pxr::VtHalfArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtIntervalArrayEdit& l,
+                            const pxr::VtIntervalArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix2dArrayEdit& l,
+                            const pxr::VtMatrix2dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix2fArrayEdit& l,
+                            const pxr::VtMatrix2fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix3dArrayEdit& l,
+                            const pxr::VtMatrix3dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix3fArrayEdit& l,
+                            const pxr::VtMatrix3fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix4dArrayEdit& l,
+                            const pxr::VtMatrix4dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtMatrix4fArrayEdit& l,
+                            const pxr::VtMatrix4fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtQuatdArrayEdit& l,
+                            const pxr::VtQuatdArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtQuaternionArrayEdit& l,
+                            const pxr::VtQuaternionArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtQuatfArrayEdit& l,
+                            const pxr::VtQuatfArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtQuathArrayEdit& l,
+                            const pxr::VtQuathArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange1dArrayEdit& l,
+                            const pxr::VtRange1dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange1fArrayEdit& l,
+                            const pxr::VtRange1fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange2dArrayEdit& l,
+                            const pxr::VtRange2dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange2fArrayEdit& l,
+                            const pxr::VtRange2fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange3dArrayEdit& l,
+                            const pxr::VtRange3dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRange3fArrayEdit& l,
+                            const pxr::VtRange3fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtRect2iArrayEdit& l,
+                            const pxr::VtRect2iArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec2dArrayEdit& l,
+                            const pxr::VtVec2dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec2fArrayEdit& l,
+                            const pxr::VtVec2fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec2hArrayEdit& l,
+                            const pxr::VtVec2hArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec2iArrayEdit& l,
+                            const pxr::VtVec2iArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec3dArrayEdit& l,
+                            const pxr::VtVec3dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec3fArrayEdit& l,
+                            const pxr::VtVec3fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec3hArrayEdit& l,
+                            const pxr::VtVec3hArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec3iArrayEdit& l,
+                            const pxr::VtVec3iArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec4dArrayEdit& l,
+                            const pxr::VtVec4dArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec4fArrayEdit& l,
+                            const pxr::VtVec4fArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec4hArrayEdit& l,
+                            const pxr::VtVec4hArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtVec4iArrayEdit& l,
+                            const pxr::VtVec4iArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtTokenArrayEdit& l,
+                            const pxr::VtTokenArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtBoolArrayEdit& l,
+                            const pxr::VtBoolArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtCharArrayEdit& l,
+                            const pxr::VtCharArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtDoubleArrayEdit& l,
+                            const pxr::VtDoubleArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtFloatArrayEdit& l,
+                            const pxr::VtFloatArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtInt64ArrayEdit& l,
+                            const pxr::VtInt64ArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtIntArrayEdit& l,
+                            const pxr::VtIntArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtShortArrayEdit& l,
+                            const pxr::VtShortArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtStringArrayEdit& l,
+                            const pxr::VtStringArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtUInt64ArrayEdit& l,
+                            const pxr::VtUInt64ArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtUCharArrayEdit& l,
+                            const pxr::VtUCharArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtUIntArrayEdit& l,
+                            const pxr::VtUIntArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtUShortArrayEdit& l,
+                            const pxr::VtUShortArrayEdit& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorEqualsEquals(const pxr::HdAovSettingsMap& l,
                             const pxr::HdAovSettingsMap& r);
@@ -572,6 +697,26 @@ namespace __Overlay {
                             const pxr::SdfTextFileFormat& r);
   bool operatorEqualsEquals(const pxr::SdfTextFileFormatRefPtr& l,
                             const pxr::SdfTextFileFormatRefPtr& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdFileFormat& l,
+                            const pxr::SdfUsdFileFormat& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdFileFormatRefPtr& l,
+                            const pxr::SdfUsdFileFormatRefPtr& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdaData& l,
+                            const pxr::SdfUsdaData& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdaDataRefPtr& l,
+                            const pxr::SdfUsdaDataRefPtr& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdaFileFormat& l,
+                            const pxr::SdfUsdaFileFormat& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdaFileFormatRefPtr& l,
+                            const pxr::SdfUsdaFileFormatRefPtr& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdcFileFormat& l,
+                            const pxr::SdfUsdcFileFormat& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdcFileFormatRefPtr& l,
+                            const pxr::SdfUsdcFileFormatRefPtr& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdzFileFormat& l,
+                            const pxr::SdfUsdzFileFormat& r);
+  bool operatorEqualsEquals(const pxr::SdfUsdzFileFormatRefPtr& l,
+                            const pxr::SdfUsdzFileFormatRefPtr& r);
   bool operatorEqualsEquals(const pxr::SdfVariantSetSpecHandle& l,
                             const pxr::SdfVariantSetSpecHandle& r);
   bool operatorEqualsEquals(const pxr::SdfVariantSetSpec& l,
@@ -580,20 +725,14 @@ namespace __Overlay {
                             const pxr::SdfVariantSpecHandle& r);
   bool operatorEqualsEquals(const pxr::SdfVariantSpec& l,
                             const pxr::SdfVariantSpec& r);
-  bool operatorEqualsEquals(const pxr::NdrVersion& l,
-                            const pxr::NdrVersion& r);
-  bool operatorEqualsEquals(const pxr::NdrDiscoveryPluginContext& l,
-                            const pxr::NdrDiscoveryPluginContext& r);
-  bool operatorEqualsEquals(const pxr::NdrDiscoveryPlugin& l,
-                            const pxr::NdrDiscoveryPlugin& r);
-  bool operatorEqualsEquals(const pxr::NdrDiscoveryPluginRefPtr& l,
-                            const pxr::NdrDiscoveryPluginRefPtr& r);
   bool operatorEqualsEquals(const pxr::SdrVersion& l,
                             const pxr::SdrVersion& r);
   bool operatorEqualsEquals(const pxr::SdrDiscoveryPluginContext& l,
                             const pxr::SdrDiscoveryPluginContext& r);
   bool operatorEqualsEquals(const pxr::SdrDiscoveryPlugin& l,
                             const pxr::SdrDiscoveryPlugin& r);
+  bool operatorEqualsEquals(const pxr::SdrDiscoveryPluginRefPtr& l,
+                            const pxr::SdrDiscoveryPluginRefPtr& r);
   bool operatorEqualsEquals(const pxr::SdrRegistry& l,
                             const pxr::SdrRegistry& r);
   bool operatorEqualsEquals(const pxr::PcpNodeReverseIterator& l,
@@ -636,22 +775,6 @@ namespace __Overlay {
                             const pxr::UsdNotice::ObjectsChanged::PathRange::iterator& r);
   bool operatorEqualsEquals(const pxr::UsdStageCache::Id& l,
                             const pxr::UsdStageCache::Id& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdFileFormatRefPtr& l,
-                            const pxr::UsdUsdFileFormatRefPtr& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdFileFormat& l,
-                            const pxr::UsdUsdFileFormat& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdaFileFormatRefPtr& l,
-                            const pxr::UsdUsdaFileFormatRefPtr& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdaFileFormat& l,
-                            const pxr::UsdUsdaFileFormat& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdcFileFormatRefPtr& l,
-                            const pxr::UsdUsdcFileFormatRefPtr& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdcFileFormat& l,
-                            const pxr::UsdUsdcFileFormat& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdzFileFormatRefPtr& l,
-                            const pxr::UsdUsdzFileFormatRefPtr& r);
-  bool operatorEqualsEquals(const pxr::UsdUsdzFileFormat& l,
-                            const pxr::UsdUsdzFileFormat& r);
   bool operatorEqualsEquals(const pxr::UsdGeomPrimvar& l,
                             const pxr::UsdGeomPrimvar& r);
   bool operatorEqualsEquals(const pxr::UsdGeomXformOp& l,
@@ -666,6 +789,16 @@ namespace __Overlay {
                             const pxr::UsdSkelAnimQuery& r);
   bool operatorEqualsEquals(const pxr::UsdSkelSkeletonQuery& l,
                             const pxr::UsdSkelSkeletonQuery& r);
+  bool operatorEqualsEquals(const pxr::VdfScheduler::NodeToRequestMap& l,
+                            const pxr::VdfScheduler::NodeToRequestMap& r);
+  bool operatorEqualsEquals(const pxr::VdfIndexedWeights& l,
+                            const pxr::VdfIndexedWeights& r);
+  bool operatorEqualsEquals(const pxr::VdfRequest& l,
+                            const pxr::VdfRequest& r);
+  bool operatorEqualsEquals(const pxr::VdfExecutionTypeRegistry& l,
+                            const pxr::VdfExecutionTypeRegistry& r);
+  bool operatorEqualsEquals(const pxr::ExecTypeRegistry& l,
+                            const pxr::ExecTypeRegistry& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorEqualsEquals(const pxr::GarchGLPlatformDebugContext& l,
                             const pxr::GarchGLPlatformDebugContext& r);
@@ -755,6 +888,10 @@ namespace __Overlay {
                             const pxr::HdNoticeBatchingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdNoticeBatchingSceneIndexRefPtr& l,
                             const pxr::HdNoticeBatchingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdCachingSceneIndex& l,
+                            const pxr::HdCachingSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdCachingSceneIndexRefPtr& l,
+                            const pxr::HdCachingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdDependencyForwardingSceneIndex& l,
                             const pxr::HdDependencyForwardingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdDependencyForwardingSceneIndexRefPtr& l,
@@ -799,6 +936,10 @@ namespace __Overlay {
                             const pxr::HdsiDebuggingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiDebuggingSceneIndexRefPtr& l,
                             const pxr::HdsiDebuggingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiDomeLightCameraVisibilitySceneIndex& l,
+                            const pxr::HdsiDomeLightCameraVisibilitySceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& l,
+                            const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiExtComputationDependencySceneIndex& l,
                             const pxr::HdsiExtComputationDependencySceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiExtComputationDependencySceneIndexRefPtr& l,
@@ -879,6 +1020,10 @@ namespace __Overlay {
                             const pxr::HdsiTetMeshConversionSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiTetMeshConversionSceneIndexRefPtr& l,
                             const pxr::HdsiTetMeshConversionSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiUnboundMaterialPruningSceneIndex& l,
+                            const pxr::HdsiUnboundMaterialPruningSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& l,
+                            const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiVelocityMotionResolvingSceneIndex& l,
                             const pxr::HdsiVelocityMotionResolvingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiVelocityMotionResolvingSceneIndexRefPtr& l,

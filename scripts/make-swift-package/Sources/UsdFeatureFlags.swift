@@ -24,6 +24,7 @@ extension FileSystemInfo {
                 ("PXR_BUILD_PRMAN_PLUGIN", "PRMAN"),
                 ("PXR_BUILD_IMAGING", "IMAGING"),
                 ("PXR_BUILD_USD_IMAGING", "USD_IMAGING"),
+                ("PXR_BUILD_IMAGEIO_PLUGIN", "IMAGEIO"),
                 ("PXR_ENABLE_MATERIALX_SUPPORT", "MATERIALX"),
                 ("PXR_ENABLE_OPENVDB_SUPPORT", "OPENVDB"),
                 ("PXR_ENABLE_PTEX_SUPPORT", "PTEX"),
@@ -39,7 +40,19 @@ extension FileSystemInfo {
             switch moduleName {
             case "SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT": "Embree"
             case "SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT": "OpenImageIO"
+            case "SwiftUsd_PXR_ENABLE_OPENVDB_SUPPORT": "OpenVDB"
             default: nil
+            }
+        }
+
+        /// Most feature flags get merged using boolean AND when using multiple Usd installs.
+        /// These flags use OR instead, because they're only available on certain platforms
+        static func prefersOrForMergingFeatureFlag(_ flag: String) -> Bool {
+            switch flag {
+            case "PXR_BUILD_EMBREE_PLUGIN": true
+            case "PXR_BUILD_OPENIMAGEIO_PLUGIN": true
+            case "PXR_ENABLE_OPENVDB_SUPPORT": true
+            default: false
             }
         }
         
@@ -85,6 +98,7 @@ extension FileSystemInfo {
         var PXR_BUILD_DRACO_PLUGIN: CMakeValue { _getCMakeValue("PXR_BUILD_DRACO_PLUGIN") }
         var PXR_BUILD_EMBREE_PLUGIN: CMakeValue { _getCMakeValue("PXR_BUILD_EMBREE_PLUGIN") }
         var PXR_BUILD_EXAMPLES: CMakeValue { _getCMakeValue("PXR_BUILD_EXAMPLES") }
+        var PXR_BUILD_IMAGEIO_PLUGIN: CMakeValue { _getCMakeValue("PXR_BUILD_IMAGEIO_PLUGIN") }
         var PXR_BUILD_HTML_DOCUMENTATION: CMakeValue { _getCMakeValue("PXR_BUILD_HTML_DOCUMENTATION") }
         var PXR_BUILD_IMAGING: CMakeValue { _getCMakeValue("PXR_BUILD_IMAGING") }
         var PXR_BUILD_MAYAPY_TESTS: CMakeValue { _getCMakeValue("PXR_BUILD_MAYAPY_TESTS") }
@@ -121,17 +135,7 @@ extension FileSystemInfo {
             let logLine = try Self.getLogFileLine(usdInstall: usdInstall)
             rawFlags = Dictionary.init(try Self.splitLogLineToRawFlags(logLine), uniquingKeysWith: { $1 })
         }
-        
-        /// Most feature flags get merged using boolean AND when using multiple Usd installs.
-        /// These flags use OR instead, because they're only available on certain platforms
-        static func prefersOrForMergingFeatureFlag(_ flag: String) -> Bool {
-            switch flag {
-            case "PXR_BUILD_EMBREE_PLUGIN": true
-            case "PXR_BUILD_OPENIMAGEIO_PLUGIN": true
-            default: false
-            }
-        }
-        
+                
         /// Merges the feature flags for multiple different Usd installs into a single UsdFeatureFlags instance
         /// that represents all of them
         static func merge(_ featureFlags: [UsdFeatureFlags]) throws -> UsdFeatureFlags {

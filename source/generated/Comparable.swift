@@ -242,6 +242,7 @@ extension pxr.SdfFileFormatRefPtr: Comparable { // classTemplateSpecialization
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.SdfFileVersion: Comparable {} // foundBySwift
 extension pxr.SdfLayer: Comparable { // importedAsReference
     public static func <(lhs: pxr.SdfLayer, rhs: pxr.SdfLayer) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -331,6 +332,56 @@ extension pxr.SdfTextFileFormatRefPtr: Comparable { // classTemplateSpecializati
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.SdfUsdFileFormat: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfUsdFileFormat, rhs: pxr.SdfUsdFileFormat) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdFileFormatRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdfUsdFileFormatRefPtr, rhs: pxr.SdfUsdFileFormatRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdaData: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfUsdaData, rhs: pxr.SdfUsdaData) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdaDataRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdfUsdaDataRefPtr, rhs: pxr.SdfUsdaDataRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdaFileFormat: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfUsdaFileFormat, rhs: pxr.SdfUsdaFileFormat) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdaFileFormatRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdfUsdaFileFormatRefPtr, rhs: pxr.SdfUsdaFileFormatRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdcFileFormat: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfUsdcFileFormat, rhs: pxr.SdfUsdcFileFormat) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdcFileFormatRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdfUsdcFileFormatRefPtr, rhs: pxr.SdfUsdcFileFormatRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdzFileFormat: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfUsdzFileFormat, rhs: pxr.SdfUsdzFileFormat) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdfUsdzFileFormatRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdfUsdzFileFormatRefPtr, rhs: pxr.SdfUsdzFileFormatRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.SdfVariantSetSpecHandle: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.SdfVariantSetSpecHandle, rhs: pxr.SdfVariantSetSpecHandle) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -351,22 +402,6 @@ extension pxr.SdfVariantSpec: Comparable { // differentArgumentTypes
         __Overlay.operatorLess(lhs, rhs)
     }
 }
-extension pxr.NdrVersion: Comparable {} // friendFunction
-extension pxr.NdrDiscoveryPluginContext: Comparable { // importedAsReference
-    public static func <(lhs: pxr.NdrDiscoveryPluginContext, rhs: pxr.NdrDiscoveryPluginContext) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.NdrDiscoveryPlugin: Comparable { // importedAsReference
-    public static func <(lhs: pxr.NdrDiscoveryPlugin, rhs: pxr.NdrDiscoveryPlugin) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.NdrDiscoveryPluginRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.NdrDiscoveryPluginRefPtr, rhs: pxr.NdrDiscoveryPluginRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
 extension pxr.SdrVersion: Comparable {} // friendFunction
 extension pxr.SdrDiscoveryPluginContext: Comparable { // importedAsReference
     public static func <(lhs: pxr.SdrDiscoveryPluginContext, rhs: pxr.SdrDiscoveryPluginContext) -> Bool {
@@ -375,6 +410,11 @@ extension pxr.SdrDiscoveryPluginContext: Comparable { // importedAsReference
 }
 extension pxr.SdrDiscoveryPlugin: Comparable { // importedAsReference
     public static func <(lhs: pxr.SdrDiscoveryPlugin, rhs: pxr.SdrDiscoveryPlugin) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.SdrDiscoveryPluginRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.SdrDiscoveryPluginRefPtr, rhs: pxr.SdrDiscoveryPluginRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -449,49 +489,23 @@ extension pxr.UsdRelationship: Comparable { // differentArgumentTypes
     }
 }
 extension pxr.UsdStageCache.Id: Comparable {} // friendFunction
-extension pxr.UsdUsdFileFormatRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.UsdUsdFileFormatRefPtr, rhs: pxr.UsdUsdFileFormatRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdFileFormat: Comparable { // importedAsReference
-    public static func <(lhs: pxr.UsdUsdFileFormat, rhs: pxr.UsdUsdFileFormat) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdaFileFormatRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.UsdUsdaFileFormatRefPtr, rhs: pxr.UsdUsdaFileFormatRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdaFileFormat: Comparable { // importedAsReference
-    public static func <(lhs: pxr.UsdUsdaFileFormat, rhs: pxr.UsdUsdaFileFormat) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdcFileFormatRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.UsdUsdcFileFormatRefPtr, rhs: pxr.UsdUsdcFileFormatRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdcFileFormat: Comparable { // importedAsReference
-    public static func <(lhs: pxr.UsdUsdcFileFormat, rhs: pxr.UsdUsdcFileFormat) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdzFileFormatRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.UsdUsdzFileFormatRefPtr, rhs: pxr.UsdUsdzFileFormatRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.UsdUsdzFileFormat: Comparable { // importedAsReference
-    public static func <(lhs: pxr.UsdUsdzFileFormat, rhs: pxr.UsdUsdzFileFormat) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
 extension pxr.UsdGeomPrimvar: Comparable {} // friendFunction
 extension pxr.UsdHydraDiscoveryPlugin: Comparable { // importedAsReference
     public static func <(lhs: pxr.UsdHydraDiscoveryPlugin, rhs: pxr.UsdHydraDiscoveryPlugin) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.VdfMaskedOutput: Comparable {} // foundBySwift
+extension pxr.VdfExecutionTypeRegistry: Comparable { // importedAsReference
+    public static func <(lhs: pxr.VdfExecutionTypeRegistry, rhs: pxr.VdfExecutionTypeRegistry) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.VdfObjectPtr: Comparable {} // foundBySwift
+extension pxr.EfTime: Comparable {} // foundBySwift
+extension pxr.EfTimeInterval: Comparable {} // foundBySwift
+extension pxr.ExecTypeRegistry: Comparable { // importedAsReference
+    public static func <(lhs: pxr.ExecTypeRegistry, rhs: pxr.ExecTypeRegistry) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -670,6 +684,16 @@ extension pxr.HdNoticeBatchingSceneIndexRefPtr: Comparable { // classTemplateSpe
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdCachingSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdCachingSceneIndex, rhs: pxr.HdCachingSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdCachingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdCachingSceneIndexRefPtr, rhs: pxr.HdCachingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdDependencyForwardingSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdDependencyForwardingSceneIndex, rhs: pxr.HdDependencyForwardingSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -767,6 +791,16 @@ extension pxr.HdsiDebuggingSceneIndex: Comparable { // importedAsReference
 }
 extension pxr.HdsiDebuggingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdsiDebuggingSceneIndexRefPtr, rhs: pxr.HdsiDebuggingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiDomeLightCameraVisibilitySceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiDomeLightCameraVisibilitySceneIndex, rhs: pxr.HdsiDomeLightCameraVisibilitySceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiDomeLightCameraVisibilitySceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiDomeLightCameraVisibilitySceneIndexRefPtr, rhs: pxr.HdsiDomeLightCameraVisibilitySceneIndexRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -967,6 +1001,16 @@ extension pxr.HdsiTetMeshConversionSceneIndex: Comparable { // importedAsReferen
 }
 extension pxr.HdsiTetMeshConversionSceneIndexRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdsiTetMeshConversionSceneIndexRefPtr, rhs: pxr.HdsiTetMeshConversionSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiUnboundMaterialPruningSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiUnboundMaterialPruningSceneIndex, rhs: pxr.HdsiUnboundMaterialPruningSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiUnboundMaterialPruningSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiUnboundMaterialPruningSceneIndexRefPtr, rhs: pxr.HdsiUnboundMaterialPruningSceneIndexRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }

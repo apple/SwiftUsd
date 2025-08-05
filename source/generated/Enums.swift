@@ -135,6 +135,11 @@ extension pxr.TsSplineSampleSource {
   @_documentation(visibility: internal) public static var TsSourcePostExtrap: pxr.TsSplineSampleSource { Overlay.TsSourcePostExtrap }
   @_documentation(visibility: internal) public static var TsSourcePostExtrapLoop: pxr.TsSplineSampleSource { Overlay.TsSourcePostExtrapLoop }
 }
+extension pxr.TsTangentAlgorithm {
+  @_documentation(visibility: internal) public static var TsTangentAlgorithmNone: pxr.TsTangentAlgorithm { Overlay.TsTangentAlgorithmNone }
+  @_documentation(visibility: internal) public static var TsTangentAlgorithmCustom: pxr.TsTangentAlgorithm { Overlay.TsTangentAlgorithmCustom }
+  @_documentation(visibility: internal) public static var TsTangentAlgorithmAutoEase: pxr.TsTangentAlgorithm { Overlay.TsTangentAlgorithmAutoEase }
+}
 extension pxr.TsAntiRegressionMode {
   @_documentation(visibility: internal) public static var TsAntiRegressionNone: pxr.TsAntiRegressionMode { Overlay.TsAntiRegressionNone }
   @_documentation(visibility: internal) public static var TsAntiRegressionContain: pxr.TsAntiRegressionMode { Overlay.TsAntiRegressionContain }
@@ -241,11 +246,6 @@ extension pxr.SdfNamespaceEditDetail.Result {
 extension pxr.SdfPredicateFunctionResult.Constancy {
   @_documentation(visibility: internal) public static var ConstantOverDescendants: pxr.SdfPredicateFunctionResult.Constancy { Overlay.SdfPredicateFunctionResult.ConstantOverDescendants }
   @_documentation(visibility: internal) public static var MayVaryOverDescendants: pxr.SdfPredicateFunctionResult.Constancy { Overlay.SdfPredicateFunctionResult.MayVaryOverDescendants }
-}
-extension pxr.NdrVersionFilter {
-  @_documentation(visibility: internal) public static var NdrVersionFilterDefaultOnly: pxr.NdrVersionFilter { Overlay.NdrVersionFilterDefaultOnly }
-  @_documentation(visibility: internal) public static var NdrVersionFilterAllVersions: pxr.NdrVersionFilter { Overlay.NdrVersionFilterAllVersions }
-  @_documentation(visibility: internal) public static var NdrNumVersionFilters: pxr.NdrVersionFilter { Overlay.NdrNumVersionFilters }
 }
 extension pxr.SdrVersionFilter {
   @_documentation(visibility: internal) public static var SdrVersionFilterDefaultOnly: pxr.SdrVersionFilter { Overlay.SdrVersionFilterDefaultOnly }
@@ -465,6 +465,48 @@ extension pxr.UsdSkelBakeSkinningParms.DeformationFlags {
   @_documentation(visibility: internal) public static var ModifiesNormals: pxr.UsdSkelBakeSkinningParms.DeformationFlags { Overlay.UsdSkelBakeSkinningParms.ModifiesNormals }
   @_documentation(visibility: internal) public static var ModifiesXform: pxr.UsdSkelBakeSkinningParms.DeformationFlags { Overlay.UsdSkelBakeSkinningParms.ModifiesXform }
 }
+extension pxr.VdfInputSpec.Access {
+  @_documentation(visibility: internal) public static var READ: pxr.VdfInputSpec.Access { Overlay.VdfInputSpec.READ }
+  @_documentation(visibility: internal) public static var READWRITE: pxr.VdfInputSpec.Access { Overlay.VdfInputSpec.READWRITE }
+}
+extension pxr.VdfVector.ConstructBoxedCopyTag {
+  @_documentation(visibility: internal) public static var ConstructBoxedCopy: pxr.VdfVector.ConstructBoxedCopyTag { Overlay.VdfVector.ConstructBoxedCopy }
+}
+extension pxr.VdfExecutionStats.EventType {
+  @_documentation(visibility: internal) public static var NodeEvaluateEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.NodeEvaluateEvent }
+  @_documentation(visibility: internal) public static var NodePrepareEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.NodePrepareEvent }
+  @_documentation(visibility: internal) public static var NodeRequiredInputsEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.NodeRequiredInputsEvent }
+  @_documentation(visibility: internal) public static var NodeInputsTaskEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.NodeInputsTaskEvent }
+  @_documentation(visibility: internal) public static var NodeDidComputeEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.NodeDidComputeEvent }
+  @_documentation(visibility: internal) public static var ElementsCopiedEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.ElementsCopiedEvent }
+  @_documentation(visibility: internal) public static var ElementsProcessedEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.ElementsProcessedEvent }
+  @_documentation(visibility: internal) public static var RequestedOutputInSpeculationsEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.RequestedOutputInSpeculationsEvent }
+  @_documentation(visibility: internal) public static var MaxEvent: pxr.VdfExecutionStats.EventType { Overlay.VdfExecutionStats.MaxEvent }
+}
+extension pxr.VdfGrapherOptions.DisplayStyle {
+  @_documentation(visibility: internal) public static var DisplayStyleFull: pxr.VdfGrapherOptions.DisplayStyle { Overlay.VdfGrapherOptions.DisplayStyleFull }
+  @_documentation(visibility: internal) public static var DisplayStyleNoLabels: pxr.VdfGrapherOptions.DisplayStyle { Overlay.VdfGrapherOptions.DisplayStyleNoLabels }
+  @_documentation(visibility: internal) public static var DisplayStyleSummary: pxr.VdfGrapherOptions.DisplayStyle { Overlay.VdfGrapherOptions.DisplayStyleSummary }
+}
+extension pxr.VdfObjectPtr.`Type` {
+  @_documentation(visibility: internal) public static var Undefined: pxr.VdfObjectPtr.`Type` { Overlay.VdfObjectPtr.Undefined }
+  @_documentation(visibility: internal) public static var Node: pxr.VdfObjectPtr.`Type` { Overlay.VdfObjectPtr.Node }
+  @_documentation(visibility: internal) public static var Connection: pxr.VdfObjectPtr.`Type` { Overlay.VdfObjectPtr.Connection }
+  @_documentation(visibility: internal) public static var Input: pxr.VdfObjectPtr.`Type` { Overlay.VdfObjectPtr.Input }
+  @_documentation(visibility: internal) public static var Output: pxr.VdfObjectPtr.`Type` { Overlay.VdfObjectPtr.Output }
+}
+extension pxr.VdfIndexedWeightsOperand.SetOperation {
+  @_documentation(visibility: internal) public static var Union: pxr.VdfIndexedWeightsOperand.SetOperation { Overlay.VdfIndexedWeightsOperand.Union }
+  @_documentation(visibility: internal) public static var Intersection: pxr.VdfIndexedWeightsOperand.SetOperation { Overlay.VdfIndexedWeightsOperand.Intersection }
+}
+extension pxr.VdfSparseInputTraverser.CallbackMode {
+  @_documentation(visibility: internal) public static var CallbackModeAllNodes: pxr.VdfSparseInputTraverser.CallbackMode { Overlay.VdfSparseInputTraverser.CallbackModeAllNodes }
+  @_documentation(visibility: internal) public static var CallbackModeTerminalNodes: pxr.VdfSparseInputTraverser.CallbackMode { Overlay.VdfSparseInputTraverser.CallbackModeTerminalNodes }
+}
+extension pxr.VdfSparseVectorizedInputTraverser.CallbackMode {
+  @_documentation(visibility: internal) public static var CallbackModeAllNodes: pxr.VdfSparseVectorizedInputTraverser.CallbackMode { Overlay.VdfSparseVectorizedInputTraverser.CallbackModeAllNodes }
+  @_documentation(visibility: internal) public static var CallbackModeTerminalNodes: pxr.VdfSparseVectorizedInputTraverser.CallbackMode { Overlay.VdfSparseVectorizedInputTraverser.CallbackModeTerminalNodes }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLDebugWindow.Buttons {
   @_documentation(visibility: internal) public static var MyButton1: pxr.GarchGLDebugWindow.Buttons { Overlay.GarchGLDebugWindow.MyButton1 }
@@ -583,6 +625,7 @@ extension pxr.HgiDeviceCapabilitiesBits {
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsPrimitiveIdEmulation: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsPrimitiveIdEmulation }
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsIndirectCommandBuffers: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsIndirectCommandBuffers }
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsRoundPoints: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsRoundPoints }
+  @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsSingleSlotResourceArrays: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsSingleSlotResourceArrays }
 }
 extension pxr.HgiTextureType {
   @_documentation(visibility: internal) public static var HgiTextureType1D: pxr.HgiTextureType { Overlay.HgiTextureType1D }

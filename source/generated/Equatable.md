@@ -149,6 +149,53 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedChar>``
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedInt>``
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedShort>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatd>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatf>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuath>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.pxr_half.half>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfInterval>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix3d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix3f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix4d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix4f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfQuatd>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfQuaternion>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfQuatf>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfQuath>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange1d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange1f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange2d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange2f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange3d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange3f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRect2i>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2h>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2i>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec3d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec3f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec3h>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec3i>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4d>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4f>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4h>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4i>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.TfToken>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CBool>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CChar>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CDouble>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CFloat>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CLongLong>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CInt>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CShort>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<std.__1.basic_string<CChar, std.__1.char_traits<CChar>, std.__1.allocator<CChar>>>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedLongLong>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedChar>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedInt>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedShort>``
 
 ###  Vt types
 - ``OpenUSD/C++/pxr/VtDictionary``
@@ -179,6 +226,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/SdfPathAncestorsRange/iterator``
 - ``OpenUSD/C++/pxr/SdfUnregisteredValue``
 - ``OpenUSD/C++/pxr/SdfValueBlock``
+- ``OpenUSD/C++/pxr/SdfAnimationBlock``
 - ``OpenUSD/C++/pxr/SdfHumanReadableValue``
 - ``OpenUSD/C++/pxr/SdfAssetPath``
 - ``OpenUSD/C++/pxr/SdfOpaqueValue``
@@ -207,6 +255,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfData>``
 - ``OpenUSD/C++/pxr/SdfFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfFileFormat>``
+- ``OpenUSD/C++/pxr/SdfFileVersion``
 - ``OpenUSD/C++/pxr/SdfLayer``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfLayer>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.SdfLayer>``
@@ -230,23 +279,29 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/SdfSite``
 - ``OpenUSD/C++/pxr/SdfTextFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfTextFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdaData``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdaData>``
+- ``OpenUSD/C++/pxr/SdfUsdaFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdaFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdcFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdcFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdzFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdzFileFormat>``
 - ``OpenUSD/C++/pxr/SdfVariableExpression/EmptyList``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfVariantSetSpec>``
 - ``OpenUSD/C++/pxr/SdfVariantSetSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfVariantSpec>``
 - ``OpenUSD/C++/pxr/SdfVariantSpec``
-
-###  Ndr types
-- ``OpenUSD/C++/pxr/NdrVersion``
-- ``OpenUSD/C++/pxr/NdrDiscoveryPluginContext``
-- ``OpenUSD/C++/pxr/NdrDiscoveryPlugin``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.NdrDiscoveryPlugin>``
-- ``OpenUSD/C++/pxr/NdrSdfTypeIndicator``
+- ``OpenUSD/C++/pxr/SdfZipFile/Iterator``
 
 ###  Sdr types
 - ``OpenUSD/C++/pxr/SdrVersion``
 - ``OpenUSD/C++/pxr/SdrDiscoveryPluginContext``
 - ``OpenUSD/C++/pxr/SdrDiscoveryPlugin``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdrDiscoveryPlugin>``
+- ``OpenUSD/C++/pxr/SdrSdfTypeIndicator``
 - ``OpenUSD/C++/pxr/SdrRegistry``
 
 ###  Pcp types
@@ -293,15 +348,6 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/UsdPrimRange``
 - ``OpenUSD/C++/pxr/UsdPrimRange/iterator``
 - ``OpenUSD/C++/pxr/UsdStageCache/Id``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdaFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdaFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdcFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdcFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdzFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdzFileFormat``
-- ``OpenUSD/C++/pxr/UsdZipFile/Iterator``
 
 ###  UsdGeom types
 - ``OpenUSD/C++/pxr/UsdGeomPrimvar``
@@ -326,6 +372,30 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/UsdUtilsDependencyInfo``
 - ``OpenUSD/C++/pxr/UsdUtilsTimeCodeRange``
 - ``OpenUSD/C++/pxr/UsdUtilsTimeCodeRange/const_iterator``
+
+###  Vdf types
+- ``OpenUSD/C++/pxr/VdfInputSpec``
+- ``OpenUSD/C++/pxr/VdfMask``
+- ``OpenUSD/C++/pxr/VdfMask/iterator``
+- ``OpenUSD/C++/pxr/VdfMaskedOutput``
+- ``OpenUSD/C++/pxr/VdfInputSpecs``
+- ``OpenUSD/C++/pxr/VdfOutputSpecs``
+- ``OpenUSD/C++/pxr/VdfOutputSpec``
+- ``OpenUSD/C++/pxr/VdfIndexedData<CFloat>``
+- ``OpenUSD/C++/pxr/VdfRequest``
+- ``OpenUSD/C++/pxr/VdfRequest/const_iterator``
+- ``OpenUSD/C++/pxr/VdfExecutionTypeRegistry``
+- ``OpenUSD/C++/pxr/VdfObjectPtr``
+
+###  Ef types
+- ``OpenUSD/C++/pxr/EfTime``
+- ``OpenUSD/C++/pxr/EfTimeInterval``
+
+###  Esf types
+- ``OpenUSD/C++/pxr/EsfJournal``
+
+###  Exec types
+- ``OpenUSD/C++/pxr/ExecTypeRegistry``
 
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLPlatformDebugContext``
@@ -442,6 +512,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdRetainedSceneIndex>``
 - ``OpenUSD/C++/pxr/HdNoticeBatchingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdNoticeBatchingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdCachingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdCachingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdDependencyForwardingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdDependencyForwardingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdFlatteningSceneIndex``
@@ -475,6 +547,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiCoordSysPrimSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiDebuggingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiDebuggingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiDomeLightCameraVisibilitySceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiDomeLightCameraVisibilitySceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiExtComputationDependencySceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiExtComputationDependencySceneIndex>``
 - ``OpenUSD/C++/pxr/HdSiExtComputationPrimvarPruningSceneIndex``
@@ -516,6 +590,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSwitchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiTetMeshConversionSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiTetMeshConversionSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiUnboundMaterialPruningSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiUnboundMaterialPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiVelocityMotionResolvingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiVelocityMotionResolvingSceneIndex>``
 

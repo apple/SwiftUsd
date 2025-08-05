@@ -1,68 +1,6 @@
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/build_scripts/build_usd.py ./build_scripts/build_usd.py
---- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2025-04-29 09:20:26
-+++ ./build_scripts/build_usd.py	2025-05-20 10:23:41
-@@ -1599,12 +1599,8 @@
- 
- ############################################################
- # Embree
--# For MacOS we use version 3.13.3 to include a fix from Intel
--# to build on Apple Silicon.
--if MacOS():
--    EMBREE_URL = "https://github.com/embree/embree/archive/v3.13.3.zip"
--else:
--    EMBREE_URL = "https://github.com/embree/embree/archive/v3.2.2.zip"
-+
-+EMBREE_URL = "https://github.com/embree/embree/archive/v4.4.0.zip"
- 
- def InstallEmbree(context, force, buildArgs):
-     with CurrentWorkingDirectory(DownloadURL(EMBREE_URL, context, force)):
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/cmake/modules/FindEmbree.cmake ./cmake/modules/FindEmbree.cmake
---- /Users/maddyadams/OpenUSD/cmake/modules/FindEmbree.cmake	2024-07-25 13:27:40
-+++ ./cmake/modules/FindEmbree.cmake	2025-05-20 10:24:36
-@@ -20,11 +20,11 @@
- #=============================================================================
- 
- if (APPLE)
--    set (EMBREE_LIB_NAME libembree3.dylib)
-+    set (EMBREE_LIB_NAME libembree4.dylib)
- elseif (UNIX)
--    set (EMBREE_LIB_NAME libembree3.so)
-+    set (EMBREE_LIB_NAME libembree4.so)
- elseif (WIN32)
--    set (EMBREE_LIB_NAME embree3.lib)
-+    set (EMBREE_LIB_NAME embree4.lib)
- endif()
- 
- find_library(EMBREE_LIBRARY
-@@ -39,7 +39,7 @@
- )
- 
- find_path(EMBREE_INCLUDE_DIR
--    embree3/rtcore.h
-+    embree4/rtcore.h
- HINTS
-     "${EMBREE_LOCATION}/include"
-     "$ENV{EMBREE_LOCATION}/include"
-@@ -47,12 +47,12 @@
-     "Embree headers path"
- )
- 
--if (EMBREE_INCLUDE_DIR AND EXISTS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" )
--    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MAJOR.*$")
-+if (EMBREE_INCLUDE_DIR AND EXISTS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" )
-+    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MAJOR.*$")
-     string(REGEX MATCHALL "[0-9]+" MAJOR ${TMP})
--    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MINOR.*$")
-+    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_MINOR.*$")
-     string(REGEX MATCHALL "[0-9]+" MINOR ${TMP})
--    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree3/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_PATCH.*$")
-+    file(STRINGS "${EMBREE_INCLUDE_DIR}/embree4/rtcore_version.h" TMP REGEX "^#define RTC_VERSION_PATCH.*$")
-     string(REGEX MATCHALL "[0-9]+" PATCH ${TMP})
- 
-     set (EMBREE_VERSION ${MAJOR}.${MINOR}.${PATCH})
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
---- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2024-07-25 13:27:40
-+++ ./pxr/base/arch/fileSystem.h	2025-05-20 10:25:11
+--- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2025-08-01 10:43:22
++++ ./pxr/base/arch/fileSystem.h	2025-08-01 11:02:36
 @@ -38,8 +38,6 @@
  #include <stringapiset.h>
  #endif
@@ -82,9 +20,9 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if defined(ARCH_OS_WINDOWS)
      #define ARCH_GLOB_NOCHECK   1
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt ./pxr/base/tf/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-01-22 14:05:52
-+++ ./pxr/base/tf/CMakeLists.txt	2025-05-20 10:45:29
-@@ -240,6 +240,7 @@
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-08-01 10:43:22
++++ ./pxr/base/tf/CMakeLists.txt	2025-08-01 11:02:51
+@@ -237,6 +237,7 @@
          pxrTslRobinMap/robin_map.h
          pxrTslRobinMap/robin_set.h
          preprocessorUtilsLite.h
@@ -94,7 +32,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          staticData.h
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h ./pxr/base/tf/iterator.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h	2024-07-25 13:27:40
-+++ ./pxr/base/tf/iterator.h	2025-05-20 10:25:53
++++ ./pxr/base/tf/iterator.h	2025-08-01 11:03:24
 @@ -418,6 +418,7 @@
      using pointer = typename ReverseIterator::pointer;
      using difference_type = typename ReverseIterator::difference_type;
@@ -113,7 +51,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      explicit Tf_ProxyReferenceReverseIterator(UnderlyingIterator it) :
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h ./pxr/base/tf/notice.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2025-01-22 14:05:52
-+++ ./pxr/base/tf/notice.h	2025-05-29 11:24:06
++++ ./pxr/base/tf/notice.h	2025-08-01 11:05:33
 @@ -263,6 +263,7 @@
  
          friend class Tf_NoticeRegistry;
@@ -207,7 +145,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h ./pxr/base/tf/refBase.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h	2024-10-25 14:14:15
-+++ ./pxr/base/tf/refBase.h	2025-05-20 10:33:12
++++ ./pxr/base/tf/refBase.h	2025-08-01 11:05:53
 @@ -125,6 +125,8 @@
  
      template <typename T> friend TfRefPtr<T>
@@ -219,7 +157,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  /// \class TfSimpleRefBase
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h ./pxr/base/tf/refPtr.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h	2025-01-22 14:05:52
-+++ ./pxr/base/tf/refPtr.h	2025-05-20 10:48:17
++++ ./pxr/base/tf/refPtr.h	2025-08-01 11:07:09
 @@ -423,6 +423,7 @@
  #include <typeinfo>
  #include <type_traits>
@@ -274,7 +212,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if !defined(doxygen)
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h ./pxr/base/tf/retainReleaseHelper.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h	1969-12-31 16:00:00
-+++ ./pxr/base/tf/retainReleaseHelper.h	2025-05-20 10:35:03
++++ ./pxr/base/tf/retainReleaseHelper.h	2025-08-01 11:07:44
 @@ -0,0 +1,54 @@
 +//
 +//  retainReleaseHelper.h
@@ -332,7 +270,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +#endif /* retainReleaseHelper_h */
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h ./pxr/base/tf/weakPtrFacade.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2025-01-22 14:05:52
-+++ ./pxr/base/tf/weakPtrFacade.h	2025-05-20 10:35:29
++++ ./pxr/base/tf/weakPtrFacade.h	2025-08-01 11:08:10
 @@ -17,6 +17,7 @@
  #include "pxr/base/arch/demangle.h"
  
@@ -352,7 +290,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h ./pxr/base/vt/dictionary.h
 --- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2025-04-29 09:20:26
-+++ ./pxr/base/vt/dictionary.h	2025-05-20 10:35:44
++++ ./pxr/base/vt/dictionary.h	2025-08-01 11:08:25
 @@ -439,8 +439,8 @@
  {
      VtDictionary::const_iterator i = dictionary.find(key);
@@ -364,9 +302,62 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      }
  
      return i->second.Get<T>();
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt ./pxr/exec/exec/CMakeLists.txt
+--- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2025-08-01 10:43:22
++++ ./pxr/exec/exec/CMakeLists.txt	2025-08-01 14:55:13
+@@ -35,6 +35,7 @@
+         systemChangeProcessor
+         systemDiagnostics
+         typeRegistry
++        valueExtractor
+         valueKey
+ 
+     PRIVATE_HEADERS
+@@ -73,8 +74,7 @@
+         uncompilationRuleSet
+         uncompilationTable
+         uncompilationTarget
+-        uncompiler
+-        valueExtractor
++        uncompiler        
+ 
+     RESOURCE_FILES
+         plugInfo.json
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h ./pxr/exec/vdf/parallelExecutorEngineBase.h
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2025-08-01 10:43:22
++++ ./pxr/exec/vdf/parallelExecutorEngineBase.h	2025-08-01 14:11:16
+@@ -1885,9 +1885,9 @@
+         if (!privateBuffer->GetExecutorCache()) {
+             // No output value: Spit out a warning.
+             TF_WARN(
+-                "No value set for output " + output.GetDebugName() +
+-                " of type " + output.GetSpec().GetType().GetTypeName() +
+-                " named " + output.GetName().GetString());
++                ("No value set for output " + output.GetDebugName() +
++                 " of type " + output.GetSpec().GetType().GetTypeName() +
++                 " named " + output.GetName().GetString()).c_str());
+ 
+             // Fill the output with a default value.
+             VdfExecutionTypeRegistry::FillVector(
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h ./pxr/exec/vdf/pullBasedExecutorEngine.h
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2025-08-01 10:43:22
++++ ./pxr/exec/vdf/pullBasedExecutorEngine.h	2025-08-01 14:11:13
+@@ -1035,9 +1035,9 @@
+             // requested because otherwise, it wouldn't be in the schedule,
+             // because of VdfScheduler::_RemoveTrivialNodes.)
+             TF_WARN(
+-                "No value set for output " + output.GetDebugName() +
+-                " of type " + output.GetSpec().GetType().GetTypeName() +
+-                " named " + output.GetName().GetString());
++                ("No value set for output " + output.GetDebugName() +
++                 " of type " + output.GetSpec().GetType().GetTypeName() +
++                 " named " + output.GetName().GetString()).c_str());
+ 
+             //XXX: This is not 100% right when we use a single data flow
+             //     element to hold multiple values (as we do for shaped
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h ./pxr/imaging/hd/dependencySchema.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2024-07-25 13:27:40
-+++ ./pxr/imaging/hd/dependencySchema.h	2025-05-20 10:36:21
++++ ./pxr/imaging/hd/dependencySchema.h	2025-08-01 11:08:52
 @@ -52,6 +52,9 @@
      HdDependencySchema(HdContainerDataSourceHandle container)
        : HdSchema(container) {}
@@ -386,7 +377,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +#endif
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h ./pxr/imaging/hd/schema.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2024-07-25 13:27:40
-+++ ./pxr/imaging/hd/schema.h	2025-05-20 10:36:44
++++ ./pxr/imaging/hd/schema.h	2025-08-01 11:09:06
 @@ -28,6 +28,8 @@
      HdSchema(HdContainerDataSourceHandle container)
      : _container(container) {}
@@ -397,8 +388,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      /// Returns the container data source that this schema is interpreting.
      HD_API
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp ./pxr/imaging/hdsi/debuggingSceneIndex.cpp
---- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-04-29 09:20:26
-+++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-05-20 10:37:10
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-08-01 10:43:22
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-08-01 11:09:38
 @@ -29,62 +29,6 @@
  // It does produce a non-trivial data source for /foo.
  const bool implicitlyAddedAncestorsHaveEmptyType = true;
@@ -464,7 +455,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // Future work might throw an error/show a stack trace/...
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h ./pxr/imaging/hdsi/debuggingSceneIndex.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h	2025-04-29 09:20:26
-+++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2025-05-20 10:37:37
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2025-08-01 11:10:04
 @@ -22,7 +22,61 @@
  namespace HdsiDebuggingSceneIndex_Impl
  {
@@ -528,144 +519,9 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  using _PrimInfoSharedPtr = std::shared_ptr<_PrimInfo>;
  using _PrimMap = std::map<SdfPath, _PrimInfo>;
  
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/context.h ./pxr/imaging/plugin/hdEmbree/context.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/context.h	2024-07-25 13:27:41
-+++ ./pxr/imaging/plugin/hdEmbree/context.h	2025-05-20 10:39:36
-@@ -14,7 +14,7 @@
- #include "pxr/base/gf/matrix4f.h"
- #include "pxr/base/vt/array.h"
- 
--#include <embree3/rtcore.h>
-+#include <embree4/rtcore.h>
- 
- PXR_NAMESPACE_OPEN_SCOPE
- 
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/mesh.h ./pxr/imaging/plugin/hdEmbree/mesh.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/mesh.h	2024-10-25 14:14:15
-+++ ./pxr/imaging/plugin/hdEmbree/mesh.h	2025-05-20 10:39:49
-@@ -15,8 +15,8 @@
- 
- #include "pxr/imaging/plugin/hdEmbree/meshSamplers.h"
- 
--#include <embree3/rtcore.h>
--#include <embree3/rtcore_ray.h>
-+#include <embree4/rtcore.h>
-+#include <embree4/rtcore_ray.h>
- 
- PXR_NAMESPACE_OPEN_SCOPE
- 
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/meshSamplers.h ./pxr/imaging/plugin/hdEmbree/meshSamplers.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/meshSamplers.h	2024-07-25 13:27:41
-+++ ./pxr/imaging/plugin/hdEmbree/meshSamplers.h	2025-05-20 10:40:02
-@@ -12,8 +12,8 @@
- #include "pxr/imaging/hd/meshUtil.h"
- #include "pxr/base/vt/types.h"
- 
--#include <embree3/rtcore.h>
--#include <embree3/rtcore_geometry.h>
-+#include <embree4/rtcore.h>
-+#include <embree4/rtcore_geometry.h>
- 
- #include <bitset>
- 
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/pch.h ./pxr/imaging/plugin/hdEmbree/pch.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/pch.h	2025-04-29 09:20:26
-+++ ./pxr/imaging/plugin/hdEmbree/pch.h	2025-05-20 10:40:12
-@@ -76,9 +76,9 @@
- #include <unordered_set>
- #include <utility>
- #include <vector>
--#include <embree3/rtcore.h>
--#include <embree3/rtcore_geometry.h>
--#include <embree3/rtcore_ray.h>
-+#include <embree4/rtcore.h>
-+#include <embree4/rtcore_geometry.h>
-+#include <embree4/rtcore_ray.h>
- #include <tbb/blocked_range.h>
- #include <tbb/cache_aligned_allocator.h>
- #include <tbb/concurrent_hash_map.h>
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderDelegate.h ./pxr/imaging/plugin/hdEmbree/renderDelegate.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderDelegate.h	2024-10-25 14:14:15
-+++ ./pxr/imaging/plugin/hdEmbree/renderDelegate.h	2025-05-20 10:40:21
-@@ -14,7 +14,7 @@
- #include "pxr/base/tf/staticTokens.h"
- 
- #include <mutex>
--#include <embree3/rtcore.h>
-+#include <embree4/rtcore.h>
- 
- PXR_NAMESPACE_OPEN_SCOPE
- 
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderParam.h ./pxr/imaging/plugin/hdEmbree/renderParam.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderParam.h	2024-07-25 13:27:41
-+++ ./pxr/imaging/plugin/hdEmbree/renderParam.h	2025-05-20 10:40:29
-@@ -11,7 +11,7 @@
- #include "pxr/imaging/hd/renderDelegate.h"
- #include "pxr/imaging/hd/renderThread.h"
- 
--#include <embree3/rtcore.h>
-+#include <embree4/rtcore.h>
- 
- PXR_NAMESPACE_OPEN_SCOPE
- 
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.cpp ./pxr/imaging/plugin/hdEmbree/renderer.cpp
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.cpp	2024-10-25 14:14:15
-+++ ./pxr/imaging/plugin/hdEmbree/renderer.cpp	2025-05-20 10:41:11
-@@ -667,9 +667,9 @@
-     rayHit.ray.flags = 0;
-     _PopulateRayHit(&rayHit, origin, dir, 0.0f);
-     {
--      RTCIntersectContext context;
--      rtcInitIntersectContext(&context);
--      rtcIntersect1(_scene, &context, &rayHit);
-+      RTCIntersectArguments arguments;
-+      rtcInitIntersectArguments(&arguments);
-+      rtcIntersect1(_scene, &rayHit, &arguments);
-       //
-       // there is something odd about how this is used in Embree. Is it reversed
-       // here and then when it it used in
-@@ -1005,9 +1005,9 @@
-         shadow.flags = 0;
-         _PopulateRay(&shadow, position, shadowDir, 0.001f);
-         {
--          RTCIntersectContext context;
--          rtcInitIntersectContext(&context);
--          rtcOccluded1(_scene,&context,&shadow);
-+          RTCOccludedArguments arguments;
-+          rtcInitOccludedArguments(&arguments);
-+          rtcOccluded1(_scene,&shadow,&arguments);
-         }
- 
-         // Record this AO ray's contribution to the occlusion factor: a
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.h ./pxr/imaging/plugin/hdEmbree/renderer.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/renderer.h	2024-10-25 14:14:15
-+++ ./pxr/imaging/plugin/hdEmbree/renderer.h	2025-05-20 10:41:21
-@@ -15,8 +15,8 @@
- #include "pxr/base/gf/matrix4d.h"
- #include "pxr/base/gf/rect2i.h"
- 
--#include <embree3/rtcore.h>
--#include <embree3/rtcore_ray.h>
-+#include <embree4/rtcore.h>
-+#include <embree4/rtcore_ray.h>
- 
- #include <random>
- #include <atomic>
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp ./pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp
---- /Users/maddyadams/OpenUSD/pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp	2024-07-25 13:27:41
-+++ ./pxr/imaging/plugin/hdEmbree/testenv/testHdEmbree.cpp	2025-05-20 10:41:30
-@@ -23,7 +23,7 @@
- 
- #include "pxr/base/tf/errorMark.h"
- 
--#include <embree3/rtcore.h>
-+#include <embree4/rtcore.h>
- #include <iostream>
- 
- PXR_NAMESPACE_USING_DIRECTIVE
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h ./pxr/usd/sdf/predicateProgram.h
 --- /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h	2024-07-25 13:27:41
-+++ ./pxr/usd/sdf/predicateProgram.h	2025-05-20 10:41:44
++++ ./pxr/usd/sdf/predicateProgram.h	2025-08-01 11:10:27
 @@ -208,7 +208,7 @@
  
      if (!errs.empty()) {
@@ -676,8 +532,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      return prog;
  }
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp ./pxr/usd/usdMtlx/utils.cpp
---- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-04-29 09:20:26
-+++ ./pxr/usd/usdMtlx/utils.cpp	2025-05-28 09:47:06
+--- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-08-01 10:43:22
++++ ./pxr/usd/usdMtlx/utils.cpp	2025-08-01 11:12:04
 @@ -16,6 +16,8 @@
  #include "pxr/usd/sdf/types.h"
  #include "pxr/usd/sdr/shaderProperty.h"
@@ -687,7 +543,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #include "pxr/base/gf/matrix3d.h"
  #include "pxr/base/gf/matrix4d.h"
  #include "pxr/base/gf/vec2f.h"
-@@ -180,6 +182,18 @@
+@@ -183,6 +185,18 @@
      stdlibSearchPaths =
          _MergeSearchPaths(stdlibSearchPaths, { PXR_MATERIALX_STDLIB_DIR });
  #endif
@@ -703,6 +559,6 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +        std::string toAdd = TfStringCatPaths(binaryPath, "../Resources/MaterialX_Libraries/libraries");
 +        stdlibSearchPaths = _MergeSearchPaths({ toAdd }, stdlibSearchPaths);
 +    }
-     return stdlibSearchPaths;
- }
  
+     // The MaterialX plugin contains the MaterialX standard
+     // library under the libraries location in its resource folder

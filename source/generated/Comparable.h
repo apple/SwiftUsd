@@ -33,6 +33,12 @@
 #include "pxr/base/trace/reporter.h"
 #include "pxr/base/trace/reporterBase.h"
 #include "pxr/base/trace/reporterDataSourceCollector.h"
+#include "pxr/exec/ef/time.h"
+#include "pxr/exec/ef/timeInterval.h"
+#include "pxr/exec/exec/typeRegistry.h"
+#include "pxr/exec/vdf/executionTypeRegistry.h"
+#include "pxr/exec/vdf/maskedOutput.h"
+#include "pxr/exec/vdf/object.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/garch/glPlatformDebugContext.h"
 #include "pxr/imaging/glf/bindingMap.h"
@@ -43,6 +49,7 @@
 #include "pxr/imaging/glf/texture.h"
 #include "pxr/imaging/glf/uniformBlock.h"
 #include "pxr/imaging/hd/bufferSpec.h"
+#include "pxr/imaging/hd/cachingSceneIndex.h"
 #include "pxr/imaging/hd/dataSourceLocator.h"
 #include "pxr/imaging/hd/dependencyForwardingSceneIndex.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
@@ -66,6 +73,7 @@
 #include "pxr/imaging/hdGp/generativeProceduralResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/coordSysPrimSceneIndex.h"
 #include "pxr/imaging/hdsi/debuggingSceneIndex.h"
+#include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationDependencySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationPrimvarPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
@@ -86,6 +94,7 @@
 #include "pxr/imaging/hdsi/sceneGlobalsSceneIndex.h"
 #include "pxr/imaging/hdsi/switchingSceneIndex.h"
 #include "pxr/imaging/hdsi/tetMeshConversionSceneIndex.h"
+#include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/velocityMotionResolvingSceneIndex.h"
 #include "pxr/imaging/hdx/pickTask.h"
 #include "pxr/imaging/hdx/taskControllerSceneIndex.h"
@@ -96,8 +105,6 @@
 #include "pxr/usd/ar/resolverContext.h"
 #include "pxr/usd/ar/timestamp.h"
 #include "pxr/usd/kind/registry.h"
-#include "pxr/usd/ndr/declare.h"
-#include "pxr/usd/ndr/discoveryPlugin.h"
 #include "pxr/usd/pcp/expressionVariablesSource.h"
 #include "pxr/usd/pcp/iterator.h"
 #include "pxr/usd/pcp/layerStack.h"
@@ -110,6 +117,7 @@
 #include "pxr/usd/sdf/data.h"
 #include "pxr/usd/sdf/declareHandles.h"
 #include "pxr/usd/sdf/fileFormat.h"
+#include "pxr/usd/sdf/fileVersion.h"
 #include "pxr/usd/sdf/layer.h"
 #include "pxr/usd/sdf/layerOffset.h"
 #include "pxr/usd/sdf/layerStateDelegate.h"
@@ -130,6 +138,11 @@
 #include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
+#include "pxr/usd/sdf/usdFileFormat.h"
+#include "pxr/usd/sdf/usdaData.h"
+#include "pxr/usd/sdf/usdaFileFormat.h"
+#include "pxr/usd/sdf/usdcFileFormat.h"
+#include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/sdf/variantSetSpec.h"
 #include "pxr/usd/sdf/variantSpec.h"
 #include "pxr/usd/sdr/declare.h"
@@ -145,10 +158,6 @@
 #include "pxr/usd/usd/stage.h"
 #include "pxr/usd/usd/stageCache.h"
 #include "pxr/usd/usd/timeCode.h"
-#include "pxr/usd/usd/usdFileFormat.h"
-#include "pxr/usd/usd/usdaFileFormat.h"
-#include "pxr/usd/usd/usdcFileFormat.h"
-#include "pxr/usd/usd/usdzFileFormat.h"
 #include "pxr/usd/usdGeom/primvar.h"
 #include "pxr/usd/usdHydra/discoveryPlugin.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
@@ -287,6 +296,26 @@ namespace __Overlay {
                     const pxr::SdfTextFileFormat& r);
   bool operatorLess(const pxr::SdfTextFileFormatRefPtr& l,
                     const pxr::SdfTextFileFormatRefPtr& r);
+  bool operatorLess(const pxr::SdfUsdFileFormat& l,
+                    const pxr::SdfUsdFileFormat& r);
+  bool operatorLess(const pxr::SdfUsdFileFormatRefPtr& l,
+                    const pxr::SdfUsdFileFormatRefPtr& r);
+  bool operatorLess(const pxr::SdfUsdaData& l,
+                    const pxr::SdfUsdaData& r);
+  bool operatorLess(const pxr::SdfUsdaDataRefPtr& l,
+                    const pxr::SdfUsdaDataRefPtr& r);
+  bool operatorLess(const pxr::SdfUsdaFileFormat& l,
+                    const pxr::SdfUsdaFileFormat& r);
+  bool operatorLess(const pxr::SdfUsdaFileFormatRefPtr& l,
+                    const pxr::SdfUsdaFileFormatRefPtr& r);
+  bool operatorLess(const pxr::SdfUsdcFileFormat& l,
+                    const pxr::SdfUsdcFileFormat& r);
+  bool operatorLess(const pxr::SdfUsdcFileFormatRefPtr& l,
+                    const pxr::SdfUsdcFileFormatRefPtr& r);
+  bool operatorLess(const pxr::SdfUsdzFileFormat& l,
+                    const pxr::SdfUsdzFileFormat& r);
+  bool operatorLess(const pxr::SdfUsdzFileFormatRefPtr& l,
+                    const pxr::SdfUsdzFileFormatRefPtr& r);
   bool operatorLess(const pxr::SdfVariantSetSpecHandle& l,
                     const pxr::SdfVariantSetSpecHandle& r);
   bool operatorLess(const pxr::SdfVariantSetSpec& l,
@@ -295,20 +324,14 @@ namespace __Overlay {
                     const pxr::SdfVariantSpecHandle& r);
   bool operatorLess(const pxr::SdfVariantSpec& l,
                     const pxr::SdfVariantSpec& r);
-  bool operatorLess(const pxr::NdrVersion& l,
-                    const pxr::NdrVersion& r);
-  bool operatorLess(const pxr::NdrDiscoveryPluginContext& l,
-                    const pxr::NdrDiscoveryPluginContext& r);
-  bool operatorLess(const pxr::NdrDiscoveryPlugin& l,
-                    const pxr::NdrDiscoveryPlugin& r);
-  bool operatorLess(const pxr::NdrDiscoveryPluginRefPtr& l,
-                    const pxr::NdrDiscoveryPluginRefPtr& r);
   bool operatorLess(const pxr::SdrVersion& l,
                     const pxr::SdrVersion& r);
   bool operatorLess(const pxr::SdrDiscoveryPluginContext& l,
                     const pxr::SdrDiscoveryPluginContext& r);
   bool operatorLess(const pxr::SdrDiscoveryPlugin& l,
                     const pxr::SdrDiscoveryPlugin& r);
+  bool operatorLess(const pxr::SdrDiscoveryPluginRefPtr& l,
+                    const pxr::SdrDiscoveryPluginRefPtr& r);
   bool operatorLess(const pxr::SdrRegistry& l,
                     const pxr::SdrRegistry& r);
   bool operatorLess(const pxr::PcpLayerStack& l,
@@ -339,26 +362,14 @@ namespace __Overlay {
                     const pxr::UsdRelationship& r);
   bool operatorLess(const pxr::UsdStageCache::Id& l,
                     const pxr::UsdStageCache::Id& r);
-  bool operatorLess(const pxr::UsdUsdFileFormatRefPtr& l,
-                    const pxr::UsdUsdFileFormatRefPtr& r);
-  bool operatorLess(const pxr::UsdUsdFileFormat& l,
-                    const pxr::UsdUsdFileFormat& r);
-  bool operatorLess(const pxr::UsdUsdaFileFormatRefPtr& l,
-                    const pxr::UsdUsdaFileFormatRefPtr& r);
-  bool operatorLess(const pxr::UsdUsdaFileFormat& l,
-                    const pxr::UsdUsdaFileFormat& r);
-  bool operatorLess(const pxr::UsdUsdcFileFormatRefPtr& l,
-                    const pxr::UsdUsdcFileFormatRefPtr& r);
-  bool operatorLess(const pxr::UsdUsdcFileFormat& l,
-                    const pxr::UsdUsdcFileFormat& r);
-  bool operatorLess(const pxr::UsdUsdzFileFormatRefPtr& l,
-                    const pxr::UsdUsdzFileFormatRefPtr& r);
-  bool operatorLess(const pxr::UsdUsdzFileFormat& l,
-                    const pxr::UsdUsdzFileFormat& r);
   bool operatorLess(const pxr::UsdGeomPrimvar& l,
                     const pxr::UsdGeomPrimvar& r);
   bool operatorLess(const pxr::UsdHydraDiscoveryPlugin& l,
                     const pxr::UsdHydraDiscoveryPlugin& r);
+  bool operatorLess(const pxr::VdfExecutionTypeRegistry& l,
+                    const pxr::VdfExecutionTypeRegistry& r);
+  bool operatorLess(const pxr::ExecTypeRegistry& l,
+                    const pxr::ExecTypeRegistry& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorLess(const pxr::GarchGLPlatformDebugContext& l,
                     const pxr::GarchGLPlatformDebugContext& r);
@@ -428,6 +439,10 @@ namespace __Overlay {
                     const pxr::HdNoticeBatchingSceneIndex& r);
   bool operatorLess(const pxr::HdNoticeBatchingSceneIndexRefPtr& l,
                     const pxr::HdNoticeBatchingSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdCachingSceneIndex& l,
+                    const pxr::HdCachingSceneIndex& r);
+  bool operatorLess(const pxr::HdCachingSceneIndexRefPtr& l,
+                    const pxr::HdCachingSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdDependencyForwardingSceneIndex& l,
                     const pxr::HdDependencyForwardingSceneIndex& r);
   bool operatorLess(const pxr::HdDependencyForwardingSceneIndexRefPtr& l,
@@ -468,6 +483,10 @@ namespace __Overlay {
                     const pxr::HdsiDebuggingSceneIndex& r);
   bool operatorLess(const pxr::HdsiDebuggingSceneIndexRefPtr& l,
                     const pxr::HdsiDebuggingSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdsiDomeLightCameraVisibilitySceneIndex& l,
+                    const pxr::HdsiDomeLightCameraVisibilitySceneIndex& r);
+  bool operatorLess(const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& l,
+                    const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdsiExtComputationDependencySceneIndex& l,
                     const pxr::HdsiExtComputationDependencySceneIndex& r);
   bool operatorLess(const pxr::HdsiExtComputationDependencySceneIndexRefPtr& l,
@@ -548,6 +567,10 @@ namespace __Overlay {
                     const pxr::HdsiTetMeshConversionSceneIndex& r);
   bool operatorLess(const pxr::HdsiTetMeshConversionSceneIndexRefPtr& l,
                     const pxr::HdsiTetMeshConversionSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdsiUnboundMaterialPruningSceneIndex& l,
+                    const pxr::HdsiUnboundMaterialPruningSceneIndex& r);
+  bool operatorLess(const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& l,
+                    const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdsiVelocityMotionResolvingSceneIndex& l,
                     const pxr::HdsiVelocityMotionResolvingSceneIndex& r);
   bool operatorLess(const pxr::HdsiVelocityMotionResolvingSceneIndexRefPtr& l,

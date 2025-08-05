@@ -22,6 +22,8 @@
 #include "pxr/base/trace/eventTree.h"
 #include "pxr/base/trace/reporter.h"
 #include "pxr/base/trace/reporterBase.h"
+#include "pxr/exec/exec/typeRegistry.h"
+#include "pxr/exec/vdf/executionTypeRegistry.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/garch/glPlatformDebugContext.h"
 #include "pxr/imaging/glf/bindingMap.h"
@@ -31,6 +33,7 @@
 #include "pxr/imaging/glf/simpleShadowArray.h"
 #include "pxr/imaging/glf/texture.h"
 #include "pxr/imaging/glf/uniformBlock.h"
+#include "pxr/imaging/hd/cachingSceneIndex.h"
 #include "pxr/imaging/hd/dependencyForwardingSceneIndex.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
 #include "pxr/imaging/hd/flatteningSceneIndex.h"
@@ -50,6 +53,7 @@
 #include "pxr/imaging/hdGp/generativeProceduralResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/coordSysPrimSceneIndex.h"
 #include "pxr/imaging/hdsi/debuggingSceneIndex.h"
+#include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationDependencySceneIndex.h"
 #include "pxr/imaging/hdsi/extComputationPrimvarPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
@@ -70,12 +74,12 @@
 #include "pxr/imaging/hdsi/sceneGlobalsSceneIndex.h"
 #include "pxr/imaging/hdsi/switchingSceneIndex.h"
 #include "pxr/imaging/hdsi/tetMeshConversionSceneIndex.h"
+#include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/velocityMotionResolvingSceneIndex.h"
 #include "pxr/imaging/hdx/taskControllerSceneIndex.h"
 #include "pxr/imaging/hio/imageRegistry.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/usd/kind/registry.h"
-#include "pxr/usd/ndr/discoveryPlugin.h"
 #include "pxr/usd/pcp/layerStack.h"
 #include "pxr/usd/sdf/abstractData.h"
 #include "pxr/usd/sdf/data.h"
@@ -85,14 +89,15 @@
 #include "pxr/usd/sdf/layerTree.h"
 #include "pxr/usd/sdf/schema.h"
 #include "pxr/usd/sdf/textFileFormat.h"
+#include "pxr/usd/sdf/usdFileFormat.h"
+#include "pxr/usd/sdf/usdaData.h"
+#include "pxr/usd/sdf/usdaFileFormat.h"
+#include "pxr/usd/sdf/usdcFileFormat.h"
+#include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/sdr/discoveryPlugin.h"
 #include "pxr/usd/sdr/registry.h"
 #include "pxr/usd/usd/schemaRegistry.h"
 #include "pxr/usd/usd/stage.h"
-#include "pxr/usd/usd/usdFileFormat.h"
-#include "pxr/usd/usd/usdaFileFormat.h"
-#include "pxr/usd/usd/usdcFileFormat.h"
-#include "pxr/usd/usd/usdzFileFormat.h"
 #include "pxr/usd/usdHydra/discoveryPlugin.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 #include "pxr/usdImaging/usdImaging/drawModeSceneIndex.h"
@@ -973,103 +978,250 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfTextFileFormat> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfTextFileFormat> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfTextFileFormatE_ConstWeakPtr._isNonnull(self:));
 
-typedef pxr::NdrDiscoveryPluginContext __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE;
-typedef pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext> __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::NdrDiscoveryPluginContext> __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext> __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::NdrDiscoveryPluginContext> __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstWeakPtr;
-void* _Nonnull _address(pxr::NdrDiscoveryPluginContext* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._address(self:));
-inline void __retain__ZN3pxr25NdrDiscoveryPluginContextE(pxr::NdrDiscoveryPluginContext* _Nonnull x) {
+typedef pxr::SdfUsdFileFormat __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE;
+typedef pxr::TfRefPtr<pxr::SdfUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::SdfUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::SdfUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfUsdFileFormat* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._address(self:));
+inline void __retain__ZN3pxr16SdfUsdFileFormatE(pxr::SdfUsdFileFormat* _Nonnull x) {
     pxr::Tf_RetainReleaseHelper::retain(x);
 }
-inline void __release__ZN3pxr25NdrDiscoveryPluginContextE(pxr::NdrDiscoveryPluginContext* _Nonnull x) {
+inline void __release__ZN3pxr16SdfUsdFileFormatE(pxr::SdfUsdFileFormat* _Nonnull x) {
     pxr::Tf_RetainReleaseHelper::release(x);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext> _asRefPtrType(pxr::NdrDiscoveryPluginContext* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._asRefPtrType(self:));
-pxr::NdrDiscoveryPluginContext * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>&)
+pxr::TfRefPtr<pxr::SdfUsdFileFormat> _asRefPtrType(pxr::SdfUsdFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._asRefPtrType(self:));
+pxr::SdfUsdFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdFileFormat>&)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._fromRefPtrType(_:));
-pxr::NdrDiscoveryPluginContext * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::NdrDiscoveryPluginContext>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._fromRefPtrType(_:));
+pxr::SdfUsdFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdFileFormat>&)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._fromConstRefPtrType(_:));
-pxr::NdrDiscoveryPluginContext * _Nullable _fromRawPointer__ZN3pxr25NdrDiscoveryPluginContextE(void* _Nullable)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._fromConstRefPtrType(_:));
+pxr::SdfUsdFileFormat * _Nullable _fromRawPointer__ZN3pxr16SdfUsdFileFormatE(void* _Nullable)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>_nullRefPtr__ZN3pxr25NdrDiscoveryPluginContextE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::NdrDiscoveryPluginContext> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext> _asWeakPtrType(pxr::NdrDiscoveryPluginContext* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._asWeakPtrType(self:));
-pxr::NdrDiscoveryPluginContext * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>&) 
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::SdfUsdFileFormat>_nullRefPtr__ZN3pxr16SdfUsdFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat> _asWeakPtrType(pxr::SdfUsdFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._asWeakPtrType(self:));
+pxr::SdfUsdFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat>&) 
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._fromWeakPtrType(_:));
-pxr::NdrDiscoveryPluginContext * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPluginContext> &) 
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._fromWeakPtrType(_:));
+pxr::SdfUsdFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdFileFormat> &) 
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>_fromAnyWeakPtr__ZN3pxr25NdrDiscoveryPluginContextE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>_nullWeakPtr__ZN3pxr25NdrDiscoveryPluginContextE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPluginContext> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstWeakPtr._isNonnull(self:));
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat>_fromAnyWeakPtr__ZN3pxr16SdfUsdFileFormatE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat>_nullWeakPtr__ZN3pxr16SdfUsdFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstWeakPtr._isNonnull(self:));
 
-typedef pxr::NdrDiscoveryPlugin __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE;
-typedef pxr::TfRefPtr<pxr::NdrDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::NdrDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::NdrDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstWeakPtr;
-void* _Nonnull _address(pxr::NdrDiscoveryPlugin* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._address(self:));
-inline void __retain__ZN3pxr18NdrDiscoveryPluginE(pxr::NdrDiscoveryPlugin* _Nonnull x) {
+typedef pxr::SdfUsdaData __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE;
+typedef pxr::TfRefPtr<pxr::SdfUsdaData> __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::SdfUsdaData> __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::SdfUsdaData> __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfUsdaData> __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfUsdaData* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._address(self:));
+inline void __retain__ZN3pxr11SdfUsdaDataE(pxr::SdfUsdaData* _Nonnull x) {
     pxr::Tf_RetainReleaseHelper::retain(x);
 }
-inline void __release__ZN3pxr18NdrDiscoveryPluginE(pxr::NdrDiscoveryPlugin* _Nonnull x) {
+inline void __release__ZN3pxr11SdfUsdaDataE(pxr::SdfUsdaData* _Nonnull x) {
     pxr::Tf_RetainReleaseHelper::release(x);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPlugin> _asRefPtrType(pxr::NdrDiscoveryPlugin* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._asRefPtrType(self:));
-pxr::NdrDiscoveryPlugin * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>&)
+pxr::TfRefPtr<pxr::SdfUsdaData> _asRefPtrType(pxr::SdfUsdaData* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._asRefPtrType(self:));
+pxr::SdfUsdaData * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdaData>&)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._fromRefPtrType(_:));
-pxr::NdrDiscoveryPlugin * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::NdrDiscoveryPlugin>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._fromRefPtrType(_:));
+pxr::SdfUsdaData * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdaData>&)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._fromConstRefPtrType(_:));
-pxr::NdrDiscoveryPlugin * _Nullable _fromRawPointer__ZN3pxr18NdrDiscoveryPluginE(void* _Nullable)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._fromConstRefPtrType(_:));
+pxr::SdfUsdaData * _Nullable _fromRawPointer__ZN3pxr11SdfUsdaDataE(void* _Nullable)
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>_nullRefPtr__ZN3pxr18NdrDiscoveryPluginE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::NdrDiscoveryPlugin> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::NdrDiscoveryPlugin> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin> _asWeakPtrType(pxr::NdrDiscoveryPlugin* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._asWeakPtrType(self:));
-pxr::NdrDiscoveryPlugin * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>&) 
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::SdfUsdaData>_nullRefPtr__ZN3pxr11SdfUsdaDataE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdaData> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdaData> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::SdfUsdaData> _asWeakPtrType(pxr::SdfUsdaData* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._asWeakPtrType(self:));
+pxr::SdfUsdaData * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdaData>&) 
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._fromWeakPtrType(_:));
-pxr::NdrDiscoveryPlugin * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPlugin> &) 
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._fromWeakPtrType(_:));
+pxr::SdfUsdaData * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdaData> &) 
     SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>_fromAnyWeakPtr__ZN3pxr18NdrDiscoveryPluginE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>_nullWeakPtr__ZN3pxr18NdrDiscoveryPluginE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPlugin> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstWeakPtr._isNonnull(self:));
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdaData>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfUsdaData>_fromAnyWeakPtr__ZN3pxr11SdfUsdaDataE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfUsdaData>_nullWeakPtr__ZN3pxr11SdfUsdaDataE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdaData> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdaData> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::SdfUsdaFileFormat __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE;
+typedef pxr::TfRefPtr<pxr::SdfUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::SdfUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::SdfUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfUsdaFileFormat* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._address(self:));
+inline void __retain__ZN3pxr17SdfUsdaFileFormatE(pxr::SdfUsdaFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr17SdfUsdaFileFormatE(pxr::SdfUsdaFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdaFileFormat> _asRefPtrType(pxr::SdfUsdaFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._asRefPtrType(self:));
+pxr::SdfUsdaFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdaFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._fromRefPtrType(_:));
+pxr::SdfUsdaFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdaFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._fromConstRefPtrType(_:));
+pxr::SdfUsdaFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdaFileFormatE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::SdfUsdaFileFormat>_nullRefPtr__ZN3pxr17SdfUsdaFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdaFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdaFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat> _asWeakPtrType(pxr::SdfUsdaFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._asWeakPtrType(self:));
+pxr::SdfUsdaFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._fromWeakPtrType(_:));
+pxr::SdfUsdaFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdaFileFormat> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdaFileFormatE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdaFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdaFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::SdfUsdcFileFormat __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE;
+typedef pxr::TfRefPtr<pxr::SdfUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::SdfUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::SdfUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfUsdcFileFormat* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._address(self:));
+inline void __retain__ZN3pxr17SdfUsdcFileFormatE(pxr::SdfUsdcFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr17SdfUsdcFileFormatE(pxr::SdfUsdcFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdcFileFormat> _asRefPtrType(pxr::SdfUsdcFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._asRefPtrType(self:));
+pxr::SdfUsdcFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdcFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._fromRefPtrType(_:));
+pxr::SdfUsdcFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdcFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._fromConstRefPtrType(_:));
+pxr::SdfUsdcFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdcFileFormatE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::SdfUsdcFileFormat>_nullRefPtr__ZN3pxr17SdfUsdcFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdcFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdcFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat> _asWeakPtrType(pxr::SdfUsdcFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._asWeakPtrType(self:));
+pxr::SdfUsdcFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._fromWeakPtrType(_:));
+pxr::SdfUsdcFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdcFileFormat> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdcFileFormatE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdcFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdcFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::SdfUsdzFileFormat __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE;
+typedef pxr::TfRefPtr<pxr::SdfUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::SdfUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::SdfUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfUsdzFileFormat* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._address(self:));
+inline void __retain__ZN3pxr17SdfUsdzFileFormatE(pxr::SdfUsdzFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr17SdfUsdzFileFormatE(pxr::SdfUsdzFileFormat* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdzFileFormat> _asRefPtrType(pxr::SdfUsdzFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._asRefPtrType(self:));
+pxr::SdfUsdzFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdzFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._fromRefPtrType(_:));
+pxr::SdfUsdzFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdzFileFormat>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._fromConstRefPtrType(_:));
+pxr::SdfUsdzFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdzFileFormatE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::SdfUsdzFileFormat>_nullRefPtr__ZN3pxr17SdfUsdzFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdzFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdzFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat> _asWeakPtrType(pxr::SdfUsdzFileFormat* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._asWeakPtrType(self:));
+pxr::SdfUsdzFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._fromWeakPtrType(_:));
+pxr::SdfUsdzFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdzFileFormat> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdzFileFormatE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdzFileFormatE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdzFileFormat> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstWeakPtr._isNonnull(self:));
 
 typedef pxr::SdrDiscoveryPluginContext __SwiftUsd_Typedef___ZN3pxr25SdrDiscoveryPluginContextE;
 typedef pxr::TfRefPtr<pxr::SdrDiscoveryPluginContext> __SwiftUsd_Typedef___ZN3pxr25SdrDiscoveryPluginContextE_RefPtr;
@@ -1315,202 +1467,6 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdStage> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdStage> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr8UsdStageE_ConstWeakPtr._isNonnull(self:));
 
-typedef pxr::UsdUsdFileFormat __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE;
-typedef pxr::TfRefPtr<pxr::UsdUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::UsdUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::UsdUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::UsdUsdFileFormat> __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstWeakPtr;
-void* _Nonnull _address(pxr::UsdUsdFileFormat* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._address(self:));
-inline void __retain__ZN3pxr16UsdUsdFileFormatE(pxr::UsdUsdFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::retain(x);
-}
-inline void __release__ZN3pxr16UsdUsdFileFormatE(pxr::UsdUsdFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::release(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdFileFormat> _asRefPtrType(pxr::UsdUsdFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._asRefPtrType(self:));
-pxr::UsdUsdFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._fromRefPtrType(_:));
-pxr::UsdUsdFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._fromConstRefPtrType(_:));
-pxr::UsdUsdFileFormat * _Nullable _fromRawPointer__ZN3pxr16UsdUsdFileFormatE(void* _Nullable)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::UsdUsdFileFormat>_nullRefPtr__ZN3pxr16UsdUsdFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat> _asWeakPtrType(pxr::UsdUsdFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._asWeakPtrType(self:));
-pxr::UsdUsdFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat>&) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._fromWeakPtrType(_:));
-pxr::UsdUsdFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdFileFormat> &) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat>_fromAnyWeakPtr__ZN3pxr16UsdUsdFileFormatE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat>_nullWeakPtr__ZN3pxr16UsdUsdFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstWeakPtr._isNonnull(self:));
-
-typedef pxr::UsdUsdaFileFormat __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE;
-typedef pxr::TfRefPtr<pxr::UsdUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::UsdUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::UsdUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::UsdUsdaFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstWeakPtr;
-void* _Nonnull _address(pxr::UsdUsdaFileFormat* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._address(self:));
-inline void __retain__ZN3pxr17UsdUsdaFileFormatE(pxr::UsdUsdaFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::retain(x);
-}
-inline void __release__ZN3pxr17UsdUsdaFileFormatE(pxr::UsdUsdaFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::release(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdaFileFormat> _asRefPtrType(pxr::UsdUsdaFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._asRefPtrType(self:));
-pxr::UsdUsdaFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdaFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._fromRefPtrType(_:));
-pxr::UsdUsdaFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdaFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._fromConstRefPtrType(_:));
-pxr::UsdUsdaFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdaFileFormatE(void* _Nullable)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::UsdUsdaFileFormat>_nullRefPtr__ZN3pxr17UsdUsdaFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdaFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdaFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat> _asWeakPtrType(pxr::UsdUsdaFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._asWeakPtrType(self:));
-pxr::UsdUsdaFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>&) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._fromWeakPtrType(_:));
-pxr::UsdUsdaFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdaFileFormat> &) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdaFileFormatE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdaFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdaFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstWeakPtr._isNonnull(self:));
-
-typedef pxr::UsdUsdcFileFormat __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE;
-typedef pxr::TfRefPtr<pxr::UsdUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::UsdUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::UsdUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::UsdUsdcFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstWeakPtr;
-void* _Nonnull _address(pxr::UsdUsdcFileFormat* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._address(self:));
-inline void __retain__ZN3pxr17UsdUsdcFileFormatE(pxr::UsdUsdcFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::retain(x);
-}
-inline void __release__ZN3pxr17UsdUsdcFileFormatE(pxr::UsdUsdcFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::release(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdcFileFormat> _asRefPtrType(pxr::UsdUsdcFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._asRefPtrType(self:));
-pxr::UsdUsdcFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdcFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._fromRefPtrType(_:));
-pxr::UsdUsdcFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdcFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._fromConstRefPtrType(_:));
-pxr::UsdUsdcFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdcFileFormatE(void* _Nullable)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::UsdUsdcFileFormat>_nullRefPtr__ZN3pxr17UsdUsdcFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdcFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdcFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat> _asWeakPtrType(pxr::UsdUsdcFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._asWeakPtrType(self:));
-pxr::UsdUsdcFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>&) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._fromWeakPtrType(_:));
-pxr::UsdUsdcFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdcFileFormat> &) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdcFileFormatE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdcFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdcFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstWeakPtr._isNonnull(self:));
-
-typedef pxr::UsdUsdzFileFormat __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE;
-typedef pxr::TfRefPtr<pxr::UsdUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_RefPtr;
-typedef pxr::TfRefPtr<const pxr::UsdUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstRefPtr;
-typedef pxr::TfWeakPtr<pxr::UsdUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr;
-typedef pxr::TfWeakPtr<const pxr::UsdUsdzFileFormat> __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstWeakPtr;
-void* _Nonnull _address(pxr::UsdUsdzFileFormat* _Nonnull)
-    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._address(self:));
-inline void __retain__ZN3pxr17UsdUsdzFileFormatE(pxr::UsdUsdzFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::retain(x);
-}
-inline void __release__ZN3pxr17UsdUsdzFileFormatE(pxr::UsdUsdzFileFormat* _Nonnull x) {
-    pxr::Tf_RetainReleaseHelper::release(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdzFileFormat> _asRefPtrType(pxr::UsdUsdzFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._asRefPtrType(self:));
-pxr::UsdUsdzFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdzFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._fromRefPtrType(_:));
-pxr::UsdUsdzFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdzFileFormat>&)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._fromConstRefPtrType(_:));
-pxr::UsdUsdzFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdzFileFormatE(void* _Nullable)
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._fromRawPointer(_:));
-pxr::TfRefPtr<pxr::UsdUsdzFileFormat>_nullRefPtr__ZN3pxr17UsdUsdzFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_RefPtr._nullPtr());
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdzFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_RefPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdzFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstRefPtr._isNonnull(self:));
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat> _asWeakPtrType(pxr::UsdUsdzFileFormat* _Nonnull)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._asWeakPtrType(self:));
-pxr::UsdUsdzFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>&) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._fromWeakPtrType(_:));
-pxr::UsdUsdzFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdzFileFormat> &) 
-    SWIFT_RETURNS_RETAINED
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE._fromConstWeakPtrType(_:));
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr._asAnyWeakPtr(self:));
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdzFileFormatE(const pxr::TfAnyWeakPtr&)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr._fromAnyWeakPtr(_:));
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdzFileFormatE()
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr._nullPtr());
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr._isNonnull(self:));
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdzFileFormat> &)
-    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstWeakPtr._isNonnull(self:));
-
 typedef pxr::UsdHydraDiscoveryPlugin __SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE;
 typedef pxr::TfRefPtr<pxr::UsdHydraDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_RefPtr;
 typedef pxr::TfRefPtr<const pxr::UsdHydraDiscoveryPlugin> __SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_ConstRefPtr;
@@ -1559,6 +1515,14 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdHydraDiscoveryPlugin> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_WeakPtr._isNonnull(self:));
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdHydraDiscoveryPlugin> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::VdfExecutionTypeRegistry __SwiftUsd_Typedef___ZN3pxr24VdfExecutionTypeRegistryE;
+void* _Nonnull _address(pxr::VdfExecutionTypeRegistry* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr24VdfExecutionTypeRegistryE._address(self:));
+
+typedef pxr::ExecTypeRegistry __SwiftUsd_Typedef___ZN3pxr16ExecTypeRegistryE;
+void* _Nonnull _address(pxr::ExecTypeRegistry* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr16ExecTypeRegistryE._address(self:));
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
 typedef pxr::GarchGLPlatformDebugContext __SwiftUsd_Typedef___ZN3pxr27GarchGLPlatformDebugContextE;
@@ -2259,6 +2223,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdNoticeBatchingSceneIndex> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdNoticeBatchingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr26HdNoticeBatchingSceneIndexE_ConstWeakPtr._isNonnull(self:));
 
+typedef pxr::HdCachingSceneIndex __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE;
+typedef pxr::TfRefPtr<pxr::HdCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::HdCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::HdCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::HdCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::HdCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._address(self:));
+inline void __retain__ZN3pxr19HdCachingSceneIndexE(pxr::HdCachingSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr19HdCachingSceneIndexE(pxr::HdCachingSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::HdCachingSceneIndex> _asRefPtrType(pxr::HdCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._asRefPtrType(self:));
+pxr::HdCachingSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdCachingSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._fromRefPtrType(_:));
+pxr::HdCachingSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdCachingSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._fromConstRefPtrType(_:));
+pxr::HdCachingSceneIndex * _Nullable _fromRawPointer__ZN3pxr19HdCachingSceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::HdCachingSceneIndex>_nullRefPtr__ZN3pxr19HdCachingSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex> _asWeakPtrType(pxr::HdCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._asWeakPtrType(self:));
+pxr::HdCachingSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._fromWeakPtrType(_:));
+pxr::HdCachingSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdCachingSceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex>_fromAnyWeakPtr__ZN3pxr19HdCachingSceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex>_nullWeakPtr__ZN3pxr19HdCachingSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
 typedef pxr::HdDependencyForwardingSceneIndex __SwiftUsd_Typedef___ZN3pxr32HdDependencyForwardingSceneIndexE;
 typedef pxr::TfRefPtr<pxr::HdDependencyForwardingSceneIndex> __SwiftUsd_Typedef___ZN3pxr32HdDependencyForwardingSceneIndexE_RefPtr;
 typedef pxr::TfRefPtr<const pxr::HdDependencyForwardingSceneIndex> __SwiftUsd_Typedef___ZN3pxr32HdDependencyForwardingSceneIndexE_ConstRefPtr;
@@ -2711,6 +2724,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiDebuggingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr23HdsiDebuggingSceneIndexE_WeakPtr._isNonnull(self:));
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiDebuggingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr23HdsiDebuggingSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::HdsiDomeLightCameraVisibilitySceneIndex __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE;
+typedef pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._address(self:));
+inline void __retain__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> _asRefPtrType(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._asRefPtrType(self:));
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._fromRefPtrType(_:));
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._fromConstRefPtrType(_:));
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromRawPointer__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_nullRefPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> _asWeakPtrType(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._asWeakPtrType(self:));
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._fromWeakPtrType(_:));
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_fromAnyWeakPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_nullWeakPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstWeakPtr._isNonnull(self:));
 
 typedef pxr::HdsiExtComputationDependencySceneIndex __SwiftUsd_Typedef___ZN3pxr38HdsiExtComputationDependencySceneIndexE;
 typedef pxr::TfRefPtr<pxr::HdsiExtComputationDependencySceneIndex> __SwiftUsd_Typedef___ZN3pxr38HdsiExtComputationDependencySceneIndexE_RefPtr;
@@ -3691,6 +3753,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiTetMeshConversionSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr31HdsiTetMeshConversionSceneIndexE_WeakPtr._isNonnull(self:));
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiTetMeshConversionSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr31HdsiTetMeshConversionSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::HdsiUnboundMaterialPruningSceneIndex __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE;
+typedef pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._address(self:));
+inline void __retain__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> _asRefPtrType(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._asRefPtrType(self:));
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._fromRefPtrType(_:));
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._fromConstRefPtrType(_:));
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromRawPointer__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_nullRefPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> _asWeakPtrType(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._asWeakPtrType(self:));
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._fromWeakPtrType(_:));
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_fromAnyWeakPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_nullWeakPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstWeakPtr._isNonnull(self:));
 
 typedef pxr::HdsiVelocityMotionResolvingSceneIndex __SwiftUsd_Typedef___ZN3pxr37HdsiVelocityMotionResolvingSceneIndexE;
 typedef pxr::TfRefPtr<pxr::HdsiVelocityMotionResolvingSceneIndex> __SwiftUsd_Typedef___ZN3pxr37HdsiVelocityMotionResolvingSceneIndexE_RefPtr;

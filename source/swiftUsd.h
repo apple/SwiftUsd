@@ -57,11 +57,11 @@
 #includeforswiftdocc "swiftUsd/Wrappers/HgiMetalWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/HgiWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/HioImageWrapper.h"
+#includeforswiftdocc "swiftUsd/Wrappers/SdfZipFileIteratorWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/TfErrorMarkWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/UsdAppUtilsFrameRecorderWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/UsdImagingGLEngineWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/UsdPrimTypeInfoWrapper.h"
-#includeforswiftdocc "swiftUsd/Wrappers/UsdZipFileIteratorWrapper.h"
 
 #includeforswiftdocc "swiftUsd/SwiftOverlay/HydraHelpers.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/Miscellaneous.h"

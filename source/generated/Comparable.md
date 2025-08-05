@@ -73,6 +73,7 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfData>``
 - ``OpenUSD/C++/pxr/SdfFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfFileFormat>``
+- ``OpenUSD/C++/pxr/SdfFileVersion``
 - ``OpenUSD/C++/pxr/SdfLayer``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfLayer>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.SdfLayer>``
@@ -94,21 +95,26 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/SdfSite``
 - ``OpenUSD/C++/pxr/SdfTextFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfTextFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdaData``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdaData>``
+- ``OpenUSD/C++/pxr/SdfUsdaFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdaFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdcFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdcFileFormat>``
+- ``OpenUSD/C++/pxr/SdfUsdzFileFormat``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdzFileFormat>``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfVariantSetSpec>``
 - ``OpenUSD/C++/pxr/SdfVariantSetSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfVariantSpec>``
 - ``OpenUSD/C++/pxr/SdfVariantSpec``
 
-###  Ndr types
-- ``OpenUSD/C++/pxr/NdrVersion``
-- ``OpenUSD/C++/pxr/NdrDiscoveryPluginContext``
-- ``OpenUSD/C++/pxr/NdrDiscoveryPlugin``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.NdrDiscoveryPlugin>``
-
 ###  Sdr types
 - ``OpenUSD/C++/pxr/SdrVersion``
 - ``OpenUSD/C++/pxr/SdrDiscoveryPluginContext``
 - ``OpenUSD/C++/pxr/SdrDiscoveryPlugin``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdrDiscoveryPlugin>``
 - ``OpenUSD/C++/pxr/SdrRegistry``
 
 ###  Pcp types
@@ -136,20 +142,24 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/UsdProperty``
 - ``OpenUSD/C++/pxr/UsdRelationship``
 - ``OpenUSD/C++/pxr/UsdStageCache/Id``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdaFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdaFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdcFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdcFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdUsdzFileFormat>``
-- ``OpenUSD/C++/pxr/UsdUsdzFileFormat``
 
 ###  UsdGeom types
 - ``OpenUSD/C++/pxr/UsdGeomPrimvar``
 
 ###  UsdHydra types
 - ``OpenUSD/C++/pxr/UsdHydraDiscoveryPlugin``
+
+###  Vdf types
+- ``OpenUSD/C++/pxr/VdfMaskedOutput``
+- ``OpenUSD/C++/pxr/VdfExecutionTypeRegistry``
+- ``OpenUSD/C++/pxr/VdfObjectPtr``
+
+###  Ef types
+- ``OpenUSD/C++/pxr/EfTime``
+- ``OpenUSD/C++/pxr/EfTimeInterval``
+
+###  Exec types
+- ``OpenUSD/C++/pxr/ExecTypeRegistry``
 
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLPlatformDebugContext``
@@ -196,6 +206,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdRetainedSceneIndex>``
 - ``OpenUSD/C++/pxr/HdNoticeBatchingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdNoticeBatchingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdCachingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdCachingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdDependencyForwardingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdDependencyForwardingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdFlatteningSceneIndex``
@@ -220,6 +232,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiCoordSysPrimSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiDebuggingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiDebuggingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiDomeLightCameraVisibilitySceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiDomeLightCameraVisibilitySceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiExtComputationDependencySceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiExtComputationDependencySceneIndex>``
 - ``OpenUSD/C++/pxr/HdSiExtComputationPrimvarPruningSceneIndex``
@@ -260,6 +274,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSwitchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiTetMeshConversionSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiTetMeshConversionSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiUnboundMaterialPruningSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiUnboundMaterialPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiVelocityMotionResolvingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiVelocityMotionResolvingSceneIndex>``
 

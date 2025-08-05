@@ -154,6 +154,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/TsCurveType``
 - ``OpenUSD/C++/pxr/TsExtrapMode``
 - ``OpenUSD/C++/pxr/TsSplineSampleSource``
+- ``OpenUSD/C++/pxr/TsTangentAlgorithm``
 - ``OpenUSD/C++/pxr/TsAntiRegressionMode``
 - ``OpenUSD/C++/pxr/TsKnot``
 - ``OpenUSD/C++/pxr/TsRegressionPreventer/InteractiveMode``
@@ -170,6 +171,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/SdfLengthUnit``
 - ``OpenUSD/C++/pxr/SdfUnregisteredValue``
 - ``OpenUSD/C++/pxr/SdfValueBlock``
+- ``OpenUSD/C++/pxr/SdfAnimationBlock``
 - ``OpenUSD/C++/pxr/SdfHumanReadableValue``
 - ``OpenUSD/C++/pxr/SdfAssetPath``
 - ``OpenUSD/C++/pxr/SdfListOpType``
@@ -205,9 +207,6 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/SdfVariantSetSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfVariantSpec>``
 - ``OpenUSD/C++/pxr/SdfVariantSpec``
-
-###  Ndr types
-- ``OpenUSD/C++/pxr/NdrVersionFilter``
 
 ###  Sdr types
 - ``OpenUSD/C++/pxr/SdrVersionFilter``
@@ -285,6 +284,29 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/UsdPhysicsObjectType``
 - ``OpenUSD/C++/pxr/UsdPhysicsAxis``
 - ``OpenUSD/C++/pxr/UsdPhysicsJointDOF``
+
+###  Vdf types
+- ``OpenUSD/C++/pxr/VdfInputSpec/Access``
+- ``OpenUSD/C++/pxr/VdfMask``
+- ``OpenUSD/C++/pxr/VdfVector/ConstructBoxedCopyTag``
+- ``OpenUSD/C++/pxr/VdfVector/DebugPrintable``
+- ``OpenUSD/C++/pxr/VdfIndexedData<CFloat>``
+- ``OpenUSD/C++/pxr/VdfExecutionStats/EventType``
+- ``OpenUSD/C++/pxr/VdfMaskedIteratorMode``
+- ``OpenUSD/C++/pxr/VdfDataManagerDeallocationMode``
+- ``OpenUSD/C++/pxr/VdfGrapherOptions/DisplayStyle``
+- ``OpenUSD/C++/pxr/VdfObjectPtr``
+- ``OpenUSD/C++/pxr/VdfObjectPtr/Type``
+- ``OpenUSD/C++/pxr/VdfIndexedWeightsOperand/SetOperation``
+- ``OpenUSD/C++/pxr/VdfSparseInputTraverser/CallbackMode``
+- ``OpenUSD/C++/pxr/VdfSparseVectorizedInputTraverser/CallbackMode``
+
+###  Ef types
+- ``OpenUSD/C++/pxr/EfTime``
+- ``OpenUSD/C++/pxr/EfTimeInterval``
+
+###  Exec types
+- ``OpenUSD/C++/pxr/ExecProviderResolution/DynamicTraversal``
 
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLDebugWindow/Buttons``

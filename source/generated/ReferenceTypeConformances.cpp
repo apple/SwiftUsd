@@ -1016,120 +1016,294 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfTextFileFormat> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfTextFileFormat> & p) {
     return (bool)p;}
 
-void* _Nonnull _address(pxr::NdrDiscoveryPluginContext* _Nonnull x) {
+void* _Nonnull _address(pxr::SdfUsdFileFormat* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext> _asRefPtrType(pxr::NdrDiscoveryPluginContext* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>(x);
+pxr::TfRefPtr<pxr::SdfUsdFileFormat> _asRefPtrType(pxr::SdfUsdFileFormat* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::SdfUsdFileFormat>(x);
 }
-pxr::NdrDiscoveryPluginContext * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>& x) {
+pxr::SdfUsdFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdFileFormat>& x) {
     if (!x) { return nullptr; }
     pxr::Tf_RetainReleaseHelper::retain(x.operator->());
     return x.operator->();
 }
-pxr::NdrDiscoveryPluginContext * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::NdrDiscoveryPluginContext>& x) {
+pxr::SdfUsdFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdFileFormat>& x) {
     if (!x) { return nullptr; }
-    pxr::NdrDiscoveryPluginContext* result = const_cast<pxr::NdrDiscoveryPluginContext *>(x.operator->());
+    pxr::SdfUsdFileFormat* result = const_cast<pxr::SdfUsdFileFormat *>(x.operator->());
     pxr::Tf_RetainReleaseHelper::retain(result);
     return result;
 }
-pxr::NdrDiscoveryPluginContext * _Nullable _fromRawPointer__ZN3pxr25NdrDiscoveryPluginContextE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::NdrDiscoveryPluginContext>(p);
+pxr::SdfUsdFileFormat * _Nullable _fromRawPointer__ZN3pxr16SdfUsdFileFormatE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::SdfUsdFileFormat>(p);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>_nullRefPtr__ZN3pxr25NdrDiscoveryPluginContextE() {
-    return pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>(nullptr);
+pxr::TfRefPtr<pxr::SdfUsdFileFormat>_nullRefPtr__ZN3pxr16SdfUsdFileFormatE() {
+    return pxr::TfRefPtr<pxr::SdfUsdFileFormat>(nullptr);
 }
-bool _isNonnull(const pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext> & p) {
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdFileFormat> & p) {
     return (bool)p;
 }
-bool _isNonnull(const pxr::TfRefPtr<const pxr::NdrDiscoveryPluginContext> & p) {
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdFileFormat> & p) {
     return (bool)p;
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext> _asWeakPtrType(pxr::NdrDiscoveryPluginContext* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>(x);
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat> _asWeakPtrType(pxr::SdfUsdFileFormat* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfUsdFileFormat>(x);
 }
-pxr::NdrDiscoveryPluginContext * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::NdrDiscoveryPluginContext>(x));
+pxr::SdfUsdFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::SdfUsdFileFormat>(x));
 }
-pxr::NdrDiscoveryPluginContext * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPluginContext> & x) {
+pxr::SdfUsdFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdFileFormat> & x) {
     if (!x) { return nullptr; }
-    pxr::NdrDiscoveryPluginContext * result = const_cast<pxr::NdrDiscoveryPluginContext *>(x.operator->());
+    pxr::SdfUsdFileFormat * result = const_cast<pxr::SdfUsdFileFormat *>(x.operator->());
     pxr::Tf_RetainReleaseHelper::retain(result);
     return result;
 }
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>& x) {
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat>& x) {
     return pxr::TfAnyWeakPtr(x);
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>_fromAnyWeakPtr__ZN3pxr25NdrDiscoveryPluginContextE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>(nullptr); }
-    pxr::NdrDiscoveryPluginContext* rawPtr = static_cast<pxr::NdrDiscoveryPluginContext*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>(rawPtr);
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat>_fromAnyWeakPtr__ZN3pxr16SdfUsdFileFormatE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfUsdFileFormat>(nullptr); }
+    pxr::SdfUsdFileFormat* rawPtr = static_cast<pxr::SdfUsdFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfUsdFileFormat>(rawPtr);
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>_nullWeakPtr__ZN3pxr25NdrDiscoveryPluginContextE() {
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext>(nullptr);
+pxr::TfWeakPtr<pxr::SdfUsdFileFormat>_nullWeakPtr__ZN3pxr16SdfUsdFileFormatE() {
+    return pxr::TfWeakPtr<pxr::SdfUsdFileFormat>(nullptr);
 }
-bool _isNonnull(const pxr::TfWeakPtr<pxr::NdrDiscoveryPluginContext> & p) {
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdFileFormat> & p) {
     return (bool)p;
 }
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPluginContext> & p) {
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdFileFormat> & p) {
     return (bool)p;}
 
-void* _Nonnull _address(pxr::NdrDiscoveryPlugin* _Nonnull x) {
+void* _Nonnull _address(pxr::SdfUsdaData* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPlugin> _asRefPtrType(pxr::NdrDiscoveryPlugin* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>(x);
+pxr::TfRefPtr<pxr::SdfUsdaData> _asRefPtrType(pxr::SdfUsdaData* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::SdfUsdaData>(x);
 }
-pxr::NdrDiscoveryPlugin * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>& x) {
+pxr::SdfUsdaData * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdaData>& x) {
     if (!x) { return nullptr; }
     pxr::Tf_RetainReleaseHelper::retain(x.operator->());
     return x.operator->();
 }
-pxr::NdrDiscoveryPlugin * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::NdrDiscoveryPlugin>& x) {
+pxr::SdfUsdaData * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdaData>& x) {
     if (!x) { return nullptr; }
-    pxr::NdrDiscoveryPlugin* result = const_cast<pxr::NdrDiscoveryPlugin *>(x.operator->());
+    pxr::SdfUsdaData* result = const_cast<pxr::SdfUsdaData *>(x.operator->());
     pxr::Tf_RetainReleaseHelper::retain(result);
     return result;
 }
-pxr::NdrDiscoveryPlugin * _Nullable _fromRawPointer__ZN3pxr18NdrDiscoveryPluginE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::NdrDiscoveryPlugin>(p);
+pxr::SdfUsdaData * _Nullable _fromRawPointer__ZN3pxr11SdfUsdaDataE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::SdfUsdaData>(p);
 }
-pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>_nullRefPtr__ZN3pxr18NdrDiscoveryPluginE() {
-    return pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>(nullptr);
+pxr::TfRefPtr<pxr::SdfUsdaData>_nullRefPtr__ZN3pxr11SdfUsdaDataE() {
+    return pxr::TfRefPtr<pxr::SdfUsdaData>(nullptr);
 }
-bool _isNonnull(const pxr::TfRefPtr<pxr::NdrDiscoveryPlugin> & p) {
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdaData> & p) {
     return (bool)p;
 }
-bool _isNonnull(const pxr::TfRefPtr<const pxr::NdrDiscoveryPlugin> & p) {
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdaData> & p) {
     return (bool)p;
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin> _asWeakPtrType(pxr::NdrDiscoveryPlugin* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>(x);
+pxr::TfWeakPtr<pxr::SdfUsdaData> _asWeakPtrType(pxr::SdfUsdaData* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfUsdaData>(x);
 }
-pxr::NdrDiscoveryPlugin * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::NdrDiscoveryPlugin>(x));
+pxr::SdfUsdaData * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdaData>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::SdfUsdaData>(x));
 }
-pxr::NdrDiscoveryPlugin * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPlugin> & x) {
+pxr::SdfUsdaData * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdaData> & x) {
     if (!x) { return nullptr; }
-    pxr::NdrDiscoveryPlugin * result = const_cast<pxr::NdrDiscoveryPlugin *>(x.operator->());
+    pxr::SdfUsdaData * result = const_cast<pxr::SdfUsdaData *>(x.operator->());
     pxr::Tf_RetainReleaseHelper::retain(result);
     return result;
 }
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>& x) {
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdaData>& x) {
     return pxr::TfAnyWeakPtr(x);
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>_fromAnyWeakPtr__ZN3pxr18NdrDiscoveryPluginE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>(nullptr); }
-    pxr::NdrDiscoveryPlugin* rawPtr = static_cast<pxr::NdrDiscoveryPlugin*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>(rawPtr);
+pxr::TfWeakPtr<pxr::SdfUsdaData>_fromAnyWeakPtr__ZN3pxr11SdfUsdaDataE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfUsdaData>(nullptr); }
+    pxr::SdfUsdaData* rawPtr = static_cast<pxr::SdfUsdaData*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfUsdaData>(rawPtr);
 }
-pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>_nullWeakPtr__ZN3pxr18NdrDiscoveryPluginE() {
-    return pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin>(nullptr);
+pxr::TfWeakPtr<pxr::SdfUsdaData>_nullWeakPtr__ZN3pxr11SdfUsdaDataE() {
+    return pxr::TfWeakPtr<pxr::SdfUsdaData>(nullptr);
 }
-bool _isNonnull(const pxr::TfWeakPtr<pxr::NdrDiscoveryPlugin> & p) {
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdaData> & p) {
     return (bool)p;
 }
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::NdrDiscoveryPlugin> & p) {
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdaData> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::SdfUsdaFileFormat* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdaFileFormat> _asRefPtrType(pxr::SdfUsdaFileFormat* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::SdfUsdaFileFormat>(x);
+}
+pxr::SdfUsdaFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdaFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::SdfUsdaFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdaFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdaFileFormat* result = const_cast<pxr::SdfUsdaFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::SdfUsdaFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdaFileFormatE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::SdfUsdaFileFormat>(p);
+}
+pxr::TfRefPtr<pxr::SdfUsdaFileFormat>_nullRefPtr__ZN3pxr17SdfUsdaFileFormatE() {
+    return pxr::TfRefPtr<pxr::SdfUsdaFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdaFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdaFileFormat> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat> _asWeakPtrType(pxr::SdfUsdaFileFormat* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>(x);
+}
+pxr::SdfUsdaFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::SdfUsdaFileFormat>(x));
+}
+pxr::SdfUsdaFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdaFileFormat> & x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdaFileFormat * result = const_cast<pxr::SdfUsdaFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdaFileFormatE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>(nullptr); }
+    pxr::SdfUsdaFileFormat* rawPtr = static_cast<pxr::SdfUsdaFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdaFileFormatE() {
+    return pxr::TfWeakPtr<pxr::SdfUsdaFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdaFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdaFileFormat> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::SdfUsdcFileFormat* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdcFileFormat> _asRefPtrType(pxr::SdfUsdcFileFormat* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::SdfUsdcFileFormat>(x);
+}
+pxr::SdfUsdcFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdcFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::SdfUsdcFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdcFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdcFileFormat* result = const_cast<pxr::SdfUsdcFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::SdfUsdcFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdcFileFormatE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::SdfUsdcFileFormat>(p);
+}
+pxr::TfRefPtr<pxr::SdfUsdcFileFormat>_nullRefPtr__ZN3pxr17SdfUsdcFileFormatE() {
+    return pxr::TfRefPtr<pxr::SdfUsdcFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdcFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdcFileFormat> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat> _asWeakPtrType(pxr::SdfUsdcFileFormat* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>(x);
+}
+pxr::SdfUsdcFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::SdfUsdcFileFormat>(x));
+}
+pxr::SdfUsdcFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdcFileFormat> & x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdcFileFormat * result = const_cast<pxr::SdfUsdcFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdcFileFormatE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>(nullptr); }
+    pxr::SdfUsdcFileFormat* rawPtr = static_cast<pxr::SdfUsdcFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdcFileFormatE() {
+    return pxr::TfWeakPtr<pxr::SdfUsdcFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdcFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdcFileFormat> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::SdfUsdzFileFormat* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::SdfUsdzFileFormat> _asRefPtrType(pxr::SdfUsdzFileFormat* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::SdfUsdzFileFormat>(x);
+}
+pxr::SdfUsdzFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::SdfUsdzFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::SdfUsdzFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::SdfUsdzFileFormat>& x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdzFileFormat* result = const_cast<pxr::SdfUsdzFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::SdfUsdzFileFormat * _Nullable _fromRawPointer__ZN3pxr17SdfUsdzFileFormatE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::SdfUsdzFileFormat>(p);
+}
+pxr::TfRefPtr<pxr::SdfUsdzFileFormat>_nullRefPtr__ZN3pxr17SdfUsdzFileFormatE() {
+    return pxr::TfRefPtr<pxr::SdfUsdzFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::SdfUsdzFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::SdfUsdzFileFormat> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat> _asWeakPtrType(pxr::SdfUsdzFileFormat* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>(x);
+}
+pxr::SdfUsdzFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::SdfUsdzFileFormat>(x));
+}
+pxr::SdfUsdzFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfUsdzFileFormat> & x) {
+    if (!x) { return nullptr; }
+    pxr::SdfUsdzFileFormat * result = const_cast<pxr::SdfUsdzFileFormat *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>_fromAnyWeakPtr__ZN3pxr17SdfUsdzFileFormatE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>(nullptr); }
+    pxr::SdfUsdzFileFormat* rawPtr = static_cast<pxr::SdfUsdzFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>_nullWeakPtr__ZN3pxr17SdfUsdzFileFormatE() {
+    return pxr::TfWeakPtr<pxr::SdfUsdzFileFormat>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfUsdzFileFormat> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfUsdzFileFormat> & p) {
     return (bool)p;}
 
 void* _Nonnull _address(pxr::SdrDiscoveryPluginContext* _Nonnull x) {
@@ -1426,238 +1600,6 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdStage> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdStage> & p) {
     return (bool)p;}
 
-void* _Nonnull _address(pxr::UsdUsdFileFormat* _Nonnull x) {
-    return reinterpret_cast<void*>(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdFileFormat> _asRefPtrType(pxr::UsdUsdFileFormat* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::UsdUsdFileFormat>(x);
-}
-pxr::UsdUsdFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
-    return x.operator->();
-}
-pxr::UsdUsdFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdFileFormat* result = const_cast<pxr::UsdUsdFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::UsdUsdFileFormat * _Nullable _fromRawPointer__ZN3pxr16UsdUsdFileFormatE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::UsdUsdFileFormat>(p);
-}
-pxr::TfRefPtr<pxr::UsdUsdFileFormat>_nullRefPtr__ZN3pxr16UsdUsdFileFormatE() {
-    return pxr::TfRefPtr<pxr::UsdUsdFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdFileFormat> & p) {
-    return (bool)p;
-}
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat> _asWeakPtrType(pxr::UsdUsdFileFormat* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::UsdUsdFileFormat>(x);
-}
-pxr::UsdUsdFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::UsdUsdFileFormat>(x));
-}
-pxr::UsdUsdFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdFileFormat> & x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdFileFormat * result = const_cast<pxr::UsdUsdFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat>& x) {
-    return pxr::TfAnyWeakPtr(x);
-}
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat>_fromAnyWeakPtr__ZN3pxr16UsdUsdFileFormatE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::UsdUsdFileFormat>(nullptr); }
-    pxr::UsdUsdFileFormat* rawPtr = static_cast<pxr::UsdUsdFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::UsdUsdFileFormat>(rawPtr);
-}
-pxr::TfWeakPtr<pxr::UsdUsdFileFormat>_nullWeakPtr__ZN3pxr16UsdUsdFileFormatE() {
-    return pxr::TfWeakPtr<pxr::UsdUsdFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdFileFormat> & p) {
-    return (bool)p;}
-
-void* _Nonnull _address(pxr::UsdUsdaFileFormat* _Nonnull x) {
-    return reinterpret_cast<void*>(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdaFileFormat> _asRefPtrType(pxr::UsdUsdaFileFormat* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::UsdUsdaFileFormat>(x);
-}
-pxr::UsdUsdaFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdaFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
-    return x.operator->();
-}
-pxr::UsdUsdaFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdaFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdaFileFormat* result = const_cast<pxr::UsdUsdaFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::UsdUsdaFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdaFileFormatE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::UsdUsdaFileFormat>(p);
-}
-pxr::TfRefPtr<pxr::UsdUsdaFileFormat>_nullRefPtr__ZN3pxr17UsdUsdaFileFormatE() {
-    return pxr::TfRefPtr<pxr::UsdUsdaFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdaFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdaFileFormat> & p) {
-    return (bool)p;
-}
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat> _asWeakPtrType(pxr::UsdUsdaFileFormat* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>(x);
-}
-pxr::UsdUsdaFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::UsdUsdaFileFormat>(x));
-}
-pxr::UsdUsdaFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdaFileFormat> & x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdaFileFormat * result = const_cast<pxr::UsdUsdaFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>& x) {
-    return pxr::TfAnyWeakPtr(x);
-}
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdaFileFormatE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>(nullptr); }
-    pxr::UsdUsdaFileFormat* rawPtr = static_cast<pxr::UsdUsdaFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>(rawPtr);
-}
-pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdaFileFormatE() {
-    return pxr::TfWeakPtr<pxr::UsdUsdaFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdaFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdaFileFormat> & p) {
-    return (bool)p;}
-
-void* _Nonnull _address(pxr::UsdUsdcFileFormat* _Nonnull x) {
-    return reinterpret_cast<void*>(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdcFileFormat> _asRefPtrType(pxr::UsdUsdcFileFormat* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::UsdUsdcFileFormat>(x);
-}
-pxr::UsdUsdcFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdcFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
-    return x.operator->();
-}
-pxr::UsdUsdcFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdcFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdcFileFormat* result = const_cast<pxr::UsdUsdcFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::UsdUsdcFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdcFileFormatE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::UsdUsdcFileFormat>(p);
-}
-pxr::TfRefPtr<pxr::UsdUsdcFileFormat>_nullRefPtr__ZN3pxr17UsdUsdcFileFormatE() {
-    return pxr::TfRefPtr<pxr::UsdUsdcFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdcFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdcFileFormat> & p) {
-    return (bool)p;
-}
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat> _asWeakPtrType(pxr::UsdUsdcFileFormat* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>(x);
-}
-pxr::UsdUsdcFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::UsdUsdcFileFormat>(x));
-}
-pxr::UsdUsdcFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdcFileFormat> & x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdcFileFormat * result = const_cast<pxr::UsdUsdcFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>& x) {
-    return pxr::TfAnyWeakPtr(x);
-}
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdcFileFormatE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>(nullptr); }
-    pxr::UsdUsdcFileFormat* rawPtr = static_cast<pxr::UsdUsdcFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>(rawPtr);
-}
-pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdcFileFormatE() {
-    return pxr::TfWeakPtr<pxr::UsdUsdcFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdcFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdcFileFormat> & p) {
-    return (bool)p;}
-
-void* _Nonnull _address(pxr::UsdUsdzFileFormat* _Nonnull x) {
-    return reinterpret_cast<void*>(x);
-}
-pxr::TfRefPtr<pxr::UsdUsdzFileFormat> _asRefPtrType(pxr::UsdUsdzFileFormat* _Nonnull x) {
-    return pxr::TfRefPtr<pxr::UsdUsdzFileFormat>(x);
-}
-pxr::UsdUsdzFileFormat * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdUsdzFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
-    return x.operator->();
-}
-pxr::UsdUsdzFileFormat * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdUsdzFileFormat>& x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdzFileFormat* result = const_cast<pxr::UsdUsdzFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::UsdUsdzFileFormat * _Nullable _fromRawPointer__ZN3pxr17UsdUsdzFileFormatE(void* _Nullable p) {
-    return __Overlay::dynamic_cast_raw_to_frt<pxr::UsdUsdzFileFormat>(p);
-}
-pxr::TfRefPtr<pxr::UsdUsdzFileFormat>_nullRefPtr__ZN3pxr17UsdUsdzFileFormatE() {
-    return pxr::TfRefPtr<pxr::UsdUsdzFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfRefPtr<pxr::UsdUsdzFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdUsdzFileFormat> & p) {
-    return (bool)p;
-}
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat> _asWeakPtrType(pxr::UsdUsdzFileFormat* _Nonnull x) {
-    return pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>(x);
-}
-pxr::UsdUsdzFileFormat * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>& x) {
-    return _fromRefPtrType(pxr::TfRefPtr<pxr::UsdUsdzFileFormat>(x));
-}
-pxr::UsdUsdzFileFormat * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdUsdzFileFormat> & x) {
-    if (!x) { return nullptr; }
-    pxr::UsdUsdzFileFormat * result = const_cast<pxr::UsdUsdzFileFormat *>(x.operator->());
-    pxr::Tf_RetainReleaseHelper::retain(result);
-    return result;
-}
-pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>& x) {
-    return pxr::TfAnyWeakPtr(x);
-}
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>_fromAnyWeakPtr__ZN3pxr17UsdUsdzFileFormatE(const pxr::TfAnyWeakPtr& x) {
-    if (!x) { return pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>(nullptr); }
-    pxr::UsdUsdzFileFormat* rawPtr = static_cast<pxr::UsdUsdzFileFormat*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
-    return pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>(rawPtr);
-}
-pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>_nullWeakPtr__ZN3pxr17UsdUsdzFileFormatE() {
-    return pxr::TfWeakPtr<pxr::UsdUsdzFileFormat>(nullptr);
-}
-bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdUsdzFileFormat> & p) {
-    return (bool)p;
-}
-bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdUsdzFileFormat> & p) {
-    return (bool)p;}
-
 void* _Nonnull _address(pxr::UsdHydraDiscoveryPlugin* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
@@ -1715,6 +1657,14 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdHydraDiscoveryPlugin> & p) {
 }
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdHydraDiscoveryPlugin> & p) {
     return (bool)p;}
+
+void* _Nonnull _address(pxr::VdfExecutionTypeRegistry* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+
+void* _Nonnull _address(pxr::ExecTypeRegistry* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
 void* _Nonnull _address(pxr::GarchGLPlatformDebugContext* _Nonnull x) {
@@ -2541,6 +2491,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdNoticeBatchingSceneIndex> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdNoticeBatchingSceneIndex> & p) {
     return (bool)p;}
 
+void* _Nonnull _address(pxr::HdCachingSceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::HdCachingSceneIndex> _asRefPtrType(pxr::HdCachingSceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::HdCachingSceneIndex>(x);
+}
+pxr::HdCachingSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdCachingSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::HdCachingSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdCachingSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::HdCachingSceneIndex* result = const_cast<pxr::HdCachingSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::HdCachingSceneIndex * _Nullable _fromRawPointer__ZN3pxr19HdCachingSceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::HdCachingSceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::HdCachingSceneIndex>_nullRefPtr__ZN3pxr19HdCachingSceneIndexE() {
+    return pxr::TfRefPtr<pxr::HdCachingSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdCachingSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdCachingSceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex> _asWeakPtrType(pxr::HdCachingSceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::HdCachingSceneIndex>(x);
+}
+pxr::HdCachingSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::HdCachingSceneIndex>(x));
+}
+pxr::HdCachingSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdCachingSceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::HdCachingSceneIndex * result = const_cast<pxr::HdCachingSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex>_fromAnyWeakPtr__ZN3pxr19HdCachingSceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::HdCachingSceneIndex>(nullptr); }
+    pxr::HdCachingSceneIndex* rawPtr = static_cast<pxr::HdCachingSceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::HdCachingSceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::HdCachingSceneIndex>_nullWeakPtr__ZN3pxr19HdCachingSceneIndexE() {
+    return pxr::TfWeakPtr<pxr::HdCachingSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdCachingSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdCachingSceneIndex> & p) {
+    return (bool)p;}
+
 void* _Nonnull _address(pxr::HdDependencyForwardingSceneIndex* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
@@ -3073,6 +3081,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiDebuggingSceneIndex> & p) {
     return (bool)p;
 }
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiDebuggingSceneIndex> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> _asRefPtrType(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(x);
+}
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiDomeLightCameraVisibilitySceneIndex* result = const_cast<pxr::HdsiDomeLightCameraVisibilitySceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromRawPointer__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_nullRefPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE() {
+    return pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> _asWeakPtrType(pxr::HdsiDomeLightCameraVisibilitySceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(x);
+}
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(x));
+}
+pxr::HdsiDomeLightCameraVisibilitySceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiDomeLightCameraVisibilitySceneIndex * result = const_cast<pxr::HdsiDomeLightCameraVisibilitySceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_fromAnyWeakPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(nullptr); }
+    pxr::HdsiDomeLightCameraVisibilitySceneIndex* rawPtr = static_cast<pxr::HdsiDomeLightCameraVisibilitySceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>_nullWeakPtr__ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE() {
+    return pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiDomeLightCameraVisibilitySceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiDomeLightCameraVisibilitySceneIndex> & p) {
     return (bool)p;}
 
 void* _Nonnull _address(pxr::HdsiExtComputationDependencySceneIndex* _Nonnull x) {
@@ -4233,6 +4299,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiTetMeshConversionSceneIndex> & p) 
     return (bool)p;
 }
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiTetMeshConversionSceneIndex> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> _asRefPtrType(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(x);
+}
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiUnboundMaterialPruningSceneIndex* result = const_cast<pxr::HdsiUnboundMaterialPruningSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromRawPointer__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::HdsiUnboundMaterialPruningSceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_nullRefPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE() {
+    return pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> _asWeakPtrType(pxr::HdsiUnboundMaterialPruningSceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(x);
+}
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(x));
+}
+pxr::HdsiUnboundMaterialPruningSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiUnboundMaterialPruningSceneIndex * result = const_cast<pxr::HdsiUnboundMaterialPruningSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_fromAnyWeakPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(nullptr); }
+    pxr::HdsiUnboundMaterialPruningSceneIndex* rawPtr = static_cast<pxr::HdsiUnboundMaterialPruningSceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>_nullWeakPtr__ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE() {
+    return pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiUnboundMaterialPruningSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiUnboundMaterialPruningSceneIndex> & p) {
     return (bool)p;}
 
 void* _Nonnull _address(pxr::HdsiVelocityMotionResolvingSceneIndex* _Nonnull x) {

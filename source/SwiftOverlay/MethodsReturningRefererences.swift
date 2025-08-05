@@ -149,6 +149,11 @@ extension pxr.UsdPrim {
     public func GetTypeName() -> pxr.TfToken {
         __GetTypeNameUnsafe().pointee
     }
+
+    @_documentation(visibility: internal)
+    public func GetAppliedSchemas() -> pxr.TfTokenVector {
+        __GetAppliedSchemasUnsafe().pointee
+    }
 }
 
 extension pxr.UsdStage {

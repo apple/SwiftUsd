@@ -679,6 +679,11 @@ extension pxr.TsSplineSampleSource: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.TsTangentAlgorithm: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.TsAntiRegressionMode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -745,6 +750,11 @@ extension pxr.SdfUnregisteredValue: CustomStringConvertible {
     }
 }
 extension pxr.SdfValueBlock: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.SdfAnimationBlock: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -930,11 +940,6 @@ extension pxr.SdfVariantSpecHandle: CustomStringConvertible {
     }
 }
 extension pxr.SdfVariantSpec: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.NdrVersionFilter: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1230,6 +1235,91 @@ extension pxr.UsdPhysicsAxis: CustomStringConvertible {
     }
 }
 extension pxr.UsdPhysicsJointDOF: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfInputSpec.Access: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfMask: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfVector.ConstructBoxedCopyTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfVector.DebugPrintable: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfIndexedWeights: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfExecutionStats.EventType: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfMaskedIteratorMode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfDataManagerDeallocationMode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfGrapherOptions.DisplayStyle: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfObjectPtr: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfObjectPtr.`Type`: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfIndexedWeightsOperand.SetOperation: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfSparseInputTraverser.CallbackMode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfSparseVectorizedInputTraverser.CallbackMode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.EfTime: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.EfTimeInterval: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.ExecProviderResolution.DynamicTraversal: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }

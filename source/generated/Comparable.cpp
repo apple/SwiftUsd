@@ -244,6 +244,46 @@ bool __Overlay::operatorLess(const pxr::SdfTextFileFormatRefPtr& l,
                              const pxr::SdfTextFileFormatRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::SdfUsdFileFormat& l,
+                             const pxr::SdfUsdFileFormat& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdFileFormatRefPtr& l,
+                             const pxr::SdfUsdFileFormatRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdaData& l,
+                             const pxr::SdfUsdaData& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdaDataRefPtr& l,
+                             const pxr::SdfUsdaDataRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdaFileFormat& l,
+                             const pxr::SdfUsdaFileFormat& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdaFileFormatRefPtr& l,
+                             const pxr::SdfUsdaFileFormatRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdcFileFormat& l,
+                             const pxr::SdfUsdcFileFormat& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdcFileFormatRefPtr& l,
+                             const pxr::SdfUsdcFileFormatRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdzFileFormat& l,
+                             const pxr::SdfUsdzFileFormat& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdfUsdzFileFormatRefPtr& l,
+                             const pxr::SdfUsdzFileFormatRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::SdfVariantSetSpecHandle& l,
                              const pxr::SdfVariantSetSpecHandle& r) {
     return l < r;
@@ -260,22 +300,6 @@ bool __Overlay::operatorLess(const pxr::SdfVariantSpec& l,
                              const pxr::SdfVariantSpec& r) {
     return l < r;
 }
-bool __Overlay::operatorLess(const pxr::NdrVersion& l,
-                             const pxr::NdrVersion& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::NdrDiscoveryPluginContext& l,
-                             const pxr::NdrDiscoveryPluginContext& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::NdrDiscoveryPlugin& l,
-                             const pxr::NdrDiscoveryPlugin& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::NdrDiscoveryPluginRefPtr& l,
-                             const pxr::NdrDiscoveryPluginRefPtr& r) {
-    return l < r;
-}
 bool __Overlay::operatorLess(const pxr::SdrVersion& l,
                              const pxr::SdrVersion& r) {
     return l < r;
@@ -287,6 +311,10 @@ bool __Overlay::operatorLess(const pxr::SdrDiscoveryPluginContext& l,
 bool __Overlay::operatorLess(const pxr::SdrDiscoveryPlugin& l,
                              const pxr::SdrDiscoveryPlugin& r) {
     return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::SdrDiscoveryPluginRefPtr& l,
+                             const pxr::SdrDiscoveryPluginRefPtr& r) {
+    return l < r;
 }
 bool __Overlay::operatorLess(const pxr::SdrRegistry& l,
                              const pxr::SdrRegistry& r) {
@@ -348,44 +376,20 @@ bool __Overlay::operatorLess(const pxr::UsdStageCache::Id& l,
                              const pxr::UsdStageCache::Id& r) {
     return l < r;
 }
-bool __Overlay::operatorLess(const pxr::UsdUsdFileFormatRefPtr& l,
-                             const pxr::UsdUsdFileFormatRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdFileFormat& l,
-                             const pxr::UsdUsdFileFormat& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdaFileFormatRefPtr& l,
-                             const pxr::UsdUsdaFileFormatRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdaFileFormat& l,
-                             const pxr::UsdUsdaFileFormat& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdcFileFormatRefPtr& l,
-                             const pxr::UsdUsdcFileFormatRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdcFileFormat& l,
-                             const pxr::UsdUsdcFileFormat& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdzFileFormatRefPtr& l,
-                             const pxr::UsdUsdzFileFormatRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::UsdUsdzFileFormat& l,
-                             const pxr::UsdUsdzFileFormat& r) {
-    return &l < &r;
-}
 bool __Overlay::operatorLess(const pxr::UsdGeomPrimvar& l,
                              const pxr::UsdGeomPrimvar& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::UsdHydraDiscoveryPlugin& l,
                              const pxr::UsdHydraDiscoveryPlugin& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::VdfExecutionTypeRegistry& l,
+                             const pxr::VdfExecutionTypeRegistry& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::ExecTypeRegistry& l,
+                             const pxr::ExecTypeRegistry& r) {
     return &l < &r;
 }
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -525,6 +529,14 @@ bool __Overlay::operatorLess(const pxr::HdNoticeBatchingSceneIndexRefPtr& l,
                              const pxr::HdNoticeBatchingSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdCachingSceneIndex& l,
+                             const pxr::HdCachingSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdCachingSceneIndexRefPtr& l,
+                             const pxr::HdCachingSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdDependencyForwardingSceneIndex& l,
                              const pxr::HdDependencyForwardingSceneIndex& r) {
     return &l < &r;
@@ -603,6 +615,14 @@ bool __Overlay::operatorLess(const pxr::HdsiDebuggingSceneIndex& l,
 }
 bool __Overlay::operatorLess(const pxr::HdsiDebuggingSceneIndexRefPtr& l,
                              const pxr::HdsiDebuggingSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiDomeLightCameraVisibilitySceneIndex& l,
+                             const pxr::HdsiDomeLightCameraVisibilitySceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& l,
+                             const pxr::HdsiDomeLightCameraVisibilitySceneIndexRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdsiExtComputationDependencySceneIndex& l,
@@ -763,6 +783,14 @@ bool __Overlay::operatorLess(const pxr::HdsiTetMeshConversionSceneIndex& l,
 }
 bool __Overlay::operatorLess(const pxr::HdsiTetMeshConversionSceneIndexRefPtr& l,
                              const pxr::HdsiTetMeshConversionSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiUnboundMaterialPruningSceneIndex& l,
+                             const pxr::HdsiUnboundMaterialPruningSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& l,
+                             const pxr::HdsiUnboundMaterialPruningSceneIndexRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdsiVelocityMotionResolvingSceneIndex& l,

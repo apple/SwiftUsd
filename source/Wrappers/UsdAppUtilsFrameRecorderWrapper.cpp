@@ -11,8 +11,9 @@
 #include "swiftUsd/Wrappers/UsdAppUtilsFrameRecorderWrapper.h"
 
 Overlay::UsdAppUtilsFrameRecorderWrapper::UsdAppUtilsFrameRecorderWrapper(const pxr::TfToken& rendererPluginId,
-                                                                          bool gpuEnabled) :
-_impl(std::make_shared<pxr::UsdAppUtilsFrameRecorder>(rendererPluginId, gpuEnabled)) {}
+                                                                          bool gpuEnabled,
+                                                                          bool enableUsdDrawModes) :
+_impl(std::make_shared<pxr::UsdAppUtilsFrameRecorder>(rendererPluginId, gpuEnabled, enableUsdDrawModes)) {}
 
 pxr::TfToken Overlay::UsdAppUtilsFrameRecorderWrapper::GetCurrentRendererId() const {
     return _impl->GetCurrentRendererId();
@@ -52,6 +53,10 @@ void Overlay::UsdAppUtilsFrameRecorderWrapper::SetDomeLightVisibility(bool domeL
 
 void Overlay::UsdAppUtilsFrameRecorderWrapper::SetIncludedPurposes(const pxr::TfTokenVector &purposes) {
     _impl->SetIncludedPurposes(purposes);
+}
+
+void Overlay::UsdAppUtilsFrameRecorderWrapper::SetPrimaryCameraPrimPath(const pxr::SdfPath& cameraPath) {
+    _impl->SetPrimaryCameraPrimPath(cameraPath);
 }
 
 bool Overlay::UsdAppUtilsFrameRecorderWrapper::Record(const pxr::UsdStagePtr &stage,

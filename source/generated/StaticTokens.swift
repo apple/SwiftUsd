@@ -45,6 +45,18 @@ extension pxr.TfToken {
     public static var SdfTextFileFormatTokens: pxr.SdfTextFileFormatTokens_StaticTokenType {
         __Overlay.SdfTextFileFormatTokens.pointee
     }
+    public static var SdfUsdFileFormatTokens: pxr.SdfUsdFileFormatTokens_StaticTokenType {
+        __Overlay.SdfUsdFileFormatTokens.pointee
+    }
+    public static var SdfUsdaFileFormatTokens: pxr.SdfUsdaFileFormatTokens_StaticTokenType {
+        __Overlay.SdfUsdaFileFormatTokens.pointee
+    }
+    public static var SdfUsdcFileFormatTokens: pxr.SdfUsdcFileFormatTokens_StaticTokenType {
+        __Overlay.SdfUsdcFileFormatTokens.pointee
+    }
+    public static var SdfUsdzFileFormatTokens: pxr.SdfUsdzFileFormatTokens_StaticTokenType {
+        __Overlay.SdfUsdzFileFormatTokens.pointee
+    }
     public static var SdrPropertyTypes: pxr.SdrPropertyTypes_StaticTokenType {
         __Overlay.SdrPropertyTypes.pointee
     }
@@ -149,6 +161,15 @@ extension pxr.TfToken {
         __Overlay.UsdMtlxTokens.pointee
     }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT)
+    public static var VdfTokens: pxr.VdfTokens_StaticTokenType {
+        __Overlay.VdfTokens.pointee
+    }
+    public static var EfLeafTokens: pxr.EfLeafTokens_StaticTokenType {
+        __Overlay.EfLeafTokens.pointee
+    }
+    public static var ExecGeomXformableTokens: pxr.ExecGeomXformableTokens_StaticTokenType {
+        __Overlay.ExecGeomXformableTokens.pointee
+    }
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
     public static var HioGlslfxTokens: pxr.HioGlslfxTokens_StaticTokenType {
         __Overlay.HioGlslfxTokens.pointee
@@ -501,6 +522,9 @@ extension pxr.TfToken {
     public static var HdGpGenerativeProceduralTokens: pxr.HdGpGenerativeProceduralTokens_StaticTokenType {
         __Overlay.HdGpGenerativeProceduralTokens.pointee
     }
+    public static var HdsiDomeLightCameraVisibilitySceneIndexTokens: pxr.HdsiDomeLightCameraVisibilitySceneIndexTokens_StaticTokenType {
+        __Overlay.HdsiDomeLightCameraVisibilitySceneIndexTokens.pointee
+    }
     public static var HdsiImplicitSurfaceSceneIndexTokens: pxr.HdsiImplicitSurfaceSceneIndexTokens_StaticTokenType {
         __Overlay.HdsiImplicitSurfaceSceneIndexTokens.pointee
     }
@@ -524,6 +548,9 @@ extension pxr.TfToken {
     }
     public static var HdsiRenderSettingsFilteringSceneIndexTokens: pxr.HdsiRenderSettingsFilteringSceneIndexTokens_StaticTokenType {
         __Overlay.HdsiRenderSettingsFilteringSceneIndexTokens.pointee
+    }
+    public static var HdsiUnboundMaterialPruningSceneIndexTokens: pxr.HdsiUnboundMaterialPruningSceneIndexTokens_StaticTokenType {
+        __Overlay.HdsiUnboundMaterialPruningSceneIndexTokens.pointee
     }
     public static var HdsiVelocityMotionResolvingSceneIndexTokens: pxr.HdsiVelocityMotionResolvingSceneIndexTokens_StaticTokenType {
         __Overlay.HdsiVelocityMotionResolvingSceneIndexTokens.pointee

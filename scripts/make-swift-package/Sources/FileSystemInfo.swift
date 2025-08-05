@@ -95,6 +95,8 @@ struct FileSystemInfo {
             "ar", "kind", "sdf", "ndr", "sdr", "pcp", "usd", "usdGeom", "usdVol", "usdMedia",
             "usdShade", "usdLux", "usdProc", "usdRender", "usdHydra", "usdRi", "usdSemantics",
             "usdSkel", "usdUI", "usdUtils", "usdPhysics", "usdMtlx",
+            // exec
+            "vdf", "ef", "esf", "esfUsd", "exec", "execUsd", "execGeom",
             // imaging
             "garch", "hf", "hio", "cameraUtil", "pxOsd", "geomUtil", "glf", "hgi",
             "hgiGL", "hgiMetal", "hgiInterop", "hd", "hdar", "hdGp", "hdsi", "hdMtlx", "hioOpenVDB",
@@ -331,9 +333,13 @@ extension FileSystemInfo {
                 result = "O" + result.dropFirst()
             }
             
-            // Osd and MaterialX use symlink versioning (e.g. OsdCPU.3.6.0), so strip that out
+            // Osd, MaterialX, and OpenVDB use symlink versioning (e.g. OsdCPU.3.6.0), so strip that out
             if let match = result.wholeMatch(of: #/([^.]*)(\.\d+)+/#) {
                 result = String(match.output.1)
+            }
+
+            if result == "openvdb" {
+                result = "OpenVDB"
             }
             
             return result

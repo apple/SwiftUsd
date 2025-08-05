@@ -20,6 +20,10 @@ const pxr::SdfFieldKeys_StaticTokenType* const __Overlay::SdfFieldKeys = pxr::Sd
 const pxr::SdfChildrenKeys_StaticTokenType* const __Overlay::SdfChildrenKeys = pxr::SdfChildrenKeys.Get();
 const pxr::SdfFileFormatTokens_StaticTokenType* const __Overlay::SdfFileFormatTokens = pxr::SdfFileFormatTokens.Get();
 const pxr::SdfTextFileFormatTokens_StaticTokenType* const __Overlay::SdfTextFileFormatTokens = pxr::SdfTextFileFormatTokens.Get();
+const pxr::SdfUsdFileFormatTokens_StaticTokenType* const __Overlay::SdfUsdFileFormatTokens = pxr::SdfUsdFileFormatTokens.Get();
+const pxr::SdfUsdaFileFormatTokens_StaticTokenType* const __Overlay::SdfUsdaFileFormatTokens = pxr::SdfUsdaFileFormatTokens.Get();
+const pxr::SdfUsdcFileFormatTokens_StaticTokenType* const __Overlay::SdfUsdcFileFormatTokens = pxr::SdfUsdcFileFormatTokens.Get();
+const pxr::SdfUsdzFileFormatTokens_StaticTokenType* const __Overlay::SdfUsdzFileFormatTokens = pxr::SdfUsdzFileFormatTokens.Get();
 const pxr::SdrPropertyTypes_StaticTokenType* const __Overlay::SdrPropertyTypes = pxr::SdrPropertyTypes.Get();
 const pxr::SdrPropertyMetadata_StaticTokenType* const __Overlay::SdrPropertyMetadata = pxr::SdrPropertyMetadata.Get();
 const pxr::SdrPropertyRole_StaticTokenType* const __Overlay::SdrPropertyRole = pxr::SdrPropertyRole.Get();
@@ -56,6 +60,9 @@ const pxr::UsdPhysicsTokensType* const __Overlay::UsdPhysicsTokens = pxr::UsdPhy
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
 const pxr::UsdMtlxTokensType* const __Overlay::UsdMtlxTokens = pxr::UsdMtlxTokens.Get();
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+const pxr::VdfTokens_StaticTokenType* const __Overlay::VdfTokens = pxr::VdfTokens.Get();
+const pxr::EfLeafTokens_StaticTokenType* const __Overlay::EfLeafTokens = pxr::EfLeafTokens.Get();
+const pxr::ExecGeomXformableTokens_StaticTokenType* const __Overlay::ExecGeomXformableTokens = pxr::ExecGeomXformableTokens.Get();
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 const pxr::HioGlslfxTokens_StaticTokenType* const __Overlay::HioGlslfxTokens = pxr::HioGlslfxTokens.Get();
 const pxr::HioGlslfxResourceLayoutTokens_StaticTokenType* const __Overlay::HioGlslfxResourceLayoutTokens = pxr::HioGlslfxResourceLayoutTokens.Get();
@@ -174,6 +181,7 @@ const pxr::HdVolumeFieldSchemaTokens_StaticTokenType* const __Overlay::HdVolumeF
 const pxr::HdXformSchemaTokens_StaticTokenType* const __Overlay::HdXformSchemaTokens = pxr::HdXformSchemaTokens.Get();
 const pxr::HdarSystemSchemaTokens_StaticTokenType* const __Overlay::HdarSystemSchemaTokens = pxr::HdarSystemSchemaTokens.Get();
 const pxr::HdGpGenerativeProceduralTokens_StaticTokenType* const __Overlay::HdGpGenerativeProceduralTokens = pxr::HdGpGenerativeProceduralTokens.Get();
+const pxr::HdsiDomeLightCameraVisibilitySceneIndexTokens_StaticTokenType* const __Overlay::HdsiDomeLightCameraVisibilitySceneIndexTokens = pxr::HdsiDomeLightCameraVisibilitySceneIndexTokens.Get();
 const pxr::HdsiImplicitSurfaceSceneIndexTokens_StaticTokenType* const __Overlay::HdsiImplicitSurfaceSceneIndexTokens = pxr::HdsiImplicitSurfaceSceneIndexTokens.Get();
 const pxr::HdsiLightLinkingSceneIndexTokens_StaticTokenType* const __Overlay::HdsiLightLinkingSceneIndexTokens = pxr::HdsiLightLinkingSceneIndexTokens.Get();
 const pxr::HdsiPrefixPathPruningSceneIndexTokens_StaticTokenType* const __Overlay::HdsiPrefixPathPruningSceneIndexTokens = pxr::HdsiPrefixPathPruningSceneIndexTokens.Get();
@@ -182,6 +190,7 @@ const pxr::HdsiPrimTypeAndPathPruningSceneIndexTokens_StaticTokenType* const __O
 const pxr::HdsiPrimTypeNoticeBatchingSceneIndexTokens_StaticTokenType* const __Overlay::HdsiPrimTypeNoticeBatchingSceneIndexTokens = pxr::HdsiPrimTypeNoticeBatchingSceneIndexTokens.Get();
 const pxr::HdsiPrimTypePruningSceneIndexTokens_StaticTokenType* const __Overlay::HdsiPrimTypePruningSceneIndexTokens = pxr::HdsiPrimTypePruningSceneIndexTokens.Get();
 const pxr::HdsiRenderSettingsFilteringSceneIndexTokens_StaticTokenType* const __Overlay::HdsiRenderSettingsFilteringSceneIndexTokens = pxr::HdsiRenderSettingsFilteringSceneIndexTokens.Get();
+const pxr::HdsiUnboundMaterialPruningSceneIndexTokens_StaticTokenType* const __Overlay::HdsiUnboundMaterialPruningSceneIndexTokens = pxr::HdsiUnboundMaterialPruningSceneIndexTokens.Get();
 const pxr::HdsiVelocityMotionResolvingSceneIndexTokens_StaticTokenType* const __Overlay::HdsiVelocityMotionResolvingSceneIndexTokens = pxr::HdsiVelocityMotionResolvingSceneIndexTokens.Get();
 const pxr::HdStDrawTargetTokens_StaticTokenType* const __Overlay::HdStDrawTargetTokens = pxr::HdStDrawTargetTokens.Get();
 const pxr::HdStGLSLProgramTokens_StaticTokenType* const __Overlay::HdStGLSLProgramTokens = pxr::HdStGLSLProgramTokens.Get();

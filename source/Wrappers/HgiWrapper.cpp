@@ -139,6 +139,10 @@ void Overlay::HgiWrapper::EndFrame() {
     get()->EndFrame();
 }
 
+void Overlay::HgiWrapper::GarbageCollect() {
+    get()->GarbageCollect();
+}
+
 // MARK: SwiftUsd implementation access
 
 Overlay::HgiWrapper::HgiWrapper(std::shared_ptr<pxr::Hgi> _ptr) : _ptr(_ptr) {}

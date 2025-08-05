@@ -341,40 +341,94 @@ extension __SwiftUsd_Typedef___ZN3pxr17SdfTextFileFormatE_ConstWeakPtr: Overlay.
     public typealias _TfWeakBaseType = pxr.SdfTextFileFormat
 }
 
-extension pxr.NdrDiscoveryPluginContext: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.NdrDiscoveryPluginContext
+extension pxr.SdfUsdFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfUsdFileFormat
 }
-extension pxr.NdrDiscoveryPluginContext: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.NdrDiscoveryPluginContext
+extension pxr.SdfUsdFileFormat: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdFileFormat
 }
-extension __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.NdrDiscoveryPluginContext
+extension __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdFileFormat
 }
-extension pxr.NdrDiscoveryPluginContext: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.NdrDiscoveryPluginContext
+extension pxr.SdfUsdFileFormat: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdFileFormat
 }
-extension __SwiftUsd_Typedef___ZN3pxr25NdrDiscoveryPluginContextE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.NdrDiscoveryPluginContext
+extension __SwiftUsd_Typedef___ZN3pxr16SdfUsdFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdFileFormat
 }
 
-extension pxr.NdrDiscoveryPlugin: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.NdrDiscoveryPlugin
+extension pxr.SdfUsdaData: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfUsdaData
 }
-extension pxr.NdrDiscoveryPlugin: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.NdrDiscoveryPlugin
+extension pxr.SdfUsdaData: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdaData
 }
-extension __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.NdrDiscoveryPlugin
+extension __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdaData
 }
-extension pxr.NdrDiscoveryPlugin: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.NdrDiscoveryPlugin
+extension pxr.SdfUsdaData: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdaData
 }
-extension __SwiftUsd_Typedef___ZN3pxr18NdrDiscoveryPluginE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.NdrDiscoveryPlugin
+extension __SwiftUsd_Typedef___ZN3pxr11SdfUsdaDataE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdaData
+}
+
+extension pxr.SdfUsdaFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfUsdaFileFormat
+}
+extension pxr.SdfUsdaFileFormat: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdaFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdaFileFormat
+}
+extension pxr.SdfUsdaFileFormat: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdaFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdaFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdaFileFormat
+}
+
+extension pxr.SdfUsdcFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfUsdcFileFormat
+}
+extension pxr.SdfUsdcFileFormat: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdcFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdcFileFormat
+}
+extension pxr.SdfUsdcFileFormat: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdcFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdcFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdcFileFormat
+}
+
+extension pxr.SdfUsdzFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfUsdzFileFormat
+}
+extension pxr.SdfUsdzFileFormat: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdzFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.SdfUsdzFileFormat
+}
+extension pxr.SdfUsdzFileFormat: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdzFileFormat
+}
+extension __SwiftUsd_Typedef___ZN3pxr17SdfUsdzFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfUsdzFileFormat
 }
 
 extension pxr.SdrDiscoveryPluginContext: Overlay._SwiftUsdReferenceTypeProtocol {
@@ -473,78 +527,6 @@ extension __SwiftUsd_Typedef___ZN3pxr8UsdStageE_ConstWeakPtr: Overlay._TfConstWe
     public typealias _TfWeakBaseType = pxr.UsdStage
 }
 
-extension pxr.UsdUsdFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.UsdUsdFileFormat
-}
-extension pxr.UsdUsdFileFormat: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdFileFormat
-}
-extension pxr.UsdUsdFileFormat: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr16UsdUsdFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdFileFormat
-}
-
-extension pxr.UsdUsdaFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.UsdUsdaFileFormat
-}
-extension pxr.UsdUsdaFileFormat: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdaFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdaFileFormat
-}
-extension pxr.UsdUsdaFileFormat: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdaFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdaFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdaFileFormat
-}
-
-extension pxr.UsdUsdcFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.UsdUsdcFileFormat
-}
-extension pxr.UsdUsdcFileFormat: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdcFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdcFileFormat
-}
-extension pxr.UsdUsdcFileFormat: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdcFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdcFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdcFileFormat
-}
-
-extension pxr.UsdUsdzFileFormat: Overlay._SwiftUsdReferenceTypeProtocol {
-    public typealias _SelfType = pxr.UsdUsdzFileFormat
-}
-extension pxr.UsdUsdzFileFormat: Overlay._TfRefBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_RefPtr: Overlay._TfRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdzFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
-    public typealias _TfRefBaseType = pxr.UsdUsdzFileFormat
-}
-extension pxr.UsdUsdzFileFormat: Overlay._TfWeakBaseProtocol {}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_WeakPtr: Overlay._TfWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdzFileFormat
-}
-extension __SwiftUsd_Typedef___ZN3pxr17UsdUsdzFileFormatE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
-    public typealias _TfWeakBaseType = pxr.UsdUsdzFileFormat
-}
-
 extension pxr.UsdHydraDiscoveryPlugin: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.UsdHydraDiscoveryPlugin
 }
@@ -562,6 +544,16 @@ extension __SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_WeakPtr: Overlay
 extension __SwiftUsd_Typedef___ZN3pxr23UsdHydraDiscoveryPluginE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
     public typealias _TfWeakBaseType = pxr.UsdHydraDiscoveryPlugin
 }
+
+extension pxr.VdfExecutionTypeRegistry: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.VdfExecutionTypeRegistry
+}
+extension pxr.VdfExecutionTypeRegistry: Overlay._SwiftUsdImmortalReferenceTypeProtocol {}
+
+extension pxr.ExecTypeRegistry: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.ExecTypeRegistry
+}
+extension pxr.ExecTypeRegistry: Overlay._SwiftUsdImmortalReferenceTypeProtocol {}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 
 extension pxr.GarchGLPlatformDebugContext: Overlay._SwiftUsdReferenceTypeProtocol {
@@ -831,6 +823,24 @@ extension __SwiftUsd_Typedef___ZN3pxr26HdNoticeBatchingSceneIndexE_ConstWeakPtr:
     public typealias _TfWeakBaseType = pxr.HdNoticeBatchingSceneIndex
 }
 
+extension pxr.HdCachingSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.HdCachingSceneIndex
+}
+extension pxr.HdCachingSceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdCachingSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdCachingSceneIndex
+}
+extension pxr.HdCachingSceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdCachingSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr19HdCachingSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdCachingSceneIndex
+}
+
 extension pxr.HdDependencyForwardingSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.HdDependencyForwardingSceneIndex
 }
@@ -1006,6 +1016,24 @@ extension __SwiftUsd_Typedef___ZN3pxr23HdsiDebuggingSceneIndexE_WeakPtr: Overlay
 }
 extension __SwiftUsd_Typedef___ZN3pxr23HdsiDebuggingSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
     public typealias _TfWeakBaseType = pxr.HdsiDebuggingSceneIndex
+}
+
+extension pxr.HdsiDomeLightCameraVisibilitySceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.HdsiDomeLightCameraVisibilitySceneIndex
+}
+extension pxr.HdsiDomeLightCameraVisibilitySceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiDomeLightCameraVisibilitySceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiDomeLightCameraVisibilitySceneIndex
+}
+extension pxr.HdsiDomeLightCameraVisibilitySceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiDomeLightCameraVisibilitySceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr39HdsiDomeLightCameraVisibilitySceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiDomeLightCameraVisibilitySceneIndex
 }
 
 extension pxr.HdsiExtComputationDependencySceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
@@ -1366,6 +1394,24 @@ extension __SwiftUsd_Typedef___ZN3pxr31HdsiTetMeshConversionSceneIndexE_WeakPtr:
 }
 extension __SwiftUsd_Typedef___ZN3pxr31HdsiTetMeshConversionSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
     public typealias _TfWeakBaseType = pxr.HdsiTetMeshConversionSceneIndex
+}
+
+extension pxr.HdsiUnboundMaterialPruningSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.HdsiUnboundMaterialPruningSceneIndex
+}
+extension pxr.HdsiUnboundMaterialPruningSceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiUnboundMaterialPruningSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiUnboundMaterialPruningSceneIndex
+}
+extension pxr.HdsiUnboundMaterialPruningSceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiUnboundMaterialPruningSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr36HdsiUnboundMaterialPruningSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiUnboundMaterialPruningSceneIndex
 }
 
 extension pxr.HdsiVelocityMotionResolvingSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {

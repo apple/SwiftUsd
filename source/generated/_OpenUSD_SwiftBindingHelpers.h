@@ -24,7 +24,6 @@
 #include "pxr/base/gf/transform.h"
 #include "pxr/base/tf/type.h"
 #include "pxr/usd/ar/resolvedPath.h"
-#include "pxr/usd/ndr/node.h"
 #include "pxr/usd/sdf/attributeSpec.h"
 #include "pxr/usd/sdf/fileFormat.h"
 #include "pxr/usd/sdf/layer.h"
@@ -34,7 +33,10 @@
 #include "pxr/usd/sdf/pseudoRootSpec.h"
 #include "pxr/usd/sdf/relationshipSpec.h"
 #include "pxr/usd/sdf/textFileFormat.h"
-#include "pxr/usd/sdr/shaderNode.h"
+#include "pxr/usd/sdf/usdFileFormat.h"
+#include "pxr/usd/sdf/usdaFileFormat.h"
+#include "pxr/usd/sdf/usdcFileFormat.h"
+#include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/usd/attribute.h"
 #include "pxr/usd/usd/object.h"
 #include "pxr/usd/usd/payloads.h"
@@ -42,10 +44,6 @@
 #include "pxr/usd/usd/property.h"
 #include "pxr/usd/usd/references.h"
 #include "pxr/usd/usd/relationship.h"
-#include "pxr/usd/usd/usdFileFormat.h"
-#include "pxr/usd/usd/usdaFileFormat.h"
-#include "pxr/usd/usd/usdcFileFormat.h"
-#include "pxr/usd/usd/usdzFileFormat.h"
 #include "pxr/usd/usdShade/input.h"
 #include "pxr/usd/usdShade/materialBindingAPI.h"
 #include "pxr/usd/usdShade/output.h"
@@ -53,139 +51,139 @@
 typedef pxr::GfBBox3d __SwiftUsdImportAsMemberTypedef___ZN3pxr8GfBBox3dE;
 /// Returns the range of the axis-aligned untransformed box.
 /// This synonym of \c GetRange exists for compatibility purposes.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/bbox3d.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/bbox3d.h
 pxr::GfRange3d __SwiftUsdImportAsMemberReplacement___ZN3pxr8GfBBox3dE__GetBox(pxr::GfBBox3d const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8GfBBox3dE.GetBox(self:));
 
 // Returns the transformation matrix.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/bbox3d.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/bbox3d.h
 pxr::GfMatrix4d __SwiftUsdImportAsMemberReplacement___ZN3pxr8GfBBox3dE__GetMatrix(pxr::GfBBox3d const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8GfBBox3dE.GetMatrix(self:));
 
 typedef pxr::GfDualQuatd __SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatdE;
 // Returns the real part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuatd.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuatd.h
 pxr::GfQuatd __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuatdE__GetReal(pxr::GfDualQuatd const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatdE.GetReal(self:));
 
 // Returns the dual part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuatd.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuatd.h
 pxr::GfQuatd __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuatdE__GetDual(pxr::GfDualQuatd const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatdE.GetDual(self:));
 
 typedef pxr::GfDualQuatf __SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatfE;
 // Returns the real part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuatf.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuatf.h
 pxr::GfQuatf __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuatfE__GetReal(pxr::GfDualQuatf const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatfE.GetReal(self:));
 
 // Returns the dual part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuatf.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuatf.h
 pxr::GfQuatf __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuatfE__GetDual(pxr::GfDualQuatf const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuatfE.GetDual(self:));
 
 typedef pxr::GfDualQuath __SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuathE;
 // Returns the real part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuath.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuath.h
 pxr::GfQuath __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuathE__GetReal(pxr::GfDualQuath const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuathE.GetReal(self:));
 
 // Returns the dual part of the dual quaternion.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/dualQuath.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/dualQuath.h
 pxr::GfQuath __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfDualQuathE__GetDual(pxr::GfDualQuath const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfDualQuathE.GetDual(self:));
 
 typedef pxr::GfFrustum __SwiftUsdImportAsMemberTypedef___ZN3pxr9GfFrustumE;
 // Returns the position of the frustum in world space.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/frustum.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/frustum.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr9GfFrustumE__GetPosition(pxr::GfFrustum const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr9GfFrustumE.GetPosition(self:));
 
 /// Returns the orientation of the frustum in world space as a rotation to
 /// apply to the -z axis.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/frustum.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/frustum.h
 pxr::GfRotation __SwiftUsdImportAsMemberReplacement___ZN3pxr9GfFrustumE__GetRotation(pxr::GfFrustum const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr9GfFrustumE.GetRotation(self:));
 
 // Returns the window rectangle in the reference plane.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/frustum.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/frustum.h
 pxr::GfRange2d __SwiftUsdImportAsMemberReplacement___ZN3pxr9GfFrustumE__GetWindow(pxr::GfFrustum const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr9GfFrustumE.GetWindow(self:));
 
 // Returns the near/far interval.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/frustum.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/frustum.h
 pxr::GfRange1d __SwiftUsdImportAsMemberReplacement___ZN3pxr9GfFrustumE__GetNearFar(pxr::GfFrustum const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr9GfFrustumE.GetNearFar(self:));
 
 typedef pxr::GfPlane __SwiftUsdImportAsMemberTypedef___ZN3pxr7GfPlaneE;
 // Returns the unit-length normal vector of the plane.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/plane.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/plane.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr7GfPlaneE__GetNormal(pxr::GfPlane const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7GfPlaneE.GetNormal(self:));
 
 typedef pxr::GfRay __SwiftUsdImportAsMemberTypedef___ZN3pxr5GfRayE;
 // Returns the starting point of the segment.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/ray.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/ray.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr5GfRayE__GetStartPoint(pxr::GfRay const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr5GfRayE.GetStartPoint(self:));
 
 /// Returns the direction vector of the segment. This is not guaranteed to
 /// be unit length.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/ray.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/ray.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr5GfRayE__GetDirection(pxr::GfRay const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr5GfRayE.GetDirection(self:));
 
 typedef pxr::GfLine __SwiftUsdImportAsMemberTypedef___ZN3pxr6GfLineE;
 // Return the normalized direction of the line.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/line.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/line.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr6GfLineE__GetDirection(pxr::GfLine const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr6GfLineE.GetDirection(self:));
 
 typedef pxr::GfLine2d __SwiftUsdImportAsMemberTypedef___ZN3pxr8GfLine2dE;
 // Return the normalized direction of the line.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/line2d.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/line2d.h
 pxr::GfVec2d __SwiftUsdImportAsMemberReplacement___ZN3pxr8GfLine2dE__GetDirection(pxr::GfLine2d const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8GfLine2dE.GetDirection(self:));
 
 typedef pxr::GfTransform __SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE;
 // Returns the scale component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetScale(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetScale(self:));
 
 // Returns the pivot orientation component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfRotation __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetPivotOrientation(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetPivotOrientation(self:));
 
 // Returns the scale orientation component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfRotation __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetScaleOrientation(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetScaleOrientation(self:));
 
 // Returns the rotation component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfRotation __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetRotation(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetRotation(self:));
 
 // Returns the pivot position component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetPivotPosition(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetPivotPosition(self:));
 
 // Returns the pivot position component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetCenter(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetCenter(self:));
 
 // Returns the translation component.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/transform.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/transform.h
 pxr::GfVec3d __SwiftUsdImportAsMemberReplacement___ZN3pxr11GfTransformE__GetTranslation(pxr::GfTransform const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11GfTransformE.GetTranslation(self:));
 
 typedef pxr::ArResolvedPath __SwiftUsdImportAsMemberTypedef___ZN3pxr14ArResolvedPathE;
 // Return the resolved path held by this object as a string.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/ar/resolvedPath.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/ar/resolvedPath.h
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr14ArResolvedPathE__GetPathString(pxr::ArResolvedPath const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr14ArResolvedPathE.GetPathString(self:));
 
@@ -195,7 +193,7 @@ typedef pxr::UsdPrim __SwiftUsdImportAsMemberTypedef___ZN3pxr7UsdPrimE;
 ///
 /// This is equivalent to, but generally cheaper than,
 /// GetPath().GetNameToken()
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/object.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/object.h
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr7UsdPrimE__GetName(pxr::UsdPrim const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7UsdPrimE.GetName(self:));
 
@@ -205,7 +203,7 @@ typedef pxr::UsdObject __SwiftUsdImportAsMemberTypedef___ZN3pxr9UsdObjectE;
 ///
 /// This is equivalent to, but generally cheaper than,
 /// GetPath().GetNameToken()
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/object.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/object.h
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr9UsdObjectE__GetName(pxr::UsdObject const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr9UsdObjectE.GetName(self:));
 
@@ -215,7 +213,7 @@ typedef pxr::UsdAttribute __SwiftUsdImportAsMemberTypedef___ZN3pxr12UsdAttribute
 ///
 /// This is equivalent to, but generally cheaper than,
 /// GetPath().GetNameToken()
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/object.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/object.h
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr12UsdAttributeE__GetName(pxr::UsdAttribute const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr12UsdAttributeE.GetName(self:));
 
@@ -225,7 +223,7 @@ typedef pxr::UsdProperty __SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPropertyE;
 ///
 /// This is equivalent to, but generally cheaper than,
 /// GetPath().GetNameToken()
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/object.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/object.h
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPropertyE__GetName(pxr::UsdProperty const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPropertyE.GetName(self:));
 
@@ -235,7 +233,7 @@ typedef pxr::UsdRelationship __SwiftUsdImportAsMemberTypedef___ZN3pxr15UsdRelati
 ///
 /// This is equivalent to, but generally cheaper than,
 /// GetPath().GetNameToken()
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/object.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/object.h
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr15UsdRelationshipE__GetName(pxr::UsdRelationship const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr15UsdRelationshipE.GetName(self:));
 
@@ -246,19 +244,19 @@ typedef pxr::UsdReferences __SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferenc
 /// explanation of expectations on \p ref and what return values and errors
 /// to expect, and \ref Usd_OM_ListOps for details on list editing and
 /// composition of listOps.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__AddReference(pxr::UsdReferences const & _this, pxr::SdfReference const & ref, pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddReference(self:_:_:));
 
 // \overload 
 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__AddReference(pxr::UsdReferences const & _this, std::string const & identifier, pxr::SdfPath const & primPath, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddReference(self:_:_:_:_:));
 
 /// \overload
 /// \sa \ref Usd_DefaultPrim_References "References Without Prim Paths"
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__AddReference(pxr::UsdReferences const & _this, std::string const & identifier, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddReference(self:_:_:_:));
 
@@ -267,7 +265,7 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddReference
 /// reference completely, as it may be added or set in another layer in
 /// the same LayerStack as the current EditTarget.
 /// \sa \ref Usd_OM_ListOps 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__RemoveReference(pxr::UsdReferences const & _this, pxr::SdfReference const & ref)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.RemoveReference(self:_:));
 
@@ -277,7 +275,7 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.RemoveRefere
 /// explanation of expectations on \p ref and what return values and errors
 /// to expect, and \ref Usd_OM_ListOps for details on list editing and
 /// composition of listOps.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__SetReferences(pxr::UsdReferences const & _this, std::vector<pxr::SdfReference, std::allocator<pxr::SdfReference>> const & items)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.SetReferences(self:_:));
 
@@ -288,19 +286,19 @@ typedef pxr::UsdPayloads __SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE;
 /// explanation of expectations on \p payload and what return values and 
 /// errors to expect, and \ref Usd_OM_ListOps for details on list editing 
 /// and composition of listOps. 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddPayload(pxr::UsdPayloads const & _this, pxr::SdfPayload const & payload, pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddPayload(self:_:_:));
 
 // \overload 
 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddPayload(pxr::UsdPayloads const & _this, std::string const & identifier, pxr::SdfPath const & primPath, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddPayload(self:_:_:_:_:));
 
 /// \overload
 /// \sa \ref Usd_DefaultPrim_References "Payloads Without Prim Paths"
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddPayload(pxr::UsdPayloads const & _this, std::string const & identifier, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddPayload(self:_:_:_:));
 
@@ -309,7 +307,7 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddPayload(sel
 /// completely, as it may be added or set in another layer in the same 
 /// LayerStack as the current EditTarget. 
 /// \sa \ref Usd_OM_ListOps 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__RemovePayload(pxr::UsdPayloads const & _this, pxr::SdfPayload const & ref)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.RemovePayload(self:_:));
 
@@ -319,37 +317,37 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.RemovePayload(
 /// explanation of expectations on \p items and what return values and 
 /// errors to expect, and \ref Usd_OM_ListOps for details on list editing 
 /// and composition of listOps. 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.h
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__SetPayloads(pxr::UsdPayloads const & _this, std::vector<pxr::SdfPayload, std::allocator<pxr::SdfPayload>> const & items)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.SetPayloads(self:_:));
 
 typedef pxr::UsdShadeInput __SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdShadeInputE;
 // Explicit UsdAttribute extractor.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usdShade/input.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usdShade/input.h
 pxr::UsdAttribute __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdShadeInputE__GetAttr(pxr::UsdShadeInput const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdShadeInputE.GetAttr(self:));
 
 typedef pxr::UsdShadeOutput __SwiftUsdImportAsMemberTypedef___ZN3pxr14UsdShadeOutputE;
 // Explicit UsdAttribute extractor.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usdShade/output.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usdShade/output.h
 pxr::UsdAttribute __SwiftUsdImportAsMemberReplacement___ZN3pxr14UsdShadeOutputE__GetAttr(pxr::UsdShadeOutput const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr14UsdShadeOutputE.GetAttr(self:));
 
 typedef pxr::UsdShadeMaterialBindingAPI::DirectBinding __SwiftUsdImportAsMemberTypedef___ZN3pxr26UsdShadeMaterialBindingAPI13DirectBindingE;
 /// Returns the path to the material that is bound to by this 
 /// direct binding.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usdShade/materialBindingAPI.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usdShade/materialBindingAPI.h
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr26UsdShadeMaterialBindingAPI13DirectBindingE__GetMaterialPath(pxr::UsdShadeMaterialBindingAPI::DirectBinding const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr26UsdShadeMaterialBindingAPI13DirectBindingE.GetMaterialPath(self:));
 
 typedef pxr::UsdShadeMaterialBindingAPI::CollectionBinding __SwiftUsdImportAsMemberTypedef___ZN3pxr26UsdShadeMaterialBindingAPI17CollectionBindingE;
 // Returns the path to the collection that is bound by this binding.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usdShade/materialBindingAPI.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usdShade/materialBindingAPI.h
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr26UsdShadeMaterialBindingAPI17CollectionBindingE__GetCollectionPath(pxr::UsdShadeMaterialBindingAPI::CollectionBinding const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr26UsdShadeMaterialBindingAPI17CollectionBindingE.GetCollectionPath(self:));
 
 // Returns the path to the material that is bound to by this binding.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usdShade/materialBindingAPI.h
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usdShade/materialBindingAPI.h
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr26UsdShadeMaterialBindingAPI17CollectionBindingE__GetMaterialPath(pxr::UsdShadeMaterialBindingAPI::CollectionBinding const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr26UsdShadeMaterialBindingAPI17CollectionBindingE.GetMaterialPath(self:));
 
@@ -370,132 +368,114 @@ typedef pxr::TfType __SwiftUsdImportAsMemberTypedef___ZN3pxr6TfTypeE;
 /// For any object \c obj,
 /// \code
 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/tf/type.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/tf/type.cpp
 pxr::TfType __SwiftUsdImportAsMemberReplacement___ZN3pxr6TfTypeE__FindByName(std::string const & name)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr6TfTypeE.FindByName(_:));
 
 typedef pxr::GfCamera __SwiftUsdImportAsMemberTypedef___ZN3pxr8GfCameraE;
 // Returns additional clipping planes.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/base/gf/camera.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/gf/camera.cpp
 std::vector<pxr::GfVec4f, std::allocator<pxr::GfVec4f>> __SwiftUsdImportAsMemberReplacement___ZN3pxr8GfCameraE__GetClippingPlanes(pxr::GfCamera const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8GfCameraE.GetClippingPlanes(self:));
 
 typedef pxr::SdfFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr13SdfFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr13SdfFileFormatE__GetFormatId(pxr::SdfFileFormat const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13SdfFileFormatE.GetFormatId(self:));
 
 typedef pxr::SdfTextFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfTextFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfTextFileFormatE__GetFormatId(pxr::SdfTextFileFormat const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfTextFileFormatE.GetFormatId(self:));
 
-typedef pxr::UsdUsdFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr16UsdUsdFileFormatE;
+typedef pxr::SdfUsdFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr16SdfUsdFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr16UsdUsdFileFormatE__GetFormatId(pxr::UsdUsdFileFormat const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr16UsdUsdFileFormatE.GetFormatId(self:));
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr16SdfUsdFileFormatE__GetFormatId(pxr::SdfUsdFileFormat const & _this)
+SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr16SdfUsdFileFormatE.GetFormatId(self:));
 
-typedef pxr::UsdUsdaFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdaFileFormatE;
+typedef pxr::SdfUsdaFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdaFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdaFileFormatE__GetFormatId(pxr::UsdUsdaFileFormat const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdaFileFormatE.GetFormatId(self:));
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdaFileFormatE__GetFormatId(pxr::SdfUsdaFileFormat const & _this)
+SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdaFileFormatE.GetFormatId(self:));
 
-typedef pxr::UsdUsdcFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdcFileFormatE;
+typedef pxr::SdfUsdcFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdcFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdcFileFormatE__GetFormatId(pxr::UsdUsdcFileFormat const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdcFileFormatE.GetFormatId(self:));
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdcFileFormatE__GetFormatId(pxr::SdfUsdcFileFormat const & _this)
+SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdcFileFormatE.GetFormatId(self:));
 
-typedef pxr::UsdUsdzFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdzFileFormatE;
+typedef pxr::SdfUsdzFileFormat __SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdzFileFormatE;
 // Returns the format identifier.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/fileFormat.cpp
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdzFileFormatE__GetFormatId(pxr::UsdUsdzFileFormat const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17UsdUsdzFileFormatE.GetFormatId(self:));
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/fileFormat.cpp
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdzFileFormatE__GetFormatId(pxr::SdfUsdzFileFormat const & _this)
+SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfUsdzFileFormatE.GetFormatId(self:));
 
 typedef pxr::SdfLayer __SwiftUsdImportAsMemberTypedef___ZN3pxr8SdfLayerE;
 // Returns the file format used by this layer.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/layer.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/layer.cpp
 pxr::TfWeakPtr<pxr::SdfFileFormat const> __SwiftUsdImportAsMemberReplacement___ZN3pxr8SdfLayerE__GetFileFormat(pxr::SdfLayer const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8SdfLayerE.GetFileFormat(self:));
 
 /// Returns the resolved path for this layer. This is equivalent to
 /// GetResolvedPath().GetPathString().
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/layer.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/layer.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr8SdfLayerE__GetRealPath(pxr::SdfLayer const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr8SdfLayerE.GetRealPath(self:));
 
 typedef pxr::SdfPath __SwiftUsdImportAsMemberTypedef___ZN3pxr7SdfPathE;
 // The empty path value, equivalent to SdfPath().
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/path.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/path.cpp
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr7SdfPathE__EmptyPath()
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7SdfPathE.EmptyPath());
 
 /// The absolute path representing the top of the
 /// namespace hierarchy.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/path.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/path.cpp
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr7SdfPathE__AbsoluteRootPath()
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7SdfPathE.AbsoluteRootPath());
 
 // The relative path representing "self".
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/path.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/path.cpp
 pxr::SdfPath __SwiftUsdImportAsMemberReplacement___ZN3pxr7SdfPathE__ReflexiveRelativePath()
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7SdfPathE.ReflexiveRelativePath());
 
 typedef pxr::SdfPrimSpec __SwiftUsdImportAsMemberTypedef___ZN3pxr11SdfPrimSpecE;
 // Returns the prim's name.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/primSpec.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/primSpec.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr11SdfPrimSpecE__GetName(pxr::SdfPrimSpec const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11SdfPrimSpecE.GetName(self:));
 
 typedef pxr::SdfPseudoRootSpec __SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfPseudoRootSpecE;
 // Returns the prim's name.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/primSpec.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/primSpec.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfPseudoRootSpecE__GetName(pxr::SdfPseudoRootSpec const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr17SdfPseudoRootSpecE.GetName(self:));
 
 typedef pxr::SdfAttributeSpec __SwiftUsdImportAsMemberTypedef___ZN3pxr16SdfAttributeSpecE;
 // Returns the property's name.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/propertySpec.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/propertySpec.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr16SdfAttributeSpecE__GetName(pxr::SdfAttributeSpec const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr16SdfAttributeSpecE.GetName(self:));
 
 typedef pxr::SdfPropertySpec __SwiftUsdImportAsMemberTypedef___ZN3pxr15SdfPropertySpecE;
 // Returns the property's name.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/propertySpec.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/propertySpec.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr15SdfPropertySpecE__GetName(pxr::SdfPropertySpec const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr15SdfPropertySpecE.GetName(self:));
 
 typedef pxr::SdfRelationshipSpec __SwiftUsdImportAsMemberTypedef___ZN3pxr19SdfRelationshipSpecE;
 // Returns the property's name.
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/sdf/propertySpec.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/propertySpec.cpp
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr19SdfRelationshipSpecE__GetName(pxr::SdfRelationshipSpec const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr19SdfRelationshipSpecE.GetName(self:));
 
-typedef pxr::NdrNode __SwiftUsdImportAsMemberTypedef___ZN3pxr7NdrNodeE;
-/// Get an ordered list of all the input names on this node.
-///
-/// \deprecated
-/// Deprecated in favor of SdrShaderNode::GetShaderInputNames
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/ndr/node.cpp
-std::vector<pxr::TfToken, std::allocator<pxr::TfToken>> __SwiftUsdImportAsMemberReplacement___ZN3pxr7NdrNodeE__GetInputNames(pxr::NdrNode const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr7NdrNodeE.GetInputNames(self:));
-
-typedef pxr::SdrShaderNode __SwiftUsdImportAsMemberTypedef___ZN3pxr13SdrShaderNodeE;
-/// Get an ordered list of all the input names on this node.
-///
-/// \deprecated
-/// Deprecated in favor of SdrShaderNode::GetShaderInputNames
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/ndr/node.cpp
-std::vector<pxr::TfToken, std::allocator<pxr::TfToken>> __SwiftUsdImportAsMemberReplacement___ZN3pxr13SdrShaderNodeE__GetInputNames(pxr::SdrShaderNode const & _this)
-SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13SdrShaderNodeE.GetInputNames(self:));
-
 /// Add an internal payload to the specified prim.
 /// \sa \ref Usd_Internal_References "Internal Payloads"
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.cpp
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddInternalPayload(pxr::UsdPayloads const & _this, pxr::SdfPath const & primPath, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddInternalPayload(self:_:_:_:));
 
@@ -504,13 +484,13 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.AddInternalPay
 /// actually increase the number of composed payloads, if the listOp being 
 /// cleared contained the "remove" operator. 
 /// \sa \ref Usd_OM_ListOps 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/payloads.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/payloads.cpp
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__ClearPayloads(pxr::UsdPayloads const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr11UsdPayloadsE.ClearPayloads(self:));
 
 /// Add an internal reference to the specified prim.
 /// \sa \ref Usd_Internal_References "Internal References"
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.cpp
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__AddInternalReference(pxr::UsdReferences const & _this, pxr::SdfPath const & primPath, pxr::SdfLayerOffset const & layerOffset = pxr::SdfLayerOffset(), pxr::UsdListPosition position = pxr::UsdListPositionBackOfPrependList)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddInternalReference(self:_:_:_:));
 
@@ -519,7 +499,7 @@ SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.AddInternalR
 /// actually increase the number of composed references, if the listOp
 /// being cleared contained the "remove" operator.
 /// \sa \ref Usd_OM_ListOps 
-// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/usd/references.cpp
+// Original documentation from https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/references.cpp
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__ClearReferences(pxr::UsdReferences const & _this)
 SWIFT_NAME(__SwiftUsdImportAsMemberTypedef___ZN3pxr13UsdReferencesE.ClearReferences(self:));
 

@@ -43,6 +43,7 @@ Overlay::UsdImagingGLEngineWrapper::UsdImagingGLEngineWrapper(const Overlay::Usd
     ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::Parameters, Overlay::UsdImagingGLEngineWrapper::Parameters, gpuEnabled);
     ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::Parameters, Overlay::UsdImagingGLEngineWrapper::Parameters, displayUnloadedPrimsWithBounds);
     ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::Parameters, Overlay::UsdImagingGLEngineWrapper::Parameters, allowAsynchronousSceneProcessing);
+    ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::Parameters, Overlay::UsdImagingGLEngineWrapper::Parameters, enableUsdDrawModes);
 
     pxr::UsdImagingGLEngine::Parameters params = *reinterpret_cast<const pxr::UsdImagingGLEngine::Parameters*>(&wrapperParams);
     _impl = std::make_shared<pxr::UsdImagingGLEngine>(params);
@@ -63,9 +64,10 @@ Overlay::UsdImagingGLEngineWrapper::UsdImagingGLEngineWrapper(const pxr::SdfPath
                                                               const pxr::SdfPath &sceneDelegateID,
                                                               const pxr::HdDriver &driver,
                                                               const pxr::TfToken &rendererPluginId,
-                                                              bool gpuEnabled,
-                                                              bool displayUnloadedPrimsWithBounds,
-                                                              bool allowAsynchronousSceneProcessing) :
+                                                              const bool gpuEnabled,
+                                                              const bool displayUnloadedPrimsWithBounds,
+                                                              const bool allowAsynchronousSceneProcessing,
+                                                              const bool enableUsdDrawModes) :
 _impl(std::make_shared<pxr::UsdImagingGLEngine>(rootPath,
                                                 excludedPaths,
                                                 invisedPaths,
@@ -74,7 +76,8 @@ _impl(std::make_shared<pxr::UsdImagingGLEngine>(rootPath,
                                                 rendererPluginId,
                                                 gpuEnabled,
                                                 displayUnloadedPrimsWithBounds,
-                                                allowAsynchronousSceneProcessing))
+                                                allowAsynchronousSceneProcessing,
+                                                enableUsdDrawModes))
 {
 }
 

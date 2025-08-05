@@ -214,19 +214,19 @@ pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfTextFileFormatE__G
     return arg0.GetFormatId();
 }
 
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr16UsdUsdFileFormatE__GetFormatId(pxr::UsdUsdFileFormat const & arg0) {
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr16SdfUsdFileFormatE__GetFormatId(pxr::SdfUsdFileFormat const & arg0) {
     return arg0.GetFormatId();
 }
 
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdaFileFormatE__GetFormatId(pxr::UsdUsdaFileFormat const & arg0) {
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdaFileFormatE__GetFormatId(pxr::SdfUsdaFileFormat const & arg0) {
     return arg0.GetFormatId();
 }
 
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdcFileFormatE__GetFormatId(pxr::UsdUsdcFileFormat const & arg0) {
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdcFileFormatE__GetFormatId(pxr::SdfUsdcFileFormat const & arg0) {
     return arg0.GetFormatId();
 }
 
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17UsdUsdzFileFormatE__GetFormatId(pxr::UsdUsdzFileFormat const & arg0) {
+pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfUsdzFileFormatE__GetFormatId(pxr::SdfUsdzFileFormat const & arg0) {
     return arg0.GetFormatId();
 }
 
@@ -268,14 +268,6 @@ std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr15SdfPropertySpecE__GetN
 
 std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr19SdfRelationshipSpecE__GetName(pxr::SdfRelationshipSpec const & arg0) {
     return arg0.GetName();
-}
-
-std::vector<pxr::TfToken, std::allocator<pxr::TfToken>> __SwiftUsdImportAsMemberReplacement___ZN3pxr7NdrNodeE__GetInputNames(pxr::NdrNode const & arg0) {
-    return arg0.GetInputNames();
-}
-
-std::vector<pxr::TfToken, std::allocator<pxr::TfToken>> __SwiftUsdImportAsMemberReplacement___ZN3pxr13SdrShaderNodeE__GetInputNames(pxr::SdrShaderNode const & arg0) {
-    return arg0.GetInputNames();
 }
 
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddInternalPayload(pxr::UsdPayloads const & arg0, pxr::SdfPath const & arg1, pxr::SdfLayerOffset const & arg2, pxr::UsdListPosition arg3) {

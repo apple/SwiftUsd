@@ -6,7 +6,7 @@
 //
 
 // Original documentation for pxr::Hgi from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/imaging/hgi/hgi.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/imaging/hgi/hgi.h
 
 #ifndef SWIFTUSD_WRAPPERS_HGIWRAPPER_H
 #define SWIFTUSD_WRAPPERS_HGIWRAPPER_H
@@ -251,6 +251,13 @@ namespace Overlay {
         /// Please read the comments in StartFrame.
         /// Thread safety: Not thread safe. Should be called on the main thread.
         void EndFrame();
+
+        /// Perform any necessary garbage collection, if applicable. This can be
+        /// used to flush pending deletes immediately after unloading assets, for
+        /// example. Note that as some clients may not call this, Hgi
+        /// implementations should find other opportunities to garbage collect as
+        /// well (e.g. EndFrame).
+        void GarbageCollect();
 
         // MARK: SwiftUsd implementation access
 

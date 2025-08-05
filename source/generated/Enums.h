@@ -26,6 +26,17 @@
 #include "pxr/base/trace/event.h"
 #include "pxr/base/ts/regressionPreventer.h"
 #include "pxr/base/ts/types.h"
+#include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/vdf/dataManagerVector.h"
+#include "pxr/exec/vdf/executionStats.h"
+#include "pxr/exec/vdf/grapherOptions.h"
+#include "pxr/exec/vdf/indexedWeightsOperand.h"
+#include "pxr/exec/vdf/inputSpec.h"
+#include "pxr/exec/vdf/maskedIterator.h"
+#include "pxr/exec/vdf/object.h"
+#include "pxr/exec/vdf/sparseInputTraverser.h"
+#include "pxr/exec/vdf/sparseVectorizedInputTraverser.h"
+#include "pxr/exec/vdf/vector.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/cameraUtil/conformWindow.h"
 #include "pxr/imaging/garch/glDebugWindow.h"
@@ -65,7 +76,6 @@
 #include "pxr/imaging/hio/types.h"
 #include "pxr/imaging/pxOsd/meshTopologyValidation.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-#include "pxr/usd/ndr/declare.h"
 #include "pxr/usd/pcp/changes.h"
 #include "pxr/usd/pcp/dependency.h"
 #include "pxr/usd/pcp/errors.h"
@@ -307,6 +317,11 @@ namespace Overlay {
   extern const pxr::TsSplineSampleSource TsSourcePostExtrapLoop;
 }
 namespace Overlay {
+  extern const pxr::TsTangentAlgorithm TsTangentAlgorithmNone;
+  extern const pxr::TsTangentAlgorithm TsTangentAlgorithmCustom;
+  extern const pxr::TsTangentAlgorithm TsTangentAlgorithmAutoEase;
+}
+namespace Overlay {
   extern const pxr::TsAntiRegressionMode TsAntiRegressionNone;
   extern const pxr::TsAntiRegressionMode TsAntiRegressionContain;
   extern const pxr::TsAntiRegressionMode TsAntiRegressionKeepRatio;
@@ -428,11 +443,6 @@ namespace Overlay {
     extern const pxr::SdfPredicateFunctionResult::Constancy ConstantOverDescendants;
     extern const pxr::SdfPredicateFunctionResult::Constancy MayVaryOverDescendants;
   }
-}
-namespace Overlay {
-  extern const pxr::NdrVersionFilter NdrVersionFilterDefaultOnly;
-  extern const pxr::NdrVersionFilter NdrVersionFilterAllVersions;
-  extern const pxr::NdrVersionFilter NdrNumVersionFilters;
 }
 namespace Overlay {
   extern const pxr::SdrVersionFilter SdrVersionFilterDefaultOnly;
@@ -857,6 +867,85 @@ namespace Overlay {
     extern const pxr::UsdPhysicsJointDOF RotZ;
   }
 }
+namespace Overlay {
+  namespace VdfInputSpec {
+    extern const pxr::VdfInputSpec::Access READ;
+    extern const pxr::VdfInputSpec::Access READWRITE;
+  }
+}
+namespace Overlay {
+  namespace VdfVector {
+    extern const pxr::VdfVector::ConstructBoxedCopyTag ConstructBoxedCopy;
+  }
+}
+namespace Overlay {
+  namespace VdfExecutionStats {
+    extern const pxr::VdfExecutionStats::EventType NodeEvaluateEvent;
+    extern const pxr::VdfExecutionStats::EventType NodePrepareEvent;
+    extern const pxr::VdfExecutionStats::EventType NodeRequiredInputsEvent;
+    extern const pxr::VdfExecutionStats::EventType NodeInputsTaskEvent;
+    extern const pxr::VdfExecutionStats::EventType NodeDidComputeEvent;
+    extern const pxr::VdfExecutionStats::EventType ElementsCopiedEvent;
+    extern const pxr::VdfExecutionStats::EventType ElementsProcessedEvent;
+    extern const pxr::VdfExecutionStats::EventType RequestedOutputInSpeculationsEvent;
+    extern const pxr::VdfExecutionStats::EventType MaxEvent;
+  }
+}
+namespace Overlay {
+  namespace VdfMaskedIteratorMode {
+    extern const pxr::VdfMaskedIteratorMode VisitUnset;
+    extern const pxr::VdfMaskedIteratorMode VisitSet;
+  }
+}
+namespace Overlay {
+  namespace VdfDataManagerDeallocationMode {
+    extern const pxr::VdfDataManagerDeallocationMode Background;
+    extern const pxr::VdfDataManagerDeallocationMode Immediate;
+  }
+}
+namespace Overlay {
+  namespace VdfGrapherOptions {
+    extern const pxr::VdfGrapherOptions::DisplayStyle DisplayStyleFull;
+    extern const pxr::VdfGrapherOptions::DisplayStyle DisplayStyleNoLabels;
+    extern const pxr::VdfGrapherOptions::DisplayStyle DisplayStyleSummary;
+  }
+}
+namespace Overlay {
+  namespace VdfObjectPtr {
+    extern const pxr::VdfObjectPtr::Type Undefined;
+    extern const pxr::VdfObjectPtr::Type Node;
+    extern const pxr::VdfObjectPtr::Type Connection;
+    extern const pxr::VdfObjectPtr::Type Input;
+    extern const pxr::VdfObjectPtr::Type Output;
+  }
+}
+namespace Overlay {
+  namespace VdfIndexedWeightsOperand {
+    extern const pxr::VdfIndexedWeightsOperand::SetOperation Union;
+    extern const pxr::VdfIndexedWeightsOperand::SetOperation Intersection;
+  }
+}
+namespace Overlay {
+  namespace VdfSparseInputTraverser {
+    extern const pxr::VdfSparseInputTraverser::CallbackMode CallbackModeAllNodes;
+    extern const pxr::VdfSparseInputTraverser::CallbackMode CallbackModeTerminalNodes;
+  }
+}
+namespace Overlay {
+  namespace VdfSparseVectorizedInputTraverser {
+    extern const pxr::VdfSparseVectorizedInputTraverser::CallbackMode CallbackModeAllNodes;
+    extern const pxr::VdfSparseVectorizedInputTraverser::CallbackMode CallbackModeTerminalNodes;
+  }
+}
+namespace Overlay {
+  namespace ExecProviderResolution {
+    namespace DynamicTraversal {
+      extern const pxr::ExecProviderResolution::DynamicTraversal Local;
+      extern const pxr::ExecProviderResolution::DynamicTraversal RelationshipTargetedObjects;
+      extern const pxr::ExecProviderResolution::DynamicTraversal NamespaceAncestor;
+    }
+  }
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 namespace Overlay {
   namespace GarchGLDebugWindow {
@@ -1049,6 +1138,7 @@ namespace Overlay {
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsPrimitiveIdEmulation;
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsIndirectCommandBuffers;
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsRoundPoints;
+  extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsSingleSlotResourceArrays;
 }
 namespace Overlay {
   extern const pxr::HgiTextureType HgiTextureType1D;

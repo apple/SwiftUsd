@@ -771,6 +771,14 @@ std::string __Overlay::to_string(const pxr::TsSplineSampleSource& x) {
     default: return "pxr::TsSplineSampleSource(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::TsTangentAlgorithm& x) {
+    switch (x) {
+    case pxr::TsTangentAlgorithmNone: return "pxr::TsTangentAlgorithmNone";
+    case pxr::TsTangentAlgorithmCustom: return "pxr::TsTangentAlgorithmCustom";
+    case pxr::TsTangentAlgorithmAutoEase: return "pxr::TsTangentAlgorithmAutoEase";
+    default: return "pxr::TsTangentAlgorithm(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::TsAntiRegressionMode& x) {
     switch (x) {
     case pxr::TsAntiRegressionNone: return "pxr::TsAntiRegressionNone";
@@ -881,6 +889,11 @@ std::string __Overlay::to_string(const pxr::SdfUnregisteredValue& x) {
     return ss.str();
 }
 std::string __Overlay::to_string(const pxr::SdfValueBlock& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::SdfAnimationBlock& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -1113,14 +1126,6 @@ std::string __Overlay::to_string(const pxr::SdfVariantSpec& x) {
         return "dormant pxr::SdfVariantSpec";
     }
     return "pxr::SdfVariantSpec(" + x.GetLayer()->GetIdentifier() + ", " + x.GetPath().GetString() + ")";
-}
-std::string __Overlay::to_string(const pxr::NdrVersionFilter& x) {
-    switch (x) {
-    case pxr::NdrVersionFilterDefaultOnly: return "pxr::NdrVersionFilterDefaultOnly";
-    case pxr::NdrVersionFilterAllVersions: return "pxr::NdrVersionFilterAllVersions";
-    case pxr::NdrNumVersionFilters: return "pxr::NdrNumVersionFilters";
-    default: return "pxr::NdrVersionFilter(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
 }
 std::string __Overlay::to_string(const pxr::SdrVersionFilter& x) {
     switch (x) {
@@ -1659,6 +1664,124 @@ std::string __Overlay::to_string(const pxr::UsdPhysicsJointDOF& x) {
     default: return "pxr::UsdPhysicsJointDOF(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::VdfInputSpec::Access& x) {
+    switch (x) {
+    case pxr::VdfInputSpec::READ: return "pxr::VdfInputSpec::READ";
+    case pxr::VdfInputSpec::READWRITE: return "pxr::VdfInputSpec::READWRITE";
+    default: return "pxr::VdfInputSpec::Access(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfMask& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VdfVector::ConstructBoxedCopyTag& x) {
+    switch (x) {
+    case pxr::VdfVector::ConstructBoxedCopy: return "pxr::VdfVector::ConstructBoxedCopy";
+    default: return "pxr::VdfVector::ConstructBoxedCopyTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfVector::DebugPrintable& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VdfIndexedWeights& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VdfExecutionStats::EventType& x) {
+    switch (x) {
+    case pxr::VdfExecutionStats::NodeEvaluateEvent: return "pxr::VdfExecutionStats::NodeEvaluateEvent";
+    case pxr::VdfExecutionStats::NodePrepareEvent: return "pxr::VdfExecutionStats::NodePrepareEvent";
+    case pxr::VdfExecutionStats::NodeRequiredInputsEvent: return "pxr::VdfExecutionStats::NodeRequiredInputsEvent";
+    case pxr::VdfExecutionStats::NodeInputsTaskEvent: return "pxr::VdfExecutionStats::NodeInputsTaskEvent";
+    case pxr::VdfExecutionStats::NodeDidComputeEvent: return "pxr::VdfExecutionStats::NodeDidComputeEvent";
+    case pxr::VdfExecutionStats::ElementsCopiedEvent: return "pxr::VdfExecutionStats::ElementsCopiedEvent";
+    case pxr::VdfExecutionStats::ElementsProcessedEvent: return "pxr::VdfExecutionStats::ElementsProcessedEvent";
+    case pxr::VdfExecutionStats::RequestedOutputInSpeculationsEvent: return "pxr::VdfExecutionStats::RequestedOutputInSpeculationsEvent";
+    case pxr::VdfExecutionStats::MaxEvent: return "pxr::VdfExecutionStats::MaxEvent";
+    default: return "pxr::VdfExecutionStats::EventType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfMaskedIteratorMode& x) {
+    switch (x) {
+    case pxr::VdfMaskedIteratorMode::VisitUnset: return "pxr::VdfMaskedIteratorMode::VisitUnset";
+    case pxr::VdfMaskedIteratorMode::VisitSet: return "pxr::VdfMaskedIteratorMode::VisitSet";
+    default: return "pxr::VdfMaskedIteratorMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfDataManagerDeallocationMode& x) {
+    switch (x) {
+    case pxr::VdfDataManagerDeallocationMode::Background: return "pxr::VdfDataManagerDeallocationMode::Background";
+    case pxr::VdfDataManagerDeallocationMode::Immediate: return "pxr::VdfDataManagerDeallocationMode::Immediate";
+    default: return "pxr::VdfDataManagerDeallocationMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfGrapherOptions::DisplayStyle& x) {
+    switch (x) {
+    case pxr::VdfGrapherOptions::DisplayStyleFull: return "pxr::VdfGrapherOptions::DisplayStyleFull";
+    case pxr::VdfGrapherOptions::DisplayStyleNoLabels: return "pxr::VdfGrapherOptions::DisplayStyleNoLabels";
+    case pxr::VdfGrapherOptions::DisplayStyleSummary: return "pxr::VdfGrapherOptions::DisplayStyleSummary";
+    default: return "pxr::VdfGrapherOptions::DisplayStyle(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfObjectPtr& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VdfObjectPtr::Type& x) {
+    switch (x) {
+    case pxr::VdfObjectPtr::Undefined: return "pxr::VdfObjectPtr::Undefined";
+    case pxr::VdfObjectPtr::Node: return "pxr::VdfObjectPtr::Node";
+    case pxr::VdfObjectPtr::Connection: return "pxr::VdfObjectPtr::Connection";
+    case pxr::VdfObjectPtr::Input: return "pxr::VdfObjectPtr::Input";
+    case pxr::VdfObjectPtr::Output: return "pxr::VdfObjectPtr::Output";
+    default: return "pxr::VdfObjectPtr::Type(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfIndexedWeightsOperand::SetOperation& x) {
+    switch (x) {
+    case pxr::VdfIndexedWeightsOperand::Union: return "pxr::VdfIndexedWeightsOperand::Union";
+    case pxr::VdfIndexedWeightsOperand::Intersection: return "pxr::VdfIndexedWeightsOperand::Intersection";
+    default: return "pxr::VdfIndexedWeightsOperand::SetOperation(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfSparseInputTraverser::CallbackMode& x) {
+    switch (x) {
+    case pxr::VdfSparseInputTraverser::CallbackModeAllNodes: return "pxr::VdfSparseInputTraverser::CallbackModeAllNodes";
+    case pxr::VdfSparseInputTraverser::CallbackModeTerminalNodes: return "pxr::VdfSparseInputTraverser::CallbackModeTerminalNodes";
+    default: return "pxr::VdfSparseInputTraverser::CallbackMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfSparseVectorizedInputTraverser::CallbackMode& x) {
+    switch (x) {
+    case pxr::VdfSparseVectorizedInputTraverser::CallbackModeAllNodes: return "pxr::VdfSparseVectorizedInputTraverser::CallbackModeAllNodes";
+    case pxr::VdfSparseVectorizedInputTraverser::CallbackModeTerminalNodes: return "pxr::VdfSparseVectorizedInputTraverser::CallbackModeTerminalNodes";
+    default: return "pxr::VdfSparseVectorizedInputTraverser::CallbackMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::EfTime& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::EfTimeInterval& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::ExecProviderResolution::DynamicTraversal& x) {
+    switch (x) {
+    case pxr::ExecProviderResolution::DynamicTraversal::Local: return "pxr::ExecProviderResolution::DynamicTraversal::Local";
+    case pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects: return "pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects";
+    case pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor: return "pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor";
+    default: return "pxr::ExecProviderResolution::DynamicTraversal(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 std::string __Overlay::to_string(const pxr::GarchGLDebugWindow::Buttons& x) {
     switch (x) {
@@ -1885,6 +2008,7 @@ std::string __Overlay::to_string(const pxr::HgiDeviceCapabilitiesBits& x) {
     case pxr::HgiDeviceCapabilitiesBitsPrimitiveIdEmulation: return "pxr::HgiDeviceCapabilitiesBitsPrimitiveIdEmulation";
     case pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers: return "pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers";
     case pxr::HgiDeviceCapabilitiesBitsRoundPoints: return "pxr::HgiDeviceCapabilitiesBitsRoundPoints";
+    case pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays: return "pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays";
     default: return "pxr::HgiDeviceCapabilitiesBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }

@@ -6,7 +6,7 @@
 //
 
 // Original documentation for pxr::ArResolver from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.05.01/pxr/usd/ar/resolver.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/ar/resolver.h
 
 #ifndef SWIFTUSD_WRAPPERS_ARRESOLVERWRAPPER_H
 #define SWIFTUSD_WRAPPERS_ARRESOLVERWRAPPER_H

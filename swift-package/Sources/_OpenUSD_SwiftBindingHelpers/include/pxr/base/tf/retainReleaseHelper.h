@@ -1,10 +1,3 @@
-//
-//  retainReleaseHelper.h
-//
-//
-//  Created by Maddy Adams on 10/12/23.
-//
-
 #ifndef retainReleaseHelper_hpp
 #define retainReleaseHelper_hpp
 

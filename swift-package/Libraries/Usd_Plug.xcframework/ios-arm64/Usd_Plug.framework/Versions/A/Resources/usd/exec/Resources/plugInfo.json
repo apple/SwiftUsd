@@ -1,0 +1,15 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                }
+            },
+            "LibraryPath": "../../../../../Usd_Exec.framework/Usd_Exec",
+            "Name": "exec",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

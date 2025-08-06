@@ -11,16 +11,16 @@
 
 #define PXR_MAJOR_VERSION 0
 #define PXR_MINOR_VERSION 25
-#define PXR_PATCH_VERSION 5
+#define PXR_PATCH_VERSION 8
 
-#define PXR_VERSION 2505
+#define PXR_VERSION 2508
 
 #define PXR_USE_NAMESPACES 1
 
 #if PXR_USE_NAMESPACES
 
 #define PXR_NS pxr
-#define PXR_INTERNAL_NS pxrInternal_v0_25_5__pxrReserved__
+#define PXR_INTERNAL_NS pxrInternal_v0_25_8__pxrReserved__
 #define PXR_NS_GLOBAL ::PXR_NS
 
 namespace PXR_INTERNAL_NS { }

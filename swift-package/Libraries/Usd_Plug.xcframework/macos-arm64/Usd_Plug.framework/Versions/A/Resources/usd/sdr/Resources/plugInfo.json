@@ -3,16 +3,12 @@
         {
             "Info": {
                 "Types": {
-                    "SdrDiscoveryPlugin": {
-                        "bases": ["NdrDiscoveryPlugin"]
-                    },
+                    "SdrDiscoveryPlugin": {},
                     "_SdrFilesystemDiscoveryPlugin" : {
                         "bases": ["SdrDiscoveryPlugin"],
                         "displayName": "Filesystem Discovery"
                     },
-                    "SdrParserPlugin": {
-                        "bases": ["NdrParserPlugin"]
-                    }
+                    "SdrParserPlugin": {}
                 }
             },
             "LibraryPath": "../../../../../Usd_Sdr.framework/Usd_Sdr", 

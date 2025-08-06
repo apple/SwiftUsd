@@ -14,17 +14,18 @@
 #define SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT 1
 #endif // #ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_OPENCOLORIO_SUPPORT 0
-// OpenImageIO is not available on embedded platforms
-#ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT 0
-#else
-#define SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT 1
-#endif // #ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_PRMAN_SUPPORT 0
 #define SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT 1
 #define SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT 1
+#define SwiftUsd_PXR_ENABLE_IMAGEIO_SUPPORT 1
 #define SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT 1
+// OpenVDB is not available on embedded platforms
+#ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_OPENVDB_SUPPORT 0
+#else
+#define SwiftUsd_PXR_ENABLE_OPENVDB_SUPPORT 1
+#endif // #ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_PTEX_SUPPORT 0
 #define SwiftUsd_PXR_ENABLE_PYTHON_SUPPORT 0
 

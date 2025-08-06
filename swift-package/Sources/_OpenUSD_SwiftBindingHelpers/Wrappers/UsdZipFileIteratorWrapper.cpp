@@ -1,1 +1,0 @@
-../../../../source/Wrappers/UsdZipFileIteratorWrapper.cpp

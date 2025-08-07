@@ -153,6 +153,9 @@ private:
         , sceneRoot(sceneRoot)
         {
         }
+
+        // Swift default argument overspecialization fix
+        _InputEntry() {}
     };
 
     // We observe that most merging scene indexes have few inputs, such as 2.

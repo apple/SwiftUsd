@@ -169,7 +169,69 @@ public:
 private:
 
     // A type used to represent an input in a priority queue.
-    class _PrioritizedOutput;
+    class _PrioritizedOutput {
+    public:
+        _PrioritizedOutput(
+            const VdfOutput *output,
+            const VdfMask   &dependencyMask)
+        :   _output(output),
+            _dependencyBits(dependencyMask.GetBits())
+        { }
+
+        _PrioritizedOutput(
+            const VdfOutput *output,
+            const VdfMask   &dependencyMask,
+            const VdfObjectPtrVector &basePath,
+            const VdfConnection *pathElement)
+        :   _output(output),
+            _dependencyBits(dependencyMask.GetBits()),
+            _path(std::make_shared<VdfObjectPtrVector>(basePath))
+        {
+            if (pathElement) {
+                _path->push_back(pathElement);
+            }
+        }
+
+        /// Returns the output.
+        ///
+        const VdfOutput *GetOutput() const {
+            return _output;
+        }
+
+        /// Returns the accumulated dependency bits.
+        ///
+        const VdfMask::Bits &GetDependencyBits() const {
+            return _dependencyBits;
+        }
+
+        /// Extends this prioritized output with \p dependencyMask and
+        /// \p parentCacheIndex.
+        ///
+        void Extend(const VdfMask &dependencyMask) {
+            _dependencyBits |= dependencyMask.GetBits();
+        }
+
+        /// Returns the path, or a reference to NULL if we have no path.
+        const VdfObjectPtrVector &GetPath() const
+        {
+            static VdfObjectPtrVector empty;
+            return _path ? *_path : empty;
+        }
+
+    private:
+
+        // The output.
+        const VdfOutput *_output;
+
+        // The (accumulated) dependency mask.
+        VdfMask::Bits _dependencyBits;
+
+        // The first path that leads to this pool output.
+        // The _path is held via shared pointer because we use this call as
+        // value type.
+        std::shared_ptr<VdfObjectPtrVector> _path;
+    };
+
 
     // A map from pool chain index to prioritized output, used to ensure that we
     // process outputs in their order in the pool chain.

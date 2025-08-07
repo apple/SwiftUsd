@@ -6,7 +6,7 @@ Adding SwiftUsd to your project or package
 Before you can start using SwiftUsd, you need to add it as a dependency to your Xcode project or Swift Package, and then configure a few build settings.
 
 
-> Important: Tested with OpenUSD v25.08, Xcode 16.3 (16E140) on macOS 15.4.1 (24E263) and iPadOS 18.4.1 (22E252). 
+> Important: Tested with OpenUSD v25.08, Xcode 16.3 (16E140) on macOS 15.6 (24G84) and iPadOS 18.6 (22G86). 
 
 ### Xcode project
 1. To use SwiftUsd in an Xcode project, select File > Add Package Dependencies..., and enter the following URL:
@@ -23,7 +23,7 @@ https://github.com/apple/SwiftUsd
 1. To use SwiftUsd in a Swift Package, first add it as a dependency:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/apple/SwiftUsd", from: "5.0.0"),
+    .package(url: "https://github.com/apple/SwiftUsd", from: "5.0.1"),
 ]
 ```
 

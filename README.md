@@ -14,7 +14,7 @@ Before you can start using SwiftUsd, you need to add it as a dependency to your 
 1. To use SwiftUsd in a Swift Package, first add it as a dependency:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/apple/SwiftUsd", from: "5.0.0"),
+    .package(url: "https://github.com/apple/SwiftUsd", from: "5.0.1"),
 ]
 ```
 

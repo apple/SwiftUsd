@@ -44,13 +44,17 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/base/tf/iterator.h`
 
 - [https://github.com/swiftlang/swift/issues/83116: Swift instantiates default arguments for function templates too eagerly](https://github.com/swiftlang/swift/issues/83116)  
-    This issue can be worked around by making sure that the default arguments to methods in class templates are valid expressions for all specialization of that template, even if a particular specialization does not use some methods.  
+    This issue can be worked around by making sure that the default arguments to methods in class templates are valid expressions for all specialization of that template, even if a particular specialization does not use some methods.
+    - Modified: `pxr/exec/vdf/poolChainIndex.h`
     - Modified: `pxr/imaging/hd/dependencySchema.h`
+    - Modified: `pxr/imaging/hd/mergingSceneIndex.h`
     - Modified: `pxr/imaging/hd/schema.h`
 
 - [rdar://150456875: Forward declaring std::map's value causes an error for Swift but not C++ (Swift 6.1 regression)](rdar://150456875)
-    This issue is worked around by moving the definition of a type from a source file into a header file, and by making a private header publig
+    This issue is worked around by moving the definition of a type from a source file into a header file, and by making a private header public
     - Modified: `pxr/exec/exec/CMakeLists.txt`
+    - Modified: `pxr/exec/vdf/sparseInputTraverser.cpp`
+    - Modified: `pxr/exec/vdf/sparseInputTraverser.h`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.cpp`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.h`
 

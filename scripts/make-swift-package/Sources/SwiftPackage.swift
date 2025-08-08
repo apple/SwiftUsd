@@ -227,18 +227,21 @@ struct SwiftPackage {
             // pxr, base, tf, refPtr.h
             if components[0] == "pxr" {
                 guard let index = minorLibraries.firstIndex(of: String(components[2])) else {
-                    fatalError("Invalid header line: \(headerLine)")
+                    print("Warning: Unknown header line '\(headerLine)'")
+                    return (minorLibraries.count, headerLine)
                 }
                 return (index, String(components[3]))
             }
             // swiftUsd, generated, ReferenceTypeConformances.h
             if components[0] == "swiftUsd" {
                 guard let index = minorLibraries.firstIndex(of: String(components[1])) else {
-                    fatalError("Invalid header line: \(headerLine)")
+                    print("Warning: Unknown header line '\(headerLine)'")
+                    return (minorLibraries.count, headerLine)
                 }
                 return (index, String(components[2]))
             }
-            fatalError("Bad header line \(headerLine)")
+            print("Warning: Unknown header line '\(headerLine)'")
+            return (minorLibraries.count, headerLine)
         }
         
         var lines = [

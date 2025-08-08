@@ -292,19 +292,43 @@ extension FileSystemInfo {
         var versionsA: URL { versions.appending(path: "A") }
         /// name.framework/Versions/A/usd
         var versionsAUsd: URL { versionsA.appending(path: "usd") }
-        /// name.framework/Versions/A/Resources
-        var versionsAResources: URL { versionsA.appending(path: "Resources") }
+        /// name.framework/Versions/A/Resources on macOS, name.framework/Resources\_iOS on iOS
+        var versionsAResources: URL {
+            get async {
+                if await usdInstall.isMacOS {
+                    versionsA.appending(path: "Resources")
+                } else {
+                    url.appending(path: "Resources_iOS")
+                }
+            }
+        }
         /// name.framework/Versions/A/Resources/usd
-        var resourcesUsd: URL { versionsAResources.appending(path: "usd") }
+        var resourcesUsd: URL { get async { await versionsAResources.appending(path: "usd") } }
         /// name.framework/Versions/A/Resources/plugInfo.json
-        var resourcesPlugInfoJson: URL { resourcesUsd.appending(path: "plugInfo.json") }
-        /// name.framework/Versions/A/Resources/Info.plist
-        var resourcesInfoPlist: URL { versionsAResources.appending(path: "Info.plist") }
+        var resourcesPlugInfoJson: URL { get async { await resourcesUsd.appending(path: "plugInfo.json") } }
+        /// name.framework/Versions/A/Resources/Info.plist on macOS, name.framework/Info.plist on iOS
+        var resourcesInfoPlist: URL {
+            get async {
+                if await usdInstall.isMacOS {
+                    await versionsAResources.appending(path: "Info.plist")
+                } else {
+                    url.appending(path: "Info.plist")
+                }
+            }
+        }
         /// `name.framework/Versions/A/Resources/MaterialX_Libraries`
-        var resourcesMaterialXLibraries: URL { versionsAResources.appending(path: "MaterialX_Libraries") }
+        var resourcesMaterialXLibraries: URL { get async { await versionsAResources.appending(path: "MaterialX_Libraries") } }
         
-        /// name.framework/Versions/A/name
-        var dylib: URL { versionsA.appending(path: name) }
+        /// name.framework/Versions/A/name on macOS, name.framework/name on iOS
+        var dylib: URL {
+            get async {
+                if await usdInstall.isMacOS {
+                    versionsA.appending(path: name)
+                } else {
+                    url.appending(path: name)
+                }
+            }
+        }
 
         
         var isUsdPlug: Bool { name == "Usd_Plug" }

@@ -700,7 +700,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  }
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp ./pxr/usd/usdMtlx/utils.cpp
 --- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-08-01 10:43:22
-+++ ./pxr/usd/usdMtlx/utils.cpp	2025-08-05 13:18:36
++++ ./pxr/usd/usdMtlx/utils.cpp	2025-08-08 16:07:53
 @@ -16,6 +16,8 @@
  #include "pxr/usd/sdf/types.h"
  #include "pxr/usd/sdr/shaderProperty.h"
@@ -710,7 +710,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #include "pxr/base/gf/matrix3d.h"
  #include "pxr/base/gf/matrix4d.h"
  #include "pxr/base/gf/vec2f.h"
-@@ -183,6 +185,18 @@
+@@ -183,6 +185,20 @@
      stdlibSearchPaths =
          _MergeSearchPaths(stdlibSearchPaths, { PXR_MATERIALX_STDLIB_DIR });
  #endif
@@ -724,6 +724,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +        // Make toAdd strongest, because app bundles with sandboxing pick up the build directory
 +        // if it exists, then fail to load and don't continue to the next path
 +        std::string toAdd = TfStringCatPaths(binaryPath, "../Resources/MaterialX_Libraries/libraries");
++        stdlibSearchPaths = _MergeSearchPaths({ toAdd }, stdlibSearchPaths);
++        toAdd = TfStringCatPaths(binaryPath, "../Resources_iOS/MaterialX_Libraries/libraries");
 +        stdlibSearchPaths = _MergeSearchPaths({ toAdd }, stdlibSearchPaths);
 +    }
  

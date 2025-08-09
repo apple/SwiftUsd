@@ -323,7 +323,7 @@ struct Framework: Sendable {
                     do {
                         let pattern = #/^(\s*"ResourcePath"\s*:\s*)"resources"(\s*,\s*)$/#
                         if let match = line.wholeMatch(of: pattern) {
-                            if isHydraPlugin {
+                            if isHydraPlugin && !isMacOS {
                                 return #"\#(match.output.1)"Resources_iOS"\#(match.output.2)"#
                             } else {
                                 return #"\#(match.output.1)"Resources"\#(match.output.2)"#

@@ -2,6 +2,10 @@
 
 Changes to SwiftUsd
 
+### 5.0.2
+Released 2025-08-11, based on OpenUSD v25.08
+- Fixed deployment error when using Xcode 26 beta 5 to target iOS devices
+
 ### 5.0.1
 Released 2025-08-07, based on OpenUSD v25.08
 - Fixed compiler errors when using Xcode 26 beta 5 (17A5295f)

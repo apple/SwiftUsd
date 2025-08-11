@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_CameraUtil.framework/Versions/A/Usd_CameraUtil</string>
+			<string>Usd_CameraUtil.framework/Usd_CameraUtil</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>

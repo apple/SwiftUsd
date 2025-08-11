@@ -20,7 +20,7 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_Plug.framework/Versions/A/Usd_Plug</string>
+			<string>Usd_Plug.framework/Usd_Plug</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>

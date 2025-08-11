@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_Hgi.framework/Versions/A/Usd_Hgi</string>
+			<string>Usd_Hgi.framework/Usd_Hgi</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>

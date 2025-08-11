@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>boost_iostreams</string>
     <key>CFBundleIdentifier</key>
-    <string>com.pixar.boost_iostreams</string>
+    <string>com.pixar.boost-iostreams</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>

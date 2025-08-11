@@ -1,6 +1,0 @@
-{
-    "Includes": [
-        "*/Resources/",
-        "../../../../*.framework/Resources/"
-    ]
-}

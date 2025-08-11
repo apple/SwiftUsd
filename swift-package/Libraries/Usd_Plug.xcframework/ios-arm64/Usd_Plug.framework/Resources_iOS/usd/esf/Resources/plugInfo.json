@@ -1,0 +1,15 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                }
+            },
+            "LibraryPath": "../../../Usd_Esf.framework/Usd_Esf",
+            "Name": "esf",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

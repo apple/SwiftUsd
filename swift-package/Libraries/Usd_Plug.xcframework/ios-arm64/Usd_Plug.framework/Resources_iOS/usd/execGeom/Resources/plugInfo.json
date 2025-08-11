@@ -1,0 +1,23 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Exec" : {
+                    "Schemas": {
+                        "UsdGeomXformable": {
+                            "allowsPluginComputations": true
+                        },
+                        "UsdGeomScope": {
+                            "allowsPluginComputations": false
+                        }
+                    }
+                }
+            },
+            "LibraryPath": "../../../Usd_ExecGeom.framework/Usd_ExecGeom",
+            "Name": "execGeom",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

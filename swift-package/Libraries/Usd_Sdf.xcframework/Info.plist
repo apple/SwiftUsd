@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_Sdf.framework/Versions/A/Usd_Sdf</string>
+			<string>Usd_Sdf.framework/Usd_Sdf</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>

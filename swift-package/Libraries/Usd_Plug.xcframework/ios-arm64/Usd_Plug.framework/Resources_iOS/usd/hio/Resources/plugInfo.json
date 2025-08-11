@@ -1,0 +1,25 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                   "Hio_OpenEXRImage" : {
+                        "bases": ["HioImage"],
+                        "imageTypes": ["exr"],
+                        "precedence": 30
+                    },
+                    "Hio_StbImage" : {
+                        "bases": ["HioImage"],
+                        "imageTypes": ["bmp", "jpg", "jpeg", "png", "tga", "hdr"],
+                        "precedence": 30
+                    }
+                }
+            },
+            "LibraryPath": "../../../Usd_Hio.framework/Usd_Hio",
+            "Name": "hio",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

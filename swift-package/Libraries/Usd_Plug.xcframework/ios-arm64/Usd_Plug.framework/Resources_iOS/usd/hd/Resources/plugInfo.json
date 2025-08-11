@@ -1,0 +1,12 @@
+{
+    "Plugins": [
+        {
+            "Info": {},
+            "LibraryPath": "../../../Usd_Hd.framework/Usd_Hd",
+            "Name": "hd",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

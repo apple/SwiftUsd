@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>Usd_UsdUtilsValidators</string>
     <key>CFBundleIdentifier</key>
-    <string>com.pixar.Usd_UsdUtilsValidators</string>
+    <string>com.pixar.Usd-UsdUtilsValidators</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>

@@ -20,7 +20,7 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_UsdPhysics.framework/Versions/A/Usd_UsdPhysics</string>
+			<string>Usd_UsdPhysics.framework/Usd_UsdPhysics</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>

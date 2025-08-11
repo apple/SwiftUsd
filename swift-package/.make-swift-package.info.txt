@@ -1,6 +1,6 @@
 Usd installs:
-- openusd-builds/iOS/
 - openusd-builds/macOS/
+- openusd-builds/iOS/
 Usd install strategy: copyAndBundle
 Copied plugins:
 Symlinked plugins:
@@ -17,11 +17,11 @@ Feature flags:
   CMAKE_FIND_ROOT_PATH_MODE_PACKAGE: BOTH
   CMAKE_IGNORE_PATH: /opt/homebrew
   CMAKE_IGNORE_PREFIX_PATH: /opt/homebrew
-  CMAKE_INSTALL_PREFIX: /Users/maddyadams/SwiftUsd/openusd-builds/iOS
+  CMAKE_INSTALL_PREFIX: /Users/maddyadams/SwiftUsd/openusd-builds/macOS
   CMAKE_MACOSX_RPATH: ON
   CMAKE_OSX_ARCHITECTURES: arm64
   CMAKE_OSX_SYSROOT: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.4.sdk
-  CMAKE_PREFIX_PATH: /Users/maddyadams/SwiftUsd/openusd-builds/iOS
+  CMAKE_PREFIX_PATH: /Users/maddyadams/SwiftUsd/openusd-builds/macOS
   CMAKE_SYSTEM_NAME: iOS
   CMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH: YES
   PXR_BUILD_ALEMBIC_PLUGIN: ON

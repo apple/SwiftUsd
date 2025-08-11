@@ -1,0 +1,20 @@
+{
+  "Plugins": [
+    {
+      "Info": {
+        "Types": {
+          "HioImageIO_Image" : {
+            "bases": ["HioImage"],
+            "imageTypes": ["tif", "tiff"],
+            "precedence": 15
+          }
+        }
+      },
+      "LibraryPath": "hioImageIO",
+      "Name": "hioImageIO",
+      "ResourcePath": "Resources_iOS",
+      "Root": "..",
+      "Type": "library"
+    }
+  ]
+}

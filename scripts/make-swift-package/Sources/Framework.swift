@@ -355,9 +355,15 @@ struct Framework: Sendable {
     private static func getAllRequiredDylibs(usdInstall: FileSystemInfo.UsdInstall) async -> [URL] {
         let fm = FileManager.default
         print("Getting all required dylibs at \(path: usdInstall.url)...")
+        var result = [URL]()
+
+        func addIfExists(dylibName: String) {
+            let dylibUrl = usdInstall.libDir.appending(path: dylibName)
+            guard fm.fileExists(atPath: dylibUrl.path(percentEncoded: false)) else { return }
+            result.append(dylibUrl.absoluteURL)
+        }
         
         // Start with the dylibs from OpenUSD
-        var result = [URL]()
         for item in try! fm.contentsOfDirectory(at: usdInstall.libDir, includingPropertiesForKeys: nil) {
             guard item.lastPathComponent.wholeMatch(of: #/libusd_.+\.dylib/#) != nil else { continue }
             result.append(item.absoluteURL)
@@ -369,6 +375,12 @@ struct Framework: Sendable {
                 result.append(item.absoluteURL)
             }
         }
+
+        // Special case the OpenEXR dylibs, which are often built and can be useful for clients,
+        // but may not be pulled in if building with ImageIO
+        addIfExists(dylibName: "libOpenEXR.dylib")
+        addIfExists(dylibName: "libOpenEXRCore.dylib")
+        addIfExists(dylibName: "libOpenEXRUtil.dylib")
         
         // Finally, pull in the (e.g. third-party) dependencies of any of the above dylibs.
         // (In the case of Embree, hdEmbree pulls in embree3.3.dylib, so this step has to go after finding HRDs
@@ -379,8 +391,9 @@ struct Framework: Sendable {
             }
             i += 1
         }
-        
-        return result
+
+        // Resolve any symlinks, then deduplicate
+        return Array(Set(result.map { $0.resolvingSymlinksInPath() } ))
     }
     
     /// Returns a list of dylibs loaded by `@rpath` by `dylib`

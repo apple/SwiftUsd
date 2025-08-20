@@ -11,7 +11,8 @@ These changes are contained in `SwiftUsd/openusd-patch.patch`:
 
 #### Usd-specific changes to OpenUSD before building  
 These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD
-- None
+- Cherry pick 4cf5fee816332f98af626f44a5cd852e06093e08 to avoid increasing memory footprint when using UsdImagingGLEngine on macOS:
+  - Modified: `pxr/imaging/hdx/taskControllerSceneIndex.cpp`
 
 #### Swift-specific changes to OpenUSD before building
 These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-specific features, and work around issues in the Swift compiler.  

@@ -1,5 +1,5 @@
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
---- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2025-08-26 10:30:22
 +++ ./pxr/base/arch/fileSystem.h	2025-08-05 13:18:36
 @@ -38,8 +38,6 @@
  #include <stringapiset.h>
@@ -20,7 +20,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if defined(ARCH_OS_WINDOWS)
      #define ARCH_GLOB_NOCHECK   1
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt ./pxr/base/tf/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-08-26 10:30:22
 +++ ./pxr/base/tf/CMakeLists.txt	2025-08-05 13:18:36
 @@ -237,6 +237,7 @@
          pxrTslRobinMap/robin_map.h
@@ -31,7 +31,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          span.h
          staticData.h
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h ./pxr/base/tf/iterator.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h	2024-07-25 13:27:40
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h	2025-08-26 10:20:00
 +++ ./pxr/base/tf/iterator.h	2025-08-05 13:18:36
 @@ -418,6 +418,7 @@
      using pointer = typename ReverseIterator::pointer;
@@ -50,7 +50,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      Tf_ProxyReferenceReverseIterator() = default;
      explicit Tf_ProxyReferenceReverseIterator(UnderlyingIterator it) :
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h ./pxr/base/tf/notice.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2025-01-22 14:05:52
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2025-08-26 10:30:22
 +++ ./pxr/base/tf/notice.h	2025-08-05 13:18:36
 @@ -263,6 +263,7 @@
  
@@ -144,7 +144,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          }
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h ./pxr/base/tf/refBase.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h	2024-10-25 14:14:15
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h	2025-08-26 10:20:00
 +++ ./pxr/base/tf/refBase.h	2025-08-05 13:18:36
 @@ -125,6 +125,8 @@
  
@@ -156,7 +156,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
  /// \class TfSimpleRefBase
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h ./pxr/base/tf/refPtr.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h	2025-01-22 14:05:52
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h	2025-08-26 10:20:00
 +++ ./pxr/base/tf/refPtr.h	2025-08-05 13:18:36
 @@ -423,6 +423,7 @@
  #include <typeinfo>
@@ -262,7 +262,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +
 +#endif /* retainReleaseHelper_h */
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h ./pxr/base/tf/weakPtrFacade.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2025-01-22 14:05:52
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2025-08-26 10:20:00
 +++ ./pxr/base/tf/weakPtrFacade.h	2025-08-05 13:18:36
 @@ -17,6 +17,7 @@
  #include "pxr/base/arch/demangle.h"
@@ -282,7 +282,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      }
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h ./pxr/base/vt/dictionary.h
---- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2025-04-29 09:20:26
+--- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2025-08-26 10:20:00
 +++ ./pxr/base/vt/dictionary.h	2025-08-05 13:18:36
 @@ -439,8 +439,8 @@
  {
@@ -296,7 +296,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
      return i->second.Get<T>();
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt ./pxr/exec/exec/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2025-08-26 10:55:39
 +++ ./pxr/exec/exec/CMakeLists.txt	2025-08-05 13:18:36
 @@ -35,6 +35,7 @@
          systemChangeProcessor
@@ -317,7 +317,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      RESOURCE_FILES
          plugInfo.json
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h ./pxr/exec/vdf/parallelExecutorEngineBase.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2025-08-26 10:43:44
 +++ ./pxr/exec/vdf/parallelExecutorEngineBase.h	2025-08-05 13:18:36
 @@ -1885,9 +1885,9 @@
          if (!privateBuffer->GetExecutorCache()) {
@@ -333,7 +333,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
              // Fill the output with a default value.
              VdfExecutionTypeRegistry::FillVector(
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/poolChainIndex.h ./pxr/exec/vdf/poolChainIndex.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/poolChainIndex.h	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/poolChainIndex.h	2025-08-26 10:20:00
 +++ ./pxr/exec/vdf/poolChainIndex.h	2025-08-07 11:12:20
 @@ -53,6 +53,9 @@
          return !(*this == rhs);
@@ -346,7 +346,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      friend class VdfPoolChainIndexer;
      VdfPoolChainIndex(int poolChainIndex, uint32_t outputIndex)
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h ./pxr/exec/vdf/pullBasedExecutorEngine.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2025-08-26 10:30:22
 +++ ./pxr/exec/vdf/pullBasedExecutorEngine.h	2025-08-05 13:18:36
 @@ -1035,9 +1035,9 @@
              // requested because otherwise, it wouldn't be in the schedule,
@@ -362,7 +362,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
              //XXX: This is not 100% right when we use a single data flow
              //     element to hold multiple values (as we do for shaped
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.cpp ./pxr/exec/vdf/sparseInputTraverser.cpp
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.cpp	2025-04-29 09:20:26
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.cpp	2025-08-26 10:20:00
 +++ ./pxr/exec/vdf/sparseInputTraverser.cpp	2025-08-07 11:12:47
 @@ -28,70 +28,6 @@
  
@@ -436,7 +436,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  {
  public:
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.h ./pxr/exec/vdf/sparseInputTraverser.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.h	2025-04-29 09:20:26
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.h	2025-08-26 10:20:00
 +++ ./pxr/exec/vdf/sparseInputTraverser.h	2025-08-07 11:13:34
 @@ -169,7 +169,69 @@
  private:
@@ -510,7 +510,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // A map from pool chain index to prioritized output, used to ensure that we
      // process outputs in their order in the pool chain.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h ./pxr/imaging/hd/dependencySchema.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2024-07-25 13:27:40
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2025-08-26 10:43:44
 +++ ./pxr/imaging/hd/dependencySchema.h	2025-08-05 13:18:36
 @@ -52,6 +52,9 @@
      HdDependencySchema(HdContainerDataSourceHandle container)
@@ -530,7 +530,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 \ No newline at end of file
 +#endif
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h ./pxr/imaging/hd/mergingSceneIndex.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h	2025-08-26 12:02:19
 +++ ./pxr/imaging/hd/mergingSceneIndex.h	2025-08-07 11:11:47
 @@ -153,6 +153,9 @@
          , sceneRoot(sceneRoot)
@@ -543,7 +543,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
      // We observe that most merging scene indexes have few inputs, such as 2.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h ./pxr/imaging/hd/schema.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2024-07-25 13:27:40
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2025-08-26 10:30:22
 +++ ./pxr/imaging/hd/schema.h	2025-08-05 13:18:36
 @@ -28,6 +28,8 @@
      HdSchema(HdContainerDataSourceHandle container)
@@ -555,7 +555,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      /// Returns the container data source that this schema is interpreting.
      HD_API
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp ./pxr/imaging/hdsi/debuggingSceneIndex.cpp
---- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-08-26 10:20:00
 +++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2025-08-05 13:18:36
 @@ -29,62 +29,6 @@
  // It does produce a non-trivial data source for /foo.
@@ -621,7 +621,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  {
      // Future work might throw an error/show a stack trace/...
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h ./pxr/imaging/hdsi/debuggingSceneIndex.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h	2025-04-29 09:20:26
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h	2025-08-26 10:20:00
 +++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2025-08-05 13:18:36
 @@ -22,7 +22,61 @@
  namespace HdsiDebuggingSceneIndex_Impl
@@ -686,8 +686,20 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  using _PrimInfoSharedPtr = std::shared_ptr<_PrimInfo>;
  using _PrimMap = std::map<SdfPath, _PrimInfo>;
  
+diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdx/taskControllerSceneIndex.cpp ./pxr/imaging/hdx/taskControllerSceneIndex.cpp
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdx/taskControllerSceneIndex.cpp	2025-08-26 12:02:19
++++ ./pxr/imaging/hdx/taskControllerSceneIndex.cpp	2025-08-26 11:49:02
+@@ -1466,7 +1466,7 @@
+     if (_aovNames == aovNames) {
+         return;
+     }
+-    _aovNames = _aovNames;
++    _aovNames = aovNames;
+ 
+     _SetRenderOutputs(_ResolvedRenderOutputs(aovNames, _IsForStorm()));
+ 
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h ./pxr/usd/sdf/predicateProgram.h
---- /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h	2024-07-25 13:27:41
+--- /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h	2025-08-26 10:20:00
 +++ ./pxr/usd/sdf/predicateProgram.h	2025-08-05 13:18:36
 @@ -208,7 +208,7 @@
  
@@ -699,7 +711,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      return prog;
  }
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp ./pxr/usd/usdMtlx/utils.cpp
---- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-08-01 10:43:22
+--- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2025-08-26 10:20:01
 +++ ./pxr/usd/usdMtlx/utils.cpp	2025-08-08 16:07:53
 @@ -16,6 +16,8 @@
  #include "pxr/usd/sdf/types.h"

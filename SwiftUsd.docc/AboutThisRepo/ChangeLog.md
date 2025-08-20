@@ -2,6 +2,11 @@
 
 Changes to SwiftUsd
 
+### TBD
+Released TBD, based on OpenUSD TBD
+- Changed dylib bundling to pick up OpenEXR again for default macOS and iOS packages
+- Cherry pick a commit from the OpenUSD dev branch to fix a memory footprint regression with UsdImagingGLEngine on macOS
+
 ### 5.0.2
 Released 2025-08-11, based on OpenUSD v25.08
 - Fixed deployment error when using Xcode 26 beta 5 to target iOS devices

@@ -118,7 +118,7 @@ struct FileSystemInfo {
             "usdImaging", "usdImagingGL", "usdProcImaging", "usdRiPxrImaging",
             "usdSkelImaging", "usdVolImaging", "usdAppUtils",
         ]
-        let extra = ["CxxOnly", "generated", "SwiftOverlay", "swiftUsd.h", "TfNotice", "Wrappers"]
+        let extra = ["CxxOnly", "generated", "SwiftOverlay", "swiftUsd.h", "TfNotice", "Util", "Work", "Wrappers"]
         
         return vanillaOnly ? vanilla : vanilla + extra
     }
@@ -372,6 +372,10 @@ extension FileSystemInfo {
             
             // Osd, MaterialX, and OpenVDB use symlink versioning (e.g. OsdCPU.3.6.0), so strip that out
             if let match = result.wholeMatch(of: #/([^.]*)(\.\d+)+/#) {
+                result = String(match.output.1)
+            }
+            // Iex, IlmThread, Imath, and OpenEXR use symlink versioning (e.g. Iex-3_1.30.13.1), so strip that out
+            if let match = result.wholeMatch(of: #/([^.-]*)-\d+_\d(\.\d+)*/#) {
                 result = String(match.output.1)
             }
 

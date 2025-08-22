@@ -18,6 +18,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
+// Original documentation for pxr::WorkParallelReduceN from
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/work/reduce.h
+
 // Important: In C++, size_t is an unsigned value, but Swift implicitly converts
 // this value to _signed_ Int. (Except for a template-related bug, which is worked
 // around in Util/Utils.h). For greater consistency with Swift-Cxx, we choose
@@ -73,6 +76,21 @@ fileprivate class WorkParallelReduceNReductionClosureHolder: _Overlay.Retainable
 
 
 extension pxr {
+    /// Recursively splits the range [0, `n`) into subranges, which are then
+    /// reduced by invoking `loopCallback` in parallel.
+    ///
+    /// Each invocation of `loopCallback` returns a single value that is the
+    /// result of joining the elements in the respective subrange. These values
+    /// are then further joined using the binary operator `reductionCallback`,
+    /// until only a single value remains. This single value is then the result
+    /// of joining all elements over the entire range [0, `n`).
+    /// 
+    /// `grainSize` specifies a minimum amount of work to be done per-thread.
+    /// There is overhead to launching a task and a typical guideline is that
+    /// you want to have at least 10,000 instructions to count for the overhead of
+    /// launching that task.
+    // Note: For whatever reason, this function doesn't have public documentation visibility by default
+    @_documentation(visibility: public)
     public static func WorkParallelReduceN<T>(_ _identity: T,
                                               _ n: Int,
                                               _ grainSize: Int,
@@ -95,6 +113,20 @@ extension pxr {
         }
     }
 
+    /// Recursively splits the range [0, `n`) into subranges, which are then
+    /// reduced by invoking `loopCallback` in parallel.
+    ///
+    /// Each invocation of `loopCallback` returns a single value that is the
+    /// result of joining the elements in the respective subrange. These values
+    /// are then further joined using the binary operator `reductionCallback`,
+    /// until only a single value remains. This single value is then the result
+    /// of joining all elements over the entire range [0, `n`).
+    ///
+    /// This overload does not accept a grain size parameter and instead attempts
+    /// to automatically deduce a grain size that is optimal for the current
+    /// resource utilization and provided workload.
+    // Note: For whatever reason, this function doesn't have public documentation visibility by default
+    @_documentation(visibility: public)
     public static func WorkParallelReduceN<T>(_ _identity: T,
                                               _ n: Int,
                                               _ loopCallback: @Sendable (Int, Int, T) -> T,

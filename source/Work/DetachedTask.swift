@@ -18,6 +18,10 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
+// Original documentation for pxr::WorkRunDetachedTask from
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/work/detachedTask.h
+
+
 fileprivate class WorkRunDetachedTaskClosureHolder: _Overlay.RetainableByCxx {
     var closure: @Sendable () -> ()
 
@@ -32,6 +36,8 @@ fileprivate class WorkRunDetachedTaskClosureHolder: _Overlay.RetainableByCxx {
 }
 
 extension pxr {
+    /// Invoke `closure` asynchronously, discard any errors it produces, and provide
+    /// no way to wait for it to complete.
     public static func WorkRunDetachedTask(_ closure: @escaping @Sendable () -> ()) {
         WorkRunDetachedTaskClosureHolder(closure).toCxx().WorkRunDetachedTask()
     }

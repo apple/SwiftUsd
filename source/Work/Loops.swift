@@ -18,6 +18,10 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
+// Original documentation for pxr::WorkSerialForN, pxr::WorkParallelForN, and pxr::WorkParallelForEach from
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/work/loops.h
+
+
 // Important: In C++, size_t is an unsigned value, but Swift implicitly converts
 // this value to _signed_ Int. (Except for a template-related bug, which is worked
 // around in Util/Utils.h). For greater consistency with Swift-Cxx, we choose
@@ -106,24 +110,35 @@ fileprivate class WorkParallelForEachClosureHolder: _Overlay.RetainableByCxx {
 }
 
 extension pxr {
-    public static func WorkSerialForN(_ n: Int, closure: @Sendable (_ begin: Int, _ end: Int) -> ()) {
+    /// A serial version of WorkParallelForN as a drop in replacement to
+    /// selectively turn off multithreading for a single parallel loop for easier
+    /// debugging. 
+    public static func WorkSerialForN(_ n: Int, _ closure: @Sendable (_ begin: Int, _ end: Int) -> ()) {
         withoutActuallyEscaping(closure) {
             WorkParallelForNClosureHolder($0).toCxx().WorkSerialForN(n)
         }
     }
 
+    /// Runs `closure` in parallel over the range 0 to n.
+    ///
+    /// `grainSize` specifies a minimum amount of work to be done per-thread. There
+    /// is overhead to launching a thread (or task) and a typical guideline is that
+    /// you want to have at least 10,000 instructions to count for the overhead of
+    /// launching a thread.
     public static func WorkParallelForN(_ n: Int, _ grainSize: Int, _ closure: @Sendable (_ begin: Int, _ end: Int) -> ()) {
         withoutActuallyEscaping(closure) {
             WorkParallelForNClosureHolder($0).toCxx().WorkParallelForN(n, grainSize)
         }
     }
 
+    /// Runs `closure` in parallel over the range 0 to n.
     public static func WorkParallelForN(_ n: Int, _ closure: @Sendable (_ begin: Int, _ end: Int) -> ()) {
         withoutActuallyEscaping(closure) {
             WorkParallelForNClosureHolder($0).toCxx().WorkParallelForN(n)
         }
     }
 
+    /// Runs `closure` in parallel over the elements in `collection`
     public static func WorkParallelForEach<C: Collection>(_ collection: C, _ closure: @Sendable (C.Element) -> ()) {
         withoutActuallyEscaping(closure) {
             let closureHolder = WorkParallelForEachClosureHolder.Generic($0, collection)

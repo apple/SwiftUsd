@@ -31,6 +31,7 @@ This Swift package adds new functions/types to make OpenUSD more natural to use 
 - <doc:WorkingWithTfNotice>
 - <doc:WorkingWithTfErrorMark>
 - <doc:WorkingWithTfDiagnosticFacilities>
+- <doc:UsingLibWork>
 - <doc:ConvenientExtensions>
 - <doc:TypeConversion>
 

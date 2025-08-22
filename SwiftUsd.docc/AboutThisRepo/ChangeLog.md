@@ -4,6 +4,7 @@ Changes to SwiftUsd
 
 ### TBD
 Released TBD, based on OpenUSD TBD
+- Exposed some libWork APIs to Swift (see [Using libWork](<doc:UsingLibWork>))
 - Changed dylib bundling to pick up OpenEXR again for default macOS and iOS packages
 - Cherry pick a commit from the OpenUSD dev branch to fix a memory footprint regression with UsdImagingGLEngine on macOS
 

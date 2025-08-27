@@ -71,7 +71,9 @@ let package = Package(
 func cppTarget_dependencies() -> [Target.Dependency] {
     [
         .target(name: "_Alembic_xcframework", condition: .when(platforms: [.macOS, .iOS])),
-        .target(name: "_Imath-3_1_xcframework", condition: .when(platforms: [.macOS, .iOS])),
+        .target(name: "_Iex_xcframework", condition: .when(platforms: [.macOS, .iOS])),
+        .target(name: "_IlmThread_xcframework", condition: .when(platforms: [.macOS, .iOS])),
+        .target(name: "_Imath_xcframework", condition: .when(platforms: [.macOS, .iOS])),
         .target(name: "_MaterialX_xcframework", condition: .when(platforms: [.iOS])),
         .target(name: "_MaterialXCore_xcframework", condition: .when(platforms: [.macOS])),
         .target(name: "_MaterialXFormat_xcframework", condition: .when(platforms: [.macOS])),
@@ -81,6 +83,9 @@ func cppTarget_dependencies() -> [Target.Dependency] {
         .target(name: "_MaterialXRender_xcframework", condition: .when(platforms: [.macOS])),
         .target(name: "_MaterialXRenderGlsl_xcframework", condition: .when(platforms: [.macOS])),
         .target(name: "_MaterialXRenderHw_xcframework", condition: .when(platforms: [.macOS])),
+        .target(name: "_OpenEXR_xcframework", condition: .when(platforms: [.macOS, .iOS])),
+        .target(name: "_OpenEXRCore_xcframework", condition: .when(platforms: [.macOS, .iOS])),
+        .target(name: "_OpenEXRUtil_xcframework", condition: .when(platforms: [.macOS, .iOS])),
         .target(name: "_OpenVDB_xcframework", condition: .when(platforms: [.macOS])),
         .target(name: "_OsdCPU_xcframework", condition: .when(platforms: [.macOS])),
         .target(name: "_OsdGPU_xcframework", condition: .when(platforms: [.macOS])),
@@ -172,7 +177,9 @@ func cppTarget_dependencies() -> [Target.Dependency] {
 func xcframeworkBinaryTargets() -> [Target] {
     [
         .binaryTarget(name: "_Alembic_xcframework", path: "swift-package/Libraries/Alembic.xcframework"),
-        .binaryTarget(name: "_Imath-3_1_xcframework", path: "swift-package/Libraries/Imath-3_1.xcframework"),
+        .binaryTarget(name: "_Iex_xcframework", path: "swift-package/Libraries/Iex.xcframework"),
+        .binaryTarget(name: "_IlmThread_xcframework", path: "swift-package/Libraries/IlmThread.xcframework"),
+        .binaryTarget(name: "_Imath_xcframework", path: "swift-package/Libraries/Imath.xcframework"),
         .binaryTarget(name: "_MaterialX_xcframework", path: "swift-package/Libraries/MaterialX.xcframework"),
         .binaryTarget(name: "_MaterialXCore_xcframework", path: "swift-package/Libraries/MaterialXCore.xcframework"),
         .binaryTarget(name: "_MaterialXFormat_xcframework", path: "swift-package/Libraries/MaterialXFormat.xcframework"),
@@ -182,6 +189,9 @@ func xcframeworkBinaryTargets() -> [Target] {
         .binaryTarget(name: "_MaterialXRender_xcframework", path: "swift-package/Libraries/MaterialXRender.xcframework"),
         .binaryTarget(name: "_MaterialXRenderGlsl_xcframework", path: "swift-package/Libraries/MaterialXRenderGlsl.xcframework"),
         .binaryTarget(name: "_MaterialXRenderHw_xcframework", path: "swift-package/Libraries/MaterialXRenderHw.xcframework"),
+        .binaryTarget(name: "_OpenEXR_xcframework", path: "swift-package/Libraries/OpenEXR.xcframework"),
+        .binaryTarget(name: "_OpenEXRCore_xcframework", path: "swift-package/Libraries/OpenEXRCore.xcframework"),
+        .binaryTarget(name: "_OpenEXRUtil_xcframework", path: "swift-package/Libraries/OpenEXRUtil.xcframework"),
         .binaryTarget(name: "_OpenVDB_xcframework", path: "swift-package/Libraries/OpenVDB.xcframework"),
         .binaryTarget(name: "_OsdCPU_xcframework", path: "swift-package/Libraries/OsdCPU.xcframework"),
         .binaryTarget(name: "_OsdGPU_xcframework", path: "swift-package/Libraries/OsdGPU.xcframework"),

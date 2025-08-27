@@ -2,8 +2,17 @@
 
 Changes to SwiftUsd
 
-### TBD
-Released TBD, based on OpenUSD TBD
+@Comment {
+    If you're adding to the ChangeLog and there isn't an existing "TBD release" section,
+    please create one by adding the following lines above the most recent release's section
+    ```
+    ### TBD
+    Released TBD, based on OpenUSD TBD
+    ```
+}
+
+### 5.1.0
+Released 2025-08-27, based on OpenUSD v25.08
 - Exposed some libWork APIs to Swift (see [Using libWork](<doc:UsingLibWork>))
 - Changed dylib bundling to pick up OpenEXR again for default macOS and iOS packages
 - Cherry pick a commit from the OpenUSD dev branch to fix a memory footprint regression with UsdImagingGLEngine on macOS

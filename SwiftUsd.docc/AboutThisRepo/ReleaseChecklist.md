@@ -12,7 +12,7 @@ Checklist for releasing new versions of SwiftUsd
 1. [Compare changes to the patch](<doc:CheatSheet#Comparing-the-differences-between-an-old-patch-and-a-new-patch>)
 1. Move the patch to `SwiftUsd/openusd-patch.patch`
 1. Update [Changes to OpenUSD](<doc:ChangesToOpenUSD>)
-1. Remove `swift-package` and run `./scripts/make-swift-package.py openusd-builds/macOS openusd-builds/iOS`
+1. Remove `swift-package` and run `./scripts/make-swift-package.zsh openusd-builds/macOS openusd-builds/iOS`
 
 
 ## 3. If ast-answerer was changed
@@ -20,7 +20,7 @@ Checklist for releasing new versions of SwiftUsd
 
 
 ## 4. If source files have been added or removed
-1. Remove `swift-package` and run `python3 scripts/make-swift-package.py`
+1. Remove `swift-package` and run `python3 scripts/make-swift-package.zsh`
 1. Add to `swiftUsd.h` umbrella header
 1. Review changes via `git status` and `git diff`
 
@@ -48,6 +48,7 @@ Checklist for releasing new versions of SwiftUsd
         1. README.md, "Swift Package"
         1. [Getting Started, "Swift Package"](<doc:GettingStarted#Swift-Package>)
         1. make-spm-tests.py in SwiftUsdTests
+        1. project.pbxproj in SwiftUsdTests
 1. If files have been added or removed, update [Miscellaneous, "Repo structure"](<doc:Miscellaneous#Repo-structure>)
 1. Update [Ongoing Work](<doc:OngoingWork>)
 1. Update the [Change Log](<doc:ChangeLog>)

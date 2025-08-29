@@ -22,7 +22,7 @@ name: Build SwiftUsd
 
 inputs:
   openusd-ref:
-    description 'OpenUSD ref'
+    description: 'OpenUSD ref'
     required: true
     type: string
 

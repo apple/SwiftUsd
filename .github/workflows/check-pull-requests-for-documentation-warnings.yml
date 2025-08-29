@@ -28,5 +28,5 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v5
 
-    - name: Check
+    - name: Check for documentation warnings
       uses: ./actions/build-symbol-graphs

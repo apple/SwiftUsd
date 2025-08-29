@@ -41,6 +41,7 @@ runs:
     run: |
       cd ./openusd-source
       patch -p1 -i ../openusd-patch.patch
+    shell: bash
 
   - name: Build OpenUSD for macOS
     run: |
@@ -54,26 +55,29 @@ runs:
         --ignore-homebrew \
         --build-target native \
         ../openusd-builds/macOS
+    shell: bash
 
   - name: Build OpenUSD for iOS
     run: |
       cd ./openusd-source
       python3 build_scripts/build_usd.py \
-      --imageio \
-      --alembic \
-      --no-python \
-      --ignore-homebrew \
-      --build-target iOS \
-      ../openusd-builds/iOS
-
+        --imageio \
+        --alembic \
+        --no-python \
+        --ignore-homebrew \
+        --build-target iOS \
+        ../openusd-builds/iOS
+    shell: bash
 
   - name: Remove Package.swift and swift-package
     run: |
       rm ./Package.swift
       rm -rf ./swift-package
+    shell: bash
 
   - name: Run make-swift-package
     run: |
       swift run --package-path ./scripts/make-swift-package make-swift-package \
         ./openusd-builds/iOS \
         ./openusd-builds/macOS
+    shell: bash

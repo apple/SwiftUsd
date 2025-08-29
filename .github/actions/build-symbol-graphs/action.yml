@@ -26,8 +26,10 @@ runs:
 
   - name: Build symbol graphs
     run: swift run --package-path ./scripts/docc build-documentation
+    shell: bash
 
   - name: Check documentation for warnings
     run: |
       xcrun docc convert --additional-symbol-graph-dir ./.symbol-graphs ./SwiftUsd.docc \
         --warnings-as-errors
+    shell: bash

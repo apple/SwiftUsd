@@ -53,13 +53,13 @@ jobs:
         ref: ${{ inputs.swiftusd-ref }}
     
     - name: Build SwiftUsd
-      uses: ./actions/build-swiftusd
+      uses: ./.github/actions/build-swiftusd
       with:
         swiftusd-ref: ${{ inputs.swiftusd-ref }}
         openusd-ref: ${{ inputs.openusd-ref }}
       
     - name: Build symbol graphs
-      uses: ./actions/build-symbol-graphs
+      uses: ./.github/actions/build-symbol-graphs
           
     - name: Update SwiftUsd.doccarchive
       run: |

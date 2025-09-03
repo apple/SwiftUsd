@@ -29,6 +29,9 @@ inputs:
 runs:
   using: "composite"
   steps:
+
+  - name: Install CMake
+    uses: ./.github/actions/install-cmake
         
   - name: Clone OpenUSD
     uses: actions/checkout@v5

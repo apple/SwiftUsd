@@ -20,6 +20,8 @@
 
 name: Check Pull Requests for Documentation Warnings
 run-name: Checking Pull Request for Documentation Warnings
+permissions:
+  contents: read
 on: pull_request
 jobs:
   Check:

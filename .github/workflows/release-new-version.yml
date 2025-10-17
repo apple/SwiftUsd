@@ -20,6 +20,8 @@
 
 name: Release new version
 run-name: Releasing new version
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:

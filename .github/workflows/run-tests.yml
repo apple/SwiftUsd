@@ -20,7 +20,8 @@
 
 name: Run tests
 run-name: Running tests
-
+permissions:
+  contents: read
 on:
   workflow_dispatch:
     inputs:

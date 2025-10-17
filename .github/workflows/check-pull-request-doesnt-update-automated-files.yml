@@ -21,6 +21,9 @@
 name: Check that pull requests don't update automated files
 run-name: Checking that pull request doesn't update automated files
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     paths:

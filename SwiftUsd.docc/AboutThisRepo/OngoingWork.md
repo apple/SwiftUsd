@@ -6,8 +6,7 @@ In-progress and future tasks for improving OpenUSD in Swift
 SwiftUsd is currently a work-in-progress. Here is a list of potential future improvements, organized by topic. 
 
 ### Ease of set up
-- Include visionOS, tvOS, simulators in XCFrameworks
-
+- Include tvOS binaries
 
 ### Small items
 - Add missing `SWIFT_NONMUTATING`:

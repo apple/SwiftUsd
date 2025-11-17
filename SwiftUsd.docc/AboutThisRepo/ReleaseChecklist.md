@@ -12,7 +12,8 @@ Checklist for releasing new versions of SwiftUsd
 1. [Compare changes to the patch](<doc:CheatSheet#Comparing-the-differences-between-an-old-patch-and-a-new-patch>)
 1. Move the patch to `SwiftUsd/openusd-patch.patch`
 1. Update [Changes to OpenUSD](<doc:ChangesToOpenUSD>)
-1. Remove `swift-package` and run `./scripts/make-swift-package.zsh openusd-builds/macOS openusd-builds/iOS`
+1. Remove `swift-package` and run `./scripts/make-swift-package.zsh openusd-builds/*`
+1. Make sure all wrappers are up to date
 
 
 ## 3. If ast-answerer was changed
@@ -39,6 +40,7 @@ Checklist for releasing new versions of SwiftUsd
     1. OpenUSD
         1. [Getting Started](<doc:GettingStarted>)
         1. [Building Locally](<doc:BuildingLocally>)
+        1. Links to vanilla OpenUSD source files on GitHub
     1. Pixar namespace
         1. [Getting Started, "Using SwiftUsd"](<doc:GettingStarted#Using-SwiftUsd>)
         1. [Getting Started, "Common Issues"](<doc:GettingStarted#Common-issues>)
@@ -50,6 +52,7 @@ Checklist for releasing new versions of SwiftUsd
         1. make-spm-tests.py in SwiftUsdTests
         1. project.pbxproj in SwiftUsdTests
         1. project.pbxproj for each Xcode project in Examples
+        1. Package.swift for each Swift Package in Examples
 1. If files have been added or removed, update [Miscellaneous, "Repo structure"](<doc:Miscellaneous#Repo-structure>)
 1. Update [Ongoing Work](<doc:OngoingWork>)
 1. Update the [Change Log](<doc:ChangeLog>)

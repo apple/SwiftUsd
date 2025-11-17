@@ -367,7 +367,7 @@
 			repositoryURL = "https://github.com/apple/SwiftUsd";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.2;
+				minimumVersion = 5.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -45,6 +45,33 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target iOS \
     ~/SwiftUsd/openusd-builds/iOS
+
+cd ~/SwiftUsd/openusd-source
+python3 build_scripts/build_usd.py \
+    --imageio \
+    --alembic \
+    --no-python \
+    --ignore-homebrew \
+    --build-target iOSSimulator \
+    ~/SwiftUsd/openusd-builds/iOSSimulator
+
+cd ~/SwiftUsd/openusd-source
+python3 build_scripts/build_usd.py \
+    --imageio \
+    --alembic \
+    --no-python \
+    --ignore-homebrew \
+    --build-target visionOS \
+    ~/SwiftUsd/openusd-builds/visionOS
+
+cd ~/SwiftUsd/openusd-source
+python3 build_scripts/build_usd.py \
+    --imageio \
+    --alembic \
+    --no-python \
+    --ignore-homebrew \
+    --build-target visionOSSimulator \
+    ~/SwiftUsd/openusd-builds/visionOSSimulator
 ```
 
 > Note: Custom feature flags are experimental, and may have some restrictions. For example, building with Python will not work on Apple platforms, building with additional plugins may not work for app-bundlable packages, and packaging multiple Usd builds with incompatible feature flags may not work. 
@@ -52,5 +79,5 @@ python3 build_scripts/build_usd.py \
 5. Run `scripts/make-swift-package.zsh`. Use the `--generated-package-dir` flag to create the custom SwiftUsd package at a specific location (defaults to the SwiftUsd repo cloned from git). Note: if making the swift package in place with the following command, remove `swift-package` before running `make-swift-package`. 
 ```zsh
 cd ~/SwiftUsd
-./scripts/make-swift-package.zsh openusd-builds/iOS openusd-builds/macOS
+./scripts/make-swift-package.zsh openusd-builds/*
 ```

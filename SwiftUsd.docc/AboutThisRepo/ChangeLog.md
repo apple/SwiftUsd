@@ -11,6 +11,12 @@ Changes to SwiftUsd
     ```
 }
 
+### 5.2.0
+Released 2025-11-20, based on OpenUSD v25.08
+- Add support for the universal binaries on macOS, iOS simulator, visionOS, and visionOS simulator. (Note that the default SwiftUsd package uses Apple Silicon-only binaries)
+- Add a `--force` flag to make-swift-package, changed it to abort if the `generatedPackageDir` already exists and `--force` isn't used
+- Fixed MethodsReturningReferences to use borrowing methods
+
 ### 5.1.0
 Released 2025-08-27, based on OpenUSD v25.08
 - Exposed some libWork APIs to Swift (see [Using libWork](<doc:UsingLibWork>))

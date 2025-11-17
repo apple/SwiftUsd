@@ -93,7 +93,7 @@ Parent directory for the file system structure expected by Swift Package Manager
     - `SwiftUsd/swift-package/Sources`  
     The SPM `Sources` directory. 
 
-    - `SwiftUsd/swift-package/XCFrameworks`  
+    - `SwiftUsd/swift-package/Libraries`  
     Parent directory for the XCFrameworks created by `SwiftUsd/scripts/make-swift-package`. 
 
 - `SwiftUsd/SwiftUsd.docc`  

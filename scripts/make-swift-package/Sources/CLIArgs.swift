@@ -88,7 +88,11 @@ struct CLIArgs: AsyncParsableCommand {
     """)
     var artifactsHostingURL: String?
     
-    
+    @Flag(help: """
+                If `generatedPackageDir` already exists, make-swift-package will exit to avoid overwriting it
+                unless --force is passed
+                """)
+    var force: Bool = false
     
     
     

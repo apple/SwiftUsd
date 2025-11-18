@@ -138,6 +138,11 @@ struct FileSystemInfo {
             switch $0.lastPathComponent {
             case "ios-arm64": return ".iOS"
             case "macos-arm64": return ".macOS"
+            case "macos-x86_64": return ".macOS"
+            case "macos-arm64_x86_64": return ".macOS"
+            case "ios-arm64-simulator": return ".iOS"
+            case "xros-arm64": return ".visionOS"
+            case "xros-arm64-simulator": return ".visionOS"
             case "Info.plist": return nil
             default:
                 print("Warning: Unknown xcframework platform subdirectory: \($0.lastPathComponent)")
@@ -145,7 +150,7 @@ struct FileSystemInfo {
             }
         }
         
-        return ".when(platforms: [\(subdirNames.joined(separator: ", "))])"
+        return ".when(platforms: [\(Set(subdirNames).sorted().joined(separator: ", "))])"
     }
 
 }
@@ -414,7 +419,6 @@ fileprivate func _getSwiftUsdRepoURL() -> URL {
 fileprivate func getPlatformNameForDylib(_ dylib: URL) async throws -> String {
     #if canImport(Darwin)
     let vtoolOutput = try await ShellUtil.runCommandAndGetOutput(arguments: ["vtool", "-show-build", dylib])
-        .reduce([]) { $0 + [$1] }
     guard let platformLine = vtoolOutput.first(where: { $0.trimmingCharacters(in: .whitespaces).starts(with: "platform")} ) else {
         throw ValidationError("vtool -show-build parsing failure")
     }
@@ -424,6 +428,9 @@ fileprivate func getPlatformNameForDylib(_ dylib: URL) async throws -> String {
     switch platform {
     case "MACOS": return "macOS"
     case "IOS": return "iOS"
+    case "IOSSIMULATOR": return "iOSSimulator"
+    case "VISIONOS": return "visionOS"
+    case "VISIONOSSIMULATOR": return "visionOSSimulator"
     default:
         print("Warning! Unknown vtool platform \(platform)")
         return platform

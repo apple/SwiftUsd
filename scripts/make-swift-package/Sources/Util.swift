@@ -196,8 +196,8 @@ extension ShellUtil {
         }
     }
     #endif
-
-    public static func runCommandAndGetOutput(arguments: [any Argument], exitOnSigint: Bool = true) throws -> ShellUtilCommandOutput {
+    
+    public static func runCommandAndGetOutput(arguments: [any Argument], exitOnSigint: Bool = true) async throws -> [String] {
         let output = Pipe()
         
         let process = Process()
@@ -210,12 +210,13 @@ extension ShellUtil {
         process.executableURL = URL(filePath: "/bin/bash")
         process.arguments = ["-c", arguments.map { $0.asSpaceEscapedString() }.joined(separator: " ")]
         try process.run()
-
-        #if os(macOS)
-        return output.fileHandleForReading.bytes.lines
-        #else
-        return .init(output.fileHandleForReading)
-        #endif
+        
+        let result = try await output.fileHandleForReading.bytes.lines.map { $0 }.reduce([]) { $0 + [$1] }
+        
+        try output.fileHandleForReading.close()
+        try output.fileHandleForWriting.close()
+        
+        return result
     }
     
     public static func runCommandAndWait(arguments: [any Argument], currentDirectoryURL: URL? = nil, exitOnSigint: Bool = true, quiet: Bool = false) async throws {

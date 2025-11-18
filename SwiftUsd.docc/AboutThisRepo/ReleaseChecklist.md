@@ -49,6 +49,7 @@ Checklist for releasing new versions of SwiftUsd
         1. [Getting Started, "Swift Package"](<doc:GettingStarted#Swift-Package>)
         1. make-spm-tests.py in SwiftUsdTests
         1. project.pbxproj in SwiftUsdTests
+        1. project.pbxproj for each Xcode project in Examples
 1. If files have been added or removed, update [Miscellaneous, "Repo structure"](<doc:Miscellaneous#Repo-structure>)
 1. Update [Ongoing Work](<doc:OngoingWork>)
 1. Update the [Change Log](<doc:ChangeLog>)

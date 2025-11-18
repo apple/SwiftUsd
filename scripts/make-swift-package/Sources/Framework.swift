@@ -240,7 +240,7 @@ struct Framework: Sendable {
     /// Greps for `cmd` in the load commands of the dylib,
     /// returning the path associated with the command
     private func grepOtool(_ cmd: String) async -> [String] {
-        let otoolOutput = try! await ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-l", fsInfo.dylib]).reduce([]) { $0 + [$1] }
+        let otoolOutput = try! await ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-l", fsInfo.dylib])
         
         var result = [String]()
         
@@ -402,7 +402,7 @@ struct Framework: Sendable {
         var result = [URL]()
         do {
             // Just use `otool` and extract the `@rpath` dylibs, relative to the `lib_dir`
-            for try await line in try! ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-L", dylib]) {
+            for line in try! await ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-L", dylib]) {
                 let pattern = #/\s*@rpath/(.*\.dylib) \(compatibility version .*, current version .*\)/#
                 if let match = line.wholeMatch(of: pattern)?.output.1 {
                     let toAppend = usdInstall.libDir.appending(path: match)
@@ -410,7 +410,7 @@ struct Framework: Sendable {
                         // otool -L told us about an rpath dependency we can't find.
                         // if this happens because the dependency is itself, that's okay.
                         // (otool -L outputs the shared library ID when ran on a shared library)
-                        let sharedLibraryId = (try! await ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-D", dylib]).reduce([]) { $0 + [$1] })[1]
+                        let sharedLibraryId = (try! await ShellUtil.runCommandAndGetOutput(arguments: ["otool", "-D", dylib]))[1]
                         if sharedLibraryId.wholeMatch(of: #/@rpath/(.*\.dylib)/#)?.output.1 == match {
                             continue
                         } else {
@@ -435,8 +435,6 @@ struct Framework: Sendable {
                     print("Did you mean to use `--ignore-paths` or `--ignore-homebrew` when building OpenUSD?")
                 }
             }
-        } catch {
-            fatalError(String(describing: error))
         }
         
         return result

@@ -65,6 +65,15 @@ struct SwiftPackage {
     }
     
     private func setupDirectoryStructure() async throws {
+        if fm.fileExists(atPath: fsInfo.swiftUsdPackage.generatedSwiftPackageDir.path(percentEncoded: false)) {
+            if cliArgs.force {
+                try! fm.removeItem(at: fsInfo.swiftUsdPackage.generatedSwiftPackageDir)
+            } else {
+                print("Error: \(fsInfo.swiftUsdPackage.generatedSwiftPackageDir.relativePath) already exists.")
+                print("Choose another destination, or pass `--force` to overwrite it.")
+                throw ValidationError("\(fsInfo.swiftUsdPackage.generatedSwiftPackageDir.relativePath) already exists but `--force` wasn't passed")
+            }
+        }
         try! fm.createDirectory(at: fsInfo.swiftUsdPackage.generatedSwiftPackageDir, withIntermediateDirectories: true)
         try! fsInfo.packageConfigInfo.write(to: fsInfo.packageConfigInfoUrl, atomically: true, encoding: .utf8)
         try! fm.createDirectory(at: fsInfo.swiftUsdPackage.tmpDir, withIntermediateDirectories: true)
@@ -132,7 +141,7 @@ struct SwiftPackage {
             let dest = cliArgs.checksummedArtifactsDir!.appending(path: "\(src.lastPathComponent).zip")
             try await ShellUtil.runCommandAndWait(arguments: ["ditto", "-c", "-k", "--sequesterRsrc", src, dest])
             
-            let opensslOutput = try await ShellUtil.runCommandAndGetOutput(arguments: ["openssl", "dgst", "-sha256", dest]).reduce([]) { $0 + [$1] }
+            let opensslOutput = try await ShellUtil.runCommandAndGetOutput(arguments: ["openssl", "dgst", "-sha256", dest])
             guard let checksum = opensslOutput[0].wholeMatch(of: #/SHA256\(.*\.xcframework\.zip\)= ([0-9a-f]*)/#)?.output.1 else {
                 throw ValidationError("openssl checksumming error! Got \(opensslOutput)")
             }
@@ -311,6 +320,7 @@ struct SwiftPackage {
                     "module \(moduleName) {",
                     "    // \(shortName) is not available on embedded platforms",
                     "    requires !ios",
+                    "    requires !xros",
                     "}"
                 ]
             } else {

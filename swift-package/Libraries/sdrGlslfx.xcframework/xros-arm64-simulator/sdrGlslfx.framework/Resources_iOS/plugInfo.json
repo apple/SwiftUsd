@@ -1,0 +1,19 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "SdrGlslfxParserPlugin": {
+                        "bases": ["SdrParserPlugin"], 
+                        "displayName": "Glslfx-based shader definition parser plugin"
+                    }
+                }
+            },
+            "LibraryPath": "sdrGlslfx",
+            "Name": "sdrGlslfx",
+            "ResourcePath": "Resources_iOS",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

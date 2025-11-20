@@ -52,9 +52,9 @@ public:
     {
         return !(*this == rhs);
     }
-
     // Swift default argument overspecialization fix
     VdfPoolChainIndex() {}
+
 
 private:
     friend class VdfPoolChainIndexer;

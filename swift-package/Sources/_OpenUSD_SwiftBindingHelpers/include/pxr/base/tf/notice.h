@@ -393,8 +393,8 @@ public:
     ///
     /// This revokes interest by the listener for the particular notice type
     /// and call-back method for which this key was created.
-    /// `Revoke` will return a bool value indicating whether or not the key
-    /// was successfully revoked. Subsequent calls to `Revoke` with the same
+    /// \c Revoke will return a bool value indicating whether or not the key
+    /// was successfully revoked. Subsequent calls to \c Revoke with the same
     /// key will return false.
     TF_API
     static bool Revoke(TfNotice::SwiftKey key);

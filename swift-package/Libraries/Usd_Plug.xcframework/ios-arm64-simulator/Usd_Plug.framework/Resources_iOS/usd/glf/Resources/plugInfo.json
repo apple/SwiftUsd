@@ -1,0 +1,14 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "ShaderResources": "shaders"
+            },
+            "LibraryPath": "../../../Usd_Glf.framework/Usd_Glf",
+            "Name": "glf",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

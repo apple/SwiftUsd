@@ -169,7 +169,8 @@ public:
 private:
 
     // A type used to represent an input in a priority queue.
-    class _PrioritizedOutput {
+    class _PrioritizedOutput
+    {
     public:
         _PrioritizedOutput(
             const VdfOutput *output,
@@ -231,7 +232,6 @@ private:
         // value type.
         std::shared_ptr<VdfObjectPtrVector> _path;
     };
-
 
     // A map from pool chain index to prioritized output, used to ensure that we
     // process outputs in their order in the pool chain.

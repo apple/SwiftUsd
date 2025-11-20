@@ -1243,9 +1243,6 @@ module _OpenUSD_SwiftBindingHelpers {
     header "pxr/imaging/hdMtlx/api.h"
     header "pxr/imaging/hdMtlx/debugCodes.h"
     header "pxr/imaging/hdMtlx/hdMtlx.h"
-    header "pxr/imaging/hioOpenVDB/api.h"
-    header "pxr/imaging/hioOpenVDB/utils.h"
-    header "pxr/imaging/hioOpenVDB/vdbAssetInterface.h"
     header "pxr/imaging/hdSt/api.h"
     header "pxr/imaging/hdSt/basisCurves.h"
     header "pxr/imaging/hdSt/binding.h"
@@ -1595,11 +1592,13 @@ module SwiftUsd_PXR_ENABLE_ALEMBIC_SUPPORT {}
 module SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT {
     // Embree is not available on embedded platforms
     requires !ios
+    requires !xros
 }
 // module SwiftUsd_PXR_ENABLE_OPENCOLORIO_SUPPORT {}
 // module SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT {
 //     // OpenImageIO is not available on embedded platforms
 //     requires !ios
+//     requires !xros
 // }
 // module SwiftUsd_PXR_ENABLE_PRMAN_SUPPORT {}
 module SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT {}
@@ -1609,6 +1608,7 @@ module SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT {}
 module SwiftUsd_PXR_ENABLE_OPENVDB_SUPPORT {
     // OpenVDB is not available on embedded platforms
     requires !ios
+    requires !xros
 }
 // module SwiftUsd_PXR_ENABLE_PTEX_SUPPORT {}
 // module SwiftUsd_PXR_ENABLE_PYTHON_SUPPORT {}

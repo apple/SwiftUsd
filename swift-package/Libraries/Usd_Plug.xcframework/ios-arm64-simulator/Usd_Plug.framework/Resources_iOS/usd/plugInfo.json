@@ -1,0 +1,8 @@
+{
+    "Includes": [
+        "*/Resources/",
+        "*/Resources_iOS/",
+        "../../../../*.framework/Resources/",
+        "../../*.framework/Resources_iOS/"
+    ]
+}

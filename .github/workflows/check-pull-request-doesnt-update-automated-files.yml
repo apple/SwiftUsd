@@ -18,8 +18,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #===----------------------------------------------------------------------===#
 
-name: Check that pull requests don't update automated files
-run-name: Checking that pull request doesn't update automated files
+name: Check that pull requests don't update generated files
+run-name: Checking that pull request doesn't update generated files
 
 on:
   pull_request:
@@ -30,7 +30,7 @@ on:
     - ./SwiftUsd/docs/**
 
 jobs:
-  Fail:
-    runs-on: self-hosted
+  fail:
+    runs-on: ubuntu-latest
     steps:
     - run: exit 1

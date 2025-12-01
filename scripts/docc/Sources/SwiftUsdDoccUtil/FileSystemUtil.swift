@@ -58,6 +58,7 @@ final public class Driver: Sendable {
         
         symbolGraphsURL = swiftUsdRepoURL.appending(path: ".symbol-graphs")
         moduleAtObjcSymbolsURL = symbolGraphsURL.appending(path: "OpenUSD@__ObjC.symbols.json")
+        moduleAtSwiftBindingHelpersURL = symbolGraphsURL.appending(path: "OpenUSD@_OpenUSD_SwiftBindingHelpers.symbols.json")
         moduleAtCppSymbolsURL = symbolGraphsURL.appending(path: "OpenUSD@C++.symbols.json")
         
         docsURL = swiftUsdRepoURL.appending(path: "docs")
@@ -98,6 +99,7 @@ final public class Driver: Sendable {
     private let _clangExtractAPISymbolsAlreadyUsedFilenames = Mutex<Set<String>>([])
     
     public let moduleAtObjcSymbolsURL: URL
+    public let moduleAtSwiftBindingHelpersURL: URL
     public let moduleAtCppSymbolsURL: URL
     
     public let docsURL: URL

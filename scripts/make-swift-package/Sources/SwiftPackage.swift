@@ -58,6 +58,7 @@ struct SwiftPackage {
         try await swiftPackage.writeModulemap()
         try await swiftPackage.writeCppDefinesFile()
         try await swiftPackage.writeExtraArgsFile()
+        try await swiftPackage.removeTemporaryFiles()
         
         print("")
         print("Success! To use \(path: swiftPackage.fsInfo.swiftUsdPackage.generatedSwiftPackageDir) from the command line: ")
@@ -82,6 +83,10 @@ struct SwiftPackage {
         try! fm.createDirectory(at: fsInfo.swiftUsdPackage.sourcesOpenUSD, withIntermediateDirectories: true)
         try! fm.createDirectory(at: fsInfo.swiftUsdPackage.sources_OpenUSD_SwiftBindingHelpers, withIntermediateDirectories: true)
         try! fm.createDirectory(at: fsInfo.swiftUsdPackage.sourcesInclude, withIntermediateDirectories: true)
+    }
+
+    private func removeTemporaryFiles() async throws {
+        try! fm.removeItem(at: fsInfo.swiftUsdPackage.tmpDir)
     }
     
     private mutating func makeXCFrameworks() async throws {

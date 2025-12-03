@@ -18,22 +18,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #===----------------------------------------------------------------------===#
 
-name: Check that pull requests don't update generated files
-permissions:
-  contents: read
+def collapsedSection(title, body, openByDefault=False):
+    openString = " open" if openByDefault else ""
+    return f"""<details{openString}>
+<summary>{title}</summary>
 
-on:
-  pull_request:
-    paths:
-    - ./Package.swift
-    - ./swift-package/**
-    - ./SwiftUsd.doccarchive/**
-    - ./SwiftUsd/docs/**
+{body}
 
-jobs:
-  Fail:
-    runs-on: ubuntu-latest
-    steps:
-    - run: exit 1
-
-    
+</details>"""

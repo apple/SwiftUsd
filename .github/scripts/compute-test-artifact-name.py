@@ -18,22 +18,24 @@
 # SPDX-License-Identifier: Apache-2.0
 #===----------------------------------------------------------------------===#
 
-name: Check that pull requests don't update generated files
-permissions:
-  contents: read
+from swiftusd_ci_common import *
 
-on:
-  pull_request:
-    paths:
-    - ./Package.swift
-    - ./swift-package/**
-    - ./SwiftUsd.doccarchive/**
-    - ./SwiftUsd/docs/**
 
-jobs:
-  Fail:
-    runs-on: ubuntu-latest
-    steps:
-    - run: exit 1
+if __name__ == "__main__":
+    # Artifact names cannot contain any of the following characters:
+    # `":<>|*?\r\n\/`
+    result = " ".join([
+        "SwiftUsd-Tests",
+        Environment.TestCombination.target_platform,
+        Environment.TestCombination.build_system,
+        Environment.TestCombination.config,
+        Environment.GitRef.swiftusd,
+        Environment.GitRef.openusd,
+        Environment.GitRef.swiftusd_tests,
+        Environment.TestCombination.github_run_id,
+    ])
 
-    
+    for c in ":<>|*?\r\n/\\":
+        result = result.replace(c, "")
+
+    printAndWrite(output=f"artifact_name={result}")

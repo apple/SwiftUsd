@@ -133,9 +133,32 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +
 +    return target_config_patches, clang_config_patches
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/build_scripts/build_usd.py ./build_scripts/build_usd.py
---- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2025-11-17 14:21:56
-+++ ./build_scripts/build_usd.py	2025-11-17 14:56:52
-@@ -1035,30 +1035,21 @@
+--- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2026-01-07 13:16:06
++++ ./build_scripts/build_usd.py	2026-01-07 15:00:08
+@@ -276,13 +276,20 @@
+             p.wait()
+ 
+     if p.returncode != 0:
++        with codecs.open("log.txt", "a", "utf-8") as logfile:
++            logfile.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
++            logfile.write("\n")
++            logfile.write("{cmd} exited with returncode {returncode}"
++                          .format(cmd=cmd, returncode=p.returncode))
++            logfile.write("\n")
++            
+         # If verbosity >= 3, we'll have already been printing out command output
+         # so no reason to print the log file again.
+         if verbosity < 3:
+             with open("log.txt", "r") as logfile:
+                 Print(logfile.read())
+-        raise RuntimeError("Failed to run '{cmd}' in {path}.\nSee {log} for more details."
+-                           .format(cmd=cmd, path=os.getcwd(), log=os.path.abspath("log.txt")))
++        raise RuntimeError("Failed to run '{cmd}' in {path} (exited with returncode {returncode}).\nSee {log} for more details."
++                           .format(cmd=cmd, path=os.getcwd(), returncode=p.returncode, log=os.path.abspath("log.txt")))
+ 
+ @contextlib.contextmanager
+ def CurrentWorkingDirectory(dir):
+@@ -1035,30 +1042,21 @@
                    "ifeq ($(arch),$(filter $(arch),armv7 armv7s {0}))"
                          .format(apple_utils.GetTargetArmArch()))])
  
@@ -174,7 +197,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          (primaryArch, secondaryArch) = apple_utils.GetTargetArchPair(context)
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
---- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2026-01-07 13:16:06
 +++ ./pxr/base/arch/fileSystem.h	2025-11-17 14:57:18
 @@ -38,8 +38,6 @@
  #include <stringapiset.h>
@@ -195,7 +218,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if defined(ARCH_OS_WINDOWS)
      #define ARCH_GLOB_NOCHECK   1
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt ./pxr/base/tf/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2026-01-07 13:16:06
 +++ ./pxr/base/tf/CMakeLists.txt	2025-11-17 14:57:34
 @@ -237,6 +237,7 @@
          pxrTslRobinMap/robin_map.h
@@ -225,7 +248,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      Tf_ProxyReferenceReverseIterator() = default;
      explicit Tf_ProxyReferenceReverseIterator(UnderlyingIterator it) :
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h ./pxr/base/tf/notice.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2026-01-07 13:16:06
 +++ ./pxr/base/tf/notice.h	2025-11-17 14:58:09
 @@ -263,6 +263,7 @@
  
@@ -457,7 +480,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      }
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h ./pxr/base/vt/dictionary.h
---- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2026-01-07 13:16:06
 +++ ./pxr/base/vt/dictionary.h	2025-11-17 14:59:10
 @@ -439,8 +439,8 @@
  {
@@ -471,7 +494,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
      return i->second.Get<T>();
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt ./pxr/exec/exec/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2026-01-07 13:16:06
 +++ ./pxr/exec/exec/CMakeLists.txt	2025-11-17 14:59:28
 @@ -35,6 +35,7 @@
          systemChangeProcessor
@@ -490,7 +513,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      RESOURCE_FILES
          plugInfo.json
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h ./pxr/exec/vdf/parallelExecutorEngineBase.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2026-01-07 13:16:06
 +++ ./pxr/exec/vdf/parallelExecutorEngineBase.h	2025-11-17 14:59:55
 @@ -1885,9 +1885,9 @@
          if (!privateBuffer->GetExecutorCache()) {
@@ -519,7 +542,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  private:
      friend class VdfPoolChainIndexer;
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h ./pxr/exec/vdf/pullBasedExecutorEngine.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2026-01-07 13:16:06
 +++ ./pxr/exec/vdf/pullBasedExecutorEngine.h	2025-11-17 15:00:15
 @@ -1035,9 +1035,9 @@
              // requested because otherwise, it wouldn't be in the schedule,
@@ -683,7 +706,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // A map from pool chain index to prioritized output, used to ensure that we
      // process outputs in their order in the pool chain.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h ./pxr/imaging/hd/dependencySchema.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2026-01-07 13:16:06
 +++ ./pxr/imaging/hd/dependencySchema.h	2025-11-17 15:00:38
 @@ -52,6 +52,9 @@
      HdDependencySchema(HdContainerDataSourceHandle container)
@@ -703,7 +726,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 \ No newline at end of file
 +#endif
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h ./pxr/imaging/hd/mergingSceneIndex.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h	2026-01-07 13:16:06
 +++ ./pxr/imaging/hd/mergingSceneIndex.h	2025-11-17 15:00:40
 @@ -153,6 +153,9 @@
          , sceneRoot(sceneRoot)
@@ -716,7 +739,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
      // We observe that most merging scene indexes have few inputs, such as 2.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h ./pxr/imaging/hd/schema.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2026-01-07 13:16:06
 +++ ./pxr/imaging/hd/schema.h	2025-11-17 15:00:42
 @@ -28,6 +28,8 @@
      HdSchema(HdContainerDataSourceHandle container)
@@ -860,7 +883,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  using _PrimMap = std::map<SdfPath, _PrimInfo>;
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdx/taskControllerSceneIndex.cpp ./pxr/imaging/hdx/taskControllerSceneIndex.cpp
---- /Users/maddyadams/OpenUSD/pxr/imaging/hdx/taskControllerSceneIndex.cpp	2025-11-17 14:21:56
+--- /Users/maddyadams/OpenUSD/pxr/imaging/hdx/taskControllerSceneIndex.cpp	2026-01-07 13:16:06
 +++ ./pxr/imaging/hdx/taskControllerSceneIndex.cpp	2025-11-17 15:01:09
 @@ -1466,7 +1466,7 @@
      if (_aovNames == aovNames) {

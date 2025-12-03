@@ -1,0 +1,177 @@
+#===----------------------------------------------------------------------===#
+# This source file is part of github.com/apple/SwiftUsd
+#
+# Copyright © 2025 Apple Inc. and the SwiftUsd project authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#  https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+#===----------------------------------------------------------------------===#
+
+name: Build SwiftUsd
+run-name: Building SwiftUsd ${{ inputs.swiftusd-ref }} on OpenUSD ${{ inputs.openusd-ref }}
+permissions:
+  contents: read
+
+on:
+    workflow_call:
+        inputs:
+            swiftusd-ref:
+                description: 'SwiftUsd ref'
+                required: true
+                type: string
+
+            openusd-ref:
+                description: 'OpenUSD ref'
+                required: true
+                type: string
+                default: 'v25.08'
+
+            build-targets:
+                description: 'Build target list, or ALL'
+                required: true
+                type: string
+                default: 'ALL'
+
+            allow-caching-openusd-build:
+                description: 'Whether to restore to/save from the cache. Default: true'
+                required: false
+                type: boolean
+                default: true
+
+jobs:
+    Define-Build-Matrix:
+        name: Define build matrix
+        runs-on: [self-hosted, macos]
+
+        outputs:
+            matrix: ${{ steps.matrix.outputs.matrix }}
+
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v5
+              with:
+                ref: ${{ inputs.swiftusd-ref }}
+                sparse-checkout: .github/scripts
+                sparse-checkout-cone-mode: false
+
+            - name: Define matrix
+              id: matrix
+              run: |
+                python3 ./.github/scripts/define-build-matrix.py \
+                    --targets $BUILD_TARGETS
+              env:
+                BUILD_TARGETS: ${{ inputs.build-targets }}
+
+    Build-OpenUSD:
+        runs-on: [self-hosted, macos]
+        needs: [Define-Build-Matrix]
+        strategy:
+            matrix: ${{ fromJson(needs.Define-Build-Matrix.outputs.matrix) }}
+        name: Build OpenUSD (${{ matrix.target }})
+
+        env:
+          OPENUSD_REF: ${{ inputs.openusd-ref }}
+          TARGET_PLATFORM: ${{ matrix.target }}
+          OPENUSD_PATH: ${{ github.workspace }}/openusd-source
+          SWIFTUSD_PATH: ${{ github.workspace }}/SwiftUsd
+
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v5
+              with:
+                ref: ${{ inputs.swiftusd-ref }}
+                path: SwiftUsd
+                sparse-checkout: |
+                  .github/scripts/
+                  openusd-patch.patch
+                sparse-checkout-cone-mode: false
+
+            - name: Compute cache key
+              id: compute-cache-key
+              run: |
+                python3 SwiftUsd/.github/scripts/compute-openusd-build-cache-key.py
+
+            - name: Cache OpenUSD build
+              if: ${{ inputs.allow-caching-openusd-build }}
+              id: cache-openusd-build
+              uses: actions/cache@v4
+              with:
+                path: openusd-builds/${{ matrix.target }}
+                key: ${{ steps.compute-cache-key.outputs.cache-key }}
+
+            - name: Build OpenUSD on cache miss
+              if: ${{ steps.cache-openusd-build.outputs.cache-hit != 'true' }}
+              run: |
+                python3 SwiftUsd/.github/scripts/build-openusd.py
+
+            - name: Upload OpenUSD build artifact
+              # Upload the build artifact even if building fails so it can be
+              # inspected/debugged
+              if: ${{ always() }}
+              uses: actions/upload-artifact@v4
+              with:
+                name: openusd-builds-${{ github.run_id }}-${{ matrix.target }}
+                path: openusd-builds/${{ matrix.target }}
+                if-no-files-found: 'error'
+
+    Make-Swift-Package:
+        runs-on: [self-hosted, macos]
+        needs: [Build-OpenUSD]
+        permissions:
+          contents: write
+        name: Make Swift Package
+
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v5
+              with:
+                ref: ${{ inputs.swiftusd-ref }}
+
+            - name: Download OpenUSD build artifacts
+              uses: actions/download-artifact@v5
+              with:
+                path: ../openusd-builds
+                pattern: openusd-builds-${{ github.run_id }}-*
+
+            - name: Run make-swift-package
+              run: |
+                swift run --package-path ./scripts/make-swift-package \
+                  make-swift-package ../openusd-builds/* --force
+                echo "Trimming down artiface size more..."
+                rm -rf ./docs
+                rm -rf ./SwiftUsd.doccarchive
+                swift package --package-path ./scripts/make-swift-package clean
+
+            - name: Tar package artifact before uploading
+              # `/SwiftUsd.docc/SymbolExtensions/Bool.init(_:TfWeakPtrProtocol).md` is an invalid
+              # file path for GH artifacts because it contains a colon, so tar things
+              # first to avoid that issue
+              run: |
+                tar -czf ../SwiftUsd.tar.gz .
+
+            - name: Move .tar.gz to workaround https://github.com/actions/upload-artifact/issues/176
+                # The documentation says that relative paths are supported, but in practice
+                # paths starting with '.' or '..' cause errors. So, create the .tar.gz not in the SwiftUsd directory
+                # (because creating an archive of a directory inside that directory is a bad idea),
+                # then move the archive into the SwiftUsd directory after archiving finishes to make upload-artifact happy
+              run: |
+                mv ../SwiftUsd.tar.gz ./SwiftUsd.tar.gz
+
+            - name: Upload package artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: SwiftUsd-package-${{ github.run_id }}.tar.gz
+                path: SwiftUsd.tar.gz
+                if-no-files-found: 'error'
+

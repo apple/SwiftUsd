@@ -19,16 +19,29 @@
 #===----------------------------------------------------------------------===#
 
 name: Check Pull Requests for Documentation Warnings
-run-name: Checking Pull Request for Documentation Warnings
 permissions:
   contents: read
+  
 on: pull_request
 jobs:
-  Check:
-    runs-on: self-hosted
-    steps:
-    - name: Check out repository code
-      uses: actions/checkout@v5
+    Build-SwiftUsd:
+        uses: ./.github/workflows/build-swiftusd.yml
+        with:
+            swiftusd-ref: ${{ github.ref }}
 
-    - name: Check for documentation warnings
-      uses: ./.github/actions/build-symbol-graphs
+    Check-Documentation-Warnings:
+        runs-on: [self-hosted, macos]
+        needs: [Build-SwiftUsd]
+        steps:
+            - name: Download package artifact
+              uses: actions/download-artifact@v5
+              with:
+                path: .
+                name: SwiftUsd-package-${{ github.run_id }}
+            
+            - name: Check for documentation warnings
+              run: |
+                swift run --package-path ./scripts/docc build-documentation
+                swift run --package-path ./scripts/docc check-documentation
+
+        

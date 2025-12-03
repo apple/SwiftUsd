@@ -42,6 +42,8 @@ let package = Package(
                             .product(name: "ArgumentParser", package: "swift-argument-parser")
                           ]
                          ),
+        .executableTarget(name: "check-documentation",
+                          dependencies: ["SwiftUsdDoccUtil"]),
         .executableTarget(name: "preview-documentation",
                           dependencies: ["SwiftUsdDoccUtil"]),
         .executableTarget(name: "update-documentation",

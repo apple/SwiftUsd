@@ -19,54 +19,153 @@
 #===----------------------------------------------------------------------===#
 
 name: Run tests
-run-name: Running tests
+run-name: Testing ${{ inputs.swiftusd-tests-ref }} on SwiftUsd ${{ inputs.swiftusd-ref }}, OpenUSD ${{ inputs.openusd-ref }}
 permissions:
   contents: read
+  
 on:
-  workflow_dispatch:
-    inputs:
-      swiftusd-ref:
-        description: 'SwiftUsd ref'
-        required: true
-        type: string
-      openusd-ref:
-        description: 'OpenUSD ref'
-        required: true
-        type: string
-      swiftusd-tests-ref:
-        description: 'SwiftUsd-Tests ref'
-        required: true
-        type: string
-    
+    workflow_dispatch:
+        inputs:
+            swiftusd-ref:
+                description: 'SwiftUsd ref'
+                required: true
+                type: string
+            openusd-ref:
+                description: 'OpenUSD ref'
+                required: true
+                type: string
+            swiftusd-tests-ref:
+                description: 'SwiftUsd-Tests ref'
+                required: true
+                type: string
+
 jobs:
-  Run-Tests:
-    name: Run tests
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
+    Build-SwiftUsd:
+        name: Build SwiftUsd
+        permissions:
+          contents: write
+        uses: ./.github/workflows/build-swiftusd.yml
+        with:
+          swiftusd-ref: ${{ inputs.swiftusd-ref }}
+          openusd-ref: ${{ inputs.openusd-ref }}
+          build-targets: ALL
 
-    runs-on: self-hosted
-    steps:
-    - name: Check out repository code
-      uses: actions/checkout@v5
-      with:
-        ref: ${{ inputs.swiftusd-ref }}
+    Define-Test-Matrix:
+        name: Define Test Matrix
+        runs-on: [self-hosted, macos]
+        outputs:
+            matrix: ${{ steps.matrix.outputs.matrix }}
+            max-parallel: ${{ steps.matrix.outputs.max-parallel }}
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v5
+              with:
+                ref: ${{ inputs.swiftusd-ref }}
+                sparse-checkout: .github/scripts/
+                sparse-checkout-cone-mode: false
 
-    - name: Build SwiftUsd
-      uses: ./.github/actions/build-swiftusd
-      with:
-        swiftusd-ref: ${{ inputs.swiftusd-ref }}
-        openusd-ref: ${{ inputs.openusd-ref }}
-      
-    - name: Check out unit tests
-      uses: actions/checkout@v5
-      with:
-        repository: apple/SwiftUsd-Tests
-        ref: ${{ inputs.swiftusd-tests-ref }}
-        path: ./swiftusd-tests
-        
-    - name: Run unit tests
-      run: |
-        cd ./swiftusd-tests
-        ln -s .. SwiftUsd
-        xcodebuild test -scheme SwiftUsdTests -skipMacroValidation -configuration ${{ matrix.configuration }}
+            - name: Define matrix
+              id: matrix
+              run: |
+                python3 ./.github/scripts/define-test-matrix.py
+
+    Run-Tests-Once:
+        runs-on: [self-hosted, macos]
+        needs: [Build-SwiftUsd, Define-Test-Matrix]        
+        continue-on-error: true
+        name: Run tests (${{ matrix.target_platform }}, ${{ matrix.config }}, ${{ matrix.build_system }})
+        strategy:
+            fail-fast: false
+            max-parallel: ${{ fromJson(needs.Define-Test-Matrix.outputs.max-parallel) }}
+            matrix:
+              include: ${{ fromJson(needs.Define-Test-Matrix.outputs.matrix) }}
+
+        env:
+            TARGET_PLATFORM: ${{ matrix.target_platform }}
+            BUILD_SYSTEM: ${{ matrix.build_system }}
+            CONFIG: ${{ matrix.config }}
+            SWIFTUSD_REF: ${{ inputs.swiftusd-ref }}
+            OPENUSD_REF: ${{ inputs.openusd-ref }}
+            SWIFTUSD_TESTS_REF: ${{ inputs.swiftusd-tests-ref }}
+            GITHUB_RUN_ID: ${{ github.run_id }}
+            SWIFTUSD_TESTS_PATH: ${{ github.workspace }}/SwiftUsd-Tests
+            SWIFTUSD_PATH: ${{ github.workspace }}/SwiftUsd
+            RESULT_BUNDLE_PATH: ${{ github.workspace }}/SwiftUsd-Tests.xcresult
+            MATRIX_RESULT_PATH: ${{ github.workspace }}/matrix-result.json
+
+        steps:
+            - name: Download package artifact
+              uses: actions/download-artifact@v5
+              with:
+                path: SwiftUsd.tar.gz
+                name: SwiftUsd-package-${{ github.run_id }}.tar.gz
+
+            - name: Untar package artifact
+              run: |
+                mkdir ./SwiftUsd
+                tar -xzf ./SwiftUsd.tar.gz/SwiftUsd.tar.gz -C ./SwiftUsd
+
+            - name: Check out unit tests
+              uses: actions/checkout@v5
+              with:
+                repository: apple/SwiftUsd-Tests
+                ref: ${{ inputs.swiftusd-tests-ref }}
+                path: ./SwiftUsd-Tests
+
+            - name: Compute artifact name
+              id: compute-artifact-name
+              run: |
+                python3 ./SwiftUsd/.github/scripts/compute-test-artifact-name.py
+
+            - name: Build tests
+              id: build-tests
+              timeout-minutes: 15
+              run: |
+                python3 ./SwiftUsd/.github/scripts/run-tests-helper.py build-tests
+
+            - name: Run tests
+              id: run-tests
+              timeout-minutes: 15
+              run: |
+                python3 ./SwiftUsd/.github/scripts/run-tests-helper.py run-tests
+              
+            - name: Upload xcresult artifact
+              if: ${{ !cancelled() }}
+              uses: actions/upload-artifact@v4
+              with:
+                name: ${{ steps.compute-artifact-name.outputs.artifact_name }}
+                path: ./SwiftUsd-Tests.xcresult
+                if-no-files-found: 'warn'
+
+            - name: Upload matrix result artifact
+              if: ${{ !cancelled() }}
+              uses: actions/upload-artifact@v4
+              with:
+                name: matrix-result-${{ github.run_id }}-${{ steps.compute-artifact-name.outputs.artifact_name }}
+                path: ./matrix-result.json
+                if-no-files-found: 'error'
+
+    Summarize-Test-Results:
+      if: ${{ !cancelled() }}
+      runs-on: [self-hosted, macos]
+      needs: [Run-Tests-Once]
+      name: Summarize Test Results
+      steps:
+        - name: Check out repository code
+          uses: actions/checkout@v5
+          with:
+            ref: ${{ inputs.swiftusd-ref }}
+            sparse-checkout: .github/scripts
+            sparse-checkout-cone-mode: false
+
+        - name: Download matrix result artifacts
+          uses: actions/download-artifact@v5
+          with: 
+            path: ../matrix-results
+            pattern: matrix-result-${{ github.run_id }}-*
+
+        - name: Summarize matrix results
+          run: |
+            python3 ./.github/scripts/summarize-test-matrix-results.py
+          env:
+            MATRIX_RESULTS_PATH: ${{ github.workspace }}/../matrix-results

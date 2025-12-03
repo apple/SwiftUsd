@@ -18,22 +18,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #===----------------------------------------------------------------------===#
 
-name: Check that pull requests don't update generated files
-permissions:
-  contents: read
-
-on:
-  pull_request:
-    paths:
-    - ./Package.swift
-    - ./swift-package/**
-    - ./SwiftUsd.doccarchive/**
-    - ./SwiftUsd/docs/**
-
-jobs:
-  Fail:
-    runs-on: ubuntu-latest
-    steps:
-    - run: exit 1
-
-    
+from .environment import *
+from .markdown import *
+from .openusd_building import *
+from .subprocesses import *
+from .test_matrix_results import *
+from .write import *

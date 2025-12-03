@@ -18,18 +18,29 @@
 # SPDX-License-Identifier: Apache-2.0
 #===----------------------------------------------------------------------===#
 
-name: Build symbol graphs
+from swiftusd_ci_common import *
+import argparse
+import json
 
-runs:
-  using: "composite"
-  steps:
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--targets", required=True)
+    args = parser.parse_args()
 
-  - name: Build symbol graphs
-    run: swift run --package-path ./scripts/docc build-documentation
-    shell: bash
+    all_targets = ["macOS", "iOS", "iOSSimulator", "visionOS", "visionOSSimulator"]
 
-  - name: Check documentation for warnings
-    run: |
-      xcrun docc convert --additional-symbol-graph-dir ./.symbol-graphs ./SwiftUsd.docc \
-        --warnings-as-errors
-    shell: bash
+    if args.targets == "ALL":
+        result = all_targets
+    else:
+        result = []
+        for x in args.targets.split(","):
+            x = x.strip()
+            if x in all_targets:
+                if x not in result:
+                    result.append(x)
+            else:
+                raise ValueError(f"Unknown target '{x}'")
+
+    result = {"target" : result}
+
+    printAndWrite(output=f"matrix={json.dumps(result)}")

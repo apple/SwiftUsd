@@ -78,3 +78,5 @@ print(makeHelloWorldString())
 **Solution**: In the Build Settings for your target, make sure that `Runpath Search Paths` is set to `@executable_path/Frameworks`. (`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks` for xcconfig files.)  
 Note: This should only affect command line executable targets. 
 
+- macOS apps with App Sandbox compiled in Release mode can't find Hydra Render Delegate plugins when launched from Xcode  
+**Solution**: In the Run, Arguments, Environment Variables section of your Scheme, add `DYLD_FRAMEWORK_PATH=$CONFIGURATION_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH` as a key-value pair

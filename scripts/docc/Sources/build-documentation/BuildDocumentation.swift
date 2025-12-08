@@ -45,9 +45,20 @@ struct BuildDocumentation: AsyncParsableCommand {
             "-Xcxx", "-DOPENUSD_SWIFT_EMIT_SYMBOL_GRAPHS",
             "-Xcxx", "-DOPENUSD_SWIFT_BUILD_FROM_CLI",
         ], currentDirectoryURL: Driver.shared.swiftUsdRepoURL)
+
+
+        // Prior to Swift 6.2, docc would emit OpenUSD@__ObjC.symbols.json for the
+        // C++ symbols emitted by Swift-Cxx interop. Starting in Swift 6.2, docc emits them
+        // to OpenUSD@_OpenUSD_SwiftBindingHelpers.symbols.json
+        let swiftVersion = await detectSwiftVersion()
+        if isSwiftVersion(swiftVersion, lessThan: [6, 2]) {
+            try! FileManager.default.moveItem(at: Driver.shared.moduleAtObjcSymbolsURL,
+                                              to: Driver.shared.moduleAtCppSymbolsURL)
+        } else {
+            try! FileManager.default.moveItem(at: Driver.shared.moduleAtSwiftBindingHelpersURL,
+                                              to: Driver.shared.moduleAtCppSymbolsURL)
+        }
         
-        try! FileManager.default.moveItem(at: Driver.shared.moduleAtObjcSymbolsURL,
-                                          to: Driver.shared.moduleAtCppSymbolsURL)
         
         // SwiftSyntax makes a bunch of symbol graph files, but we don't want to get any of them
         for item in Array(FileManager.default.allUrls(under: Driver.shared.symbolGraphsURL)) {

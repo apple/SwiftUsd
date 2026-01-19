@@ -1,6 +1,6 @@
 # SwiftUsd
 
-A Swift Package for using OpenUSD in Swift
+A Swift Package for using OpenUSD, Pixar's [Universal Scene Description](https://openusd.org/release/index.html)
 
 ## Getting Started
 Before you can start using SwiftUsd, you need to add it as a dependency to your Xcode project or Swift Package, and then configure a few build settings. 

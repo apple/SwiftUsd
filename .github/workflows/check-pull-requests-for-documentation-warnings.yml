@@ -25,6 +25,8 @@ permissions:
 on: pull_request
 jobs:
     Build-SwiftUsd:
+        permissions:
+            contents: write
         uses: ./.github/workflows/build-swiftusd.yml
         with:
             swiftusd-ref: ${{ github.ref }}
@@ -36,12 +38,17 @@ jobs:
             - name: Download package artifact
               uses: actions/download-artifact@v5
               with:
-                path: .
-                name: SwiftUsd-package-${{ github.run_id }}
+                path: SwiftUsd.tar.gz
+                name: SwiftUsd-package-${{ github.run_id }}.tar.gz
+
+            - name: Untar package artifact
+              run: |
+                mkdir ./SwiftUsd
+                tar -xzf ./SwiftUsd.tar.gz/SwiftUsd.tar.gz -C ./SwiftUsd
             
             - name: Check for documentation warnings
               run: |
-                swift run --package-path ./scripts/docc build-documentation
-                swift run --package-path ./scripts/docc check-documentation
+                swift run --package-path ./SwiftUsd/scripts/docc build-documentation
+                swift run --package-path ./SwiftUsd/scripts/docc check-documentation
 
         

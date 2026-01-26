@@ -33,13 +33,13 @@ on:
 
             openusd-ref:
                 description: 'OpenUSD ref'
-                required: true
+                required: false
                 type: string
                 default: 'v25.08'
 
             build-targets:
                 description: 'Build target list, or ALL'
-                required: true
+                required: false
                 type: string
                 default: 'ALL'
 

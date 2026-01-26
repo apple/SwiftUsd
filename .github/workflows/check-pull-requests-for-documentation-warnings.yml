@@ -43,8 +43,8 @@ jobs:
 
             - name: Untar package artifact
               run: |
-              mkdir ./SwiftUsd
-              tar -xzf ./SwiftUsd.tar.gz/SwiftUsd.tar.gz -C ./SwiftUsd
+                mkdir ./SwiftUsd
+                tar -xzf ./SwiftUsd.tar.gz/SwiftUsd.tar.gz -C ./SwiftUsd
             
             - name: Check for documentation warnings
               run: |

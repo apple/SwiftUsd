@@ -25,6 +25,8 @@ permissions:
 on: pull_request
 jobs:
     Build-SwiftUsd:
+        permissions:
+            contents: write
         uses: ./.github/workflows/build-swiftusd.yml
         with:
             swiftusd-ref: ${{ github.ref }}

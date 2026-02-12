@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::HioImage from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/imaging/hio/image.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/imaging/hio/image.h
 
 #ifndef SWIFTUSD_WRAPPERS_HIOIMAGEWRAPPER_H
 #define SWIFTUSD_WRAPPERS_HIOIMAGEWRAPPER_H

@@ -335,16 +335,6 @@ extension pxr.SdfRelationshipSpec: Comparable { // differentArgumentTypes
     }
 }
 extension pxr.SdfSite: Comparable {} // foundBySwift
-extension pxr.SdfTextFileFormat: Comparable { // importedAsReference
-    public static func <(lhs: pxr.SdfTextFileFormat, rhs: pxr.SdfTextFileFormat) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
-extension pxr.SdfTextFileFormatRefPtr: Comparable { // classTemplateSpecialization
-    public static func <(lhs: pxr.SdfTextFileFormatRefPtr, rhs: pxr.SdfTextFileFormatRefPtr) -> Bool {
-        __Overlay.operatorLess(lhs, rhs)
-    }
-}
 extension pxr.SdfUsdFileFormat: Comparable { // importedAsReference
     public static func <(lhs: pxr.SdfUsdFileFormat, rhs: pxr.SdfUsdFileFormat) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -757,6 +747,16 @@ extension pxr.HdRendererPluginRegistry: Comparable { // importedAsReference
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdRenderIndexAdapterSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdRenderIndexAdapterSceneIndex, rhs: pxr.HdRenderIndexAdapterSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdRenderIndexAdapterSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdRenderIndexAdapterSceneIndexRefPtr, rhs: pxr.HdRenderIndexAdapterSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdSceneIndexPluginRegistry: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdSceneIndexPluginRegistry, rhs: pxr.HdSceneIndexPluginRegistry) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -897,6 +897,16 @@ extension pxr.HdsiMaterialPrimvarTransferSceneIndexRefPtr: Comparable { // class
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdsiMaterialRenderContextFilteringSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiMaterialRenderContextFilteringSceneIndex, rhs: pxr.HdsiMaterialRenderContextFilteringSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiMaterialRenderContextFilteringSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiMaterialRenderContextFilteringSceneIndexRefPtr, rhs: pxr.HdsiMaterialRenderContextFilteringSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdSiNodeIdentifierResolvingSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdSiNodeIdentifierResolvingSceneIndex, rhs: pxr.HdSiNodeIdentifierResolvingSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -977,6 +987,16 @@ extension pxr.HdsiPrimTypePruningSceneIndexRefPtr: Comparable { // classTemplate
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdsiRenderPassPruneSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiRenderPassPruneSceneIndex, rhs: pxr.HdsiRenderPassPruneSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiRenderPassPruneSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiRenderPassPruneSceneIndexRefPtr, rhs: pxr.HdsiRenderPassPruneSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdsiRenderSettingsFilteringSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdsiRenderSettingsFilteringSceneIndex, rhs: pxr.HdsiRenderSettingsFilteringSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -994,6 +1014,16 @@ extension pxr.HdsiSceneGlobalsSceneIndex: Comparable { // importedAsReference
 }
 extension pxr.HdsiSceneGlobalsSceneIndexRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdsiSceneGlobalsSceneIndexRefPtr, rhs: pxr.HdsiSceneGlobalsSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiSceneMaterialPruningSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiSceneMaterialPruningSceneIndex, rhs: pxr.HdsiSceneMaterialPruningSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiSceneMaterialPruningSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiSceneMaterialPruningSceneIndexRefPtr, rhs: pxr.HdsiSceneMaterialPruningSceneIndexRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }

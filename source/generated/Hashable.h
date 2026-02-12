@@ -87,6 +87,7 @@
 #include "pxr/base/vt/dictionary.h"
 #include "pxr/base/vt/types.h"
 #include "pxr/base/vt/value.h"
+#include "pxr/base/vt/valueRef.h"
 #include "pxr/exec/ef/time.h"
 #include "pxr/exec/exec/typeRegistry.h"
 #include "pxr/exec/vdf/executionTypeRegistry.h"
@@ -115,6 +116,7 @@
 #include "pxr/imaging/hd/noticeBatchingSceneIndex.h"
 #include "pxr/imaging/hd/perfLog.h"
 #include "pxr/imaging/hd/prefixingSceneIndex.h"
+#include "pxr/imaging/hd/renderIndexAdapterSceneIndex.h"
 #include "pxr/imaging/hd/rendererPluginRegistry.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/retainedSceneIndex.h"
@@ -139,6 +141,7 @@
 #include "pxr/imaging/hdsi/materialBindingResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialOverrideResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialPrimvarTransferSceneIndex.h"
+#include "pxr/imaging/hdsi/materialRenderContextFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/nodeIdentifierResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/nurbsApproximatingSceneIndex.h"
 #include "pxr/imaging/hdsi/pinnedCurveExpandingSceneIndex.h"
@@ -147,8 +150,10 @@
 #include "pxr/imaging/hdsi/primTypeAndPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypeNoticeBatchingSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypePruningSceneIndex.h"
+#include "pxr/imaging/hdsi/renderPassPruneSceneIndex.h"
 #include "pxr/imaging/hdsi/renderSettingsFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/sceneGlobalsSceneIndex.h"
+#include "pxr/imaging/hdsi/sceneMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/switchingSceneIndex.h"
 #include "pxr/imaging/hdsi/tetMeshConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
@@ -192,7 +197,6 @@
 #include "pxr/usd/sdf/relationshipSpec.h"
 #include "pxr/usd/sdf/schema.h"
 #include "pxr/usd/sdf/spec.h"
-#include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/usdFileFormat.h"
@@ -235,6 +239,7 @@
 #include "pxr/usdImaging/usdImaging/selectionSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/stageSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/unloadedDrawModeSceneIndex.h"
+#include "pxr/usdImaging/usdSkelImaging/animationSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/pointsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdSkelImaging/skeletonResolvingSceneIndex.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
@@ -350,10 +355,11 @@ namespace __Overlay {
   int64_t hash_value(const pxr::VtUCharArray& x);
   int64_t hash_value(const pxr::VtUIntArray& x);
   int64_t hash_value(const pxr::VtUShortArray& x);
+  int64_t hash_value(const pxr::VtBoolArrayEdit& x);
+  int64_t hash_value(const pxr::VtCharArrayEdit& x);
   int64_t hash_value(const pxr::VtDualQuatdArrayEdit& x);
   int64_t hash_value(const pxr::VtDualQuatfArrayEdit& x);
   int64_t hash_value(const pxr::VtDualQuathArrayEdit& x);
-  int64_t hash_value(const pxr::VtHalfArrayEdit& x);
   int64_t hash_value(const pxr::VtIntervalArrayEdit& x);
   int64_t hash_value(const pxr::VtMatrix2dArrayEdit& x);
   int64_t hash_value(const pxr::VtMatrix2fArrayEdit& x);
@@ -385,20 +391,21 @@ namespace __Overlay {
   int64_t hash_value(const pxr::VtVec4hArrayEdit& x);
   int64_t hash_value(const pxr::VtVec4iArrayEdit& x);
   int64_t hash_value(const pxr::VtTokenArrayEdit& x);
-  int64_t hash_value(const pxr::VtBoolArrayEdit& x);
-  int64_t hash_value(const pxr::VtCharArrayEdit& x);
+  int64_t hash_value(const pxr::VtHalfArrayEdit& x);
   int64_t hash_value(const pxr::VtDoubleArrayEdit& x);
   int64_t hash_value(const pxr::VtFloatArrayEdit& x);
-  int64_t hash_value(const pxr::VtInt64ArrayEdit& x);
   int64_t hash_value(const pxr::VtIntArrayEdit& x);
+  int64_t hash_value(const pxr::VtInt64ArrayEdit& x);
   int64_t hash_value(const pxr::VtShortArrayEdit& x);
   int64_t hash_value(const pxr::VtStringArrayEdit& x);
-  int64_t hash_value(const pxr::VtUInt64ArrayEdit& x);
   int64_t hash_value(const pxr::VtUCharArrayEdit& x);
   int64_t hash_value(const pxr::VtUIntArrayEdit& x);
+  int64_t hash_value(const pxr::VtUInt64ArrayEdit& x);
   int64_t hash_value(const pxr::VtUShortArrayEdit& x);
   int64_t hash_value(const pxr::VtDictionary& x);
   int64_t hash_value(const pxr::VtValue& x);
+  int64_t hash_value(const pxr::VtValueRef& x);
+  int64_t hash_value(const pxr::VtMutableValueRef& x);
   int64_t hash_value(const pxr::TsSpline& x);
   int64_t hash_value(const pxr::ArAssetInfo& x);
   int64_t hash_value(const pxr::ArDefaultResolverContext& x);
@@ -454,8 +461,6 @@ namespace __Overlay {
   int64_t hash_value(const pxr::SdfReference& x);
   int64_t hash_value(const pxr::SdfRelationshipSpecHandle& x);
   int64_t hash_value(const pxr::SdfRelationshipSpec& x);
-  int64_t hash_value(const pxr::SdfTextFileFormat& x);
-  int64_t hash_value(const pxr::SdfTextFileFormatRefPtr& x);
   int64_t hash_value(const pxr::SdfUsdFileFormat& x);
   int64_t hash_value(const pxr::SdfUsdFileFormatRefPtr& x);
   int64_t hash_value(const pxr::SdfUsdaData& x);
@@ -558,6 +563,8 @@ namespace __Overlay {
   int64_t hash_value(const pxr::HdPrefixingSceneIndex& x);
   int64_t hash_value(const pxr::HdPrefixingSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdRendererPluginRegistry& x);
+  int64_t hash_value(const pxr::HdRenderIndexAdapterSceneIndex& x);
+  int64_t hash_value(const pxr::HdRenderIndexAdapterSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdSceneIndexPluginRegistry& x);
   int64_t hash_value(const pxr::HdGpGenerativeProceduralPluginRegistry& x);
   int64_t hash_value(const pxr::HdGpGenerativeProceduralFilteringSceneIndex& x);
@@ -586,6 +593,8 @@ namespace __Overlay {
   int64_t hash_value(const pxr::HdsiMaterialOverrideResolvingSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiMaterialPrimvarTransferSceneIndex& x);
   int64_t hash_value(const pxr::HdsiMaterialPrimvarTransferSceneIndexRefPtr& x);
+  int64_t hash_value(const pxr::HdsiMaterialRenderContextFilteringSceneIndex& x);
+  int64_t hash_value(const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdSiNodeIdentifierResolvingSceneIndex& x);
   int64_t hash_value(const pxr::HdSiNodeIdentifierResolvingSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiNurbsApproximatingSceneIndex& x);
@@ -602,10 +611,14 @@ namespace __Overlay {
   int64_t hash_value(const pxr::HdsiPrimTypeNoticeBatchingSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiPrimTypePruningSceneIndex& x);
   int64_t hash_value(const pxr::HdsiPrimTypePruningSceneIndexRefPtr& x);
+  int64_t hash_value(const pxr::HdsiRenderPassPruneSceneIndex& x);
+  int64_t hash_value(const pxr::HdsiRenderPassPruneSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiRenderSettingsFilteringSceneIndex& x);
   int64_t hash_value(const pxr::HdsiRenderSettingsFilteringSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiSceneGlobalsSceneIndex& x);
   int64_t hash_value(const pxr::HdsiSceneGlobalsSceneIndexRefPtr& x);
+  int64_t hash_value(const pxr::HdsiSceneMaterialPruningSceneIndex& x);
+  int64_t hash_value(const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiSwitchingSceneIndex& x);
   int64_t hash_value(const pxr::HdsiSwitchingSceneIndexRefPtr& x);
   int64_t hash_value(const pxr::HdsiTetMeshConversionSceneIndex& x);

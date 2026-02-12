@@ -738,6 +738,16 @@ std::string __Overlay::to_string(const pxr::UsdMetadataValueMap& x) {
     ss << ">";
     return ss.str();
 }
+std::string __Overlay::to_string(const pxr::VtValueRef& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VtMutableValueRef& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::TsSpline& x) {
     std::stringstream ss;
     ss << x;
@@ -1032,6 +1042,30 @@ std::string __Overlay::to_string(const pxr::SdfRelocatesMapProxy& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
+}
+std::string __Overlay::to_string(const pxr::SdfBooleanExpression& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::SdfBooleanExpression::BinaryOperator& x) {
+    switch (x) {
+    case pxr::SdfBooleanExpression::BinaryOperator::EqualTo: return "pxr::SdfBooleanExpression::BinaryOperator::EqualTo";
+    case pxr::SdfBooleanExpression::BinaryOperator::NotEqualTo: return "pxr::SdfBooleanExpression::BinaryOperator::NotEqualTo";
+    case pxr::SdfBooleanExpression::BinaryOperator::LessThan: return "pxr::SdfBooleanExpression::BinaryOperator::LessThan";
+    case pxr::SdfBooleanExpression::BinaryOperator::LessThanOrEqualTo: return "pxr::SdfBooleanExpression::BinaryOperator::LessThanOrEqualTo";
+    case pxr::SdfBooleanExpression::BinaryOperator::GreaterThan: return "pxr::SdfBooleanExpression::BinaryOperator::GreaterThan";
+    case pxr::SdfBooleanExpression::BinaryOperator::GreaterThanOrEqualTo: return "pxr::SdfBooleanExpression::BinaryOperator::GreaterThanOrEqualTo";
+    case pxr::SdfBooleanExpression::BinaryOperator::And: return "pxr::SdfBooleanExpression::BinaryOperator::And";
+    case pxr::SdfBooleanExpression::BinaryOperator::Or: return "pxr::SdfBooleanExpression::BinaryOperator::Or";
+    default: return "pxr::SdfBooleanExpression::BinaryOperator(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::SdfBooleanExpression::UnaryOperator& x) {
+    switch (x) {
+    case pxr::SdfBooleanExpression::UnaryOperator::Not: return "pxr::SdfBooleanExpression::UnaryOperator::Not";
+    default: return "pxr::SdfBooleanExpression::UnaryOperator(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
 }
 std::string __Overlay::to_string(const pxr::SdfChangeList& x) {
     std::stringstream ss;
@@ -1443,11 +1477,13 @@ std::string __Overlay::to_string(const pxr::UsdPrimCompositionQuery::ArcTypeFilt
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::Inherit: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::Inherit";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::Specialize: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::Specialize";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::Variant: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::Variant";
+    case pxr::UsdPrimCompositionQuery::ArcTypeFilter::Relocate: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::Relocate";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::ReferenceOrPayload: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::ReferenceOrPayload";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::InheritOrSpecialize: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::InheritOrSpecialize";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotReferenceOrPayload: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotReferenceOrPayload";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotInheritOrSpecialize: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotInheritOrSpecialize";
     case pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotVariant: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotVariant";
+    case pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotRelocate: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotRelocate";
     default: return "pxr::UsdPrimCompositionQuery::ArcTypeFilter(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -1791,8 +1827,15 @@ std::string __Overlay::to_string(const pxr::ExecProviderResolution::DynamicTrave
     switch (x) {
     case pxr::ExecProviderResolution::DynamicTraversal::Local: return "pxr::ExecProviderResolution::DynamicTraversal::Local";
     case pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects: return "pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects";
+    case pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects: return "pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects";
     case pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor: return "pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor";
     default: return "pxr::ExecProviderResolution::DynamicTraversal(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::ExecValidationErrorType& x) {
+    switch (x) {
+    case pxr::ExecValidationErrorType::DataDependencyCycle: return "pxr::ExecValidationErrorType::DataDependencyCycle";
+    default: return "pxr::ExecValidationErrorType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -1944,6 +1987,7 @@ std::string __Overlay::to_string(const pxr::HioGlslfxResourceLayout::TextureType
     case pxr::HioGlslfxResourceLayout::TextureType::TEXTURE: return "pxr::HioGlslfxResourceLayout::TextureType::TEXTURE";
     case pxr::HioGlslfxResourceLayout::TextureType::SHADOW_TEXTURE: return "pxr::HioGlslfxResourceLayout::TextureType::SHADOW_TEXTURE";
     case pxr::HioGlslfxResourceLayout::TextureType::ARRAY_TEXTURE: return "pxr::HioGlslfxResourceLayout::TextureType::ARRAY_TEXTURE";
+    case pxr::HioGlslfxResourceLayout::TextureType::CUBEMAP_TEXTURE: return "pxr::HioGlslfxResourceLayout::TextureType::CUBEMAP_TEXTURE";
     default: return "pxr::HioGlslfxResourceLayout::TextureType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -2030,6 +2074,7 @@ std::string __Overlay::to_string(const pxr::HgiTextureType& x) {
     case pxr::HgiTextureType1D: return "pxr::HgiTextureType1D";
     case pxr::HgiTextureType2D: return "pxr::HgiTextureType2D";
     case pxr::HgiTextureType3D: return "pxr::HgiTextureType3D";
+    case pxr::HgiTextureTypeCubemap: return "pxr::HgiTextureTypeCubemap";
     case pxr::HgiTextureType1DArray: return "pxr::HgiTextureType1DArray";
     case pxr::HgiTextureType2DArray: return "pxr::HgiTextureType2DArray";
     case pxr::HgiTextureTypeCount: return "pxr::HgiTextureTypeCount";
@@ -2119,6 +2164,7 @@ std::string __Overlay::to_string(const pxr::HgiBufferUsageBits& x) {
     case pxr::HgiBufferUsageVertex: return "pxr::HgiBufferUsageVertex";
     case pxr::HgiBufferUsageStorage: return "pxr::HgiBufferUsageStorage";
     case pxr::HgiBufferUsageIndirect: return "pxr::HgiBufferUsageIndirect";
+    case pxr::HgiBufferUsageUpload: return "pxr::HgiBufferUsageUpload";
     case pxr::HgiBufferUsageCustomBitsBegin: return "pxr::HgiBufferUsageCustomBitsBegin";
     default: return "pxr::HgiBufferUsageBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
@@ -2338,6 +2384,7 @@ std::string __Overlay::to_string(const pxr::HgiShaderTextureType& x) {
     case pxr::HgiShaderTextureTypeTexture: return "pxr::HgiShaderTextureTypeTexture";
     case pxr::HgiShaderTextureTypeShadowTexture: return "pxr::HgiShaderTextureTypeShadowTexture";
     case pxr::HgiShaderTextureTypeArrayTexture: return "pxr::HgiShaderTextureTypeArrayTexture";
+    case pxr::HgiShaderTextureTypeCubemapTexture: return "pxr::HgiShaderTextureTypeCubemapTexture";
     default: return "pxr::HgiShaderTextureType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -2762,6 +2809,11 @@ std::string __Overlay::to_string(const pxr::HdRprimCollection& x) {
     ss << x;
     return ss.str();
 }
+std::string __Overlay::to_string(const pxr::HdSceneIndexPrim& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::HdDataSourceLocator& x) {
     std::stringstream ss;
     ss << x;
@@ -2844,6 +2896,14 @@ std::string __Overlay::to_string(const pxr::HdLight::DirtyBits& x) {
     default: return "pxr::HdLight::DirtyBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::HdMeshComputationResult& x) {
+    switch (x) {
+    case pxr::HdMeshComputationResult::Error: return "pxr::HdMeshComputationResult::Error";
+    case pxr::HdMeshComputationResult::Success: return "pxr::HdMeshComputationResult::Success";
+    case pxr::HdMeshComputationResult::Unchanged: return "pxr::HdMeshComputationResult::Unchanged";
+    default: return "pxr::HdMeshComputationResult(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::HdPrimOriginSchema::OriginPath& x) {
     std::stringstream ss;
     ss << x;
@@ -2908,6 +2968,7 @@ std::string __Overlay::to_string(const pxr::HdStBinding::Type& x) {
     case pxr::HdStBinding::TEXTURE_UDIM_LAYOUT: return "pxr::HdStBinding::TEXTURE_UDIM_LAYOUT";
     case pxr::HdStBinding::TEXTURE_PTEX_TEXEL: return "pxr::HdStBinding::TEXTURE_PTEX_TEXEL";
     case pxr::HdStBinding::TEXTURE_PTEX_LAYOUT: return "pxr::HdStBinding::TEXTURE_PTEX_LAYOUT";
+    case pxr::HdStBinding::TEXTURE_CUBEMAP: return "pxr::HdStBinding::TEXTURE_CUBEMAP";
     case pxr::HdStBinding::BINDLESS_TEXTURE_2D: return "pxr::HdStBinding::BINDLESS_TEXTURE_2D";
     case pxr::HdStBinding::BINDLESS_ARRAY_OF_TEXTURE_2D: return "pxr::HdStBinding::BINDLESS_ARRAY_OF_TEXTURE_2D";
     case pxr::HdStBinding::BINDLESS_TEXTURE_FIELD: return "pxr::HdStBinding::BINDLESS_TEXTURE_FIELD";
@@ -2915,6 +2976,7 @@ std::string __Overlay::to_string(const pxr::HdStBinding::Type& x) {
     case pxr::HdStBinding::BINDLESS_TEXTURE_UDIM_LAYOUT: return "pxr::HdStBinding::BINDLESS_TEXTURE_UDIM_LAYOUT";
     case pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_TEXEL: return "pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_TEXEL";
     case pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_LAYOUT: return "pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_LAYOUT";
+    case pxr::HdStBinding::BINDLESS_TEXTURE_CUBEMAP: return "pxr::HdStBinding::BINDLESS_TEXTURE_CUBEMAP";
     case pxr::HdStBinding::PRIMVAR_REDIRECT: return "pxr::HdStBinding::PRIMVAR_REDIRECT";
     case pxr::HdStBinding::FIELD_REDIRECT: return "pxr::HdStBinding::FIELD_REDIRECT";
     case pxr::HdStBinding::TRANSFORM_2D: return "pxr::HdStBinding::TRANSFORM_2D";
@@ -2933,6 +2995,7 @@ std::string __Overlay::to_string(const pxr::HdStTextureType& x) {
     case pxr::HdStTextureType::Field: return "pxr::HdStTextureType::Field";
     case pxr::HdStTextureType::Ptex: return "pxr::HdStTextureType::Ptex";
     case pxr::HdStTextureType::Udim: return "pxr::HdStTextureType::Udim";
+    case pxr::HdStTextureType::Cubemap: return "pxr::HdStTextureType::Cubemap";
     default: return "pxr::HdStTextureType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }

@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::UsdAppUtilsFrameRecorder from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usdImaging/usdAppUtils/frameRecorder.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/usdImaging/usdAppUtils/frameRecorder.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDAPPUTILSFRAMERECORDERWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDAPPUTILSFRAMERECORDERWRAPPER_H

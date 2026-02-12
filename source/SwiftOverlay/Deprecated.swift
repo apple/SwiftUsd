@@ -46,11 +46,11 @@ extension Overlay.SdfLayer {
 
 extension Overlay {
     #if compiler(<6.3)
-    @available(*, deprecated, message: "Use pxr.UsdZipFileWriter instead")
+    @available(*, deprecated, message: "Use pxr.SdfZipFileWriter instead")
     #else
-    @available(*, unavailable, message: "Use pxr.UsdZipFileWriter instead")
+    @available(*, unavailable, message: "Use pxr.SdfZipFileWriter instead")
     #endif
-    public typealias UsdZipFileWriterWrapper = pxr.UsdZipFileWriter
+    public typealias UsdZipFileWriterWrapper = pxr.SdfZipFileWriter
 }
 
 extension Overlay {

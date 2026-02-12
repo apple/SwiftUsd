@@ -74,6 +74,7 @@
 #include "pxr/imaging/hd/noticeBatchingSceneIndex.h"
 #include "pxr/imaging/hd/perfLog.h"
 #include "pxr/imaging/hd/prefixingSceneIndex.h"
+#include "pxr/imaging/hd/renderIndexAdapterSceneIndex.h"
 #include "pxr/imaging/hd/rendererPluginRegistry.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/retainedSceneIndex.h"
@@ -95,6 +96,7 @@
 #include "pxr/imaging/hdsi/materialBindingResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialOverrideResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialPrimvarTransferSceneIndex.h"
+#include "pxr/imaging/hdsi/materialRenderContextFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/nodeIdentifierResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/nurbsApproximatingSceneIndex.h"
 #include "pxr/imaging/hdsi/pinnedCurveExpandingSceneIndex.h"
@@ -103,8 +105,10 @@
 #include "pxr/imaging/hdsi/primTypeAndPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypeNoticeBatchingSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypePruningSceneIndex.h"
+#include "pxr/imaging/hdsi/renderPassPruneSceneIndex.h"
 #include "pxr/imaging/hdsi/renderSettingsFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/sceneGlobalsSceneIndex.h"
+#include "pxr/imaging/hdsi/sceneMaterialPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/switchingSceneIndex.h"
 #include "pxr/imaging/hdsi/tetMeshConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/unboundMaterialPruningSceneIndex.h"
@@ -148,7 +152,6 @@
 #include "pxr/usd/sdf/schema.h"
 #include "pxr/usd/sdf/site.h"
 #include "pxr/usd/sdf/spec.h"
-#include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/usdFileFormat.h"
@@ -305,10 +308,6 @@ namespace __Overlay {
                     const pxr::SdfRelationshipSpecHandle& r);
   bool operatorLess(const pxr::SdfRelationshipSpec& l,
                     const pxr::SdfRelationshipSpec& r);
-  bool operatorLess(const pxr::SdfTextFileFormat& l,
-                    const pxr::SdfTextFileFormat& r);
-  bool operatorLess(const pxr::SdfTextFileFormatRefPtr& l,
-                    const pxr::SdfTextFileFormatRefPtr& r);
   bool operatorLess(const pxr::SdfUsdFileFormat& l,
                     const pxr::SdfUsdFileFormat& r);
   bool operatorLess(const pxr::SdfUsdFileFormatRefPtr& l,
@@ -476,6 +475,10 @@ namespace __Overlay {
                     const pxr::HdPrefixingSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdRendererPluginRegistry& l,
                     const pxr::HdRendererPluginRegistry& r);
+  bool operatorLess(const pxr::HdRenderIndexAdapterSceneIndex& l,
+                    const pxr::HdRenderIndexAdapterSceneIndex& r);
+  bool operatorLess(const pxr::HdRenderIndexAdapterSceneIndexRefPtr& l,
+                    const pxr::HdRenderIndexAdapterSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdSceneIndexPluginRegistry& l,
                     const pxr::HdSceneIndexPluginRegistry& r);
   bool operatorLess(const pxr::HdGpGenerativeProceduralPluginRegistry& l,
@@ -532,6 +535,10 @@ namespace __Overlay {
                     const pxr::HdsiMaterialPrimvarTransferSceneIndex& r);
   bool operatorLess(const pxr::HdsiMaterialPrimvarTransferSceneIndexRefPtr& l,
                     const pxr::HdsiMaterialPrimvarTransferSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdsiMaterialRenderContextFilteringSceneIndex& l,
+                    const pxr::HdsiMaterialRenderContextFilteringSceneIndex& r);
+  bool operatorLess(const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& l,
+                    const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdSiNodeIdentifierResolvingSceneIndex& l,
                     const pxr::HdSiNodeIdentifierResolvingSceneIndex& r);
   bool operatorLess(const pxr::HdSiNodeIdentifierResolvingSceneIndexRefPtr& l,
@@ -564,6 +571,10 @@ namespace __Overlay {
                     const pxr::HdsiPrimTypePruningSceneIndex& r);
   bool operatorLess(const pxr::HdsiPrimTypePruningSceneIndexRefPtr& l,
                     const pxr::HdsiPrimTypePruningSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdsiRenderPassPruneSceneIndex& l,
+                    const pxr::HdsiRenderPassPruneSceneIndex& r);
+  bool operatorLess(const pxr::HdsiRenderPassPruneSceneIndexRefPtr& l,
+                    const pxr::HdsiRenderPassPruneSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdsiRenderSettingsFilteringSceneIndex& l,
                     const pxr::HdsiRenderSettingsFilteringSceneIndex& r);
   bool operatorLess(const pxr::HdsiRenderSettingsFilteringSceneIndexRefPtr& l,
@@ -572,6 +583,10 @@ namespace __Overlay {
                     const pxr::HdsiSceneGlobalsSceneIndex& r);
   bool operatorLess(const pxr::HdsiSceneGlobalsSceneIndexRefPtr& l,
                     const pxr::HdsiSceneGlobalsSceneIndexRefPtr& r);
+  bool operatorLess(const pxr::HdsiSceneMaterialPruningSceneIndex& l,
+                    const pxr::HdsiSceneMaterialPruningSceneIndex& r);
+  bool operatorLess(const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& l,
+                    const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& r);
   bool operatorLess(const pxr::HdsiSwitchingSceneIndex& l,
                     const pxr::HdsiSwitchingSceneIndex& r);
   bool operatorLess(const pxr::HdsiSwitchingSceneIndexRefPtr& l,

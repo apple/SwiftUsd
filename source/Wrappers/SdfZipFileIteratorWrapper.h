@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::SdfZipFile::Iterator from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/sdf/zipFile.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/usd/sdf/zipFile.h
 
 #ifndef SWIFTUSD_WRAPPERS_SDFZIPFILEITERATORWRAPPER_H
 #define SWIFTUSD_WRAPPERS_SDFZIPFILEITERATORWRAPPER_H
@@ -27,7 +27,7 @@
 #include <stdio.h>
 #include <memory>
 #include <swift/bridging>
-#include "pxr/usd/usd/zipFile.h"
+#include "pxr/usd/sdf/zipFile.h"
 
 
 namespace Overlay {

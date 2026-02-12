@@ -101,7 +101,7 @@ extension Bool {
     }
 
     /// Returns `true` if the zip file is valid
-    public init(_ x: pxr.UsdZipFile) {
+    public init(_ x: pxr.SdfZipFile) {
         self = x.__convertToBool()
     }
 

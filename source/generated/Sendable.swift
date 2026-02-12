@@ -32,17 +32,29 @@
 // std::optional<std::allocator<std::pair<unsigned char const, pxr::TfType>>>
 // std::vector<std::pair<pxr::TfDiagnosticType, std::string>, std::allocator<std::pair<pxr::TfDiagnosticType, std::string>>>
 // std::pair<pxr::TfDiagnosticType, std::string>
+// std::unordered_map<bool, long long, pxr::TfHash, std::equal_to<bool>, std::allocator<std::pair<bool const, long long>>>
+// std::unordered_map<double, long long, pxr::TfHash, std::equal_to<double>, std::allocator<std::pair<double const, long long>>>
+// std::unordered_map<float, long long, pxr::TfHash, std::equal_to<float>, std::allocator<std::pair<float const, long long>>>
+// std::unordered_map<int, long long, pxr::TfHash, std::equal_to<int>, std::allocator<std::pair<int const, long long>>>
 // std::unordered_map<int, unsigned long, pxr::TfHash, std::equal_to<int>, std::allocator<std::pair<int const, unsigned long>>>
+// std::unordered_map<long long, long long, pxr::TfHash, std::equal_to<long long>, std::allocator<std::pair<long long const, long long>>>
 // std::unordered_map<long long, unsigned long, pxr::TfHash, std::equal_to<long long>, std::allocator<std::pair<long long const, unsigned long>>>
 // std::unordered_map<std::string, std::variant<<int, _Bool, std::string>>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::variant<<int, _Bool, std::string>>>>>
 // std::unordered_map<std::string, std::vector<std::string, std::allocator<std::string>>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string>>>>>
+// std::unordered_map<std::string, long long, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, long long>>>
 // std::unordered_map<std::string, unsigned long, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, unsigned long>>>
+// std::unordered_map<unsigned char, long long, pxr::TfHash, std::equal_to<unsigned char>, std::allocator<std::pair<unsigned char const, long long>>>
+// std::unordered_map<unsigned int, long long, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, long long>>>
 // std::unordered_map<unsigned int, unsigned long, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned long>>>
+// std::unordered_map<unsigned long long, long long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, long long>>>
 // std::unordered_map<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>
 // pxr::TfRefPtr<pxr::TfRefBase>
 // std::optional<std::allocator<std::pair<pxr::VdfConnection const *, pxr::TfCompressedBits>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::TfNotice::Probe>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TfNotice::Probe>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>
+// std::vector<pxr::TfMallocTag::CallTree::PathNode, std::allocator<pxr::TfMallocTag::CallTree::PathNode>>
+// std::vector<pxr::TfMallocTag::CallTree::CallSite, std::allocator<pxr::TfMallocTag::CallTree::CallSite>>
+// std::vector<pxr::TfMallocTag::CallStackInfo, std::allocator<pxr::TfMallocTag::CallStackInfo>>
 // pxr::TfHashMap<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int>>>
 // pxr::TfHashMap<int, unsigned long, pxr::TfHash, std::equal_to<int>, std::allocator<std::pair<int const, unsigned long>>>
 // pxr::TfHashMap<long long, unsigned long, pxr::TfHash, std::equal_to<long long>, std::allocator<std::pair<long long const, unsigned long>>>
@@ -53,12 +65,8 @@
 // pxr::TfHashMap<unsigned int, unsigned long, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned long>>>
 // pxr::TfHashMap<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>
 // pxr::TfSingleton<pxr::TfDiagnosticMgr>
-// std::vector<pxr::TfMallocTag::CallTree::PathNode, std::allocator<pxr::TfMallocTag::CallTree::PathNode>>
-// std::vector<pxr::TfMallocTag::CallTree::CallSite, std::allocator<pxr::TfMallocTag::CallTree::CallSite>>
-// std::vector<pxr::TfMallocTag::CallStackInfo, std::allocator<pxr::TfMallocTag::CallStackInfo>>
 // std::optional<std::allocator<std::pair<void const *, pxr::TfRefPtrTracker::Trace>>>
 // pxr::TfSingleton<pxr::TfRefPtrTracker>
-// pxr::TfSingleton<pxr::TfRegTest>
 // pxr::TfHashSet<int, std::hash<int>, std::equal_to<int>, std::allocator<int>>
 // pxr::TfHashSet<std::string, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::string>>
 // std::unordered_set<std::string, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::string>>
@@ -76,8 +84,8 @@
 // std::optional<std::allocator<pxr::TfToken>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdrParserPlugin *>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
-// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
-// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet *>>>>>
+// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
+// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, double>, std::allocator<std::pair<unsigned long long, double>>>>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdrShaderProperty const *>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::HdVolumeFieldDescriptor const *>>>
@@ -92,6 +100,7 @@
 // std::set<pxr::TfToken, std::less<pxr::TfToken>, std::allocator<pxr::TfToken>>
 // std::unordered_map<pxr::TfToken, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // std::unordered_map<pxr::TfToken, int, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, int>>>
+// std::unordered_map<pxr::TfToken, long long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, long long>>>
 // std::unordered_map<pxr::TfToken, std::atomic<int>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::atomic<int>>>>
 // std::unordered_map<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
 // std::unordered_map<std::pair<pxr::TfToken, pxr::TfToken>, unsigned int, pxr::TfHash, std::equal_to<std::pair<pxr::TfToken, pxr::TfToken>>, std::allocator<std::pair<std::pair<pxr::TfToken, pxr::TfToken> const, unsigned int>>>
@@ -101,13 +110,13 @@
 // std::pair<pxr::TfToken, bool>
 // std::pair<pxr::TfToken, double>
 // std::pair<pxr::TfToken, int>
-// std::pair<pxr::TfToken, nullptr_t>
+// std::pair<pxr::TfToken, std::string>
 // std::pair<pxr::TfToken, unsigned int>
 // std::pair<pxr::TfToken, unsigned long>
 // std::pair<pxr::TfToken const, std::set<std::string, std::less<std::string>, std::allocator<std::string>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, double>, std::allocator<std::pair<unsigned long long, double>>>>
-// std::pair<pxr::TfToken const, std::string>
+// std::pair<pxr::TfToken const, long long>
 // std::pair<pxr::TfToken const, std::pair<pxr::TfToken, unsigned long>>
 // std::pair<pxr::TfToken const, unsigned long long>
 // std::pair<std::string const, pxr::TfToken>
@@ -117,8 +126,6 @@
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned int, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned int>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
-// std::unordered_map<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
-// std::unordered_map<pxr::TfToken, std::unordered_map<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::unordered_map<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>>>>
 // std::unordered_map<pxr::TfToken, std::unordered_map<pxr::TfToken, std::pair<pxr::TfToken, unsigned long>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::pair<pxr::TfToken, unsigned long>>>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::unordered_map<pxr::TfToken, std::pair<pxr::TfToken, unsigned long>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::pair<pxr::TfToken, unsigned long>>>>>>>
 // std::unordered_map<pxr::TfToken, int, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, int>>>
 // std::unordered_map<pxr::TfToken, std::pair<pxr::TfToken, unsigned long>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::pair<pxr::TfToken, unsigned long>>>>
@@ -133,43 +140,80 @@
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::GfBBox3d>>>
 // std::pair<pxr::GfBBox3d, float>
 // std::pair<pxr::TfToken const, pxr::GfBBox3d>
+// std::unordered_map<pxr::GfMatrix4d, long long, pxr::TfHash, std::equal_to<pxr::GfMatrix4d>, std::allocator<std::pair<pxr::GfMatrix4d const, long long>>>
 // std::vector<pxr::GfMatrix4d, std::allocator<pxr::GfMatrix4d>>
 // std::vector<std::pair<pxr::GfMatrix4d, int>, std::allocator<std::pair<pxr::GfMatrix4d, int>>>
 // std::pair<pxr::GfMatrix4d, int>
+// std::pair<pxr::GfMatrix4d const, long long>
+// std::unordered_map<pxr::GfVec4d, long long, pxr::TfHash, std::equal_to<pxr::GfVec4d>, std::allocator<std::pair<pxr::GfVec4d const, long long>>>
+// std::pair<pxr::GfVec4d const, long long>
+// std::unordered_map<pxr::GfVec4f, long long, pxr::TfHash, std::equal_to<pxr::GfVec4f>, std::allocator<std::pair<pxr::GfVec4f const, long long>>>
 // std::vector<pxr::GfVec4f, std::allocator<pxr::GfVec4f>>
 // std::vector<std::pair<unsigned int, pxr::GfVec4f>, std::allocator<std::pair<unsigned int, pxr::GfVec4f>>>
+// std::pair<pxr::GfVec4f const, long long>
 // std::pair<unsigned int, pxr::GfVec4f>
+// std::unordered_map<pxr::GfVec4h, long long, pxr::TfHash, std::equal_to<pxr::GfVec4h>, std::allocator<std::pair<pxr::GfVec4h const, long long>>>
+// std::pair<pxr::GfVec4h const, long long>
 // std::optional<pxr::pxr_half::half>
+// std::unordered_map<pxr::pxr_half::half, long long, pxr::TfHash, std::equal_to<pxr::pxr_half::half>, std::allocator<std::pair<pxr::pxr_half::half const, long long>>>
 // std::vector<pxr::pxr_half::half, std::allocator<pxr::pxr_half::half>>
 // std::pair<pxr::pxr_half::half, pxr::pxr_half::half>
+// std::pair<pxr::pxr_half::half const, long long>
+// std::unordered_map<pxr::GfVec4i, long long, pxr::TfHash, std::equal_to<pxr::GfVec4i>, std::allocator<std::pair<pxr::GfVec4i const, long long>>>
 // std::vector<pxr::GfVec4i, std::allocator<pxr::GfVec4i>>
+// std::pair<pxr::GfVec4i const, long long>
+// std::unordered_map<pxr::GfVec3d, long long, pxr::TfHash, std::equal_to<pxr::GfVec3d>, std::allocator<std::pair<pxr::GfVec3d const, long long>>>
 // std::vector<pxr::GfVec3d, std::allocator<pxr::GfVec3d>>
+// std::pair<pxr::GfVec3d const, long long>
+// std::unordered_map<pxr::GfVec3f, long long, pxr::TfHash, std::equal_to<pxr::GfVec3f>, std::allocator<std::pair<pxr::GfVec3f const, long long>>>
 // std::vector<pxr::GfVec3f, std::allocator<pxr::GfVec3f>>
+// std::pair<pxr::GfVec3f const, long long>
+// std::unordered_map<pxr::GfVec3h, long long, pxr::TfHash, std::equal_to<pxr::GfVec3h>, std::allocator<std::pair<pxr::GfVec3h const, long long>>>
+// std::pair<pxr::GfVec3h const, long long>
+// std::unordered_map<pxr::GfVec3i, long long, pxr::TfHash, std::equal_to<pxr::GfVec3i>, std::allocator<std::pair<pxr::GfVec3i const, long long>>>
+// std::pair<pxr::GfVec3i const, long long>
 // std::pair<pxr::GfVec3i const, std::pair<unsigned long, pxr::GfVec3i>>
 // std::pair<unsigned long, pxr::GfVec3i>
 // std::vector<pxr::GfRange3d, std::allocator<pxr::GfRange3d>>
 // std::optional<pxr::GfVec2f>
+// std::unordered_map<pxr::GfVec2f, long long, pxr::TfHash, std::equal_to<pxr::GfVec2f>, std::allocator<std::pair<pxr::GfVec2f const, long long>>>
 // std::vector<pxr::GfVec2f, std::allocator<pxr::GfVec2f>>
 // std::vector<std::vector<pxr::GfVec2f, std::allocator<pxr::GfVec2f>>, std::allocator<std::vector<pxr::GfVec2f, std::allocator<pxr::GfVec2f>>>>
+// std::pair<pxr::GfVec2f const, long long>
+// std::unordered_map<pxr::GfVec2d, long long, pxr::TfHash, std::equal_to<pxr::GfVec2d>, std::allocator<std::pair<pxr::GfVec2d const, long long>>>
 // std::vector<pxr::GfVec2d, std::allocator<pxr::GfVec2d>>
 // std::vector<std::vector<pxr::GfVec2d, std::allocator<pxr::GfVec2d>>, std::allocator<std::vector<pxr::GfVec2d, std::allocator<pxr::GfVec2d>>>>
+// std::pair<pxr::GfVec2d const, long long>
+// std::unordered_map<pxr::GfVec2h, long long, pxr::TfHash, std::equal_to<pxr::GfVec2h>, std::allocator<std::pair<pxr::GfVec2h const, long long>>>
 // std::vector<pxr::GfVec2h, std::allocator<pxr::GfVec2h>>
 // std::vector<std::vector<pxr::GfVec2h, std::allocator<pxr::GfVec2h>>, std::allocator<std::vector<pxr::GfVec2h, std::allocator<pxr::GfVec2h>>>>
+// std::pair<pxr::GfVec2h const, long long>
 // std::optional<std::allocator<pxr::GfVec2i>>
 // std::optional<std::allocator<std::pair<unsigned long const, pxr::GfVec2i>>>
+// std::unordered_map<pxr::GfVec2i, long long, pxr::TfHash, std::equal_to<pxr::GfVec2i>, std::allocator<std::pair<pxr::GfVec2i const, long long>>>
 // std::unordered_map<unsigned long, pxr::GfVec2i, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, pxr::GfVec2i>>>
 // std::vector<pxr::GfVec2i, std::allocator<pxr::GfVec2i>>
+// std::pair<pxr::GfVec2i const, long long>
 // std::pair<unsigned long, pxr::GfVec2i>
 // std::vector<pxr::GfMatrix3f, std::allocator<pxr::GfMatrix3f>>
 // std::vector<pxr::GfDualQuatd, std::allocator<pxr::GfDualQuatd>>
+// std::unordered_map<pxr::GfQuatd, long long, pxr::TfHash, std::equal_to<pxr::GfQuatd>, std::allocator<std::pair<pxr::GfQuatd const, long long>>>
 // std::vector<pxr::GfQuatd, std::allocator<pxr::GfQuatd>>
+// std::pair<pxr::GfQuatd const, long long>
+// std::unordered_map<pxr::GfQuatf, long long, pxr::TfHash, std::equal_to<pxr::GfQuatf>, std::allocator<std::pair<pxr::GfQuatf const, long long>>>
+// std::pair<pxr::GfQuatf const, long long>
+// std::unordered_map<pxr::GfQuath, long long, pxr::TfHash, std::equal_to<pxr::GfQuath>, std::allocator<std::pair<pxr::GfQuath const, long long>>>
+// std::pair<pxr::GfQuath const, long long>
 // std::optional<std::allocator<pxr::GfInterval>>
 // std::vector<pxr::GfInterval, std::allocator<pxr::GfInterval>>
+// std::unordered_map<pxr::GfMatrix2d, long long, pxr::TfHash, std::equal_to<pxr::GfMatrix2d>, std::allocator<std::pair<pxr::GfMatrix2d const, long long>>>
+// std::pair<pxr::GfMatrix2d const, long long>
+// std::unordered_map<pxr::GfMatrix3d, long long, pxr::TfHash, std::equal_to<pxr::GfMatrix3d>, std::allocator<std::pair<pxr::GfMatrix3d const, long long>>>
 // std::vector<pxr::GfMatrix3d, std::allocator<pxr::GfMatrix3d>>
+// std::pair<pxr::GfMatrix3d const, long long>
 // std::vector<pxr::GfMatrix4f, std::allocator<pxr::GfMatrix4f>>
 // std::optional<std::allocator<std::pair<std::string const, pxr::JsValue>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::TraceAggregateNode>
-// pxr::TfSingleton<pxr::TraceCategory>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceAggregateNode>
 // std::optional<std::allocator<std::pair<pxr::TraceKey const, pxr::TfToken>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, pxr::TraceThreadId>, std::allocator<std::pair<unsigned long long, pxr::TraceThreadId>>>>>>
 // std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, pxr::TraceThreadId>, std::allocator<std::pair<unsigned long long, pxr::TraceThreadId>>>>
@@ -177,17 +221,65 @@
 // std::optional<std::allocator<pxr::TraceDynamicKey>>
 // pxr::TfSingleton<pxr::TraceCollector>
 // std::pair<pxr::TfToken const, pxr::TraceEventData>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::TraceReporter>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::TraceReporterDataSourceCollector>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::PlugPlugin>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::PlugRegistry>
-// pxr::TfSingleton<pxr::PlugRegistry>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceReporter>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceReporterDataSourceCollector>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PlugPlugin>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PlugRegistry>
 // pxr::VtArray<pxr::GfFrustum>
 // pxr::VtArray<pxr::GfMultiInterval>
 // pxr::VtArray<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
 // pxr::VtArray<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // pxr::VtArray<std::vector<double, std::allocator<double>>>
 // pxr::VtArray<std::vector<std::string, std::allocator<std::string>>>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuath>
+// pxr::VtValueTypeCanTransform<pxr::pxr_half::half>
+// pxr::VtValueTypeCanTransform<pxr::GfInterval>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4f>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfQuaternion>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfQuath>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3f>
+// pxr::VtValueTypeCanTransform<pxr::GfRect2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4i>
+// pxr::VtValueTypeCanTransform<pxr::TfToken>
+// pxr::VtValueTypeCanTransform<bool>
+// pxr::VtValueTypeCanTransform<char>
+// pxr::VtValueTypeCanTransform<pxr::GfFrustum>
+// pxr::VtValueTypeCanTransform<pxr::GfMultiInterval>
+// pxr::VtValueTypeCanTransform<double>
+// pxr::VtValueTypeCanTransform<float>
+// pxr::VtValueTypeCanTransform<long long>
+// pxr::VtValueTypeCanTransform<int>
+// pxr::VtValueTypeCanTransform<short>
+// pxr::VtValueTypeCanTransform<std::string>
+// pxr::VtValueTypeCanTransform<unsigned long long>
+// pxr::VtValueTypeCanTransform<unsigned char>
+// pxr::VtValueTypeCanTransform<unsigned int>
+// pxr::VtValueTypeCanTransform<unsigned short>
 // pxr::VtArray<pxr::VtArray<int>>
 // std::optional<pxr::VtArray<pxr::GfVec2d>>
 // std::optional<pxr::VtArray<pxr::GfVec4f>>
@@ -197,25 +289,464 @@
 // std::vector<pxr::VtArray<pxr::TfToken>, std::allocator<pxr::VtArray<pxr::TfToken>>>
 // std::vector<pxr::VtArray<int>, std::allocator<pxr::VtArray<int>>>
 // std::pair<pxr::VtArray<int>, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
+// pxr::VtValueTypeCanCompose<bool>
+// pxr::VtValueTypeCanCompose<char>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuatd>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuatf>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuath>
+// pxr::VtValueTypeCanCompose<pxr::GfFrustum>
+// pxr::VtValueTypeCanCompose<pxr::GfInterval>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix2d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix2f>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix3d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix3f>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix4d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix4f>
+// pxr::VtValueTypeCanCompose<pxr::GfMultiInterval>
+// pxr::VtValueTypeCanCompose<pxr::GfQuatd>
+// pxr::VtValueTypeCanCompose<pxr::GfQuaternion>
+// pxr::VtValueTypeCanCompose<pxr::GfQuatf>
+// pxr::VtValueTypeCanCompose<pxr::GfQuath>
+// pxr::VtValueTypeCanCompose<pxr::GfRange1d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange1f>
+// pxr::VtValueTypeCanCompose<pxr::GfRange2d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange2f>
+// pxr::VtValueTypeCanCompose<pxr::GfRange3d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange3f>
+// pxr::VtValueTypeCanCompose<pxr::GfRect2i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4i>
+// pxr::VtValueTypeCanCompose<pxr::HdSceneDelegate *>
+// pxr::VtValueTypeCanCompose<pxr::Hgi *>
+// pxr::VtValueTypeCanCompose<pxr::TfEnum>
+// pxr::VtValueTypeCanCompose<pxr::TfToken>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfDualQuatd>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfDualQuatf>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfDualQuath>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::pxr_half::half>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfInterval>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix2d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix2f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix3d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix3f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix4d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMatrix4f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfQuatd>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfQuaternion>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfQuatf>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfQuath>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange1d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange1f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange2d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange2f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange3d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRange3f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfRect2i>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec2d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec2f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec2h>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec2i>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec3d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec3f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec3h>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec3i>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec4d>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec4f>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec4h>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfVec4i>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::TfToken>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<bool>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<char>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfFrustum>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::GfMultiInterval>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<double>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<float>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<long long>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<int>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<short>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<std::string>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<unsigned long long>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<unsigned char>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<unsigned int>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<unsigned short>>
+// pxr::VtValueTypeCanCompose<pxr::pxr_half::half>
+// pxr::VtValueTypeCanCompose<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
+// pxr::VtValueTypeCanCompose<std::unordered_map<pxr::TfToken, std::string, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::string>>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::GfVec4d, std::allocator<pxr::GfVec4d>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::HdDriver *, std::allocator<pxr::HdDriver *>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::SdrShaderNode const *, std::allocator<pxr::SdrShaderNode const *>>>
+// pxr::VtValueTypeCanCompose<std::vector<double, std::allocator<double>>>
+// pxr::VtValueTypeCanCompose<std::vector<float, std::allocator<float>>>
+// pxr::VtValueTypeCanCompose<std::vector<std::string, std::allocator<std::string>>>
+// pxr::VtValueTypeCanCompose<pxr::HdSceneDelegate const *>
+// pxr::VtValueTypeCanCompose<pxr::Hgi const *>
+// pxr::VtValueTypeCanCompose<double>
+// pxr::VtValueTypeCanCompose<float>
+// pxr::VtValueTypeCanCompose<int>
+// pxr::VtValueTypeCanCompose<long long>
+// pxr::VtValueTypeCanCompose<long>
+// pxr::VtValueTypeCanCompose<short>
+// pxr::VtValueTypeCanCompose<signed char>
+// pxr::VtValueTypeCanCompose<std::string>
+// pxr::VtValueTypeCanCompose<std::pair<float, unsigned int>>
+// pxr::VtValueTypeCanCompose<unsigned char>
+// pxr::VtValueTypeCanCompose<unsigned int>
+// pxr::VtValueTypeCanCompose<unsigned long long>
+// pxr::VtValueTypeCanCompose<unsigned long>
+// pxr::VtValueTypeCanCompose<unsigned short>
+// pxr::VtValueTypeCanTransform<bool>
+// pxr::VtValueTypeCanTransform<char>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuath>
+// pxr::VtValueTypeCanTransform<pxr::GfFrustum>
+// pxr::VtValueTypeCanTransform<pxr::GfInterval>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4f>
+// pxr::VtValueTypeCanTransform<pxr::GfMultiInterval>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfQuaternion>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfQuath>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3f>
+// pxr::VtValueTypeCanTransform<pxr::GfRect2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4i>
+// pxr::VtValueTypeCanTransform<pxr::HdSceneDelegate *>
+// pxr::VtValueTypeCanTransform<pxr::Hgi *>
+// pxr::VtValueTypeCanTransform<pxr::TfEnum>
+// pxr::VtValueTypeCanTransform<pxr::TfToken>
+// pxr::VtValueTypeCanTransform<pxr::pxr_half::half>
+// pxr::VtValueTypeCanTransform<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
+// pxr::VtValueTypeCanTransform<std::unordered_map<pxr::TfToken, std::string, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::string>>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::GfVec4d, std::allocator<pxr::GfVec4d>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::HdDriver *, std::allocator<pxr::HdDriver *>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::SdrShaderNode const *, std::allocator<pxr::SdrShaderNode const *>>>
+// pxr::VtValueTypeCanTransform<std::vector<double, std::allocator<double>>>
+// pxr::VtValueTypeCanTransform<std::vector<float, std::allocator<float>>>
+// pxr::VtValueTypeCanTransform<std::vector<std::string, std::allocator<std::string>>>
+// pxr::VtValueTypeCanTransform<pxr::HdSceneDelegate const *>
+// pxr::VtValueTypeCanTransform<pxr::Hgi const *>
+// pxr::VtValueTypeCanTransform<double>
+// pxr::VtValueTypeCanTransform<float>
+// pxr::VtValueTypeCanTransform<int>
+// pxr::VtValueTypeCanTransform<long long>
+// pxr::VtValueTypeCanTransform<long>
+// pxr::VtValueTypeCanTransform<short>
+// pxr::VtValueTypeCanTransform<signed char>
+// pxr::VtValueTypeCanTransform<std::string>
+// pxr::VtValueTypeCanTransform<std::pair<float, unsigned int>>
+// pxr::VtValueTypeCanTransform<unsigned char>
+// pxr::VtValueTypeCanTransform<unsigned int>
+// pxr::VtValueTypeCanTransform<unsigned long long>
+// pxr::VtValueTypeCanTransform<unsigned long>
+// pxr::VtValueTypeCanTransform<unsigned short>
+// pxr::VtArray<pxr::VtArrayEdit<bool>>
+// pxr::VtArray<pxr::VtArrayEdit<char>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatd>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatf>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuath>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfInterval>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatd>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuaternion>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatf>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuath>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRect2i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::TfToken>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::pxr_half::half>>
+// pxr::VtArray<pxr::VtArrayEdit<double>>
+// pxr::VtArray<pxr::VtArrayEdit<float>>
+// pxr::VtArray<pxr::VtArrayEdit<int>>
+// pxr::VtArray<pxr::VtArrayEdit<long long>>
+// pxr::VtArray<pxr::VtArrayEdit<short>>
+// pxr::VtArray<pxr::VtArrayEdit<std::string>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned char>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned int>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned long long>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned short>>
+// pxr::VtArrayEdit<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
+// pxr::VtArrayEdit<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
+// pxr::VtArrayEdit<std::vector<double, std::allocator<double>>>
+// pxr::VtArrayEdit<std::vector<std::string, std::allocator<std::string>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<bool>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<char>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatd>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatf>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuath>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfInterval>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatd>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuaternion>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatf>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuath>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfRect2i>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2h>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2i>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3h>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3i>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4d>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4f>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4h>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4i>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::TfToken>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<pxr::pxr_half::half>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<double>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<float>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<int>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<long long>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<short>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<std::string>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<unsigned char>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<unsigned int>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<unsigned long long>>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::VtArrayEdit<unsigned short>>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<bool>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<char>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfDualQuatd>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfDualQuatf>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfDualQuath>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfInterval>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix2d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix2f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix3d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix3f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix4d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfMatrix4f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfQuatd>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfQuaternion>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfQuatf>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfQuath>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange1d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange1f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange2d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange2f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange3d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRange3f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfRect2i>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec2d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec2f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec2h>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec2i>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec3d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec3f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec3h>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec3i>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec4d>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec4f>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec4h>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::GfVec4i>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::TfToken>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<pxr::pxr_half::half>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<double>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<float>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<int>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<long long>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<short>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<std::string>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<unsigned char>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<unsigned int>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<unsigned long long>>
+// pxr::VtValueTypeCanTransform<pxr::VtArrayEdit<unsigned short>>
+// pxr::VtValueTypeCanTransform<bool>
+// pxr::VtValueTypeCanTransform<char>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfDualQuath>
+// pxr::VtValueTypeCanTransform<pxr::GfInterval>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix2f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix3f>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4d>
+// pxr::VtValueTypeCanTransform<pxr::GfMatrix4f>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatd>
+// pxr::VtValueTypeCanTransform<pxr::GfQuaternion>
+// pxr::VtValueTypeCanTransform<pxr::GfQuatf>
+// pxr::VtValueTypeCanTransform<pxr::GfQuath>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange1f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange2f>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3d>
+// pxr::VtValueTypeCanTransform<pxr::GfRange3f>
+// pxr::VtValueTypeCanTransform<pxr::GfRect2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec2i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec3i>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4d>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4f>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4h>
+// pxr::VtValueTypeCanTransform<pxr::GfVec4i>
+// pxr::VtValueTypeCanTransform<pxr::TfToken>
+// pxr::VtValueTypeCanTransform<pxr::pxr_half::half>
+// pxr::VtValueTypeCanTransform<double>
+// pxr::VtValueTypeCanTransform<float>
+// pxr::VtValueTypeCanTransform<int>
+// pxr::VtValueTypeCanTransform<long long>
+// pxr::VtValueTypeCanTransform<short>
+// pxr::VtValueTypeCanTransform<std::string>
+// pxr::VtValueTypeCanTransform<unsigned char>
+// pxr::VtValueTypeCanTransform<unsigned int>
+// pxr::VtValueTypeCanTransform<unsigned long long>
+// pxr::VtValueTypeCanTransform<unsigned short>
+// pxr::VtValueTypeCanCompose<bool>
+// pxr::VtValueTypeCanCompose<char>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuatd>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuatf>
+// pxr::VtValueTypeCanCompose<pxr::GfDualQuath>
+// pxr::VtValueTypeCanCompose<pxr::GfInterval>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix2d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix2f>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix3d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix3f>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix4d>
+// pxr::VtValueTypeCanCompose<pxr::GfMatrix4f>
+// pxr::VtValueTypeCanCompose<pxr::GfQuatd>
+// pxr::VtValueTypeCanCompose<pxr::GfQuaternion>
+// pxr::VtValueTypeCanCompose<pxr::GfQuatf>
+// pxr::VtValueTypeCanCompose<pxr::GfQuath>
+// pxr::VtValueTypeCanCompose<pxr::GfRange1d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange1f>
+// pxr::VtValueTypeCanCompose<pxr::GfRange2d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange2f>
+// pxr::VtValueTypeCanCompose<pxr::GfRange3d>
+// pxr::VtValueTypeCanCompose<pxr::GfRange3f>
+// pxr::VtValueTypeCanCompose<pxr::GfRect2i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec2i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec3i>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4d>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4f>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4h>
+// pxr::VtValueTypeCanCompose<pxr::GfVec4i>
+// pxr::VtValueTypeCanCompose<pxr::TfToken>
+// pxr::VtValueTypeCanCompose<pxr::pxr_half::half>
+// pxr::VtValueTypeCanCompose<double>
+// pxr::VtValueTypeCanCompose<float>
+// pxr::VtValueTypeCanCompose<int>
+// pxr::VtValueTypeCanCompose<long long>
+// pxr::VtValueTypeCanCompose<short>
+// pxr::VtValueTypeCanCompose<std::string>
+// pxr::VtValueTypeCanCompose<unsigned char>
+// pxr::VtValueTypeCanCompose<unsigned int>
+// pxr::VtValueTypeCanCompose<unsigned long long>
+// pxr::VtValueTypeCanCompose<unsigned short>
 // std::optional<std::allocator<std::pair<double const, pxr::VtDictionary>>>
+// pxr::VtValueTypeCanCompose<pxr::VtDictionary>
+// pxr::VtValueTypeCanTransform<pxr::VtDictionary>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::VtValue>>>
 // std::optional<std::allocator<std::pair<double const, pxr::VtValue>>>
 // std::optional<std::allocator<std::pair<std::string const, pxr::VtValue>>>
+// pxr::VtValueTypeCanCompose<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>>
+// pxr::VtValueTypeCanCompose<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>
+// pxr::VtValueTypeCanTransform<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>>
+// pxr::VtValueTypeCanTransform<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtValueTypeCanTransform<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>
+// pxr::VtValueTypeCanCompose<pxr::VtBackgroundType>
+// pxr::VtValueTypeCanTransform<pxr::VtBackgroundType>
+// pxr::VtValueTypeCanCompose<pxr::TsSpline>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::TsSpline>>
+// pxr::VtValueTypeCanCompose<pxr::TsSpline>
+// pxr::VtValueTypeCanTransform<pxr::TsSpline>
+// pxr::VtValueTypeCanTransform<pxr::TsSpline>
+// pxr::VtValueTypeCanTransform<pxr::TsSpline>
 // std::vector<pxr::TsSplineSampleSource, std::allocator<pxr::TsSplineSampleSource>>
-// pxr::TsSplineSamples<pxr::GfVec2d>
-// pxr::TsSplineSamples<pxr::GfVec2f>
-// pxr::TsSplineSamples<pxr::GfVec2h>
-// pxr::TsSplineSamplesWithSources<pxr::GfVec2d>
-// pxr::TsSplineSamplesWithSources<pxr::GfVec2f>
-// pxr::TsSplineSamplesWithSources<pxr::GfVec2h>
+// pxr::VtValueTypeCanCompose<pxr::ArResolverContext>
+// pxr::VtValueTypeCanTransform<pxr::ArResolverContext>
 // std::pair<std::string, pxr::ArResolvedPath>
-// pxr::TfSingleton<pxr::KindRegistry>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData const>
+// pxr::VtValueTypeCanCompose<pxr::ArTimestamp>
+// pxr::VtValueTypeCanTransform<pxr::ArTimestamp>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData const>
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPath>
 // pxr::VtArray<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArray<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
+// pxr::VtArrayEdit<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
+// pxr::VtArrayEdit<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
 // std::list<pxr::SdfPath, std::allocator<pxr::SdfPath>>
 // std::map<pxr::SdfPath, bool, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, bool>>>
 // std::map<pxr::SdfPath, pxr::GfMatrix4d, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>
@@ -225,7 +756,7 @@
 // std::map<pxr::SdfPath, int, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, int>>>
 // std::map<pxr::SdfPath, unsigned long, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // std::map<pxr::TfToken, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>
-// std::map<std::tuple<<class pxrInternal_v0_25_8__pxrReserved__::SdfPath, class pxrInternal_v0_25_8__pxrReserved__::SdfPath, int>>, pxr::VtArray<int>, std::less<std::tuple<<class pxrInternal_v0_25_8__pxrReserved__::SdfPath, class pxrInternal_v0_25_8__pxrReserved__::SdfPath, int>>>, std::allocator<std::pair<std::tuple<<class pxrInternal_v0_25_8__pxrReserved__::SdfPath, class pxrInternal_v0_25_8__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>>>
+// std::map<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>>, pxr::VtArray<int>, std::less<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>>>, std::allocator<std::pair<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>>>
 // std::map<std::string, pxr::SdfPath, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::SdfPath>>>
 // std::multimap<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::optional<pxr::SdfPath>
@@ -242,11 +773,11 @@
 // std::optional<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>
 // std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // std::optional<std::pair<pxr::SdfPath, pxr::TfToken>>
-// std::unordered_map<pxr::SdfPath, pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::unordered_map<pxr::SdfPath, std::unordered_set<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>>>>
 // std::unordered_map<pxr::SdfPath, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // std::unordered_map<pxr::TfToken, std::unordered_set<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<pxr::SdfPath, pxr::TfToken>>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::unordered_set<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<pxr::SdfPath, pxr::TfToken>>>>>>
 // std::unordered_map<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfToken, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<std::pair<pxr::SdfPath, pxr::TfToken> const, pxr::TfToken>>>
+// std::unordered_map<unsigned long long, pxr::SdfPath, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, pxr::SdfPath>>>
 // std::unordered_set<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>
 // std::unordered_set<std::pair<pxr::SdfPath, pxr::SdfPath>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::SdfPath>>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>
 // std::unordered_set<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<pxr::SdfPath, pxr::TfToken>>>
@@ -256,6 +787,16 @@
 // std::vector<std::pair<pxr::TfToken, std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::allocator<std::pair<pxr::TfToken, std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
 // std::vector<std::pair<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>, std::allocator<std::pair<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>
 // std::vector<std::pair<pxr::SdfPath const, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfPath>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::SdfPath>>
+// pxr::VtValueTypeCanCompose<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
+// pxr::VtValueTypeCanCompose<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
+// pxr::VtValueTypeCanTransform<pxr::SdfPath>
+// pxr::VtValueTypeCanTransform<pxr::SdfPath>
+// pxr::VtValueTypeCanTransform<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
+// pxr::VtValueTypeCanTransform<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
 // std::pair<pxr::SdfPath, bool>
 // std::pair<pxr::SdfPath, pxr::TfToken>
 // std::pair<pxr::SdfPath, std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>
@@ -263,11 +804,13 @@
 // std::pair<pxr::SdfPath, std::vector<double, std::allocator<double>>>
 // std::pair<pxr::SdfPath, int>
 // std::pair<pxr::SdfPath, unsigned long>
+// std::pair<pxr::TfToken, pxr::SdfPath>
 // std::pair<pxr::TfToken, std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>
 // std::pair<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // std::pair<pxr::SdfPath const, pxr::GfMatrix4d>
 // std::pair<pxr::SdfPath const, std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>
 // std::pair<pxr::SdfPath const, std::unordered_map<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>>
+// std::pair<pxr::SdfPath const, std::unordered_map<unsigned long long, pxr::SdfPath, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, pxr::SdfPath>>>>
 // std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>
 // std::pair<pxr::SdfPath const, std::unordered_set<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>>
 // std::pair<pxr::SdfPath const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
@@ -275,9 +818,10 @@
 // std::pair<pxr::SdfPath const, unsigned int>
 // std::pair<pxr::TfToken const, std::unordered_set<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<pxr::SdfPath, pxr::TfToken>>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
-// std::pair<std::tuple<<class pxrInternal_v0_25_8__pxrReserved__::SdfPath, class pxrInternal_v0_25_8__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>
+// std::pair<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>
 // std::pair<std::string const, pxr::SdfPath>
 // std::pair<std::pair<pxr::SdfPath, pxr::TfToken> const, pxr::TfToken>
+// std::pair<unsigned long long const, pxr::SdfPath>
 // pxr::TfHashMap<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
@@ -294,8 +838,9 @@
 // std::unordered_map<pxr::SdfPath, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
 // std::unordered_map<pxr::SdfPath, pxr::TfToken, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfToken>>>
 // std::unordered_map<pxr::SdfPath, std::unordered_map<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_map<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>>>>
+// std::unordered_map<pxr::SdfPath, std::unordered_map<unsigned long long, pxr::SdfPath, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, pxr::SdfPath>>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_map<unsigned long long, pxr::SdfPath, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, pxr::SdfPath>>>>>>
 // std::unordered_map<pxr::SdfPath, std::unordered_set<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
-// std::unordered_map<pxr::SdfPath, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
+// std::unordered_map<pxr::SdfPath, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
 // std::unordered_map<pxr::SdfPath, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>
 // std::unordered_map<pxr::SdfPath, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
 // std::unordered_map<pxr::SdfPath, int, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, int>>>
@@ -307,32 +852,98 @@
 // std::map<pxr::SdfPath, std::vector<std::string, std::allocator<std::string>>, pxr::SdfPath::FastLessThan, std::allocator<std::pair<pxr::SdfPath const, std::vector<std::string, std::allocator<std::string>>>>>
 // std::map<pxr::SdfPath, int, pxr::SdfPath::FastLessThan, std::allocator<std::pair<pxr::SdfPath const, int>>>
 // pxr::VtArray<pxr::SdfSpecifier>
+// pxr::VtArrayEdit<pxr::SdfSpecifier>
+// pxr::VtValueTypeCanCompose<pxr::SdfSpecifier>
+// pxr::VtValueTypeCanTransform<pxr::SdfSpecifier>
 // pxr::VtArray<pxr::SdfPermission>
+// pxr::VtArrayEdit<pxr::SdfPermission>
+// pxr::VtValueTypeCanCompose<pxr::SdfPermission>
+// pxr::VtValueTypeCanTransform<pxr::SdfPermission>
 // pxr::VtArray<pxr::SdfVariability>
+// pxr::VtArrayEdit<pxr::SdfVariability>
+// pxr::VtValueTypeCanCompose<pxr::SdfVariability>
+// pxr::VtValueTypeCanTransform<pxr::SdfVariability>
+// pxr::VtValueTypeCanCompose<pxr::SdfAngularUnit>
+// pxr::VtValueTypeCanCompose<pxr::SdfDimensionlessUnit>
+// pxr::VtValueTypeCanCompose<pxr::SdfLengthUnit>
+// pxr::VtValueTypeCanTransform<pxr::SdfAngularUnit>
+// pxr::VtValueTypeCanTransform<pxr::SdfDimensionlessUnit>
+// pxr::VtValueTypeCanTransform<pxr::SdfLengthUnit>
+// pxr::VtValueTypeCanTransform<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtValueTypeCanCompose<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // std::optional<std::allocator<pxr::SdfUnregisteredValue>>
 // std::optional<std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfUnregisteredValue>
+// pxr::VtValueTypeCanTransform<pxr::SdfUnregisteredValue>
 // pxr::VtArray<pxr::SdfValueBlock>
+// pxr::VtArrayEdit<pxr::SdfValueBlock>
+// pxr::VtValueTypeCanCompose<pxr::SdfValueBlock>
+// pxr::VtValueTypeCanTransform<pxr::SdfValueBlock>
 // pxr::VtArray<pxr::SdfAnimationBlock>
+// pxr::VtArrayEdit<pxr::SdfAnimationBlock>
+// pxr::VtValueTypeCanCompose<pxr::SdfAnimationBlock>
+// pxr::VtValueTypeCanTransform<pxr::SdfAnimationBlock>
 // pxr::VtArray<pxr::SdfAssetPath>
+// pxr::VtArrayEdit<pxr::SdfAssetPath>
+// pxr::VtArrayEditBuilder<pxr::SdfAssetPath>
 // std::optional<pxr::SdfAssetPath>
 // std::optional<pxr::VtArray<pxr::SdfAssetPath>>
+// std::unordered_map<pxr::SdfAssetPath, long long, pxr::TfHash, std::equal_to<pxr::SdfAssetPath>, std::allocator<std::pair<pxr::SdfAssetPath const, long long>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfAssetPath>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::SdfAssetPath>>
+// pxr::VtValueTypeCanCompose<pxr::SdfAssetPath>
+// pxr::VtValueTypeCanTransform<pxr::SdfAssetPath>
+// pxr::VtValueTypeCanTransform<pxr::SdfAssetPath>
 // std::pair<pxr::SdfAssetPath, pxr::TfToken>
+// std::pair<pxr::SdfAssetPath const, long long>
+// pxr::VtValueTypeCanTransform<pxr::SdfAssetPath>
 // std::pair<pxr::SdfListOpType const, bool>
+// pxr::VtValueTypeCanCompose<pxr::SdfPath>
+// pxr::VtValueTypeCanCompose<pxr::SdfUnregisteredValue>
+// pxr::VtValueTypeCanCompose<pxr::TfToken>
+// pxr::VtValueTypeCanCompose<long long>
+// pxr::VtValueTypeCanCompose<int>
+// pxr::VtValueTypeCanCompose<std::string>
+// pxr::VtValueTypeCanCompose<unsigned long long>
+// pxr::VtValueTypeCanCompose<unsigned int>
 // pxr::VtArray<pxr::SdfOpaqueValue>
+// pxr::VtArrayEdit<pxr::SdfOpaqueValue>
+// pxr::VtValueTypeCanCompose<pxr::SdfOpaqueValue>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::SdfOpaqueValue>>
+// pxr::VtValueTypeCanCompose<pxr::SdfOpaqueValue>
+// pxr::VtValueTypeCanTransform<pxr::SdfOpaqueValue>
+// pxr::VtValueTypeCanTransform<pxr::SdfOpaqueValue>
+// pxr::VtValueTypeCanTransform<pxr::SdfOpaqueValue>
 // std::optional<std::allocator<pxr::SdfPathExpression>>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::SdfPathExpression>>
+// pxr::VtValueTypeCanCompose<pxr::SdfPathExpression>
+// pxr::VtValueTypeCanTransform<pxr::SdfPathExpression>
+// pxr::VtValueTypeCanTransform<pxr::SdfPathExpression>
 // std::vector<pxr::SdfPathExpression::ExpressionReference, std::allocator<pxr::SdfPathExpression::ExpressionReference>>
 // std::vector<pxr::SdfPathExpression::Op, std::allocator<pxr::SdfPathExpression::Op>>
 // std::vector<std::pair<pxr::SdfPathExpression::Op, int>, std::allocator<std::pair<pxr::SdfPathExpression::Op, int>>>
 // std::pair<pxr::SdfPathExpression::Op, int>
+// pxr::VtValueTypeCanCompose<pxr::SdfPathExpression>
+// pxr::VtValueTypeCanTransform<pxr::SdfPathExpression>
 // std::vector<pxr::SdfPathPattern::Component, std::allocator<pxr::SdfPathPattern::Component>>
 // std::vector<pxr::SdfPredicateExpression::Op, std::allocator<pxr::SdfPredicateExpression::Op>>
 // std::vector<std::pair<pxr::SdfPredicateExpression::Op, int>, std::allocator<std::pair<pxr::SdfPredicateExpression::Op, int>>>
 // std::pair<pxr::SdfPredicateExpression::Op, int>
 // pxr::VtArray<pxr::SdfTimeCode>
+// pxr::VtArrayEdit<pxr::SdfTimeCode>
+// pxr::VtArrayEditBuilder<pxr::SdfTimeCode>
+// std::unordered_map<pxr::SdfTimeCode, long long, pxr::TfHash, std::equal_to<pxr::SdfTimeCode>, std::allocator<std::pair<pxr::SdfTimeCode const, long long>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfTimeCode>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::SdfTimeCode>>
+// pxr::VtValueTypeCanCompose<pxr::SdfTimeCode>
+// pxr::VtValueTypeCanTransform<pxr::SdfTimeCode>
+// pxr::VtValueTypeCanTransform<pxr::SdfTimeCode>
+// std::pair<pxr::SdfTimeCode const, long long>
+// pxr::VtValueTypeCanTransform<pxr::SdfTimeCode>
 // pxr::SdfHandleTo<pxr::SdfAttributeSpec>
 // pxr::SdfHandleTo<pxr::SdfPropertySpec>
 // pxr::SdfHandleTo<pxr::SdfSpec>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfSchemaBase>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfSchemaBase>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdfSchemaBase::FieldDefinition>>>
 // std::pair<pxr::SdfSchemaBase::SpecDefinition, bool>
 // pxr::TfSingleton<pxr::SdfSchema>
@@ -341,12 +952,16 @@
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfPropertySpec>>
 // pxr::SdfIdentityMapEditProxyValuePolicy<pxr::VtDictionary>
 // pxr::SdfIdentityMapEditProxyValuePolicy<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
+// std::map<std::string, pxr::SdfBooleanExpression::BinaryOperator, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::SdfBooleanExpression::BinaryOperator>>>
+// std::pair<std::string const, pxr::SdfBooleanExpression::BinaryOperator>
 // std::vector<std::pair<std::string, pxr::SdfChangeList::SubLayerChangeType>, std::allocator<std::pair<std::string, pxr::SdfChangeList::SubLayerChangeType>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfCopySpecsValueEdit>
+// pxr::VtValueTypeCanTransform<pxr::SdfCopySpecsValueEdit>
 // std::vector<pxr::SdfCrateInfo::Section, std::allocator<pxr::SdfCrateInfo::Section>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfData const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfLayer>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfLayer const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfData const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayer>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayer const>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::SdfLayer>>>
 // std::optional<std::allocator<std::pair<pxr::TfWeakPtr<pxr::SdfLayer>, std::string>>>
@@ -355,15 +970,23 @@
 // std::optional<std::allocator<std::pair<pxr::TfWeakPtr<pxr::SdfLayer> const, std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>>>
 // pxr::SdfHandleTo<pxr::SdfLayer>
 // pxr::VtArray<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfLayerStateDelegateBase>
+// pxr::VtArrayEdit<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
+// std::optional<pxr::SdfLayerOffset>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayerStateDelegateBase>
 // pxr::TfHashMap<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPayload>
+// pxr::VtArrayEdit<pxr::SdfPayload>
 // std::list<pxr::SdfPayload, std::allocator<pxr::SdfPayload>>
 // std::optional<pxr::SdfPayload>
 // std::optional<std::allocator<pxr::SdfPayload>>
 // std::optional<std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // std::set<pxr::SdfPayload, std::less<pxr::SdfPayload>, std::allocator<pxr::SdfPayload>>
 // std::unordered_map<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfPayload>
+// pxr::VtValueTypeCanCompose<pxr::SdfPayload>
+// pxr::VtValueTypeCanTransform<pxr::SdfPayload>
 // std::pair<pxr::SdfPayload, unsigned long>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfPrimSpec>>
 // pxr::SdfChildrenViewTrivialPredicate<pxr::SdfHandle<pxr::SdfPrimSpec>>
@@ -371,24 +994,114 @@
 // pxr::SdfHandleTo<pxr::SdfPseudoRootSpec>
 // std::optional<std::allocator<pxr::SdfReference>>
 // std::optional<std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
+// pxr::VtValueTypeCanCompose<pxr::SdfReference>
+// pxr::VtValueTypeCanCompose<pxr::SdfReference>
+// pxr::VtValueTypeCanTransform<pxr::SdfReference>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfRelationshipSpec>>
 // pxr::SdfHandleTo<pxr::SdfRelationshipSpec>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfUsdFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfUsdaData const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfUsdaFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::SdfUsdcFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdaData const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdaFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdcFileFormat const>
+// pxr::VtValueTypeCanCompose<pxr::SdfVariableExpression::EmptyList>
+// pxr::VtValueTypeCanTransform<pxr::SdfVariableExpression::EmptyList>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfVariantSetSpec>>
 // pxr::SdfChildrenViewTrivialPredicate<pxr::SdfHandle<pxr::SdfVariantSetSpec>>
 // pxr::SdfHandleTo<pxr::SdfVariantSetSpec>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfVariantSpec>>
 // pxr::SdfChildrenViewTrivialPredicate<pxr::SdfHandle<pxr::SdfVariantSpec>>
 // pxr::SdfHandleTo<pxr::SdfVariantSpec>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatStretch>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatStretch>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatSep>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatSep>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElemText>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElemText>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElem>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElem>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDot>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDots>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::DotDots>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::ReflexiveRelative>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsoluteStart>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPattern>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::AbsPathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::BracedPredExpr>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::DotDots>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatSep>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatternElems>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
 // pxr::SdfPathPatternActions::PathPatternAction<void>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::AbsoluteStart>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatStretch>
@@ -398,7 +1111,150 @@
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PropPathPatternElem>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::ReflexiveRelative>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::DotDot>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::NotKW>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::AndKW>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::OrKW>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Inf>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Inf>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::True>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::True>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::False>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::False>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ImpliedAnd>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ReservedWord>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::ReservedWord>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Frac>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Frac>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgFloat>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgInt>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgBool>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::QuotedString>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::QuotedString>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedString>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedString>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgString>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgName>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArg>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArg>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenPosArg>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenPosArg>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFuncName>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonCall>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenCall>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredBareCall>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOpenGroup>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredCloseGroup>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredAtom>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredAtom>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFactor>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredFactor>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOperator>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredOperator>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPredicateExpressionParser::PredExpr>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredExpr>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
+// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::Digits>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::Exp>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::False>
@@ -419,6 +1275,39 @@
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::True>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::UnquotedString>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
 // pxr::SdfPredicateExpressionParser::PredAction<void>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::NotKW>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::AndKW>
@@ -446,7 +1335,7 @@
 // std::optional<std::allocator<std::pair<pxr::PcpArcType const, unsigned long>>>
 // std::pair<pxr::PcpArcType const, unsigned long>
 // std::optional<std::allocator<pxr::PcpLayerStackSite>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::PcpLayerStack>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PcpLayerStack>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::PcpLayerStack>>>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::PcpLayerStack>>>
 // std::optional<std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>>
@@ -458,8 +1347,8 @@
 // std::vector<pxr::UsdTimeCode, std::allocator<pxr::UsdTimeCode>>
 // std::optional<std::allocator<pxr::UsdObject>>
 // pxr::TfSingleton<pxr::UsdSchemaRegistry>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::UsdStage>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::UsdStage const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdStage>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdStage const>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::UsdStage>>>
 // std::vector<std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>, std::allocator<std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>>>
 // std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>
@@ -550,6 +1439,7 @@
 // pxr::VdfTypedVector<pxr::SdfPath>
 // pxr::VdfTypedVector<pxr::SdfPathExpression>
 // pxr::VdfTypedVector<pxr::SdfTimeCode>
+// pxr::VdfTypedVector<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>>
 // pxr::VdfTypedVector<pxr::TfToken>
 // pxr::VdfTypedVector<pxr::VtArray<pxr::pxr_half::half>>
 // pxr::VdfTypedVector<pxr::VtArray<pxr::GfMatrix2d>>
@@ -585,6 +1475,53 @@
 // pxr::VdfTypedVector<pxr::VtArray<unsigned long long>>
 // pxr::VdfTypedVector<pxr::VtArray<unsigned char>>
 // pxr::VdfTypedVector<pxr::VtArray<unsigned int>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<bool>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<char>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfDualQuatd>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfDualQuatf>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfDualQuath>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfInterval>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix2d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix2f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix3d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix3f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix4d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfMatrix4f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfQuatd>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfQuaternion>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfQuatf>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfQuath>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange1d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange1f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange2d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange2f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange3d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRange3f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfRect2i>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec2d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec2f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec2h>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec2i>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec3d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec3f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec3h>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec3i>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec4d>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec4f>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec4h>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::GfVec4i>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::TfToken>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<pxr::pxr_half::half>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<double>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<float>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<int>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<long long>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<short>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<std::string>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<unsigned char>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<unsigned int>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<unsigned long long>>
+// pxr::VdfTypedVector<pxr::VtArrayEdit<unsigned short>>
 // pxr::VdfTypedVector<pxr::pxr_half::half>
 // pxr::VdfTypedVector<double>
 // pxr::VdfTypedVector<float>
@@ -599,52 +1536,90 @@
 // std::optional<std::allocator<std::pair<pxr::VdfPoolChainIndex const, pxr::VdfMaskedOutput>>>
 // std::vector<pxr::VdfScheduleNodeTasks, std::allocator<pxr::VdfScheduleNodeTasks>>
 // std::vector<pxr::VdfExecutionStats::Event, std::allocator<pxr::VdfExecutionStats::Event>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>>
 // std::map<std::string, pxr::VdfNetworkStats::NodeTypeStats, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::VdfNetworkStats::NodeTypeStats>>>
 // std::pair<std::string const, pxr::VdfNetworkStats::NodeTypeStats>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::EfMaskedSubExecutor, pxr::VdfSpeculationExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::EfMaskedSubExecutor, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
 // pxr::VdfTypedVector<pxr::EfTime>
+// pxr::VtValueTypeCanCompose<pxr::EfTime>
+// pxr::VtValueTypeCanTransform<pxr::EfTime>
 // std::optional<pxr::EsfObject>
 // std::vector<pxr::ExecValueKey, std::allocator<pxr::ExecValueKey>>
 // pxr::TfTypeFunctions<pxr::HfPluginBase>
 // std::optional<pxr::CameraUtilConformWindowPolicy>
+// pxr::VtValueTypeCanCompose<pxr::CameraUtilConformWindowPolicy>
+// pxr::VtValueTypeCanTransform<pxr::CameraUtilConformWindowPolicy>
 // std::pair<bool, pxr::CameraUtilConformWindowPolicy>
 // std::vector<pxr::PxOsdMeshTopologyValidation::Invalidation, std::allocator<pxr::PxOsdMeshTopologyValidation::Invalidation>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::GlfBindingMap>
-// pxr::TfSingleton<pxr::GlfContextCaps>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::GlfDrawTarget>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfBindingMap>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfDrawTarget>
 // std::optional<std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::GlfSimpleLightingContext>
+// pxr::VtValueTypeCanCompose<pxr::GlfSimpleLight>
+// pxr::VtValueTypeCanTransform<pxr::GlfSimpleLight>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfSimpleLightingContext>
+// pxr::VtValueTypeCanCompose<pxr::TfRefPtr<pxr::GlfSimpleLightingContext>>
+// pxr::VtValueTypeCanTransform<pxr::TfRefPtr<pxr::GlfSimpleLightingContext>>
 // std::vector<pxr::HgiMipInfo, std::allocator<pxr::HgiMipInfo>>
+// pxr::VtValueTypeCanCompose<pxr::HgiHandle<pxr::HgiTexture>>
+// pxr::VtValueTypeCanTransform<pxr::HgiHandle<pxr::HgiTexture>>
 // pxr::HgiFactory<pxr::HgiGL>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::HgiGLTexture const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HgiGLTexture const>
 // pxr::HgiFactory<pxr::HgiMetal>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::HdRenderPassAovBinding, std::allocator<pxr::HdRenderPassAovBinding>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::HdRenderPassAovBinding, std::allocator<pxr::HdRenderPassAovBinding>>>
 // std::pair<pxr::HdWrap, pxr::HdWrap>
 // pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::VtValueTypeCanCompose<pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>>
+// pxr::VtValueTypeCanCompose<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::VtValueTypeCanTransform<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::VtValueTypeCanTransform<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::VtValueTypeCanCompose<pxr::HdTupleType>
+// pxr::VtValueTypeCanTransform<pxr::HdTupleType>
+// pxr::VtValueTypeCanCompose<pxr::HdFormat>
+// pxr::VtValueTypeCanTransform<pxr::HdFormat>
 // std::vector<std::pair<pxr::TfToken, std::array<pxr::HdBasisCurvesReprDesc, 1UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdBasisCurvesReprDesc, 1UL>>>>
 // std::pair<pxr::TfToken, std::array<pxr::HdBasisCurvesReprDesc, 1UL>>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdBufferArrayRange>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdBufferArrayRange>>
 // pxr::TfSingleton<pxr::HdPerfLog>
 // std::map<pxr::SdfPath, std::vector<pxr::HdExtComputationPrimvarDescriptor, std::allocator<pxr::HdExtComputationPrimvarDescriptor>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::HdExtComputationPrimvarDescriptor, std::allocator<pxr::HdExtComputationPrimvarDescriptor>>>>>
 // std::pair<pxr::SdfPath const, std::vector<pxr::HdExtComputationPrimvarDescriptor, std::allocator<pxr::HdExtComputationPrimvarDescriptor>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexBase>
+// pxr::VtValueTypeCanCompose<pxr::HdBasisCurvesTopology>
+// pxr::VtValueTypeCanTransform<pxr::HdBasisCurvesTopology>
+// pxr::VtValueTypeCanCompose<pxr::HdMeshTopology>
+// pxr::VtValueTypeCanTransform<pxr::HdMeshTopology>
+// pxr::VtValueTypeCanCompose<pxr::HdRprimCollection>
+// pxr::VtValueTypeCanTransform<pxr::HdRprimCollection>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexBase>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>
-// std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdDataSourceBase>>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdContainerDataSource>>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexObserver>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::HdFilteringSceneIndexBase>
+// pxr::VtValueTypeCanCompose<pxr::HdDataSourceLocator>
+// pxr::VtValueTypeCanTransform<pxr::HdDataSourceLocator>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexObserver>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdFilteringSceneIndexBase>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdLegacyTaskFactory>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdLegacyTaskFactory>>
+// pxr::VtValueTypeCanCompose<pxr::HdCamera::Projection>
+// pxr::VtValueTypeCanTransform<pxr::HdCamera::Projection>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdContainerDataSourceEditor>>>>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdExtComputationCpuCallback>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdExtComputationCpuCallback>>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdFlattenedDataSourceProvider>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdFlattenedDataSourceProvider>>
 // std::vector<pxr::HdMaterialRelationship, std::allocator<pxr::HdMaterialRelationship>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::HdMaterialNetwork>>>
+// pxr::VtValueTypeCanCompose<pxr::HdMaterialNetworkMap>
+// pxr::VtValueTypeCanTransform<pxr::HdMaterialNetworkMap>
 // std::map<pxr::TfToken, std::vector<pxr::HdMaterialConnection2, std::allocator<pxr::HdMaterialConnection2>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::HdMaterialConnection2, std::allocator<pxr::HdMaterialConnection2>>>>>
 // std::map<pxr::TfToken, pxr::HdMaterialConnection2, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::HdMaterialConnection2>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::HdMaterialConnection2, std::allocator<pxr::HdMaterialConnection2>>>>>
@@ -652,42 +1627,93 @@
 // std::pair<pxr::TfToken const, std::vector<pxr::HdMaterialConnection2, std::allocator<pxr::HdMaterialConnection2>>>
 // std::pair<pxr::TfToken const, pxr::HdMaterialConnection2>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::HdMaterialNode2>>>
+// pxr::VtValueTypeCanCompose<pxr::HdMaterialNode2>
+// pxr::VtValueTypeCanTransform<pxr::HdMaterialNode2>
 // std::vector<std::pair<pxr::TfToken, std::array<pxr::HdMeshReprDesc, 2UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdMeshReprDesc, 2UL>>>>
 // std::pair<pxr::TfToken, std::array<pxr::HdMeshReprDesc, 2UL>>
+// pxr::VtValueTypeCanCompose<pxr::HdRendererCreateArgs>
+// pxr::VtValueTypeCanTransform<pxr::HdRendererCreateArgs>
 // std::vector<std::pair<pxr::TfToken, std::array<pxr::HdPointsReprDesc, 1UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdPointsReprDesc, 1UL>>>>
 // std::pair<pxr::TfToken, std::array<pxr::HdPointsReprDesc, 1UL>>
+// pxr::VtValueTypeCanCompose<pxr::HdPrimOriginSchema::OriginPath>
+// pxr::VtValueTypeCanTransform<pxr::HdPrimOriginSchema::OriginPath>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdRenderPassState>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdRenderPassState>>
 // std::vector<pxr::HdRenderPassState::ColorMask, std::allocator<pxr::HdRenderPassState::ColorMask>>
+// pxr::VtValueTypeCanCompose<std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>>
+// pxr::VtValueTypeCanTransform<std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>>
+// std::pair<int, pxr::HdSceneIndexPluginRegistry::InsertionOrder>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>>>
 // std::unordered_map<pxr::SdfPath, pxr::HdSelection::PrimSelectionState, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>>>
 // std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>
+// std::unordered_map<pxr::SdfPath, pxr::HdsiMaterialOverrideResolvingSceneIndex::MaterialData, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdsiMaterialOverrideResolvingSceneIndex::MaterialData>>>
+// std::pair<pxr::SdfPath const, pxr::HdsiMaterialOverrideResolvingSceneIndex::MaterialData>
+// std::unordered_map<pxr::SdfPath, pxr::HdsiMaterialOverrideResolvingSceneIndex::PrimData, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdsiMaterialOverrideResolvingSceneIndex::PrimData>>>
+// std::pair<pxr::SdfPath const, pxr::HdsiMaterialOverrideResolvingSceneIndex::PrimData>
 // std::optional<std::allocator<std::shared_ptr<pxr::HdStTextureObject>>>
 // std::map<pxr::HdStTextureType, unsigned long, std::less<pxr::HdStTextureType>, std::allocator<std::pair<pxr::HdStTextureType const, unsigned long>>>
 // std::pair<pxr::HdStTextureType const, unsigned long>
 // std::optional<std::allocator<std::shared_ptr<pxr::HdStShaderCode>>>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdStLightingShader>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdStLightingShader>>
 // std::optional<std::allocator<std::shared_ptr<pxr::HdStTextureHandle>>>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxAovInputTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxAovInputTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxAovInputTaskParams>
+// pxr::VtValueTypeCanCompose<pxr::HdxBoundingBoxTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxBoundingBoxTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxBoundingBoxTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxColorizeSelectionTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxColorizeSelectionTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxColorizeSelectionTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxColorCorrectionTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxColorCorrectionTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxColorCorrectionTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxDrawTargetTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxDrawTargetTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxDrawTargetTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxOitRenderTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxRenderTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxRenderSetupTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxRenderTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxRenderTaskParams>
+// pxr::VtValueTypeCanCompose<pxr::HdxOitResolveTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxOitResolveTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxOitResolveTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxOitVolumeRenderTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxPickTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxPickTaskParams>
+// pxr::VtValueTypeCanCompose<pxr::HdxPickTaskContextParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxPickTaskContextParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxPickTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxPickFromRenderBufferTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxPickFromRenderBufferTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxPickFromRenderBufferTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxPresentTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxPresentTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxPresentTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxSelectionTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxSelectionTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxSelectionTask>
+// pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdxSelectionTracker>>
+// pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdxSelectionTracker>>
+// pxr::VtValueTypeCanCompose<pxr::HdxShadowTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxShadowTaskParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxShadowTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxSimpleLightTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxSimpleLightTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxSimpleLightTaskParams>
+// pxr::VtValueTypeCanCompose<pxr::HdxShadowParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxShadowParams>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxSkydomeTask>
 // pxr::HdLegacyTaskFactory_Impl<pxr::HdxVisualizeAovTask>
+// pxr::VtValueTypeCanCompose<pxr::HdxVisualizeAovTaskParams>
+// pxr::VtValueTypeCanTransform<pxr::HdxVisualizeAovTaskParams>
 // pxr::TfSingleton<pxr::UsdImagingAdapterRegistry>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::UsdImagingDelegate>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdImagingDelegate>
 // std::pair<pxr::UsdImagingPrimvarDescCache::Key, std::vector<pxr::HdPrimvarDescriptor, std::allocator<pxr::HdPrimvarDescriptor>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr, pxr::UsdImagingStageSceneIndex>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdImagingStageSceneIndex>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingCollectionAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingCoordSysAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingGeomModelAPIAdapter>
@@ -695,6 +1721,7 @@
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingMaterialBindingAPIAdapter>
 // std::vector<pxr::UsdImagingGLEngine::IntersectionResult, std::allocator<pxr::UsdImagingGLEngine::IntersectionResult>>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdRiPxrImagingCameraAPIAdapter>
+// pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdRiPxrImagingCameraProjectionAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdSkelImagingBindingAPIAdapter>
 // std::map<pxr::TfToken, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>>
@@ -709,8 +1736,8 @@
 // std::vector<std::vector<pxr::TfType, std::allocator<pxr::TfType>>, std::allocator<std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>
 // std::pair<pxr::TfType, pxr::TfType>
 // std::pair<pxr::TfType, void *>
-// std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_25_8__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>
-// std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_25_8__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_25_8__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_25_8__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_25_8__pxrReserved__::VtArray<GfVec3f> *) *>
+// std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>
+// std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *>
 // std::pair<pxr::TfType const, bool>
 // std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>
 // std::pair<pxr::TfType const, unsigned char>
@@ -720,8 +1747,8 @@
 // std::unique_ptr<pxr::TfType::FactoryBase, std::default_delete<pxr::TfType::FactoryBase>>
 // pxr::TfWeakPtr<void>
 // std::unique_ptr<std::vector<std::pair<pxr::TfDiagnosticType, std::string>, std::allocator<std::pair<pxr::TfDiagnosticType, std::string>>>, std::default_delete<std::vector<std::pair<pxr::TfDiagnosticType, std::string>, std::allocator<std::pair<pxr::TfDiagnosticType, std::string>>>>>
-// std::unordered_map<pxr::TfType, _Bool (class pxrInternal_v0_25_8__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_25_8__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>>>
-// std::unordered_map<pxr::TfType, _Bool (const class pxrInternal_v0_25_8__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_25_8__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_25_8__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_25_8__pxrReserved__::VtArray<GfVec3f> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_25_8__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_25_8__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_25_8__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_25_8__pxrReserved__::VtArray<GfVec3f> *) *>>>
+// std::unordered_map<pxr::TfType, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>>>
+// std::unordered_map<pxr::TfType, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *>>>
 // std::unordered_map<pxr::TfType, std::vector<pxr::TfType, std::allocator<pxr::TfType>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>>
 // std::unordered_map<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>
 // std::unordered_map<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>, pxr::TfHash, std::equal_to<pxr::TfErrorMark const *>, std::allocator<std::pair<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>>>>
@@ -748,6 +1775,7 @@
 // std::pair<pxr::TfEnum const, std::string>
 // std::pair<std::string const, pxr::TfEnum>
 // std::vector<pxr::TfWeakPtr<pxr::TfNotice::Probe>, std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>
+// std::pair<void const *, pxr::TfMallocTag::CallStackInfo>
 // std::unordered_map<unsigned long, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>, pxr::TfHash, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>>>>
 // pxr::TfHashMap<pxr::TfBits, pxr::TfBits, pxr::TfBits::FastHash, std::equal_to<pxr::TfBits>, std::allocator<std::pair<pxr::TfBits const, pxr::TfBits>>>
 // pxr::TfHashMap<pxr::TfEnum, std::string, pxr::TfHash, std::equal_to<pxr::TfEnum>, std::allocator<std::pair<pxr::TfEnum const, std::string>>>
@@ -775,7 +1803,6 @@
 // pxr::TfEnvSetting<bool>
 // pxr::TfEnvSetting<int>
 // pxr::TfEnvSetting<std::string>
-// std::pair<void const *, pxr::TfMallocTag::CallStackInfo>
 // pxr::TfHashMap<unsigned int, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>>>>
 // std::unique_ptr<pxr::TfSmallVector<pxr::TfType, 1U>, std::default_delete<pxr::TfSmallVector<pxr::TfType, 1U>>>
 // std::unordered_map<unsigned int, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>>>>
@@ -797,20 +1824,21 @@
 // std::shared_ptr<std::set<pxr::TfToken, std::less<pxr::TfToken>, std::allocator<pxr::TfToken>>>
 // std::unique_ptr<pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>, std::default_delete<pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>>>
 // std::unique_ptr<std::pair<pxr::TfToken, pxr::TfToken>, std::default_delete<std::pair<pxr::TfToken, pxr::TfToken>>>
-// std::unordered_map<pxr::TfToken, std::function<void, <const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
-// std::unordered_map<pxr::TfToken, std::function<void, <unsigned int, class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet *>>>>>
+// std::unordered_map<pxr::TfToken, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
+// std::unordered_map<pxr::TfToken, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>>>
 // std::unordered_map<pxr::TfToken, pxr::UsdSchemaRegistry::SchemaInfo const *, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::UsdSchemaRegistry::SchemaInfo const *>>>
 // std::unordered_map<pxr::TfType, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
 // std::vector<std::pair<pxr::TfToken, pxr::TraceEvent const *>, std::allocator<std::pair<pxr::TfToken, pxr::TraceEvent const *>>>
+// std::vector<std::pair<pxr::SdfPath const *, pxr::TfToken const>, std::allocator<std::pair<pxr::SdfPath const *, pxr::TfToken const>>>
 // std::pair<pxr::TfToken, pxr::VdfInput *>
 // std::pair<pxr::TfToken, pxr::VdfOutput *>
 // std::pair<pxr::TfToken, pxr::TraceEvent const *>
 // std::pair<pxr::TfType, pxr::TfToken>
-// std::pair<pxr::TfToken const *, std::back_insert_iterator<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>
+// std::pair<pxr::SdfPath const *, pxr::TfToken const>
 // std::pair<pxr::TfToken const, pxr::SdrParserPlugin *>
 // std::pair<pxr::TfToken const, pxr::TfType>
-// std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>
-// std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocatorSet *>>>
+// std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>
+// std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>
 // std::pair<pxr::TfToken const, pxr::SdrShaderProperty const *>
 // std::pair<pxr::TfToken const, pxr::HdVolumeFieldDescriptor const *>
 // std::pair<pxr::TfToken const, pxr::UsdSchemaRegistry::SchemaInfo const *>
@@ -865,8 +1893,6 @@
 // std::unique_ptr<pxr::GfMatrix3d, std::default_delete<pxr::GfMatrix3d>>
 // pxr::TfSpan<pxr::GfMatrix4f>
 // std::unique_ptr<pxr::GfMatrix4f, std::default_delete<pxr::GfMatrix4f>>
-// std::unique_ptr<std::map<std::string, pxr::JsValue, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::JsValue>>>, std::default_delete<std::map<std::string, pxr::JsValue, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::JsValue>>>>>
-// std::unique_ptr<std::vector<pxr::JsValue, std::allocator<pxr::JsValue>>, std::default_delete<std::vector<pxr::JsValue, std::allocator<pxr::JsValue>>>>
 // std::vector<std::pair<pxr::TfToken, pxr::JsValue>, std::allocator<std::pair<pxr::TfToken, pxr::JsValue>>>
 // std::pair<pxr::TfToken, pxr::JsValue>
 // std::pair<std::string, pxr::JsValue>
@@ -881,6 +1907,8 @@
 // std::pair<pxr::TraceThreadId const, std::unique_ptr<pxr::TraceEventList, std::default_delete<pxr::TraceEventList>>>
 // std::list<std::unordered_set<pxr::TraceDynamicKey, pxr::TraceDynamicKey::HashFunctor, std::equal_to<pxr::TraceDynamicKey>, std::allocator<pxr::TraceDynamicKey>>, std::allocator<std::unordered_set<pxr::TraceDynamicKey, pxr::TraceDynamicKey::HashFunctor, std::equal_to<pxr::TraceDynamicKey>, std::allocator<pxr::TraceDynamicKey>>>>
 // std::unordered_set<pxr::TraceDynamicKey, pxr::TraceDynamicKey::HashFunctor, std::equal_to<pxr::TraceDynamicKey>, std::allocator<pxr::TraceDynamicKey>>
+// pxr::TfPointerAndBits<std::multimap<pxr::TfToken, pxr::TraceEventData, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TraceEventData>>>>
+// pxr::TfSpan<pxr::TfRefPtr<pxr::TraceEventNode> const>
 // std::deque<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::allocator<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>>>
 // std::stack<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::deque<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::allocator<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>>>>
 // std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, int>
@@ -934,25 +1962,90 @@
 // std::unique_ptr<pxr::VtArray<unsigned int>, std::default_delete<pxr::VtArray<unsigned int>>>
 // std::pair<pxr::GfVec2i *, std::back_insert_iterator<pxr::VtArray<pxr::GfVec2i>>>
 // std::pair<int *, std::back_insert_iterator<pxr::VtArray<int>>>
+// std::unique_ptr<pxr::VtArrayEdit<bool>, std::default_delete<pxr::VtArrayEdit<bool>>>
+// std::unique_ptr<pxr::VtArrayEdit<char>, std::default_delete<pxr::VtArrayEdit<char>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfDualQuatd>, std::default_delete<pxr::VtArrayEdit<pxr::GfDualQuatd>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfDualQuatf>, std::default_delete<pxr::VtArrayEdit<pxr::GfDualQuatf>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfDualQuath>, std::default_delete<pxr::VtArrayEdit<pxr::GfDualQuath>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfInterval>, std::default_delete<pxr::VtArrayEdit<pxr::GfInterval>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix2d>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix2d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix2f>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix2f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix3d>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix3d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix3f>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix3f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix4d>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix4d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfMatrix4f>, std::default_delete<pxr::VtArrayEdit<pxr::GfMatrix4f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfQuatd>, std::default_delete<pxr::VtArrayEdit<pxr::GfQuatd>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfQuaternion>, std::default_delete<pxr::VtArrayEdit<pxr::GfQuaternion>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfQuatf>, std::default_delete<pxr::VtArrayEdit<pxr::GfQuatf>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfQuath>, std::default_delete<pxr::VtArrayEdit<pxr::GfQuath>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange1d>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange1d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange1f>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange1f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange2d>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange2d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange2f>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange2f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange3d>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange3d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRange3f>, std::default_delete<pxr::VtArrayEdit<pxr::GfRange3f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfRect2i>, std::default_delete<pxr::VtArrayEdit<pxr::GfRect2i>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec2d>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec2d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec2f>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec2f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec2h>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec2h>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec2i>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec2i>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec3d>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec3d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec3f>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec3f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec3h>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec3h>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec3i>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec3i>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec4d>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec4d>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec4f>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec4f>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec4h>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec4h>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::GfVec4i>, std::default_delete<pxr::VtArrayEdit<pxr::GfVec4i>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::TfToken>, std::default_delete<pxr::VtArrayEdit<pxr::TfToken>>>
+// std::unique_ptr<pxr::VtArrayEdit<pxr::pxr_half::half>, std::default_delete<pxr::VtArrayEdit<pxr::pxr_half::half>>>
+// std::unique_ptr<pxr::VtArrayEdit<double>, std::default_delete<pxr::VtArrayEdit<double>>>
+// std::unique_ptr<pxr::VtArrayEdit<float>, std::default_delete<pxr::VtArrayEdit<float>>>
+// std::unique_ptr<pxr::VtArrayEdit<int>, std::default_delete<pxr::VtArrayEdit<int>>>
+// std::unique_ptr<pxr::VtArrayEdit<long long>, std::default_delete<pxr::VtArrayEdit<long long>>>
+// std::unique_ptr<pxr::VtArrayEdit<short>, std::default_delete<pxr::VtArrayEdit<short>>>
+// std::unique_ptr<pxr::VtArrayEdit<std::string>, std::default_delete<pxr::VtArrayEdit<std::string>>>
+// std::unique_ptr<pxr::VtArrayEdit<unsigned char>, std::default_delete<pxr::VtArrayEdit<unsigned char>>>
+// std::unique_ptr<pxr::VtArrayEdit<unsigned int>, std::default_delete<pxr::VtArrayEdit<unsigned int>>>
+// std::unique_ptr<pxr::VtArrayEdit<unsigned long long>, std::default_delete<pxr::VtArrayEdit<unsigned long long>>>
+// std::unique_ptr<pxr::VtArrayEdit<unsigned short>, std::default_delete<pxr::VtArrayEdit<unsigned short>>>
 // pxr::VtArray<pxr::VtDictionary>
+// pxr::VtArrayEdit<pxr::VtDictionary>
+// std::optional<pxr::VtDictionary>
 // std::unordered_map<double, pxr::VtDictionary, std::hash<double>, std::equal_to<double>, std::allocator<std::pair<double const, pxr::VtDictionary>>>
 // std::vector<pxr::VtDictionary, std::allocator<pxr::VtDictionary>>
 // std::pair<double const, pxr::VtDictionary>
 // pxr::TfSpan<pxr::VtValue>
+// pxr::TfSpan<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // pxr::VtArray<pxr::VtValue>
+// pxr::VtArray<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtArrayEdit<pxr::VtValue>
+// pxr::VtArrayEdit<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // std::map<pxr::TfToken, pxr::VtValue, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::VtValue>>>
 // std::map<std::string, pxr::VtValue, std::less<void>, std::allocator<std::pair<std::string const, pxr::VtValue>>>
 // std::optional<pxr::VtValue>
+// std::optional<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // std::unique_ptr<std::map<std::string, pxr::VtValue, std::less<void>, std::allocator<std::pair<std::string const, pxr::VtValue>>>, std::default_delete<std::map<std::string, pxr::VtValue, std::less<void>, std::allocator<std::pair<std::string const, pxr::VtValue>>>>>
+// std::unordered_map<pxr::TfToken, std::function<pxr::VtValue, <std::string>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<pxr::VtValue, <std::string>>>>>
+// std::unordered_map<pxr::TfToken, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>>>>
+// std::vector<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>, std::allocator<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>>
 // std::vector<std::pair<pxr::TfToken, pxr::VtValue>, std::allocator<std::pair<pxr::TfToken, pxr::VtValue>>>
+// std::vector<std::pair<pxr::TfToken, std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>, std::allocator<std::pair<pxr::TfToken, std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>>>
 // std::vector<std::pair<pxr::PcpDynamicFileFormatInterface const *, pxr::VtValue>, std::allocator<std::pair<pxr::PcpDynamicFileFormatInterface const *, pxr::VtValue>>>
 // std::pair<pxr::TfToken, pxr::VtValue>
+// std::pair<pxr::TfToken, std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>
 // std::pair<pxr::TfToken, std::pair<pxr::VtValue, pxr::VtValue>>
+// std::pair<pxr::VtValue, pxr::TfToken>
 // std::pair<pxr::VtValue, pxr::VtArray<int>>
 // std::pair<pxr::PcpDynamicFileFormatInterface const *, pxr::VtValue>
+// std::pair<pxr::TfToken const, std::function<pxr::VtValue, <std::string>>>
+// std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>>
 // std::pair<double const, pxr::VtValue>
 // std::pair<std::string, pxr::VtValue>
+// std::vector<pxr::VtValueRef, std::allocator<pxr::VtValueRef>>
+// pxr::TfSpan<pxr::TsSpline>
 // pxr::VtArray<pxr::TsSpline>
+// pxr::VtArrayEdit<pxr::TsSpline>
 // std::optional<pxr::TsSpline>
 // std::reference_wrapper<pxr::TsKnotMap const>
 // std::optional<pxr::TsKnot>
@@ -972,6 +2065,7 @@
 // std::map<std::string, pxr::TfRefPtr<pxr::SdfAbstractData>, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::SdfAbstractData>>>>
 // std::pair<std::string const, pxr::TfRefPtr<pxr::SdfAbstractData>>
 // pxr::TfSpan<pxr::SdfPath>
+// pxr::TfSpan<std::pair<pxr::SdfPath, pxr::TfToken> const>
 // std::back_insert_iterator<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // std::deque<pxr::SdfPath, std::allocator<pxr::SdfPath>>
 // std::insert_iterator<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>
@@ -1023,6 +2117,7 @@
 // std::unordered_map<pxr::SdfPath, std::vector<pxr::UsdPhysicsJointDesc const *, std::allocator<pxr::UsdPhysicsJointDesc const *>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::UsdPhysicsJointDesc const *, std::allocator<pxr::UsdPhysicsJointDesc const *>>>>>
 // pxr::TfHashMap<pxr::SdfUnregisteredValue, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>
 // pxr::VtArray<pxr::SdfUnregisteredValue>
+// pxr::VtArrayEdit<pxr::SdfUnregisteredValue>
 // std::list<pxr::SdfUnregisteredValue, std::allocator<pxr::SdfUnregisteredValue>>
 // std::optional<pxr::SdfUnregisteredValue>
 // std::unique_ptr<pxr::TfHashMap<pxr::SdfUnregisteredValue, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>, std::default_delete<pxr::TfHashMap<pxr::SdfUnregisteredValue, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>>>
@@ -1036,14 +2131,18 @@
 // std::unique_ptr<pxr::VtArray<pxr::SdfOpaqueValue>, std::default_delete<pxr::VtArray<pxr::SdfOpaqueValue>>>
 // pxr::TfSpan<pxr::SdfPathExpression>
 // pxr::VtArray<pxr::SdfPathExpression>
+// pxr::VtArrayEdit<pxr::SdfPathExpression>
+// pxr::VtArrayEditBuilder<pxr::SdfPathExpression>
 // std::optional<pxr::SdfPathExpression>
 // std::unique_ptr<pxr::SdfPathExpression, std::default_delete<pxr::SdfPathExpression>>
 // std::unique_ptr<pxr::VtArray<pxr::SdfPathExpression>, std::default_delete<pxr::VtArray<pxr::SdfPathExpression>>>
+// std::unordered_map<pxr::SdfPathExpression, long long, pxr::TfHash, std::equal_to<pxr::SdfPathExpression>, std::allocator<std::pair<pxr::SdfPathExpression const, long long>>>
 // std::unordered_map<pxr::TfToken, pxr::SdfPathExpression, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdfPathExpression>>>
 // std::unordered_set<pxr::SdfPathExpression, pxr::TfHash, std::equal_to<pxr::SdfPathExpression>, std::allocator<pxr::SdfPathExpression>>
 // std::vector<pxr::SdfPathExpression, std::allocator<pxr::SdfPathExpression>>
 // std::vector<std::pair<pxr::SdfPathExpression, std::optional<std::pair<pxr::SdfPath, pxr::TfToken>>>, std::allocator<std::pair<pxr::SdfPathExpression, std::optional<std::pair<pxr::SdfPath, pxr::TfToken>>>>>
 // std::pair<pxr::SdfPathExpression, std::optional<std::pair<pxr::SdfPath, pxr::TfToken>>>
+// std::pair<pxr::SdfPathExpression const, long long>
 // std::pair<pxr::TfToken const, pxr::SdfPathExpression>
 // std::vector<pxr::SdfPathPattern, std::allocator<pxr::SdfPathPattern>>
 // std::vector<pxr::SdfPredicateExpression, std::allocator<pxr::SdfPredicateExpression>>
@@ -1053,9 +2152,9 @@
 // std::unique_ptr<pxr::VtArray<pxr::SdfTimeCode>, std::default_delete<pxr::VtArray<pxr::SdfTimeCode>>>
 // std::unordered_map<pxr::TfToken, pxr::SdfValueTypeName, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdfValueTypeName>>>
 // std::vector<pxr::SdfValueTypeName, std::allocator<pxr::SdfValueTypeName>>
-// std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_25_8__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_25_8__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_25_8__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_25_8__pxrReserved__::SdfPath &, const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocator &) *>
+// std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *>
 // std::pair<pxr::TfToken const, pxr::SdfValueTypeName>
-// std::unordered_map<pxr::SdfValueTypeName, class std::shared_ptr<class pxrInternal_v0_25_8__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_25_8__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_25_8__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_25_8__pxrReserved__::SdfPath &, const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocator &) *, pxr::SdfValueTypeNameHash, std::equal_to<pxr::SdfValueTypeName>, std::allocator<std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_25_8__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_25_8__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_25_8__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_25_8__pxrReserved__::SdfPath &, const class pxrInternal_v0_25_8__pxrReserved__::HdDataSourceLocator &) *>>>
+// std::unordered_map<pxr::SdfValueTypeName, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *, pxr::SdfValueTypeNameHash, std::equal_to<pxr::SdfValueTypeName>, std::allocator<std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *>>>
 // std::insert_iterator<std::vector<pxr::SdfHandle<pxr::SdfPropertySpec>, std::allocator<pxr::SdfHandle<pxr::SdfPropertySpec>>>>
 // std::reference_wrapper<pxr::SdfHandle<pxr::SdfPropertySpec> const>
 // std::vector<pxr::SdfSpec, std::allocator<pxr::SdfSpec>>
@@ -1067,10 +2166,12 @@
 // pxr::SdfListProxy<pxr::SdfNameKeyPolicy>
 // pxr::SdfListProxy<pxr::SdfPathKeyPolicy>
 // pxr::SdfListProxy<pxr::SdfReferenceTypePolicy>
+// std::vector<pxr::SdfBooleanExpression, std::allocator<pxr::SdfBooleanExpression>>
 // std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>
 // pxr::TfHashMap<std::string, pxr::TfRefPtr<pxr::SdfLayer>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::SdfLayer>>>>
 // std::map<pxr::TfRefPtr<pxr::SdfLayer>, pxr::TfRefPtr<pxr::SdfLayer>, std::less<pxr::TfRefPtr<pxr::SdfLayer>>, std::allocator<std::pair<pxr::TfRefPtr<pxr::SdfLayer> const, pxr::TfRefPtr<pxr::SdfLayer>>>>
 // std::map<pxr::TfWeakPtr<pxr::SdfLayer>, std::unordered_set<std::pair<pxr::SdfPath, pxr::SdfPath>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::SdfPath>>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>, std::less<pxr::TfWeakPtr<pxr::SdfLayer>>, std::allocator<std::pair<pxr::TfWeakPtr<pxr::SdfLayer> const, std::unordered_set<std::pair<pxr::SdfPath, pxr::SdfPath>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::SdfPath>>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>>>
+// std::optional<pxr::TfFunctionRef<pxr::TfRefPtr<pxr::SdfLayer>, <>>>
 // std::optional<pxr::TfWeakPtr<pxr::SdfLayer>>
 // std::set<pxr::TfRefPtr<pxr::SdfLayer>, std::less<pxr::TfRefPtr<pxr::SdfLayer>>, std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>>
 // std::unordered_map<std::string, pxr::TfRefPtr<pxr::SdfLayer>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::SdfLayer>>>>
@@ -1095,8 +2196,8 @@
 // std::vector<std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>, std::allocator<std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>>>
 // std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>
 // std::vector<pxr::SdfPredicateParamNamesAndDefaults::Param, std::allocator<pxr::SdfPredicateParamNamesAndDefaults::Param>>
-// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_25_8__pxrReserved__::UsdObject &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_25_8__pxrReserved__::UsdObject &>>>>
-// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_25_8__pxrReserved__::HdSceneIndexPrim &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_25_8__pxrReserved__::HdSceneIndexPrim &>>>>
+// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_3__pxrReserved__::UsdObject &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_3__pxrReserved__::UsdObject &>>>>
+// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_3__pxrReserved__::HdSceneIndexPrim &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_3__pxrReserved__::HdSceneIndexPrim &>>>>
 // std::vector<pxr::SdfPredicateProgram<pxr::HdSceneIndexPrim const &>, std::allocator<pxr::SdfPredicateProgram<pxr::HdSceneIndexPrim const &>>>
 // pxr::SdfPathTable<bool>
 // pxr::SdfPathTable<std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>
@@ -1121,6 +2222,12 @@
 // std::unordered_map<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
 // std::pair<pxr::SdfReference, unsigned long>
 // std::unique_ptr<pxr::SdfUsdaData, std::default_delete<pxr::SdfUsdaData>>
+// std::unique_ptr<pxr::SdfVariableExpressionASTNodes::Node, std::default_delete<pxr::SdfVariableExpressionASTNodes::Node>>
+// std::vector<std::unique_ptr<pxr::SdfVariableExpressionASTNodes::Node, std::default_delete<pxr::SdfVariableExpressionASTNodes::Node>>, std::allocator<std::unique_ptr<pxr::SdfVariableExpressionASTNodes::Node, std::default_delete<pxr::SdfVariableExpressionASTNodes::Node>>>>
+// std::unique_ptr<pxr::SdfVariableExpressionASTNodes::LiteralNode, std::default_delete<pxr::SdfVariableExpressionASTNodes::LiteralNode>>
+// std::unique_ptr<pxr::SdfVariableExpressionASTNodes::VariableNode, std::default_delete<pxr::SdfVariableExpressionASTNodes::VariableNode>>
+// std::unique_ptr<pxr::SdfVariableExpressionASTNodes::ListNode, std::default_delete<pxr::SdfVariableExpressionASTNodes::ListNode>>
+// std::unique_ptr<pxr::SdfVariableExpressionASTNodes::FunctionNode, std::default_delete<pxr::SdfVariableExpressionASTNodes::FunctionNode>>
 // std::pair<std::string const, pxr::SdfHandle<pxr::SdfVariantSetSpec>>
 // std::pair<std::shared_ptr<pxr::ArAsset>, pxr::SdfZipFile>
 // std::pair<std::string, std::pair<std::shared_ptr<pxr::ArAsset>, pxr::SdfZipFile>>
@@ -1151,7 +2258,6 @@
 // std::reference_wrapper<pxr::PcpSite const>
 // std::map<pxr::PcpLayerStackSite, unsigned long, std::less<pxr::PcpLayerStackSite>, std::allocator<std::pair<pxr::PcpLayerStackSite const, unsigned long>>>
 // std::set<pxr::PcpLayerStackSite, std::less<pxr::PcpLayerStackSite>, std::allocator<pxr::PcpLayerStackSite>>
-// std::unordered_set<pxr::PcpLayerStackSite, pxr::TfHash, std::equal_to<pxr::PcpLayerStackSite>, std::allocator<pxr::PcpLayerStackSite>>
 // std::pair<pxr::PcpLayerStackSite const, unsigned long>
 // std::shared_ptr<pxr::PcpLayerStackIdentifier>
 // std::unique_ptr<pxr::PcpLayerStackIdentifier, std::default_delete<pxr::PcpLayerStackIdentifier>>
@@ -1269,6 +2375,7 @@
 // std::pair<pxr::TfRefPtr<pxr::UsdStage>, bool>
 // std::pair<pxr::TfWeakPtr<pxr::UsdStage>, pxr::UsdEditTarget>
 // std::vector<pxr::UsdProperty, std::allocator<pxr::UsdProperty>>
+// std::shared_ptr<pxr::UsdResolveInfo>
 // std::map<std::string, pxr::UsdCollectionAPI, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::UsdCollectionAPI>>>
 // std::vector<pxr::UsdCollectionAPI, std::allocator<pxr::UsdCollectionAPI>>
 // std::pair<std::string const, pxr::UsdCollectionAPI>
@@ -1332,13 +2439,14 @@
 // std::back_insert_iterator<std::vector<pxr::UsdUtilsSparseAttrValueWriter, std::allocator<pxr::UsdUtilsSparseAttrValueWriter>>>
 // std::vector<pxr::UsdUtilsSparseAttrValueWriter, std::allocator<pxr::UsdUtilsSparseAttrValueWriter>>
 // std::pair<pxr::UsdAttribute const, pxr::UsdUtilsSparseAttrValueWriter>
-// std::reference_wrapper<std::function<pxr::UsdUtilsStitchValueStatus, <const class pxrInternal_v0_25_8__pxrReserved__::TfToken &, const class pxrInternal_v0_25_8__pxrReserved__::SdfPath &, const class pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr<class pxrInternal_v0_25_8__pxrReserved__::SdfLayer> &, _Bool, const class pxrInternal_v0_25_8__pxrReserved__::TfWeakPtr<class pxrInternal_v0_25_8__pxrReserved__::SdfLayer> &, _Bool, class pxrInternal_v0_25_8__pxrReserved__::VtValue *>> const>
+// std::reference_wrapper<std::function<pxr::UsdUtilsStitchValueStatus, <const class pxrInternal_v0_26_3__pxrReserved__::TfToken &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_3__pxrReserved__::SdfLayer> &, _Bool, const class pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_3__pxrReserved__::SdfLayer> &, _Bool, class pxrInternal_v0_26_3__pxrReserved__::VtValue *>> const>
 // std::vector<pxr::UsdPhysicsCollisionGroup, std::allocator<pxr::UsdPhysicsCollisionGroup>>
 // std::vector<pxr::UsdPhysicsDriveAPI, std::allocator<pxr::UsdPhysicsDriveAPI>>
 // std::vector<pxr::UsdPhysicsLimitAPI, std::allocator<pxr::UsdPhysicsLimitAPI>>
 // pxr::TfSpan<pxr::UsdPhysicsObjectDesc const>
 // std::unordered_map<std::string, pxr::UsdMtlxUsdTypeInfo, std::hash<std::allocator<char>>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::UsdMtlxUsdTypeInfo>>>
 // std::pair<std::string const, pxr::UsdMtlxUsdTypeInfo>
+// pxr::VdfConnectorMap<pxr::VdfInput>
 // std::unordered_set<pxr::VdfInput *, std::hash<pxr::VdfInput>, std::equal_to<pxr::VdfInput *>, std::allocator<pxr::VdfInput *>>
 // pxr::TfHashMap<pxr::VdfOutput *, pxr::VdfMask, pxr::TfHash, std::equal_to<pxr::VdfOutput *>, std::allocator<std::pair<pxr::VdfOutput *, pxr::VdfMask>>>
 // std::reference_wrapper<pxr::VdfMask const>
@@ -1390,6 +2498,7 @@
 // pxr::VdfVector::ReadWriteAccessor<pxr::SdfPath>
 // pxr::VdfVector::ReadWriteAccessor<pxr::SdfPathExpression>
 // pxr::VdfVector::ReadWriteAccessor<pxr::SdfTimeCode>
+// pxr::VdfVector::ReadWriteAccessor<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>>
 // pxr::VdfVector::ReadWriteAccessor<pxr::TfToken>
 // pxr::VdfVector::ReadWriteAccessor<pxr::VtArray<pxr::pxr_half::half>>
 // pxr::VdfVector::ReadWriteAccessor<pxr::VtArray<pxr::GfMatrix2d>>
@@ -1458,6 +2567,7 @@
 // pxr::VdfVector::ReadAccessor<pxr::SdfPath>
 // pxr::VdfVector::ReadAccessor<pxr::SdfPathExpression>
 // pxr::VdfVector::ReadAccessor<pxr::SdfTimeCode>
+// pxr::VdfVector::ReadAccessor<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>>
 // pxr::VdfVector::ReadAccessor<pxr::TfToken>
 // pxr::VdfVector::ReadAccessor<pxr::pxr_half::half>
 // pxr::VdfVector::ReadAccessor<double>
@@ -1472,8 +2582,7 @@
 // std::unique_ptr<pxr::VdfIndexedData<float>, std::default_delete<pxr::VdfIndexedData<float>>>
 // pxr::VdfIndexedDataIterator<int>
 // std::pair<pxr::VdfIndexedDataIterator<int>, pxr::VdfIndexedDataIterator<int>>
-// pxr::VdfLinearMap<pxr::TfToken, pxr::VdfInput *>
-// pxr::VdfLinearMap<pxr::TfToken, pxr::VdfOutput *>
+// pxr::VdfConnectorMap<pxr::VdfOutput>
 // std::unordered_multimap<pxr::VdfOutput const *, pxr::VdfOutput const *, std::hash<pxr::VdfOutput const>, std::equal_to<pxr::VdfOutput const *>, std::allocator<std::pair<pxr::VdfOutput const *, pxr::VdfOutput const *>>>
 // std::unique_ptr<pxr::VdfRequest, std::default_delete<pxr::VdfRequest>>
 // std::unique_ptr<pxr::VdfSMBLData, std::default_delete<pxr::VdfSMBLData>>
@@ -1493,10 +2602,10 @@
 // std::vector<pxr::VdfScheduleNode, std::allocator<pxr::VdfScheduleNode>>
 // std::unique_ptr<pxr::VdfSpeculationExecutorBase, std::default_delete<pxr::VdfSpeculationExecutorBase>>
 // std::optional<pxr::VdfDataManagerFacade>
-// pxr::VdfMaskMemoizer<pxrInternal_v0_25_8__pxrReserved__::TfHashMap>
+// pxr::VdfMaskMemoizer<pxrInternal_v0_26_3__pxrReserved__::TfHashMap>
 // pxr::VdfMaskMemoizer<tbb::interface5::concurrent_unordered_map>
-// pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
-// pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
+// pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
+// pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
 // pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerHashTable>
 // pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerHashTable>
 // std::unique_ptr<pxr::VdfExecutorInvalidator, std::default_delete<pxr::VdfExecutorInvalidator>>
@@ -1516,8 +2625,8 @@
 // std::unordered_map<std::string, pxr::VdfTestUtils::Node, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::VdfTestUtils::Node>>>
 // std::pair<std::string const, pxr::VdfTestUtils::Node>
 // std::unique_ptr<pxr::EfPageCacheStorage, std::default_delete<pxr::EfPageCacheStorage>>
-// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>>>
-// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_25_8__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_25_8__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>>
+// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>>>
+// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>>
 // pxr::VdfVector::ReadAccessor<pxr::EfTime>
 // pxr::VdfVector::ReadWriteAccessor<pxr::EfTime>
 // pxr::exec_registration::NamespaceAncestor<pxr::GfMatrix4d>
@@ -1539,6 +2648,7 @@
 // std::unique_ptr<pxr::GlfGLRawContext, std::default_delete<pxr::GlfGLRawContext>>
 // std::shared_ptr<pxr::GlfSimpleLight>
 // std::unique_ptr<pxr::GlfTestGLContext, std::default_delete<pxr::GlfTestGLContext>>
+// std::pair<pxr::HgiFormat, pxr::VtValue>
 // std::pair<pxr::HgiFormat, void (const void *, unsigned long, void *) *>
 // std::vector<pxr::HgiBufferGpuToGpuOp, std::allocator<pxr::HgiBufferGpuToGpuOp>>
 // std::unique_ptr<pxr::HgiGLCapabilities, std::default_delete<pxr::HgiGLCapabilities>>
@@ -1571,10 +2681,10 @@
 // std::pair<pxr::SdfPath, pxr::HdSceneIndexPrim>
 // std::map<pxr::SdfPath, pxr::TfRefPtr<pxr::HdSceneIndexBase>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfRefPtr<pxr::HdSceneIndexBase>>>>
 // std::unordered_map<std::string, pxr::TfWeakPtr<pxr::HdSceneIndexBase>, std::hash<std::allocator<char>>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>>
+// std::unordered_set<pxr::TfRefPtr<pxr::HdSceneIndexBase>, pxr::TfHash, std::equal_to<pxr::TfRefPtr<pxr::HdSceneIndexBase>>, std::allocator<pxr::TfRefPtr<pxr::HdSceneIndexBase>>>
 // std::unordered_set<pxr::TfWeakPtr<pxr::HdSceneIndexBase>, pxr::TfHash, std::equal_to<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>, std::allocator<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>
 // std::pair<pxr::SdfPath const, pxr::TfRefPtr<pxr::HdSceneIndexBase>>
 // std::pair<std::string const, pxr::TfWeakPtr<pxr::HdSceneIndexBase>>
-// std::map<pxr::TfToken, std::shared_ptr<pxr::HdDataSourceBase>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdDataSourceBase>>>>
 // std::vector<std::shared_ptr<pxr::HdDataSourceBase>, std::allocator<std::shared_ptr<pxr::HdDataSourceBase>>>
 // std::pair<pxr::TfToken, std::shared_ptr<pxr::HdDataSourceBase>>
 // std::pair<pxr::TfToken const, pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 8U>>
@@ -1587,8 +2697,10 @@
 // std::vector<std::shared_ptr<pxr::HdSampledDataSource>, std::allocator<std::shared_ptr<pxr::HdSampledDataSource>>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::GlfSimpleLight>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::HdSceneDelegate *>>
+// std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::Hgi *>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<unsigned int>>
+// std::vector<std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::GfMatrix4d>>, std::allocator<std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::GfMatrix4d>>>>
 // std::pair<std::shared_ptr<pxr::HdTypedSampledDataSource<int>>, std::shared_ptr<pxr::HdTypedSampledDataSource<int>>>
 // std::unique_ptr<pxr::HdBlockDataSource, std::default_delete<pxr::HdBlockDataSource>>
 // std::unordered_map<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, std::shared_ptr<pxr::HdDataSourceBase>>>>
@@ -1602,7 +2714,9 @@
 // std::back_insert_iterator<pxr::TfSmallVector<pxr::HdSceneIndexObserver::DirtiedPrimEntry, 16U>>
 // std::vector<pxr::TfSmallVector<pxr::HdSceneIndexObserver::DirtiedPrimEntry, 16U>, std::allocator<pxr::TfSmallVector<pxr::HdSceneIndexObserver::DirtiedPrimEntry, 16U>>>
 // std::vector<pxr::HdMergingSceneIndex::InputScene, std::allocator<pxr::HdMergingSceneIndex::InputScene>>
-// pxr::HdTypedVectorSchema<pxr::HdTypedSampledDataSource<pxr::TfToken>>
+// std::pair<std::shared_ptr<pxr::HdBufferSource>, bool>
+// pxr::HdVectorOfTypedSampledDataSourcesSchema<pxr::HdTypedSampledDataSource<pxr::TfToken>>
+// std::optional<pxr::HdCollectionExpressionEvaluator>
 // std::unordered_map<pxr::SdfPathExpression, std::pair<pxr::TfToken, pxr::HdCollectionExpressionEvaluator>, pxr::TfHash, std::equal_to<pxr::SdfPathExpression>, std::allocator<std::pair<pxr::SdfPathExpression const, std::pair<pxr::TfToken, pxr::HdCollectionExpressionEvaluator>>>>
 // std::pair<pxr::TfToken, pxr::HdCollectionExpressionEvaluator>
 // std::pair<pxr::SdfPathExpression const, std::pair<pxr::TfToken, pxr::HdCollectionExpressionEvaluator>>
@@ -1612,6 +2726,7 @@
 // std::unique_ptr<pxr::HdDataSourceLegacyPrim, std::default_delete<pxr::HdDataSourceLegacyPrim>>
 // std::unique_ptr<pxr::HdDataSourceLegacyTaskPrim, std::default_delete<pxr::HdDataSourceLegacyTaskPrim>>
 // std::unique_ptr<pxr::HdEngine, std::default_delete<pxr::HdEngine>>
+// std::vector<pxr::HdDriver, std::allocator<pxr::HdDriver>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::shared_ptr<pxr::HdFlattenedDataSourceProvider>>>
 // std::unique_ptr<pxr::HdRetainedSampledDataSource, std::default_delete<pxr::HdRetainedSampledDataSource>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<bool>>
@@ -1656,6 +2771,7 @@
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdDataSourceLocator>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdRprimCollection>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdSceneDelegate *>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::Hgi *>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfAssetPath>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPath>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPathExpression>>
@@ -1709,6 +2825,53 @@
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned char>>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned int>>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned short>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<bool>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<char>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatd>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatf>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuath>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfInterval>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatd>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuaternion>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatf>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuath>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRect2i>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2h>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2i>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3h>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3i>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4d>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4f>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4h>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4i>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::TfToken>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::pxr_half::half>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<double>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<float>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<int>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<long long>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<short>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<std::string>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned char>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned int>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned long long>>>
+// std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned short>>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtDictionary>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtValue>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::pxr_half::half>>
@@ -1773,6 +2936,7 @@
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdDataSourceLocator>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::HdDataSourceLocator>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdRprimCollection>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::HdRprimCollection>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdSceneDelegate *>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::HdSceneDelegate *>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::Hgi *>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::Hgi *>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfAssetPath>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::SdfAssetPath>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPath>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPath>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPathExpression>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::SdfPathExpression>>>
@@ -1826,6 +2990,53 @@
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned char>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned char>>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned int>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned int>>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned short>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArray<unsigned short>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<bool>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<bool>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<char>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<char>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatd>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatd>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatf>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuatf>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuath>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfDualQuath>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfInterval>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfInterval>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix2f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix3f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfMatrix4f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatd>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatd>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuaternion>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuaternion>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatf>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuatf>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuath>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfQuath>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange1f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange2f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRange3f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRect2i>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfRect2i>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2h>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2h>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2i>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec2i>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3h>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3h>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3i>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec3i>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4d>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4d>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4f>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4f>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4h>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4h>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4i>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::GfVec4i>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::TfToken>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::TfToken>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::pxr_half::half>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<pxr::pxr_half::half>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<double>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<double>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<float>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<float>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<int>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<int>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<long long>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<long long>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<short>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<short>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<std::string>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<std::string>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned char>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned char>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned int>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned int>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned long long>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned long long>>>>
+// std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned short>>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtArrayEdit<unsigned short>>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtDictionary>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtDictionary>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::VtValue>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::VtValue>>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::pxr_half::half>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::pxr_half::half>>>
@@ -1889,18 +3100,20 @@
 // std::pair<pxr::TfToken, pxr::HdInstanceRegistry<std::shared_ptr<pxr::HdBufferArrayRange>>>
 // std::unique_ptr<pxr::HdLazyContainerDataSource, std::default_delete<pxr::HdLazyContainerDataSource>>
 // std::unique_ptr<pxr::HdMapContainerDataSource, std::default_delete<pxr::HdMapContainerDataSource>>
+// std::optional<pxr::HdMaterialBindingSchema>
 // std::unique_ptr<pxr::HdMaterialNetwork2Interface, std::default_delete<pxr::HdMaterialNetwork2Interface>>
 // std::unique_ptr<pxr::HdQuadInfo const, std::default_delete<pxr::HdQuadInfo const>>
 // std::unique_ptr<pxr::HdOverlayContainerDataSource, std::default_delete<pxr::HdOverlayContainerDataSource>>
-// std::shared_ptr<pxr::HdPrimDataSourceOverlayCache>
-// std::weak_ptr<pxr::HdPrimDataSourceOverlayCache>
+// std::unique_ptr<pxr::HdRenderDelegate, std::default_delete<pxr::HdRenderDelegate>>
 // std::shared_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdPrimOriginSchema::OriginPath>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::HdPrimOriginSchema::OriginPath>>
 // std::unique_ptr<pxr::HdRetainedTypedSampledDataSource<pxr::HdPrimOriginSchema::OriginPath>, std::default_delete<pxr::HdRetainedTypedSampledDataSource<pxr::HdPrimOriginSchema::OriginPath>>>
+// std::unique_ptr<pxr::HdRenderDelegateAdapterRenderer, std::default_delete<pxr::HdRenderDelegateAdapterRenderer>>
+// std::unique_ptr<pxr::HdRenderer, std::default_delete<pxr::HdRenderer>>
 // std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>
 // std::vector<pxr::HdRenderSettings::RenderProduct::RenderVar, std::allocator<pxr::HdRenderSettings::RenderProduct::RenderVar>>
 // std::unique_ptr<pxr::HdSceneIndexAdapterSceneDelegate, std::default_delete<pxr::HdSceneIndexAdapterSceneDelegate>>
-// pxr::HdSchemaBasedVectorSchema<pxr::HdSelectionSchema>
+// pxr::HdVectorOfSchemasSchema<pxr::HdSelectionSchema>
 // std::shared_ptr<pxr::HdVtBufferSource>
 // std::unique_ptr<pxr::HdVtBufferSource, std::default_delete<pxr::HdVtBufferSource>>
 // std::shared_ptr<pxr::HdGpGenerativeProcedural>
@@ -1909,8 +3122,8 @@
 // std::pair<pxr::SdfPath const, std::shared_ptr<pxr::HdsiPrimManagingSceneIndexObserver::PrimBase>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::shared_ptr<pxr::HdsiPrimManagingSceneIndexObserver::PrimFactoryBase>>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::shared_ptr<pxr::HdsiPrimTypeNoticeBatchingSceneIndex::PrimTypePriorityFunctor>>>
-// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>>>
-// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_25_8__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>
+// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>>>
+// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>
 // std::map<pxr::TfToken, pxr::HdStBindingRequest, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::HdStBindingRequest>>>
 // std::pair<pxr::TfToken const, pxr::HdStBindingRequest>
 // std::vector<std::shared_ptr<pxr::HdStBufferResource>, std::allocator<std::shared_ptr<pxr::HdStBufferResource>>>
@@ -1920,6 +3133,7 @@
 // std::unique_ptr<pxr::HdStDrawItem, std::default_delete<pxr::HdStDrawItem>>
 // std::shared_ptr<pxr::HdStCopyComputationGPU>
 // std::vector<std::shared_ptr<pxr::HdStDispatchBuffer>, std::allocator<std::shared_ptr<pxr::HdStDispatchBuffer>>>
+// std::shared_ptr<pxr::HdStDynamicCubemapTextureObject>
 // pxr::HdInstance<std::shared_ptr<pxr::HdStTextureObject>>
 // pxr::HdInstanceRegistry<std::shared_ptr<pxr::HdStTextureObject>>
 // std::set<std::shared_ptr<pxr::HdStTextureObject>, std::less<std::shared_ptr<pxr::HdStTextureObject>>, std::allocator<std::shared_ptr<pxr::HdStTextureObject>>>
@@ -1935,6 +3149,14 @@
 // std::unordered_map<pxr::Hgi *, std::weak_ptr<pxr::HdStResourceRegistry>, std::hash<pxr::Hgi>, std::equal_to<pxr::Hgi *>, std::allocator<std::pair<pxr::Hgi *, std::weak_ptr<pxr::HdStResourceRegistry>>>>
 // std::weak_ptr<pxr::HdStResourceRegistry>
 // std::pair<pxr::Hgi *, std::weak_ptr<pxr::HdStResourceRegistry>>
+// std::vector<std::unique_ptr<pxr::HdStPooledRenderBuffer, std::default_delete<pxr::HdStPooledRenderBuffer>>, std::allocator<std::unique_ptr<pxr::HdStPooledRenderBuffer, std::default_delete<pxr::HdStPooledRenderBuffer>>>>
+// std::shared_ptr<pxr::HdStRenderBuffer>
+// std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>
+// std::vector<std::shared_ptr<pxr::HdStRenderBuffer>, std::allocator<std::shared_ptr<pxr::HdStRenderBuffer>>>
+// std::vector<std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>, std::allocator<std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>>>
+// pxr::HdStTextureUtils::AlignedBuffer<float>
+// pxr::HdStTextureUtils::AlignedBuffer<int>
+// pxr::HdStTextureUtils::AlignedBuffer<unsigned char>
 // std::shared_ptr<pxr::HdStExtCompGpuPrimvarBufferSource>
 // std::shared_ptr<pxr::HdStExtCompPrimvarBufferSource>
 // std::unique_ptr<pxr::HdStOpenVDBAssetSubtextureIdentifier, std::default_delete<pxr::HdStOpenVDBAssetSubtextureIdentifier>>
@@ -1945,6 +3167,7 @@
 // std::unique_ptr<pxr::HdStDynamicUvSubtextureIdentifier, std::default_delete<pxr::HdStDynamicUvSubtextureIdentifier>>
 // std::unique_ptr<pxr::HdStPtexSubtextureIdentifier, std::default_delete<pxr::HdStPtexSubtextureIdentifier>>
 // std::unique_ptr<pxr::HdStUdimSubtextureIdentifier, std::default_delete<pxr::HdStUdimSubtextureIdentifier>>
+// std::unique_ptr<pxr::HdStDynamicCubemapSubtextureIdentifier, std::default_delete<pxr::HdStDynamicCubemapSubtextureIdentifier>>
 // std::shared_ptr<pxr::HdStGLSLFXShader>
 // std::unique_ptr<pxr::HdStGLSLFXShader, std::default_delete<pxr::HdStGLSLFXShader>>
 // pxr::HdInstance<std::shared_ptr<pxr::HdStGLSLProgram>>
@@ -1952,11 +3175,6 @@
 // std::unique_ptr<pxr::HdStInterleavedUBOMemoryManager, std::default_delete<pxr::HdStInterleavedUBOMemoryManager>>
 // std::unique_ptr<pxr::HdStInterleavedSSBOMemoryManager, std::default_delete<pxr::HdStInterleavedSSBOMemoryManager>>
 // std::shared_ptr<pxr::HdStPtexTextureObject>
-// std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>
-// std::vector<std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>, std::allocator<std::unique_ptr<pxr::HdStRenderBuffer, std::default_delete<pxr::HdStRenderBuffer>>>>
-// pxr::HdStTextureUtils::AlignedBuffer<float>
-// pxr::HdStTextureUtils::AlignedBuffer<int>
-// pxr::HdStTextureUtils::AlignedBuffer<unsigned char>
 // std::unique_ptr<pxr::HdStRenderParam, std::default_delete<pxr::HdStRenderParam>>
 // pxr::HdInstance<std::shared_ptr<pxr::HdStRenderPassShader>>
 // pxr::HdInstanceRegistry<std::shared_ptr<pxr::HdStRenderPassShader>>
@@ -1965,6 +3183,7 @@
 // std::shared_ptr<pxr::HdStFieldSamplerObject>
 // std::shared_ptr<pxr::HdStPtexSamplerObject>
 // std::shared_ptr<pxr::HdStUdimSamplerObject>
+// std::shared_ptr<pxr::HdStCubemapSamplerObject>
 // std::unique_ptr<pxr::HdStStagingBuffer, std::default_delete<pxr::HdStStagingBuffer>>
 // std::unique_ptr<pxr::HdStTextureCpuData, std::default_delete<pxr::HdStTextureCpuData>>
 // std::set<std::shared_ptr<pxr::HdStTextureHandle>, std::less<std::shared_ptr<pxr::HdStTextureHandle>>, std::allocator<std::shared_ptr<pxr::HdStTextureHandle>>>
@@ -2246,10 +3465,13 @@
 // std::shared_ptr<pxr::UsdProcImagingGenerativeProceduralAdapter>
 // std::shared_ptr<pxr::UsdRiPxrImagingAovLightAdapter>
 // std::shared_ptr<pxr::UsdRiPxrImagingCameraAPIAdapter>
+// std::shared_ptr<pxr::UsdRiPxrImagingCameraProjectionAdapter>
+// std::shared_ptr<pxr::UsdRiPxrImagingCameraProjectionAPIAdapter>
 // std::shared_ptr<pxr::UsdRiPxrImagingDisplayFilterAdapter>
 // std::shared_ptr<pxr::UsdRiPxrImagingIntegratorAdapter>
 // std::shared_ptr<pxr::UsdRiPxrImagingSampleFilterAdapter>
 // std::shared_ptr<pxr::UsdSkelImagingAnimationAdapter>
+// pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
 // std::shared_ptr<pxr::UsdSkelImagingBindingAPIAdapter>
 // std::shared_ptr<pxr::UsdSkelImagingBlendShapeAdapter>
 // std::shared_ptr<pxr::UsdSkelImagingBlendShapeData>
@@ -2278,10 +3500,12 @@
 // std::shared_ptr<pxr::UsdSkelImagingSkelRootAdapter>
 // std::unique_ptr<pxr::UsdImagingDataSourceFieldAsset, std::default_delete<pxr::UsdImagingDataSourceFieldAsset>>
 // std::unique_ptr<pxr::UsdImagingDataSourceFieldAssetPrim, std::default_delete<pxr::UsdImagingDataSourceFieldAssetPrim>>
-// std::shared_ptr<pxr::UsdImagingOpenVDBAssetAdapter>
+// std::unique_ptr<pxr::UsdImagingDataSourceParticleFieldPrim, std::default_delete<pxr::UsdImagingDataSourceParticleFieldPrim>>
 // std::shared_ptr<pxr::UsdImagingField3DAssetAdapter>
-// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>>>
-// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_25_8__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>
+// std::shared_ptr<pxr::UsdImagingOpenVDBAssetAdapter>
+// std::shared_ptr<pxr::UsdImagingParticleFieldAdapter>
+// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>>>
+// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>
 
 
 // Conformance available:
@@ -2320,18 +3544,18 @@ extension pxr.TfDebugSymbolsChangedNotice: @unchecked Sendable {}
 extension pxr.TfDebugSymbolEnableChangedNotice: @unchecked Sendable {}
 extension pxr.TfNotice: @unchecked Sendable {}
 extension pxr.TfNotice.Block: @unchecked Sendable {}
-extension pxr.TfDictionaryLessThan: @unchecked Sendable {}
-extension pxr.TfStreamFloat: @unchecked Sendable {}
-extension pxr.TfStreamDouble: @unchecked Sendable {}
-extension pxr.TfDiagnosticMgr.Delegate: @unchecked Sendable {}
-extension pxr.TfSkipCallerFrames: @unchecked Sendable {}
-extension pxr.TfFastCompression: @unchecked Sendable {}
 extension pxr.TfMallocTag: @unchecked Sendable {}
 extension pxr.TfMallocTag.CallTree: @unchecked Sendable {}
 extension pxr.TfMallocTag.CallTree.PathNode: @unchecked Sendable {}
 extension pxr.TfMallocTag.CallTree.CallSite: @unchecked Sendable {}
 extension pxr.TfMallocTag.CallTree.PrintSetting: @unchecked Sendable {}
 extension pxr.TfMallocTag.CallStackInfo: @unchecked Sendable {}
+extension pxr.TfDictionaryLessThan: @unchecked Sendable {}
+extension pxr.TfStreamFloat: @unchecked Sendable {}
+extension pxr.TfStreamDouble: @unchecked Sendable {}
+extension pxr.TfDiagnosticMgr.Delegate: @unchecked Sendable {}
+extension pxr.TfSkipCallerFrames: @unchecked Sendable {}
+extension pxr.TfFastCompression: @unchecked Sendable {}
 extension pxr.TfSmallVectorBase: @unchecked Sendable {}
 extension pxr.TfRefPtrTracker.TraceType: @unchecked Sendable {}
 extension pxr.TfStackedAccess: @unchecked Sendable {}
@@ -2347,6 +3571,10 @@ extension pxr.TraceAggregateTree.CounterMap: @unchecked Sendable {}
 extension pxr.GlfBindingMap.BindingMap: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.TfToken.HashSet: @unchecked Sendable {}
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.TfTokenMap: @unchecked Sendable {}
+extension pxr.NestedTfTokenMap: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.SdrShaderNode.ComplianceResults: @unchecked Sendable {}
 extension pxr.TraceCounterAccumulator.CounterValuesMap: @unchecked Sendable {}
 extension pxr.TraceCounterAccumulator.CounterMap: @unchecked Sendable {}
@@ -2422,7 +3650,6 @@ extension pxr.GfTransform: @unchecked Sendable {}
 extension pxr.GfNumericCastFailureType: @unchecked Sendable {}
 extension pxr.JsParseError: @unchecked Sendable {}
 extension pxr.JsValue.`Type`: @unchecked Sendable {}
-extension pxr.TraceAggregateNode.Id: @unchecked Sendable {}
 extension pxr.TraceEvent.BeginTag: @unchecked Sendable {}
 extension pxr.TraceEvent.EndTag: @unchecked Sendable {}
 extension pxr.TraceEvent.TimespanTag: @unchecked Sendable {}
@@ -2501,10 +3728,11 @@ extension pxr.TopologyToPrimvarVector: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.VtTypedValueProxyBase: @unchecked Sendable {}
 extension pxr.VtErasedValueProxyBase: @unchecked Sendable {}
+extension pxr.VtBoolArrayEdit: @unchecked Sendable {}
+extension pxr.VtCharArrayEdit: @unchecked Sendable {}
 extension pxr.VtDualQuatdArrayEdit: @unchecked Sendable {}
 extension pxr.VtDualQuatfArrayEdit: @unchecked Sendable {}
 extension pxr.VtDualQuathArrayEdit: @unchecked Sendable {}
-extension pxr.VtHalfArrayEdit: @unchecked Sendable {}
 extension pxr.VtIntervalArrayEdit: @unchecked Sendable {}
 extension pxr.VtMatrix2dArrayEdit: @unchecked Sendable {}
 extension pxr.VtMatrix2fArrayEdit: @unchecked Sendable {}
@@ -2536,19 +3764,48 @@ extension pxr.VtVec4fArrayEdit: @unchecked Sendable {}
 extension pxr.VtVec4hArrayEdit: @unchecked Sendable {}
 extension pxr.VtVec4iArrayEdit: @unchecked Sendable {}
 extension pxr.VtTokenArrayEdit: @unchecked Sendable {}
-extension pxr.VtBoolArrayEdit: @unchecked Sendable {}
-extension pxr.VtCharArrayEdit: @unchecked Sendable {}
+extension pxr.VtHalfArrayEdit: @unchecked Sendable {}
 extension pxr.VtDoubleArrayEdit: @unchecked Sendable {}
 extension pxr.VtFloatArrayEdit: @unchecked Sendable {}
-extension pxr.VtInt64ArrayEdit: @unchecked Sendable {}
 extension pxr.VtIntArrayEdit: @unchecked Sendable {}
+extension pxr.VtInt64ArrayEdit: @unchecked Sendable {}
 extension pxr.VtShortArrayEdit: @unchecked Sendable {}
 extension pxr.VtStringArrayEdit: @unchecked Sendable {}
-extension pxr.VtUInt64ArrayEdit: @unchecked Sendable {}
 extension pxr.VtUCharArrayEdit: @unchecked Sendable {}
 extension pxr.VtUIntArrayEdit: @unchecked Sendable {}
+extension pxr.VtUInt64ArrayEdit: @unchecked Sendable {}
 extension pxr.VtUShortArrayEdit: @unchecked Sendable {}
+extension pxr.VtBoolArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtMatrix2dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtMatrix3dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtMatrix4dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtQuatdArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtQuatfArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtQuathArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec2dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec2fArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec2hArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec2iArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec3dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec3fArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec3hArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec3iArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec4dArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec4fArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec4hArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtVec4iArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtTokenArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtHalfArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtDoubleArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtFloatArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtIntArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtInt64ArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtStringArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtUCharArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtUIntArrayEditBuilder: @unchecked Sendable {}
+extension pxr.VtUInt64ArrayEditBuilder: @unchecked Sendable {}
 extension pxr.VtDictionaryHash: @unchecked Sendable {}
+extension pxr.VtBackgroundType: @unchecked Sendable {}
 extension pxr.TsInterpMode: @unchecked Sendable {}
 extension pxr.TsCurveType: @unchecked Sendable {}
 extension pxr.TsExtrapMode: @unchecked Sendable {}
@@ -2627,6 +3884,8 @@ extension pxr.SdfRelocatesMapProxyValuePolicy: @unchecked Sendable {}
 extension pxr.SdfGenericSpecViewPredicate: @unchecked Sendable {}
 extension pxr.SdfAttributeViewPredicate: @unchecked Sendable {}
 extension pxr.SdfRelationshipViewPredicate: @unchecked Sendable {}
+extension pxr.SdfBooleanExpression.BinaryOperator: @unchecked Sendable {}
+extension pxr.SdfBooleanExpression.UnaryOperator: @unchecked Sendable {}
 extension pxr.SdfChangeList.SubLayerChangeType: @unchecked Sendable {}
 extension pxr.SdfChangeList.Entry.SubLayerChange: @unchecked Sendable {}
 extension pxr.SdfCrateInfo.Section: @unchecked Sendable {}
@@ -2659,12 +3918,17 @@ extension pxr.SdfPayload: @unchecked Sendable {}
 extension pxr.SdfPayloadVector: @unchecked Sendable {}
 extension pxr.SdfReference.IdentityEqual: @unchecked Sendable {}
 extension pxr.SdfReference.IdentityLessThan: @unchecked Sendable {}
-extension pxr.SdfTextFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfUsdFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfUsdaFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfUsdcFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfUsdzFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfVariableExpression.EmptyList: @unchecked Sendable {}
+extension pxr.SdfVariableExpression.Builder: @unchecked Sendable {}
+extension pxr.SdfVariableExpression.FunctionBuilder: @unchecked Sendable {}
+extension pxr.SdfVariableExpression.ListBuilder: @unchecked Sendable {}
+extension pxr.SdfVariableExpressionASTNodes.Node: @unchecked Sendable {}
+extension pxr.SdfVariableExpressionASTNodes.LiteralNode: @unchecked Sendable {}
+extension pxr.SdfVariableExpressionASTNodes.VariableNode: @unchecked Sendable {}
 extension pxr.SdfZipFile.FileInfo: @unchecked Sendable {}
 extension pxr.SdfPathPatternParser.PathPatStretch: @unchecked Sendable {}
 extension pxr.SdfPathPatternParser.PathPatSep: @unchecked Sendable {}
@@ -2726,12 +3990,13 @@ extension pxr.SdrDiscoveryUriVec: @unchecked Sendable {}
 extension pxr.SdrDiscoveryUri: @unchecked Sendable {}
 extension pxr.SdrParserPluginFactoryBase: @unchecked Sendable {}
 extension pxr.SdrPropertyTypes_StaticTokenType: @unchecked Sendable {}
-extension pxr.SdrPropertyMetadata_StaticTokenType: @unchecked Sendable {}
-extension pxr.SdrPropertyRole_StaticTokenType: @unchecked Sendable {}
-extension pxr.SdrPropertyTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrNodeFieldKey_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeMetadata_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeContext_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeRole_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrPropertyMetadata_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrPropertyRole_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrPropertyTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.PcpNodeRef.Hash: @unchecked Sendable {}
 extension pxr.PcpArcType: @unchecked Sendable {}
 extension pxr.PcpRangeType: @unchecked Sendable {}
@@ -2771,6 +4036,7 @@ extension pxr.UsdCollectionMembershipQueryTokens_StaticTokenType: @unchecked Sen
 extension pxr.UsdColorSpaceAPI.ColorSpaceCache: @unchecked Sendable {}
 extension pxr.UsdModelAPI.KindValidation: @unchecked Sendable {}
 extension pxr.UsdModelAPIAssetInfoKeys_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdLimitsKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdNamespaceEditor.EditOptions: @unchecked Sendable {}
 extension pxr.UsdNotice: @unchecked Sendable {}
 extension pxr.UsdNotice.ObjectsChanged.PrimResyncType: @unchecked Sendable {}
@@ -2781,10 +4047,6 @@ extension pxr.UsdPrimCompositionQuery.HasSpecsFilter: @unchecked Sendable {}
 extension pxr.UsdPrimCompositionQuery.Filter: @unchecked Sendable {}
 extension pxr.UsdStageCache.Id: @unchecked Sendable {}
 extension pxr.UsdStageCacheContextBlockType: @unchecked Sendable {}
-extension pxr.UsdUsdFileFormatTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.UsdUsdaFileFormatTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.UsdUsdcFileFormatTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.UsdUsdzFileFormatTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdGeomImageable.PurposeInfo: @unchecked Sendable {}
 extension pxr.UsdGeomTokensType: @unchecked Sendable {}
 extension pxr.UsdGeomXformOpTypes_StaticTokenType: @unchecked Sendable {}
@@ -2823,6 +4085,7 @@ extension pxr.UsdSkelTopology: @unchecked Sendable {}
 extension pxr.UsdSkelAnimMapper: @unchecked Sendable {}
 extension pxr.UsdSkelBakeSkinningParms.DeformationFlags: @unchecked Sendable {}
 extension pxr.UsdUITokensType: @unchecked Sendable {}
+extension pxr.UsdUIHintKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdUtilsCoalescingDiagnosticDelegateSharedItem: @unchecked Sendable {}
 extension pxr.UsdUtilsConditionalAbortDiagnosticDelegateErrorFilters: @unchecked Sendable {}
 extension pxr.UsdUtilsExtractExternalReferencesParams: @unchecked Sendable {}
@@ -2935,9 +4198,12 @@ extension pxr.ExecProviderResolution.DynamicTraversal: @unchecked Sendable {}
 extension pxr.ExecDefinitionRegistryTag: @unchecked Sendable {}
 extension pxr.exec_registration.Attribute: @unchecked Sendable {}
 extension pxr.exec_registration.Relationship: @unchecked Sendable {}
+extension pxr.exec_registration.Prim: @unchecked Sendable {}
 extension pxr.exec_registration.Stage: @unchecked Sendable {}
+extension pxr.ExecValidationErrorType: @unchecked Sendable {}
 extension pxr.ExecValueKey: @unchecked Sendable {}
 extension pxr.ExecGeomXformableTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.ExecIrTokens_StaticTokenType: @unchecked Sendable {}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLDebugWindow.Buttons: @unchecked Sendable {}
 extension pxr.GarchGLDebugWindow.ModifierKeys: @unchecked Sendable {}
@@ -3134,6 +4400,8 @@ extension pxr.HdAspectRatioConformPolicyTokens_StaticTokenType: @unchecked Senda
 extension pxr.HdResourceTypeTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexEmulationTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdCollectionEmulationTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdSkinningInputTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdSkinningSkelInputTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdReprSelector: @unchecked Sendable {}
 extension pxr.HdReprSelectorVector: @unchecked Sendable {}
 extension pxr.HdDrawingCoord: @unchecked Sendable {}
@@ -3163,6 +4431,7 @@ extension pxr.HdContainerDataSource: @unchecked Sendable {}
 extension pxr.HdVectorDataSource: @unchecked Sendable {}
 extension pxr.HdSampledDataSource: @unchecked Sendable {}
 extension pxr.HdBlockDataSource: @unchecked Sendable {}
+extension pxr.HdDataSourceLocatorSentinelTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexObserver.AddedPrimEntry: @unchecked Sendable {}
 extension pxr.HdSceneIndexObserver.RemovedPrimEntry: @unchecked Sendable {}
 extension pxr.HdSceneIndexObserver.RenamedPrimEntry: @unchecked Sendable {}
@@ -3171,6 +4440,7 @@ extension pxr.HdLegacyTaskFactory: @unchecked Sendable {}
 extension pxr.HdBasisCurvesSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdBasisCurvesTopologySchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdBprim: @unchecked Sendable {}
+extension pxr.HdBuiltinMaterialSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdCameraTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdCamera: @unchecked Sendable {}
 extension pxr.HdCamera.DirtyBits: @unchecked Sendable {}
@@ -3197,6 +4467,7 @@ extension pxr.HdMaterialNetworkInterface: @unchecked Sendable {}
 extension pxr.HdMaterialNetworkInterface.InputConnection: @unchecked Sendable {}
 extension pxr.HdMaterialNetworkInterface.InputConnectionResult: @unchecked Sendable {}
 extension pxr.HdMaterialNetworkSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdMaterialInterfaceSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialNodeSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdDependenciesSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdDependencySchemaTokens_StaticTokenType: @unchecked Sendable {}
@@ -3233,6 +4504,7 @@ extension pxr.HdInstancerTopologySchemaTokens_StaticTokenType: @unchecked Sendab
 extension pxr.HdInstanceSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdIntegratorSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdLegacyDisplayStyleSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdLegacyRenderControlInterface: @unchecked Sendable {}
 extension pxr.HdLegacyTaskSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdLightTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdLight: @unchecked Sendable {}
@@ -3242,6 +4514,7 @@ extension pxr.HdMaterialBindingSchemaTokens_StaticTokenType: @unchecked Sendable
 extension pxr.HdMaterialBindingsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialConnectionSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialInterfaceMappingSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdMaterialInterfaceParameterSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialNodeParameterSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialOverrideSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMaterialSchemaTokens_StaticTokenType: @unchecked Sendable {}
@@ -3251,6 +4524,7 @@ extension pxr.HdMeshSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMeshTopologySchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSubdivisionTagsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdQuadInfo: @unchecked Sendable {}
+extension pxr.HdMeshComputationResult: @unchecked Sendable {}
 extension pxr.HdNurbsCurvesSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdNurbsPatchSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType: @unchecked Sendable {}
@@ -3264,6 +4538,9 @@ extension pxr.HdRenderBuffer: @unchecked Sendable {}
 extension pxr.HdRenderBuffer.DirtyBits: @unchecked Sendable {}
 extension pxr.HdRenderBufferSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdRenderCapabilitiesSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdRenderer: @unchecked Sendable {}
+extension pxr.HdRenderDelegateInfo: @unchecked Sendable {}
+extension pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdRenderPassSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdRenderPassState.ColorMask: @unchecked Sendable {}
 extension pxr.HdRenderProductSchemaTokens_StaticTokenType: @unchecked Sendable {}
@@ -3271,6 +4548,7 @@ extension pxr.HdRenderSettingsSchemaTokens_StaticTokenType: @unchecked Sendable 
 extension pxr.HdRenderVarSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSampleFilterSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneGlobalsSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdSceneIndexInputArgsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexPluginRegistryTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexPluginRegistry.InsertionOrder: @unchecked Sendable {}
 extension pxr.HdSelection: @unchecked Sendable {}
@@ -3308,6 +4586,7 @@ extension pxr.HdsiRenderSettingsFilteringSceneIndexTokens_StaticTokenType: @unch
 extension pxr.HdsiUnboundMaterialPruningSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdsiVelocityMotionResolvingSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdMtlxTexturePrimvarData: @unchecked Sendable {}
+extension pxr.HdMtlxTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStBinding: @unchecked Sendable {}
 extension pxr.HdStBinding.`Type`: @unchecked Sendable {}
 extension pxr.HdStBinding.Location: @unchecked Sendable {}
@@ -3316,6 +4595,7 @@ extension pxr.HdStComputation: @unchecked Sendable {}
 extension pxr.HdStDrawTargetTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStTextureType: @unchecked Sendable {}
 extension pxr.HdStComputeQueue: @unchecked Sendable {}
+extension pxr.HdStTextureUtils: @unchecked Sendable {}
 extension pxr.HdStOpenVDBAssetSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStField3DAssetSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStSubtextureIdentifier: @unchecked Sendable {}
@@ -3324,10 +4604,10 @@ extension pxr.HdStAssetUvSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStDynamicUvSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStPtexSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStUdimSubtextureIdentifier: @unchecked Sendable {}
+extension pxr.HdStDynamicCubemapSubtextureIdentifier: @unchecked Sendable {}
 extension pxr.HdStGLConversions: @unchecked Sendable {}
 extension pxr.HdStHgiConversions: @unchecked Sendable {}
 extension pxr.HdStHioConversions: @unchecked Sendable {}
-extension pxr.HdStTextureUtils: @unchecked Sendable {}
 extension pxr.HdStTextureCpuData: @unchecked Sendable {}
 extension pxr.HdStGLSLProgramTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStTokens_StaticTokenType: @unchecked Sendable {}
@@ -3337,6 +4617,7 @@ extension pxr.HdStRenderSettingsTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStMaterialTagTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStSdrMetadataTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStPerfTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdStDynamicCubemapTextureImplementation: @unchecked Sendable {}
 extension pxr.HdStDynamicUvTextureImplementation: @unchecked Sendable {}
 extension pxr.HdxAovInputTaskParams: @unchecked Sendable {}
 extension pxr.HdxBoundingBoxTaskParams: @unchecked Sendable {}
@@ -3375,6 +4656,7 @@ extension pxr.UsdImagingPrimAdapter.PopulationMode: @unchecked Sendable {}
 extension pxr.UsdImagingExtentResolvingSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingExtentsHintSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingGeomModelSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdImagingGeomXformVectorsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingModelSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingStageSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingTokens_StaticTokenType: @unchecked Sendable {}
@@ -3387,13 +4669,16 @@ extension pxr.UsdImagingUsdPrimInfoSchemaTokens_StaticTokenType: @unchecked Send
 extension pxr.UsdImagingUsdRenderProductSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingUsdRenderVarSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdImagingSceneIndexPlugin: @unchecked Sendable {}
 extension pxr.UsdImagingSceneIndexPlugin.FactoryBase: @unchecked Sendable {}
 extension pxr.UsdImagingGLDrawMode: @unchecked Sendable {}
 extension pxr.UsdImagingGLCullStyle: @unchecked Sendable {}
 extension pxr.UsdImagingGLRenderParams: @unchecked Sendable {}
 extension pxr.UsdImagingGLRendererSetting.`Type`: @unchecked Sendable {}
+extension pxr.UsdRiPxrImagingProjectionSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdRiPxrImagingTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdRiPxrImagingPrimTypeTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingAnimationSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingBindingSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingWeightsAndSubShapeIndices: @unchecked Sendable {}
@@ -3405,12 +4690,13 @@ extension pxr.UsdSkelImagingSkeletonSchemaTokens_StaticTokenType: @unchecked Sen
 extension pxr.UsdSkelImagingInbetweenShapeSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingJointInfluencesData: @unchecked Sendable {}
 extension pxr.UsdSkelImagingResolvingSceneIndexPlugin: @unchecked Sendable {}
-extension pxr.UsdSkelImagingSkelData: @unchecked Sendable {}
 extension pxr.UsdSkelImagingSkelGuideData: @unchecked Sendable {}
+extension pxr.UsdSkelImagingExtComputationTypeTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingPrimTypeTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingExtComputationNameTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingExtAggregatorComputationInputNameTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingExtComputationInputNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdSkelImagingExtComputationLegacyInputNameTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingExtComputationOutputNameTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
@@ -3435,6 +4721,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfNotice.WeakProbePtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfNotice.Key: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfNotice.Keys: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfMallocTag.StackState: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfRefPtrTracker.WatchedCounts: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfNodeToInputPtrVectorMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticBase: @unchecked Sendable {}
@@ -3457,7 +4744,6 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfSafeOutputFile: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfNodePtrSet: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfOutputPtrSet: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TfTemplateString: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrPropertyMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfTypeWasDeclaredNotice: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfUtf8CodePointIterator: @unchecked Sendable {}
@@ -3524,6 +4810,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 @available(*, unavailable) extension pxr.PcpDynamicFileFormatContext.VtValueVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfChangeList.Entry.InfoChange: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.VtValueRef: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.VtMutableValueRef: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TsSpline: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TsKnotMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TsKnot: @unchecked Sendable {}
@@ -3570,6 +4858,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfDictionaryProxy: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfRelocatesMapProxy: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariantSelectionProxy: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfBooleanExpression: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfChangeList: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfChangeList.Entry: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfCopySpecsValueEdit: @unchecked Sendable {}
@@ -3612,8 +4901,6 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfRelationshipSpecHandleVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSite: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSiteVector: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.SdfTextFileFormat: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.SdfTextFileFormatRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfUsdFileFormat: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfUsdFileFormatRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfUsdaData: @unchecked Sendable {}
@@ -3626,6 +4913,10 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfUsdzFileFormatRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariableExpression: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariableExpression.Result: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfVariableExpressionASTNodes.NodeList: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfVariableExpressionASTNodes.ListNode: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfVariableExpressionASTNodes.FunctionNode: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfVariableExpressionAST: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariantSetSpecHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariantSetSpec: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfVariantSetSpecHandleMap: @unchecked Sendable {}
@@ -3649,7 +4940,11 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrSdfTypeIndicator: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrShaderNode: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrShaderNodeUniquePtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderNodeMetadata: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderPropertyMetadata: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrRegistry: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderNodeQuery: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderNodeQueryResult: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.PcpArc: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.PcpMapExpression: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.PcpMapExpression.VariableUniquePtr: @unchecked Sendable {}
@@ -3808,6 +5103,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdColorSpaceDefinitionAPI: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdModelAPI: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdTyped: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdAttributeLimits: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdAttributeLimits.ValidationResult: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdAttributeQuery: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdResolveTarget: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdExpiredPrimAccessError: @unchecked Sendable {}
@@ -3871,8 +5168,23 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdGeomXformCommonAPI.Ops: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdVolField3DAsset: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdVolFieldAsset: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolVolumeFieldAsset: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdVolFieldBase: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolVolumeFieldBase: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdVolOpenVDBAsset: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleField: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleField3DGaussianSplat: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldPositionAttributeAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldPositionBaseAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldOrientationAttributeAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldScaleAttributeAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldOpacityAttributeAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldKernelGaussianEllipsoidAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldKernelBaseAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldSphericalHarmonicsAttributeAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldRadianceBaseAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldKernelConstantSurfletAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdVolParticleFieldKernelGaussianSurfletAPI: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdVolVolume: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdMediaAssetPreviewsAPI: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdMediaSpatialAudio: @unchecked Sendable {}
@@ -3948,6 +5260,10 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUIBackdrop: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUINodeGraphNodeAPI: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUISceneGraphPrimAPI: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdUIAttributeHints: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdUIPropertyHints: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdUIObjectHints: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdUIPrimHints: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUtilsCoalescingDiagnosticDelegateUnsharedItem: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUtilsCoalescingDiagnosticDelegateVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdUtilsCoalescingDiagnosticDelegateItem: @unchecked Sendable {}
@@ -4172,11 +5488,18 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdAssetPathDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPathDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPathExpressionDataSourceHandle: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT) && canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
+@available(*, unavailable) extension pxr.UsdStageRefPtrDataSourceHandle: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT) && canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 @available(*, unavailable) extension pxr.HdTokenDataSourceHandle: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMatrix3fArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMatrixArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMatrix4fArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdQuatfArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVec2dArrayDataSourceHandle: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdVec2iArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVec3dArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVec3fArrayDataSourceHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVec3hArrayDataSourceHandle: @unchecked Sendable {}
@@ -4232,6 +5555,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdBufferSourceSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdBufferSourceSharedPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdBufferSourceWeakPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdBuiltinMaterialSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdBuiltinMaterialSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdCachingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdCachingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdCameraSchema: @unchecked Sendable {}
@@ -4274,8 +5599,10 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNetworkInterface.NodeParamData: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNetworkSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNetworkSchema.Builder: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdMaterialNodeSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialInterfaceSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialInterfaceSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNodeContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialNodeSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNodeSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdDependenciesSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdDependencySchema: @unchecked Sendable {}
@@ -4292,11 +5619,11 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationUtils.ComputationDependencyMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationCpuCallbackSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationCpuCallbackDataSourceHandle: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdExtComputationInputComputationSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationInputComputationContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdExtComputationInputComputationSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationInputComputationSchema.Builder: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdExtComputationOutputSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationOutputContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdExtComputationOutputSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationOutputSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationPrimvarSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdExtComputationPrimvarSchema.Builder: @unchecked Sendable {}
@@ -4353,19 +5680,22 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialBindingSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialBindingSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialBindingsSchema: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdMaterialConnectionSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialConnectionContainerSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialConnectionVectorContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialConnectionSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialConnectionVectorSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialConnectionSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialFilteringSceneIndexBase: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialInterfaceMappingSchema: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdMaterialInterfaceMappingsContainerSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialInterfaceMappingVectorSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialInterfaceMappingSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialInterfaceParameterContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialInterfaceParameterSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialInterfaceParameterSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNetwork2Interface: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdMaterialNodeParameterSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdNodeToInputToMaterialNodeParameterSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNodeParameterContainerSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdMaterialNodeParameterSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialNodeParameterSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialOverrideSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMaterialOverrideSchema.Builder: @unchecked Sendable {}
@@ -4393,9 +5723,10 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRendererPluginHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderSettingDescriptorList: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderSettingDescriptor: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRendererCreateArgs: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdPluginRendererUniqueHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPrefixingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPrefixingSceneIndexRefPtr: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdPrimDataSourceOverlayCache: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPrimOriginSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPrimvarsSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdPurposeSchema: @unchecked Sendable {}
@@ -4404,7 +5735,12 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderBufferSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderCapabilitiesSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderCapabilitiesSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRenderDelegateInfoDataSourceHandle: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRendererCreateArgsSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRendererCreateArgsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRendererPluginRegistry: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRenderIndexAdapterSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdRenderIndexAdapterSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderPassSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderPassSharedPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdRenderPassSchema: @unchecked Sendable {}
@@ -4423,6 +5759,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSampleFilterSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSceneGlobalsSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSceneGlobalsSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdSceneIndexInputArgsSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdSceneIndexInputArgsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSceneIndexPluginRegistry: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSceneIndexPrimView: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSceneIndexPrimView.const_iterator: @unchecked Sendable {}
@@ -4475,6 +5813,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialOverrideResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialPrimvarTransferSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialPrimvarTransferSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiMaterialRenderContextFilteringSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiMaterialRenderContextFilteringSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSiNodeIdentifierResolvingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSiNodeIdentifierResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiNurbsApproximatingSceneIndex: @unchecked Sendable {}
@@ -4494,10 +5834,14 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPrimTypeNoticeBatchingSceneIndex.PrimTypePriorityFunctorHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPrimTypePruningSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPrimTypePruningSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiRenderPassPruneSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiRenderPassPruneSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiRenderSettingsFilteringSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiRenderSettingsFilteringSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiSceneGlobalsSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiSceneGlobalsSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiSceneMaterialPruningSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiSceneMaterialPruningSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiSwitchingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiSwitchingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiTetMeshConversionSceneIndex: @unchecked Sendable {}
@@ -4519,18 +5863,20 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStComputationSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStCopyComputationGPU: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStDispatchBufferSharedPtr: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdStDynamicUvTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureIdentifier: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdStDynamicUvTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStExtCompCpuComputationSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStShaderCodeSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStShaderCodeSharedPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStShaderCodePtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStComputationComputeQueuePairVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStResourceRegistrySharedPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdStPooledRenderBufferUniquePtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdStRenderBufferPool: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStLightingShaderSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStField: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStGLSLProgram: @unchecked Sendable {}
@@ -4553,6 +5899,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStFieldSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStPtexSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStUdimSamplerObject: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdStCubemapSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStSimpleLightingShaderSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStSimpleLightingShaderPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStStagingBuffer: @unchecked Sendable {}
@@ -4578,6 +5925,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdxShadowParams: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdxTaskControllerSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdxTaskControllerSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdxTaskControllerSceneIndex.Parameters: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdxShaderInputs: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdxShadowMatrixComputationSharedPtr: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
@@ -4695,6 +6043,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingExtentsHintSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGeomModelSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGeomModelSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingGeomXformVectorsSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingGeomXformVectorsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGeomSubsetAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingIndexProxy: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingModelSchema: @unchecked Sendable {}
@@ -4765,6 +6115,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingUsdRenderSettingsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingUsdRenderVarSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingUsdRenderVarSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingUsdSceneIndexInputArgsSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingUsdSceneIndexInputArgsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingRectLightAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingRenderPassAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingRenderProductAdapter: @unchecked Sendable {}
@@ -4787,8 +6139,12 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGLRendererSettingsList: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGLRendererSetting: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdProcImagingGenerativeProceduralAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdRiPxrImagingProjectionSchema: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdRiPxrImagingProjectionSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdRiPxrImagingAovLightAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdRiPxrImagingCameraAPIAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdRiPxrImagingCameraProjectionAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdRiPxrImagingCameraProjectionAPIAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdRiPxrImagingDisplayFilterAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdRiPxrImagingIntegratorAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdRiPxrImagingSampleFilterAdapter: @unchecked Sendable {}
@@ -4811,6 +6167,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingResolvedSkeletonSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingResolvedSkeletonSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdSkelImagingDataSourceXformResolver: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedSkeletonPrim: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedSkeletonPrimAtomicHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingSkeletonSchema: @unchecked Sendable {}
@@ -4822,6 +6179,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingInbetweenShapeSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingPointsResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingPointsResolvingSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdSkelImagingSkelData: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingSkeletonResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingSkeletonResolvingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingSkeletonAdapter: @unchecked Sendable {}
@@ -4830,6 +6188,9 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingDataSourceFieldAssetAtomicHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingDataSourceFieldAssetPrim: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingDataSourceFieldAssetPrimAtomicHandle: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdImagingOpenVDBAssetAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingDataSourceParticleFieldPrim: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingDataSourceParticleFieldPrimAtomicHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingField3DAssetAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingOpenVDBAssetAdapter: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingParticleFieldAdapter: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)

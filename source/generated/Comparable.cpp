@@ -249,14 +249,6 @@ bool __Overlay::operatorLess(const pxr::SdfRelationshipSpec& l,
                              const pxr::SdfRelationshipSpec& r) {
     return l < r;
 }
-bool __Overlay::operatorLess(const pxr::SdfTextFileFormat& l,
-                             const pxr::SdfTextFileFormat& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::SdfTextFileFormatRefPtr& l,
-                             const pxr::SdfTextFileFormatRefPtr& r) {
-    return l < r;
-}
 bool __Overlay::operatorLess(const pxr::SdfUsdFileFormat& l,
                              const pxr::SdfUsdFileFormat& r) {
     return &l < &r;
@@ -590,6 +582,14 @@ bool __Overlay::operatorLess(const pxr::HdRendererPluginRegistry& l,
                              const pxr::HdRendererPluginRegistry& r) {
     return &l < &r;
 }
+bool __Overlay::operatorLess(const pxr::HdRenderIndexAdapterSceneIndex& l,
+                             const pxr::HdRenderIndexAdapterSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdRenderIndexAdapterSceneIndexRefPtr& l,
+                             const pxr::HdRenderIndexAdapterSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdSceneIndexPluginRegistry& l,
                              const pxr::HdSceneIndexPluginRegistry& r) {
     return &l < &r;
@@ -702,6 +702,14 @@ bool __Overlay::operatorLess(const pxr::HdsiMaterialPrimvarTransferSceneIndexRef
                              const pxr::HdsiMaterialPrimvarTransferSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdsiMaterialRenderContextFilteringSceneIndex& l,
+                             const pxr::HdsiMaterialRenderContextFilteringSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& l,
+                             const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdSiNodeIdentifierResolvingSceneIndex& l,
                              const pxr::HdSiNodeIdentifierResolvingSceneIndex& r) {
     return &l < &r;
@@ -766,6 +774,14 @@ bool __Overlay::operatorLess(const pxr::HdsiPrimTypePruningSceneIndexRefPtr& l,
                              const pxr::HdsiPrimTypePruningSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdsiRenderPassPruneSceneIndex& l,
+                             const pxr::HdsiRenderPassPruneSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiRenderPassPruneSceneIndexRefPtr& l,
+                             const pxr::HdsiRenderPassPruneSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdsiRenderSettingsFilteringSceneIndex& l,
                              const pxr::HdsiRenderSettingsFilteringSceneIndex& r) {
     return &l < &r;
@@ -780,6 +796,14 @@ bool __Overlay::operatorLess(const pxr::HdsiSceneGlobalsSceneIndex& l,
 }
 bool __Overlay::operatorLess(const pxr::HdsiSceneGlobalsSceneIndexRefPtr& l,
                              const pxr::HdsiSceneGlobalsSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiSceneMaterialPruningSceneIndex& l,
+                             const pxr::HdsiSceneMaterialPruningSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& l,
+                             const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdsiSwitchingSceneIndex& l,

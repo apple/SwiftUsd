@@ -667,6 +667,16 @@ extension pxr.UsdMetadataValueMap: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.VtValueRef: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VtMutableValueRef: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.TsSpline: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -863,6 +873,21 @@ extension pxr.SdfDictionaryProxy: CustomStringConvertible {
     }
 }
 extension pxr.SdfRelocatesMapProxy: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.SdfBooleanExpression: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.SdfBooleanExpression.BinaryOperator: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.SdfBooleanExpression.UnaryOperator: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1337,6 +1362,11 @@ extension pxr.ExecProviderResolution.DynamicTraversal: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.ExecValidationErrorType: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLDebugWindow.Buttons: CustomStringConvertible {
     public var description: String {
@@ -1766,6 +1796,11 @@ extension pxr.HdRprimCollection: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.HdSceneIndexPrim: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.HdDataSourceLocator: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1817,6 +1852,11 @@ extension pxr.HdMaterialNode2: CustomStringConvertible {
     }
 }
 extension pxr.HdLight.DirtyBits: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.HdMeshComputationResult: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }

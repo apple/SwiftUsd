@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::HgiMetal from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/imaging/hgiMetal/hgi.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/imaging/hgiMetal/hgi.h
 
 #ifndef SWIFTUSD_WRAPPERS_HGIMETALWRAPPER_H
 #define SWIFTUSD_WRAPPERS_HGIMETALWRAPPER_H

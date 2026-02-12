@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::TfErrorMark from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/base/tf/errorMark.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/base/tf/errorMark.h
 
 #ifndef SWIFTUSD_WRAPPERS_TFERRORMARKWRAPPER_H
 #define SWIFTUSD_WRAPPERS_TFERRORMARKWRAPPER_H

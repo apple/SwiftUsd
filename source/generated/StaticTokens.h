@@ -28,6 +28,7 @@
 #include "pxr/base/trace/reporter.h"
 #include "pxr/exec/ef/leafNode.h"
 #include "pxr/exec/execGeom/tokens.h"
+#include "pxr/exec/execIr/tokens.h"
 #include "pxr/exec/vdf/tokens.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/geomUtil/tokens.h"
@@ -35,6 +36,7 @@
 #include "pxr/imaging/hd/basisCurves.h"
 #include "pxr/imaging/hd/basisCurvesSchema.h"
 #include "pxr/imaging/hd/basisCurvesTopologySchema.h"
+#include "pxr/imaging/hd/builtinMaterialSchema.h"
 #include "pxr/imaging/hd/camera.h"
 #include "pxr/imaging/hd/cameraSchema.h"
 #include "pxr/imaging/hd/capsuleSchema.h"
@@ -47,6 +49,7 @@
 #include "pxr/imaging/hd/cubeSchema.h"
 #include "pxr/imaging/hd/cylinderSchema.h"
 #include "pxr/imaging/hd/dataSourceLegacyPrim.h"
+#include "pxr/imaging/hd/dataSourceLocator.h"
 #include "pxr/imaging/hd/dependenciesSchema.h"
 #include "pxr/imaging/hd/dependencySchema.h"
 #include "pxr/imaging/hd/displayFilterSchema.h"
@@ -75,6 +78,8 @@
 #include "pxr/imaging/hd/materialBindingsSchema.h"
 #include "pxr/imaging/hd/materialConnectionSchema.h"
 #include "pxr/imaging/hd/materialInterfaceMappingSchema.h"
+#include "pxr/imaging/hd/materialInterfaceParameterSchema.h"
+#include "pxr/imaging/hd/materialInterfaceSchema.h"
 #include "pxr/imaging/hd/materialNetworkSchema.h"
 #include "pxr/imaging/hd/materialNodeParameterSchema.h"
 #include "pxr/imaging/hd/materialNodeSchema.h"
@@ -97,8 +102,10 @@
 #include "pxr/imaging/hd/renderProductSchema.h"
 #include "pxr/imaging/hd/renderSettingsSchema.h"
 #include "pxr/imaging/hd/renderVarSchema.h"
+#include "pxr/imaging/hd/rendererCreateArgsSchema.h"
 #include "pxr/imaging/hd/sampleFilterSchema.h"
 #include "pxr/imaging/hd/sceneGlobalsSchema.h"
+#include "pxr/imaging/hd/sceneIndexInputArgsSchema.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
 #include "pxr/imaging/hd/selectionSchema.h"
 #include "pxr/imaging/hd/selectionsSchema.h"
@@ -115,6 +122,7 @@
 #include "pxr/imaging/hd/volumeFieldSchema.h"
 #include "pxr/imaging/hd/xformSchema.h"
 #include "pxr/imaging/hdGp/generativeProcedural.h"
+#include "pxr/imaging/hdMtlx/tokens.h"
 #include "pxr/imaging/hdSt/drawTarget.h"
 #include "pxr/imaging/hdSt/tokens.h"
 #include "pxr/imaging/hdar/systemSchema.h"
@@ -140,7 +148,6 @@
 #include "pxr/usd/sdf/abstractData.h"
 #include "pxr/usd/sdf/fileFormat.h"
 #include "pxr/usd/sdf/schema.h"
-#include "pxr/usd/sdf/textFileFormat.h"
 #include "pxr/usd/sdf/tokens.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/usdFileFormat.h"
@@ -148,16 +155,15 @@
 #include "pxr/usd/sdf/usdcFileFormat.h"
 #include "pxr/usd/sdf/usdzFileFormat.h"
 #include "pxr/usd/sdr/shaderNode.h"
+#include "pxr/usd/sdr/shaderNodeMetadata.h"
 #include "pxr/usd/sdr/shaderProperty.h"
+#include "pxr/usd/sdr/shaderPropertyMetadata.h"
+#include "pxr/usd/usd/attributeLimits.h"
 #include "pxr/usd/usd/clipsAPI.h"
 #include "pxr/usd/usd/collectionMembershipQuery.h"
 #include "pxr/usd/usd/modelAPI.h"
 #include "pxr/usd/usd/timeCode.h"
 #include "pxr/usd/usd/tokens.h"
-#include "pxr/usd/usd/usdFileFormat.h"
-#include "pxr/usd/usd/usdaFileFormat.h"
-#include "pxr/usd/usd/usdcFileFormat.h"
-#include "pxr/usd/usd/usdzFileFormat.h"
 #include "pxr/usd/usdGeom/tokens.h"
 #include "pxr/usd/usdGeom/xformOp.h"
 #include "pxr/usd/usdHydra/tokens.h"
@@ -173,6 +179,7 @@
 #include "pxr/usd/usdSemantics/tokens.h"
 #include "pxr/usd/usdShade/tokens.h"
 #include "pxr/usd/usdSkel/tokens.h"
+#include "pxr/usd/usdUI/objectHints.h"
 #include "pxr/usd/usdUI/tokens.h"
 #include "pxr/usd/usdUtils/introspection.h"
 #include "pxr/usd/usdUtils/timeCodeRange.h"
@@ -184,6 +191,7 @@
 #include "pxr/usdImaging/usdImaging/extentResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/extentsHintSchema.h"
 #include "pxr/usdImaging/usdImaging/geomModelSchema.h"
+#include "pxr/usdImaging/usdImaging/geomXformVectorsSchema.h"
 #include "pxr/usdImaging/usdImaging/materialBindingSchema.h"
 #include "pxr/usdImaging/usdImaging/materialBindingsSchema.h"
 #include "pxr/usdImaging/usdImaging/modelSchema.h"
@@ -193,6 +201,8 @@
 #include "pxr/usdImaging/usdImaging/usdRenderProductSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderSettingsSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderVarSchema.h"
+#include "pxr/usdImaging/usdImaging/usdSceneIndexInputArgsSchema.h"
+#include "pxr/usdImaging/usdRiPxrImaging/projectionSchema.h"
 #include "pxr/usdImaging/usdRiPxrImaging/tokens.h"
 #include "pxr/usdImaging/usdSkelImaging/animationSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/bindingSchema.h"
@@ -216,28 +226,25 @@ namespace __Overlay {
     extern const pxr::SdfFieldKeys_StaticTokenType* const SdfFieldKeys;
     extern const pxr::SdfChildrenKeys_StaticTokenType* const SdfChildrenKeys;
     extern const pxr::SdfFileFormatTokens_StaticTokenType* const SdfFileFormatTokens;
-    extern const pxr::SdfTextFileFormatTokens_StaticTokenType* const SdfTextFileFormatTokens;
     extern const pxr::SdfUsdFileFormatTokens_StaticTokenType* const SdfUsdFileFormatTokens;
     extern const pxr::SdfUsdaFileFormatTokens_StaticTokenType* const SdfUsdaFileFormatTokens;
     extern const pxr::SdfUsdcFileFormatTokens_StaticTokenType* const SdfUsdcFileFormatTokens;
     extern const pxr::SdfUsdzFileFormatTokens_StaticTokenType* const SdfUsdzFileFormatTokens;
     extern const pxr::SdrPropertyTypes_StaticTokenType* const SdrPropertyTypes;
-    extern const pxr::SdrPropertyMetadata_StaticTokenType* const SdrPropertyMetadata;
-    extern const pxr::SdrPropertyRole_StaticTokenType* const SdrPropertyRole;
-    extern const pxr::SdrPropertyTokens_StaticTokenType* const SdrPropertyTokens;
+    extern const pxr::SdrNodeFieldKey_StaticTokenType* const SdrNodeFieldKey;
     extern const pxr::SdrNodeMetadata_StaticTokenType* const SdrNodeMetadata;
     extern const pxr::SdrNodeContext_StaticTokenType* const SdrNodeContext;
     extern const pxr::SdrNodeRole_StaticTokenType* const SdrNodeRole;
+    extern const pxr::SdrPropertyMetadata_StaticTokenType* const SdrPropertyMetadata;
+    extern const pxr::SdrPropertyRole_StaticTokenType* const SdrPropertyRole;
+    extern const pxr::SdrPropertyTokens_StaticTokenType* const SdrPropertyTokens;
     extern const pxr::UsdTimeCodeTokens_StaticTokenType* const UsdTimeCodeTokens;
     extern const pxr::UsdClipsAPIInfoKeys_StaticTokenType* const UsdClipsAPIInfoKeys;
     extern const pxr::UsdClipsAPISetNames_StaticTokenType* const UsdClipsAPISetNames;
     extern const pxr::UsdTokensType* const UsdTokens;
     extern const pxr::UsdCollectionMembershipQueryTokens_StaticTokenType* const UsdCollectionMembershipQueryTokens;
     extern const pxr::UsdModelAPIAssetInfoKeys_StaticTokenType* const UsdModelAPIAssetInfoKeys;
-    extern const pxr::UsdUsdFileFormatTokens_StaticTokenType* const UsdUsdFileFormatTokens;
-    extern const pxr::UsdUsdaFileFormatTokens_StaticTokenType* const UsdUsdaFileFormatTokens;
-    extern const pxr::UsdUsdcFileFormatTokens_StaticTokenType* const UsdUsdcFileFormatTokens;
-    extern const pxr::UsdUsdzFileFormatTokens_StaticTokenType* const UsdUsdzFileFormatTokens;
+    extern const pxr::UsdLimitsKeys_StaticTokenType* const UsdLimitsKeys;
     extern const pxr::UsdGeomTokensType* const UsdGeomTokens;
     extern const pxr::UsdGeomXformOpTypes_StaticTokenType* const UsdGeomXformOpTypes;
     extern const pxr::UsdVolTokensType* const UsdVolTokens;
@@ -251,6 +258,7 @@ namespace __Overlay {
     extern const pxr::UsdSemanticsTokensType* const UsdSemanticsTokens;
     extern const pxr::UsdSkelTokensType* const UsdSkelTokens;
     extern const pxr::UsdUITokensType* const UsdUITokens;
+    extern const pxr::UsdUIHintKeys_StaticTokenType* const UsdUIHintKeys;
     extern const pxr::UsdUtilsUsdStageStatsKeys_StaticTokenType* const UsdUtilsUsdStageStatsKeys;
     extern const pxr::UsdUtilsTimeCodeRangeTokens_StaticTokenType* const UsdUtilsTimeCodeRangeTokens;
     extern const pxr::UsdPhysicsTokensType* const UsdPhysicsTokens;
@@ -260,6 +268,7 @@ namespace __Overlay {
     extern const pxr::VdfTokens_StaticTokenType* const VdfTokens;
     extern const pxr::EfLeafTokens_StaticTokenType* const EfLeafTokens;
     extern const pxr::ExecGeomXformableTokens_StaticTokenType* const ExecGeomXformableTokens;
+    extern const pxr::ExecIrTokens_StaticTokenType* const ExecIrTokens;
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
     extern const pxr::HioGlslfxTokens_StaticTokenType* const HioGlslfxTokens;
     extern const pxr::HioGlslfxResourceLayoutTokens_StaticTokenType* const HioGlslfxResourceLayoutTokens;
@@ -295,8 +304,12 @@ namespace __Overlay {
     extern const pxr::HdResourceTypeTokens_StaticTokenType* const HdResourceTypeTokens;
     extern const pxr::HdSceneIndexEmulationTokens_StaticTokenType* const HdSceneIndexEmulationTokens;
     extern const pxr::HdCollectionEmulationTokens_StaticTokenType* const HdCollectionEmulationTokens;
+    extern const pxr::HdSkinningInputTokens_StaticTokenType* const HdSkinningInputTokens;
+    extern const pxr::HdSkinningSkelInputTokens_StaticTokenType* const HdSkinningSkelInputTokens;
+    extern const pxr::HdDataSourceLocatorSentinelTokens_StaticTokenType* const HdDataSourceLocatorSentinelTokens;
     extern const pxr::HdBasisCurvesSchemaTokens_StaticTokenType* const HdBasisCurvesSchemaTokens;
     extern const pxr::HdBasisCurvesTopologySchemaTokens_StaticTokenType* const HdBasisCurvesTopologySchemaTokens;
+    extern const pxr::HdBuiltinMaterialSchemaTokens_StaticTokenType* const HdBuiltinMaterialSchemaTokens;
     extern const pxr::HdCameraTokens_StaticTokenType* const HdCameraTokens;
     extern const pxr::HdCameraSchemaTokens_StaticTokenType* const HdCameraSchemaTokens;
     extern const pxr::HdSplitDiopterSchemaTokens_StaticTokenType* const HdSplitDiopterSchemaTokens;
@@ -313,6 +326,7 @@ namespace __Overlay {
     extern const pxr::HdLegacyPrimTypeTokens_StaticTokenType* const HdLegacyPrimTypeTokens;
     extern const pxr::HdLegacyFlagTokens_StaticTokenType* const HdLegacyFlagTokens;
     extern const pxr::HdMaterialNetworkSchemaTokens_StaticTokenType* const HdMaterialNetworkSchemaTokens;
+    extern const pxr::HdMaterialInterfaceSchemaTokens_StaticTokenType* const HdMaterialInterfaceSchemaTokens;
     extern const pxr::HdMaterialNodeSchemaTokens_StaticTokenType* const HdMaterialNodeSchemaTokens;
     extern const pxr::HdDependenciesSchemaTokens_StaticTokenType* const HdDependenciesSchemaTokens;
     extern const pxr::HdDependencySchemaTokens_StaticTokenType* const HdDependencySchemaTokens;
@@ -342,6 +356,7 @@ namespace __Overlay {
     extern const pxr::HdMaterialBindingsSchemaTokens_StaticTokenType* const HdMaterialBindingsSchemaTokens;
     extern const pxr::HdMaterialConnectionSchemaTokens_StaticTokenType* const HdMaterialConnectionSchemaTokens;
     extern const pxr::HdMaterialInterfaceMappingSchemaTokens_StaticTokenType* const HdMaterialInterfaceMappingSchemaTokens;
+    extern const pxr::HdMaterialInterfaceParameterSchemaTokens_StaticTokenType* const HdMaterialInterfaceParameterSchemaTokens;
     extern const pxr::HdMaterialNodeParameterSchemaTokens_StaticTokenType* const HdMaterialNodeParameterSchemaTokens;
     extern const pxr::HdMaterialOverrideSchemaTokens_StaticTokenType* const HdMaterialOverrideSchemaTokens;
     extern const pxr::HdMaterialSchemaTokens_StaticTokenType* const HdMaterialSchemaTokens;
@@ -358,12 +373,14 @@ namespace __Overlay {
     extern const pxr::HdPurposeSchemaTokens_StaticTokenType* const HdPurposeSchemaTokens;
     extern const pxr::HdRenderBufferSchemaTokens_StaticTokenType* const HdRenderBufferSchemaTokens;
     extern const pxr::HdRenderCapabilitiesSchemaTokens_StaticTokenType* const HdRenderCapabilitiesSchemaTokens;
+    extern const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const HdRendererCreateArgsSchemaTokens;
     extern const pxr::HdRenderPassSchemaTokens_StaticTokenType* const HdRenderPassSchemaTokens;
     extern const pxr::HdRenderProductSchemaTokens_StaticTokenType* const HdRenderProductSchemaTokens;
     extern const pxr::HdRenderSettingsSchemaTokens_StaticTokenType* const HdRenderSettingsSchemaTokens;
     extern const pxr::HdRenderVarSchemaTokens_StaticTokenType* const HdRenderVarSchemaTokens;
     extern const pxr::HdSampleFilterSchemaTokens_StaticTokenType* const HdSampleFilterSchemaTokens;
     extern const pxr::HdSceneGlobalsSchemaTokens_StaticTokenType* const HdSceneGlobalsSchemaTokens;
+    extern const pxr::HdSceneIndexInputArgsSchemaTokens_StaticTokenType* const HdSceneIndexInputArgsSchemaTokens;
     extern const pxr::HdSceneIndexPluginRegistryTokens_StaticTokenType* const HdSceneIndexPluginRegistryTokens;
     extern const pxr::HdSelectionSchemaTokens_StaticTokenType* const HdSelectionSchemaTokens;
     extern const pxr::HdSelectionsSchemaTokens_StaticTokenType* const HdSelectionsSchemaTokens;
@@ -389,6 +406,7 @@ namespace __Overlay {
     extern const pxr::HdsiRenderSettingsFilteringSceneIndexTokens_StaticTokenType* const HdsiRenderSettingsFilteringSceneIndexTokens;
     extern const pxr::HdsiUnboundMaterialPruningSceneIndexTokens_StaticTokenType* const HdsiUnboundMaterialPruningSceneIndexTokens;
     extern const pxr::HdsiVelocityMotionResolvingSceneIndexTokens_StaticTokenType* const HdsiVelocityMotionResolvingSceneIndexTokens;
+    extern const pxr::HdMtlxTokens_StaticTokenType* const HdMtlxTokens;
     extern const pxr::HdStDrawTargetTokens_StaticTokenType* const HdStDrawTargetTokens;
     extern const pxr::HdStGLSLProgramTokens_StaticTokenType* const HdStGLSLProgramTokens;
     extern const pxr::HdStTokens_StaticTokenType* const HdStTokens;
@@ -414,6 +432,7 @@ namespace __Overlay {
     extern const pxr::UsdImagingExtentResolvingSceneIndexTokens_StaticTokenType* const UsdImagingExtentResolvingSceneIndexTokens;
     extern const pxr::UsdImagingExtentsHintSchemaTokens_StaticTokenType* const UsdImagingExtentsHintSchemaTokens;
     extern const pxr::UsdImagingGeomModelSchemaTokens_StaticTokenType* const UsdImagingGeomModelSchemaTokens;
+    extern const pxr::UsdImagingGeomXformVectorsSchemaTokens_StaticTokenType* const UsdImagingGeomXformVectorsSchemaTokens;
     extern const pxr::UsdImagingModelSchemaTokens_StaticTokenType* const UsdImagingModelSchemaTokens;
     extern const pxr::UsdImagingStageSceneIndexTokens_StaticTokenType* const UsdImagingStageSceneIndexTokens;
     extern const pxr::UsdImagingTokens_StaticTokenType* const UsdImagingTokens;
@@ -423,17 +442,22 @@ namespace __Overlay {
     extern const pxr::UsdImagingUsdRenderProductSchemaTokens_StaticTokenType* const UsdImagingUsdRenderProductSchemaTokens;
     extern const pxr::UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType* const UsdImagingUsdRenderSettingsSchemaTokens;
     extern const pxr::UsdImagingUsdRenderVarSchemaTokens_StaticTokenType* const UsdImagingUsdRenderVarSchemaTokens;
+    extern const pxr::UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType* const UsdImagingUsdSceneIndexInputArgsSchemaTokens;
+    extern const pxr::UsdRiPxrImagingProjectionSchemaTokens_StaticTokenType* const UsdRiPxrImagingProjectionSchemaTokens;
     extern const pxr::UsdRiPxrImagingTokens_StaticTokenType* const UsdRiPxrImagingTokens;
+    extern const pxr::UsdRiPxrImagingPrimTypeTokens_StaticTokenType* const UsdRiPxrImagingPrimTypeTokens;
     extern const pxr::UsdSkelImagingAnimationSchemaTokens_StaticTokenType* const UsdSkelImagingAnimationSchemaTokens;
     extern const pxr::UsdSkelImagingBindingSchemaTokens_StaticTokenType* const UsdSkelImagingBindingSchemaTokens;
     extern const pxr::UsdSkelImagingBlendShapeSchemaTokens_StaticTokenType* const UsdSkelImagingBlendShapeSchemaTokens;
     extern const pxr::UsdSkelImagingResolvedSkeletonSchemaTokens_StaticTokenType* const UsdSkelImagingResolvedSkeletonSchemaTokens;
     extern const pxr::UsdSkelImagingSkeletonSchemaTokens_StaticTokenType* const UsdSkelImagingSkeletonSchemaTokens;
     extern const pxr::UsdSkelImagingInbetweenShapeSchemaTokens_StaticTokenType* const UsdSkelImagingInbetweenShapeSchemaTokens;
+    extern const pxr::UsdSkelImagingExtComputationTypeTokens_StaticTokenType* const UsdSkelImagingExtComputationTypeTokens;
     extern const pxr::UsdSkelImagingPrimTypeTokens_StaticTokenType* const UsdSkelImagingPrimTypeTokens;
     extern const pxr::UsdSkelImagingExtComputationNameTokens_StaticTokenType* const UsdSkelImagingExtComputationNameTokens;
     extern const pxr::UsdSkelImagingExtAggregatorComputationInputNameTokens_StaticTokenType* const UsdSkelImagingExtAggregatorComputationInputNameTokens;
     extern const pxr::UsdSkelImagingExtComputationInputNameTokens_StaticTokenType* const UsdSkelImagingExtComputationInputNameTokens;
+    extern const pxr::UsdSkelImagingExtComputationLegacyInputNameTokens_StaticTokenType* const UsdSkelImagingExtComputationLegacyInputNameTokens;
     extern const pxr::UsdSkelImagingExtComputationOutputNameTokens_StaticTokenType* const UsdSkelImagingExtComputationOutputNameTokens;
     extern const pxr::UsdVolImagingTokens_StaticTokenType* const UsdVolImagingTokens;
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT

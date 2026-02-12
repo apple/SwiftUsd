@@ -392,8 +392,25 @@ struct Framework: Sendable {
             i += 1
         }
 
-        // Resolve any symlinks, then deduplicate
-        return Array(Set(result.map { $0.resolvingSymlinksInPath() } ))
+        // Resolve any symlinks, then deduplicate.
+        // Deduplication has to be on the actual framework url, because
+        // we might pick up dylibs that are the same file, just
+        // different version specificities
+        result = result.map { $0.resolvingSymlinksInPath().absoluteURL }
+        var deduplicatedResult = [URL]()
+        var frameworkUrls = Set<URL>()
+        for x in result {
+            let fsInfo = usdInstall.framework(originalDylib: x)
+            if frameworkUrls.contains(fsInfo.url) {
+                print("Deduplicated \(fsInfo.name).framework")
+                continue
+            }
+            
+            deduplicatedResult.append(x)
+            frameworkUrls.insert(fsInfo.url)
+        }
+
+        return deduplicatedResult
     }
     
     /// Returns a list of dylibs loaded by `@rpath` by `dylib`

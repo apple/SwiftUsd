@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::UsdPrimTypeInfo from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usd/usd/primTypeInfo.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/usd/usd/primTypeInfo.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDPRIMTYPEINFOWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDPRIMTYPEINFOWRAPPER_H

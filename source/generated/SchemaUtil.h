@@ -137,7 +137,22 @@
 #include "pxr/usd/usdVol/fieldAsset.h"
 #include "pxr/usd/usdVol/fieldBase.h"
 #include "pxr/usd/usdVol/openVDBAsset.h"
+#include "pxr/usd/usdVol/particleField.h"
+#include "pxr/usd/usdVol/particleField3DGaussianSplat.h"
+#include "pxr/usd/usdVol/particleFieldKernelBaseAPI.h"
+#include "pxr/usd/usdVol/particleFieldKernelConstantSurfletAPI.h"
+#include "pxr/usd/usdVol/particleFieldKernelGaussianEllipsoidAPI.h"
+#include "pxr/usd/usdVol/particleFieldKernelGaussianSurfletAPI.h"
+#include "pxr/usd/usdVol/particleFieldOpacityAttributeAPI.h"
+#include "pxr/usd/usdVol/particleFieldOrientationAttributeAPI.h"
+#include "pxr/usd/usdVol/particleFieldPositionAttributeAPI.h"
+#include "pxr/usd/usdVol/particleFieldPositionBaseAPI.h"
+#include "pxr/usd/usdVol/particleFieldRadianceBaseAPI.h"
+#include "pxr/usd/usdVol/particleFieldScaleAttributeAPI.h"
+#include "pxr/usd/usdVol/particleFieldSphericalHarmonicsAttributeAPI.h"
 #include "pxr/usd/usdVol/volume.h"
+#include "pxr/usd/usdVol/volumeFieldAsset.h"
+#include "pxr/usd/usdVol/volumeFieldBase.h"
 
 namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdAPISchemaBase& x);
@@ -181,8 +196,23 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdGeomXformCommonAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolField3DAsset& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolFieldAsset& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolVolumeFieldAsset& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolFieldBase& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolVolumeFieldBase& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolOpenVDBAsset& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleField& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleField3DGaussianSplat& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldPositionAttributeAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldPositionBaseAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldOrientationAttributeAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldScaleAttributeAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldOpacityAttributeAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldKernelGaussianEllipsoidAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldKernelBaseAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldSphericalHarmonicsAttributeAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldRadianceBaseAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldKernelConstantSurfletAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolVolume& x);
     pxr::UsdPrim GetPrim(const pxr::UsdMediaAssetPreviewsAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdMediaSpatialAudio& x);
@@ -298,8 +328,23 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdGeomXformCommonAPI& x);
     bool convertToBool(const pxr::UsdVolField3DAsset& x);
     bool convertToBool(const pxr::UsdVolFieldAsset& x);
+    bool convertToBool(const pxr::UsdVolVolumeFieldAsset& x);
     bool convertToBool(const pxr::UsdVolFieldBase& x);
+    bool convertToBool(const pxr::UsdVolVolumeFieldBase& x);
     bool convertToBool(const pxr::UsdVolOpenVDBAsset& x);
+    bool convertToBool(const pxr::UsdVolParticleField& x);
+    bool convertToBool(const pxr::UsdVolParticleField3DGaussianSplat& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldPositionAttributeAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldPositionBaseAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldOrientationAttributeAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldScaleAttributeAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldOpacityAttributeAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldKernelGaussianEllipsoidAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldKernelBaseAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldSphericalHarmonicsAttributeAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldRadianceBaseAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldKernelConstantSurfletAPI& x);
+    bool convertToBool(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x);
     bool convertToBool(const pxr::UsdVolVolume& x);
     bool convertToBool(const pxr::UsdMediaAssetPreviewsAPI& x);
     bool convertToBool(const pxr::UsdMediaSpatialAudio& x);

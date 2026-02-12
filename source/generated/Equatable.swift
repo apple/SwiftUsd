@@ -71,13 +71,71 @@
 // pxr::VtArray<std::vector<double, std::allocator<double>>>
 // pxr::VtArray<std::vector<std::string, std::allocator<std::string>>>
 // pxr::VtArray<pxr::VtArray<int>>
+// pxr::VtArray<pxr::VtArrayEdit<bool>>
+// pxr::VtArray<pxr::VtArrayEdit<char>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatd>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatf>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuath>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfInterval>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatd>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuaternion>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatf>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuath>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRect2i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4d>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4f>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4h>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4i>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::TfToken>>
+// pxr::VtArray<pxr::VtArrayEdit<pxr::pxr_half::half>>
+// pxr::VtArray<pxr::VtArrayEdit<double>>
+// pxr::VtArray<pxr::VtArrayEdit<float>>
+// pxr::VtArray<pxr::VtArrayEdit<int>>
+// pxr::VtArray<pxr::VtArrayEdit<long long>>
+// pxr::VtArray<pxr::VtArrayEdit<short>>
+// pxr::VtArray<pxr::VtArrayEdit<std::string>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned char>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned int>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned long long>>
+// pxr::VtArray<pxr::VtArrayEdit<unsigned short>>
+// pxr::VtArrayEdit<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
+// pxr::VtArrayEdit<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
+// pxr::VtArrayEdit<std::vector<double, std::allocator<double>>>
+// pxr::VtArrayEdit<std::vector<std::string, std::allocator<std::string>>>
 // pxr::VtArray<pxr::VtDictionary>
+// pxr::VtArrayEdit<pxr::VtDictionary>
 // pxr::VtArray<pxr::VtValue>
+// pxr::VtArray<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::VtArrayEdit<pxr::VtValue>
+// pxr::VtArrayEdit<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // pxr::VtArray<pxr::TsSpline>
+// pxr::VtArrayEdit<pxr::TsSpline>
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPath>
 // pxr::VtArray<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArray<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
+// pxr::VtArrayEdit<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
+// pxr::VtArrayEdit<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::HdInstancer *, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdInstancer *>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
@@ -91,16 +149,26 @@
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::TfHashMultiMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // pxr::VtArray<pxr::SdfSpecifier>
+// pxr::VtArrayEdit<pxr::SdfSpecifier>
 // pxr::VtArray<pxr::SdfPermission>
+// pxr::VtArrayEdit<pxr::SdfPermission>
 // pxr::VtArray<pxr::SdfVariability>
+// pxr::VtArrayEdit<pxr::SdfVariability>
 // pxr::TfHashMap<pxr::SdfUnregisteredValue, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>
 // pxr::VtArray<pxr::SdfUnregisteredValue>
+// pxr::VtArrayEdit<pxr::SdfUnregisteredValue>
 // pxr::VtArray<pxr::SdfValueBlock>
+// pxr::VtArrayEdit<pxr::SdfValueBlock>
 // pxr::VtArray<pxr::SdfAnimationBlock>
+// pxr::VtArrayEdit<pxr::SdfAnimationBlock>
 // pxr::VtArray<pxr::SdfAssetPath>
+// pxr::VtArrayEdit<pxr::SdfAssetPath>
 // pxr::VtArray<pxr::SdfOpaqueValue>
+// pxr::VtArrayEdit<pxr::SdfOpaqueValue>
 // pxr::VtArray<pxr::SdfPathExpression>
+// pxr::VtArrayEdit<pxr::SdfPathExpression>
 // pxr::VtArray<pxr::SdfTimeCode>
+// pxr::VtArrayEdit<pxr::SdfTimeCode>
 // pxr::TfWeakPtr<pxr::SdfSchemaBase>
 // pxr::TfHashMap<pxr::TfToken, pxr::SdfSchemaBase::FieldDefinition, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdfSchemaBase::FieldDefinition>>>
 // pxr::SdfListProxy<pxr::SdfNameKeyPolicy>
@@ -108,8 +176,10 @@
 // pxr::SdfListProxy<pxr::SdfReferenceTypePolicy>
 // pxr::TfHashMap<std::string, pxr::TfRefPtr<pxr::SdfLayer>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::SdfLayer>>>>
 // pxr::VtArray<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
+// pxr::VtArrayEdit<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
 // pxr::TfHashMap<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPayload>
+// pxr::VtArrayEdit<pxr::SdfPayload>
 // pxr::TfHashMap<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::GfMatrix4d, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::SdfPath>>>
@@ -119,12 +189,12 @@
 // pxr::TfHashMap<pxr::UsdPrim, pxr::UsdGeomImageable::PurposeInfo, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::UsdGeomImageable::PurposeInfo>>>
 // pxr::TfRefPtr<pxr::UsdHydraDiscoveryPlugin>
 // pxr::VtArray<pxr::UsdSkelSkinningQuery>
+// pxr::VdfConnectorMap<pxr::VdfInput>
 // pxr::TfHashMap<pxr::VdfOutput *, pxr::VdfMask, pxr::TfHash, std::equal_to<pxr::VdfOutput *>, std::allocator<std::pair<pxr::VdfOutput *, pxr::VdfMask>>>
 // pxr::TfHashMap<pxr::VdfMask, unsigned long, pxr::VdfMask::HashFunctor, std::equal_to<pxr::VdfMask>, std::allocator<std::pair<pxr::VdfMask const, unsigned long>>>
 // pxr::TfHashMap<pxr::VdfMaskedOutput, unsigned long, pxr::VdfMaskedOutput::Hash, std::equal_to<pxr::VdfMaskedOutput>, std::allocator<std::pair<pxr::VdfMaskedOutput const, unsigned long>>>
 // pxr::VdfIndexedDataIterator<int>
-// pxr::VdfLinearMap<pxr::TfToken, pxr::VdfInput *>
-// pxr::VdfLinearMap<pxr::TfToken, pxr::VdfOutput *>
+// pxr::VdfConnectorMap<pxr::VdfOutput>
 // pxr::TfHashMap<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle, pxr::TfHash, std::equal_to<pxr::VdfNode const *>, std::allocator<std::pair<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle>>>
 // pxr::TfHashMap<pxr::VdfObjectPtr, pxr::TfToken, pxr::VdfObjectPtr::HashFunctor, std::equal_to<pxr::VdfObjectPtr>, std::allocator<std::pair<pxr::VdfObjectPtr const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::VdfObjectPtr, std::string, pxr::VdfObjectPtr::HashFunctor, std::equal_to<pxr::VdfObjectPtr>, std::allocator<std::pair<pxr::VdfObjectPtr const, std::string>>>
@@ -133,6 +203,7 @@
 // pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>
 // pxr::TfHashMap<pxr::TfToken, std::shared_ptr<pxr::UsdImagingPrimAdapter>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>
 // pxr::TfWeakPtr<pxr::UsdImagingStageSceneIndex>
+// pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
 
 
 // Conformance available:
@@ -585,53 +656,241 @@ extension pxr.VtUShortArray: Equatable { // classTemplateSpecialization
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
-extension pxr.VtDualQuatdArrayEdit: Equatable {} // friendFunction
-extension pxr.VtDualQuatfArrayEdit: Equatable {} // friendFunction
-extension pxr.VtDualQuathArrayEdit: Equatable {} // friendFunction
-extension pxr.VtHalfArrayEdit: Equatable {} // friendFunction
-extension pxr.VtIntervalArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix2dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix2fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix3dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix3fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix4dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtMatrix4fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtQuatdArrayEdit: Equatable {} // friendFunction
-extension pxr.VtQuaternionArrayEdit: Equatable {} // friendFunction
-extension pxr.VtQuatfArrayEdit: Equatable {} // friendFunction
-extension pxr.VtQuathArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange1dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange1fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange2dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange2fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange3dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRange3fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtRect2iArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec2dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec2fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec2hArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec2iArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec3dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec3fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec3hArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec3iArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec4dArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec4fArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec4hArrayEdit: Equatable {} // friendFunction
-extension pxr.VtVec4iArrayEdit: Equatable {} // friendFunction
-extension pxr.VtTokenArrayEdit: Equatable {} // friendFunction
-extension pxr.VtBoolArrayEdit: Equatable {} // friendFunction
-extension pxr.VtCharArrayEdit: Equatable {} // friendFunction
-extension pxr.VtDoubleArrayEdit: Equatable {} // friendFunction
-extension pxr.VtFloatArrayEdit: Equatable {} // friendFunction
-extension pxr.VtInt64ArrayEdit: Equatable {} // friendFunction
-extension pxr.VtIntArrayEdit: Equatable {} // friendFunction
-extension pxr.VtShortArrayEdit: Equatable {} // friendFunction
-extension pxr.VtStringArrayEdit: Equatable {} // friendFunction
-extension pxr.VtUInt64ArrayEdit: Equatable {} // friendFunction
-extension pxr.VtUCharArrayEdit: Equatable {} // friendFunction
-extension pxr.VtUIntArrayEdit: Equatable {} // friendFunction
-extension pxr.VtUShortArrayEdit: Equatable {} // friendFunction
+extension pxr.VtBoolArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtCharArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtDualQuatdArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtDualQuatfArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtDualQuathArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtIntervalArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix2dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix2fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix3dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix3fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix4dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtMatrix4fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtQuatdArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtQuaternionArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtQuatfArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtQuathArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange1dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange1fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange2dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange2fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange3dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRange3fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtRect2iArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec2dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec2fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec2hArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec2iArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec3dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec3fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec3hArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec3iArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec4dArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec4fArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec4hArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtVec4iArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtTokenArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtHalfArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtDoubleArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtFloatArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtIntArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtInt64ArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtShortArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtStringArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtUCharArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtUIntArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtUInt64ArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtUShortArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.VtDictionary: Equatable {} // foundBySwift
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.HdAovSettingsMap: Equatable { // classTemplateSpecialization
@@ -651,6 +910,12 @@ extension pxr.VtDictionary.const_iterator: Equatable { // classTemplateSpecializ
     }
 }
 extension pxr.VtValue: Equatable {} // foundBySwift
+extension pxr.VtValueRef: Equatable {} // foundBySwift
+extension pxr.VtMutableValueRef: Equatable { // differentArgumentTypes
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.TsSpline: Equatable {} // foundBySwift
 extension pxr.TsLoopParams: Equatable {} // foundBySwift
 extension pxr.TsExtrapolation: Equatable {} // foundBySwift
@@ -864,16 +1129,6 @@ extension pxr.SdfRelationshipSpec: Equatable { // differentArgumentTypes
     }
 }
 extension pxr.SdfSite: Equatable {} // foundBySwift
-extension pxr.SdfTextFileFormat: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.SdfTextFileFormat, rhs: pxr.SdfTextFileFormat) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.SdfTextFileFormatRefPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
 extension pxr.SdfUsdFileFormat: Equatable { // importedAsReference
     public static func ==(lhs: pxr.SdfUsdFileFormat, rhs: pxr.SdfUsdFileFormat) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1061,6 +1316,8 @@ extension pxr.UsdRelationship: Equatable { // differentArgumentTypes
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.UsdAttributeLimits: Equatable {} // foundBySwift
+extension pxr.UsdAttributeLimits.ValidationResult: Equatable {} // foundBySwift
 extension pxr.UsdNotice.ObjectsChanged.PathRange.iterator: Equatable { // availableShouldBeFoundBySwiftButIsnt
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1084,6 +1341,22 @@ extension pxr.UsdSkelInbetweenShape: Equatable {} // foundBySwift
 extension pxr.UsdSkelAnimMapper: Equatable {} // foundBySwift
 extension pxr.UsdSkelAnimQuery: Equatable {} // friendFunction
 extension pxr.UsdSkelSkeletonQuery: Equatable {} // friendFunction
+extension pxr.UsdUIAttributeHints: Equatable { // differentArgumentTypes
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.UsdUIPropertyHints: Equatable { // differentArgumentTypes
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.UsdUIObjectHints: Equatable {} // foundBySwift
+extension pxr.UsdUIPrimHints: Equatable { // differentArgumentTypes
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.UsdUtilsDependencyInfo: Equatable {} // foundBySwift
 extension pxr.UsdUtilsTimeCodeRange: Equatable {} // foundBySwift
 extension pxr.UsdUtilsTimeCodeRange.const_iterator: Equatable {} // foundBySwift
@@ -1453,6 +1726,7 @@ extension pxr.HdMaterialFilteringSceneIndexBase: Equatable { // importedAsRefere
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.HdRendererCreateArgs: Equatable {} // foundBySwift
 extension pxr.HdPrefixingSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdPrefixingSceneIndex, rhs: pxr.HdPrefixingSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1468,8 +1742,19 @@ extension pxr.HdPrimOriginSchema.OriginPath: Equatable { // availableShouldBeFou
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.HdRenderDelegateInfo: Equatable {} // foundBySwift
 extension pxr.HdRendererPluginRegistry: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdRendererPluginRegistry, rhs: pxr.HdRendererPluginRegistry) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdRenderIndexAdapterSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdRenderIndexAdapterSceneIndex, rhs: pxr.HdRenderIndexAdapterSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdRenderIndexAdapterSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
@@ -1619,6 +1904,16 @@ extension pxr.HdsiMaterialPrimvarTransferSceneIndexRefPtr: Equatable { // classT
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.HdsiMaterialRenderContextFilteringSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiMaterialRenderContextFilteringSceneIndex, rhs: pxr.HdsiMaterialRenderContextFilteringSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiMaterialRenderContextFilteringSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.HdSiNodeIdentifierResolvingSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdSiNodeIdentifierResolvingSceneIndex, rhs: pxr.HdSiNodeIdentifierResolvingSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1699,6 +1994,16 @@ extension pxr.HdsiPrimTypePruningSceneIndexRefPtr: Equatable { // classTemplateS
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.HdsiRenderPassPruneSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiRenderPassPruneSceneIndex, rhs: pxr.HdsiRenderPassPruneSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiRenderPassPruneSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.HdsiRenderSettingsFilteringSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdsiRenderSettingsFilteringSceneIndex, rhs: pxr.HdsiRenderSettingsFilteringSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1715,6 +2020,16 @@ extension pxr.HdsiSceneGlobalsSceneIndex: Equatable { // importedAsReference
     }
 }
 extension pxr.HdsiSceneGlobalsSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiSceneMaterialPruningSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiSceneMaterialPruningSceneIndex, rhs: pxr.HdsiSceneMaterialPruningSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiSceneMaterialPruningSceneIndexRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }

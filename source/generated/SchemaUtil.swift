@@ -63,8 +63,23 @@ extension Bool {
     public init(_ x: pxr.UsdGeomXformCommonAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolField3DAsset) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolFieldAsset) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolVolumeFieldAsset) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolFieldBase) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolVolumeFieldBase) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolOpenVDBAsset) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleField) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleField3DGaussianSplat) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldPositionAttributeAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldPositionBaseAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldOrientationAttributeAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldScaleAttributeAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldOpacityAttributeAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldKernelGaussianEllipsoidAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldKernelBaseAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldSphericalHarmonicsAttributeAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldRadianceBaseAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldKernelConstantSurfletAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdVolParticleFieldKernelGaussianSurfletAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolVolume) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdMediaAssetPreviewsAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdMediaSpatialAudio) { self.init(__Overlay.convertToBool(x)) }

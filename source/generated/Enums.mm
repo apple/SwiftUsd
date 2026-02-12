@@ -227,6 +227,17 @@ const pxr::SdfPredicateExpression::Op Overlay::SdfPredicateExpression::ImpliedAn
 const pxr::SdfPredicateExpression::Op Overlay::SdfPredicateExpression::And = pxr::SdfPredicateExpression::And;
 const pxr::SdfPredicateExpression::Op Overlay::SdfPredicateExpression::Or = pxr::SdfPredicateExpression::Or;
 
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::EqualTo = pxr::SdfBooleanExpression::BinaryOperator::EqualTo;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::NotEqualTo = pxr::SdfBooleanExpression::BinaryOperator::NotEqualTo;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::LessThan = pxr::SdfBooleanExpression::BinaryOperator::LessThan;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::LessThanOrEqualTo = pxr::SdfBooleanExpression::BinaryOperator::LessThanOrEqualTo;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::GreaterThan = pxr::SdfBooleanExpression::BinaryOperator::GreaterThan;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::GreaterThanOrEqualTo = pxr::SdfBooleanExpression::BinaryOperator::GreaterThanOrEqualTo;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::And = pxr::SdfBooleanExpression::BinaryOperator::And;
+const pxr::SdfBooleanExpression::BinaryOperator Overlay::SdfBooleanExpression::BinaryOperator::Or = pxr::SdfBooleanExpression::BinaryOperator::Or;
+
+const pxr::SdfBooleanExpression::UnaryOperator Overlay::SdfBooleanExpression::UnaryOperator::Not = pxr::SdfBooleanExpression::UnaryOperator::Not;
+
 const pxr::SdfChangeList::SubLayerChangeType Overlay::SdfChangeList::SubLayerAdded = pxr::SdfChangeList::SubLayerAdded;
 const pxr::SdfChangeList::SubLayerChangeType Overlay::SdfChangeList::SubLayerRemoved = pxr::SdfChangeList::SubLayerRemoved;
 const pxr::SdfChangeList::SubLayerChangeType Overlay::SdfChangeList::SubLayerOffset = pxr::SdfChangeList::SubLayerOffset;
@@ -395,11 +406,13 @@ const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQue
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::Inherit = pxr::UsdPrimCompositionQuery::ArcTypeFilter::Inherit;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::Specialize = pxr::UsdPrimCompositionQuery::ArcTypeFilter::Specialize;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::Variant = pxr::UsdPrimCompositionQuery::ArcTypeFilter::Variant;
+const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::Relocate = pxr::UsdPrimCompositionQuery::ArcTypeFilter::Relocate;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::ReferenceOrPayload = pxr::UsdPrimCompositionQuery::ArcTypeFilter::ReferenceOrPayload;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::InheritOrSpecialize = pxr::UsdPrimCompositionQuery::ArcTypeFilter::InheritOrSpecialize;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::NotReferenceOrPayload = pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotReferenceOrPayload;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::NotInheritOrSpecialize = pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotInheritOrSpecialize;
 const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::NotVariant = pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotVariant;
+const pxr::UsdPrimCompositionQuery::ArcTypeFilter Overlay::UsdPrimCompositionQuery::ArcTypeFilter::NotRelocate = pxr::UsdPrimCompositionQuery::ArcTypeFilter::NotRelocate;
 
 const pxr::UsdPrimCompositionQuery::DependencyTypeFilter Overlay::UsdPrimCompositionQuery::DependencyTypeFilter::All = pxr::UsdPrimCompositionQuery::DependencyTypeFilter::All;
 const pxr::UsdPrimCompositionQuery::DependencyTypeFilter Overlay::UsdPrimCompositionQuery::DependencyTypeFilter::Direct = pxr::UsdPrimCompositionQuery::DependencyTypeFilter::Direct;
@@ -578,7 +591,10 @@ const pxr::VdfSparseVectorizedInputTraverser::CallbackMode Overlay::VdfSparseVec
 
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::Local = pxr::ExecProviderResolution::DynamicTraversal::Local;
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects = pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects;
+const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects = pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects;
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::NamespaceAncestor = pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor;
+
+const pxr::ExecValidationErrorType Overlay::ExecValidationErrorType::DataDependencyCycle = pxr::ExecValidationErrorType::DataDependencyCycle;
 
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 const pxr::GarchGLDebugWindow::Buttons Overlay::GarchGLDebugWindow::MyButton1 = pxr::GarchGLDebugWindow::MyButton1;
@@ -687,6 +703,7 @@ const pxr::HioGlslfxResourceLayout::Kind Overlay::HioGlslfxResourceLayout::Kind:
 const pxr::HioGlslfxResourceLayout::TextureType Overlay::HioGlslfxResourceLayout::TextureType::TEXTURE = pxr::HioGlslfxResourceLayout::TextureType::TEXTURE;
 const pxr::HioGlslfxResourceLayout::TextureType Overlay::HioGlslfxResourceLayout::TextureType::SHADOW_TEXTURE = pxr::HioGlslfxResourceLayout::TextureType::SHADOW_TEXTURE;
 const pxr::HioGlslfxResourceLayout::TextureType Overlay::HioGlslfxResourceLayout::TextureType::ARRAY_TEXTURE = pxr::HioGlslfxResourceLayout::TextureType::ARRAY_TEXTURE;
+const pxr::HioGlslfxResourceLayout::TextureType Overlay::HioGlslfxResourceLayout::TextureType::CUBEMAP_TEXTURE = pxr::HioGlslfxResourceLayout::TextureType::CUBEMAP_TEXTURE;
 
 const pxr::CameraUtilConformWindowPolicy Overlay::CameraUtilMatchVertically = pxr::CameraUtilMatchVertically;
 const pxr::CameraUtilConformWindowPolicy Overlay::CameraUtilMatchHorizontally = pxr::CameraUtilMatchHorizontally;
@@ -737,6 +754,7 @@ const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsSingleSlo
 const pxr::HgiTextureType Overlay::HgiTextureType1D = pxr::HgiTextureType1D;
 const pxr::HgiTextureType Overlay::HgiTextureType2D = pxr::HgiTextureType2D;
 const pxr::HgiTextureType Overlay::HgiTextureType3D = pxr::HgiTextureType3D;
+const pxr::HgiTextureType Overlay::HgiTextureTypeCubemap = pxr::HgiTextureTypeCubemap;
 const pxr::HgiTextureType Overlay::HgiTextureType1DArray = pxr::HgiTextureType1DArray;
 const pxr::HgiTextureType Overlay::HgiTextureType2DArray = pxr::HgiTextureType2DArray;
 const pxr::HgiTextureType Overlay::HgiTextureTypeCount = pxr::HgiTextureTypeCount;
@@ -790,6 +808,7 @@ const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageIndex32 = pxr::HgiBufferUsa
 const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageVertex = pxr::HgiBufferUsageVertex;
 const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageStorage = pxr::HgiBufferUsageStorage;
 const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageIndirect = pxr::HgiBufferUsageIndirect;
+const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageUpload = pxr::HgiBufferUsageUpload;
 const pxr::HgiBufferUsageBits Overlay::HgiBufferUsageCustomBitsBegin = pxr::HgiBufferUsageCustomBitsBegin;
 
 const pxr::HgiShaderStageBits Overlay::HgiShaderStageVertex = pxr::HgiShaderStageVertex;
@@ -929,6 +948,7 @@ const pxr::HgiStorageType Overlay::HgiStoragePatch = pxr::HgiStoragePatch;
 const pxr::HgiShaderTextureType Overlay::HgiShaderTextureTypeTexture = pxr::HgiShaderTextureTypeTexture;
 const pxr::HgiShaderTextureType Overlay::HgiShaderTextureTypeShadowTexture = pxr::HgiShaderTextureTypeShadowTexture;
 const pxr::HgiShaderTextureType Overlay::HgiShaderTextureTypeArrayTexture = pxr::HgiShaderTextureTypeArrayTexture;
+const pxr::HgiShaderTextureType Overlay::HgiShaderTextureTypeCubemapTexture = pxr::HgiShaderTextureTypeCubemapTexture;
 
 const pxr::HgiComputeDispatch Overlay::HgiComputeDispatchSerial = pxr::HgiComputeDispatchSerial;
 const pxr::HgiComputeDispatch Overlay::HgiComputeDispatchConcurrent = pxr::HgiComputeDispatchConcurrent;
@@ -1239,6 +1259,10 @@ const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyResource = pxr::HdLight::Di
 const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyInstancer = pxr::HdLight::DirtyInstancer;
 const pxr::HdLight::DirtyBits Overlay::HdLight::AllDirty = pxr::HdLight::AllDirty;
 
+const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Error = pxr::HdMeshComputationResult::Error;
+const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Success = pxr::HdMeshComputationResult::Success;
+const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Unchanged = pxr::HdMeshComputationResult::Unchanged;
+
 const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::Clean = pxr::HdRenderBuffer::Clean;
 const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::DirtyDescription = pxr::HdRenderBuffer::DirtyDescription;
 const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::AllDirty = pxr::HdRenderBuffer::AllDirty;
@@ -1280,6 +1304,7 @@ const pxr::HdStBinding::Type Overlay::HdStBinding::TEXTURE_UDIM_ARRAY = pxr::HdS
 const pxr::HdStBinding::Type Overlay::HdStBinding::TEXTURE_UDIM_LAYOUT = pxr::HdStBinding::TEXTURE_UDIM_LAYOUT;
 const pxr::HdStBinding::Type Overlay::HdStBinding::TEXTURE_PTEX_TEXEL = pxr::HdStBinding::TEXTURE_PTEX_TEXEL;
 const pxr::HdStBinding::Type Overlay::HdStBinding::TEXTURE_PTEX_LAYOUT = pxr::HdStBinding::TEXTURE_PTEX_LAYOUT;
+const pxr::HdStBinding::Type Overlay::HdStBinding::TEXTURE_CUBEMAP = pxr::HdStBinding::TEXTURE_CUBEMAP;
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_2D = pxr::HdStBinding::BINDLESS_TEXTURE_2D;
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_ARRAY_OF_TEXTURE_2D = pxr::HdStBinding::BINDLESS_ARRAY_OF_TEXTURE_2D;
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_FIELD = pxr::HdStBinding::BINDLESS_TEXTURE_FIELD;
@@ -1287,6 +1312,7 @@ const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_UDIM_ARRAY =
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_UDIM_LAYOUT = pxr::HdStBinding::BINDLESS_TEXTURE_UDIM_LAYOUT;
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_PTEX_TEXEL = pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_TEXEL;
 const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_PTEX_LAYOUT = pxr::HdStBinding::BINDLESS_TEXTURE_PTEX_LAYOUT;
+const pxr::HdStBinding::Type Overlay::HdStBinding::BINDLESS_TEXTURE_CUBEMAP = pxr::HdStBinding::BINDLESS_TEXTURE_CUBEMAP;
 const pxr::HdStBinding::Type Overlay::HdStBinding::PRIMVAR_REDIRECT = pxr::HdStBinding::PRIMVAR_REDIRECT;
 const pxr::HdStBinding::Type Overlay::HdStBinding::FIELD_REDIRECT = pxr::HdStBinding::FIELD_REDIRECT;
 const pxr::HdStBinding::Type Overlay::HdStBinding::TRANSFORM_2D = pxr::HdStBinding::TRANSFORM_2D;
@@ -1297,6 +1323,7 @@ const pxr::HdStTextureType Overlay::HdStTextureType::Uv = pxr::HdStTextureType::
 const pxr::HdStTextureType Overlay::HdStTextureType::Field = pxr::HdStTextureType::Field;
 const pxr::HdStTextureType Overlay::HdStTextureType::Ptex = pxr::HdStTextureType::Ptex;
 const pxr::HdStTextureType Overlay::HdStTextureType::Udim = pxr::HdStTextureType::Udim;
+const pxr::HdStTextureType Overlay::HdStTextureType::Cubemap = pxr::HdStTextureType::Cubemap;
 
 const pxr::HdStComputeQueue Overlay::HdStComputeQueueZero = pxr::HdStComputeQueueZero;
 const pxr::HdStComputeQueue Overlay::HdStComputeQueueOne = pxr::HdStComputeQueueOne;

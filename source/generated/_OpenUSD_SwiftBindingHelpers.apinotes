@@ -2,7 +2,7 @@
 
 Name: _OpenUSD_SwiftBindingHelpers
 Namespaces:
-- Name: pxrInternal_v0_25_8__pxrReserved__
+- Name: pxrInternal_v0_26_3__pxrReserved__
   Tags:
   - Name: TfType
     SwiftImportAs: owned
@@ -215,6 +215,11 @@ Namespaces:
     SwiftRetainOp: immortal
     SwiftReleaseOp: immortal
 
+  - Name: VtValue
+    Methods:
+    - Name: Ref
+      SwiftName: __RefUnsafe()
+
   - Name: ArResolvedPath
     Methods:
     - Name: GetPathString
@@ -301,11 +306,6 @@ Namespaces:
     - Name: GetName
       Availability: nonswift
 
-  - Name: SdfTextFileFormat
-    SwiftImportAs: reference
-    SwiftRetainOp: __retain__ZN3pxr17SdfTextFileFormatE
-    SwiftReleaseOp: __release__ZN3pxr17SdfTextFileFormatE
-
   - Name: SdfUsdFileFormat
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr16SdfUsdFileFormatE
@@ -365,6 +365,10 @@ Namespaces:
     - Name: GetName
       Availability: nonswift
 
+    - Name: SetMetadata
+
+    - Name: SetMetadataByDictKey
+
   - Name: UsdSchemaRegistry
     SwiftImportAs: reference
     SwiftRetainOp: immortal
@@ -374,6 +378,10 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr8UsdStageE
     SwiftReleaseOp: __release__ZN3pxr8UsdStageE
+    Methods:
+    - Name: SetMetadata
+
+    - Name: SetMetadataByDictKey
 
   - Name: UsdEditTarget
     SwiftImportAs: owned
@@ -616,6 +624,11 @@ Namespaces:
     SwiftRetainOp: immortal
     SwiftReleaseOp: immortal
 
+  - Name: HdRenderIndexAdapterSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr30HdRenderIndexAdapterSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr30HdRenderIndexAdapterSceneIndexE
+
   - Name: HdSceneIndexPluginRegistry
     SwiftImportAs: reference
     SwiftRetainOp: immortal
@@ -691,6 +704,11 @@ Namespaces:
     SwiftRetainOp: __retain__ZN3pxr37HdsiMaterialPrimvarTransferSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr37HdsiMaterialPrimvarTransferSceneIndexE
 
+  - Name: HdsiMaterialRenderContextFilteringSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr44HdsiMaterialRenderContextFilteringSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr44HdsiMaterialRenderContextFilteringSceneIndexE
+
   - Name: HdSiNodeIdentifierResolvingSceneIndex
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr37HdSiNodeIdentifierResolvingSceneIndexE
@@ -731,6 +749,11 @@ Namespaces:
     SwiftRetainOp: __retain__ZN3pxr29HdsiPrimTypePruningSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr29HdsiPrimTypePruningSceneIndexE
 
+  - Name: HdsiRenderPassPruneSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr29HdsiRenderPassPruneSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr29HdsiRenderPassPruneSceneIndexE
+
   - Name: HdsiRenderSettingsFilteringSceneIndex
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr37HdsiRenderSettingsFilteringSceneIndexE
@@ -740,6 +763,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr26HdsiSceneGlobalsSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr26HdsiSceneGlobalsSceneIndexE
+
+  - Name: HdsiSceneMaterialPruningSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr34HdsiSceneMaterialPruningSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr34HdsiSceneMaterialPruningSceneIndexE
 
   - Name: HdsiSwitchingSceneIndex
     SwiftImportAs: reference

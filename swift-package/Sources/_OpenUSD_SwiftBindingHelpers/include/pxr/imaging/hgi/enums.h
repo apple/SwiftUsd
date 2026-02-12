@@ -99,6 +99,8 @@ using HgiDeviceCapabilities = HgiBits;
 ///   A two-dimensional texture.</li>
 /// <li>HgiTextureType3D:
 ///   A three-dimensional texture.</li>
+/// <li>HgiTextureTypeCubemap:
+///   A cubemap texture.</li>
 /// <li>HgiTextureType1DArray:
 ///   An array of one-dimensional textures.</li>
 /// <li>HgiTextureType2DArray:
@@ -110,6 +112,7 @@ enum HgiTextureType
     HgiTextureType1D = 0,
     HgiTextureType2D,
     HgiTextureType3D,
+    HgiTextureTypeCubemap,
     HgiTextureType1DArray,
     HgiTextureType2DArray,
 
@@ -297,6 +300,8 @@ enum HgiAttachmentStoreOp
 ///   Vertex attributes.</li>
 /// <li>HgiBufferUsageStorage:
 ///   Shader storage buffer / Argument buffer.</li>
+/// <li>HgiBufferUsageUpload:
+///   Buffer will be used to upload data.</li>
 ///
 /// <li>HgiBufferUsageCustomBitsBegin:
 ///   This bit (and any bit after) can be used to attached custom, backend
@@ -310,8 +315,9 @@ enum HgiBufferUsageBits : HgiBits
     HgiBufferUsageVertex   = 1 << 2,
     HgiBufferUsageStorage  = 1 << 3,
     HgiBufferUsageIndirect = 1 << 4,
+    HgiBufferUsageUpload   = 1 << 5,
 
-    HgiBufferUsageCustomBitsBegin = 1 << 5,
+    HgiBufferUsageCustomBitsBegin = 1 << 6,
 };
 using HgiBufferUsage = HgiBits;
 
@@ -790,13 +796,16 @@ enum HgiStorageType
 ///   Indicates a shadow texture.</li>
 /// <li>HgiShaderTextureTypeArrayTexture:
 ///   Indicates an array texture.</li>
+/// <li>HgiShaderTextureTypeCubemapTexture:
+///   Indicates a cubemap texture.</li>
 /// </ul>
 ///
 enum HgiShaderTextureType
 {
     HgiShaderTextureTypeTexture = 0,
     HgiShaderTextureTypeShadowTexture,
-    HgiShaderTextureTypeArrayTexture
+    HgiShaderTextureTypeArrayTexture,
+    HgiShaderTextureTypeCubemapTexture
 };
 
 /// \enum HgiComputeDispatch

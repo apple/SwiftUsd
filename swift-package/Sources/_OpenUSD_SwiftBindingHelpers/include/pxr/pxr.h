@@ -10,17 +10,17 @@
 /// \file pxr/pxr.h
 
 #define PXR_MAJOR_VERSION 0
-#define PXR_MINOR_VERSION 25
-#define PXR_PATCH_VERSION 8
+#define PXR_MINOR_VERSION 26
+#define PXR_PATCH_VERSION 3
 
-#define PXR_VERSION 2508
+#define PXR_VERSION 2603
 
 #define PXR_USE_NAMESPACES 1
 
 #if PXR_USE_NAMESPACES
 
 #define PXR_NS pxr
-#define PXR_INTERNAL_NS pxrInternal_v0_25_8__pxrReserved__
+#define PXR_INTERNAL_NS pxrInternal_v0_26_3__pxrReserved__
 #define PXR_NS_GLOBAL ::PXR_NS
 
 namespace PXR_INTERNAL_NS { }
@@ -50,6 +50,10 @@ namespace PXR_NS {
 
 #if 1
 #define PXR_PREFER_SAFETY_OVER_SPEED
+#endif
+
+#if 0
+#define PXR_ARCH_PREFER_TSC_TIMING
 #endif
 
 #define PXR_USE_INTERNAL_BOOST_PYTHON

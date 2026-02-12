@@ -8,22 +8,6 @@
 			<key>BinaryPath</key>
 			<string>Usd_CameraUtil.framework/Usd_CameraUtil</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
-			<key>LibraryPath</key>
-			<string>Usd_CameraUtil.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_CameraUtil.framework/Usd_CameraUtil</string>
-			<key>LibraryIdentifier</key>
 			<string>ios-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_CameraUtil.framework</string>
@@ -33,6 +17,20 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_CameraUtil.framework/Versions/A/Usd_CameraUtil</string>
+			<key>LibraryIdentifier</key>
+			<string>macos-arm64</string>
+			<key>LibraryPath</key>
+			<string>Usd_CameraUtil.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>macos</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -52,9 +50,9 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_CameraUtil.framework/Versions/A/Usd_CameraUtil</string>
+			<string>Usd_CameraUtil.framework/Usd_CameraUtil</string>
 			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
+			<string>ios-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_CameraUtil.framework</string>
 			<key>SupportedArchitectures</key>
@@ -62,7 +60,9 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>macos</string>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>

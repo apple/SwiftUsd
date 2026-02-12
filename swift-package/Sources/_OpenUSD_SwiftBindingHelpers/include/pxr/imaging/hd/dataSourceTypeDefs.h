@@ -62,6 +62,8 @@ using HdPathArrayDataSourceHandle = HdPathArrayDataSource::Handle;
 
 using HdStringDataSource = HdTypedSampledDataSource<std::string>;
 using HdStringDataSourceHandle = HdStringDataSource::Handle;
+using HdStringArrayDataSource = HdTypedSampledDataSource<VtArray<std::string>>;
+using HdStringArrayDataSourceHandle = HdStringArrayDataSource::Handle;
 
 using HdAssetPathDataSource = HdTypedSampledDataSource<SdfAssetPath>;
 using HdAssetPathDataSourceHandle = HdAssetPathDataSource::Handle;
@@ -72,6 +74,8 @@ using HdPathExpressionDataSourceHandle = HdPathExpressionDataSource::Handle;
 // Linear algebra
 using HdVec2iDataSource = HdTypedSampledDataSource<GfVec2i>;
 using HdVec2iDataSourceHandle = HdVec2iDataSource::Handle;
+using HdVec2iArrayDataSource = HdTypedSampledDataSource<VtArray<GfVec2i>>;
+using HdVec2iArrayDataSourceHandle = HdVec2iArrayDataSource::Handle;
 using HdVec2fDataSource = HdTypedSampledDataSource<GfVec2f>;
 using HdVec2fDataSourceHandle = HdVec2fDataSource::Handle;
 using HdVec2dDataSource = HdTypedSampledDataSource<GfVec2d>;

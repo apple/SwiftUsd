@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_UsdAppUtils.framework/Versions/A/Usd_UsdAppUtils</string>
+			<string>Usd_UsdAppUtils.framework/Usd_UsdAppUtils</string>
 			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
+			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdAppUtils.framework</string>
 			<key>SupportedArchitectures</key>
@@ -16,7 +16,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>macos</string>
+			<string>xros</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -36,6 +36,22 @@
 			<key>BinaryPath</key>
 			<string>Usd_UsdAppUtils.framework/Usd_UsdAppUtils</string>
 			<key>LibraryIdentifier</key>
+			<string>xros-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdAppUtils.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_UsdAppUtils.framework/Usd_UsdAppUtils</string>
+			<key>LibraryIdentifier</key>
 			<string>ios-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdAppUtils.framework</string>
@@ -50,9 +66,9 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_UsdAppUtils.framework/Usd_UsdAppUtils</string>
+			<string>Usd_UsdAppUtils.framework/Versions/A/Usd_UsdAppUtils</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
+			<string>macos-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdAppUtils.framework</string>
 			<key>SupportedArchitectures</key>
@@ -60,23 +76,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_UsdAppUtils.framework/Usd_UsdAppUtils</string>
-			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdAppUtils.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
+			<string>macos</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

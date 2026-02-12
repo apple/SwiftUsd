@@ -293,14 +293,14 @@ public:
     static StencilTable const * Create(
                 TopologyRefiner const & refiner, Options options = Options()) {
 
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 BaseFactory::Create(refiner, options));
     }
 
     static StencilTable const * Create(
                 int numTables, StencilTable const ** tables) {
 
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 BaseFactory::Create(numTables,
                         reinterpret_cast<BaseTable const **>(tables)));
     }
@@ -311,7 +311,7 @@ public:
                 StencilTable const *localPointStencilTable,
                 bool factorize = true) {
 
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 BaseFactory::AppendLocalPointStencilTable(refiner,
                         static_cast<BaseTable const *>(baseStencilTable),
                         static_cast<BaseTable const *>(localPointStencilTable),
@@ -324,7 +324,7 @@ public:
                 StencilTable const *localPointStencilTable,
                 bool factorize = true) {
 
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 BaseFactory::AppendLocalPointStencilTableVarying(refiner,
                         static_cast<BaseTable const *>(baseStencilTable),
                         static_cast<BaseTable const *>(localPointStencilTable),
@@ -338,7 +338,7 @@ public:
                 int channel = 0,
                 bool factorize = true) {
 
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 BaseFactory::AppendLocalPointStencilTableFaceVarying(refiner,
                         static_cast<BaseTable const *>(baseStencilTable),
                         static_cast<BaseTable const *>(localPointStencilTable),
@@ -364,7 +364,7 @@ public:
                 PatchTable const * patchTable = 0,
                 Options options = Options()) {
 
-        return static_cast<LimitStencilTable const *>(
+        return reinterpret_cast<LimitStencilTable const *>(
                 BaseFactory::Create(
                         refiner,
                         locationArrays,

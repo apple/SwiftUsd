@@ -6,22 +6,6 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Iex.framework/Iex</string>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
-			<key>LibraryPath</key>
-			<string>Iex.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
 			<string>Iex.framework/Versions/A/Iex</string>
 			<key>LibraryIdentifier</key>
 			<string>macos-arm64</string>
@@ -38,7 +22,7 @@
 			<key>BinaryPath</key>
 			<string>Iex.framework/Iex</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>ios-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Iex.framework</string>
 			<key>SupportedArchitectures</key>
@@ -46,7 +30,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
+			<string>ios</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>
@@ -63,6 +47,22 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Iex.framework/Iex</string>
+			<key>LibraryIdentifier</key>
+			<string>xros-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>Iex.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>

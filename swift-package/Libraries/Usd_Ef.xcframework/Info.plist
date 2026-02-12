@@ -36,7 +36,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_Ef.framework/Usd_Ef</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>ios-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_Ef.framework</string>
 			<key>SupportedArchitectures</key>
@@ -44,7 +44,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
+			<string>ios</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>
@@ -66,7 +66,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_Ef.framework/Usd_Ef</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
+			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_Ef.framework</string>
 			<key>SupportedArchitectures</key>
@@ -74,7 +74,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>ios</string>
+			<string>xros</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>

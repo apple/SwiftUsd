@@ -52,6 +52,8 @@ TF_DECLARE_PUBLIC_TOKENS(HdRenderSettingsSchemaTokens, HD_API,
 //-----------------------------------------------------------------------------
 
 
+/// \class HdRenderSettingsSchema
+///
 class HdRenderSettingsSchema : public HdSchema
 {
 public:
@@ -85,7 +87,7 @@ public:
     /// @{
 
     HD_API
-    HdContainerDataSourceHandle GetNamespacedSettings() const;
+    HdSampledDataSourceContainerSchema GetNamespacedSettings() const;
 
     HD_API
     HdBoolDataSourceHandle GetActive() const;

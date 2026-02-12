@@ -110,8 +110,25 @@
 // 79 -> 80: Added refinedSolidWireOnSurf and solidWireOnSurf to HD_REPR_TOKENS.
 // 80 -> 81: Added IsValid() to HdRenderParam.
 // 81 -> 82: Added hgi/version.h
+// 82 -> 83: Added overloads for HdRendererPlugin::IsSupported and
+//           HdRendererPluginRegistry::GetDefaultPluginId.
+// 83 -> 84: Added HdDataSourceLocatorSentinelTokens.
+// 84 -> 85: Deprecate HdMaterialNetworkSchema::GetInterfaceMappings().
+//           Add HdMaterialNetworkSchema::GetInterface().
+//           Add HdMaterialInterfaceSchema, HdMaterialInterfaceParameterSchema.
+// 85 -> 86: Rename Hd[Typed|SchemaBased][Container|Vector]Schema to
+//           Hd[Container|Vector]Of[Schemas|TypedSampledDataSources]Schema.
+// 86 -> 87: Added HdContainerDataSourceEditor::ComputeDirtyLocators.
+// 87 -> 88: Added support for parameterValues data source in 
+//           HdMaterialOverrideSchema and related functions (GetParameterValues,
+//           SetParameterValues). The deprecated method BuildRetained now 
+//           requires a second parameter for the parameterValues data source.
+// 88 -> 89: HdRenderSettingsSchema namespacedSettings is a
+//           HdSampledDataSourceContainerSchema.
+// 89 -> 90: Added HdRendererPlugin::GetSceneIndexInputArgs and
+//           HdSceneIndexInputArgsSchema.
 
-#define HD_API_VERSION 82
+#define HD_API_VERSION 90
 
 // 1  ->  2: SimpleLighting -> FallbackLighting
 #define HD_SHADER_API 2

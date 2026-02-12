@@ -130,6 +130,32 @@ public:
         const std::string &instanceName=std::string(),
         const std::string &appName=std::string());
 
+    /// Create a render index with the given render delegate that populates
+    /// itself by observing the given scene index.
+    /// Returns null if renderDelegate is null.
+    /// The render delegate and render tasks may require access to a renderer's
+    /// device provided by the application. The objects can be
+    /// passed in as 'drivers'. Hgi is an example of a HdDriver.
+    ///   hgi = Hgi::CreatePlatformDefaultHgi()
+    ///   hgiDriver = new HdDriver<Hgi*>(HgiTokens→renderDriver, hgi)
+    ///   HdRenderIndex::New(_renderDelegate, {_hgiDriver})
+    ///
+    static HdRenderIndex *New(
+        HdRenderDelegate *renderDelegate, 
+        HdDriverVector const& drivers,
+        HdSceneIndexBaseRefPtr const &terminalSceneIndex);
+
+    /// Create a render index for "front-end" emulation. That is,
+    /// the render index can be populated from an HdSceneDelegate and
+    /// populates the returned emulation scene index.
+    ///
+    /// The HdRenderDelegate is not populated. It is just used by the
+    /// HdSceneDelegate for queries such as
+    /// HdRenderDelegate::GetMaterialBindingPurpose().
+    ///
+    static HdRenderIndex *
+    New(HdRenderDelegate *renderDelegate);
+
     HD_API
     ~HdRenderIndex();
 
@@ -220,6 +246,10 @@ public:
 
     /// Query function to return the id's of the scene delegate and instancer
     /// associated with the Rprim at the given path.
+    ///
+    /// \deprecated. Query terminal scene index for prim and extract instancer
+    /// from HdInstancedBySchema instead.
+    ///
     HD_API
     bool GetSceneDelegateAndInstancerIds(SdfPath const &id,
                                          SdfPath* sceneDelegateId,
@@ -381,6 +411,9 @@ public:
     HD_API
     HdSceneIndexBaseRefPtr GetTerminalSceneIndex() const;
 
+    HD_API
+    HdSceneIndexBaseRefPtr GetEmulationSceneIndex() const;
+    
     // ---------------------------------------------------------------------- //
     /// \name Render Delegate
     // ---------------------------------------------------------------------- //
@@ -450,7 +483,9 @@ private:
         HdRenderDelegate *renderDelegate, 
         HdDriverVector const& drivers,
         const std::string &instanceName,
-        const std::string &appName);
+        const std::string &appName,
+        HdSceneIndexBaseRefPtr const &terminalSceneIndex = nullptr,
+        bool createFrontEndEmulationOnly = false);
 
     // ---------------------------------------------------------------------- //
     // Private Helper methods 
@@ -578,6 +613,7 @@ private:
     HdRenderDelegate *_renderDelegate;
     HdDriverVector _drivers;
 
+    HdSceneIndexBaseRefPtr _finalEmulationSceneIndex;
 
     std::string _instanceName;
 

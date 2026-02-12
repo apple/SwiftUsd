@@ -66,11 +66,9 @@ struct HdxPickTaskParams
 {
     HdxPickTaskParams()
         : cullStyle(HdCullStyleNothing)
-        , enableSceneMaterials(true)
     {}
 
     HdCullStyle cullStyle;
-    bool enableSceneMaterials;
 };
 
 /// Picking hit structure. This is output by the pick task as a record of
@@ -79,6 +77,8 @@ struct HdxPickHit
 {
     /// delegateID of HdSceneDelegate that provided the picked prim.
     /// Irrelevant for scene indices.
+    ///
+    /// \deprecated
     SdfPath delegateId;
     /// Path computed from scenePath's in primOrigin data source of
     /// picked prim and instancers if provided by scene index.
@@ -86,6 +86,9 @@ struct HdxPickHit
     SdfPath objectId;
     /// Only supported for scene delegates, see HdxPrimOriginInfo for
     /// scene indices.
+    ///
+    /// \deprecated Query terminal scene index for prim and extract instancer
+    /// from HdInstancedBySchema instead.
     SdfPath instancerId;
     int instanceIndex;
     int elementIndex;
@@ -161,21 +164,39 @@ struct HdxInstancerContext
 ///
 struct HdxPrimOriginInfo
 {
+    /// Query terminal scene index for information about picked prim.
+    HDX_API
+    static HdxPrimOriginInfo
+    FromPickHit(HdSceneIndexBaseRefPtr const &terminalSceneIndex,
+                const HdxPickHit &hit);
+
     /// Query terminal scene index of render index for information about
     /// picked prim.
+    ///
+    /// \deprecated Use overload taking scene index.
     HDX_API
     static HdxPrimOriginInfo
     FromPickHit(HdRenderIndex * renderIndex,
                 const HdxPickHit &hit);
 
     /// Vectorized implementation of function to query terminal scene index
+    /// for information about picked prim. Amortizes the cost of computing the
+    /// array of all instance indices and locations for instancers.
+    HDX_API
+    static std::vector<HdxPrimOriginInfo>
+    FromPickHits(HdSceneIndexBaseRefPtr const &terminalSceneIndex,
+                 const std::vector<HdxPickHit> &hits);
+
+    /// Vectorized implementation of function to query terminal scene index
     /// of render index for information about picked prim. Amortizes the cost
     /// of computing the array of all instace indices and locations for
     /// instancers.
+    ///
+    /// \deprecated Use overload taking scene index.
     HDX_API
     static std::vector<HdxPrimOriginInfo>
     FromPickHits(HdRenderIndex * renderIndex,
-                const std::vector<HdxPickHit> &hits);
+                 const std::vector<HdxPickHit> &hits);
 
     /// Combines instance scene paths and prim scene path to obtain the full
     /// scene path.

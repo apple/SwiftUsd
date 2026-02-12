@@ -13,6 +13,7 @@
 
 #include "pxr/usd/sdf/pathTable.h"
 #include <tbb/concurrent_hash_map.h>
+#include <tbb/concurrent_vector.h>
 
 PXR_NAMESPACE_OPEN_SCOPE
 
@@ -26,6 +27,7 @@ namespace HdFlatteningSceneIndex_Impl
 constexpr uint32_t _smallVectorSize = 8;
 using _DataSourceLocatorSetVector =
     TfSmallVector<HdDataSourceLocatorSet, _smallVectorSize>;
+class _PrimLevelWrappingDataSource;
 }
 
 TF_DECLARE_REF_PTRS(HdFlatteningSceneIndex);
@@ -100,21 +102,26 @@ protected:
             const HdSceneIndexObserver::DirtiedPrimEntries &entries) override;
 
 private:
+    friend class HdFlatteningSceneIndex_Impl::_PrimLevelWrappingDataSource;
+    
     using _DataSourceLocatorSetVector =
         HdFlatteningSceneIndex_Impl::_DataSourceLocatorSetVector;
 
     // Consolidate _recentPrims into _prims.
     void _ConsolidateRecentPrims();
 
+    using _AdditionalDirtiedVector =
+        tbb::concurrent_vector<HdSceneIndexObserver::DirtiedPrimEntry>;
+
     void _DirtyHierarchy(
         const SdfPath &primPath,
         const _DataSourceLocatorSetVector &relativeDirtyLocators,
         const HdDataSourceLocatorSet &dirtyLocators,
-        HdSceneIndexObserver::DirtiedPrimEntries *dirtyEntries);
+        _AdditionalDirtiedVector *additionalDirty) const;
 
     void _PrimDirtied(
         const HdSceneIndexObserver::DirtiedPrimEntry &entry,
-        HdSceneIndexObserver::DirtiedPrimEntries *dirtyEntries);
+        _AdditionalDirtiedVector *additionalDirty) const;
 
     // _dataSourceNames and _dataSourceProviders run in parallel
     // and indicate that a data source at locator name in a prim data

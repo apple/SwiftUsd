@@ -127,7 +127,6 @@ struct HdxRenderTaskParams
         , pointSize(3.0)
         , enableLighting(false)
         , alphaThreshold(0.0)
-        , enableSceneMaterials(true)
         , enableSceneLights(true)
         , enableClipping(true)
         // Selection/Masking params
@@ -176,7 +175,6 @@ struct HdxRenderTaskParams
     float pointSize;
     bool enableLighting;
     float alphaThreshold;
-    bool enableSceneMaterials;
     bool enableSceneLights;
     bool enableClipping;
 

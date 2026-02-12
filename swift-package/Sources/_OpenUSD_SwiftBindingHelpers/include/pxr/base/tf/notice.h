@@ -14,6 +14,8 @@
 #include "pxr/base/tf/api.h"
 #include "pxr/base/tf/anyWeakPtr.h"
 #include "pxr/base/tf/diagnostic.h"
+#include "pxr/base/tf/mallocTag.h"
+#include "pxr/base/tf/scoped.h"
 #include "pxr/base/tf/type.h"
 #include "pxr/base/tf/weakPtr.h"
 #include "pxr/base/arch/demangle.h"
@@ -21,6 +23,7 @@
 
 #include <atomic>
 #include <list>
+#include <optional>
 #include <typeinfo>
 
 PXR_NAMESPACE_OPEN_SCOPE
@@ -354,12 +357,14 @@ public:
     template <class LPtr, class MethodPtr>
     static TfNotice::Key
     Register(LPtr const &listener, MethodPtr method) {
+        TfAutoMallocTag tag("Tf", "Tf_NoticeRegistry::_Register");
         return _Register(_MakeDeliverer(listener, method));
     }
 
     template <class LPtr, class MethodPtr, class SenderPtr>
     static TfNotice::Key
     Register(LPtr const &listener, MethodPtr method, SenderPtr const &sender) {
+        TfAutoMallocTag tag("Tf", "Tf_NoticeRegistry::_Register");
         return _Register(_MakeDeliverer(listener, method, sender));
     }
 
@@ -367,9 +372,28 @@ public:
     static TfNotice::Key
     Register(LPtr const &listener, MethodPtr method,
              const TfType &noticeType, const TfAnyWeakPtr &sender) {
+        TfAutoMallocTag tag("Tf", "Tf_NoticeRegistry::_Register");
         return _Register(_MakeDeliverer(noticeType, listener, method, sender));
     }
     
+    /// Revoke interest by a listener.
+    ///
+    /// This revokes interest by the listener for the particular notice type
+    /// and call-back method for which this key was created.
+    /// \c Revoke will return a bool value indicating whether or not the key
+    /// was successfully revoked. Subsequent calls to \c Revoke with the same
+    /// key will return false.
+    TF_API
+    static bool Revoke(TfNotice::SwiftKey key);
+
+    /// Revoke interest by listeners.
+    ///
+    /// This revokes interest by the listeners for the particular
+    /// notice types and call-back methods for which the keys were
+    /// created. It then clears the keys container.
+    TF_API
+    static void Revoke(TfNotice::SwiftKeys* keys);
+
     /// Revoke interest by a listener.
     ///
     /// This revokes interest by the listener for the particular notice type
@@ -388,24 +412,6 @@ public:
     /// created.  It then clears the keys container.
     TF_API
     static void Revoke(TfNotice::Keys* keys);
-
-    /// Revoke interest by a listener.
-    ///
-    /// This revokes interest by the listener for the particular notice type
-    /// and call-back method for which this key was created.
-    /// \c Revoke will return a bool value indicating whether or not the key
-    /// was successfully revoked. Subsequent calls to \c Revoke with the same
-    /// key will return false.
-    TF_API
-    static bool Revoke(TfNotice::SwiftKey key);
-
-    /// Revoke interest by listeners.
-    ///
-    /// This revokes interest by the listeners for the particular
-    /// notice types and call-back methods for which the keys were
-    /// created. It then clears the keys container.
-    TF_API
-    static void Revoke(TfNotice::SwiftKeys* keys);
 
     /// Revoke interest by a listener.
     ///
@@ -595,10 +601,16 @@ private:
                 _busy.fetch_add(-1, std::memory_order_release);
                 return false;
             }
+
+            // Ensure we decrement the count even if the delivery throws.
+            TfScoped cleanup([this]() {
+                // Decrement the number of sends in progress.
+                _busy.fetch_add(-1, std::memory_order_release);
+            });
+            
             const auto result =
                 _SendToListenerImpl(n, type,
                                     s, senderUniqueId, senderType, probes);
-            _busy.fetch_add(-1, std::memory_order_release);
             return result;
         }
 
@@ -701,6 +713,8 @@ private:
             ListenerType *listener = get_pointer(derived->_listener);
 
             if (listener && !derived->_sender.IsInvalid()) {
+
+                std::optional<TfScoped<>> endDeliveryScope;
                 if (ARCH_UNLIKELY(!probes.empty())) {
                     TfWeakBase const *senderWeakBase = GetSenderWeakBase(),
                         *listenerWeakBase = derived->_listener.GetWeakBase();
@@ -709,6 +723,12 @@ private:
                                    senderType : typeid(void),
                                    listenerWeakBase,
                                    typeid(ListenerType), probes);
+
+                    // Ensure _EndDelivery is called even if the listener
+                    // throws.
+                    endDeliveryScope.emplace([this, &probes]() {
+                        _EndDelivery(probes);
+                    });
                 }
 
                 derived->
@@ -716,9 +736,6 @@ private:
                                           *_CastNotice<NoticeType>(&notice),
                                           noticeType, sender,
                                           senderUniqueId, senderType);
-                
-                if (ARCH_UNLIKELY(!probes.empty()))
-                    _EndDelivery(probes);
 
                 return true;
             }

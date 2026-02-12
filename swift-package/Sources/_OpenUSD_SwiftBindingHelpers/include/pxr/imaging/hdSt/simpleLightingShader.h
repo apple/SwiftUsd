@@ -97,7 +97,9 @@ public:
     /// Call after lighting context has been set or updated in Sync-phase.
     ///
     HDST_API
-    void AllocateTextureHandles(HdRenderIndex const &renderIndex);
+    void AllocateTextureHandles(
+        HdRenderIndex const &renderIndex,
+        const SdfPath& graphPath);
 
     /// The dome light environment map used as source for the other
     /// dome light textures.
@@ -117,13 +119,23 @@ public:
     const HdStTextureHandleSharedPtr &GetTextureHandle(
         const TfToken &name) const;
 
+    /// The dome light environment cubemap texture generated from the
+    /// latlong dome light texture.
+    HDST_API
+    const HdStTextureHandleSharedPtr &
+    GetDomeLightEnvironmentCubemapTextureHandle() const;
+
     HdRenderPassAovBindingVector const& GetShadowAovBindings() {
         return _shadowAovBindings;
     }
 
+    HDST_API
+    void SetDomeLightCubemapTargetMemory(unsigned int targetMemoryMB);
+
 private:
-    SdfPath _GetAovPath(TfToken const &aov, size_t shadowIndex) const;
-    void _ResizeOrCreateBufferForAov(size_t shadowIndex) const;
+    void _AllocateShadowTextures(
+        HdStResourceRegistry* const resourceRegistry,
+        const SdfPath& graphPath);
     void _CleanupAovBindings();
 
     GlfSimpleLightingContextRefPtr _lightingContext; 
@@ -143,6 +155,10 @@ private:
     NamedTextureHandleVector _namedTextureHandles;
 
     NamedTextureHandleVector _domeLightTextureHandles;
+
+    // Maximum target memory of computed dome light cubemap texture (in MB)
+    unsigned int _domeLightCubemapTargetMemoryMB;
+    
     NamedTextureHandle _shadowTextureHandle;
     
     HdSt_MaterialParamVector _lightTextureParams;
@@ -150,7 +166,8 @@ private:
     HdRenderParam *_renderParam;
 
     HdRenderPassAovBindingVector _shadowAovBindings;
-    std::vector<std::unique_ptr<HdStRenderBuffer>> _shadowAovBuffers;
+
+    std::vector<HdStPooledRenderBufferUniquePtr> _shadowBuffers;
 };
 
 

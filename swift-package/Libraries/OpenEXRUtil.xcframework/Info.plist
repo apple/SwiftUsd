@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>OpenEXRUtil.framework/OpenEXRUtil</string>
+			<string>OpenEXRUtil.framework/Versions/A/OpenEXRUtil</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>macos-arm64</string>
 			<key>LibraryPath</key>
 			<string>OpenEXRUtil.framework</string>
 			<key>SupportedArchitectures</key>
@@ -16,9 +16,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
+			<string>macos</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -33,6 +31,22 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>OpenEXRUtil.framework/OpenEXRUtil</string>
+			<key>LibraryIdentifier</key>
+			<string>xros-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>OpenEXRUtil.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>xros</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>
@@ -63,20 +77,6 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>OpenEXRUtil.framework/Versions/A/OpenEXRUtil</string>
-			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
-			<key>LibraryPath</key>
-			<string>OpenEXRUtil.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>macos</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

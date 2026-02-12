@@ -472,6 +472,7 @@ public:
     void orientIncidentComponents();
     bool orderVertexFacesAndEdges(Index vIndex, Index* vFaces, Index* vEdges) const;
     bool orderVertexFacesAndEdges(Index vIndex);
+    bool testVertexNonManifoldCrease(Index vIndex) const;
     void populateLocalIndices();
 
     IndexArray shareFaceVertCountsAndOffsets() const;

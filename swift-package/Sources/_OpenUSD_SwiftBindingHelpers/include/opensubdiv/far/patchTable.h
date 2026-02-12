@@ -777,19 +777,19 @@ PatchTable::LocalPointFaceVaryingStencilPrecisionMatchesType<double>() const {
 inline StencilTable const *
 PatchTable::GetLocalPointStencilTable() const {
     assert(LocalPointStencilPrecisionMatchesType<float>());
-    return static_cast<StencilTable const *>(_localPointStencils.Get<float>());
+    return reinterpret_cast<StencilTable const *>(_localPointStencils.Get<float>());
 }
 inline StencilTable const *
 PatchTable::GetLocalPointVaryingStencilTable() const {
     assert(LocalPointVaryingStencilPrecisionMatchesType<float>());
-    return static_cast<StencilTable const *>(
+    return reinterpret_cast<StencilTable const *>(
             _localPointVaryingStencils.Get<float>());
 }
 inline StencilTable const *
 PatchTable::GetLocalPointFaceVaryingStencilTable(int channel) const {
     assert(LocalPointFaceVaryingStencilPrecisionMatchesType<float>());
     if (channel >= 0 && channel < (int)_localPointFaceVaryingStencils.size()) {
-        return static_cast<StencilTable const *>(
+        return reinterpret_cast<StencilTable const *>(
                 _localPointFaceVaryingStencils[channel].Get<float>());
     }
     return NULL;

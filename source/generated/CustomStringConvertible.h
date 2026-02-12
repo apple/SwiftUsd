@@ -95,9 +95,11 @@
 #include "pxr/base/vt/dictionary.h"
 #include "pxr/base/vt/types.h"
 #include "pxr/base/vt/value.h"
+#include "pxr/base/vt/valueRef.h"
 #include "pxr/exec/ef/time.h"
 #include "pxr/exec/ef/timeInterval.h"
 #include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/exec/validationError.h"
 #include "pxr/exec/vdf/dataManagerVector.h"
 #include "pxr/exec/vdf/executionStats.h"
 #include "pxr/exec/vdf/grapherOptions.h"
@@ -132,11 +134,13 @@
 #include "pxr/imaging/hd/geomSubset.h"
 #include "pxr/imaging/hd/light.h"
 #include "pxr/imaging/hd/material.h"
+#include "pxr/imaging/hd/meshUtil.h"
 #include "pxr/imaging/hd/primOriginSchema.h"
 #include "pxr/imaging/hd/renderBuffer.h"
 #include "pxr/imaging/hd/renderPassState.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/rprimCollection.h"
+#include "pxr/imaging/hd/sceneIndex.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
 #include "pxr/imaging/hd/topology.h"
 #include "pxr/imaging/hd/types.h"
@@ -191,6 +195,7 @@
 #include "pxr/usd/pcp/types.h"
 #include "pxr/usd/sdf/assetPath.h"
 #include "pxr/usd/sdf/attributeSpec.h"
+#include "pxr/usd/sdf/booleanExpression.h"
 #include "pxr/usd/sdf/changeList.h"
 #include "pxr/usd/sdf/layerOffset.h"
 #include "pxr/usd/sdf/listOp.h"
@@ -380,6 +385,8 @@ namespace __Overlay {
   std::string to_string(const pxr::VtDictionary& x);
   std::string to_string(const pxr::VtValue& x);
   std::string to_string(const pxr::UsdMetadataValueMap& x);
+  std::string to_string(const pxr::VtValueRef& x);
+  std::string to_string(const pxr::VtMutableValueRef& x);
   std::string to_string(const pxr::TsSpline& x);
   std::string to_string(const pxr::TsInterpMode& x);
   std::string to_string(const pxr::TsCurveType& x);
@@ -420,6 +427,9 @@ namespace __Overlay {
   std::string to_string(const pxr::SdfSpec& x);
   std::string to_string(const pxr::SdfDictionaryProxy& x);
   std::string to_string(const pxr::SdfRelocatesMapProxy& x);
+  std::string to_string(const pxr::SdfBooleanExpression& x);
+  std::string to_string(const pxr::SdfBooleanExpression::BinaryOperator& x);
+  std::string to_string(const pxr::SdfBooleanExpression::UnaryOperator& x);
   std::string to_string(const pxr::SdfChangeList& x);
   std::string to_string(const pxr::SdfChangeList::SubLayerChangeType& x);
   std::string to_string(const pxr::SdfLayerOffset& x);
@@ -514,6 +524,7 @@ namespace __Overlay {
   std::string to_string(const pxr::EfTime& x);
   std::string to_string(const pxr::EfTimeInterval& x);
   std::string to_string(const pxr::ExecProviderResolution::DynamicTraversal& x);
+  std::string to_string(const pxr::ExecValidationErrorType& x);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   std::string to_string(const pxr::GarchGLDebugWindow::Buttons& x);
   std::string to_string(const pxr::GarchGLDebugWindow::ModifierKeys& x);
@@ -607,6 +618,7 @@ namespace __Overlay {
   std::string to_string(const pxr::HdTopology& x);
   std::string to_string(const pxr::HdGeomSubset::Type& x);
   std::string to_string(const pxr::HdRprimCollection& x);
+  std::string to_string(const pxr::HdSceneIndexPrim& x);
   std::string to_string(const pxr::HdDataSourceLocator& x);
   std::string to_string(const pxr::HdDataSourceLocatorSet& x);
   std::string to_string(const pxr::HdCamera::DirtyBits& x);
@@ -618,6 +630,7 @@ namespace __Overlay {
   std::string to_string(const pxr::HdMaterialNetworkMap& x);
   std::string to_string(const pxr::HdMaterialNode2& x);
   std::string to_string(const pxr::HdLight::DirtyBits& x);
+  std::string to_string(const pxr::HdMeshComputationResult& x);
   std::string to_string(const pxr::HdPrimOriginSchema::OriginPath& x);
   std::string to_string(const pxr::HdRenderBuffer::DirtyBits& x);
   std::string to_string(const pxr::HdRenderPassState::ColorMask& x);

@@ -223,10 +223,6 @@ pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr13SdfFileFormatE__GetFo
     return arg0.GetFormatId();
 }
 
-pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr17SdfTextFileFormatE__GetFormatId(pxr::SdfTextFileFormat const & arg0) {
-    return arg0.GetFormatId();
-}
-
 pxr::TfToken __SwiftUsdImportAsMemberReplacement___ZN3pxr16SdfUsdFileFormatE__GetFormatId(pxr::SdfUsdFileFormat const & arg0) {
     return arg0.GetFormatId();
 }
@@ -283,6 +279,46 @@ std::string __SwiftUsdImportAsMemberReplacement___ZN3pxr19SdfRelationshipSpecE__
     return arg0.GetName();
 }
 
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr7UsdPrimE__SetMetadata(pxr::UsdPrim const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr9UsdObjectE__SetMetadata(pxr::UsdObject const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr12UsdAttributeE__SetMetadata(pxr::UsdAttribute const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPropertyE__SetMetadata(pxr::UsdProperty const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr15UsdRelationshipE__SetMetadata(pxr::UsdRelationship const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr7UsdPrimE__SetMetadataByDictKey(pxr::UsdPrim const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr9UsdObjectE__SetMetadataByDictKey(pxr::UsdObject const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr12UsdAttributeE__SetMetadataByDictKey(pxr::UsdAttribute const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPropertyE__SetMetadataByDictKey(pxr::UsdProperty const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr15UsdRelationshipE__SetMetadataByDictKey(pxr::UsdRelationship const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
+}
+
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr11UsdPayloadsE__AddInternalPayload(pxr::UsdPayloads const & arg0, pxr::SdfPath const & arg1, pxr::SdfLayerOffset const & arg2, pxr::UsdListPosition arg3) {
     auto arg0Copy = arg0;
     return arg0Copy.AddInternalPayload(arg1, arg2, arg3);
@@ -301,5 +337,13 @@ bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__AddInternalRe
 bool __SwiftUsdImportAsMemberReplacement___ZN3pxr13UsdReferencesE__ClearReferences(pxr::UsdReferences const & arg0) {
     auto arg0Copy = arg0;
     return arg0Copy.ClearReferences();
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr8UsdStageE__SetMetadata(pxr::UsdStage const & arg0, pxr::TfToken const & arg1, pxr::VtValue arg2) {
+    return arg0.SetMetadata(arg1, arg2);
+}
+
+bool __SwiftUsdImportAsMemberReplacement___ZN3pxr8UsdStageE__SetMetadataByDictKey(pxr::UsdStage const & arg0, pxr::TfToken const & arg1, pxr::TfToken const & arg2, pxr::VtValue arg3) {
+    return arg0.SetMetadataByDictKey(arg1, arg2, arg3);
 }
 

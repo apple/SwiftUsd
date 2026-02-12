@@ -351,6 +351,12 @@ int64_t __Overlay::hash_value(const pxr::VtUIntArray& x) {
 int64_t __Overlay::hash_value(const pxr::VtUShortArray& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::VtBoolArrayEdit& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtCharArrayEdit& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::VtDualQuatdArrayEdit& x) {
     return pxr::TfHash()(x);
 }
@@ -358,9 +364,6 @@ int64_t __Overlay::hash_value(const pxr::VtDualQuatfArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtDualQuathArrayEdit& x) {
-    return pxr::TfHash()(x);
-}
-int64_t __Overlay::hash_value(const pxr::VtHalfArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtIntervalArrayEdit& x) {
@@ -456,10 +459,7 @@ int64_t __Overlay::hash_value(const pxr::VtVec4iArrayEdit& x) {
 int64_t __Overlay::hash_value(const pxr::VtTokenArrayEdit& x) {
     return pxr::TfHash()(x);
 }
-int64_t __Overlay::hash_value(const pxr::VtBoolArrayEdit& x) {
-    return pxr::TfHash()(x);
-}
-int64_t __Overlay::hash_value(const pxr::VtCharArrayEdit& x) {
+int64_t __Overlay::hash_value(const pxr::VtHalfArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtDoubleArrayEdit& x) {
@@ -468,10 +468,10 @@ int64_t __Overlay::hash_value(const pxr::VtDoubleArrayEdit& x) {
 int64_t __Overlay::hash_value(const pxr::VtFloatArrayEdit& x) {
     return pxr::TfHash()(x);
 }
-int64_t __Overlay::hash_value(const pxr::VtInt64ArrayEdit& x) {
+int64_t __Overlay::hash_value(const pxr::VtIntArrayEdit& x) {
     return pxr::TfHash()(x);
 }
-int64_t __Overlay::hash_value(const pxr::VtIntArrayEdit& x) {
+int64_t __Overlay::hash_value(const pxr::VtInt64ArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtShortArrayEdit& x) {
@@ -480,13 +480,13 @@ int64_t __Overlay::hash_value(const pxr::VtShortArrayEdit& x) {
 int64_t __Overlay::hash_value(const pxr::VtStringArrayEdit& x) {
     return pxr::TfHash()(x);
 }
-int64_t __Overlay::hash_value(const pxr::VtUInt64ArrayEdit& x) {
-    return pxr::TfHash()(x);
-}
 int64_t __Overlay::hash_value(const pxr::VtUCharArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtUIntArrayEdit& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtUInt64ArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtUShortArrayEdit& x) {
@@ -496,6 +496,12 @@ int64_t __Overlay::hash_value(const pxr::VtDictionary& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtValue& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtValueRef& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtMutableValueRef& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::TsSpline& x) {
@@ -661,12 +667,6 @@ int64_t __Overlay::hash_value(const pxr::SdfRelationshipSpecHandle& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::SdfRelationshipSpec& x) {
-    return pxr::TfHash()(x);
-}
-int64_t __Overlay::hash_value(const pxr::SdfTextFileFormat& x) {
-    return (int64_t) &x;
-}
-int64_t __Overlay::hash_value(const pxr::SdfTextFileFormatRefPtr& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::SdfUsdFileFormat& x) {
@@ -973,6 +973,12 @@ int64_t __Overlay::hash_value(const pxr::HdPrefixingSceneIndexRefPtr& x) {
 int64_t __Overlay::hash_value(const pxr::HdRendererPluginRegistry& x) {
     return (int64_t) &x;
 }
+int64_t __Overlay::hash_value(const pxr::HdRenderIndexAdapterSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdRenderIndexAdapterSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdSceneIndexPluginRegistry& x) {
     return (int64_t) &x;
 }
@@ -1057,6 +1063,12 @@ int64_t __Overlay::hash_value(const pxr::HdsiMaterialPrimvarTransferSceneIndex& 
 int64_t __Overlay::hash_value(const pxr::HdsiMaterialPrimvarTransferSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::HdsiMaterialRenderContextFilteringSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiMaterialRenderContextFilteringSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdSiNodeIdentifierResolvingSceneIndex& x) {
     return (int64_t) &x;
 }
@@ -1105,6 +1117,12 @@ int64_t __Overlay::hash_value(const pxr::HdsiPrimTypePruningSceneIndex& x) {
 int64_t __Overlay::hash_value(const pxr::HdsiPrimTypePruningSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::HdsiRenderPassPruneSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiRenderPassPruneSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdsiRenderSettingsFilteringSceneIndex& x) {
     return (int64_t) &x;
 }
@@ -1115,6 +1133,12 @@ int64_t __Overlay::hash_value(const pxr::HdsiSceneGlobalsSceneIndex& x) {
     return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::HdsiSceneGlobalsSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::HdsiSceneMaterialPruningSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiSceneMaterialPruningSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdsiSwitchingSceneIndex& x) {

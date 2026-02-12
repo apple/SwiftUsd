@@ -147,6 +147,8 @@ These types conform to `CustomStringConvertible` in Swift.
 ###  Vt types
 - ``OpenUSD/C++/pxr/VtDictionary``
 - ``OpenUSD/C++/pxr/VtValue``
+- ``OpenUSD/C++/pxr/VtValueRef``
+- ``OpenUSD/C++/pxr/VtMutableValueRef``
 
 ###  Ts types
 - ``OpenUSD/C++/pxr/TsSpline``
@@ -189,6 +191,9 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/SdfPropertySpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfSpec>``
 - ``OpenUSD/C++/pxr/SdfSpec``
+- ``OpenUSD/C++/pxr/SdfBooleanExpression``
+- ``OpenUSD/C++/pxr/SdfBooleanExpression/BinaryOperator``
+- ``OpenUSD/C++/pxr/SdfBooleanExpression/UnaryOperator``
 - ``OpenUSD/C++/pxr/SdfChangeList``
 - ``OpenUSD/C++/pxr/SdfChangeList/SubLayerChangeType``
 - ``OpenUSD/C++/pxr/SdfLayerOffset``
@@ -307,6 +312,7 @@ These types conform to `CustomStringConvertible` in Swift.
 
 ###  Exec types
 - ``OpenUSD/C++/pxr/ExecProviderResolution/DynamicTraversal``
+- ``OpenUSD/C++/pxr/ExecValidationErrorType``
 
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLDebugWindow/Buttons``
@@ -407,6 +413,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdTopology``
 - ``OpenUSD/C++/pxr/HdGeomSubset/Type``
 - ``OpenUSD/C++/pxr/HdRprimCollection``
+- ``OpenUSD/C++/pxr/HdSceneIndexPrim``
 - ``OpenUSD/C++/pxr/HdDataSourceLocator``
 - ``OpenUSD/C++/pxr/HdDataSourceLocatorSet``
 - ``OpenUSD/C++/pxr/HdCamera/DirtyBits``
@@ -418,6 +425,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdMaterialNetworkMap``
 - ``OpenUSD/C++/pxr/HdMaterialNode2``
 - ``OpenUSD/C++/pxr/HdLight/DirtyBits``
+- ``OpenUSD/C++/pxr/HdMeshComputationResult``
 - ``OpenUSD/C++/pxr/HdPrimOriginSchema/OriginPath``
 - ``OpenUSD/C++/pxr/HdRenderBuffer/DirtyBits``
 - ``OpenUSD/C++/pxr/HdRenderPassState/ColorMask``

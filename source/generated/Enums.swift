@@ -644,6 +644,7 @@ extension pxr.HgiTextureType {
   @_documentation(visibility: internal) public static var HgiTextureType1D: pxr.HgiTextureType { Overlay.HgiTextureType1D }
   @_documentation(visibility: internal) public static var HgiTextureType2D: pxr.HgiTextureType { Overlay.HgiTextureType2D }
   @_documentation(visibility: internal) public static var HgiTextureType3D: pxr.HgiTextureType { Overlay.HgiTextureType3D }
+  @_documentation(visibility: internal) public static var HgiTextureTypeCubemap: pxr.HgiTextureType { Overlay.HgiTextureTypeCubemap }
   @_documentation(visibility: internal) public static var HgiTextureType1DArray: pxr.HgiTextureType { Overlay.HgiTextureType1DArray }
   @_documentation(visibility: internal) public static var HgiTextureType2DArray: pxr.HgiTextureType { Overlay.HgiTextureType2DArray }
   @_documentation(visibility: internal) public static var HgiTextureTypeCount: pxr.HgiTextureType { Overlay.HgiTextureTypeCount }
@@ -706,6 +707,7 @@ extension pxr.HgiBufferUsageBits {
   @_documentation(visibility: internal) public static var HgiBufferUsageVertex: pxr.HgiBufferUsageBits { Overlay.HgiBufferUsageVertex }
   @_documentation(visibility: internal) public static var HgiBufferUsageStorage: pxr.HgiBufferUsageBits { Overlay.HgiBufferUsageStorage }
   @_documentation(visibility: internal) public static var HgiBufferUsageIndirect: pxr.HgiBufferUsageBits { Overlay.HgiBufferUsageIndirect }
+  @_documentation(visibility: internal) public static var HgiBufferUsageUpload: pxr.HgiBufferUsageBits { Overlay.HgiBufferUsageUpload }
   @_documentation(visibility: internal) public static var HgiBufferUsageCustomBitsBegin: pxr.HgiBufferUsageBits { Overlay.HgiBufferUsageCustomBitsBegin }
 }
 extension pxr.HgiShaderStageBits {
@@ -865,6 +867,7 @@ extension pxr.HgiShaderTextureType {
   @_documentation(visibility: internal) public static var HgiShaderTextureTypeTexture: pxr.HgiShaderTextureType { Overlay.HgiShaderTextureTypeTexture }
   @_documentation(visibility: internal) public static var HgiShaderTextureTypeShadowTexture: pxr.HgiShaderTextureType { Overlay.HgiShaderTextureTypeShadowTexture }
   @_documentation(visibility: internal) public static var HgiShaderTextureTypeArrayTexture: pxr.HgiShaderTextureType { Overlay.HgiShaderTextureTypeArrayTexture }
+  @_documentation(visibility: internal) public static var HgiShaderTextureTypeCubemapTexture: pxr.HgiShaderTextureType { Overlay.HgiShaderTextureTypeCubemapTexture }
 }
 extension pxr.HgiComputeDispatch {
   @_documentation(visibility: internal) public static var HgiComputeDispatchSerial: pxr.HgiComputeDispatch { Overlay.HgiComputeDispatchSerial }
@@ -1232,6 +1235,7 @@ extension pxr.HdStBinding.`Type` {
   @_documentation(visibility: internal) public static var TEXTURE_UDIM_LAYOUT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.TEXTURE_UDIM_LAYOUT }
   @_documentation(visibility: internal) public static var TEXTURE_PTEX_TEXEL: pxr.HdStBinding.`Type` { Overlay.HdStBinding.TEXTURE_PTEX_TEXEL }
   @_documentation(visibility: internal) public static var TEXTURE_PTEX_LAYOUT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.TEXTURE_PTEX_LAYOUT }
+  @_documentation(visibility: internal) public static var TEXTURE_CUBEMAP: pxr.HdStBinding.`Type` { Overlay.HdStBinding.TEXTURE_CUBEMAP }
   @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_2D: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_2D }
   @_documentation(visibility: internal) public static var BINDLESS_ARRAY_OF_TEXTURE_2D: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_ARRAY_OF_TEXTURE_2D }
   @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_FIELD: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_FIELD }
@@ -1239,6 +1243,7 @@ extension pxr.HdStBinding.`Type` {
   @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_UDIM_LAYOUT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_UDIM_LAYOUT }
   @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_PTEX_TEXEL: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_PTEX_TEXEL }
   @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_PTEX_LAYOUT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_PTEX_LAYOUT }
+  @_documentation(visibility: internal) public static var BINDLESS_TEXTURE_CUBEMAP: pxr.HdStBinding.`Type` { Overlay.HdStBinding.BINDLESS_TEXTURE_CUBEMAP }
   @_documentation(visibility: internal) public static var PRIMVAR_REDIRECT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.PRIMVAR_REDIRECT }
   @_documentation(visibility: internal) public static var FIELD_REDIRECT: pxr.HdStBinding.`Type` { Overlay.HdStBinding.FIELD_REDIRECT }
   @_documentation(visibility: internal) public static var TRANSFORM_2D: pxr.HdStBinding.`Type` { Overlay.HdStBinding.TRANSFORM_2D }

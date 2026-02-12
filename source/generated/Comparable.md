@@ -93,8 +93,6 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfRelationshipSpec>``
 - ``OpenUSD/C++/pxr/SdfRelationshipSpec``
 - ``OpenUSD/C++/pxr/SdfSite``
-- ``OpenUSD/C++/pxr/SdfTextFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfTextFileFormat>``
 - ``OpenUSD/C++/pxr/SdfUsdFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdFileFormat>``
 - ``OpenUSD/C++/pxr/SdfUsdaData``
@@ -218,6 +216,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/HdPrefixingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdPrefixingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdRendererPluginRegistry``
+- ``OpenUSD/C++/pxr/HdRenderIndexAdapterSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdRenderIndexAdapterSceneIndex>``
 - ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry``
 
 ###  HdGp types
@@ -250,6 +250,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialOverrideResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiMaterialPrimvarTransferSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialPrimvarTransferSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiMaterialRenderContextFilteringSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialRenderContextFilteringSceneIndex>``
 - ``OpenUSD/C++/pxr/HdSiNodeIdentifierResolvingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdSiNodeIdentifierResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiNurbsApproximatingSceneIndex``
@@ -266,10 +268,14 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimTypeNoticeBatchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPrimTypePruningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimTypePruningSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiRenderPassPruneSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiRenderPassPruneSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiRenderSettingsFilteringSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiRenderSettingsFilteringSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiSceneGlobalsSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSceneGlobalsSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiSceneMaterialPruningSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSceneMaterialPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiSwitchingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSwitchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiTetMeshConversionSceneIndex``

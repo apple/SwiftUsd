@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::UsdImagingGLEngine from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v25.08/pxr/usdImaging/usdImagingGL/engine.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/usdImaging/usdImagingGL/engine.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
@@ -399,14 +399,23 @@ namespace Overlay {
         /// @{
         // ---------------------------------------------------------------------
 
+        /// Returns the active render pass prim path by querying the terminal scene
+        /// index. Returns an empty path if none was found.
+        pxr::SdfPath GetActiveRenderPassPrimPath() const;
+
+        /// Returns the active render settings prim path by querying the terminal
+        /// scene index. Returns an empty path if none was found.
+        pxr::SdfPath GetActiveRenderSettingsPrimPath() const;
+
+        /// Utility method to query available render settings prims.
+        static pxr::SdfPathVector
+        GetAvailableRenderSettingsPrimPaths(const pxr::UsdPrim& root);
+
         /// Set active render pass prim to use to drive rendering.
         void SetActiveRenderPassPrimPath(const pxr::SdfPath& path);
 
         /// Set active render settings prim to use to drive rendering.
         void SetActiveRenderSettingsPrimPath(const pxr::SdfPath& path);
-
-        /// Utility method to query available render settings prims.
-        static pxr::SdfPathVector GetAvailableRenderSettingsPrimPaths(const pxr::UsdPrim& root);
     
         /// @}
 
@@ -547,6 +556,15 @@ namespace Overlay {
         /// A return value of true indicates that the scene has changed and the
         /// render should be updated.
         bool PollForAsynchronousUpdates() const;
+
+        // ---------------------------------------------------------------------
+        /// \name Miscellaneous
+        /// @{
+        // ---------------------------------------------------------------------
+
+        /// Returns true if using the UsdImaging scene index.
+        static bool UseUsdImagingSceneIndex();
+        /// @}
 
         /// MARK: SwiftUsd implementation access
 

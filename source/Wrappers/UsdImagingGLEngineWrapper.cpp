@@ -330,17 +330,25 @@ void Overlay::UsdImagingGLEngineWrapper::SetRendererSetting(const pxr::TfToken& 
 
 // MARK: Render Settings (Scene description driven)
 
+pxr::SdfPath Overlay::UsdImagingGLEngineWrapper::GetActiveRenderPassPrimPath() const {
+    return _impl->GetActiveRenderPassPrimPath();
+}
+
+pxr::SdfPath Overlay::UsdImagingGLEngineWrapper::GetActiveRenderSettingsPrimPath() const {
+    return _impl->GetActiveRenderSettingsPrimPath();
+}
+
+/* static */
+pxr::SdfPathVector Overlay::UsdImagingGLEngineWrapper::GetAvailableRenderSettingsPrimPaths(const pxr::UsdPrim& root) {
+    return pxr::UsdImagingGLEngine::GetAvailableRenderSettingsPrimPaths(root);
+}
+
 void Overlay::UsdImagingGLEngineWrapper::SetActiveRenderPassPrimPath(const pxr::SdfPath& path) {
     _impl->SetActiveRenderPassPrimPath(path);
 }
 
 void Overlay::UsdImagingGLEngineWrapper::SetActiveRenderSettingsPrimPath(const pxr::SdfPath& path) {
     _impl->SetActiveRenderSettingsPrimPath(path);
-}
-
-/* static */
-pxr::SdfPathVector GetAvailableRenderSettingsPrimPaths(const pxr::UsdPrim& root) {
-    return pxr::UsdImagingGLEngine::GetAvailableRenderSettingsPrimPaths(root);
 }
 
 // MARK: Presentation
@@ -423,6 +431,13 @@ pxr::Hgi* Overlay::UsdImagingGLEngineWrapper::GetHgi() {
 
 bool Overlay::UsdImagingGLEngineWrapper::PollForAsynchronousUpdates() const {
     return _impl->PollForAsynchronousUpdates();
+}
+
+// MARK: Miscellaneous
+
+/* static */
+bool Overlay::UsdImagingGLEngineWrapper::UseUsdImagingSceneIndex() {
+    return pxr::UsdImagingGLEngine::UseUsdImagingSceneIndex();
 }
 
 // MARK: SwiftUsd implementation access

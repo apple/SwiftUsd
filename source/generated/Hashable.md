@@ -126,10 +126,11 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedChar>``
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedInt>``
 - ``OpenUSD/C++/pxr/VtArray<CUnsignedShort>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CBool>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CChar>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatd>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatf>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuath>``
-- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.pxr_half.half>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfInterval>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2d>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2f>``
@@ -161,22 +162,23 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4h>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec4i>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.TfToken>``
-- ``OpenUSD/C++/pxr/VtArrayEdit<CBool>``
-- ``OpenUSD/C++/pxr/VtArrayEdit<CChar>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.pxr_half.half>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CDouble>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CFloat>``
-- ``OpenUSD/C++/pxr/VtArrayEdit<CLongLong>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CInt>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CLongLong>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CShort>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<std.__1.basic_string<CChar, std.__1.char_traits<CChar>, std.__1.allocator<CChar>>>``
-- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedLongLong>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedChar>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedInt>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedLongLong>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<CUnsignedShort>``
 
 ###  Vt types
 - ``OpenUSD/C++/pxr/VtDictionary``
 - ``OpenUSD/C++/pxr/VtValue``
+- ``OpenUSD/C++/pxr/VtValueRef``
+- ``OpenUSD/C++/pxr/VtMutableValueRef``
 
 ###  Ts types
 - ``OpenUSD/C++/pxr/TsSpline``
@@ -240,8 +242,6 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/SdfReference``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfRelationshipSpec>``
 - ``OpenUSD/C++/pxr/SdfRelationshipSpec``
-- ``OpenUSD/C++/pxr/SdfTextFileFormat``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfTextFileFormat>``
 - ``OpenUSD/C++/pxr/SdfUsdFileFormat``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfUsdFileFormat>``
 - ``OpenUSD/C++/pxr/SdfUsdaData``
@@ -369,6 +369,8 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/HdPrefixingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdPrefixingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdRendererPluginRegistry``
+- ``OpenUSD/C++/pxr/HdRenderIndexAdapterSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdRenderIndexAdapterSceneIndex>``
 - ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry``
 
 ###  HdGp types
@@ -401,6 +403,8 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialOverrideResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiMaterialPrimvarTransferSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialPrimvarTransferSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiMaterialRenderContextFilteringSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialRenderContextFilteringSceneIndex>``
 - ``OpenUSD/C++/pxr/HdSiNodeIdentifierResolvingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdSiNodeIdentifierResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiNurbsApproximatingSceneIndex``
@@ -417,10 +421,14 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimTypeNoticeBatchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPrimTypePruningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimTypePruningSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiRenderPassPruneSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiRenderPassPruneSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiRenderSettingsFilteringSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiRenderSettingsFilteringSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiSceneGlobalsSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSceneGlobalsSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiSceneMaterialPruningSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSceneMaterialPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiSwitchingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiSwitchingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiTetMeshConversionSceneIndex``

@@ -40,6 +40,7 @@
 #include "pxr/base/ts/regressionPreventer.h"
 #include "pxr/base/ts/types.h"
 #include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/exec/validationError.h"
 #include "pxr/exec/vdf/dataManagerVector.h"
 #include "pxr/exec/vdf/executionStats.h"
 #include "pxr/exec/vdf/grapherOptions.h"
@@ -66,6 +67,7 @@
 #include "pxr/imaging/hd/field.h"
 #include "pxr/imaging/hd/geomSubset.h"
 #include "pxr/imaging/hd/light.h"
+#include "pxr/imaging/hd/meshUtil.h"
 #include "pxr/imaging/hd/renderBuffer.h"
 #include "pxr/imaging/hd/renderPassState.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
@@ -95,6 +97,7 @@
 #include "pxr/usd/pcp/namespaceEdits.h"
 #include "pxr/usd/pcp/primIndex.h"
 #include "pxr/usd/pcp/types.h"
+#include "pxr/usd/sdf/booleanExpression.h"
 #include "pxr/usd/sdf/changeList.h"
 #include "pxr/usd/sdf/listOp.h"
 #include "pxr/usd/sdf/namespaceEdit.h"
@@ -438,6 +441,27 @@ namespace Overlay {
   }
 }
 namespace Overlay {
+  namespace SdfBooleanExpression {
+    namespace BinaryOperator {
+      extern const pxr::SdfBooleanExpression::BinaryOperator EqualTo;
+      extern const pxr::SdfBooleanExpression::BinaryOperator NotEqualTo;
+      extern const pxr::SdfBooleanExpression::BinaryOperator LessThan;
+      extern const pxr::SdfBooleanExpression::BinaryOperator LessThanOrEqualTo;
+      extern const pxr::SdfBooleanExpression::BinaryOperator GreaterThan;
+      extern const pxr::SdfBooleanExpression::BinaryOperator GreaterThanOrEqualTo;
+      extern const pxr::SdfBooleanExpression::BinaryOperator And;
+      extern const pxr::SdfBooleanExpression::BinaryOperator Or;
+    }
+  }
+}
+namespace Overlay {
+  namespace SdfBooleanExpression {
+    namespace UnaryOperator {
+      extern const pxr::SdfBooleanExpression::UnaryOperator Not;
+    }
+  }
+}
+namespace Overlay {
   namespace SdfChangeList {
     extern const pxr::SdfChangeList::SubLayerChangeType SubLayerAdded;
     extern const pxr::SdfChangeList::SubLayerChangeType SubLayerRemoved;
@@ -668,11 +692,13 @@ namespace Overlay {
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter Inherit;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter Specialize;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter Variant;
+      extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter Relocate;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter ReferenceOrPayload;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter InheritOrSpecialize;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter NotReferenceOrPayload;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter NotInheritOrSpecialize;
       extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter NotVariant;
+      extern const pxr::UsdPrimCompositionQuery::ArcTypeFilter NotRelocate;
     }
   }
 }
@@ -955,8 +981,14 @@ namespace Overlay {
     namespace DynamicTraversal {
       extern const pxr::ExecProviderResolution::DynamicTraversal Local;
       extern const pxr::ExecProviderResolution::DynamicTraversal RelationshipTargetedObjects;
+      extern const pxr::ExecProviderResolution::DynamicTraversal ConnectionTargetedObjects;
       extern const pxr::ExecProviderResolution::DynamicTraversal NamespaceAncestor;
     }
+  }
+}
+namespace Overlay {
+  namespace ExecValidationErrorType {
+    extern const pxr::ExecValidationErrorType DataDependencyCycle;
   }
 }
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -1097,6 +1129,7 @@ namespace Overlay {
       extern const pxr::HioGlslfxResourceLayout::TextureType TEXTURE;
       extern const pxr::HioGlslfxResourceLayout::TextureType SHADOW_TEXTURE;
       extern const pxr::HioGlslfxResourceLayout::TextureType ARRAY_TEXTURE;
+      extern const pxr::HioGlslfxResourceLayout::TextureType CUBEMAP_TEXTURE;
     }
   }
 }
@@ -1157,6 +1190,7 @@ namespace Overlay {
   extern const pxr::HgiTextureType HgiTextureType1D;
   extern const pxr::HgiTextureType HgiTextureType2D;
   extern const pxr::HgiTextureType HgiTextureType3D;
+  extern const pxr::HgiTextureType HgiTextureTypeCubemap;
   extern const pxr::HgiTextureType HgiTextureType1DArray;
   extern const pxr::HgiTextureType HgiTextureType2DArray;
   extern const pxr::HgiTextureType HgiTextureTypeCount;
@@ -1219,6 +1253,7 @@ namespace Overlay {
   extern const pxr::HgiBufferUsageBits HgiBufferUsageVertex;
   extern const pxr::HgiBufferUsageBits HgiBufferUsageStorage;
   extern const pxr::HgiBufferUsageBits HgiBufferUsageIndirect;
+  extern const pxr::HgiBufferUsageBits HgiBufferUsageUpload;
   extern const pxr::HgiBufferUsageBits HgiBufferUsageCustomBitsBegin;
 }
 namespace Overlay {
@@ -1378,6 +1413,7 @@ namespace Overlay {
   extern const pxr::HgiShaderTextureType HgiShaderTextureTypeTexture;
   extern const pxr::HgiShaderTextureType HgiShaderTextureTypeShadowTexture;
   extern const pxr::HgiShaderTextureType HgiShaderTextureTypeArrayTexture;
+  extern const pxr::HgiShaderTextureType HgiShaderTextureTypeCubemapTexture;
 }
 namespace Overlay {
   extern const pxr::HgiComputeDispatch HgiComputeDispatchSerial;
@@ -1763,6 +1799,13 @@ namespace Overlay {
   }
 }
 namespace Overlay {
+  namespace HdMeshComputationResult {
+    extern const pxr::HdMeshComputationResult Error;
+    extern const pxr::HdMeshComputationResult Success;
+    extern const pxr::HdMeshComputationResult Unchanged;
+  }
+}
+namespace Overlay {
   namespace HdRenderBuffer {
     extern const pxr::HdRenderBuffer::DirtyBits Clean;
     extern const pxr::HdRenderBuffer::DirtyBits DirtyDescription;
@@ -1820,6 +1863,7 @@ namespace Overlay {
     extern const pxr::HdStBinding::Type TEXTURE_UDIM_LAYOUT;
     extern const pxr::HdStBinding::Type TEXTURE_PTEX_TEXEL;
     extern const pxr::HdStBinding::Type TEXTURE_PTEX_LAYOUT;
+    extern const pxr::HdStBinding::Type TEXTURE_CUBEMAP;
     extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_2D;
     extern const pxr::HdStBinding::Type BINDLESS_ARRAY_OF_TEXTURE_2D;
     extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_FIELD;
@@ -1827,6 +1871,7 @@ namespace Overlay {
     extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_UDIM_LAYOUT;
     extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_PTEX_TEXEL;
     extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_PTEX_LAYOUT;
+    extern const pxr::HdStBinding::Type BINDLESS_TEXTURE_CUBEMAP;
     extern const pxr::HdStBinding::Type PRIMVAR_REDIRECT;
     extern const pxr::HdStBinding::Type FIELD_REDIRECT;
     extern const pxr::HdStBinding::Type TRANSFORM_2D;
@@ -1843,6 +1888,7 @@ namespace Overlay {
     extern const pxr::HdStTextureType Field;
     extern const pxr::HdStTextureType Ptex;
     extern const pxr::HdStTextureType Udim;
+    extern const pxr::HdStTextureType Cubemap;
   }
 }
 namespace Overlay {

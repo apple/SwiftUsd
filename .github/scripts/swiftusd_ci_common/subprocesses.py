@@ -68,3 +68,6 @@ def run(args, cwd=None, env=None, input=None, logCmd=True, logOutput=True, check
         exit(result.returncode)
 
     return result
+
+def which(cmd):
+    return run(["which", cmd], logCmd=False, logOutput=False, check=False).returncode == 0

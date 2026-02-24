@@ -35,7 +35,8 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target native \
-    ~/SwiftUsd/openusd-builds/macOS
+    ~/SwiftUsd/openusd-builds/macOS \
+    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
@@ -44,7 +45,8 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target iOS \
-    ~/SwiftUsd/openusd-builds/iOS
+    ~/SwiftUsd/openusd-builds/iOS \
+    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
@@ -53,7 +55,8 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target iOSSimulator \
-    ~/SwiftUsd/openusd-builds/iOSSimulator
+    ~/SwiftUsd/openusd-builds/iOSSimulator \
+    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
@@ -62,7 +65,8 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target visionOS \
-    ~/SwiftUsd/openusd-builds/visionOS
+    ~/SwiftUsd/openusd-builds/visionOS \
+    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
@@ -71,7 +75,8 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target visionOSSimulator \
-    ~/SwiftUsd/openusd-builds/visionOSSimulator
+    ~/SwiftUsd/openusd-builds/visionOSSimulator \
+    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 ```
 
 > Note: Custom feature flags are experimental, and may have some restrictions. For example, building with Python will not work on Apple platforms, building with additional plugins may not work for app-bundlable packages, and packaging multiple Usd builds with incompatible feature flags may not work. 

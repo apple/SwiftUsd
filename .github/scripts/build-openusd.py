@@ -26,6 +26,13 @@ import subprocess
 from swiftusd_ci_common import *
 
 def install_cmake():
+    if which("cmake"):
+        print("CMake is already on PATH, will not reinstall")
+        return
+    else:
+        print(os.environ)
+        print("Couldn't find CMake, will install")
+
     print("Downloading CMake...")
     run(["curl", "-L", "https://github.com/Kitware/CMake/releases/download/v3.28.6/cmake-3.28.6-macos-universal.dmg",
         "--output", "CMake.dmg"],

@@ -11,6 +11,11 @@ Changes to SwiftUsd
     ```
 }
 
+### TBD
+Released TBD, based on OpenUSD TBD
+- Added ci-at-desk, an internal tool for running CI workflows locally
+
+
 ### 6.1.0
 Released 2026-03-18, based on OpenUSD v26.03
 - Add support for Swift 6.3

@@ -32,7 +32,10 @@ if __name__ == "__main__":
     # Turn branch names like `dev` into a hash commit to avoid incorrect cache key matches
     clone_openusd()
     rev_parsed_ref = run(["git", "rev-parse", Environment.GitRef.openusd], cwd=Environment.Path.openusd, logOutput=False).output[0]
-    build_flags = "".join(get_openusd_build_flags(Environment.TestCombination.target_platform))
+    # Don't include the build directory when forming the cache key
+    build_flags = get_openusd_build_flags(Environment.TestCombination.target_platform)
+    build_flags = [x for x in build_flags if not x.startswith("/")]
+    build_flags = "".join(build_flags)
 
     result = "  ".join([
         Environment.TestCombination.target_platform,
@@ -43,4 +46,4 @@ if __name__ == "__main__":
         openusd_patch_hash
     ])
 
-    printAndWrite(output=f"cache-key='{result}'")
+    printAndWrite(output=f"cache-key={result}")

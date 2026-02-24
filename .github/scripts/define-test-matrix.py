@@ -23,8 +23,18 @@ import random
 import json
 import math
 
+def get_xcodebuild_destination(target_platform):
+    if target_platform == "macOS": return "platform=macOS,name=My Mac"
+    elif target_platform == "iOS": return Environment.TestCombination.at_desk_iOS_xcodebuild_destination
+    elif target_platform == "iOSSimulator": return "platform=iOS Simulator,name=iPhone 17 Pro"
+    elif target_platform == "visionOS": return Environment.TestCombination.at_desk_visionOS_xcodebuild_destination
+    elif target_platform == "visionOSSimulator": return "platform=visionOS Simulator,name=Apple Vision Pro (at 2732x2048)"
+    else:
+        print(f"Error: Unknown target '{target_platform}'")
+        exit(1)
+
 if __name__ == "__main__":
-    target_platforms = ["macOS", "iOSSimulator", "visionOSSimulator"]
+    target_platforms = ["macOS", "iOS", "iOSSimulator", "visionOS", "visionOSSimulator"]
     configs = ["Debug", "Release"]
     build_systems = ["xcodebuild-xcodeproj", "swiftbuild-SPM-Tests", "xcodebuild-SPM-Tests"]
 
@@ -32,16 +42,25 @@ if __name__ == "__main__":
     for target_platform in target_platforms:
         for config in configs:
             for build_system in build_systems:
-
-                # if target_platform == "macOS" and build_system == "xcodebuild-xcodeproj":
-                #     # Disabled for now
-                #     continue
-
+                exclusivity_keys = []
+                
                 if build_system == "swiftbuild-SPM-Tests" and target_platform != "macOS":
                     # swiftbuild only supports macOS
                     continue
 
-                all_combinations.append({"target_platform" : target_platform, "config" : config, "build_system" : build_system})
+                if build_system == "xcodebuild-SPM-Tests" and target_platform in ["iOS", "visionOS"]:
+                    # xcodebuild on a Swift Package doesn't support physical iOS/visionOS devices
+                    continue
+
+                xcodebuild_destination = get_xcodebuild_destination(target_platform)
+                if xcodebuild_destination is None: continue
+
+                if target_platform in ["iOS", "visionOS"]:
+                    exclusivity_keys.append(target_platform)
+
+                all_combinations.append({"target_platform" : target_platform, "config" : config, 
+                                         "build_system" : build_system, "xcodebuild_destination" : xcodebuild_destination,
+                                         "exclusivity_keys" : exclusivity_keys})
 
     random.shuffle(all_combinations)
 

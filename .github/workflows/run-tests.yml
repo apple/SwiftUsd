@@ -82,6 +82,7 @@ jobs:
 
         env:
             TARGET_PLATFORM: ${{ matrix.target_platform }}
+            XCODEBUILD_DESTINATION: ${{ matrix.xcodebuild_destination }}
             BUILD_SYSTEM: ${{ matrix.build_system }}
             CONFIG: ${{ matrix.config }}
             SWIFTUSD_REF: ${{ inputs.swiftusd-ref }}

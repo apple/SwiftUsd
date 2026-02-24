@@ -45,7 +45,7 @@ def build_or_run_test_suite(name, cleanCmd, buildCmd, testCmd, buildTestCommonAr
         if action == "build":
             return any([s in l for s in ["error:"]])
         elif action == "test":
-            return any([s in l for s in ["failed:", "launchd"]])
+            return any([s in l for s in ["failed:", "launchd", "crash"]])
 
     def processRunResult(runResult):
         end = time.time()
@@ -78,22 +78,52 @@ def build_or_run_test_suite(name, cleanCmd, buildCmd, testCmd, buildTestCommonAr
 
 def prepare_to_build_tests():
     print("Preparing to build tests...")
+    run(["swift", "package", "--package-path", "ReconfigurePbxprojPackageDependency", "clean"],
+        cwd=Environment.Path.swiftusd_tests)
     run(["swift", "run", "--package-path", "ReconfigurePbxprojPackageDependency",
         "ReconfigurePbxprojPackageDependency", "SwiftUsdTests.xcodeproj/project.pbxproj",
          "--replace", "https://github.com/apple/SwiftUsd", "--with", "SwiftUsd"], 
         cwd=Environment.Path.swiftusd_tests)
-    if not (Environment.Path.swiftusd_tests / "SwiftUsd").exists():
-        (Environment.Path.swiftusd_tests / "SwiftUsd").symlink_to(Environment.Path.swiftusd)
+
+    if (Environment.Path.swiftusd_tests / "SwiftUsd").exists():
+        os.unlink(Environment.Path.swiftusd_tests / "SwiftUsd")
+    (Environment.Path.swiftusd_tests / "SwiftUsd").symlink_to(Environment.Path.swiftusd)
     run(["python3", "make-spm-tests.py", "--local", "--force"],
         cwd=Environment.Path.swiftusd_tests)
 
-def get_xcodebuild_destination():
-    if Environment.TestCombination.target_platform == "macOS": return "platform=macOS,name=My Mac"
-    elif Environment.TestCombination.target_platform == "iOSSimulator": return "platform=iOS Simulator,name=iPhone 17 Pro"
-    elif Environment.TestCombination.target_platform == "visionOSSimulator": return "platform=visionOS Simulator,name=Apple Vision Pro (at 2732x2048)"
+def conditionalCommonArgs():
+    result = []
+
+    def handleJobs(x, singleMinus):
+        nonlocal result
+        try:
+            if int(x) > 0:
+                result += ["-jobs" if singleMinus else "--jobs", x]
+        except:
+            pass        
+
+    def handleDevelopmentTeam():
+        nonlocal result
+        if Environment.TestCombination.at_desk_development_team:
+            result += [f"DEVELOPMENT_TEAM={Environment.TestCombination.at_desk_development_team}"]
+
+    if Environment.TestCombination.build_system == "xcodebuild-xcodeproj":
+        handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
+        handleDevelopmentTeam()
+        
+    elif Environment.TestCombination.build_system == "swiftbuild-SPM-Tests":
+        handleJobs(Environment.TestCombination.at_desk_swiftbuild_jobs, False)
+        
+    elif Environment.TestCombination.build_system == "xcodebuild-SPM-Tests":
+        handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
+        handleDevelopmentTeam()
+        
     else:
-        print(f"Error: Unknown target '{Environment.TestCombination.target_platform}'")
+        print(f"Error: Unknown build system {Environment.TestCombination.build_system}")
         exit(1)
+    
+    
+    return result
 
 def do_xcodebuild_xcodeproj_tests(action):
     build_or_run_test_suite(
@@ -106,11 +136,11 @@ def do_xcodebuild_xcodeproj_tests(action):
         ],
         buildTestCommonArgs=[
             "-verbose", "-skipMacroValidation",
-            "-scheme", "UnitTests", 
+            "-scheme", "UnitTests",
             "-configuration", Environment.TestCombination.config,
-            "-destination", get_xcodebuild_destination(),
+            "-destination", Environment.TestCombination.xcodebuild_destination,
             "OTHER_SWIFT_FLAGS=$(inherited) -DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ],
+        ] + conditionalCommonArgs(),
         cwd=Environment.Path.swiftusd_tests,
         action=action,
     )
@@ -119,10 +149,14 @@ def do_swiftbuild_spm_tests(action):
     env = os.environ.copy()
     env["SWIFT_BACKTRACE"] = "interactive=no"
 
-    # Set DEVELOPER_DIR to work around 
-    # error: cannot load module 'SwiftCompilerPlugin' built with SDK 'macosx26.0' when using SDK 'macosx26.2'
-    # https://github.com/apple/SwiftUsd/actions/runs/21256906902/job/61175337955
-    env["DEVELOPER_DIR"] = "/Applications/Xcode-latest.app"
+    # todo: revisit this, setting it here means that
+    # xcodebuild -version in the logs is misleading because
+    # it's computed without this environment variable
+    if os.path.exists("/Applications/Xcode-latest.app"):
+        # Set DEVELOPER_DIR to work around 
+        # error: cannot load module 'SwiftCompilerPlugin' built with SDK 'macosx26.0' when using SDK 'macosx26.2'
+        # https://github.com/apple/SwiftUsd/actions/runs/21256906902/job/61175337955
+        env["DEVELOPER_DIR"] = "/Applications/Xcode-latest.app"
 
     build_or_run_test_suite(
         name="swiftbuild-SPM-Tests",
@@ -134,7 +168,7 @@ def do_swiftbuild_spm_tests(action):
             "-Xswiftc", "-DOPENUSD_SWIFT_BUILD_FROM_CLI", "-Xcxx", "-DOPENUSD_SWIFT_BUILD_FROM_CLI",
             "--configuration", Environment.TestCombination.config.lower(),
             "-Xswiftc", "-DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ],
+        ] + conditionalCommonArgs(),
         cwd=Environment.Path.swiftusd_tests / "SPM-Tests",
         action=action,
         env=env
@@ -153,9 +187,9 @@ def do_xcodebuild_spm_tests(action):
             "-verbose", "-skipMacroValidation",
             "-scheme", "SPM-Tests-Package",
             "-config", Environment.TestCombination.config,
-            "-destination", get_xcodebuild_destination(),
+            "-destination", Environment.TestCombination.xcodebuild_destination,
             "OTHER_SWIFT_FLAGS=$(inherited) -DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ],
+        ] + conditionalCommonArgs(),
         cwd=Environment.Path.swiftusd_tests / "SPM-Tests",
         action=action,
     )

@@ -42,6 +42,7 @@ Checklist for releasing new versions of SwiftUsd
         1. [Building Locally](<doc:BuildingLocally>)
         1. Links to vanilla OpenUSD source files on GitHub
         1. Default openusd-ref in .github/workflows/build-swiftusd.yml
+        1. ci-at-desk sample YAML config file
     1. Pixar namespace
         1. [Getting Started, "Using SwiftUsd"](<doc:GettingStarted#Using-SwiftUsd>)
         1. [Getting Started, "Common Issues"](<doc:GettingStarted#Common-issues>)
@@ -55,6 +56,7 @@ Checklist for releasing new versions of SwiftUsd
         1. project.pbxproj in SwiftUsdTests
         1. project.pbxproj for each Xcode project in Examples
         1. Package.swift for each Swift Package in Examples
+        1. ci-at-desk sample YAML config file
 1. If files have been added or removed, update [Miscellaneous, "Repo structure"](<doc:Miscellaneous#Repo-structure>)
 1. Update [Ongoing Work](<doc:OngoingWork>)
 1. Update the [Change Log](<doc:ChangeLog>)

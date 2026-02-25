@@ -41,9 +41,11 @@ Checklist for releasing new versions of SwiftUsd
         1. [Getting Started](<doc:GettingStarted>)
         1. [Building Locally](<doc:BuildingLocally>)
         1. Links to vanilla OpenUSD source files on GitHub
+        1. Default openusd-ref in .github/workflows/build-swiftusd.yml
     1. Pixar namespace
         1. [Getting Started, "Using SwiftUsd"](<doc:GettingStarted#Using-SwiftUsd>)
         1. [Getting Started, "Common Issues"](<doc:GettingStarted#Common-issues>)
+        1. Typealias in each Xcode project/Swift Package in Examples
     1. Xcode, OS
         1. [Getting Started](<doc:GettingStarted>). Include build numbers as well
     1. SwiftUsd

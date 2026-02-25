@@ -19,6 +19,9 @@ Miscellaneous details about this repo
 - `SwiftUsd/.build`  
 Swift Package Manager build directory from running `./scripts/build_symbol_graphs.zsh`. Only needed by advanced users. Not tracked by git.
 
+- `SwiftUsd/.github`  
+Github Actions directory
+
 - `SwiftUsd/.spi.yml`  
 Swift Package Index Manifest file.
 

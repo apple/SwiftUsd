@@ -11,6 +11,11 @@ Changes to SwiftUsd
     ```
 }
 
+### 6.0.0
+Released 2026-02-26, based on OpenUSD v26.03
+- Move from OpenUSD v25.08 to v26.03
+- Set up GitHub Actions CI for SwiftUsd
+
 ### 5.2.0
 Released 2025-11-20, based on OpenUSD v25.08
 - Add support for the universal binaries on macOS, iOS simulator, visionOS, and visionOS simulator. (Note that the default SwiftUsd package uses Apple Silicon-only binaries)

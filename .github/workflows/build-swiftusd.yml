@@ -35,7 +35,7 @@ on:
                 description: 'OpenUSD ref'
                 required: false
                 type: string
-                default: 'v25.08'
+                default: 'v26.03'
 
             build-targets:
                 description: 'Build target list, or ALL'

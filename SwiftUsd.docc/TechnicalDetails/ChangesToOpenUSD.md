@@ -11,11 +11,10 @@ These changes are contained in `SwiftUsd/openusd-patch.patch`:
 
 #### Usd-specific changes to OpenUSD before building  
 These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD
-- Cherry pick 4cf5fee816332f98af626f44a5cd852e06093e08 to avoid increasing memory footprint when using UsdImagingGLEngine on macOS:
-  - Modified: `pxr/imaging/hdx/taskControllerSceneIndex.cpp`
-
-- Cherry pick https://github.com/PixarAnimationStudios/OpenUSD/pull/3707 to add support for compiling for iOS simulator:
+- Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/3707](https://github.com/PixarAnimationStudios/OpenUSD/pull/3707) to add support for compiling for iOS/visionOS simulators:
   - Modified: `build_scripts/apple_utils.py`
+
+- Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/3950](https://github.com/PixarAnimationStudios/OpenUSD/pull/3950) to improve error reporting when building OpenUSD:
   - Modified: `build_scripts/build_usd.py`
 
 #### Swift-specific changes to OpenUSD before building
@@ -40,7 +39,7 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
 - Support using `pxr::TfNotice::Register` from Swift:
     - Modified: `pxr/base/tf/notice.h`
 
-- [rdar://148534260: API notes should support annotating C++ operators](rdar://148534260)
+- [rdar://148534260: API notes should support annotating C++ operators](rdar://148534260)  
     Annotations of C++ operators have to go in header files until they're supported in API Notes
     - Modified: `pxr/base/tf/refPtr.h`
     - Modified: `pxr/base/tf/weakPtrFacade.h`
@@ -62,6 +61,10 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/exec/vdf/sparseInputTraverser.h`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.cpp`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.h`
+
+- [https://github.com/swiftlang/swift/pull/80344: [cxx-interop] Layout reference types that use tail padding of their bases correctly](https://github.com/swiftlang/swift/pull/80344)
+    This issue is worked around by reordering fields in derived types that use tail padding to no longer use tail padding. This issue was fixed in Swift 6.2.
+    - Modified: `pxr/base/trace/eventNode.h`
 
 ### Changes to OpenUSD while making a Swift Package
 These changes are applied by `SwiftUsd/scripts/make-swift-package`, after `build_usd.py` has finished compiling OpenUSD. (This list is non-exhaustive, see `SwiftUsd/scripts/make-swift-package` for full details)

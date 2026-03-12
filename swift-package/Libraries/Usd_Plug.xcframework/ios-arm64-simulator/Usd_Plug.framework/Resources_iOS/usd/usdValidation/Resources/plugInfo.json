@@ -1,0 +1,27 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Validators": {
+                    "CompositionErrorTest": {
+                        "doc": "Validator aims at providing all composition errors, which were generated while composing the stage."
+                    }, 
+                    "StageMetadataChecker": {
+                        "doc": "Stages that can be consumed as referenceable assets must have a valid 'defaultPrim' specified."
+                    },
+                    "AttributeTypeMismatch": {
+                        "doc": "Validator that checks for attribute type mismatch with the schema definition."
+                    },
+                    "keywords": [
+                        "UsdCoreValidators"
+                    ]
+                }
+            }, 
+            "LibraryPath": "../../../Usd_UsdValidation.framework/Usd_UsdValidation", 
+            "Name": "usdValidation", 
+            "ResourcePath": "Resources", 
+            "Root": "..", 
+            "Type": "library"
+        }
+    ]
+}

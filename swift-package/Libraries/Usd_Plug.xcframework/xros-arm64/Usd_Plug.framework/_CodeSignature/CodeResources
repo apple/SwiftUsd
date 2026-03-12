@@ -396,6 +396,10 @@
 		<data>
 		N3zIPnjCBDTg2LpKq5h3HciKEAM=
 		</data>
+		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
+		<data>
+		6/UeCiS8u2osxRG59+LgWO3r9m0=
+		</data>
 		<key>Resources_iOS/usd/usdHydra/Resources/generatedSchema.usda</key>
 		<data>
 		KYiy5R3R/grzLyhM/r+T1IZuFd4=
@@ -1508,6 +1512,10 @@
 		<data>
 		pt4iy2JhE1d6iD9iYWDESCKnsFM=
 		</data>
+		<key>Resources_iOS/usd/usdPhysicsValidators/Resources/plugInfo.json</key>
+		<data>
+		TXFcTLauENVd38vrJCCgnXzA11g=
+		</data>
 		<key>Resources_iOS/usd/usdProc/Resources/generatedSchema.usda</key>
 		<data>
 		zPH9iqBDvKW62y0lUtvpBv6pKAc=
@@ -1576,6 +1584,10 @@
 		<data>
 		cEbhruL+GWLTKh5D2EW2dJ+fmfQ=
 		</data>
+		<key>Resources_iOS/usd/usdShadeValidators/Resources/plugInfo.json</key>
+		<data>
+		EEc/Yva54YZFGtp1TWIMbYNkwWc=
+		</data>
 		<key>Resources_iOS/usd/usdSkel/Resources/generatedSchema.usda</key>
 		<data>
 		let7FNRFPLpBxAKB8jGDhH37fl8=
@@ -1596,6 +1608,10 @@
 		<data>
 		6ljN+5zFXsVIecx1ZoF8omqQD+4=
 		</data>
+		<key>Resources_iOS/usd/usdSkelValidators/Resources/plugInfo.json</key>
+		<data>
+		tyJUD58VvorbNTe/b8eggvNszG8=
+		</data>
 		<key>Resources_iOS/usd/usdUI/Resources/generatedSchema.usda</key>
 		<data>
 		IZ99vrmDtGjp4//qCTu5ZsjMluI=
@@ -1607,6 +1623,14 @@
 		<key>Resources_iOS/usd/usdUI/Resources/usdUI/schema.usda</key>
 		<data>
 		FWB6xQXe+gZS1BFwN/bEBE9lGZE=
+		</data>
+		<key>Resources_iOS/usd/usdUtilsValidators/Resources/plugInfo.json</key>
+		<data>
+		0hKFLTuIwLj2DMOw49y86pbajrA=
+		</data>
+		<key>Resources_iOS/usd/usdValidation/Resources/plugInfo.json</key>
+		<data>
+		XV7u48hczs0zx+q7g0Oyn4ikaSg=
 		</data>
 		<key>Resources_iOS/usd/usdVol/Resources/generatedSchema.usda</key>
 		<data>
@@ -2304,6 +2328,13 @@
 			<key>hash2</key>
 			<data>
 			Zi1JcDYMAm3yUMzrjnqhnfp036SZ1jysfCG240zOu0A=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KscUv/7cgJ8EI3RGhBrFRt/7n/d99+gQd7D3pYjxYek=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdHydra/Resources/generatedSchema.usda</key>
@@ -4252,6 +4283,13 @@
 			HHmDxlABsdf3rrFYj28T7t0wzxar0sj4uOGGcJW84GM=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdPhysicsValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ydZwXSC8esoZoJy3AlhioTmLQNwLt9/249xSLJQvX8I=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdProc/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
@@ -4371,6 +4409,13 @@
 			zoPLuOq7GL5nIgSnrFj7W6ecXQ8/NbXzi7a3pp/FJaQ=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdShadeValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AnKcSSSmxnrU1QQ6TPps5meMyBpml9rbeL1h5u6bmag=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdSkel/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
@@ -4406,6 +4451,13 @@
 			EX7VtNl4g9PAp43dmnt0EIN6iRCAGO+dmO2tTqqOgow=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdSkelValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			b9kB+EJos94UiFfdN4m3elm88OuOOowybmTsFpMu6HY=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdUI/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
@@ -4425,6 +4477,20 @@
 			<key>hash2</key>
 			<data>
 			eHU0euLgNbYCvZPh3epqkUI/GrrDUphbFxxCgdDiV4I=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdUtilsValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Qw9V1WCyND5/D2cxopz09MYXkrSksJ+275V/HwGOgao=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdValidation/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xh5Nldr0T0FAbx6BSNGoSnBTbzsRbDnPg66UzIKE0lg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdVol/Resources/generatedSchema.usda</key>

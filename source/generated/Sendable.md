@@ -729,6 +729,33 @@ Use this extension method sparingly!
 ### Sendable ExecIr types
 - `pxr.ExecIrTokens_StaticTokenType`
 
+### Sendable UsdValidation types
+- `pxr.UsdValidationErrorType`
+- `pxr.UsdValidationTimeRange`
+- `pxr.UsdValidatorNameTokens_StaticTokenType`
+- `pxr.UsdValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdValidationErrorNameTokens_StaticTokenType`
+
+### Sendable UsdGeomValidators types
+- `pxr.UsdGeomValidatorNameTokens_StaticTokenType`
+- `pxr.UsdGeomValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdGeomValidationErrorNameTokens_StaticTokenType`
+
+### Sendable UsdShadeValidators types
+- `pxr.UsdShadeValidatorNameTokens_StaticTokenType`
+- `pxr.UsdShadeValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdShadeValidationErrorNameTokens_StaticTokenType`
+
+### Sendable UsdSkelValidators types
+- `pxr.UsdSkelValidatorNameTokens_StaticTokenType`
+- `pxr.UsdSkelValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdSkelValidationErrorNameTokens_StaticTokenType`
+
+### Sendable UsdUtilsValidators types
+- `pxr.UsdUtilsValidatorNameTokens_StaticTokenType`
+- `pxr.UsdUtilsValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdUtilsValidationErrorNameTokens_StaticTokenType`
+
 ### Sendable Garch types
 - `pxr.GarchGLDebugWindow.Buttons`
 - `pxr.GarchGLDebugWindow.ModifierKeys`
@@ -1856,6 +1883,16 @@ Use this extension method sparingly!
 - `pxr.ExecUsdCacheView`
 - `pxr.ExecUsdRequest`
 - `pxr.ExecUsdValueKey`
+
+### Non-Sendable UsdValidation types
+- `pxr.UsdValidationContext`
+- `pxr.UsdValidationErrorSite`
+- `pxr.UsdValidationError`
+- `pxr.UsdValidationValidatorMetadata`
+- `pxr.UsdValidationValidator`
+- `pxr.UsdValidationValidatorSuite`
+- `pxr.UsdValidationFixer`
+- `pxr.UsdValidationRegistry`
 
 ### Non-Sendable Garch types
 - `pxr.GarchGLDebugWindow`

@@ -1620,6 +1620,10 @@ void* _Nonnull _address(pxr::VdfExecutionTypeRegistry* _Nonnull x) {
 void* _Nonnull _address(pxr::ExecTypeRegistry* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
+
+void* _Nonnull _address(pxr::UsdValidationRegistry* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
 void* _Nonnull _address(pxr::GarchGLPlatformDebugContext* _Nonnull x) {

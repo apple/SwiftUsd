@@ -1555,6 +1555,7 @@
 // pxr::VtValueTypeCanTransform<pxr::EfTime>
 // std::optional<pxr::EsfObject>
 // std::vector<pxr::ExecValueKey, std::allocator<pxr::ExecValueKey>>
+// pxr::TfSingleton<pxr::UsdValidationRegistry>
 // pxr::TfTypeFunctions<pxr::HfPluginBase>
 // std::optional<pxr::CameraUtilConformWindowPolicy>
 // pxr::VtValueTypeCanCompose<pxr::CameraUtilConformWindowPolicy>
@@ -1828,10 +1829,12 @@
 // std::unordered_map<pxr::TfToken, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>>>
 // std::unordered_map<pxr::TfToken, pxr::UsdSchemaRegistry::SchemaInfo const *, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::UsdSchemaRegistry::SchemaInfo const *>>>
 // std::unordered_map<pxr::TfType, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
+// std::vector<std::pair<pxr::TfToken, std::vector<pxr::UsdValidationValidator const *, std::allocator<pxr::UsdValidationValidator const *>>>, std::allocator<std::pair<pxr::TfToken, std::vector<pxr::UsdValidationValidator const *, std::allocator<pxr::UsdValidationValidator const *>>>>>
 // std::vector<std::pair<pxr::TfToken, pxr::TraceEvent const *>, std::allocator<std::pair<pxr::TfToken, pxr::TraceEvent const *>>>
 // std::vector<std::pair<pxr::SdfPath const *, pxr::TfToken const>, std::allocator<std::pair<pxr::SdfPath const *, pxr::TfToken const>>>
 // std::pair<pxr::TfToken, pxr::VdfInput *>
 // std::pair<pxr::TfToken, pxr::VdfOutput *>
+// std::pair<pxr::TfToken, std::vector<pxr::UsdValidationValidator const *, std::allocator<pxr::UsdValidationValidator const *>>>
 // std::pair<pxr::TfToken, pxr::TraceEvent const *>
 // std::pair<pxr::TfType, pxr::TfToken>
 // std::pair<pxr::SdfPath const *, pxr::TfToken const>
@@ -2233,6 +2236,7 @@
 // std::pair<std::string, std::pair<std::shared_ptr<pxr::ArAsset>, pxr::SdfZipFile>>
 // std::unique_ptr<pxr::SdfZipFile::Iterator, std::default_delete<pxr::SdfZipFile::Iterator>>
 // std::unordered_map<std::string, pxr::SdfZipFile::Iterator, std::hash<std::allocator<char>>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::SdfZipFile::Iterator>>>
+// std::pair<pxr::SdfZipFile::Iterator, pxr::SdfZipFile::Iterator>
 // std::pair<std::string const, pxr::SdfZipFile::Iterator>
 // std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>
 // std::vector<std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>, std::allocator<std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>>>
@@ -2632,6 +2636,16 @@
 // pxr::exec_registration::NamespaceAncestor<pxr::GfMatrix4d>
 // pxr::TfSpan<pxr::ExecValueKey const>
 // std::vector<pxr::ExecUsdValueKey, std::allocator<pxr::ExecUsdValueKey>>
+// std::unordered_map<pxr::TfToken, pxr::UsdValidationValidatorMetadata, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::UsdValidationValidatorMetadata>>>
+// std::pair<pxr::TfToken const, pxr::UsdValidationValidatorMetadata>
+// std::unique_ptr<pxr::UsdValidationValidator, std::default_delete<pxr::UsdValidationValidator>>
+// std::unordered_map<pxr::TfToken, std::unique_ptr<pxr::UsdValidationValidator, std::default_delete<pxr::UsdValidationValidator>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::unique_ptr<pxr::UsdValidationValidator, std::default_delete<pxr::UsdValidationValidator>>>>>
+// std::unordered_set<pxr::UsdValidationValidator const *, std::hash<pxr::UsdValidationValidator const>, std::equal_to<pxr::UsdValidationValidator const *>, std::allocator<pxr::UsdValidationValidator const *>>
+// std::pair<pxr::TfToken const, std::unique_ptr<pxr::UsdValidationValidator, std::default_delete<pxr::UsdValidationValidator>>>
+// std::unique_ptr<pxr::UsdValidationValidatorSuite, std::default_delete<pxr::UsdValidationValidatorSuite>>
+// std::unordered_map<pxr::TfToken, std::unique_ptr<pxr::UsdValidationValidatorSuite, std::default_delete<pxr::UsdValidationValidatorSuite>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::unique_ptr<pxr::UsdValidationValidatorSuite, std::default_delete<pxr::UsdValidationValidatorSuite>>>>>
+// std::pair<pxr::TfToken const, std::unique_ptr<pxr::UsdValidationValidatorSuite, std::default_delete<pxr::UsdValidationValidatorSuite>>>
+// std::vector<pxr::UsdValidationFixer, std::allocator<pxr::UsdValidationFixer>>
 // std::map<pxr::GlfGLContext const *, pxr::GarchNSGLContextState, std::less<pxr::GlfGLContext const *>, std::allocator<std::pair<pxr::GlfGLContext const *, pxr::GarchNSGLContextState>>>
 // std::pair<pxr::GlfGLContext const *, pxr::GarchNSGLContextState>
 // std::vector<std::shared_ptr<pxr::HioImage>, std::allocator<std::shared_ptr<pxr::HioImage>>>
@@ -4204,6 +4218,23 @@ extension pxr.ExecValidationErrorType: @unchecked Sendable {}
 extension pxr.ExecValueKey: @unchecked Sendable {}
 extension pxr.ExecGeomXformableTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.ExecIrTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdValidationErrorType: @unchecked Sendable {}
+extension pxr.UsdValidationTimeRange: @unchecked Sendable {}
+extension pxr.UsdValidatorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdValidatorKeywordTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdValidationErrorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdGeomValidatorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdGeomValidatorKeywordTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdGeomValidationErrorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdShadeValidatorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdShadeValidatorKeywordTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdShadeValidationErrorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdSkelValidatorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdSkelValidatorKeywordTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdSkelValidationErrorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdUtilsValidatorNameTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdUtilsValidatorKeywordTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.UsdUtilsValidationErrorNameTokens_StaticTokenType: @unchecked Sendable {}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLDebugWindow.Buttons: @unchecked Sendable {}
 extension pxr.GarchGLDebugWindow.ModifierKeys: @unchecked Sendable {}
@@ -5324,7 +5355,9 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfScheduleInput: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfScheduleNode: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfDataManagerFacade: @unchecked Sendable {}
+#if compiler(<6.3)
 @available(*, unavailable) extension pxr.VdfDataManagerHashTable: @unchecked Sendable {}
+#endif // #if compiler(<6.3)
 @available(*, unavailable) extension pxr.VdfExecutionStatsProcessor: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfGrapherOptions: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfGrapherOptions.NodeLimitVector: @unchecked Sendable {}
@@ -5353,6 +5386,17 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecUsdCacheView: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecUsdRequest: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecUsdValueKey: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationContext: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationErrorSites: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationErrorSite: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationError: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationErrorVector: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationValidatorMetadataVector: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationValidatorMetadata: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationValidator: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationValidatorSuite: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationFixer: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdValidationRegistry: @unchecked Sendable {}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 @available(*, unavailable) extension pxr.GarchGLDebugWindow: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GarchGLPlatformDebugContext: @unchecked Sendable {}
@@ -6101,7 +6145,11 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingPluginLightAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingPluginLightFilterAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingPointsAdapter: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
+#if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT) && compiler(<6.3)
 @available(*, unavailable) extension pxr.UsdImagingPointInstancerAdapter: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT) && compiler(<6.3)
+#if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
 @available(*, unavailable) extension pxr.UsdImagingPortalLightAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingRootOverridesSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingRootOverridesSceneIndex: @unchecked Sendable {}

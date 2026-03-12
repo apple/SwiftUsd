@@ -314,6 +314,9 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/ExecProviderResolution/DynamicTraversal``
 - ``OpenUSD/C++/pxr/ExecValidationErrorType``
 
+###  UsdValidation types
+- ``OpenUSD/C++/pxr/UsdValidationErrorType``
+
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLDebugWindow/Buttons``
 - ``OpenUSD/C++/pxr/GarchGLDebugWindow/ModifierKeys``

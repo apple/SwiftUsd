@@ -134,6 +134,7 @@
 #include "pxr/usdImaging/usdImagingGL/renderParams.h"
 #include "pxr/usdImaging/usdImagingGL/rendererSettings.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdValidation/error.h"
 
 namespace Overlay {
   extern const pxr::ArchMemAdvice ArchMemAdviceNormal;
@@ -989,6 +990,14 @@ namespace Overlay {
 namespace Overlay {
   namespace ExecValidationErrorType {
     extern const pxr::ExecValidationErrorType DataDependencyCycle;
+  }
+}
+namespace Overlay {
+  namespace UsdValidationErrorType {
+    extern const pxr::UsdValidationErrorType None;
+    extern const pxr::UsdValidationErrorType Error;
+    extern const pxr::UsdValidationErrorType Warn;
+    extern const pxr::UsdValidationErrorType Info;
   }
 }
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT

@@ -405,6 +405,11 @@ These types conform to `Equatable` in Swift.
 ###  Exec types
 - ``OpenUSD/C++/pxr/ExecTypeRegistry``
 
+###  UsdValidation types
+- ``OpenUSD/C++/pxr/UsdValidationErrorSite``
+- ``OpenUSD/C++/pxr/UsdValidationError``
+- ``OpenUSD/C++/pxr/UsdValidationRegistry``
+
 ###  Garch types
 - ``OpenUSD/C++/pxr/GarchGLPlatformDebugContext``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GarchGLPlatformDebugContext>``

@@ -1393,6 +1393,13 @@ extension pxr.ExecTypeRegistry: Equatable { // importedAsReference
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.UsdValidationErrorSite: Equatable {} // foundBySwift
+extension pxr.UsdValidationError: Equatable {} // foundBySwift
+extension pxr.UsdValidationRegistry: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.UsdValidationRegistry, rhs: pxr.UsdValidationRegistry) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLPlatformDebugContext: Equatable { // importedAsReference
     public static func ==(lhs: pxr.GarchGLPlatformDebugContext, rhs: pxr.GarchGLPlatformDebugContext) -> Bool {

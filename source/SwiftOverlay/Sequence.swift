@@ -88,9 +88,14 @@ extension pxr.VtDictionary: CxxDictionary, CxxSequence {
     public mutating func __insertUnsafe(_ element: Self.Element) -> Self.InsertionResult {
         __Overlay.insert(&self, element)
     }
+    // Starting in Swift 6.3, pxr::VtDictionary::find() is correctly imported as __findUnsafe,
+    // instead of as find. This causes an error because there are multiple candidates for the
+    // protocol requirement, so hide the Swift extension candidate in Swift 6.3 and later
+    #if compiler(<6.3)
     public func __findUnsafe(_ key: Self.Key) -> Self.RawIterator {
         __Overlay.find(self, key)
     }
+    #endif
     public mutating func __findMutatingUnsafe(_ key: Self.Key) -> Self.RawMutableIterator {
         __Overlay.findMutating(&self, key)
     }

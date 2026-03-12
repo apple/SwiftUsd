@@ -929,6 +929,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::ExecTypeRegistry& l,
                                      const pxr::ExecTypeRegistry& r) {
     return &l == &r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::UsdValidationRegistry& l,
+                                     const pxr::UsdValidationRegistry& r) {
+    return &l == &r;
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 bool __Overlay::operatorEqualsEquals(const pxr::GarchGLPlatformDebugContext& l,
                                      const pxr::GarchGLPlatformDebugContext& r) {

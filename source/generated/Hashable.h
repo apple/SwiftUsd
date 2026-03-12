@@ -243,6 +243,7 @@
 #include "pxr/usdImaging/usdSkelImaging/pointsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdSkelImaging/skeletonResolvingSceneIndex.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdValidation/registry.h"
 
 namespace __Overlay {
   int64_t hash_value(const pxr::TfType& x);
@@ -510,6 +511,7 @@ namespace __Overlay {
   int64_t hash_value(const pxr::VdfExecutionTypeRegistry& x);
   int64_t hash_value(const pxr::EfTime& x);
   int64_t hash_value(const pxr::ExecTypeRegistry& x);
+  int64_t hash_value(const pxr::UsdValidationRegistry& x);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   int64_t hash_value(const pxr::GarchGLPlatformDebugContext& x);
   int64_t hash_value(const pxr::GarchGLPlatformDebugContextRefPtr& x);

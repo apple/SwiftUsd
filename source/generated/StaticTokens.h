@@ -213,6 +213,11 @@
 #include "pxr/usdImaging/usdSkelImaging/tokens.h"
 #include "pxr/usdImaging/usdVolImaging/tokens.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdGeomValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdShadeValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdSkelValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdUtilsValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdValidation/validatorTokens.h"
 
 namespace __Overlay {
     extern const pxr::GfColorSpaceNames_StaticTokenType* const GfColorSpaceNames;
@@ -269,6 +274,21 @@ namespace __Overlay {
     extern const pxr::EfLeafTokens_StaticTokenType* const EfLeafTokens;
     extern const pxr::ExecGeomXformableTokens_StaticTokenType* const ExecGeomXformableTokens;
     extern const pxr::ExecIrTokens_StaticTokenType* const ExecIrTokens;
+    extern const pxr::UsdValidatorNameTokens_StaticTokenType* const UsdValidatorNameTokens;
+    extern const pxr::UsdValidatorKeywordTokens_StaticTokenType* const UsdValidatorKeywordTokens;
+    extern const pxr::UsdValidationErrorNameTokens_StaticTokenType* const UsdValidationErrorNameTokens;
+    extern const pxr::UsdGeomValidatorNameTokens_StaticTokenType* const UsdGeomValidatorNameTokens;
+    extern const pxr::UsdGeomValidatorKeywordTokens_StaticTokenType* const UsdGeomValidatorKeywordTokens;
+    extern const pxr::UsdGeomValidationErrorNameTokens_StaticTokenType* const UsdGeomValidationErrorNameTokens;
+    extern const pxr::UsdShadeValidatorNameTokens_StaticTokenType* const UsdShadeValidatorNameTokens;
+    extern const pxr::UsdShadeValidatorKeywordTokens_StaticTokenType* const UsdShadeValidatorKeywordTokens;
+    extern const pxr::UsdShadeValidationErrorNameTokens_StaticTokenType* const UsdShadeValidationErrorNameTokens;
+    extern const pxr::UsdSkelValidatorNameTokens_StaticTokenType* const UsdSkelValidatorNameTokens;
+    extern const pxr::UsdSkelValidatorKeywordTokens_StaticTokenType* const UsdSkelValidatorKeywordTokens;
+    extern const pxr::UsdSkelValidationErrorNameTokens_StaticTokenType* const UsdSkelValidationErrorNameTokens;
+    extern const pxr::UsdUtilsValidatorNameTokens_StaticTokenType* const UsdUtilsValidatorNameTokens;
+    extern const pxr::UsdUtilsValidatorKeywordTokens_StaticTokenType* const UsdUtilsValidatorKeywordTokens;
+    extern const pxr::UsdUtilsValidationErrorNameTokens_StaticTokenType* const UsdUtilsValidationErrorNameTokens;
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
     extern const pxr::HioGlslfxTokens_StaticTokenType* const HioGlslfxTokens;
     extern const pxr::HioGlslfxResourceLayoutTokens_StaticTokenType* const HioGlslfxResourceLayoutTokens;

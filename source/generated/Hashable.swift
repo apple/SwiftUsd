@@ -1457,6 +1457,11 @@ extension pxr.ExecTypeRegistry: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.UsdValidationRegistry: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLPlatformDebugContext: Hashable {
     public func hash(into hasher: inout Hasher) {

@@ -96,7 +96,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      return target_config_patches, clang_config_patches
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/build_scripts/build_usd.py ./build_scripts/build_usd.py
 --- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2026-02-24 15:23:58
-+++ ./build_scripts/build_usd.py	2026-02-24 15:29:46
++++ ./build_scripts/build_usd.py	2026-03-12 11:35:53
 @@ -307,13 +307,20 @@
              p.wait()
  
@@ -120,6 +120,14 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
  @contextlib.contextmanager
  def CurrentWorkingDirectory(dir):
+@@ -2422,7 +2429,6 @@
+                            not embedded and 
+                            not self.targetWasm)
+         self.buildUsdValidation = (args.build_usd_validation and 
+-                                   not embedded and 
+                                    not self.targetWasm)
+ 
+         # - Documentation
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
 --- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2026-02-24 15:23:51
 +++ ./pxr/base/arch/fileSystem.h	2026-02-24 15:29:46

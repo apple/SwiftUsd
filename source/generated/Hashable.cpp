@@ -816,6 +816,9 @@ int64_t __Overlay::hash_value(const pxr::EfTime& x) {
 int64_t __Overlay::hash_value(const pxr::ExecTypeRegistry& x) {
     return (int64_t) &x;
 }
+int64_t __Overlay::hash_value(const pxr::UsdValidationRegistry& x) {
+    return (int64_t) &x;
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 int64_t __Overlay::hash_value(const pxr::GarchGLPlatformDebugContext& x) {
     return (int64_t) &x;

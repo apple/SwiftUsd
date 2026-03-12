@@ -191,7 +191,7 @@ struct SwiftPackage {
                         result.append(#"// header "\#(relativePath)" // 24.05 HdSt_MaterialNetworkShader #include fix"#)
                         continue
                     }
-                    if relativePath.starts(with: "pxr/usdImaging/usdBakeMtlx/") || relativePath.starts(with: "pxr/usdValidation") {
+                    if relativePath.starts(with: "pxr/usdImaging/usdBakeMtlx/") {
                         continue
                     }
                     if relativePath.starts(with: "pxr/usdImaging/usdviewq") {

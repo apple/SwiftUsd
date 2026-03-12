@@ -1838,6 +1838,15 @@ std::string __Overlay::to_string(const pxr::ExecValidationErrorType& x) {
     default: return "pxr::ExecValidationErrorType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::UsdValidationErrorType& x) {
+    switch (x) {
+    case pxr::UsdValidationErrorType::None: return "pxr::UsdValidationErrorType::None";
+    case pxr::UsdValidationErrorType::Error: return "pxr::UsdValidationErrorType::Error";
+    case pxr::UsdValidationErrorType::Warn: return "pxr::UsdValidationErrorType::Warn";
+    case pxr::UsdValidationErrorType::Info: return "pxr::UsdValidationErrorType::Info";
+    default: return "pxr::UsdValidationErrorType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 std::string __Overlay::to_string(const pxr::GarchGLDebugWindow::Buttons& x) {
     switch (x) {

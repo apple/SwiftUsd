@@ -371,6 +371,8 @@
 #include "pxr/usdImaging/usdSkelImaging/pointsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdSkelImaging/skeletonResolvingSceneIndex.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdValidation/error.h"
+#include "pxr/usdValidation/usdValidation/registry.h"
 
 namespace __Overlay {
   bool operatorEqualsEquals(const pxr::TfRefBase& l,
@@ -829,6 +831,8 @@ namespace __Overlay {
                             const pxr::VdfExecutionTypeRegistry& r);
   bool operatorEqualsEquals(const pxr::ExecTypeRegistry& l,
                             const pxr::ExecTypeRegistry& r);
+  bool operatorEqualsEquals(const pxr::UsdValidationRegistry& l,
+                            const pxr::UsdValidationRegistry& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorEqualsEquals(const pxr::GarchGLPlatformDebugContext& l,
                             const pxr::GarchGLPlatformDebugContext& r);

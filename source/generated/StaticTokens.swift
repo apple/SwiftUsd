@@ -180,6 +180,51 @@ extension pxr.TfToken {
     public static var ExecIrTokens: pxr.ExecIrTokens_StaticTokenType {
         __Overlay.ExecIrTokens.pointee
     }
+    public static var UsdValidatorNameTokens: pxr.UsdValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdValidatorNameTokens.pointee
+    }
+    public static var UsdValidatorKeywordTokens: pxr.UsdValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdValidatorKeywordTokens.pointee
+    }
+    public static var UsdValidationErrorNameTokens: pxr.UsdValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdValidationErrorNameTokens.pointee
+    }
+    public static var UsdGeomValidatorNameTokens: pxr.UsdGeomValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdGeomValidatorNameTokens.pointee
+    }
+    public static var UsdGeomValidatorKeywordTokens: pxr.UsdGeomValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdGeomValidatorKeywordTokens.pointee
+    }
+    public static var UsdGeomValidationErrorNameTokens: pxr.UsdGeomValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdGeomValidationErrorNameTokens.pointee
+    }
+    public static var UsdShadeValidatorNameTokens: pxr.UsdShadeValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdShadeValidatorNameTokens.pointee
+    }
+    public static var UsdShadeValidatorKeywordTokens: pxr.UsdShadeValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdShadeValidatorKeywordTokens.pointee
+    }
+    public static var UsdShadeValidationErrorNameTokens: pxr.UsdShadeValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdShadeValidationErrorNameTokens.pointee
+    }
+    public static var UsdSkelValidatorNameTokens: pxr.UsdSkelValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdSkelValidatorNameTokens.pointee
+    }
+    public static var UsdSkelValidatorKeywordTokens: pxr.UsdSkelValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdSkelValidatorKeywordTokens.pointee
+    }
+    public static var UsdSkelValidationErrorNameTokens: pxr.UsdSkelValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdSkelValidationErrorNameTokens.pointee
+    }
+    public static var UsdUtilsValidatorNameTokens: pxr.UsdUtilsValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdUtilsValidatorNameTokens.pointee
+    }
+    public static var UsdUtilsValidatorKeywordTokens: pxr.UsdUtilsValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdUtilsValidatorKeywordTokens.pointee
+    }
+    public static var UsdUtilsValidationErrorNameTokens: pxr.UsdUtilsValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdUtilsValidationErrorNameTokens.pointee
+    }
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
     public static var HioGlslfxTokens: pxr.HioGlslfxTokens_StaticTokenType {
         __Overlay.HioGlslfxTokens.pointee

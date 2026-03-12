@@ -549,6 +549,11 @@ extension pxr.ExecTypeRegistry: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.ExecTypeRegistry
 }
 extension pxr.ExecTypeRegistry: Overlay._SwiftUsdImmortalReferenceTypeProtocol {}
+
+extension pxr.UsdValidationRegistry: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.UsdValidationRegistry
+}
+extension pxr.UsdValidationRegistry: Overlay._SwiftUsdImmortalReferenceTypeProtocol {}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 
 extension pxr.GarchGLPlatformDebugContext: Overlay._SwiftUsdReferenceTypeProtocol {

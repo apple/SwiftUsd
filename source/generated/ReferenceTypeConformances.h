@@ -130,6 +130,7 @@
 #include "pxr/usdImaging/usdSkelImaging/pointsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdSkelImaging/skeletonResolvingSceneIndex.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdValidation/registry.h"
 
 #include "pxr/base/tf/anyWeakPtr.h"
 #include "pxr/usd/usd/common.h"
@@ -1490,6 +1491,10 @@ void* _Nonnull _address(pxr::VdfExecutionTypeRegistry* _Nonnull)
 typedef pxr::ExecTypeRegistry __SwiftUsd_Typedef___ZN3pxr16ExecTypeRegistryE;
 void* _Nonnull _address(pxr::ExecTypeRegistry* _Nonnull)
     SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr16ExecTypeRegistryE._address(self:));
+
+typedef pxr::UsdValidationRegistry __SwiftUsd_Typedef___ZN3pxr21UsdValidationRegistryE;
+void* _Nonnull _address(pxr::UsdValidationRegistry* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr21UsdValidationRegistryE._address(self:));
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
 typedef pxr::GarchGLPlatformDebugContext __SwiftUsd_Typedef___ZN3pxr27GarchGLPlatformDebugContextE;

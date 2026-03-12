@@ -512,6 +512,11 @@ extension pxr.ExecTypeRegistry: Comparable { // importedAsReference
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.UsdValidationRegistry: Comparable { // importedAsReference
+    public static func <(lhs: pxr.UsdValidationRegistry, rhs: pxr.UsdValidationRegistry) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLPlatformDebugContext: Comparable { // importedAsReference
     public static func <(lhs: pxr.GarchGLPlatformDebugContext, rhs: pxr.GarchGLPlatformDebugContext) -> Bool {

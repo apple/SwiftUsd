@@ -501,6 +501,11 @@ Namespaces:
     SwiftRetainOp: immortal
     SwiftReleaseOp: immortal
 
+  - Name: UsdValidationRegistry
+    SwiftImportAs: reference
+    SwiftRetainOp: immortal
+    SwiftReleaseOp: immortal
+
   - Name: GarchGLPlatformDebugContext
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr27GarchGLPlatformDebugContextE

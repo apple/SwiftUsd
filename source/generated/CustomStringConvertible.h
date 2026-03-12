@@ -255,6 +255,7 @@
 #include "pxr/usdImaging/usdImagingGL/renderParams.h"
 #include "pxr/usdImaging/usdImagingGL/rendererSettings.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdValidation/usdValidation/error.h"
 
 namespace __Overlay {
   std::string to_string(const pxr::ArchMemAdvice& x);
@@ -525,6 +526,7 @@ namespace __Overlay {
   std::string to_string(const pxr::EfTimeInterval& x);
   std::string to_string(const pxr::ExecProviderResolution::DynamicTraversal& x);
   std::string to_string(const pxr::ExecValidationErrorType& x);
+  std::string to_string(const pxr::UsdValidationErrorType& x);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   std::string to_string(const pxr::GarchGLDebugWindow::Buttons& x);
   std::string to_string(const pxr::GarchGLDebugWindow::ModifierKeys& x);

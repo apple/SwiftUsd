@@ -110,6 +110,8 @@ struct FileSystemInfo {
             "usdSkel", "usdUI", "usdUtils", "usdPhysics", "usdMtlx",
             // exec
             "vdf", "ef", "esf", "esfUsd", "exec", "execUsd", "execGeom", "execIr",
+            // usdValidation
+            "usdValidation", "usdGeomValidators", "usdPhysicsValidators", "usdShadeValidators", "usdSkelValidators", "usdUtilsValidators",
             // imaging
             "garch", "hf", "hio", "cameraUtil", "pxOsd", "geomUtil", "glf", "hgi",
             "hgiGL", "hgiMetal", "hgiInterop", "hd", "hdar", "hdGp", "hdsi", "hdMtlx", "hioOpenVDB",

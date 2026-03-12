@@ -1367,6 +1367,11 @@ extension pxr.ExecValidationErrorType: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.UsdValidationErrorType: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.GarchGLDebugWindow.Buttons: CustomStringConvertible {
     public var description: String {

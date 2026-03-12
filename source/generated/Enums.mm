@@ -596,6 +596,11 @@ const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolut
 
 const pxr::ExecValidationErrorType Overlay::ExecValidationErrorType::DataDependencyCycle = pxr::ExecValidationErrorType::DataDependencyCycle;
 
+const pxr::UsdValidationErrorType Overlay::UsdValidationErrorType::None = pxr::UsdValidationErrorType::None;
+const pxr::UsdValidationErrorType Overlay::UsdValidationErrorType::Error = pxr::UsdValidationErrorType::Error;
+const pxr::UsdValidationErrorType Overlay::UsdValidationErrorType::Warn = pxr::UsdValidationErrorType::Warn;
+const pxr::UsdValidationErrorType Overlay::UsdValidationErrorType::Info = pxr::UsdValidationErrorType::Info;
+
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 const pxr::GarchGLDebugWindow::Buttons Overlay::GarchGLDebugWindow::MyButton1 = pxr::GarchGLDebugWindow::MyButton1;
 const pxr::GarchGLDebugWindow::Buttons Overlay::GarchGLDebugWindow::MyButton2 = pxr::GarchGLDebugWindow::MyButton2;

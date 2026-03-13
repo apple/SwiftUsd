@@ -25,7 +25,7 @@ let package = Package(
     name: "HelloSwiftUsd_SPM",
     platforms: [.macOS(.v15)],
     dependencies: [
-        .package(url: "https://github.com/apple/SwiftUsd", from: "6.0.0"),
+        .package(url: "https://github.com/apple/SwiftUsd", from: "6.1.0"),
     ],
     targets: [
         .executableTarget(

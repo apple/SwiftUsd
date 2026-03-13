@@ -11,6 +11,11 @@ Changes to SwiftUsd
     ```
 }
 
+### 6.1.0
+Released 2026-03-18, based on OpenUSD v26.03
+- Add support for Swift 6.3
+- Add usdValidation binaries for iOS, visionOS, and simulators to the default Swift package
+
 ### 6.0.0
 Released 2026-02-26, based on OpenUSD v26.03
 - Move from OpenUSD v25.08 to v26.03

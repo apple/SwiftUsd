@@ -46,4 +46,7 @@ if __name__ == "__main__":
         openusd_patch_hash
     ])
 
+    # Cache keys cannot contain commas
+    result = result.replace(",", "")
+
     printAndWrite(output=f"cache-key={result}")

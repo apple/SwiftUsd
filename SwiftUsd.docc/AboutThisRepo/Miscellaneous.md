@@ -69,10 +69,13 @@ Landing page for GitHub.
 
 - `SwiftUsd/scripts`  
 Parent directory for utility scripts used while maintaining `SwiftUsd`. Only needed by advanced users.  
+    - `SwiftUsd/scripts/ci-at-desk`  
+    Script for running CI workflows locally. See its README file for more information.
+
     - `SwiftUsd/scripts/docc`  
     Parent directory for documentation scripts. See [the cheatsheet](<doc:CheatSheet#Documentation>) for more information.
 
-    - `SwiftUsd/scripts/make-swift-package.zsh`
+    - `SwiftUsd/scripts/make-swift-package.zsh`  
     Helper script that invokes make-swift-package. 
     
     - `SwiftUsd/scripts/make-swift-package`  

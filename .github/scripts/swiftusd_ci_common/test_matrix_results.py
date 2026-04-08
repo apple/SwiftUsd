@@ -40,12 +40,12 @@ class TestMatrixResult:
         raw_xcodebuild_version = "\n".join(run(["xcodebuild", "-version"]).output)
         short_xcodebuild_version = re.search(r"Xcode (.*)", raw_xcodebuild_version).group(1) + " (" + re.search(r"Build version (.*)", raw_xcodebuild_version).group(1) + ")"
         if Environment.GitRef.swiftusd and Environment.Path.swiftusd:
-            swiftusd_ref = run(["git", "rev-parse", Environment.GitRef.swiftusd], cwd=Environment.Path.swiftusd).output[0]
+            swiftusd_ref = run(["git", "rev-parse", Environment.GitRef.swiftusd], cwd=Environment.Path.swiftusd, check=False).output[0]
         else:
             swiftusd_ref = "null"
 
         if Environment.GitRef.swiftusd_tests and Environment.Path.swiftusd_tests:
-            swiftusd_tests_ref = run(["git", "rev-parse", Environment.GitRef.swiftusd_tests], cwd=Environment.Path.swiftusd_tests).output[0]
+            swiftusd_tests_ref = run(["git", "rev-parse", Environment.GitRef.swiftusd_tests], cwd=Environment.Path.swiftusd_tests, check=False).output[0]
         else:
             swiftusd_tests_ref = "null"
 

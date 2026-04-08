@@ -32,24 +32,26 @@ def clone_openusd(checkout=None):
         run(["git", "checkout", checkout], cwd=Environment.Path.openusd, logOutput=False)
 
 def get_openusd_build_flags(target):
+    file_prefix_map = f"--build-args=USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map={Environment.Path.openusd}=OpenUSD\""
+    
     if target == "macOS":
         return ["--embree", "--imageio", "--alembic", "--openvdb", "--no-python",
-                "--ignore-homebrew", "--build-target", "native", openusd_build_dir("macOS")]
+                "--ignore-homebrew", "--build-target", "native", openusd_build_dir("macOS"), file_prefix_map]
 
     if target == "iOS":
         return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "iOS", openusd_build_dir("iOS")]
+                "--build-target", "iOS", openusd_build_dir("iOS"), file_prefix_map]
 
     if target == "iOSSimulator":
         return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "iOSSimulator", openusd_build_dir("iOSSimulator")]
+                "--build-target", "iOSSimulator", openusd_build_dir("iOSSimulator"), file_prefix_map]
 
     if target == "visionOS":
         return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "visionOS", openusd_build_dir("visionOS")]
+                "--build-target", "visionOS", openusd_build_dir("visionOS"), file_prefix_map]
 
     if target == "visionOSSimulator":
         return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "visionOSSimulator", openusd_build_dir("visionOSSimulator")]
+                "--build-target", "visionOSSimulator", openusd_build_dir("visionOSSimulator"), file_prefix_map]
 
     raise ValueError(f"Unknown target {target}")

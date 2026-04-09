@@ -415,6 +415,9 @@ fileprivate enum Interpreter {
     
     static func lookup(string s: String, in context: borrowing Context) throws -> Expression {
         guard let result = context[s] else {
+            if s.hasPrefix("skips.") {
+                return .int(0)
+            }
             throw InterpreterError.badContextLookup(s)
         }
         return result

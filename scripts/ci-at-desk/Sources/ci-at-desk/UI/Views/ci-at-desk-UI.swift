@@ -27,6 +27,7 @@ struct ci_at_desk_UI: App {
     @Environment(\.openWindow) var openWindow
     
     static var initialConfigFile: URL?
+    static var readOnly = false
     
     var body: some Scene {
          Window("ci-at-desk", id: "MainWindow") {

@@ -65,10 +65,9 @@ internal struct FileSystemHelper: ~Copyable {
         guard step != nil else { fatalError() }
         return loggingDirectory.appending(path: ".githubstepsummary.txt")
     }
-    var subprocessPathEnvironmentVariable: String {
+    var shellLogFile: URL {
         guard step != nil else { fatalError() }
-        let existing = ProcessInfo.processInfo.environment["PATH"] ?? ""
-        return yamlConfig.pathPrepend + ":" + existing
+        return loggingDirectory.appending(path: "shell-log.txt")
     }
     
     init(yamlConfig: YamlConfig, workflow: Workflow?, job: Job?, matrixIndex: Int?, matrixRunnerId: UUID?, stepIndex: Int?, step: Step?) {
@@ -108,8 +107,11 @@ internal struct FileSystemHelper: ~Copyable {
     func ensureEmptyFileExists(url: URL) throws {
         logger.trace("FileSystemHelper.ensureEmptyFileExists", metadata: ["url" : url.loggerRepresentation])
         if FileManager.default.fileExists(atPath: url.path(percentEncoded: false)) {
-            try FileManager.default.trashItem(at: url, resultingItemURL: nil)
-            // try FileManager.default.removeItem(at: url)
+            var resultingItem: NSURL?
+            try FileManager.default.trashItem(at: url, resultingItemURL: &resultingItem)
+            if let trashedItem = resultingItem {
+                Task.detached { try FileManager.default.removeItem(at: trashedItem as URL) }
+            }
         }
         if !FileManager.default.fileExists(atPath: url.deletingLastPathComponent().path(percentEncoded: false)) {
             try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
@@ -120,8 +122,11 @@ internal struct FileSystemHelper: ~Copyable {
     func ensureEmptyDirectoryExists(url: URL) throws {
         logger.trace("FileSystemHelper.ensureEmptyDirectoryExists", metadata: ["url" : url.loggerRepresentation])
         if FileManager.default.fileExists(atPath: url.path(percentEncoded: false)) {
-            try FileManager.default.trashItem(at: url, resultingItemURL: nil)
-            // try FileManager.default.removeItem(at: url)
+            var resultingItem: NSURL?
+            try FileManager.default.trashItem(at: url, resultingItemURL: &resultingItem)
+            if let trashedItem = resultingItem {
+                Task.detached { try FileManager.default.removeItem(at: trashedItem as URL) }
+            }
         }
         try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
     }

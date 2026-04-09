@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::UsdImagingGLEngine from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.03/pxr/usdImaging/usdImagingGL/engine.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/usdImaging/usdImagingGL/engine.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H

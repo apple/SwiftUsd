@@ -563,6 +563,11 @@ extension pxr.GlfDrawTargetPtr: Comparable { // classTemplateSpecialization
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.GlfDrawTarget.Attachment: Comparable { // importedAsReference
+    public static func <(lhs: pxr.GlfDrawTarget.Attachment, rhs: pxr.GlfDrawTarget.Attachment) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.GlfDrawTarget.AttachmentRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.GlfDrawTarget.AttachmentRefPtr, rhs: pxr.GlfDrawTarget.AttachmentRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -649,6 +654,11 @@ extension pxr.HdMergingSceneIndexRefPtr: Comparable { // classTemplateSpecializa
 }
 extension pxr.HdFilteringSceneIndexBase: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdFilteringSceneIndexBase, rhs: pxr.HdFilteringSceneIndexBase) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdFilteringSceneIndexBaseRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdFilteringSceneIndexBaseRefPtr, rhs: pxr.HdFilteringSceneIndexBaseRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -872,6 +882,16 @@ extension pxr.HdsiLightLinkingSceneIndexRefPtr: Comparable { // classTemplateSpe
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdsiLocatorCachingSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiLocatorCachingSceneIndex, rhs: pxr.HdsiLocatorCachingSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiLocatorCachingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiLocatorCachingSceneIndexRefPtr, rhs: pxr.HdsiLocatorCachingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdsiMaterialBindingResolvingSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdsiMaterialBindingResolvingSceneIndex, rhs: pxr.HdsiMaterialBindingResolvingSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -929,6 +949,16 @@ extension pxr.HdsiNurbsApproximatingSceneIndex: Comparable { // importedAsRefere
 }
 extension pxr.HdsiNurbsApproximatingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdsiNurbsApproximatingSceneIndexRefPtr, rhs: pxr.HdsiNurbsApproximatingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiParticleFieldConversionSceneIndex, rhs: pxr.HdsiParticleFieldConversionSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiParticleFieldConversionSceneIndexRefPtr, rhs: pxr.HdsiParticleFieldConversionSceneIndexRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -1107,6 +1137,16 @@ extension pxr.UsdImagingExtentResolvingSceneIndexRefPtr: Comparable { // classTe
 }
 extension pxr.UsdImagingExtentResolvingSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.UsdImagingExtentResolvingSceneIndex, rhs: pxr.UsdImagingExtentResolvingSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr, rhs: pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.UsdImagingLegacyRenderSettingsSceneIndex, rhs: pxr.UsdImagingLegacyRenderSettingsSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }

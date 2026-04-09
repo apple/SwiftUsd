@@ -564,11 +564,11 @@ const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::ElementsProc
 const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::RequestedOutputInSpeculationsEvent = pxr::VdfExecutionStats::RequestedOutputInSpeculationsEvent;
 const pxr::VdfExecutionStats::EventType Overlay::VdfExecutionStats::MaxEvent = pxr::VdfExecutionStats::MaxEvent;
 
-const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitUnset = pxr::VdfMaskedIteratorMode::VisitUnset;
-const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitSet = pxr::VdfMaskedIteratorMode::VisitSet;
-
 const pxr::VdfDataManagerDeallocationMode Overlay::VdfDataManagerDeallocationMode::Background = pxr::VdfDataManagerDeallocationMode::Background;
 const pxr::VdfDataManagerDeallocationMode Overlay::VdfDataManagerDeallocationMode::Immediate = pxr::VdfDataManagerDeallocationMode::Immediate;
+
+const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitUnset = pxr::VdfMaskedIteratorMode::VisitUnset;
+const pxr::VdfMaskedIteratorMode Overlay::VdfMaskedIteratorMode::VisitSet = pxr::VdfMaskedIteratorMode::VisitSet;
 
 const pxr::VdfGrapherOptions::DisplayStyle Overlay::VdfGrapherOptions::DisplayStyleFull = pxr::VdfGrapherOptions::DisplayStyleFull;
 const pxr::VdfGrapherOptions::DisplayStyle Overlay::VdfGrapherOptions::DisplayStyleNoLabels = pxr::VdfGrapherOptions::DisplayStyleNoLabels;
@@ -592,6 +592,7 @@ const pxr::VdfSparseVectorizedInputTraverser::CallbackMode Overlay::VdfSparseVec
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::Local = pxr::ExecProviderResolution::DynamicTraversal::Local;
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects = pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects;
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects = pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects;
+const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::IncomingConnectionOwningAttributes = pxr::ExecProviderResolution::DynamicTraversal::IncomingConnectionOwningAttributes;
 const pxr::ExecProviderResolution::DynamicTraversal Overlay::ExecProviderResolution::DynamicTraversal::NamespaceAncestor = pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor;
 
 const pxr::ExecValidationErrorType Overlay::ExecValidationErrorType::DataDependencyCycle = pxr::ExecValidationErrorType::DataDependencyCycle;
@@ -1278,6 +1279,10 @@ const pxr::HdRenderPassState::ColorMask Overlay::HdRenderPassState::ColorMaskRGB
 
 const pxr::HdSceneIndexPluginRegistry::InsertionOrder Overlay::HdSceneIndexPluginRegistry::InsertionOrderAtStart = pxr::HdSceneIndexPluginRegistry::InsertionOrderAtStart;
 const pxr::HdSceneIndexPluginRegistry::InsertionOrder Overlay::HdSceneIndexPluginRegistry::InsertionOrderAtEnd = pxr::HdSceneIndexPluginRegistry::InsertionOrderAtEnd;
+
+const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneIndexPluginRegistry::PluginOrderingPolicy::CppRegistrationOnly = pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::CppRegistrationOnly;
+const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly = pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly;
+const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid = pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid;
 
 const pxr::HdSelection::HighlightMode Overlay::HdSelection::HighlightModeSelect = pxr::HdSelection::HighlightModeSelect;
 const pxr::HdSelection::HighlightMode Overlay::HdSelection::HighlightModeLocate = pxr::HdSelection::HighlightModeLocate;

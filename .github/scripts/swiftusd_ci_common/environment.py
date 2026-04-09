@@ -36,6 +36,7 @@ class Environment:
         target_platform = os.getenv("TARGET_PLATFORM")
         config = os.getenv("CONFIG")
         build_system = os.getenv("BUILD_SYSTEM")
+        toolchain_provider = os.getenv("TOOLCHAIN_PROVIDER")
         github_run_id = os.getenv("GITHUB_RUN_ID")
         xcodebuild_destination = os.getenv("XCODEBUILD_DESTINATION")
         at_desk_iOS_xcodebuild_destination = os.getenv("ATDESK_IOS_XCODEBUILD_DESTINATION")
@@ -43,6 +44,9 @@ class Environment:
         at_desk_swiftbuild_jobs = os.getenv("ATDESK_SWIFTBUILD_JOBS")
         at_desk_xcodebuild_jobs = os.getenv("ATDESK_XCODEBUILD_JOBS")
         at_desk_development_team = os.getenv("ATDESK_DEVELOPMENT_TEAM")
+        swiftly_assume_installed = os.getenv("SWIFTLY_ASSUME_INSTALLED")
+        swiftly_denylist = os.getenv("SWIFTLY_DENYLIST")
+        xcode_denylist = os.getenv("XCODE_DENYLIST")
 
     class Path:
         swiftusd = _getenvpath("SWIFTUSD_PATH")

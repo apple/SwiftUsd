@@ -113,5 +113,8 @@ import WorkflowRunning
         runner = nil
         cancelTime = Date()
         InProcessLogNotificationHandler.clearAllStorage()
+        Task {
+            await FireAndForgetTasks.shared.cancelAll()
+        }
     }
 }

@@ -56,6 +56,9 @@ jobs:
         outputs:
             matrix: ${{ steps.matrix.outputs.matrix }}
             max-parallel: ${{ steps.matrix.outputs.max-parallel }}
+        env:
+            SWIFTLY_DENYLIST: "-"
+            XCODE_DENYLIST: "-"
         steps:
             - name: Check out repository code
               uses: actions/checkout@v5
@@ -73,7 +76,7 @@ jobs:
         runs-on: [self-hosted, macos]
         needs: [Build-SwiftUsd, Define-Test-Matrix]        
         continue-on-error: true
-        name: Run tests (${{ matrix.target_platform }}, ${{ matrix.config }}, ${{ matrix.build_system }})
+        name: Run tests (${{ matrix.target_platform }}, ${{ matrix.config }}, ${{ matrix.build_system }}, ${{ matrix.toolchain_provider }})
         strategy:
             fail-fast: false
             max-parallel: ${{ fromJson(needs.Define-Test-Matrix.outputs.max-parallel) }}
@@ -84,6 +87,7 @@ jobs:
             TARGET_PLATFORM: ${{ matrix.target_platform }}
             XCODEBUILD_DESTINATION: ${{ matrix.xcodebuild_destination }}
             BUILD_SYSTEM: ${{ matrix.build_system }}
+            TOOLCHAIN_PROVIDER: ${{ matrix.toolchain_provider }}
             CONFIG: ${{ matrix.config }}
             SWIFTUSD_REF: ${{ inputs.swiftusd-ref }}
             OPENUSD_REF: ${{ inputs.openusd-ref }}

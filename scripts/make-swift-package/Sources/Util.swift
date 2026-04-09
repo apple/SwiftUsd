@@ -246,7 +246,10 @@ extension ShellUtil {
                     }
                 }
                 process.currentDirectoryURL = currentDirectoryURL
-                
+
+                if !quiet {
+                    print(arguments.map { $0.asSpaceEscapedString() }.joined(separator: " "))
+                }
                 try process.run()
             } catch {
                 continuation.resume(throwing: error)

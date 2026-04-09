@@ -1152,6 +1152,11 @@ extension pxr.UsdModelAPI.KindValidation: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.UsdNamespaceEditor.CanApplyResult: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.UsdNotice.ObjectsChanged.PrimResyncType: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1307,12 +1312,12 @@ extension pxr.VdfExecutionStats.EventType: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.VdfMaskedIteratorMode: CustomStringConvertible {
+extension pxr.VdfDataManagerDeallocationMode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.VdfDataManagerDeallocationMode: CustomStringConvertible {
+extension pxr.VdfMaskedIteratorMode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1886,12 +1891,12 @@ extension pxr.HdSceneIndexPluginRegistry.InsertionOrder: CustomStringConvertible
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdGpGenerativeProcedural.AsyncState: CustomStringConvertible {
+extension pxr.HdSceneIndexPluginRegistry.PluginOrderingPolicy: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdsiLegacyDisplayStyleOverrideSceneIndex.OptionalInt: CustomStringConvertible {
+extension pxr.HdGpGenerativeProcedural.AsyncState: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }

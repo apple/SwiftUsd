@@ -1808,6 +1808,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::GlfDrawTarget> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::GlfDrawTarget> & p) {
     return (bool)p;}
 
+void* _Nonnull _address(pxr::GlfDrawTarget::Attachment* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment> _asRefPtrType(pxr::GlfDrawTarget::Attachment* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>(x);
+}
+pxr::GlfDrawTarget::Attachment * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::GlfDrawTarget::Attachment * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::GlfDrawTarget::Attachment>& x) {
+    if (!x) { return nullptr; }
+    pxr::GlfDrawTarget::Attachment* result = const_cast<pxr::GlfDrawTarget::Attachment *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::GlfDrawTarget::Attachment * _Nullable _fromRawPointer__ZN3pxr13GlfDrawTarget10AttachmentE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::GlfDrawTarget::Attachment>(p);
+}
+pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>_nullRefPtr__ZN3pxr13GlfDrawTarget10AttachmentE() {
+    return pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::GlfDrawTarget::Attachment> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment> _asWeakPtrType(pxr::GlfDrawTarget::Attachment* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>(x);
+}
+pxr::GlfDrawTarget::Attachment * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>(x));
+}
+pxr::GlfDrawTarget::Attachment * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::GlfDrawTarget::Attachment> & x) {
+    if (!x) { return nullptr; }
+    pxr::GlfDrawTarget::Attachment * result = const_cast<pxr::GlfDrawTarget::Attachment *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>_fromAnyWeakPtr__ZN3pxr13GlfDrawTarget10AttachmentE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>(nullptr); }
+    pxr::GlfDrawTarget::Attachment* rawPtr = static_cast<pxr::GlfDrawTarget::Attachment*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>_nullWeakPtr__ZN3pxr13GlfDrawTarget10AttachmentE() {
+    return pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::GlfDrawTarget::Attachment> & p) {
+    return (bool)p;}
+
 void* _Nonnull _address(pxr::GlfTexture* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
@@ -3448,6 +3506,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiLightLinkingSceneIndex> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiLightLinkingSceneIndex> & p) {
     return (bool)p;}
 
+void* _Nonnull _address(pxr::HdsiLocatorCachingSceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex> _asRefPtrType(pxr::HdsiLocatorCachingSceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>(x);
+}
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiLocatorCachingSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiLocatorCachingSceneIndex* result = const_cast<pxr::HdsiLocatorCachingSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromRawPointer__ZN3pxr28HdsiLocatorCachingSceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::HdsiLocatorCachingSceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>_nullRefPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE() {
+    return pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiLocatorCachingSceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex> _asWeakPtrType(pxr::HdsiLocatorCachingSceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>(x);
+}
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>(x));
+}
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiLocatorCachingSceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiLocatorCachingSceneIndex * result = const_cast<pxr::HdsiLocatorCachingSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>_fromAnyWeakPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>(nullptr); }
+    pxr::HdsiLocatorCachingSceneIndex* rawPtr = static_cast<pxr::HdsiLocatorCachingSceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>_nullWeakPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE() {
+    return pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiLocatorCachingSceneIndex> & p) {
+    return (bool)p;}
+
 void* _Nonnull _address(pxr::HdsiMaterialBindingResolvingSceneIndex* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }
@@ -3794,6 +3910,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiNurbsApproximatingSceneIndex> & p)
     return (bool)p;
 }
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiNurbsApproximatingSceneIndex> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex> _asRefPtrType(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>(x);
+}
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiParticleFieldConversionSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiParticleFieldConversionSceneIndex* result = const_cast<pxr::HdsiParticleFieldConversionSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromRawPointer__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::HdsiParticleFieldConversionSceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>_nullRefPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE() {
+    return pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiParticleFieldConversionSceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex> _asWeakPtrType(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>(x);
+}
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>(x));
+}
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiParticleFieldConversionSceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::HdsiParticleFieldConversionSceneIndex * result = const_cast<pxr::HdsiParticleFieldConversionSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>_fromAnyWeakPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>(nullptr); }
+    pxr::HdsiParticleFieldConversionSceneIndex* rawPtr = static_cast<pxr::HdsiParticleFieldConversionSceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>_nullWeakPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE() {
+    return pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiParticleFieldConversionSceneIndex> & p) {
     return (bool)p;}
 
 void* _Nonnull _address(pxr::HdsiPrefixPathPruningSceneIndex* _Nonnull x) {
@@ -4782,6 +4956,64 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdImagingExtentResolvingSceneIndex> &
     return (bool)p;
 }
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdImagingExtentResolvingSceneIndex> & p) {
+    return (bool)p;}
+
+void* _Nonnull _address(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> _asRefPtrType(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull x) {
+    return pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(x);
+}
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::Tf_RetainReleaseHelper::retain(x.operator->());
+    return x.operator->();
+}
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex>& x) {
+    if (!x) { return nullptr; }
+    pxr::UsdImagingLegacyRenderSettingsSceneIndex* result = const_cast<pxr::UsdImagingLegacyRenderSettingsSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromRawPointer__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(void* _Nullable p) {
+    return __Overlay::dynamic_cast_raw_to_frt<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(p);
+}
+pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_nullRefPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE() {
+    return pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> & p) {
+    return (bool)p;
+}
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> _asWeakPtrType(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(x);
+}
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>& x) {
+    return _fromRefPtrType(pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(x));
+}
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> & x) {
+    if (!x) { return nullptr; }
+    pxr::UsdImagingLegacyRenderSettingsSceneIndex * result = const_cast<pxr::UsdImagingLegacyRenderSettingsSceneIndex *>(x.operator->());
+    pxr::Tf_RetainReleaseHelper::retain(result);
+    return result;
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_fromAnyWeakPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(nullptr); }
+    pxr::UsdImagingLegacyRenderSettingsSceneIndex* rawPtr = static_cast<pxr::UsdImagingLegacyRenderSettingsSceneIndex*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_nullWeakPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE() {
+    return pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> & p) {
     return (bool)p;}
 
 void* _Nonnull _address(pxr::UsdImagingStageSceneIndex* _Nonnull x) {

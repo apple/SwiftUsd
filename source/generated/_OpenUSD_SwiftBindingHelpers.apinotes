@@ -2,7 +2,7 @@
 
 Name: _OpenUSD_SwiftBindingHelpers
 Namespaces:
-- Name: pxrInternal_v0_26_3__pxrReserved__
+- Name: pxrInternal_v0_26_5__pxrReserved__
   Tags:
   - Name: TfType
     SwiftImportAs: owned
@@ -530,6 +530,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr13GlfDrawTargetE
     SwiftReleaseOp: __release__ZN3pxr13GlfDrawTargetE
+    Tags:
+    - Name: Attachment
+      SwiftImportAs: reference
+      SwiftRetainOp: __retain__ZN3pxr13GlfDrawTarget10AttachmentE
+      SwiftReleaseOp: __release__ZN3pxr13GlfDrawTarget10AttachmentE
 
   - Name: GlfTexture
     SwiftImportAs: reference
@@ -694,6 +699,11 @@ Namespaces:
     SwiftRetainOp: __retain__ZN3pxr26HdsiLightLinkingSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr26HdsiLightLinkingSceneIndexE
 
+  - Name: HdsiLocatorCachingSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr28HdsiLocatorCachingSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr28HdsiLocatorCachingSceneIndexE
+
   - Name: HdsiMaterialBindingResolvingSceneIndex
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr38HdsiMaterialBindingResolvingSceneIndexE
@@ -723,6 +733,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr32HdsiNurbsApproximatingSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr32HdsiNurbsApproximatingSceneIndexE
+
+  - Name: HdsiParticleFieldConversionSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr37HdsiParticleFieldConversionSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr37HdsiParticleFieldConversionSceneIndexE
 
   - Name: HdsiPrefixPathPruningSceneIndex
     SwiftImportAs: reference
@@ -808,6 +823,11 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: __retain__ZN3pxr35UsdImagingExtentResolvingSceneIndexE
     SwiftReleaseOp: __release__ZN3pxr35UsdImagingExtentResolvingSceneIndexE
+
+  - Name: UsdImagingLegacyRenderSettingsSceneIndex
+    SwiftImportAs: reference
+    SwiftRetainOp: __retain__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE
+    SwiftReleaseOp: __release__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE
 
   - Name: UsdImagingStageSceneIndex
     SwiftImportAs: reference

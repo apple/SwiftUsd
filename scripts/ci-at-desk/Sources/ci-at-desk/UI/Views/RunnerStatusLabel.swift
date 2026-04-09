@@ -69,7 +69,9 @@ struct RunnerStatusLabel: View {
         
         let formattedElapsedTime = elapsedDuration.formatted(.units(width: .narrow, fractionalPart: fractionStrategy))
                 
-        emoji + Text(" " + name) + Text(" (\(formattedElapsedTime))")
+        (emoji + Text(" " + name) + Text(" (\(formattedElapsedTime))"))
+            .lineLimit(nil)
+            .textSelection(.enabled)
     }
     
     private var emoji: Text {

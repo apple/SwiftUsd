@@ -34,7 +34,7 @@ let package = Package(
         ])
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..<"602.0.0"),
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..."603.0.0"),
     ],
     targets: [
         .target(name: "OpenUSD",

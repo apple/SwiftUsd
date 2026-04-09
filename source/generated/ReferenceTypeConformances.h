@@ -73,12 +73,14 @@
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
 #include "pxr/imaging/hdsi/legacyDisplayStyleOverrideSceneIndex.h"
 #include "pxr/imaging/hdsi/lightLinkingSceneIndex.h"
+#include "pxr/imaging/hdsi/locatorCachingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialBindingResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialOverrideResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialPrimvarTransferSceneIndex.h"
 #include "pxr/imaging/hdsi/materialRenderContextFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/nodeIdentifierResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/nurbsApproximatingSceneIndex.h"
+#include "pxr/imaging/hdsi/particleFieldConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/pinnedCurveExpandingSceneIndex.h"
 #include "pxr/imaging/hdsi/prefixPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primManagingSceneIndexObserver.h"
@@ -118,6 +120,7 @@
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 #include "pxr/usdImaging/usdImaging/drawModeSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/extentResolvingSceneIndex.h"
+#include "pxr/usdImaging/usdImaging/legacyRenderSettingsSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/materialBindingsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/niPrototypePropagatingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/piPrototypePropagatingSceneIndex.h"
@@ -1652,6 +1655,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::GlfDrawTarget> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::GlfDrawTarget> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTargetE_ConstWeakPtr._isNonnull(self:));
 
+typedef pxr::GlfDrawTarget::Attachment __SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE;
+typedef pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment> __SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::GlfDrawTarget::Attachment> __SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment> __SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::GlfDrawTarget::Attachment> __SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_ConstWeakPtr;
+void* _Nonnull _address(pxr::GlfDrawTarget::Attachment* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._address(self:));
+inline void __retain__ZN3pxr13GlfDrawTarget10AttachmentE(pxr::GlfDrawTarget::Attachment* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr13GlfDrawTarget10AttachmentE(pxr::GlfDrawTarget::Attachment* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment> _asRefPtrType(pxr::GlfDrawTarget::Attachment* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._asRefPtrType(self:));
+pxr::GlfDrawTarget::Attachment * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._fromRefPtrType(_:));
+pxr::GlfDrawTarget::Attachment * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::GlfDrawTarget::Attachment>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._fromConstRefPtrType(_:));
+pxr::GlfDrawTarget::Attachment * _Nullable _fromRawPointer__ZN3pxr13GlfDrawTarget10AttachmentE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>_nullRefPtr__ZN3pxr13GlfDrawTarget10AttachmentE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::GlfDrawTarget::Attachment> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment> _asWeakPtrType(pxr::GlfDrawTarget::Attachment* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._asWeakPtrType(self:));
+pxr::GlfDrawTarget::Attachment * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._fromWeakPtrType(_:));
+pxr::GlfDrawTarget::Attachment * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::GlfDrawTarget::Attachment> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>_fromAnyWeakPtr__ZN3pxr13GlfDrawTarget10AttachmentE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment>_nullWeakPtr__ZN3pxr13GlfDrawTarget10AttachmentE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::GlfDrawTarget::Attachment> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::GlfDrawTarget::Attachment> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13GlfDrawTarget10AttachmentE_ConstWeakPtr._isNonnull(self:));
+
 typedef pxr::GlfTexture __SwiftUsd_Typedef___ZN3pxr10GlfTextureE;
 typedef pxr::TfRefPtr<pxr::GlfTexture> __SwiftUsd_Typedef___ZN3pxr10GlfTextureE_RefPtr;
 typedef pxr::TfRefPtr<const pxr::GlfTexture> __SwiftUsd_Typedef___ZN3pxr10GlfTextureE_ConstRefPtr;
@@ -3040,6 +3092,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiLightLinkingSceneIndex> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiLightLinkingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr26HdsiLightLinkingSceneIndexE_ConstWeakPtr._isNonnull(self:));
 
+typedef pxr::HdsiLocatorCachingSceneIndex __SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE;
+typedef pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::HdsiLocatorCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::HdsiLocatorCachingSceneIndex> __SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::HdsiLocatorCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._address(self:));
+inline void __retain__ZN3pxr28HdsiLocatorCachingSceneIndexE(pxr::HdsiLocatorCachingSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr28HdsiLocatorCachingSceneIndexE(pxr::HdsiLocatorCachingSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex> _asRefPtrType(pxr::HdsiLocatorCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._asRefPtrType(self:));
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._fromRefPtrType(_:));
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiLocatorCachingSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._fromConstRefPtrType(_:));
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromRawPointer__ZN3pxr28HdsiLocatorCachingSceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex>_nullRefPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiLocatorCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiLocatorCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex> _asWeakPtrType(pxr::HdsiLocatorCachingSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._asWeakPtrType(self:));
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._fromWeakPtrType(_:));
+pxr::HdsiLocatorCachingSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiLocatorCachingSceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>_fromAnyWeakPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex>_nullWeakPtr__ZN3pxr28HdsiLocatorCachingSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiLocatorCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiLocatorCachingSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr28HdsiLocatorCachingSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
 typedef pxr::HdsiMaterialBindingResolvingSceneIndex __SwiftUsd_Typedef___ZN3pxr38HdsiMaterialBindingResolvingSceneIndexE;
 typedef pxr::TfRefPtr<pxr::HdsiMaterialBindingResolvingSceneIndex> __SwiftUsd_Typedef___ZN3pxr38HdsiMaterialBindingResolvingSceneIndexE_RefPtr;
 typedef pxr::TfRefPtr<const pxr::HdsiMaterialBindingResolvingSceneIndex> __SwiftUsd_Typedef___ZN3pxr38HdsiMaterialBindingResolvingSceneIndexE_ConstRefPtr;
@@ -3333,6 +3434,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiNurbsApproximatingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr32HdsiNurbsApproximatingSceneIndexE_WeakPtr._isNonnull(self:));
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiNurbsApproximatingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr32HdsiNurbsApproximatingSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::HdsiParticleFieldConversionSceneIndex __SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE;
+typedef pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex> __SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::HdsiParticleFieldConversionSceneIndex> __SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex> __SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::HdsiParticleFieldConversionSceneIndex> __SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._address(self:));
+inline void __retain__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex> _asRefPtrType(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._asRefPtrType(self:));
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._fromRefPtrType(_:));
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::HdsiParticleFieldConversionSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._fromConstRefPtrType(_:));
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromRawPointer__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex>_nullRefPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::HdsiParticleFieldConversionSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::HdsiParticleFieldConversionSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex> _asWeakPtrType(pxr::HdsiParticleFieldConversionSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._asWeakPtrType(self:));
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._fromWeakPtrType(_:));
+pxr::HdsiParticleFieldConversionSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::HdsiParticleFieldConversionSceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>_fromAnyWeakPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex>_nullWeakPtr__ZN3pxr37HdsiParticleFieldConversionSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::HdsiParticleFieldConversionSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::HdsiParticleFieldConversionSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr37HdsiParticleFieldConversionSceneIndexE_ConstWeakPtr._isNonnull(self:));
 
 typedef pxr::HdsiPrefixPathPruningSceneIndex __SwiftUsd_Typedef___ZN3pxr31HdsiPrefixPathPruningSceneIndexE;
 typedef pxr::TfRefPtr<pxr::HdsiPrefixPathPruningSceneIndex> __SwiftUsd_Typedef___ZN3pxr31HdsiPrefixPathPruningSceneIndexE_RefPtr;
@@ -4168,6 +4318,55 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdImagingExtentResolvingSceneIndex> &
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr35UsdImagingExtentResolvingSceneIndexE_WeakPtr._isNonnull(self:));
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdImagingExtentResolvingSceneIndex> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr35UsdImagingExtentResolvingSceneIndexE_ConstWeakPtr._isNonnull(self:));
+
+typedef pxr::UsdImagingLegacyRenderSettingsSceneIndex __SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE;
+typedef pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> __SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_RefPtr;
+typedef pxr::TfRefPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> __SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_ConstRefPtr;
+typedef pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> __SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> __SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_ConstWeakPtr;
+void* _Nonnull _address(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._address(self:));
+inline void __retain__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::retain(x);
+}
+inline void __release__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull x) {
+    pxr::Tf_RetainReleaseHelper::release(x);
+}
+pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> _asRefPtrType(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._asRefPtrType(self:));
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromRefPtrType(const pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._fromRefPtrType(_:));
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromConstRefPtrType(const pxr::TfRefPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex>&)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._fromConstRefPtrType(_:));
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromRawPointer__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(void* _Nullable)
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._fromRawPointer(_:));
+pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_nullRefPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_RefPtr._nullPtr());
+bool _isNonnull(const pxr::TfRefPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_RefPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfRefPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_ConstRefPtr._isNonnull(self:));
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> _asWeakPtrType(pxr::UsdImagingLegacyRenderSettingsSceneIndex* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._asWeakPtrType(self:));
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>&) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._fromWeakPtrType(_:));
+pxr::UsdImagingLegacyRenderSettingsSceneIndex * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> &) 
+    SWIFT_RETURNS_RETAINED
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_fromAnyWeakPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex>_nullWeakPtr__ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::UsdImagingLegacyRenderSettingsSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::UsdImagingLegacyRenderSettingsSceneIndex> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr40UsdImagingLegacyRenderSettingsSceneIndexE_ConstWeakPtr._isNonnull(self:));
 
 typedef pxr::UsdImagingStageSceneIndex __SwiftUsd_Typedef___ZN3pxr25UsdImagingStageSceneIndexE;
 typedef pxr::TfRefPtr<pxr::UsdImagingStageSceneIndex> __SwiftUsd_Typedef___ZN3pxr25UsdImagingStageSceneIndexE_RefPtr;

@@ -148,7 +148,6 @@
 #include "pxr/imaging/hdSt/binding.h"
 #include "pxr/imaging/hdSt/enums.h"
 #include "pxr/imaging/hdSt/resourceRegistry.h"
-#include "pxr/imaging/hdsi/legacyDisplayStyleOverrideSceneIndex.h"
 #include "pxr/imaging/hdx/aovInputTask.h"
 #include "pxr/imaging/hdx/boundingBoxTask.h"
 #include "pxr/imaging/hdx/colorChannelTask.h"
@@ -224,6 +223,7 @@
 #include "pxr/usd/usd/common.h"
 #include "pxr/usd/usd/interpolation.h"
 #include "pxr/usd/usd/modelAPI.h"
+#include "pxr/usd/usd/namespaceEditor.h"
 #include "pxr/usd/usd/notice.h"
 #include "pxr/usd/usd/object.h"
 #include "pxr/usd/usd/prim.h"
@@ -483,6 +483,7 @@ namespace __Overlay {
   std::string to_string(const pxr::UsdResolveInfoSource& x);
   std::string to_string(const pxr::UsdRelationship& x);
   std::string to_string(const pxr::UsdModelAPI::KindValidation& x);
+  std::string to_string(const pxr::UsdNamespaceEditor::CanApplyResult& x);
   std::string to_string(const pxr::UsdNotice::ObjectsChanged::PrimResyncType& x);
   std::string to_string(const pxr::UsdPrimCompositionQuery::ArcTypeFilter& x);
   std::string to_string(const pxr::UsdPrimCompositionQuery::DependencyTypeFilter& x);
@@ -514,8 +515,8 @@ namespace __Overlay {
   std::string to_string(const pxr::VdfVector::DebugPrintable& x);
   std::string to_string(const pxr::VdfIndexedWeights& x);
   std::string to_string(const pxr::VdfExecutionStats::EventType& x);
-  std::string to_string(const pxr::VdfMaskedIteratorMode& x);
   std::string to_string(const pxr::VdfDataManagerDeallocationMode& x);
+  std::string to_string(const pxr::VdfMaskedIteratorMode& x);
   std::string to_string(const pxr::VdfGrapherOptions::DisplayStyle& x);
   std::string to_string(const pxr::VdfObjectPtr& x);
   std::string to_string(const pxr::VdfObjectPtr::Type& x);
@@ -637,8 +638,8 @@ namespace __Overlay {
   std::string to_string(const pxr::HdRenderBuffer::DirtyBits& x);
   std::string to_string(const pxr::HdRenderPassState::ColorMask& x);
   std::string to_string(const pxr::HdSceneIndexPluginRegistry::InsertionOrder& x);
+  std::string to_string(const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy& x);
   std::string to_string(const pxr::HdGpGenerativeProcedural::AsyncState& x);
-  std::string to_string(const pxr::HdsiLegacyDisplayStyleOverrideSceneIndex::OptionalInt& x);
   std::string to_string(const pxr::HdStBinding::Type& x);
   std::string to_string(const pxr::HdStBinding::Location& x);
   std::string to_string(const pxr::HdStTextureType& x);

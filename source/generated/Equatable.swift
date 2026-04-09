@@ -26,7 +26,6 @@
 // pxr::TfWeakPtr<void>
 // pxr::TfRefPtr<pxr::TfRefBase>
 // pxr::TfHashMap<pxr::TfBits, pxr::TfBits, pxr::TfBits::FastHash, std::equal_to<pxr::TfBits>, std::allocator<std::pair<pxr::TfBits const, pxr::TfBits>>>
-// pxr::TfHashMap<pxr::TfEnum, std::string, pxr::TfHash, std::equal_to<pxr::TfEnum>, std::allocator<std::pair<pxr::TfEnum const, std::string>>>
 // pxr::TfHashMap<pxr::TfType, std::vector<pxr::TfType, std::allocator<pxr::TfType>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>>
 // pxr::TfHashMap<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>
 // pxr::TfHashMap<std::type_index, std::string, std::hash<std::type_index>, std::equal_to<std::type_index>, std::allocator<std::pair<std::type_index const, std::string>>>
@@ -57,6 +56,7 @@
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
 // pxr::TfHashMap<pxr::TfType, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
+// pxr::TfHashSet<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned int, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned int>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
@@ -187,6 +187,7 @@
 // pxr::TfHashMap<pxr::UsdPrim, pxr::VtArray<pxr::VtArray<int>>, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::VtArray<pxr::VtArray<int>>>>>
 // pxr::TfHashMap<pxr::UsdPrim, int, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, int>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::UsdGeomImageable::PurposeInfo, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::UsdGeomImageable::PurposeInfo>>>
+// pxr::TfHashSet<pxr::UsdShadeConnectionSourceInfo, pxr::TfHash, std::equal_to<pxr::UsdShadeConnectionSourceInfo>, std::allocator<pxr::UsdShadeConnectionSourceInfo>>
 // pxr::TfRefPtr<pxr::UsdHydraDiscoveryPlugin>
 // pxr::VtArray<pxr::UsdSkelSkinningQuery>
 // pxr::VdfConnectorMap<pxr::VdfInput>
@@ -201,6 +202,7 @@
 // pxr::TfHashMap<std::string, pxr::VdfTestUtils::Node, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::VdfTestUtils::Node>>>
 // pxr::TfRefPtr<pxr::GlfDrawTarget::AttachmentsContainer>
 // pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::TfHashMap<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>
 // pxr::TfHashMap<pxr::TfToken, std::shared_ptr<pxr::UsdImagingPrimAdapter>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>
 // pxr::TfWeakPtr<pxr::UsdImagingStageSceneIndex>
 // pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
@@ -1454,6 +1456,11 @@ extension pxr.GlfDrawTargetPtr: Equatable { // classTemplateSpecialization
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.GlfDrawTarget.Attachment: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.GlfDrawTarget.Attachment, rhs: pxr.GlfDrawTarget.Attachment) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.GlfDrawTarget.AttachmentRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1638,6 +1645,11 @@ extension pxr.HdMergingSceneIndexRefPtr: Equatable { // classTemplateSpecializat
 }
 extension pxr.HdFilteringSceneIndexBase: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdFilteringSceneIndexBase, rhs: pxr.HdFilteringSceneIndexBase) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdFilteringSceneIndexBaseRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
@@ -1870,13 +1882,22 @@ extension pxr.HdsiLegacyDisplayStyleOverrideSceneIndexRefPtr: Equatable { // cla
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
-extension pxr.HdsiLegacyDisplayStyleOverrideSceneIndex.OptionalInt: Equatable {} // foundBySwift
 extension pxr.HdsiLightLinkingSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdsiLightLinkingSceneIndex, rhs: pxr.HdsiLightLinkingSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
 extension pxr.HdsiLightLinkingSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiLocatorCachingSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiLocatorCachingSceneIndex, rhs: pxr.HdsiLocatorCachingSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiLocatorCachingSceneIndexRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -1937,6 +1958,16 @@ extension pxr.HdsiNurbsApproximatingSceneIndex: Equatable { // importedAsReferen
     }
 }
 extension pxr.HdsiNurbsApproximatingSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiParticleFieldConversionSceneIndex, rhs: pxr.HdsiParticleFieldConversionSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndexRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -2136,6 +2167,16 @@ extension pxr.UsdImagingExtentResolvingSceneIndexRefPtr: Equatable { // classTem
 }
 extension pxr.UsdImagingExtentResolvingSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.UsdImagingExtentResolvingSceneIndex, rhs: pxr.UsdImagingExtentResolvingSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.UsdImagingLegacyRenderSettingsSceneIndex, rhs: pxr.UsdImagingLegacyRenderSettingsSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }

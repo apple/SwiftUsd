@@ -27,12 +27,13 @@ import Logging
 struct LogContentsView: View {
     let logContents: LogContents
     @Environment(AppModel.self) private var model
+    @Environment(\.searchInfo) private var searchInfo: ConsoleSearchInfo
             
     var body: some View {
         if model.rawLogs {
             TextEditor(text: .constant(rawLogContents))
         } else {
-            NSTextViewRepresentable(logContents: logContents, model: model)
+            NSTextViewRepresentable(searchInfo: searchInfo, logContents: logContents, model: model)
                 .frame(minWidth: minWidth)
                 .onChange(of: model.logLevel, updateTextViewSize)
                 .onChange(of: model.showMetadata, updateTextViewSize)
@@ -58,81 +59,147 @@ struct LogContentsView: View {
     }
     
     var rawLogContents: String {
-        var toJoin = logContents.messages.compactMap { Self.buildLine(line: $0, model: model) }
-        
-        if model.logLineDisplayLimit > 0 && toJoin.count > model.logLineDisplayLimit {
-            toJoin = Array(toJoin.dropFirst(toJoin.count - model.logLineDisplayLimit))
-        }
-
-        return toJoin
-            .map { String($0.characters) }
-            .joined(separator: "\n")
+        String(Self.buildLines(searchInfo: searchInfo, lines: logContents, model: model).characters)
     }
-
     
-    fileprivate static func buildLine(line: LogContents.Line, model: AppModel) -> AttributedString? {
-        guard line.level >= model.logLevel else { return nil }
+    static private func groupAndFilter(searchInfo: ConsoleSearchInfo, lines: LogContents, model: AppModel) -> [[LogContents.Line]] {
+        if searchInfo.text.isEmpty {
+            var result = lines.messages.filter { $0.level >= model.logLevel }
+            if model.logLineDisplayLimit > 0 && result.count > model.logLineDisplayLimit {
+                result = Array(result[(result.count - model.logLineDisplayLimit)...])
+            }
+            return [result]
+        }
         
+        let directlyMatchingIndices: [Int] = lines.messages.enumerated().compactMap { (i, line) in
+            guard line.level >= model.logLevel else { return nil }
+            if line.message.localizedCaseInsensitiveContains(searchInfo.text) { return i }
+            else { return nil }
+        }
+        
+        var result = [[LogContents.Line]()]
+        var addedIndices = Set<Int>()
+        
+        for directly in directlyMatchingIndices {
+            for i in (directly - searchInfo.linesBefore)...(directly + searchInfo.linesAfter) {
+                if i < 0 || i >= lines.messages.count { continue }
+                if addedIndices.contains(i) { continue }
+                
+                if addedIndices.contains(i - 1) {
+                    result[result.count - 1].append(lines.messages[i])
+                } else {
+                    result.append([lines.messages[i]])
+                }
+                addedIndices.insert(i)
+            }
+        }
+        
+        var lineCount = 0
+        outerLoop: for i in result.indices.reversed() {
+            for j in result[i].indices.reversed() {
+                lineCount += 1
+                if model.logLineDisplayLimit > 0 && lineCount >= model.logLineDisplayLimit {
+                    result[i] = Array(result[i][j...])
+                    result = Array(result[i...])
+                    break outerLoop
+                }
+            }
+        }
+        
+        result = result.filter { !$0.isEmpty }
+        
+        return result
+    }
+    
+    static fileprivate func buildLines(searchInfo: ConsoleSearchInfo, lines: LogContents, model: AppModel) -> AttributedString {
+        var toJoin = [AttributedString]()
+        
+        let groups = groupAndFilter(searchInfo: searchInfo, lines: lines, model: model)
+        
+        for (i, group) in groups.enumerated() {
+            for line in group {
+                var toAdd = AttributedString()
+                if model.showLabel {
+                    var label = AttributedString(line.label + " ")
+                    label.foregroundColor = NSColor.tertiaryLabelColor
+                    toAdd.append(label)
+                }
+                
+                switch model.timestampsMode {
+                case .none: break
+                case .absolute:
+                    let originalTimestamp = line.timestamp.ISO8601Format(.iso8601WithTimeZone(includingFractionalSeconds: true))
+                    var timestamp = AttributedString(originalTimestamp + " ")
+                    timestamp.foregroundColor = NSColor.secondaryLabelColor
+                    timestamp.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                    toAdd.append(timestamp)
+                case .relative:
+                    let durationInSeconds = model.synchronizedNow.timeIntervalSince(line.timestamp)
+                    let formattedTime = Duration.seconds(durationInSeconds).formatted(
+                        .time(pattern: .hourMinuteSecond(padHourToLength: 2, fractionalSecondsLength: 1))
+                    )
+                    var timestamp = AttributedString("-" + formattedTime + " ")
+                    timestamp.foregroundColor = NSColor.secondaryLabelColor
+                    timestamp.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                    toAdd.append(timestamp)
+                }
+                
+                if model.showMetadata {
+                    var metadata = AttributedString(line.metadata + " ")
+                    metadata.foregroundColor = NSColor(.cyan)
+                    toAdd.append(metadata)
+                }
+                
+                // message
+                var message = AttributedString(line.message)
+                switch line.level {
+                case .trace:
+                    message.foregroundColor = NSColor(.blue)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                case .debug:
+                    message.foregroundColor = NSColor(.secondary)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                case .info:
+                    message.foregroundColor = NSColor(.primary)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                case .notice:
+                    message.foregroundColor = NSColor(.primary)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .bold)
+                case .warning:
+                    message.foregroundColor = NSColor(.yellow)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                case .error:
+                    message.foregroundColor = NSColor(.red)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                case .critical:
+                    message.foregroundColor = NSColor(.red)
+                    message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .bold)
+                }
+                
+                toAdd.append(message)
+                
+                toJoin.append(toAdd)
+            }
+            
+            if i + 1 < groups.count {
+                var separator = AttributedString("--------")
+                separator.foregroundColor = NSColor(.secondary)
+                separator.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+                toJoin.append(separator)
+            }
+        }
+        
+        return joinAttrStringsWithNewline(toJoin)
+    }
+    
+    static private func joinAttrStringsWithNewline(_ arr: [AttributedString]) -> AttributedString {
         var result = AttributedString()
-        if model.showLabel {
-            var label = AttributedString(line.label + " ")
-            label.foregroundColor = NSColor.tertiaryLabelColor
-            result.append(label)
+        for (i, x) in arr.enumerated() {
+            result += x
+            if i + 1 < arr.count {
+                result += "\n"
+            }
         }
-        
-        switch model.timestampsMode {
-        case .none: break
-        case .absolute:
-            let originalTimestamp = line.timestamp.ISO8601Format(.iso8601WithTimeZone(includingFractionalSeconds: true))
-            var timestamp = AttributedString(originalTimestamp + " ")
-            timestamp.foregroundColor = NSColor.secondaryLabelColor
-            timestamp.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-            result.append(timestamp)
-        case .relative:
-            let durationInSeconds = model.synchronizedNow.timeIntervalSince(line.timestamp)
-            let formattedTime = Duration.seconds(durationInSeconds).formatted(
-                .time(pattern: .hourMinuteSecond(padHourToLength: 2, fractionalSecondsLength: 1))
-            )
-            var timestamp = AttributedString("-" + formattedTime + " ")
-            timestamp.foregroundColor = NSColor.secondaryLabelColor
-            timestamp.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-            result.append(timestamp)
-        }
-        
-        if model.showMetadata {
-            var metadata = AttributedString(line.metadata + " ")
-            metadata.foregroundColor = NSColor(.cyan)
-            result.append(metadata)
-        }
-        
-        // message
-        var message = AttributedString(line.message)
-        switch line.level {
-        case .trace:
-            message.foregroundColor = NSColor(.blue)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        case .debug:
-            message.foregroundColor = NSColor(.secondary)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        case .info:
-            message.foregroundColor = NSColor(.primary)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        case .notice:
-            message.foregroundColor = NSColor(.primary)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .bold)
-        case .warning:
-            message.foregroundColor = NSColor(.yellow)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        case .error:
-            message.foregroundColor = NSColor(.red)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
-        case .critical:
-            message.foregroundColor = NSColor(.red)
-            message.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .bold)
-        }
-        
-        result.append(message)
-        
         return result
     }
 }
@@ -140,6 +207,7 @@ struct LogContentsView: View {
 // NSTextView wrapper for SwiftUI, for better performance than a single long Text instance
 // in a scroll view
 fileprivate struct NSTextViewRepresentable: NSViewRepresentable {
+    let searchInfo: ConsoleSearchInfo
     let logContents: LogContents
     let model: AppModel
     
@@ -152,7 +220,7 @@ fileprivate struct NSTextViewRepresentable: NSViewRepresentable {
     }
 
     func updateNSView(_ textView: NSTextView, context: Context) {
-        context.coordinator.updateNSView(textView, logContents: logContents, model: model)
+        context.coordinator.updateNSView(textView, searchInfo: searchInfo, logContents: logContents, model: model)
     }
     
     func sizeThatFits(_ proposal: ProposedViewSize, nsView textView: NSTextView, context: Context) -> CGSize? {
@@ -194,23 +262,11 @@ extension NSTextViewRepresentable {
             return textView
         }
         
-        func updateNSView(_ textView: NSTextView, logContents: LogContents, model: AppModel) {
+        func updateNSView(_ textView: NSTextView, searchInfo: ConsoleSearchInfo, logContents: LogContents, model: AppModel) {
             self.logContents = logContents
             self.model = model
             
-            var toJoin = logContents.messages.compactMap { line in
-                LogContentsView.buildLine(line: line, model: model)
-            }
-            if model.logLineDisplayLimit > 0 && toJoin.count > model.logLineDisplayLimit {
-                toJoin = Array(toJoin.dropFirst(toJoin.count - model.logLineDisplayLimit))
-            }
-            var attrString = AttributedString()
-            for (i, x) in toJoin.enumerated() {
-                attrString += x
-                if i + 1 < toJoin.count {
-                    attrString += "\n"
-                }
-            }
+            let attrString = LogContentsView.buildLines(searchInfo: searchInfo, lines: logContents, model: model)
             
             // Copy and restore the selected ranges because setAttributedString() clears the selection
             let selectedRanges = textView.selectedRanges

@@ -27,9 +27,10 @@ import pathlib
 import shutil
 import random
 import time
+import platform
 from swiftusd_ci_common import *
 
-def build_or_run_test_suite(name, cleanCmd, buildCmd, testCmd, buildTestCommonArgs, cwd, action, env=None):
+def build_or_run_test_suite(name, cleanCmd, resolveCmd, buildCmd, testCmd, resolveBuildTestCommonArgs, cwd, action, env=None):
     """Builds or runs the given test suite"""
 
     test_matrix_result = TestMatrixResult.load()
@@ -43,9 +44,9 @@ def build_or_run_test_suite(name, cleanCmd, buildCmd, testCmd, buildTestCommonAr
 
     def should_extract(l):
         if action == "build":
-            return any([s in l for s in ["error:"]])
+            return any([s in l for s in ["error:", "DESERIALIZATION FAILURE", "Stack dump:", "While deserializing SIL function"]])
         elif action == "test":
-            return any([s in l for s in ["failed:", "launchd", "crash"]])
+            return any([s in l for s in ["failed:", "launchd", "crash", "exited with unexpected signal code", "skipped"]])
 
     def processRunResult(runResult):
         end = time.time()
@@ -66,15 +67,36 @@ def build_or_run_test_suite(name, cleanCmd, buildCmd, testCmd, buildTestCommonAr
 
         exit(runResult.returncode)
 
+    resolveBuildTestCommonArgs = addConditionalCommonArgs(resolveBuildTestCommonArgs)
+
     if action == "build":
         print(f"Building {name} tests...")
         run(cleanCmd, cwd=cwd)
-        processRunResult(run(buildCmd + buildTestCommonArgs, cwd=cwd, check=False, env=env))
+        if resolveCmd:
+            run(resolveCmd + resolveBuildTestCommonArgs, cwd=cwd, env=env)
+        processRunResult(run(buildCmd + resolveBuildTestCommonArgs, cwd=cwd, check=False, env=env))
         
         
     elif action == "test":
         print(f"Running {name} tests...")
-        processRunResult(run(testCmd + buildTestCommonArgs, cwd=cwd, check=False, env=env))
+        if resolveCmd:
+            # Important! When using xcodebuild (on Xcode projects or Swift Packages)
+            # with a custom Swift toolchain (`-toolchain foo`), Swift package resolution will fail
+            # unless you explicitly resolve the package dependencies for the project/package
+            # without the custom Swift toolchain active. However, it seems that a part
+            # of package resolution is keyed to the **exact** set of environment values;
+            # Adding, removing, or modifying _any_ environment variable between resolution
+            # and the resulting `build-for-testing`/`test-without-building` will cause
+            # package resolution to fail, even if you've requested xcodebuild to not
+            # do any package resolution. When ci-at-desk is running the test suite locally,
+            # it changes the GITHUB_STEP_SUMMARY and GITHUB_OUTPUT environment variables
+            # between steps, and building and testing occur in different steps. Thus,
+            # we have to do a resolve step before _both_ building and running, with
+            # identical environment variables for each resolve and subsequent action.
+            #
+            # rdar://174939543 (Modifying a random (unused) environment variable causes `xcodebuild build -toolchain foo` to fail with an inscrutable posix_spawn message)
+            run(resolveCmd + resolveBuildTestCommonArgs, cwd=cwd, env=env)
+        processRunResult(run(testCmd + resolveBuildTestCommonArgs, cwd=cwd, check=False, env=env))
 
 def prepare_to_build_tests():
     print("Preparing to build tests...")
@@ -91,14 +113,20 @@ def prepare_to_build_tests():
     run(["python3", "make-spm-tests.py", "--local", "--force"],
         cwd=Environment.Path.swiftusd_tests)
 
-def conditionalCommonArgs():
-    result = []
-
-    def handleJobs(x, singleMinus):
+def addConditionalCommonArgs(result):
+    def handleBuildSystem(forXcodebuild):
+        nonlocal result
+        if forXcodebuild:
+            index = [i for (i, x) in enumerate(result) if x.startswith("OTHER_SWIFT_FLAGS")][0]
+            result[index] += " -DSWIFTUSD_TESTS_XCODEBUILD"
+        else:
+            result += ["-Xswiftc", "-DSWIFTUSD_TESTS_SWIFTBUILD"]
+    
+    def handleJobs(x, forXcodebuild):
         nonlocal result
         try:
             if int(x) > 0:
-                result += ["-jobs" if singleMinus else "--jobs", x]
+                result += ["-jobs" if forXcodebuild else "--jobs", x]
         except:
             pass        
 
@@ -107,20 +135,40 @@ def conditionalCommonArgs():
         if Environment.TestCombination.at_desk_development_team:
             result += [f"DEVELOPMENT_TEAM={Environment.TestCombination.at_desk_development_team}"]
 
+    def handleSwiftly603x(forXcodebuild):
+        nonlocal result
+        swiftly = parseSwiftlyToolchainProvider()
+        if swiftly.startswith("6.3."):
+            if platform.system() == "Darwin":
+                # Don't do this on Linux for now, I want to investigate these
+                # crashes if they occur on Linux because they might be different there
+                if forXcodebuild:
+                    index = [i for (i, x) in enumerate(result) if x.startswith("OTHER_SWIFT_FLAGS")][0]
+                    result[index] += " -DSWIFTUSD_TESTS_SKIP_SWIFTLY_603_CRASHES"
+                else:
+                    result += ["-Xswiftc", "-DSWIFTUSD_TESTS_SKIP_SWIFTLY_603_CRASHES"]
+
     if Environment.TestCombination.build_system == "xcodebuild-xcodeproj":
         handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
         handleDevelopmentTeam()
+        handleSwiftly603x(True)
+        handleBuildSystem(True)
         
     elif Environment.TestCombination.build_system == "swiftbuild-SPM-Tests":
         handleJobs(Environment.TestCombination.at_desk_swiftbuild_jobs, False)
+        handleSwiftly603x(False)
+        handleBuildSystem(False)
         
     elif Environment.TestCombination.build_system == "xcodebuild-SPM-Tests":
         handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
         handleDevelopmentTeam()
+        handleSwiftly603x(True)
+        handleBuildSystem(True)
         
     else:
         print(f"Error: Unknown build system {Environment.TestCombination.build_system}")
         exit(1)
+
     
     
     return result
@@ -129,18 +177,24 @@ def do_xcodebuild_xcodeproj_tests(action):
     build_or_run_test_suite(
         name="xcodebuild-xcodeproj",
         cleanCmd=["xcodebuild", "clean"],
-        buildCmd=["xcodebuild", "build-for-testing"],
+        resolveCmd=["xcodebuild", "-resolvePackageDependencies"],
+        buildCmd=[
+            "xcodebuild", "build-for-testing",
+            "-disableAutomaticPackageResolution", "-onlyUsePackageVersionsFromResolvedFile",
+        ],
         testCmd=[
             "xcodebuild", "test-without-building",
              "-resultBundlePath", str(Environment.Path.result_bundle),
+            "-disableAutomaticPackageResolution", "-onlyUsePackageVersionsFromResolvedFile",
         ],
-        buildTestCommonArgs=[
+        resolveBuildTestCommonArgs=[
             "-verbose", "-skipMacroValidation",
             "-scheme", "UnitTests",
             "-configuration", Environment.TestCombination.config,
             "-destination", Environment.TestCombination.xcodebuild_destination,
             "OTHER_SWIFT_FLAGS=$(inherited) -DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ] + conditionalCommonArgs(),
+            "-clonedSourcePackagesDirPath", "clonedSourcePackages",
+        ],
         cwd=Environment.Path.swiftusd_tests,
         action=action,
     )
@@ -161,14 +215,15 @@ def do_swiftbuild_spm_tests(action):
     build_or_run_test_suite(
         name="swiftbuild-SPM-Tests",
         cleanCmd=["swift", "package", "clean"],
+        resolveCmd=None,
         buildCmd=["swift", "build", "--build-tests"],
         testCmd=["swift", "test", "--skip-build"],
-        buildTestCommonArgs=[
+        resolveBuildTestCommonArgs=[
             "-v",
             "-Xswiftc", "-DOPENUSD_SWIFT_BUILD_FROM_CLI", "-Xcxx", "-DOPENUSD_SWIFT_BUILD_FROM_CLI",
             "--configuration", Environment.TestCombination.config.lower(),
             "-Xswiftc", "-DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ] + conditionalCommonArgs(),
+        ],
         cwd=Environment.Path.swiftusd_tests / "SPM-Tests",
         action=action,
         env=env
@@ -178,18 +233,24 @@ def do_xcodebuild_spm_tests(action):
     build_or_run_test_suite(
         name="xcodebuild-SPM-Tests",
         cleanCmd=["swift", "package", "clean"],
-        buildCmd=["xcodebuild", "build-for-testing"],
+        resolveCmd=["xcodebuild", "-resolvePackageDependencies"],
+        buildCmd=[
+            "xcodebuild", "build-for-testing",
+            "-disableAutomaticPackageResolution", "-onlyUsePackageVersionsFromResolvedFile",
+        ],
         testCmd=[
             "xcodebuild", "test-without-building",
-             "-resultBundlePath", str(Environment.Path.result_bundle)
+             "-resultBundlePath", str(Environment.Path.result_bundle),
+            "-disableAutomaticPackageResolution", "-onlyUsePackageVersionsFromResolvedFile",
         ],
-        buildTestCommonArgs=[
+        resolveBuildTestCommonArgs=[
             "-verbose", "-skipMacroValidation",
             "-scheme", "SPM-Tests-Package",
             "-config", Environment.TestCombination.config,
             "-destination", Environment.TestCombination.xcodebuild_destination,
             "OTHER_SWIFT_FLAGS=$(inherited) -DSWIFTUSD_TESTS_SUPPRESS_PERFORMANCE_FAILURES",
-        ] + conditionalCommonArgs(),
+            "-clonedSourcePackagesDirPath", "clonedSourcePackages",            
+        ],
         cwd=Environment.Path.swiftusd_tests / "SPM-Tests",
         action=action,
     )
@@ -224,6 +285,8 @@ def run_tests(args, subparsers):
 # MARK: Main
 
 if __name__ == "__main__":
+    toolchainPrepareOnce()
+    
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(required=True)
 

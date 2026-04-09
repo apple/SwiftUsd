@@ -27,6 +27,7 @@ const pxr::Usd_PrimFlags Overlay::Usd_PrimGroupFlag = pxr::Usd_PrimGroupFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimComponentFlag = pxr::Usd_PrimComponentFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimAbstractFlag = pxr::Usd_PrimAbstractFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimDefinedFlag = pxr::Usd_PrimDefinedFlag;
+const pxr::Usd_PrimFlags Overlay::Usd_PrimHasClassSpecifierFlag = pxr::Usd_PrimHasClassSpecifierFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimHasDefiningSpecifierFlag = pxr::Usd_PrimHasDefiningSpecifierFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimInstanceFlag = pxr::Usd_PrimInstanceFlag;
 const pxr::Usd_PrimFlags Overlay::Usd_PrimHasPayloadFlag = pxr::Usd_PrimHasPayloadFlag;

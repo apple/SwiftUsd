@@ -47,28 +47,26 @@ internal enum PrecheckoutRunner {
         // run times
         logger.trace("PrecheckoutRunner.run start")
         defer { logger.trace("PrecheckoutRunner.run end") }
-        
+
         for (i, p) in yamlConfig.precheckouts.enumerated() {
             logger.debug("Processing precheckout \(p.remote) (\(i + 1) of \(yamlConfig.precheckouts.count))")
-            
+
             if FileManager.default.fileExists(atPath: p.path.absoluteURL.path(percentEncoded: false)) {
-                logger.debug("\(p.path.absoluteURL.path(percentEncoded: false)) already exists, skipping clone")
-                
-            } else {
-                logger.info("git clone '\(p.remote)' '\(p.path.absoluteURL.path(percentEncoded: false))'")
-                let cloneResult = try await Subprocess.run(.name("git"), arguments: ["clone", p.remote, p.path.absoluteURL.path(percentEncoded: false)], output: .discarded)
-                guard cloneResult.terminationStatus.isSuccess else {
-                    logger.error("Failed to clone")
-                    throw PrecheckoutRunnerError.clone(cloneResult.terminationStatus)
-                }
+                try FileManager.default.removeItem(at: p.path)
             }
-            
-            logger.info("cd '\(p.path.absoluteURL.path(percentEncoded: false))'; git checkout '\(p.ref)'")
-            let checkoutResult = try await Subprocess.run(.name("git"), arguments: ["checkout", p.ref], workingDirectory: FilePath(p.path), output: .discarded)
-            guard checkoutResult.terminationStatus.isSuccess else {
-                logger.error("Failed to checkout")
-                throw PrecheckoutRunnerError.checkout(checkoutResult.terminationStatus)
-            }
+
+            logger.info("git clone '\(p.remote)' '\(p.path.absoluteURL.path(percentEncoded: false))' --depth 1 --revision '\(p.ref)'")
+            let cloneResult = try await Subprocess.run(
+                .name("git"),
+                arguments: ["clone", p.remote, p.path.absoluteURL.path(percentEncoded: false),
+                            "--depth", "1", "--revision", p.ref],
+                output: .string(limit: 65536),
+                error: .combinedWithOutput,
+            )
+            guard cloneResult.terminationStatus.isSuccess else {
+                logger.error("Failed to clone: \(cloneResult.standardOutput ?? "")")
+                throw PrecheckoutRunnerError.clone(cloneResult.terminationStatus)
+            }            
         }
     }
     

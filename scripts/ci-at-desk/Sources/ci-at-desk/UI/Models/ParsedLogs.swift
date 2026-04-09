@@ -22,6 +22,8 @@
 import Foundation
 import Logging
 import WorkflowRunning
+import Subprocess
+import RegexBuilder
 
 // Finds directories under a given directory with a given prefix
 fileprivate func dirs(under: URL, withPrefix: String) -> [URL] {
@@ -245,6 +247,74 @@ fileprivate func contentsOrEmpty(at: URL) -> String {
                 self?.addMessages(messages)
             }
         }
+        if ci_at_desk_UI.readOnly {
+            Task {
+                _ = try await Subprocess.run(
+                    .name("tail"),
+                    arguments: ["-f", "-n+0", directory.appending(path: "log.txt").absoluteURL.path(percentEncoded: false)],
+                    preferredBufferSize: 1,
+                ) { execution, output in
+                    Task { @MainActor in
+                        for try await line in output.lines() {
+                            let parsedMessage = Self.parseMessage(line)
+                            self.addMessages([parsedMessage])
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private static func parseMessage(_ line: String) -> InProcessLogNotificationHandler.Message {
+        // step-Build-Tests 2026-04-21T18:55:18.475Z DEBUG [[]]: note: Using global toolchain override 'Swift 6.3 Release 2026-04-13 (a)'. (in target 'SwiftSyntaxMacros' from project 'swift-syntax')
+        // LABEL, SPACE, TIMESTAMP, SPACE, LEVEL, SPACE, LBRACE, METADATA, RBRACE, COLON, SPACE, MESSAGE
+        
+        let labelRef = Reference(Substring.self)
+        let timestampRef = Reference(Date.self)
+        let levelRef = Reference(Logger.Level.self)
+        let metadataRef = Reference(Substring.self)
+        let messageRef = Reference(Substring.self)
+        
+        let regex = Regex {
+            Capture(as: labelRef) { /[^ ]+/ }
+            " "
+            Capture(as: timestampRef) {
+                Date.ISO8601FormatStyle.iso8601WithTimeZone(includingFractionalSeconds: true).regex
+            }
+            " "
+            TryCapture(as: levelRef) {
+                ChoiceOf {
+                    "TRACE"
+                    "DEBUG"
+                    "INFO"
+                    "NOTICE"
+                    "WARNING"
+                    "ERROR"
+                    "CRITICAL"
+                }
+            } transform: {
+                Logger.Level(rawValue: $0.lowercased())!
+            }
+
+            " ["
+            Capture(as: metadataRef) { /.*/ }
+            "]: "
+            Capture(as: messageRef) { /.*/ }
+            Optionally {
+                CharacterClass.newlineSequence
+            }
+        }
+                
+        
+        guard let match = line.wholeMatch(of: regex) else {
+            return .init(label: "", timestamp: .distantPast, level: .info, metadata: "", message: line)
+        }
+                
+        return .init(label: String(match[labelRef]),
+                     timestamp: match[timestampRef],
+                     level: match[levelRef],
+                     metadata: "[" + match[metadataRef] + "]",
+                     message: String(match[messageRef]))
     }
     
     func addMessages(_ newMessages: [InProcessLogNotificationHandler.Message]) {
@@ -270,5 +340,80 @@ fileprivate func contentsOrEmpty(at: URL) -> String {
                 }
             }
         }
+    }
+}
+
+
+@MainActor struct LogNodeCommonProperties {
+    var name: String
+    var prettyName: String?
+    var children: [LogNodeCommonProperties]
+    var isEnded: Bool
+    var containsErrors: Bool
+    var duration: Double?
+
+    init(name: String,
+         prettyName: String?,
+         children: [LogNodeCommonProperties],
+         isEnded: Bool,
+         containsErrors: Bool,
+         duration: Double?) {
+        self.name = name
+        self.prettyName = prettyName
+        self.children = children
+        self.isEnded = isEnded
+        self.containsErrors = containsErrors
+        self.duration = duration
+    }
+    
+    private static func duration(_ a: Date?, _ b: Date?) -> Double? {
+        guard let a else { return nil }
+        return (b ?? Date()).timeIntervalSince(a)
+    }
+    
+    init(_ log: ParsedLogs) {
+        self.init(name: log.name,
+                  prettyName: nil,
+                  children: log.workflows.map(LogNodeCommonProperties.init(_:)),
+                  isEnded: log.isEnded,
+                  containsErrors: log.containsErrors,
+                  duration: Self.duration(log.startTime, log.endTime))
+    }
+    
+    init(_ workflow: WorkflowLog) {
+        self.init(name: workflow.name,
+                  prettyName: workflow.logContents.prettyName,
+                  children: workflow.jobs.map(LogNodeCommonProperties.init(_:)),
+                  isEnded: workflow.isEnded,
+                  containsErrors: workflow.containsErrors,
+                  duration: Self.duration(workflow.startTime, workflow.endTime))
+    }
+    
+    init(_ job: JobLog) {
+        self.init(name: job.name,
+                  prettyName: job.logContents.prettyName,
+                  children: job.matrixInstances.map(LogNodeCommonProperties.init(_:)),
+                  isEnded: job.isEnded,
+                  containsErrors: job.containsErrors,
+                  duration: Self.duration(job.startTime, job.endTime))
+    }
+    
+    init(_ matrixInstance: MatrixInstanceLog) {
+        self.init(name: matrixInstance.name,
+                  prettyName: matrixInstance.logContents.prettyName,
+                  children: matrixInstance.steps.map(LogNodeCommonProperties.init(_:)),
+                  isEnded: matrixInstance.isEnded,
+                  containsErrors: matrixInstance.containsErrors,
+                  duration: Self.duration(matrixInstance.startTime, matrixInstance.endTime))
+
+    }
+    
+    init(_ step: StepLog) {
+        self.init(name: step.name,
+                  prettyName: step.logContents.prettyName,
+                  children: [],
+                  isEnded: step.isEnded,
+                  containsErrors: step.containsErrors,
+                  duration: Self.duration(step.startTime, step.endTime))
     }
 }

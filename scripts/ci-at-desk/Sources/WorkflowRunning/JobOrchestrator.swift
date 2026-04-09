@@ -90,7 +90,7 @@ internal final class JobOrchestrator: Sendable, OrchestratorProtocol {
         try await withThrowingTaskGroup(of: ContextRef.self) { taskGroup in
             var matrixIndex = 0
             
-            let activeExclusivityKeys = Mutex(Set<String>())
+            let sharedActiveKeys = Mutex([String : Int]())
             
             func queueNextMatrix() {
                 if matrixIndex >= matrixList.count { return }
@@ -100,45 +100,64 @@ internal final class JobOrchestrator: Sendable, OrchestratorProtocol {
                     do {
                         var detachedContext = detachedContext.detachedCopy()
                         
-                        guard let instanceExclusivityKeys = matrix["exclusivity_keys", default: []].asArray?.compactMap(\.asString),
-                              instanceExclusivityKeys.count == matrix["exclusivity_keys", default: []].asArray?.count else {
-                             throw JobOrchestratorError.invalidExclusivityKeys(matrix)
+                        func getActiveOrIncompatibleKeys(_ key: String) throws -> [String] {
+                            guard let underlyingExpression = matrix[key] else { return [] }
+                            guard let exprAsArray = underlyingExpression.asArray else { throw JobOrchestratorError.invalidActiveOrIncompatibleKeys(key, matrix) }
+                            let result = exprAsArray.compactMap(\.asString)
+                            guard result.count == exprAsArray.count else { throw JobOrchestratorError.invalidActiveOrIncompatibleKeys(key, matrix) }
+                            return result
                         }
-                        self.logger.debug("Instance \(matrixIndex + 1) has exclusivity keys \(instanceExclusivityKeys)")
+                        let instanceActiveKeys = try getActiveOrIncompatibleKeys("active_keys")
+                        let instanceIncompatibleKeys = try getActiveOrIncompatibleKeys("incompatible_keys")
+                        self.logger.debug("Instance \(matrixIndex + 1) has active keys \(instanceActiveKeys) and incompatible keys \(instanceIncompatibleKeys)")
+                        
                         
                         var hasLoggedAboutBeingBlocked = false
                         while true {
                             // Spin-lock, waiting 5 seconds. (Easier than setting up a proper semaphore system)
-                            let canRun = activeExclusivityKeys.withLock { activeExclusivityKeys in
-                                if activeExclusivityKeys.intersection(instanceExclusivityKeys).isEmpty {
-                                    self.logger.debug("Instance \(matrixIndex + 1) is inserting exclusivity keys \(instanceExclusivityKeys)")
-                                    activeExclusivityKeys.formUnion(instanceExclusivityKeys)
-                                    return true
-                                } else {
-                                    return false
+                            let canRun = sharedActiveKeys.withLock { sharedActiveKeys in
+                                // If any incompatible key is active, we're blocked
+                                for k in instanceIncompatibleKeys {
+                                    if sharedActiveKeys[k, default: 0] > 0 {
+                                        return false
+                                    }
                                 }
+                                // Every exclusivity key is inactive, so add our active keys to the shared list
+                                for k in instanceActiveKeys {
+                                    if sharedActiveKeys[k] == nil { sharedActiveKeys[k] = 0 }
+                                    sharedActiveKeys[k]! += 1
+                                }
+                                
+                                self.logger.debug("Instance \(matrixIndex + 1) is inserting active keys \(instanceActiveKeys)")
+                                
+                                return true
                             }
                             if canRun {
                                 if hasLoggedAboutBeingBlocked {
-                                    self.logger.debug("Instance \(matrixIndex + 1) with exclusivity keys \(instanceExclusivityKeys) is newly unblocked")
+                                    self.logger.debug("Instance \(matrixIndex + 1) with active keys \(instanceActiveKeys) and incompatible keys \(instanceIncompatibleKeys) is newly unblocked")
                                 }
                                 break
                             }
                             if !hasLoggedAboutBeingBlocked {
                                 hasLoggedAboutBeingBlocked = true
-                                self.logger.debug("Instance \(matrixIndex + 1) with exclusivity keys \(instanceExclusivityKeys) is blocked")
+                                self.logger.debug("Instance \(matrixIndex + 1) with active keys \(instanceActiveKeys) and incompatible keys \(instanceIncompatibleKeys) is blocked")
                             }
                             try await Task.sleep(for: .seconds(5))
                         }
                         // Make sure that even if an error is thrown later,
-                        // we clear the activeExclusivityKeys
+                        // we clear the activeSharedKeys
                         defer {
-                            activeExclusivityKeys.withLock {
-                                self.logger.debug("Instance \(matrixIndex + 1) is removing exclusivity keys \(instanceExclusivityKeys)")
-                                $0.subtract(instanceExclusivityKeys)
+                            sharedActiveKeys.withLock { sharedActiveKeys in
+                                for k in instanceActiveKeys {
+                                    sharedActiveKeys[k]! -= 1
+                                    if sharedActiveKeys[k] == 0 { sharedActiveKeys[k] = nil }
+                                }
+                                
+                                self.logger.debug("Instance \(matrixIndex + 1) is removing active keys \(instanceActiveKeys)")
                             }
                         }
                         
+                        try Task.checkCancellation()
                         try await MatrixInstanceRunner.run(matrix: matrix, matrixIndex: matrixIndex, job: job, workflow: workflow, context: &detachedContext, logger: self.logger)
                         return ContextRef(value: detachedContext)
                     } catch {
@@ -172,6 +191,6 @@ internal final class JobOrchestrator: Sendable, OrchestratorProtocol {
     }
     
     enum JobOrchestratorError: Error {
-        case invalidExclusivityKeys([String : Expression])
+        case invalidActiveOrIncompatibleKeys(String, [String : Expression])
     }
 }

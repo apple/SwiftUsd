@@ -33,42 +33,109 @@ def get_xcodebuild_destination(target_platform):
         print(f"Error: Unknown target '{target_platform}'")
         exit(1)
 
+def allCombinations(**kwargs):
+    result = [{}]
+    for (key, values) in kwargs.items():
+        result = [x | {key : value} for value in values for x in result]
+
+    result = [x | {"active_keys" : [], "incompatible_keys" : []} for x in result]
+    return result
+
 if __name__ == "__main__":
-    target_platforms = ["macOS", "iOS", "iOSSimulator", "visionOS", "visionOSSimulator"]
-    configs = ["Debug", "Release"]
-    build_systems = ["xcodebuild-xcodeproj", "swiftbuild-SPM-Tests", "xcodebuild-SPM-Tests"]
+    toConsider = allCombinations(
+        target_platform=["macOS", "iOS", "iOSSimulator", "visionOS", "visionOSSimulator"],
+        config=["Debug", "Release"],
+        build_system=["xcodebuild-xcodeproj", "swiftbuild-SPM-Tests", "xcodebuild-SPM-Tests"],
+        toolchain_provider=getAllToolchainProviders()
+    )
 
-    all_combinations = []
-    for target_platform in target_platforms:
-        for config in configs:
-            for build_system in build_systems:
-                exclusivity_keys = []
-                
-                if build_system == "swiftbuild-SPM-Tests" and target_platform != "macOS":
-                    # swiftbuild only supports macOS
+    result = []
+    for x in toConsider:
+        tc = x["toolchain_provider"]
+        swiftly = parseSwiftlyToolchainProvider(tc)
+        
+        if x["build_system"] == "swiftbuild-SPM-Tests" and x["target_platform"] != "macOS":
+            # swiftbuild only supports macOS
+            continue
+
+        if x["build_system"] == "xcodebuild-SPM-Tests" and x["target_platform"] in ["iOS", "visionOS"]:
+            # xcodebuild on a Swift Package doesn't support physical iOS/visionOS devices
+            continue
+
+        
+        if x["build_system"] == "xcodebuild-SPM-Tests":
+            # xcodebuild on a Swift Package runs into `INTERNAL ERROR: Unable to load workspace`
+            # before Xcode 26.0
+            if swiftly == "xcode":
+                version = getVersionOfToolchainProvider(tc)
+                if isVersionLessThan(version, "26.0.0"):
                     continue
 
-                if build_system == "xcodebuild-SPM-Tests" and target_platform in ["iOS", "visionOS"]:
-                    # xcodebuild on a Swift Package doesn't support physical iOS/visionOS devices
+        if x["target_platform"] in ["visionOS", "visionOSSimulator"]:
+            # visionOS/visionOSSimulator with swiftly 6.3.0/6.3.1 runs into build errors
+            # using xcodebuild.
+            #
+            # - xcodebuild-xcodeproj runs into an error from a CoreMotion
+            #   type having mismatched availability annotations
+            # 
+            # - xcodebuild-SPM-Tests runs into a linker error about
+            #   libclang_rt.profile_xros.a/libclang_rt.profile_xrossim.a
+            #   not being included as part of the toolchain.
+            if swiftly.startswith("6.3."):
+                if x["build_system"] in ["xcodebuild-xcodeproj", "xcodebuild-SPM-Tests"]:
                     continue
 
-                xcodebuild_destination = get_xcodebuild_destination(target_platform)
-                if xcodebuild_destination is None: continue
+        if swiftly.startswith("6.2."):
+            # Swiftly 6.2 runs into module deserialization failures from running up against
+            # an arbitrary limit on the number of specializations of a class template
+            # the compiler would create. This was fixed in Swiftly 6.3,
+            # and only affects the OSS Swiftly toolchains, not Xcode toolchains.
+            #
+            # https://github.com/swiftlang/swift/pull/83751
+            continue
 
-                if target_platform in ["iOS", "visionOS"]:
-                    exclusivity_keys.append(target_platform)
+        if swiftly.startswith("6.1."):
+            # Swiftly 6.1 runs into various stack dumps with no clear workaround
+            # besides using a newer compiler version
+            continue
 
-                all_combinations.append({"target_platform" : target_platform, "config" : config, 
-                                         "build_system" : build_system, "xcodebuild_destination" : xcodebuild_destination,
-                                         "exclusivity_keys" : exclusivity_keys})
+        xcodebuild_destination = get_xcodebuild_destination(x["target_platform"])
+        if xcodebuild_destination is None: continue
+        x["xcodebuild_destination"] = xcodebuild_destination
 
-    random.shuffle(all_combinations)
+        if x["target_platform"] in ["iOS", "visionOS"]:
+            x["active_keys"].append(x["target_platform"])
+            x["incompatible_keys"].append(x["target_platform"])
 
-    write(output=f"matrix={json.dumps(all_combinations)}")
-    max_parallel = int(round(math.sqrt(len(all_combinations))))
+        result.append(x)
+
+    random.shuffle(result)
+
+    axes = {}
+    for x in result:
+        for k, v in x.items():
+            if k == "active_keys" or k == "incompatible_keys": continue
+            if k not in axes:
+                axes[k] = []
+            if v not in axes[k]:
+                axes[k].append(v)
+
+    axes = dict(sorted(axes.items()))
+    for (k, v) in axes.items():
+        axes[k] = sorted(v)
+
+    write(output=f"matrix={json.dumps(result)}")
+    max_parallel = int(round(math.sqrt(len(result))))
     write(output=f"max-parallel={max_parallel}")
 
+    for (k, v) in axes.items():
+        value_string = "\n".join(v)
+        printAndWrite(summary=collapsedSection(
+            title=f"`{k}` ({len(v)} variants)",
+            body=f"```\n{value_string}\n```"
+        ))
+
     printAndWrite(summary=collapsedSection(
-        title=f"Will run {len(all_combinations)} test combinations with max-parallel={max_parallel}:",
-        body=f"```\nmatrix={json.dumps(all_combinations, indent=2)}\n```"
+        title=f"Will run {len(result)} test combinations with max-parallel={max_parallel}:",
+        body=f"```\nmatrix={json.dumps(result, indent=2)}\n```"
     ))

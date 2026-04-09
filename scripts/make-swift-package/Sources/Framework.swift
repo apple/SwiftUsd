@@ -92,34 +92,34 @@ struct Framework: Sendable {
         //         <materialx libraries>
         //     plugInfo.json
         
-        if await fsInfo.usdInstall.isMacOS {
+        if fsInfo.usdInstall.isMacOS {
             // Create the subdirectories and symlinks
             try! fm.createDirectory(at: fsInfo.versions, withIntermediateDirectories: true)
             try! fm.createDirectory(at: fsInfo.versionsA, withIntermediateDirectories: true)
-            try! await fm.createDirectory(at: fsInfo.versionsAResources, withIntermediateDirectories: true)
+            try! fm.createDirectory(at: fsInfo.versionsAResources, withIntermediateDirectories: true)
             
             fm.createSymlink(at: fsInfo.url.appending(path: name), path: "Versions/Current/\(name)")
             fm.createSymlink(at: fsInfo.url.appending(path: "Resources"), path: "Versions/Current/Resources")
             fm.createSymlink(at: fsInfo.url.appending(components: "Versions", "Current"), path: "A")
             
         } else {
-            try! await fm.createDirectory(at: fsInfo.versionsAResources, withIntermediateDirectories: true)
+            try! fm.createDirectory(at: fsInfo.versionsAResources, withIntermediateDirectories: true)
         }
     }
     
     func copyFilesIntoFrameworkBundle() async {
-        try! await fm.copyItem(at: fsInfo.originalDylib.resolvingSymlinksInPath(), to: fsInfo.dylib)
+        try! fm.copyItem(at: fsInfo.originalDylib.resolvingSymlinksInPath(), to: fsInfo.dylib)
         
         if fsInfo.isUsdMtlx {
             // Important: MaterialX wants its libraries to live in a directory called `libraries`
-            try! await fm.createDirectory(at: fsInfo.resourcesMaterialXLibraries, withIntermediateDirectories: true)
-            try! await fm.copyItem(at: fsInfo.usdInstall.libraries, to: fsInfo.resourcesMaterialXLibraries.appending(components: "libraries"))
+            try! fm.createDirectory(at: fsInfo.resourcesMaterialXLibraries, withIntermediateDirectories: true)
+            try! fm.copyItem(at: fsInfo.usdInstall.libraries, to: fsInfo.resourcesMaterialXLibraries.appending(components: "libraries"))
         }
         
         if fsInfo.isUsdPlug {
             // Usd needs to be able to find plugInfo.json files.
             // First, copy in the usd core plugin definitions.
-            try! await fm.copyItem(at: fsInfo.usdInstall.libUsdDir, to: fsInfo.resourcesUsd)
+            try! fm.copyItem(at: fsInfo.usdInstall.libUsdDir, to: fsInfo.resourcesUsd)
             
             // Next, write out a plugInfo.json file to bootstrap plugin loading
             // `*/Resources/` finds the core plugin definitions, just like in vanilla OpenUSD,
@@ -138,11 +138,11 @@ struct Framework: Sendable {
             }
             
             """
-            try! await plugInfoContents.write(to: fsInfo.resourcesPlugInfoJson, atomically: true, encoding: .utf8)
+            try! plugInfoContents.write(to: fsInfo.resourcesPlugInfoJson, atomically: true, encoding: .utf8)
             
             // Usd looks for plugInfo files at libusd_usdPlug.dylib/../usd,
             // so make a symlink there that points to where we put our plugInfo.json file
-            if await fsInfo.usdInstall.isMacOS {
+            if fsInfo.usdInstall.isMacOS {
                 fm.createSymlink(at: fsInfo.versionsAUsd, path: "Resources/usd")
             } else {
                 fm.createSymlink(at: fsInfo.url.appending(path: "usd"), path: "Resources_iOS/usd")
@@ -151,7 +151,7 @@ struct Framework: Sendable {
             // We need to make `Resources/usd/*/resources` into `Resources/usd/*/Resources`,
             // for bundle and iOS case sensitivity reasons
             
-            for item in await fm.allUrls(under: fsInfo.versionsAResources) {
+            for item in fm.allUrls(under: fsInfo.versionsAResources) {
                 guard fm.directoryExists(at: item) else { continue }
                 let nestedResourcesDir = item.appending(path: "resources")
                 if fm.directoryExists(at: nestedResourcesDir) {
@@ -168,7 +168,7 @@ struct Framework: Sendable {
             let hydraResources = hydraPluginPath.appending(path: "resources")
             if fm.directoryExists(at: hydraResources) {
                 for item in try! fm.contentsOfDirectory(at: hydraResources, includingPropertiesForKeys: nil) {
-                    try! await fm.copyItem(at: item, to: fsInfo.versionsAResources.appending(path: item.lastPathComponent))
+                    try! fm.copyItem(at: item, to: fsInfo.versionsAResources.appending(path: item.lastPathComponent))
                 }
                 await fixPlugInfo(isHydraPlugin: true)
             }
@@ -205,7 +205,7 @@ struct Framework: Sendable {
         </plist>
         
         """
-        try! await infoPlistContents.write(to: fsInfo.resourcesInfoPlist, atomically: true, encoding: .utf8)
+        try! infoPlistContents.write(to: fsInfo.resourcesInfoPlist, atomically: true, encoding: .utf8)
     }
     
     func fixDylibLoadCommands() async {
@@ -265,9 +265,9 @@ struct Framework: Sendable {
     private func fixPlugInfo(isHydraPlugin: Bool) async {
         let fm = FileManager.default
         
-        let isMacOS = await fsInfo.usdInstall.isMacOS
+        let isMacOS = fsInfo.usdInstall.isMacOS
         
-        for fileURL in await fm.allUrls(under: fsInfo.versionsAResources) {
+        for fileURL in fm.allUrls(under: fsInfo.versionsAResources) {
             guard fileURL.lastPathComponent == "plugInfo.json" else { continue }
             
             let mappedLines = try! String(contentsOf: fileURL, encoding: .utf8)

@@ -124,14 +124,26 @@ if __name__ == "__main__":
     explain_errors(axes, results, "test")
     printAndWrite(summary="")
 
-    title = "All extracted lines"
-    body = formExtractedLinesFromResults(axes, results)
-    printAndWrite(summary=collapsedSection(title=title, body=body))
+    superTitle = f"All extracted lines: ({len(results)} combinations)"
+    superBody = []
+    for x in results:
+        title = x.summary(axes)
+        body = ["```"] + x.extracted_lines + ["```"]
+        if len(x.extracted_lines) == 0:
+            title += ": (none)"
+            body = []
+        else:
+            title += f": ({len(x.extracted_lines)} lines)"
+        body = "\n".join(body)
+        superBody.append(collapsedSection(title=title, body=body))
+    superBody = "\n".join(superBody)
+    printAndWrite(summary=collapsedSection(title=superTitle, body=superBody))
     printAndWrite(summary="")
 
     explain_times(axes, results, "build")
     printAndWrite(summary="")
     explain_times(axes, results, "test")
+
 
     # Important: If any test instances fail, we want
     # the overall test workflow to be marked as failed.

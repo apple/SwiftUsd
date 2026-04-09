@@ -197,12 +197,14 @@
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
 #include "pxr/imaging/hdsi/legacyDisplayStyleOverrideSceneIndex.h"
 #include "pxr/imaging/hdsi/lightLinkingSceneIndex.h"
+#include "pxr/imaging/hdsi/locatorCachingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialBindingResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialOverrideResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/materialPrimvarTransferSceneIndex.h"
 #include "pxr/imaging/hdsi/materialRenderContextFilteringSceneIndex.h"
 #include "pxr/imaging/hdsi/nodeIdentifierResolvingSceneIndex.h"
 #include "pxr/imaging/hdsi/nurbsApproximatingSceneIndex.h"
+#include "pxr/imaging/hdsi/particleFieldConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/pinnedCurveExpandingSceneIndex.h"
 #include "pxr/imaging/hdsi/prefixPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primManagingSceneIndexObserver.h"
@@ -356,6 +358,7 @@
 #include "pxr/usdImaging/usdImaging/delegate.h"
 #include "pxr/usdImaging/usdImaging/drawModeSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/extentResolvingSceneIndex.h"
+#include "pxr/usdImaging/usdImaging/legacyRenderSettingsSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/materialBindingsResolvingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/niPrototypePropagatingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/piPrototypePropagatingSceneIndex.h"
@@ -852,6 +855,8 @@ namespace __Overlay {
                             const pxr::GlfDrawTargetRefPtr& r);
   bool operatorEqualsEquals(const pxr::GlfDrawTargetPtr& l,
                             const pxr::GlfDrawTargetPtr& r);
+  bool operatorEqualsEquals(const pxr::GlfDrawTarget::Attachment& l,
+                            const pxr::GlfDrawTarget::Attachment& r);
   bool operatorEqualsEquals(const pxr::GlfDrawTarget::AttachmentRefPtr& l,
                             const pxr::GlfDrawTarget::AttachmentRefPtr& r);
   bool operatorEqualsEquals(const pxr::GlfTexture& l,
@@ -906,6 +911,8 @@ namespace __Overlay {
                             const pxr::HdMergingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdFilteringSceneIndexBase& l,
                             const pxr::HdFilteringSceneIndexBase& r);
+  bool operatorEqualsEquals(const pxr::HdFilteringSceneIndexBaseRefPtr& l,
+                            const pxr::HdFilteringSceneIndexBaseRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdFilteringSceneIndexBasePtr& l,
                             const pxr::HdFilteringSceneIndexBasePtr& r);
   bool operatorEqualsEquals(const pxr::HdSingleInputFilteringSceneIndexBase& l,
@@ -998,6 +1005,10 @@ namespace __Overlay {
                             const pxr::HdsiLightLinkingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiLightLinkingSceneIndexRefPtr& l,
                             const pxr::HdsiLightLinkingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiLocatorCachingSceneIndex& l,
+                            const pxr::HdsiLocatorCachingSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiLocatorCachingSceneIndexRefPtr& l,
+                            const pxr::HdsiLocatorCachingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiMaterialBindingResolvingSceneIndex& l,
                             const pxr::HdsiMaterialBindingResolvingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiMaterialBindingResolvingSceneIndexRefPtr& l,
@@ -1022,6 +1033,10 @@ namespace __Overlay {
                             const pxr::HdsiNurbsApproximatingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiNurbsApproximatingSceneIndexRefPtr& l,
                             const pxr::HdsiNurbsApproximatingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiParticleFieldConversionSceneIndex& l,
+                            const pxr::HdsiParticleFieldConversionSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiParticleFieldConversionSceneIndexRefPtr& l,
+                            const pxr::HdsiParticleFieldConversionSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiPrefixPathPruningSceneIndex& l,
                             const pxr::HdsiPrefixPathPruningSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiPrefixPathPruningSceneIndexRefPtr& l,
@@ -1094,6 +1109,10 @@ namespace __Overlay {
                             const pxr::UsdImagingExtentResolvingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingExtentResolvingSceneIndex& l,
                             const pxr::UsdImagingExtentResolvingSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingLegacyRenderSettingsSceneIndexRefPtr& l,
+                            const pxr::UsdImagingLegacyRenderSettingsSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingLegacyRenderSettingsSceneIndex& l,
+                            const pxr::UsdImagingLegacyRenderSettingsSceneIndex& r);
   bool operatorEqualsEquals(const pxr::UsdImagingStageSceneIndexRefPtr& l,
                             const pxr::UsdImagingStageSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingStageSceneIndex& l,

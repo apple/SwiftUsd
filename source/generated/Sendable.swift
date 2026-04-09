@@ -50,7 +50,7 @@
 // std::unordered_map<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>
 // pxr::TfRefPtr<pxr::TfRefBase>
 // std::optional<std::allocator<std::pair<pxr::VdfConnection const *, pxr::TfCompressedBits>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TfNotice::Probe>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::TfNotice::Probe>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>
 // std::vector<pxr::TfMallocTag::CallTree::PathNode, std::allocator<pxr::TfMallocTag::CallTree::PathNode>>
 // std::vector<pxr::TfMallocTag::CallTree::CallSite, std::allocator<pxr::TfMallocTag::CallTree::CallSite>>
@@ -72,9 +72,11 @@
 // std::unordered_set<std::string, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::string>>
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
+// pxr::TfHashSet<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>
 // std::list<pxr::TfToken, std::allocator<pxr::TfToken>>
 // std::map<pxr::TfToken, pxr::TfToken, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // std::map<pxr::TfToken, std::set<std::string, std::less<std::string>, std::allocator<std::string>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::set<std::string, std::less<std::string>, std::allocator<std::string>>>>>
+// std::map<pxr::TfToken, std::vector<unsigned long, std::allocator<unsigned long>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<unsigned long, std::allocator<unsigned long>>>>>
 // std::map<pxr::TfToken, int, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, int>>>
 // std::map<pxr::TfToken, unsigned long, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
 // std::map<std::string, pxr::TfToken, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::TfToken>>>
@@ -84,8 +86,8 @@
 // std::optional<std::allocator<pxr::TfToken>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdrParserPlugin *>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
-// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
-// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>>>
+// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
+// std::optional<std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet *>>>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, double>, std::allocator<std::pair<unsigned long long, double>>>>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdrShaderProperty const *>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::HdVolumeFieldDescriptor const *>>>
@@ -116,6 +118,7 @@
 // std::pair<pxr::TfToken const, std::set<std::string, std::less<std::string>, std::allocator<std::string>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, double>, std::allocator<std::pair<unsigned long long, double>>>>
+// std::pair<pxr::TfToken const, std::vector<unsigned long, std::allocator<unsigned long>>>
 // std::pair<pxr::TfToken const, long long>
 // std::pair<pxr::TfToken const, std::pair<pxr::TfToken, unsigned long>>
 // std::pair<pxr::TfToken const, unsigned long long>
@@ -213,7 +216,7 @@
 // std::pair<pxr::GfMatrix3d const, long long>
 // std::vector<pxr::GfMatrix4f, std::allocator<pxr::GfMatrix4f>>
 // std::optional<std::allocator<std::pair<std::string const, pxr::JsValue>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceAggregateNode>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::TraceAggregateNode>
 // std::optional<std::allocator<std::pair<pxr::TraceKey const, pxr::TfToken>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, pxr::TraceThreadId>, std::allocator<std::pair<unsigned long long, pxr::TraceThreadId>>>>>>
 // std::pair<pxr::TfToken const, std::vector<std::pair<unsigned long long, pxr::TraceThreadId>, std::allocator<std::pair<unsigned long long, pxr::TraceThreadId>>>>
@@ -221,10 +224,10 @@
 // std::optional<std::allocator<pxr::TraceDynamicKey>>
 // pxr::TfSingleton<pxr::TraceCollector>
 // std::pair<pxr::TfToken const, pxr::TraceEventData>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceReporter>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::TraceReporterDataSourceCollector>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PlugPlugin>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PlugRegistry>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::TraceReporter>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::TraceReporterDataSourceCollector>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::PlugPlugin>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::PlugRegistry>
 // pxr::VtArray<pxr::GfFrustum>
 // pxr::VtArray<pxr::GfMultiInterval>
 // pxr::VtArray<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
@@ -739,8 +742,8 @@
 // std::pair<std::string, pxr::ArResolvedPath>
 // pxr::VtValueTypeCanCompose<pxr::ArTimestamp>
 // pxr::VtValueTypeCanTransform<pxr::ArTimestamp>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfAbstractData const>
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPath>
 // pxr::VtArray<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
@@ -756,7 +759,7 @@
 // std::map<pxr::SdfPath, int, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, int>>>
 // std::map<pxr::SdfPath, unsigned long, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // std::map<pxr::TfToken, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>
-// std::map<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>>, pxr::VtArray<int>, std::less<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>>>, std::allocator<std::pair<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>>>
+// std::map<std::tuple<<class pxrInternal_v0_26_5__pxrReserved__::SdfPath, class pxrInternal_v0_26_5__pxrReserved__::SdfPath, int>>, pxr::VtArray<int>, std::less<std::tuple<<class pxrInternal_v0_26_5__pxrReserved__::SdfPath, class pxrInternal_v0_26_5__pxrReserved__::SdfPath, int>>>, std::allocator<std::pair<std::tuple<<class pxrInternal_v0_26_5__pxrReserved__::SdfPath, class pxrInternal_v0_26_5__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>>>
 // std::map<std::string, pxr::SdfPath, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::SdfPath>>>
 // std::multimap<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::optional<pxr::SdfPath>
@@ -766,9 +769,6 @@
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::TfToken>>>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>
-// std::optional<std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::UsdPhysicsJointDesc const *, std::allocator<pxr::UsdPhysicsJointDesc const *>>>>>
-// std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::UsdPhysicsJointDesc *>>>
-// std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::UsdPhysicsRigidBodyDesc *>>>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // std::optional<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>
 // std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
@@ -818,7 +818,7 @@
 // std::pair<pxr::SdfPath const, unsigned int>
 // std::pair<pxr::TfToken const, std::unordered_set<std::pair<pxr::SdfPath, pxr::TfToken>, pxr::TfHash, std::equal_to<std::pair<pxr::SdfPath, pxr::TfToken>>, std::allocator<std::pair<pxr::SdfPath, pxr::TfToken>>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
-// std::pair<std::tuple<<class pxrInternal_v0_26_3__pxrReserved__::SdfPath, class pxrInternal_v0_26_3__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>
+// std::pair<std::tuple<<class pxrInternal_v0_26_5__pxrReserved__::SdfPath, class pxrInternal_v0_26_5__pxrReserved__::SdfPath, int>> const, pxr::VtArray<int>>
 // std::pair<std::string const, pxr::SdfPath>
 // std::pair<std::pair<pxr::SdfPath, pxr::TfToken> const, pxr::TfToken>
 // std::pair<unsigned long long const, pxr::SdfPath>
@@ -832,7 +832,6 @@
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::TfHashMultiMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::map<pxr::SdfPath, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
-// std::optional<std::allocator<std::pair<pxr::SdfPath const, std::unordered_set<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
 // std::unordered_map<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>
 // std::unordered_map<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
 // std::unordered_map<pxr::SdfPath, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>
@@ -943,7 +942,7 @@
 // pxr::SdfHandleTo<pxr::SdfAttributeSpec>
 // pxr::SdfHandleTo<pxr::SdfPropertySpec>
 // pxr::SdfHandleTo<pxr::SdfSpec>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfSchemaBase>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfSchemaBase>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, pxr::SdfSchemaBase::FieldDefinition>>>
 // std::pair<pxr::SdfSchemaBase::SpecDefinition, bool>
 // pxr::TfSingleton<pxr::SdfSchema>
@@ -958,10 +957,10 @@
 // pxr::VtValueTypeCanCompose<pxr::SdfCopySpecsValueEdit>
 // pxr::VtValueTypeCanTransform<pxr::SdfCopySpecsValueEdit>
 // std::vector<pxr::SdfCrateInfo::Section, std::allocator<pxr::SdfCrateInfo::Section>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfData const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayer>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayer const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfData const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfLayer>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfLayer const>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::SdfLayer>>>
 // std::optional<std::allocator<std::pair<pxr::TfWeakPtr<pxr::SdfLayer>, std::string>>>
@@ -974,11 +973,12 @@
 // std::optional<pxr::SdfLayerOffset>
 // pxr::VtValueTypeCanCompose<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
 // pxr::VtValueTypeCanTransform<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfLayerStateDelegateBase>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfLayerStateDelegateBase>
 // pxr::TfHashMap<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // pxr::VtArray<pxr::SdfPayload>
 // pxr::VtArrayEdit<pxr::SdfPayload>
 // std::list<pxr::SdfPayload, std::allocator<pxr::SdfPayload>>
+// std::map<pxr::SdfPayload, unsigned long, std::less<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // std::optional<pxr::SdfPayload>
 // std::optional<std::allocator<pxr::SdfPayload>>
 // std::optional<std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
@@ -986,7 +986,9 @@
 // std::unordered_map<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
 // pxr::VtValueTypeCanCompose<pxr::SdfPayload>
 // pxr::VtValueTypeCanCompose<pxr::SdfPayload>
+// pxr::VtValueTypeCanCompose<std::map<pxr::SdfPayload, unsigned long, std::less<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>>
 // pxr::VtValueTypeCanTransform<pxr::SdfPayload>
+// pxr::VtValueTypeCanTransform<std::map<pxr::SdfPayload, unsigned long, std::less<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>>
 // std::pair<pxr::SdfPayload, unsigned long>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfPrimSpec>>
 // pxr::SdfChildrenViewTrivialPredicate<pxr::SdfHandle<pxr::SdfPrimSpec>>
@@ -996,13 +998,15 @@
 // std::optional<std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
 // pxr::VtValueTypeCanCompose<pxr::SdfReference>
 // pxr::VtValueTypeCanCompose<pxr::SdfReference>
+// pxr::VtValueTypeCanCompose<std::map<pxr::SdfReference, unsigned long, std::less<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>>
 // pxr::VtValueTypeCanTransform<pxr::SdfReference>
+// pxr::VtValueTypeCanTransform<std::map<pxr::SdfReference, unsigned long, std::less<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfRelationshipSpec>>
 // pxr::SdfHandleTo<pxr::SdfRelationshipSpec>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdaData const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdaFileFormat const>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::SdfUsdcFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfUsdFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfUsdaData const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfUsdaFileFormat const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::SdfUsdcFileFormat const>
 // pxr::VtValueTypeCanCompose<pxr::SdfVariableExpression::EmptyList>
 // pxr::VtValueTypeCanTransform<pxr::SdfVariableExpression::EmptyList>
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfVariantSetSpec>>
@@ -1011,97 +1015,97 @@
 // pxr::SdfChildrenViewTrivialAdapter<pxr::SdfHandle<pxr::SdfVariantSpec>>
 // pxr::SdfChildrenViewTrivialPredicate<pxr::SdfHandle<pxr::SdfVariantSpec>>
 // pxr::SdfHandleTo<pxr::SdfVariantSpec>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatStretch>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatStretch>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatSep>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatSep>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElemText>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElemText>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElem>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElem>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatternElems>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatternElems>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatternElems>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsPathPattern>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::AbsPathPattern>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDot>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDots>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::DotDots>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::ReflexiveRelative>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsoluteStart>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPattern>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPattern>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatStretch>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatStretch>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatSep>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatSep>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PrimPathPatternElemText, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElemText>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPathPatternParser::PropPathPatternElemText, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>, pxr::SdfPathPatternParser::BracedPredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElemText>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PrimPathPatternElem>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PropPathPatternElem>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPatternElems>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::AbsPathPattern>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDot>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::DotDots>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::success>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::DotDots>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::success>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::ReflexiveRelative>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::AbsoluteStart>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPathPatternParser::PathPattern>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPathPatternParser::PathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::AbsPathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::BracedPredExpr>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::DotDots>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatSep>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPattern>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatternElems>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDot>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::success>>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_3__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPathPatternParser::AbsoluteStart, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::AbsPathPattern>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::AbsPathPattern>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPathPatternParser::PropPathPatternElem>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'/'>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDot>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::BracedPredExpr>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::DotDots, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::success>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::ReflexiveRelative, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatStretch, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatternElems> >>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PathPatSep, struct pxrInternal_v0_26_5__pxrReserved__::SdfPathPatternParser::PrimPathPatternElem>>>
 // pxr::SdfPathPatternActions::PathPatternAction<void>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::AbsoluteStart>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PathPatStretch>
@@ -1111,150 +1115,150 @@
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::PropPathPatternElem>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::ReflexiveRelative>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPathPatternParser::DotDot>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::NotKW>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::AndKW>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::OrKW>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Inf>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Inf>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::True>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::True>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::False>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::False>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ImpliedAnd>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ReservedWord>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::ReservedWord>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Digits>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Digits>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxr::SdfPredicateExpressionParser::Exp>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Exp>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Exp>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Frac>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Frac>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgFloat>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgInt>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgBool>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::QuotedString>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::QuotedString>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedString>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedString>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgString>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgVal>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredArgVal>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgName>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArg>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArg>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenPosArg>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenPosArg>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFuncName>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredColonArgs>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonCall>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenCall>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredBareCall>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOpenGroup>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredCloseGroup>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredAtom>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredAtom>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFactor>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredFactor>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOperator>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredOperator>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::NotKW>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::AndKW>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::OrKW>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Inf>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Inf>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::True>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::True>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::False>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::False>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ImpliedAnd>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::not_at<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::ReservedWord>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::ReservedWord>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Digits>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::Frac>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::Frac>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgFloat>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgInt>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgBool>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'"'> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'\''> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'"'> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'\''> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::QuotedString>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::QuotedString>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::UnquotedString>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::UnquotedString>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgString>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredArgVal>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgName>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::not_at<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArgPrefix>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::opt<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredKWArg>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredKWArg>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenPosArg>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenPosArg>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFuncName>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<':'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<':'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<')'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredParenArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<')'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredColonArgs>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredColonCall>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredParenCall>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredBareCall>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOpenGroup>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredCloseGroup>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredAtom>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredAtom>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredFactor>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredFactor>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::at<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::star<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredOperator>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredOperator>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
 // pxr::SdfPathPatternActions::PathPatternAction<pxr::SdfPredicateExpressionParser::PredExpr>
-// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::normal<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredExpr>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'}'>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
-// pxrInternal_v0_26_3__pxrReserved___pegtl::nothing<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
+// pxr::SdfPathPatternActions::PathPatternAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxr::SdfPredicateExpressionParser::PredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::normal<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxr::SdfPredicateExpressionParser::PredExpr>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'}'>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>>
+// pxrInternal_v0_26_5__pxrReserved___pegtl::nothing<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::Digits>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::Exp>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::False>
@@ -1275,39 +1279,39 @@
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::True>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::UnquotedString>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::UnquotedStringChar>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_3__pxrReserved___pegtl::internal::eof>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::at<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'"'> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<'\''> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_3__pxrReserved___pegtl::star<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<')'>>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_3__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::list<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_3__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_3__pxrReserved___pegtl::blank> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_3__pxrReserved___pegtl::eolf>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_3__pxrReserved___pegtl::one<':'>>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_3__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_3__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_3__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
-// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_3__pxrReserved___pegtl::star<pxrInternal_v0_26_3__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_3__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::if_must<pxr::SdfPredicateExpressionParser::PredOpenGroup, <struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<pxr::SdfPredicateExpressionParser::Frac, pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>, pxr::SdfPredicateExpressionParser::Exp>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::Digits>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredArgVal>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredCloseGroup>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredColonArgs>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<pxr::SdfPredicateExpressionParser::PredParenArgs>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredCloseGroup>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::ReservedWord, struct pxrInternal_v0_26_5__pxrReserved___pegtl::internal::eof>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::at<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredArgVal>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenPosArg>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::internal::seq<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'"'> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Escaped<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<'\''> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredParenArgs, struct pxrInternal_v0_26_5__pxrReserved___pegtl::star<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<')'>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::must<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::not_at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArgPrefix>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::NotKW, struct pxrInternal_v0_26_5__pxrReserved___pegtl::plus<struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::opt<<struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::list<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredKWArg, struct pxrInternal_v0_26_5__pxrReserved___pegtl::pad<struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<','>, struct pxrInternal_v0_26_5__pxrReserved___pegtl::blank> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredExpr, struct pxrInternal_v0_26_5__pxrReserved___pegtl::eolf>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::seq<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFuncName, struct pxrInternal_v0_26_5__pxrReserved___pegtl::one<':'>>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::sor<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Inf, struct pxrInternal_v0_26_5__pxrReserved___pegtl::seq<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Digits, struct pxrInternal_v0_26_5__pxrReserved___pegtl::if_then_else<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Frac, struct pxrInternal_v0_26_5__pxrReserved___pegtl::opt<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp>, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::Exp> >>>>
+// pxr::SdfPredicateExpressionParser::PredAction<pxrInternal_v0_26_5__pxrReserved___pegtl::star<pxrInternal_v0_26_5__pxrReserved___pegtl::at<<struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>, <struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredOperator, struct pxrInternal_v0_26_5__pxrReserved__::SdfPredicateExpressionParser::PredFactor>>>
 // pxr::SdfPredicateExpressionParser::PredAction<void>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::NotKW>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::AndKW>
@@ -1324,9 +1328,6 @@
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::PredBareCall>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::PredParenCall>
 // pxr::SdfPredicateExpressionParser::PredAction<pxr::SdfPredicateExpressionParser::PredColonCall>
-// std::unordered_multimap<pxr::TfToken, pxr::SdrShaderNodeDiscoveryResult, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdrShaderNodeDiscoveryResult>>>
-// std::vector<std::vector<pxr::SdrShaderNodeDiscoveryResult, std::allocator<pxr::SdrShaderNodeDiscoveryResult>>, std::allocator<std::vector<pxr::SdrShaderNodeDiscoveryResult, std::allocator<pxr::SdrShaderNodeDiscoveryResult>>>>
-// std::pair<pxr::TfToken const, pxr::SdrShaderNodeDiscoveryResult>
 // pxr::TfTypeFunctions<pxr::SdrParserPlugin, void>
 // std::optional<std::allocator<pxr::PcpMapFunction>>
 // std::optional<std::allocator<pxr::PcpNodeRef>>
@@ -1335,7 +1336,7 @@
 // std::optional<std::allocator<std::pair<pxr::PcpArcType const, unsigned long>>>
 // std::pair<pxr::PcpArcType const, unsigned long>
 // std::optional<std::allocator<pxr::PcpLayerStackSite>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::PcpLayerStack>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::PcpLayerStack>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::PcpLayerStack>>>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::PcpLayerStack>>>
 // std::optional<std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>>
@@ -1347,8 +1348,8 @@
 // std::vector<pxr::UsdTimeCode, std::allocator<pxr::UsdTimeCode>>
 // std::optional<std::allocator<pxr::UsdObject>>
 // pxr::TfSingleton<pxr::UsdSchemaRegistry>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdStage>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdStage const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::UsdStage>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::UsdStage const>
 // std::optional<std::allocator<pxr::TfRefPtr<pxr::UsdStage>>>
 // std::vector<std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>, std::allocator<std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>>>
 // std::pair<pxr::SdfPath, pxr::UsdStageLoadRules::Rule>
@@ -1356,6 +1357,7 @@
 // std::optional<std::allocator<std::pair<pxr::UsdStageCache::Id const, pxr::TfRefPtr<pxr::UsdStage>>>>
 // std::pair<pxr::UsdStageCache::Id, bool>
 // std::vector<pxr::UsdGeomXformOp::Type, std::allocator<pxr::UsdGeomXformOp::Type>>
+// std::optional<std::allocator<pxr::UsdShadeConnectionSourceInfo>>
 // std::pair<pxr::TfToken, pxr::UsdShadeAttributeType>
 // std::optional<std::allocator<std::pair<std::string const, std::vector<pxr::UsdShadeOutput, std::allocator<pxr::UsdShadeOutput>>>>>
 // pxr::SdrParserPluginFactory<pxr::UsdShadeShaderDefParserPlugin>
@@ -1536,20 +1538,22 @@
 // std::optional<std::allocator<std::pair<pxr::VdfPoolChainIndex const, pxr::VdfMaskedOutput>>>
 // std::vector<pxr::VdfScheduleNodeTasks, std::allocator<pxr::VdfScheduleNodeTasks>>
 // std::vector<pxr::VdfExecutionStats::Event, std::allocator<pxr::VdfExecutionStats::Event>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerHashTable>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerHashTable>::SpeculationEngineType, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerHashTable>::SpeculationEngineType, pxr::VdfDataManagerHashTable>>
+// pxr::VdfExecutorFactory<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerHashTable>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerHashTable>::SpeculationEngineType, pxr::VdfDataManagerHashTable>>
 // std::map<std::string, pxr::VdfNetworkStats::NodeTypeStats, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::VdfNetworkStats::NodeTypeStats>>>
 // std::pair<std::string const, pxr::VdfNetworkStats::NodeTypeStats>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::EfSubExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
-// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
-// pxr::VdfExecutorFactory<pxr::EfMaskedSubExecutor, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelSpeculationExecutorEngine, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfParallelDataManagerVector>::SpeculationEngineType, pxr::VdfParallelDataManagerVector>>
+// pxr::VdfExecutorFactory<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, class pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background> >::SpeculationEngineType, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
+// pxr::VdfExecutorFactory<pxr::EfMaskedSubExecutor, pxr::VdfSpeculationExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfSpeculationExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>
 // pxr::VdfTypedVector<pxr::EfTime>
 // pxr::VtValueTypeCanCompose<pxr::EfTime>
 // pxr::VtValueTypeCanTransform<pxr::EfTime>
@@ -1562,19 +1566,19 @@
 // pxr::VtValueTypeCanTransform<pxr::CameraUtilConformWindowPolicy>
 // std::pair<bool, pxr::CameraUtilConformWindowPolicy>
 // std::vector<pxr::PxOsdMeshTopologyValidation::Invalidation, std::allocator<pxr::PxOsdMeshTopologyValidation::Invalidation>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfBindingMap>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfDrawTarget>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::GlfBindingMap>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::GlfDrawTarget>
 // std::optional<std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::GlfDrawTarget::Attachment>>>>
 // pxr::VtValueTypeCanCompose<pxr::GlfSimpleLight>
 // pxr::VtValueTypeCanTransform<pxr::GlfSimpleLight>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::GlfSimpleLightingContext>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::GlfSimpleLightingContext>
 // pxr::VtValueTypeCanCompose<pxr::TfRefPtr<pxr::GlfSimpleLightingContext>>
 // pxr::VtValueTypeCanTransform<pxr::TfRefPtr<pxr::GlfSimpleLightingContext>>
 // std::vector<pxr::HgiMipInfo, std::allocator<pxr::HgiMipInfo>>
 // pxr::VtValueTypeCanCompose<pxr::HgiHandle<pxr::HgiTexture>>
 // pxr::VtValueTypeCanTransform<pxr::HgiHandle<pxr::HgiTexture>>
 // pxr::HgiFactory<pxr::HgiGL>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HgiGLTexture const>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::HgiGLTexture const>
 // pxr::HgiFactory<pxr::HgiMetal>
 // pxr::VtValueTypeCanCompose<std::vector<pxr::HdRenderPassAovBinding, std::allocator<pxr::HdRenderPassAovBinding>>>
 // pxr::VtValueTypeCanTransform<std::vector<pxr::HdRenderPassAovBinding, std::allocator<pxr::HdRenderPassAovBinding>>>
@@ -1601,13 +1605,15 @@
 // pxr::VtValueTypeCanTransform<pxr::HdMeshTopology>
 // pxr::VtValueTypeCanCompose<pxr::HdRprimCollection>
 // pxr::VtValueTypeCanTransform<pxr::HdRprimCollection>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexBase>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexBase>
+// std::optional<std::allocator<pxr::TfRefPtr<pxr::HdSceneIndexBase>>>
 // std::optional<std::allocator<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdContainerDataSource>>>>
+// std::optional<std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>
 // pxr::VtValueTypeCanCompose<pxr::HdDataSourceLocator>
 // pxr::VtValueTypeCanTransform<pxr::HdDataSourceLocator>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexObserver>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::HdFilteringSceneIndexBase>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::HdSceneIndexObserver>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::HdFilteringSceneIndexBase>
 // pxr::VtValueTypeCanCompose<std::shared_ptr<pxr::HdLegacyTaskFactory>>
 // pxr::VtValueTypeCanTransform<std::shared_ptr<pxr::HdLegacyTaskFactory>>
 // pxr::VtValueTypeCanCompose<pxr::HdCamera::Projection>
@@ -1643,7 +1649,6 @@
 // std::vector<pxr::HdRenderPassState::ColorMask, std::allocator<pxr::HdRenderPassState::ColorMask>>
 // pxr::VtValueTypeCanCompose<std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>>
 // pxr::VtValueTypeCanTransform<std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>>
-// std::pair<int, pxr::HdSceneIndexPluginRegistry::InsertionOrder>
 // std::optional<std::allocator<std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>>>
 // std::unordered_map<pxr::SdfPath, pxr::HdSelection::PrimSelectionState, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>>>
 // std::pair<pxr::SdfPath const, pxr::HdSelection::PrimSelectionState>
@@ -1711,18 +1716,16 @@
 // pxr::VtValueTypeCanCompose<pxr::HdxVisualizeAovTaskParams>
 // pxr::VtValueTypeCanTransform<pxr::HdxVisualizeAovTaskParams>
 // pxr::TfSingleton<pxr::UsdImagingAdapterRegistry>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdImagingDelegate>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::UsdImagingDelegate>
 // std::pair<pxr::UsdImagingPrimvarDescCache::Key, std::vector<pxr::HdPrimvarDescriptor, std::allocator<pxr::HdPrimvarDescriptor>>>
 // std::optional<std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>
-// pxr::TfWeakPtrFacade<pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr, pxr::UsdImagingStageSceneIndex>
+// pxr::TfWeakPtrFacade<pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr, pxr::UsdImagingStageSceneIndex>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingCollectionAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingCoordSysAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingGeomModelAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingLightAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdImagingMaterialBindingAPIAdapter>
 // std::vector<pxr::UsdImagingGLEngine::IntersectionResult, std::allocator<pxr::UsdImagingGLEngine::IntersectionResult>>
-// pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdRiPxrImagingCameraAPIAdapter>
-// pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdRiPxrImagingCameraProjectionAPIAdapter>
 // pxr::UsdImagingAPISchemaAdapterFactory<pxr::UsdSkelImagingBindingAPIAdapter>
 // std::map<pxr::TfToken, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>>>>
 // std::pair<pxr::TfToken const, std::vector<pxr::UsdSkelImagingWeightAndSubShapeIndex, std::allocator<pxr::UsdSkelImagingWeightAndSubShapeIndex>>>
@@ -1737,9 +1740,10 @@
 // std::vector<std::vector<pxr::TfType, std::allocator<pxr::TfType>>, std::allocator<std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>
 // std::pair<pxr::TfType, pxr::TfType>
 // std::pair<pxr::TfType, void *>
-// std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>
-// std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *>
+// std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_5__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>
+// std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_5__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_5__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_5__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_5__pxrReserved__::VtArray<GfVec3f> *) *>
 // std::pair<pxr::TfType const, bool>
+// std::pair<pxr::TfType const, class std::shared_ptr<class pxrInternal_v0_26_5__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_5__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_5__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_5__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocator &) *>
 // std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>
 // std::pair<pxr::TfType const, unsigned char>
 // std::pair<pxr::TfType const, unsigned long>
@@ -1748,8 +1752,9 @@
 // std::unique_ptr<pxr::TfType::FactoryBase, std::default_delete<pxr::TfType::FactoryBase>>
 // pxr::TfWeakPtr<void>
 // std::unique_ptr<std::vector<std::pair<pxr::TfDiagnosticType, std::string>, std::allocator<std::pair<pxr::TfDiagnosticType, std::string>>>, std::default_delete<std::vector<std::pair<pxr::TfDiagnosticType, std::string>, std::allocator<std::pair<pxr::TfDiagnosticType, std::string>>>>>
-// std::unordered_map<pxr::TfType, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_3__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>>>
-// std::unordered_map<pxr::TfType, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_3__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_3__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_3__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_3__pxrReserved__::VtArray<GfVec3f> *) *>>>
+// std::unordered_map<pxr::TfType, _Bool (class pxrInternal_v0_26_5__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (class pxrInternal_v0_26_5__pxrReserved__::VtValue *, class std::vector<std::string> *, const class std::vector<std::string> *) *>>>
+// std::unordered_map<pxr::TfType, _Bool (const class pxrInternal_v0_26_5__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_5__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_5__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_5__pxrReserved__::VtArray<GfVec3f> *) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, _Bool (const class pxrInternal_v0_26_5__pxrReserved__::UsdGeomBoundable &, const class pxrInternal_v0_26_5__pxrReserved__::UsdTimeCode &, const class pxrInternal_v0_26_5__pxrReserved__::GfMatrix4d *, class pxrInternal_v0_26_5__pxrReserved__::VtArray<GfVec3f> *) *>>>
+// std::unordered_map<pxr::TfType, class std::shared_ptr<class pxrInternal_v0_26_5__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_5__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_5__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_5__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocator &) *, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, class std::shared_ptr<class pxrInternal_v0_26_5__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_5__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_5__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_5__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocator &) *>>>
 // std::unordered_map<pxr::TfType, std::vector<pxr::TfType, std::allocator<pxr::TfType>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>>
 // std::unordered_map<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>
 // std::unordered_map<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>, pxr::TfHash, std::equal_to<pxr::TfErrorMark const *>, std::allocator<std::pair<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>>>>
@@ -1771,15 +1776,12 @@
 // std::unordered_map<pxr::VdfConnection const *, pxr::TfCompressedBits, pxr::TfHash, std::equal_to<pxr::VdfConnection const *>, std::allocator<std::pair<pxr::VdfConnection const *, pxr::TfCompressedBits>>>
 // std::pair<pxr::VdfConnection const *, pxr::TfCompressedBits>
 // std::map<std::string, pxr::TfEnum, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::TfEnum>>>
-// std::unordered_map<pxr::TfEnum, std::string, pxr::TfHash, std::equal_to<pxr::TfEnum>, std::allocator<std::pair<pxr::TfEnum const, std::string>>>
 // std::unordered_map<std::string, pxr::TfEnum, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfEnum>>>
-// std::pair<pxr::TfEnum const, std::string>
 // std::pair<std::string const, pxr::TfEnum>
 // std::vector<pxr::TfWeakPtr<pxr::TfNotice::Probe>, std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>
 // std::pair<void const *, pxr::TfMallocTag::CallStackInfo>
 // std::unordered_map<unsigned long, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>, pxr::TfHash, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>>>>
 // pxr::TfHashMap<pxr::TfBits, pxr::TfBits, pxr::TfBits::FastHash, std::equal_to<pxr::TfBits>, std::allocator<std::pair<pxr::TfBits const, pxr::TfBits>>>
-// pxr::TfHashMap<pxr::TfEnum, std::string, pxr::TfHash, std::equal_to<pxr::TfEnum>, std::allocator<std::pair<pxr::TfEnum const, std::string>>>
 // pxr::TfHashMap<pxr::TfType, std::vector<pxr::TfType, std::allocator<pxr::TfType>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>>
 // pxr::TfHashMap<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>
 // pxr::TfHashMap<std::type_index, std::string, std::hash<std::type_index>, std::equal_to<std::type_index>, std::allocator<std::pair<std::type_index const, std::string>>>
@@ -1801,6 +1803,9 @@
 // std::unique_ptr<pxr::TfHashMap<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>, std::default_delete<pxr::TfHashMap<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>>>
 // std::unique_ptr<pxr::TfDiagnosticBase, std::default_delete<pxr::TfDiagnosticBase>>
 // std::vector<std::unique_ptr<pxr::TfDiagnosticBase, std::default_delete<pxr::TfDiagnosticBase>>, std::allocator<std::unique_ptr<pxr::TfDiagnosticBase, std::default_delete<pxr::TfDiagnosticBase>>>>
+// std::vector<pxr::TfError, std::allocator<pxr::TfError>>
+// std::vector<pxr::TfStatus, std::allocator<pxr::TfStatus>>
+// std::vector<pxr::TfWarning, std::allocator<pxr::TfWarning>>
 // pxr::TfEnvSetting<bool>
 // pxr::TfEnvSetting<int>
 // pxr::TfEnvSetting<std::string>
@@ -1825,8 +1830,8 @@
 // std::shared_ptr<std::set<pxr::TfToken, std::less<pxr::TfToken>, std::allocator<pxr::TfToken>>>
 // std::unique_ptr<pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>, std::default_delete<pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>>>
 // std::unique_ptr<std::pair<pxr::TfToken, pxr::TfToken>, std::default_delete<std::pair<pxr::TfToken, pxr::TfToken>>>
-// std::unordered_map<pxr::TfToken, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
-// std::unordered_map<pxr::TfToken, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>>>
+// std::unordered_map<pxr::TfToken, std::function<void, <const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>>>
+// std::unordered_map<pxr::TfToken, std::function<void, <unsigned int, class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet *>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet *>>>>>
 // std::unordered_map<pxr::TfToken, pxr::UsdSchemaRegistry::SchemaInfo const *, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::UsdSchemaRegistry::SchemaInfo const *>>>
 // std::unordered_map<pxr::TfType, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
 // std::vector<std::pair<pxr::TfToken, std::vector<pxr::UsdValidationValidator const *, std::allocator<pxr::UsdValidationValidator const *>>>, std::allocator<std::pair<pxr::TfToken, std::vector<pxr::UsdValidationValidator const *, std::allocator<pxr::UsdValidationValidator const *>>>>>
@@ -1840,8 +1845,8 @@
 // std::pair<pxr::SdfPath const *, pxr::TfToken const>
 // std::pair<pxr::TfToken const, pxr::SdrParserPlugin *>
 // std::pair<pxr::TfToken const, pxr::TfType>
-// std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>
-// std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocatorSet *>>>
+// std::pair<pxr::TfToken const, std::function<void, <const class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet &, unsigned int *>>>
+// std::pair<pxr::TfToken const, std::function<void, <unsigned int, class pxrInternal_v0_26_5__pxrReserved__::HdDataSourceLocatorSet *>>>
 // std::pair<pxr::TfToken const, pxr::SdrShaderProperty const *>
 // std::pair<pxr::TfToken const, pxr::HdVolumeFieldDescriptor const *>
 // std::pair<pxr::TfToken const, pxr::UsdSchemaRegistry::SchemaInfo const *>
@@ -1912,10 +1917,6 @@
 // std::unordered_set<pxr::TraceDynamicKey, pxr::TraceDynamicKey::HashFunctor, std::equal_to<pxr::TraceDynamicKey>, std::allocator<pxr::TraceDynamicKey>>
 // pxr::TfPointerAndBits<std::multimap<pxr::TfToken, pxr::TraceEventData, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TraceEventData>>>>
 // pxr::TfSpan<pxr::TfRefPtr<pxr::TraceEventNode> const>
-// std::deque<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::allocator<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>>>
-// std::stack<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::deque<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>, std::allocator<std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>>>>
-// std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, int>
-// std::pair<pxr::TfRefPtr<pxr::TraceEventNode>, unsigned long>
 // std::vector<pxr::TraceReporter::ParsedTree, std::allocator<pxr::TraceReporter::ParsedTree>>
 // std::unique_ptr<pxr::WorkDispatcher, std::default_delete<pxr::WorkDispatcher>>
 // std::reference_wrapper<pxr::WorkTaskGraph_DefaultImpl::BaseTask>
@@ -2030,7 +2031,7 @@
 // std::optional<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // std::unique_ptr<std::map<std::string, pxr::VtValue, std::less<void>, std::allocator<std::pair<std::string const, pxr::VtValue>>>, std::default_delete<std::map<std::string, pxr::VtValue, std::less<void>, std::allocator<std::pair<std::string const, pxr::VtValue>>>>>
 // std::unordered_map<pxr::TfToken, std::function<pxr::VtValue, <std::string>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<pxr::VtValue, <std::string>>>>>
-// std::unordered_map<pxr::TfToken, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>>>>
+// std::unordered_map<pxr::TfToken, std::function<std::string, <class pxrInternal_v0_26_5__pxrReserved__::VtValue>>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_5__pxrReserved__::VtValue>>>>>
 // std::vector<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>, std::allocator<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>>
 // std::vector<std::pair<pxr::TfToken, pxr::VtValue>, std::allocator<std::pair<pxr::TfToken, pxr::VtValue>>>
 // std::vector<std::pair<pxr::TfToken, std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>, std::allocator<std::pair<pxr::TfToken, std::vector<pxr::VtValue, std::allocator<pxr::VtValue>>>>>
@@ -2042,7 +2043,7 @@
 // std::pair<pxr::VtValue, pxr::VtArray<int>>
 // std::pair<pxr::PcpDynamicFileFormatInterface const *, pxr::VtValue>
 // std::pair<pxr::TfToken const, std::function<pxr::VtValue, <std::string>>>
-// std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_3__pxrReserved__::VtValue>>>
+// std::pair<pxr::TfToken const, std::function<std::string, <class pxrInternal_v0_26_5__pxrReserved__::VtValue>>>
 // std::pair<double const, pxr::VtValue>
 // std::pair<std::string, pxr::VtValue>
 // std::vector<pxr::VtValueRef, std::allocator<pxr::VtValueRef>>
@@ -2072,6 +2073,7 @@
 // std::back_insert_iterator<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // std::deque<pxr::SdfPath, std::allocator<pxr::SdfPath>>
 // std::insert_iterator<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>
+// std::insert_iterator<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // std::map<pxr::PcpCache *, std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>, std::less<pxr::PcpCache *>, std::allocator<std::pair<pxr::PcpCache *, std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>>>
 // std::map<pxr::SdfPath, pxr::VtValue, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::VtValue>>>
 // std::map<pxr::SdfPath, std::map<pxr::TfToken, std::map<pxr::TfToken, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::map<pxr::TfToken, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>>>>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::map<pxr::TfToken, std::map<pxr::TfToken, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::map<pxr::TfToken, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>>>>>>>>
@@ -2110,6 +2112,7 @@
 // std::pair<pxr::SdfPath const, pxr::UsdPhysicsRigidBodyDesc *>
 // std::pair<pxr::TfToken const, std::map<pxr::TfToken, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>>>>
 // std::pair<pxr::TfToken const, std::shared_ptr<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>>>
+// std::pair<pxr::UsdPhysicsRigidBodyDesc *, pxr::SdfPath>
 // pxr::TfHashMap<pxr::SdfPath, pxr::HdInstancer *, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdInstancer *>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::TfHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::VtValue>>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::VtValue>>>>>>
 // pxr::TfHashMap<pxr::SdfPath, std::vector<pxr::UsdPhysicsJointDesc const *, std::allocator<pxr::UsdPhysicsJointDesc const *>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::UsdPhysicsJointDesc const *, std::allocator<pxr::UsdPhysicsJointDesc const *>>>>>
@@ -2155,9 +2158,7 @@
 // std::unique_ptr<pxr::VtArray<pxr::SdfTimeCode>, std::default_delete<pxr::VtArray<pxr::SdfTimeCode>>>
 // std::unordered_map<pxr::TfToken, pxr::SdfValueTypeName, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdfValueTypeName>>>
 // std::vector<pxr::SdfValueTypeName, std::allocator<pxr::SdfValueTypeName>>
-// std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *>
 // std::pair<pxr::TfToken const, pxr::SdfValueTypeName>
-// std::unordered_map<pxr::SdfValueTypeName, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *, pxr::SdfValueTypeNameHash, std::equal_to<pxr::SdfValueTypeName>, std::allocator<std::pair<pxr::SdfValueTypeName const, class std::shared_ptr<class pxrInternal_v0_26_3__pxrReserved__::HdSampledDataSource> (const class pxrInternal_v0_26_3__pxrReserved__::UsdAttributeQuery &, const class pxrInternal_v0_26_3__pxrReserved__::UsdImagingDataSourceStageGlobals &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::HdDataSourceLocator &) *>>>
 // std::insert_iterator<std::vector<pxr::SdfHandle<pxr::SdfPropertySpec>, std::allocator<pxr::SdfHandle<pxr::SdfPropertySpec>>>>
 // std::reference_wrapper<pxr::SdfHandle<pxr::SdfPropertySpec> const>
 // std::vector<pxr::SdfSpec, std::allocator<pxr::SdfSpec>>
@@ -2199,8 +2200,8 @@
 // std::vector<std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>, std::allocator<std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>>>
 // std::pair<pxr::SdfHandle<pxr::SdfPropertySpec>, pxr::SdfLayerOffset>
 // std::vector<pxr::SdfPredicateParamNamesAndDefaults::Param, std::allocator<pxr::SdfPredicateParamNamesAndDefaults::Param>>
-// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_3__pxrReserved__::UsdObject &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_3__pxrReserved__::UsdObject &>>>>
-// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_3__pxrReserved__::HdSceneIndexPrim &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_3__pxrReserved__::HdSceneIndexPrim &>>>>
+// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_5__pxrReserved__::UsdObject &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const class pxrInternal_v0_26_5__pxrReserved__::UsdObject &>>>>
+// std::vector<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_5__pxrReserved__::HdSceneIndexPrim &>>, std::allocator<std::function<pxr::SdfPredicateFunctionResult, <const struct pxrInternal_v0_26_5__pxrReserved__::HdSceneIndexPrim &>>>>
 // std::vector<pxr::SdfPredicateProgram<pxr::HdSceneIndexPrim const &>, std::allocator<pxr::SdfPredicateProgram<pxr::HdSceneIndexPrim const &>>>
 // pxr::SdfPathTable<bool>
 // pxr::SdfPathTable<std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>
@@ -2208,6 +2209,7 @@
 // pxr::SdfPathTable<bool>::NodeHandle
 // pxr::SdfPathTable<pxr::PcpPrimIndex>::NodeHandle
 // pxr::SdfPathTable<pxr::PcpPropertyIndex>::NodeHandle
+// pxr::SdfPathTable<pxr::TfDenseHashMap<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, 128U>>::NodeHandle
 // pxr::SdfPathTable<std::optional<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>::NodeHandle
 // pxr::SdfPathTable<std::optional<pxr::HdSceneIndexPrim>>::NodeHandle
 // pxr::SdfPathTable<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>::NodeHandle
@@ -2219,6 +2221,7 @@
 // std::pair<pxr::SdfHandle<pxr::SdfPrimSpec>, pxr::SdfLayerOffset>
 // pxr::TfHashMap<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
 // std::list<pxr::SdfReference, std::allocator<pxr::SdfReference>>
+// std::map<pxr::SdfReference, unsigned long, std::less<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
 // std::optional<pxr::SdfReference>
 // std::set<pxr::SdfReference, std::less<pxr::SdfReference>, std::allocator<pxr::SdfReference>>
 // std::unique_ptr<pxr::TfHashMap<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>, std::default_delete<pxr::TfHashMap<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>>>
@@ -2238,6 +2241,9 @@
 // std::unordered_map<std::string, pxr::SdfZipFile::Iterator, std::hash<std::allocator<char>>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::SdfZipFile::Iterator>>>
 // std::pair<pxr::SdfZipFile::Iterator, pxr::SdfZipFile::Iterator>
 // std::pair<std::string const, pxr::SdfZipFile::Iterator>
+// std::unordered_multimap<pxr::TfToken, pxr::SdrShaderNodeDiscoveryResult, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdrShaderNodeDiscoveryResult>>>
+// std::vector<std::vector<pxr::SdrShaderNodeDiscoveryResult, std::allocator<pxr::SdrShaderNodeDiscoveryResult>>, std::allocator<std::vector<pxr::SdrShaderNodeDiscoveryResult, std::allocator<pxr::SdrShaderNodeDiscoveryResult>>>>
+// std::pair<pxr::TfToken const, pxr::SdrShaderNodeDiscoveryResult>
 // std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>
 // std::vector<std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>, std::allocator<std::unique_ptr<pxr::SdrParserPlugin, std::default_delete<pxr::SdrParserPlugin>>>>
 // std::unordered_map<std::pair<pxr::TfToken, pxr::TfToken>, std::unique_ptr<pxr::SdrShaderNode, std::default_delete<pxr::SdrShaderNode>>, pxr::TfHash, std::equal_to<std::pair<pxr::TfToken, pxr::TfToken>>, std::allocator<std::pair<std::pair<pxr::TfToken, pxr::TfToken> const, std::unique_ptr<pxr::SdrShaderNode, std::default_delete<pxr::SdrShaderNode>>>>>
@@ -2405,6 +2411,8 @@
 // std::map<std::string, std::map<std::string, pxr::UsdShadeConnectableAPI, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::UsdShadeConnectableAPI>>>, std::less<std::string>, std::allocator<std::pair<std::string const, std::map<std::string, pxr::UsdShadeConnectableAPI, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::UsdShadeConnectableAPI>>>>>>
 // std::pair<std::string const, pxr::UsdShadeConnectableAPI>
 // std::pair<std::string const, std::map<std::string, pxr::UsdShadeConnectableAPI, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::UsdShadeConnectableAPI>>>>
+// pxr::TfHashSet<pxr::UsdShadeConnectionSourceInfo, pxr::TfHash, std::equal_to<pxr::UsdShadeConnectionSourceInfo>, std::allocator<pxr::UsdShadeConnectionSourceInfo>>
+// std::unordered_set<pxr::UsdShadeConnectionSourceInfo, pxr::TfHash, std::equal_to<pxr::UsdShadeConnectionSourceInfo>, std::allocator<pxr::UsdShadeConnectionSourceInfo>>
 // std::vector<pxr::UsdShadeConnectionSourceInfo, std::allocator<pxr::UsdShadeConnectionSourceInfo>>
 // std::map<std::string, pxr::UsdShadeInput, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::UsdShadeInput>>>
 // std::vector<pxr::UsdShadeInput, std::allocator<pxr::UsdShadeInput>>
@@ -2443,7 +2451,7 @@
 // std::back_insert_iterator<std::vector<pxr::UsdUtilsSparseAttrValueWriter, std::allocator<pxr::UsdUtilsSparseAttrValueWriter>>>
 // std::vector<pxr::UsdUtilsSparseAttrValueWriter, std::allocator<pxr::UsdUtilsSparseAttrValueWriter>>
 // std::pair<pxr::UsdAttribute const, pxr::UsdUtilsSparseAttrValueWriter>
-// std::reference_wrapper<std::function<pxr::UsdUtilsStitchValueStatus, <const class pxrInternal_v0_26_3__pxrReserved__::TfToken &, const class pxrInternal_v0_26_3__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_3__pxrReserved__::SdfLayer> &, _Bool, const class pxrInternal_v0_26_3__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_3__pxrReserved__::SdfLayer> &, _Bool, class pxrInternal_v0_26_3__pxrReserved__::VtValue *>> const>
+// std::reference_wrapper<std::function<pxr::UsdUtilsStitchValueStatus, <const class pxrInternal_v0_26_5__pxrReserved__::TfToken &, const class pxrInternal_v0_26_5__pxrReserved__::SdfPath &, const class pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_5__pxrReserved__::SdfLayer> &, _Bool, const class pxrInternal_v0_26_5__pxrReserved__::TfWeakPtr<class pxrInternal_v0_26_5__pxrReserved__::SdfLayer> &, _Bool, class pxrInternal_v0_26_5__pxrReserved__::VtValue *>> const>
 // std::vector<pxr::UsdPhysicsCollisionGroup, std::allocator<pxr::UsdPhysicsCollisionGroup>>
 // std::vector<pxr::UsdPhysicsDriveAPI, std::allocator<pxr::UsdPhysicsDriveAPI>>
 // std::vector<pxr::UsdPhysicsLimitAPI, std::allocator<pxr::UsdPhysicsLimitAPI>>
@@ -2606,12 +2614,13 @@
 // std::vector<pxr::VdfScheduleNode, std::allocator<pxr::VdfScheduleNode>>
 // std::unique_ptr<pxr::VdfSpeculationExecutorBase, std::default_delete<pxr::VdfSpeculationExecutorBase>>
 // std::optional<pxr::VdfDataManagerFacade>
-// pxr::VdfMaskMemoizer<pxrInternal_v0_26_3__pxrReserved__::TfHashMap>
+// pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
+// pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
+// pxr::VdfMaskMemoizer<pxrInternal_v0_26_5__pxrReserved__::TfHashMap>
 // pxr::VdfMaskMemoizer<tbb::interface5::concurrent_unordered_map>
-// pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
-// pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>
 // pxr::VdfPullBasedExecutorEngine<pxr::VdfDataManagerHashTable>
 // pxr::VdfSpeculationExecutorEngine<pxr::VdfDataManagerHashTable>
+// std::unique_ptr<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerHashTable>, std::default_delete<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerHashTable>>>
 // std::unique_ptr<pxr::VdfExecutorInvalidator, std::default_delete<pxr::VdfExecutorInvalidator>>
 // pxr::TfHashMap<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle, pxr::TfHash, std::equal_to<pxr::VdfNode const *>, std::allocator<std::pair<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle>>>
 // std::unordered_map<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle, pxr::TfHash, std::equal_to<pxr::VdfNode const *>, std::allocator<std::pair<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle>>>
@@ -2625,14 +2634,21 @@
 // std::unordered_map<pxr::VdfObjectPtr, std::string, pxr::VdfObjectPtr::HashFunctor, std::equal_to<pxr::VdfObjectPtr>, std::allocator<std::pair<pxr::VdfObjectPtr const, std::string>>>
 // std::vector<pxr::VdfIndexedWeightsOperand, std::allocator<pxr::VdfIndexedWeightsOperand>>
 // std::unique_ptr<pxr::VdfIsolatedSubnetwork, std::default_delete<pxr::VdfIsolatedSubnetwork>>
+// std::unique_ptr<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, std::default_delete<pxr::VdfSubExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>>>
 // pxr::TfHashMap<std::string, pxr::VdfTestUtils::Node, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::VdfTestUtils::Node>>>
 // std::unordered_map<std::string, pxr::VdfTestUtils::Node, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::VdfTestUtils::Node>>>
 // std::pair<std::string const, pxr::VdfTestUtils::Node>
 // std::unique_ptr<pxr::EfPageCacheStorage, std::default_delete<pxr::EfPageCacheStorage>>
-// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>>>
-// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_3__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_3__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>>
+// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfParallelExecutorEngine, pxr::VdfParallelDataManagerVector>>>
+// std::unique_ptr<pxr::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>, std::default_delete<pxr::EfPageCacheExecutor<pxrInternal_v0_26_5__pxrReserved__::VdfPullBasedExecutorEngine, pxr::VdfDataManagerVector<pxrInternal_v0_26_5__pxrReserved__::VdfDataManagerDeallocationMode::Background>>>>
+// std::unique_ptr<pxr::EfMaskedSubExecutor, std::default_delete<pxr::EfMaskedSubExecutor>>
 // pxr::VdfVector::ReadAccessor<pxr::EfTime>
 // pxr::VdfVector::ReadWriteAccessor<pxr::EfTime>
+// std::shared_ptr<pxr::EsfUsdStageData>
+// std::unique_ptr<pxr::EsfUsdStageData, std::default_delete<pxr::EsfUsdStageData>>
+// std::weak_ptr<pxr::EsfUsdStageData>
+// std::pair<pxr::TfWeakPtr<pxr::UsdStage const> const, std::weak_ptr<pxr::EsfUsdStageData>>
+// pxr::exec_registration::Constant<pxr::TfToken>
 // pxr::exec_registration::NamespaceAncestor<pxr::GfMatrix4d>
 // pxr::TfSpan<pxr::ExecValueKey const>
 // std::vector<pxr::ExecUsdValueKey, std::allocator<pxr::ExecUsdValueKey>>
@@ -2694,14 +2710,15 @@
 // std::pair<pxr::SdfPath, std::optional<pxr::HdSceneIndexPrim>>
 // std::pair<pxr::SdfPath, pxr::HdSceneIndexPrim>
 // std::map<pxr::SdfPath, pxr::TfRefPtr<pxr::HdSceneIndexBase>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::TfRefPtr<pxr::HdSceneIndexBase>>>>
+// std::set<pxr::TfRefPtr<pxr::HdSceneIndexBase>, std::less<pxr::TfRefPtr<pxr::HdSceneIndexBase>>, std::allocator<pxr::TfRefPtr<pxr::HdSceneIndexBase>>>
 // std::unordered_map<std::string, pxr::TfWeakPtr<pxr::HdSceneIndexBase>, std::hash<std::allocator<char>>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>>
 // std::unordered_set<pxr::TfRefPtr<pxr::HdSceneIndexBase>, pxr::TfHash, std::equal_to<pxr::TfRefPtr<pxr::HdSceneIndexBase>>, std::allocator<pxr::TfRefPtr<pxr::HdSceneIndexBase>>>
 // std::unordered_set<pxr::TfWeakPtr<pxr::HdSceneIndexBase>, pxr::TfHash, std::equal_to<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>, std::allocator<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>>
 // std::pair<pxr::SdfPath const, pxr::TfRefPtr<pxr::HdSceneIndexBase>>
 // std::pair<std::string const, pxr::TfWeakPtr<pxr::HdSceneIndexBase>>
 // std::vector<std::shared_ptr<pxr::HdDataSourceBase>, std::allocator<std::shared_ptr<pxr::HdDataSourceBase>>>
-// std::pair<pxr::TfToken, std::shared_ptr<pxr::HdDataSourceBase>>
 // std::pair<pxr::TfToken const, pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 8U>>
+// std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdDataSourceBase>>
 // std::optional<std::shared_ptr<pxr::HdContainerDataSource>>
 // std::unordered_map<pxr::SdfPath, std::shared_ptr<pxr::HdContainerDataSource>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::shared_ptr<pxr::HdContainerDataSource>>>>
 // std::unordered_map<pxr::TfToken, std::shared_ptr<pxr::HdContainerDataSource>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::HdContainerDataSource>>>>
@@ -2717,7 +2734,13 @@
 // std::vector<std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::GfMatrix4d>>, std::allocator<std::shared_ptr<pxr::HdTypedSampledDataSource<pxr::GfMatrix4d>>>>
 // std::pair<std::shared_ptr<pxr::HdTypedSampledDataSource<int>>, std::shared_ptr<pxr::HdTypedSampledDataSource<int>>>
 // std::unique_ptr<pxr::HdBlockDataSource, std::default_delete<pxr::HdBlockDataSource>>
+// pxr::SdfPathTable<pxr::TfDenseHashMap<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, 128U>>
+// pxr::TfHashMap<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>
+// std::unique_ptr<pxr::TfHashMap<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>, std::default_delete<pxr::TfHashMap<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>>>
 // std::unordered_map<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, std::shared_ptr<pxr::HdDataSourceBase>>>>
+// std::unordered_map<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>
+// std::pair<pxr::HdDataSourceLocator, unsigned long>
+// std::pair<pxr::SdfPath, pxr::TfDenseHashMap<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, 128U>>
 // std::pair<pxr::HdDataSourceLocator const, std::shared_ptr<pxr::HdDataSourceBase>>
 // std::pair<pxr::SdfPath const, pxr::HdDataSourceLocatorSet>
 // std::pair<pxr::SdfPath const, pxr::TfDenseHashMap<pxr::SdfPath, pxr::HdDataSourceLocatorSet, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>>
@@ -3097,7 +3120,7 @@
 // pxr::HdInstance<std::shared_ptr<pxr::HgiHandle<pxr::HgiGraphicsPipeline>>>::ValueHolder
 // pxr::HdInstance<std::shared_ptr<pxr::HgiHandle<pxr::HgiResourceBindings>>>::ValueHolder
 // pxr::HdInstance<std::shared_ptr<pxr::HioGlslfx>>::ValueHolder
-// std::pair<unsigned long long, pxr::HdInstance<std::shared_ptr<MaterialX_v1_39_3::Shader>>::ValueHolder>
+// std::pair<unsigned long long, pxr::HdInstance<std::shared_ptr<MaterialX_v1_39_4::Shader>>::ValueHolder>
 // std::pair<unsigned long long, pxr::HdInstance<std::shared_ptr<pxr::HdBufferArrayRange>>::ValueHolder>
 // std::pair<unsigned long long, pxr::HdInstance<std::shared_ptr<pxr::HdStGLSLProgram>>::ValueHolder>
 // std::pair<unsigned long long, pxr::HdInstance<std::shared_ptr<pxr::HdStRenderPassShader>>::ValueHolder>
@@ -3127,6 +3150,8 @@
 // std::vector<pxr::HdRenderSettings::RenderProduct, std::allocator<pxr::HdRenderSettings::RenderProduct>>
 // std::vector<pxr::HdRenderSettings::RenderProduct::RenderVar, std::allocator<pxr::HdRenderSettings::RenderProduct::RenderVar>>
 // std::unique_ptr<pxr::HdSceneIndexAdapterSceneDelegate, std::default_delete<pxr::HdSceneIndexAdapterSceneDelegate>>
+// std::map<pxr::TfWeakPtr<pxr::HdSceneIndexBase>, pxr::HdSceneIndexPluginRegistry::PluginInsertionMetadata, std::less<pxr::TfWeakPtr<pxr::HdSceneIndexBase>>, std::allocator<std::pair<pxr::TfWeakPtr<pxr::HdSceneIndexBase> const, pxr::HdSceneIndexPluginRegistry::PluginInsertionMetadata>>>
+// std::pair<pxr::TfWeakPtr<pxr::HdSceneIndexBase> const, pxr::HdSceneIndexPluginRegistry::PluginInsertionMetadata>
 // pxr::HdVectorOfSchemasSchema<pxr::HdSelectionSchema>
 // std::shared_ptr<pxr::HdVtBufferSource>
 // std::unique_ptr<pxr::HdVtBufferSource, std::default_delete<pxr::HdVtBufferSource>>
@@ -3136,8 +3161,8 @@
 // std::pair<pxr::SdfPath const, std::shared_ptr<pxr::HdsiPrimManagingSceneIndexObserver::PrimBase>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::shared_ptr<pxr::HdsiPrimManagingSceneIndexObserver::PrimFactoryBase>>>
 // std::shared_ptr<pxr::HdTypedSampledDataSource<std::shared_ptr<pxr::HdsiPrimTypeNoticeBatchingSceneIndex::PrimTypePriorityFunctor>>>
-// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>>>
-// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_3__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>
+// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>>>
+// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimDirtiedEntry, struct pxrInternal_v0_26_5__pxrReserved__::HdsiPrimTypeNoticeBatchingSceneIndex::_PrimAddedEntry>>>
 // std::map<pxr::TfToken, pxr::HdStBindingRequest, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::HdStBindingRequest>>>
 // std::pair<pxr::TfToken const, pxr::HdStBindingRequest>
 // std::vector<std::shared_ptr<pxr::HdStBufferResource>, std::allocator<std::shared_ptr<pxr::HdStBufferResource>>>
@@ -3147,7 +3172,6 @@
 // std::unique_ptr<pxr::HdStDrawItem, std::default_delete<pxr::HdStDrawItem>>
 // std::shared_ptr<pxr::HdStCopyComputationGPU>
 // std::vector<std::shared_ptr<pxr::HdStDispatchBuffer>, std::allocator<std::shared_ptr<pxr::HdStDispatchBuffer>>>
-// std::shared_ptr<pxr::HdStDynamicCubemapTextureObject>
 // pxr::HdInstance<std::shared_ptr<pxr::HdStTextureObject>>
 // pxr::HdInstanceRegistry<std::shared_ptr<pxr::HdStTextureObject>>
 // std::set<std::shared_ptr<pxr::HdStTextureObject>, std::less<std::shared_ptr<pxr::HdStTextureObject>>, std::allocator<std::shared_ptr<pxr::HdStTextureObject>>>
@@ -3197,7 +3221,6 @@
 // std::shared_ptr<pxr::HdStFieldSamplerObject>
 // std::shared_ptr<pxr::HdStPtexSamplerObject>
 // std::shared_ptr<pxr::HdStUdimSamplerObject>
-// std::shared_ptr<pxr::HdStCubemapSamplerObject>
 // std::unique_ptr<pxr::HdStStagingBuffer, std::default_delete<pxr::HdStStagingBuffer>>
 // std::unique_ptr<pxr::HdStTextureCpuData, std::default_delete<pxr::HdStTextureCpuData>>
 // std::set<std::shared_ptr<pxr::HdStTextureHandle>, std::less<std::shared_ptr<pxr::HdStTextureHandle>>, std::allocator<std::shared_ptr<pxr::HdStTextureHandle>>>
@@ -3268,7 +3291,9 @@
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4f>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4h>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4i>>
+// std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfOpaqueValue>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfPathExpression>>
+// std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfTimeCode>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::TfToken>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::pxr_half::half>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::GfMatrix2d>>>
@@ -3292,6 +3317,9 @@
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::TfToken>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<bool>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfAssetPath>>>
+// std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfOpaqueValue>>>
+// std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfPathExpression>>>
+// std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfTimeCode>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<double>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<float>>>
 // std::shared_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<long long>>>
@@ -3328,7 +3356,9 @@
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4f>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4f>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4h>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4h>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4i>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::GfVec4i>>>
+// std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfOpaqueValue>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::SdfOpaqueValue>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfPathExpression>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::SdfPathExpression>>>
+// std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::SdfTimeCode>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::SdfTimeCode>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::TfToken>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::TfToken>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::pxr_half::half>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::pxr_half::half>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::GfMatrix2d>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::GfMatrix2d>>>>
@@ -3352,6 +3382,9 @@
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::TfToken>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::TfToken>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<bool>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<bool>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfAssetPath>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfAssetPath>>>>
+// std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfOpaqueValue>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfOpaqueValue>>>>
+// std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfPathExpression>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfPathExpression>>>>
+// std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfTimeCode>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<pxr::SdfTimeCode>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<double>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<double>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<float>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<float>>>>
 // std::unique_ptr<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<long long>>, std::default_delete<pxr::UsdImagingDataSourceAttribute<pxr::VtArray<long long>>>>
@@ -3477,13 +3510,6 @@
 // std::shared_ptr<pxr::UsdImagingTetMeshAdapter>
 // std::shared_ptr<pxr::UsdImagingVolumeAdapter>
 // std::shared_ptr<pxr::UsdProcImagingGenerativeProceduralAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingAovLightAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingCameraAPIAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingCameraProjectionAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingCameraProjectionAPIAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingDisplayFilterAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingIntegratorAdapter>
-// std::shared_ptr<pxr::UsdRiPxrImagingSampleFilterAdapter>
 // std::shared_ptr<pxr::UsdSkelImagingAnimationAdapter>
 // pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
 // std::shared_ptr<pxr::UsdSkelImagingBindingAPIAdapter>
@@ -3518,8 +3544,8 @@
 // std::shared_ptr<pxr::UsdImagingField3DAssetAdapter>
 // std::shared_ptr<pxr::UsdImagingOpenVDBAssetAdapter>
 // std::shared_ptr<pxr::UsdImagingParticleFieldAdapter>
-// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>>>
-// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_3__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>
+// std::map<pxr::SdfPath, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>>>
+// std::pair<pxr::SdfPath const, std::variant<<struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_DirtyPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_AddPrim, struct pxrInternal_v0_26_5__pxrReserved__::UsdImaging_NiInstanceAggregationSceneIndex_Impl::_RetainedSceneIndexOperations::_RemovePrim>>>
 
 
 // Conformance available:
@@ -3995,8 +4021,6 @@ extension pxr.SdfPredicateExpressionParser.PredAtom: @unchecked Sendable {}
 extension pxr.SdfPredicateExpressionParser.PredFactor: @unchecked Sendable {}
 extension pxr.SdfPredicateExpressionParser.PredOperator: @unchecked Sendable {}
 extension pxr.SdfPredicateExpressionParser.PredExpr: @unchecked Sendable {}
-extension pxr.SdrShaderNodeDiscoveryResultVec: @unchecked Sendable {}
-extension pxr.SdrShaderNodeDiscoveryResult: @unchecked Sendable {}
 extension pxr.SdrVersion: @unchecked Sendable {}
 extension pxr.SdrVersionFilter: @unchecked Sendable {}
 extension pxr.SdrDiscoveryPluginFactoryBase: @unchecked Sendable {}
@@ -4006,6 +4030,8 @@ extension pxr.SdrParserPluginFactoryBase: @unchecked Sendable {}
 extension pxr.SdrPropertyTypes_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeFieldKey_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeMetadata_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrNodeDomain_StaticTokenType: @unchecked Sendable {}
+extension pxr.SdrNodeSubdomain_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeContext_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrNodeRole_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdrPropertyMetadata_StaticTokenType: @unchecked Sendable {}
@@ -4052,6 +4078,7 @@ extension pxr.UsdModelAPI.KindValidation: @unchecked Sendable {}
 extension pxr.UsdModelAPIAssetInfoKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdLimitsKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdNamespaceEditor.EditOptions: @unchecked Sendable {}
+extension pxr.UsdNamespaceEditor.CanApplyResult: @unchecked Sendable {}
 extension pxr.UsdNotice: @unchecked Sendable {}
 extension pxr.UsdNotice.ObjectsChanged.PrimResyncType: @unchecked Sendable {}
 extension pxr.UsdPrimCompositionQuery.ArcTypeFilter: @unchecked Sendable {}
@@ -4115,7 +4142,7 @@ extension pxr.UsdPhysicsTokensType: @unchecked Sendable {}
 extension pxr.UsdPhysicsCollisionGroup.CollisionGroupTable: @unchecked Sendable {}
 extension pxr.UsdPhysicsRigidBodyAPI.MassInformation: @unchecked Sendable {}
 extension pxr.UsdPhysicsMassUnits: @unchecked Sendable {}
-extension pxr.CustomUsdPhysicsTokens: @unchecked Sendable {}
+extension pxr.UsdPhysicsCustomTokens: @unchecked Sendable {}
 extension pxr.UsdPhysicsObjectType: @unchecked Sendable {}
 extension pxr.UsdPhysicsAxis: @unchecked Sendable {}
 extension pxr.UsdPhysicsJointDOF: @unchecked Sendable {}
@@ -4171,8 +4198,8 @@ extension pxr.VdfScheduleComputeTask: @unchecked Sendable {}
 extension pxr.VdfScheduleInputsTask: @unchecked Sendable {}
 extension pxr.VdfExecutionStats.EventType: @unchecked Sendable {}
 extension pxr.VdfExecutionStats.Event: @unchecked Sendable {}
-extension pxr.VdfMaskedIteratorMode: @unchecked Sendable {}
 extension pxr.VdfDataManagerDeallocationMode: @unchecked Sendable {}
+extension pxr.VdfMaskedIteratorMode: @unchecked Sendable {}
 extension pxr.VdfExecutorObserver: @unchecked Sendable {}
 extension pxr.VdfGrapher: @unchecked Sendable {}
 extension pxr.VdfGrapherOptions.DisplayStyle: @unchecked Sendable {}
@@ -4214,8 +4241,9 @@ extension pxr.exec_registration.Attribute: @unchecked Sendable {}
 extension pxr.exec_registration.Relationship: @unchecked Sendable {}
 extension pxr.exec_registration.Prim: @unchecked Sendable {}
 extension pxr.exec_registration.Stage: @unchecked Sendable {}
-extension pxr.ExecValidationErrorType: @unchecked Sendable {}
+extension pxr.ExecComputationBuilder.ConstructionAccess: @unchecked Sendable {}
 extension pxr.ExecValueKey: @unchecked Sendable {}
+extension pxr.ExecValidationErrorType: @unchecked Sendable {}
 extension pxr.ExecGeomXformableTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.ExecIrTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdValidationErrorType: @unchecked Sendable {}
@@ -4582,6 +4610,8 @@ extension pxr.HdSceneGlobalsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexInputArgsSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexPluginRegistryTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdSceneIndexPluginRegistry.InsertionOrder: @unchecked Sendable {}
+extension pxr.HdSceneIndexPluginRegistry.PluginInsertionMetadata: @unchecked Sendable {}
+extension pxr.HdSceneIndexPluginRegistry.PluginOrderingPolicy: @unchecked Sendable {}
 extension pxr.HdSelection: @unchecked Sendable {}
 extension pxr.HdSelection.HighlightMode: @unchecked Sendable {}
 extension pxr.HdSelection.PrimSelectionState: @unchecked Sendable {}
@@ -4595,6 +4625,7 @@ extension pxr.HdTetMeshTopologySchemaTokens_StaticTokenType: @unchecked Sendable
 extension pxr.HdVisibilitySchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdVolumeFieldBindingSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdVolumeFieldSchemaTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdVolumeSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdXformSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdInvalidatableContainerDataSource: @unchecked Sendable {}
 extension pxr.HdarSystemSchemaTokens_StaticTokenType: @unchecked Sendable {}
@@ -4603,8 +4634,8 @@ extension pxr.HdGpGenerativeProcedural: @unchecked Sendable {}
 extension pxr.HdGpGenerativeProcedural.AsyncState: @unchecked Sendable {}
 extension pxr.HdsiDomeLightCameraVisibilitySceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdsiImplicitSurfaceSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.HdsiLegacyDisplayStyleOverrideSceneIndex.OptionalInt: @unchecked Sendable {}
 extension pxr.HdsiLightLinkingSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
+extension pxr.HdsiParticleFieldConversionTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdsiPrefixPathPruningSceneIndexTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdsiPrimManagingSceneIndexObserverTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdsiPrimManagingSceneIndexObserver.PrimBase: @unchecked Sendable {}
@@ -4648,7 +4679,6 @@ extension pxr.HdStRenderSettingsTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStMaterialTagTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStSdrMetadataTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.HdStPerfTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.HdStDynamicCubemapTextureImplementation: @unchecked Sendable {}
 extension pxr.HdStDynamicUvTextureImplementation: @unchecked Sendable {}
 extension pxr.HdxAovInputTaskParams: @unchecked Sendable {}
 extension pxr.HdxBoundingBoxTaskParams: @unchecked Sendable {}
@@ -4707,9 +4737,6 @@ extension pxr.UsdImagingGLDrawMode: @unchecked Sendable {}
 extension pxr.UsdImagingGLCullStyle: @unchecked Sendable {}
 extension pxr.UsdImagingGLRenderParams: @unchecked Sendable {}
 extension pxr.UsdImagingGLRendererSetting.`Type`: @unchecked Sendable {}
-extension pxr.UsdRiPxrImagingProjectionSchemaTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.UsdRiPxrImagingTokens_StaticTokenType: @unchecked Sendable {}
-extension pxr.UsdRiPxrImagingPrimTypeTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingAnimationSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingBindingSchemaTokens_StaticTokenType: @unchecked Sendable {}
 extension pxr.UsdSkelImagingWeightsAndSubShapeIndices: @unchecked Sendable {}
@@ -4756,15 +4783,16 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfRefPtrTracker.WatchedCounts: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.VdfNodeToInputPtrVectorMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticBase: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfError: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfDiagnosticMgr.ErrorList: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfStatus: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfWarning: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticMgr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticMgr.ErrorHelper: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticMgr.WarningHelper: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticMgr.StatusHelper: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfDiagnosticMgr.FatalHelper: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TfError: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TfDiagnosticMgr.ErrorList: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TfStatus: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TfWarning: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.TfDiagnosticTransport: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfErrorTransport: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfBaseException: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TfPatternMatcher: @unchecked Sendable {}
@@ -4808,7 +4836,6 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceCollector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceEventNodeRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceEventNode: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.TraceEventNodeRefPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceEventTreeRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceEventTree: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceReporterRefPtr: @unchecked Sendable {}
@@ -4960,6 +4987,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfZipFileWriter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfPathPatternActions.PatternBuilder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfPredicateExprBuilder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderNodeDiscoveryResultVec: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdrShaderNodeDiscoveryResult: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrDiscoveryPluginContext: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrDiscoveryPlugin: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdrDiscoveryPluginRefPtr: @unchecked Sendable {}
@@ -5382,10 +5411,15 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.EfDependencyCache: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.EsfJournal: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.EsfSchemaConfigKey: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecComputationBuilder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecTypeRegistry: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecValueOverrideVector: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecValueOverride: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecUsdValueOverrideVector: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecUsdValueOverride: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.ExecUsdValueKey: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecUsdCacheView: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.ExecUsdRequest: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.ExecUsdValueKey: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdValidationContext: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdValidationErrorSites: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdValidationErrorSite: @unchecked Sendable {}
@@ -5425,6 +5459,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfDrawTarget: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfDrawTargetRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfDrawTargetPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.GlfDrawTarget.Attachment: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfDrawTarget.AttachmentRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfDrawTarget.AttachmentsMap: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.GlfTexture: @unchecked Sendable {}
@@ -5579,6 +5614,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMergingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdMergingSceneIndex.InputScene: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdFilteringSceneIndexBase: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdFilteringSceneIndexBaseRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdFilteringSceneIndexBasePtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSingleInputFilteringSceneIndexBase: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdLegacyPrimSceneIndex: @unchecked Sendable {}
@@ -5825,6 +5861,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVolumeFieldBindingSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVolumeFieldSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdVolumeFieldSchema.Builder: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdVolumeSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdXformSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdXformSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdInvalidatableContainerDataSourceAtomicHandle: @unchecked Sendable {}
@@ -5851,6 +5888,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiLegacyDisplayStyleOverrideSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiLightLinkingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiLightLinkingSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiLocatorCachingSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiLocatorCachingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialBindingResolvingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialBindingResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiMaterialOverrideResolvingSceneIndex: @unchecked Sendable {}
@@ -5863,6 +5902,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdSiNodeIdentifierResolvingSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiNurbsApproximatingSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiNurbsApproximatingSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiParticleFieldConversionSceneIndex: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdsiParticleFieldConversionSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPrefixPathPruningSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPrefixPathPruningSceneIndexRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdsiPinnedCurveExpandingSceneIndex: @unchecked Sendable {}
@@ -5907,12 +5948,12 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStComputationSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStCopyComputationGPU: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStDispatchBufferSharedPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.HdStDynamicUvTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectPtrVector: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureObjectPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStTextureIdentifier: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdStDynamicUvTextureObjectSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStExtCompCpuComputationSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStShaderCodeSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStShaderCodeSharedPtrVector: @unchecked Sendable {}
@@ -5943,7 +5984,6 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStFieldSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStPtexSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStUdimSamplerObject: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.HdStCubemapSamplerObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStSimpleLightingShaderSharedPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStSimpleLightingShaderPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.HdStStagingBuffer: @unchecked Sendable {}
@@ -6091,6 +6131,8 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGeomXformVectorsSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGeomSubsetAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingIndexProxy: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdImagingLegacyRenderSettingsSceneIndex: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingModelSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingModelSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingStageSceneIndexRefPtr: @unchecked Sendable {}
@@ -6187,15 +6229,6 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGLRendererSettingsList: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdImagingGLRendererSetting: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdProcImagingGenerativeProceduralAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingProjectionSchema: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingProjectionSchema.Builder: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingAovLightAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingCameraAPIAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingCameraProjectionAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingCameraProjectionAPIAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingDisplayFilterAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingIntegratorAdapter: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdRiPxrImagingSampleFilterAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingAnimationAdapter: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingAnimationSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingAnimationSchema.Builder: @unchecked Sendable {}

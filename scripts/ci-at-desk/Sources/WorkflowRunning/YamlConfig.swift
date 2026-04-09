@@ -62,11 +62,8 @@ public struct YamlConfig: Sendable {
     // skips:
     public let skips: [String : Int]
         
-    // optional:
-    public let pathPrepend: String
-    public let atDeskIOSXcodebuildDestination: String
-    public let atDeskVisionOSXcodebuildDestination: String
-    public let atDeskDevelopmentTeam: String
+    // env:
+    public let env: [String : String]
     
     private enum YamlConfigError: Error {
         case missingWorkflow
@@ -159,10 +156,10 @@ public struct YamlConfig: Sendable {
         
         self.skips = extract("skips") ?? [:]
         
-        self.pathPrepend = extract("optional.PATH-prepend") ?? ""
-        self.atDeskIOSXcodebuildDestination = extract("optional.ATDESK_IOS_XCODEBUILD_DESTINATION") ?? ""
-        self.atDeskVisionOSXcodebuildDestination = extract("optional.ATDESK_VISIONOS_XCODEBUILD_DESTINATION") ?? ""
-        self.atDeskDevelopmentTeam = extract("optional.ATDESK_DEVELOPMENT_TEAM") ?? ""
+        var theEnv = extract("env", as: [String : String].self) ?? [:]
+        if theEnv["SWIFTLY_DENYLIST"] == nil { theEnv["SWIFTLY_DENYLIST"] = "-" }
+        if theEnv["XCODE_DENYLIST"] == nil { theEnv["XCODE_DENYLIST"] = "-" }
+        self.env = theEnv
     }
 }
 

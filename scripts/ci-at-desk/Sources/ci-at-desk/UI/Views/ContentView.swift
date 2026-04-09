@@ -27,6 +27,8 @@ struct ContentView: View {
     @State private var model = AppModel()
     @State private var selection: HierarchicalTableView.Node?
     
+    @State private var searchText: String = ""
+    
     var body: some View {
         NavigationSplitView {
             VStack(alignment: .leading) {
@@ -34,14 +36,11 @@ struct ContentView: View {
                 LogDisplayControls()
                 Divider()
                 HierarchicalTableView(parsedLogs: model.parsedLogs, selection: $selection)
+                    
             }
         } detail: {
             VStack(alignment: .leading) {
-                if let selection {
-                    NodeDetailView(node: selection)
-                } else {
-                    SummaryView()
-                }
+                NodeDetailView(node: selection ?? .none)
             }
             .padding(.leading, 4)
         }

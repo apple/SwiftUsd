@@ -1454,6 +1454,11 @@ std::string __Overlay::to_string(const pxr::UsdModelAPI::KindValidation& x) {
     default: return "pxr::UsdModelAPI::KindValidation(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::UsdNamespaceEditor::CanApplyResult& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::UsdNotice::ObjectsChanged::PrimResyncType& x) {
     switch (x) {
     case pxr::UsdNotice::ObjectsChanged::PrimResyncType::RenameSource: return "pxr::UsdNotice::ObjectsChanged::PrimResyncType::RenameSource";
@@ -1755,18 +1760,18 @@ std::string __Overlay::to_string(const pxr::VdfExecutionStats::EventType& x) {
     default: return "pxr::VdfExecutionStats::EventType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
-std::string __Overlay::to_string(const pxr::VdfMaskedIteratorMode& x) {
-    switch (x) {
-    case pxr::VdfMaskedIteratorMode::VisitUnset: return "pxr::VdfMaskedIteratorMode::VisitUnset";
-    case pxr::VdfMaskedIteratorMode::VisitSet: return "pxr::VdfMaskedIteratorMode::VisitSet";
-    default: return "pxr::VdfMaskedIteratorMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
-}
 std::string __Overlay::to_string(const pxr::VdfDataManagerDeallocationMode& x) {
     switch (x) {
     case pxr::VdfDataManagerDeallocationMode::Background: return "pxr::VdfDataManagerDeallocationMode::Background";
     case pxr::VdfDataManagerDeallocationMode::Immediate: return "pxr::VdfDataManagerDeallocationMode::Immediate";
     default: return "pxr::VdfDataManagerDeallocationMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfMaskedIteratorMode& x) {
+    switch (x) {
+    case pxr::VdfMaskedIteratorMode::VisitUnset: return "pxr::VdfMaskedIteratorMode::VisitUnset";
+    case pxr::VdfMaskedIteratorMode::VisitSet: return "pxr::VdfMaskedIteratorMode::VisitSet";
+    default: return "pxr::VdfMaskedIteratorMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 std::string __Overlay::to_string(const pxr::VdfGrapherOptions::DisplayStyle& x) {
@@ -1828,6 +1833,7 @@ std::string __Overlay::to_string(const pxr::ExecProviderResolution::DynamicTrave
     case pxr::ExecProviderResolution::DynamicTraversal::Local: return "pxr::ExecProviderResolution::DynamicTraversal::Local";
     case pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects: return "pxr::ExecProviderResolution::DynamicTraversal::RelationshipTargetedObjects";
     case pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects: return "pxr::ExecProviderResolution::DynamicTraversal::ConnectionTargetedObjects";
+    case pxr::ExecProviderResolution::DynamicTraversal::IncomingConnectionOwningAttributes: return "pxr::ExecProviderResolution::DynamicTraversal::IncomingConnectionOwningAttributes";
     case pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor: return "pxr::ExecProviderResolution::DynamicTraversal::NamespaceAncestor";
     default: return "pxr::ExecProviderResolution::DynamicTraversal(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
@@ -2940,6 +2946,14 @@ std::string __Overlay::to_string(const pxr::HdSceneIndexPluginRegistry::Insertio
     default: return "pxr::HdSceneIndexPluginRegistry::InsertionOrder(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy& x) {
+    switch (x) {
+    case pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::CppRegistrationOnly: return "pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::CppRegistrationOnly";
+    case pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly: return "pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly";
+    case pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid: return "pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid";
+    default: return "pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::HdGpGenerativeProcedural::AsyncState& x) {
     switch (x) {
     case pxr::HdGpGenerativeProcedural::Continuing: return "pxr::HdGpGenerativeProcedural::Continuing";
@@ -2948,11 +2962,6 @@ std::string __Overlay::to_string(const pxr::HdGpGenerativeProcedural::AsyncState
     case pxr::HdGpGenerativeProcedural::FinishedWithNewChanges: return "pxr::HdGpGenerativeProcedural::FinishedWithNewChanges";
     default: return "pxr::HdGpGenerativeProcedural::AsyncState(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
-}
-std::string __Overlay::to_string(const pxr::HdsiLegacyDisplayStyleOverrideSceneIndex::OptionalInt& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
 }
 std::string __Overlay::to_string(const pxr::HdStBinding::Type& x) {
     switch (x) {

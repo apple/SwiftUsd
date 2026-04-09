@@ -112,20 +112,38 @@ internal struct FileLogHandler: LogHandler {
     }
 }
 
-internal func fileLogger(label: String, outputFile: URL) -> Logger {
-     var result = Logger(label: label.replacingOccurrences(of: " ", with: "-"),
-                         factory: {
-         let fileLogHandler = FileLogHandler(label: $0, outputFile: outputFile)
-         if InProcessLogNotificationHandler.enabled {
-             let inProcessHandler = InProcessLogNotificationHandler(label: $0, outputFile: outputFile)
-             return MultiplexLogHandler([inProcessHandler, fileLogHandler])
-         } else {
-             return fileLogHandler
-         }
-     })
-    result.logLevel = .trace
-    return result
+public enum ConsoleLogHandler {
+    public nonisolated(unsafe) static var consoleLogLevel: Logger.Level = .error
 }
+
+internal func fileLogger(label: String, outputFile: URL) -> Logger {
+    Logger(label: label.replacingOccurrences(of: " ", with: "-"),
+                        factory: {
+        var logHandlers = [any LogHandler]()
+        
+        do {
+            var fileLogHandler = FileLogHandler(label: $0, outputFile: outputFile)
+            fileLogHandler.logLevel = .trace
+            logHandlers.append(fileLogHandler)
+        }
+        
+        do {
+            var consoleLogHandler = StreamLogHandler.standardOutput(label: $0)
+            consoleLogHandler.logLevel = ConsoleLogHandler.consoleLogLevel
+            logHandlers.append(consoleLogHandler)
+        }
+        
+        if InProcessLogNotificationHandler.enabled {
+            var inProcessHandler = InProcessLogNotificationHandler(label: $0, outputFile: outputFile)
+            inProcessHandler.logLevel = .trace
+            logHandlers.append(inProcessHandler)
+        }
+        
+        return MultiplexLogHandler(logHandlers)
+    })
+}
+
+// MARK: InProcessLogNotificationHandler
 
 /// Log handler for treating log messages as notifications that other parts of the process can respond to.
 /// Makes the UI more performant because it doesn't have to repeatedly parse log files from disk
@@ -214,6 +232,14 @@ public struct InProcessLogNotificationHandler: LogHandler {
         public let level: Logger.Level
         public let metadata: String
         public let message: String
+        
+        public init(label: String, timestamp: Date, level: Logger.Level, metadata: String, message: String) {
+            self.label = label
+            self.timestamp = timestamp
+            self.level = level
+            self.metadata = metadata
+            self.message = message
+        }
     }
     
     public static func clearAllStorage() {

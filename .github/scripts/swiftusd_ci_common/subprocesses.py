@@ -19,17 +19,33 @@
 #===----------------------------------------------------------------------===#
 
 import subprocess
+import os
 
 class RunResult:
     def __init__(self, returncode, output):
         self.returncode = returncode
         self.output = output
 
-def run(args, cwd=None, env=None, input=None, logCmd=True, logOutput=True, check=True):
+def run(args, cwd=None, env=None, input=None, logCmd=True, logOutput=True, check=True, allowToolchainProviderInterposing=True):
     """Runs the given command in a subprocess"""
+
+    if env is None: env = os.environ.copy()
+
+    # python3 on macOS is often provided by the active Xcode as determined
+    # by xcode-select. Xcode-provided pythons insert SDKROOT into the environment
+    # based on the active Xcode, which can cause confusing, hard-to-reproduce behavior.
+    # Unconditionally remove it to make python3 behave more like sh/bash/zsh. 
+    env.pop("SDKROOT", None)
+    
+    if allowToolchainProviderInterposing:
+        from .toolchains import interposeToolchainProvider
+        interposeToolchainProvider(args, env)
+
     cmd_as_string = " ".join([str(x) for x in args])
     if input is not None:
         cmd_as_string = f"{cmd_as_string} <<< \"{input}\""
+    if cwd is not None:
+        cmd_as_string = f"cd {cwd}; {cmd_as_string}"
 
     if logCmd:
         print(cmd_as_string)

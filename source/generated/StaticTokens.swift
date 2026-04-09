@@ -76,6 +76,12 @@ extension pxr.TfToken {
     public static var SdrNodeMetadata: pxr.SdrNodeMetadata_StaticTokenType {
         __Overlay.SdrNodeMetadata.pointee
     }
+    public static var SdrNodeDomain: pxr.SdrNodeDomain_StaticTokenType {
+        __Overlay.SdrNodeDomain.pointee
+    }
+    public static var SdrNodeSubdomain: pxr.SdrNodeSubdomain_StaticTokenType {
+        __Overlay.SdrNodeSubdomain.pointee
+    }
     public static var SdrNodeContext: pxr.SdrNodeContext_StaticTokenType {
         __Overlay.SdrNodeContext.pointee
     }
@@ -592,6 +598,9 @@ extension pxr.TfToken {
     public static var HdVolumeFieldSchemaTokens: pxr.HdVolumeFieldSchemaTokens_StaticTokenType {
         __Overlay.HdVolumeFieldSchemaTokens.pointee
     }
+    public static var HdVolumeSchemaTokens: pxr.HdVolumeSchemaTokens_StaticTokenType {
+        __Overlay.HdVolumeSchemaTokens.pointee
+    }
     public static var HdXformSchemaTokens: pxr.HdXformSchemaTokens_StaticTokenType {
         __Overlay.HdXformSchemaTokens.pointee
     }
@@ -609,6 +618,9 @@ extension pxr.TfToken {
     }
     public static var HdsiLightLinkingSceneIndexTokens: pxr.HdsiLightLinkingSceneIndexTokens_StaticTokenType {
         __Overlay.HdsiLightLinkingSceneIndexTokens.pointee
+    }
+    public static var HdsiParticleFieldConversionTokens: pxr.HdsiParticleFieldConversionTokens_StaticTokenType {
+        __Overlay.HdsiParticleFieldConversionTokens.pointee
     }
     public static var HdsiPrefixPathPruningSceneIndexTokens: pxr.HdsiPrefixPathPruningSceneIndexTokens_StaticTokenType {
         __Overlay.HdsiPrefixPathPruningSceneIndexTokens.pointee
@@ -740,15 +752,6 @@ extension pxr.TfToken {
     }
     public static var UsdImagingUsdSceneIndexInputArgsSchemaTokens: pxr.UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType {
         __Overlay.UsdImagingUsdSceneIndexInputArgsSchemaTokens.pointee
-    }
-    public static var UsdRiPxrImagingProjectionSchemaTokens: pxr.UsdRiPxrImagingProjectionSchemaTokens_StaticTokenType {
-        __Overlay.UsdRiPxrImagingProjectionSchemaTokens.pointee
-    }
-    public static var UsdRiPxrImagingTokens: pxr.UsdRiPxrImagingTokens_StaticTokenType {
-        __Overlay.UsdRiPxrImagingTokens.pointee
-    }
-    public static var UsdRiPxrImagingPrimTypeTokens: pxr.UsdRiPxrImagingPrimTypeTokens_StaticTokenType {
-        __Overlay.UsdRiPxrImagingPrimTypeTokens.pointee
     }
     public static var UsdSkelImagingAnimationSchemaTokens: pxr.UsdSkelImagingAnimationSchemaTokens_StaticTokenType {
         __Overlay.UsdSkelImagingAnimationSchemaTokens.pointee

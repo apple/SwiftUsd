@@ -30,7 +30,6 @@ def install_cmake():
         print("CMake is already on PATH, will not reinstall")
         return
     else:
-        print(os.environ)
         print("Couldn't find CMake, will install")
 
     print("Downloading CMake...")
@@ -46,19 +45,19 @@ def install_cmake():
         cwd=Environment.Path.tmp_dir)
 
     print("Attaching DMG...")
-    run(["hdiutil", "attach", "CMake.dmg"], cwd=Environment.Path.tmp_dir, logOutput=False)
+    run(["hdiutil", "attach", "CMake.dmg", "-mountpoint", "mnt"], cwd=Environment.Path.tmp_dir, logOutput=False)
 
     print("Copying CMake.app to permanent location...")
-    copy_src = "/Volumes/cmake-3.28.6-macos-universal/CMake.app/."
-    copy_dest = Environment.Path.github_workspace / "../CMake.app"
+    copy_src = Environment.Path.tmp_dir / "mnt" / "CMake.app"
+    copy_dest = Environment.Path.github_workspace / "../"
     run(["cp", "-R", copy_src, copy_dest],
         cwd=Environment.Path.github_workspace, logOutput=False)
 
     print("Detaching DMG...")
-    run(["hdiutil", "detach", "/Volumes/cmake-3.28.6-macos-universal"])
+    run(["hdiutil", "detach", "mnt"], cwd=Environment.Path.tmp_dir)
 
     env = os.environ.copy()
-    env["PATH"] = str(copy_dest / "Contents" / "bin") + ":" + env["PATH"]
+    env["PATH"] += os.pathsep + f"{copy_dest}/CMake.app/Contents/bin"
 
     print("Testing CMake is in PATH...")
     run(["which", "cmake"], env=env)

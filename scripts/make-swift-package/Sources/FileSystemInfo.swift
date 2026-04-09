@@ -62,8 +62,8 @@ struct FileSystemInfo {
         
         // Okay, validation succeeded
         self.swiftUsdPackage = SwiftUsdPackage(cliArgs: cliArgs)
-        self.usdInstalls = _usdInstalls.enumerated().map {
-            UsdInstall(url: $0.1, index: $0.0, rootTmpDir: swiftUsdPackage.tmpDir)
+        for (i, x) in _usdInstalls.enumerated() {
+            await self.usdInstalls.append(UsdInstall(url: x, index: i, rootTmpDir: swiftUsdPackage.tmpDir))
         }
         self.featureFlags = try grabUsdFeatureFlags(usdInstalls: usdInstalls)
     }
@@ -243,6 +243,8 @@ extension FileSystemInfo {
         let index: Int
         /// A deletable scratch directory
         let tmpDir: URL
+        /// Whether this USD installation was compiled for macOS
+        let isMacOS: Bool
         
         /// The `Frameworks` dir for this install
         var frameworksDir: URL { tmpDir.appending(path: "Frameworks") }
@@ -259,17 +261,12 @@ extension FileSystemInfo {
         /// `USD_INSTALL/libraries`
         var libraries: URL { url.appending(path: "libraries") }
                 
-        var isMacOS: Bool {
-            get async {
-                (try? await getPlatformNameForDylib(getUsdDylib(installURL: url))) == "macOS"
-            }
-        }
-        
-        fileprivate init(url: URL, index: Int, rootTmpDir: URL) {
+        fileprivate init(url: URL, index: Int, rootTmpDir: URL) async {
             self.url = url
             self.index = index
             
             tmpDir = rootTmpDir.appending(path: "\(url.lastPathComponent).\(index)")
+            isMacOS = (try? await getPlatformNameForDylib(getUsdDylib(installURL: url))) == "macOS"
         }
         
         func framework(originalDylib: URL) -> FileSystemInfo.Framework {
@@ -302,39 +299,33 @@ extension FileSystemInfo {
         var versionsAUsd: URL { versionsA.appending(path: "usd") }
         /// name.framework/Versions/A/Resources on macOS, name.framework/Resources\_iOS on iOS
         var versionsAResources: URL {
-            get async {
-                if await usdInstall.isMacOS {
-                    versionsA.appending(path: "Resources")
-                } else {
-                    url.appending(path: "Resources_iOS")
-                }
+            if usdInstall.isMacOS {
+                versionsA.appending(path: "Resources")
+            } else {
+                url.appending(path: "Resources_iOS")
             }
         }
         /// name.framework/Versions/A/Resources/usd
-        var resourcesUsd: URL { get async { await versionsAResources.appending(path: "usd") } }
+        var resourcesUsd: URL { versionsAResources.appending(path: "usd") }
         /// name.framework/Versions/A/Resources/plugInfo.json
-        var resourcesPlugInfoJson: URL { get async { await resourcesUsd.appending(path: "plugInfo.json") } }
+        var resourcesPlugInfoJson: URL { resourcesUsd.appending(path: "plugInfo.json") }
         /// name.framework/Versions/A/Resources/Info.plist on macOS, name.framework/Info.plist on iOS
         var resourcesInfoPlist: URL {
-            get async {
-                if await usdInstall.isMacOS {
-                    await versionsAResources.appending(path: "Info.plist")
-                } else {
-                    url.appending(path: "Info.plist")
-                }
+            if usdInstall.isMacOS {
+                versionsAResources.appending(path: "Info.plist")
+            } else {
+                url.appending(path: "Info.plist")
             }
         }
         /// `name.framework/Versions/A/Resources/MaterialX_Libraries`
-        var resourcesMaterialXLibraries: URL { get async { await versionsAResources.appending(path: "MaterialX_Libraries") } }
+        var resourcesMaterialXLibraries: URL { versionsAResources.appending(path: "MaterialX_Libraries") }
         
         /// name.framework/Versions/A/name on macOS, name.framework/name on iOS
         var dylib: URL {
-            get async {
-                if await usdInstall.isMacOS {
-                    versionsA.appending(path: name)
-                } else {
-                    url.appending(path: name)
-                }
+            if usdInstall.isMacOS {
+                versionsA.appending(path: name)
+            } else {
+                url.appending(path: name)
             }
         }
 

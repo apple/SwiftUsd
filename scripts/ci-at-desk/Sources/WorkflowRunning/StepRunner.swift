@@ -131,22 +131,11 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
         updateEnv("GITHUB_STEP_SUMMARY", fileSystemHelper.githubStepSummaryFile)
         updateEnv("GITHUB_WORKSPACE", fileSystemHelper.githubWorkspaceDirectory)
         updateEnv("RUNNER_TEMP", fileSystemHelper.runnerTempDirectory)
-        updateEnv("PATH", fileSystemHelper.subprocessPathEnvironmentVariable)
         
-        updateEnv("ATDESK_SWIFTBUILD_JOBS", String(context.yamlConfig.atDeskSwiftBuildJobs))
-        updateEnv("ATDESK_XCODEBUILD_JOBS", String(context.yamlConfig.atDeskXcodebuildJobs))
-        
-        if context.yamlConfig.atDeskIOSXcodebuildDestination != "" {
-            updateEnv("ATDESK_IOS_XCODEBUILD_DESTINATION", context.yamlConfig.atDeskIOSXcodebuildDestination)
+        for (k, v) in context.yamlConfig.env {
+            updateEnv(Environment.Key(stringLiteral: k), v)
         }
-        if context.yamlConfig.atDeskVisionOSXcodebuildDestination != "" {
-            updateEnv("ATDESK_VISIONOS_XCODEBUILD_DESTINATION", context.yamlConfig.atDeskVisionOSXcodebuildDestination)
-        }
-        if context.yamlConfig.atDeskDevelopmentTeam != "" {
-            updateEnv("ATDESK_DEVELOPMENT_TEAM", context.yamlConfig.atDeskDevelopmentTeam)
-        }
-        
-        
+
         logger.debug(.init(stringLiteral: runStep.map(\.coerceToString).joined(separator: " ")))
         func globExpand(_ s: String) -> [String] {
             guard s.hasSuffix("/*") else { return [s] }
@@ -163,15 +152,13 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
         logger.info(.init(stringLiteral: evaluatedRunCommand.joined(separator: " ")))
         
         
-        
-        
-        let runResult = try await withTimeout(step.timeout) { [env, logger, workingDirectory = FilePath(fileSystemHelper.swiftUsdWorkspaceDirectory)] in
-            try await Subprocess.run(
-                .name(evaluatedRunCommand.first!),
-                arguments: Arguments(Array(evaluatedRunCommand.dropFirst())),
-                environment: env,
-                workingDirectory: workingDirectory,
-                error: .combineWithOutput,
+        let shellLogFile = fileSystemHelper.shellLogFile
+        let writeFileDescriptor = try FileDescriptor.open(FilePath(shellLogFile)!, .writeOnly, options: .create, permissions: .ownerReadWrite)
+        await FireAndForgetTasks.shared.add { [logger] in
+            _ = try await Subprocess.run(
+                .name("tail"),
+                arguments: ["-f", shellLogFile.absoluteURL.path(percentEncoded: false)],
+                error: .discarded,
                 preferredBufferSize: 1,
             ) { execution, output in
                 for try await line in output.lines() {
@@ -180,6 +167,16 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
                     logger.debug(.init(stringLiteral: line))
                 }
             }
+        }
+        let runResult = try await withTimeout(step.timeout) { [env, workingDirectory = FilePath(fileSystemHelper.swiftUsdWorkspaceDirectory)] in
+            try await Subprocess.run(
+                .name(evaluatedRunCommand.first!),
+                arguments: Arguments(Array(evaluatedRunCommand.dropFirst())),
+                environment: env,
+                workingDirectory: workingDirectory,
+                output: .fileDescriptor(writeFileDescriptor, closeAfterSpawningProcess: true),
+                error: .combinedWithOutput,
+            )
         } onTimeout: { [logger, timeout = step.timeout] in
             logger.error("Step timed out after \(timeout)")
         }
@@ -316,6 +313,14 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
                 // try FileManager.default.copyItem(at: fileSystemHelper.swiftUsdSrcDirectory, to: fileSystemHelper.swiftUsdWorkspaceDirectory)
             case .swiftUsd_tests:
                 try FileManager.default.copyItem(at: fileSystemHelper.swiftUsdTestsSrcDirectory, to: fileSystemHelper.swiftUsdTestsWorkspaceDirectory)
+                let runResult = try await Subprocess.run(
+                    .name("git"),
+                    arguments: ["clean", "-fdX"],
+                    workingDirectory: FilePath(fileSystemHelper.swiftUsdTestsWorkspaceDirectory),
+                    output: .discarded)
+                if !runResult.terminationStatus.isSuccess {
+                    throw StepRunnerError.gitCleanError(runResult.terminationStatus)
+                }
             }
             return true
         } catch {
@@ -331,6 +336,7 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
         case sparseCheckoutError(Error, [String])
         case checkoutStep(Error, Step.Kind.CheckoutKind)
         case rsyncError(Subprocess.TerminationStatus)
+        case gitCleanError(Subprocess.TerminationStatus)
     }
 }
 
@@ -390,7 +396,7 @@ extension StepRunner {
 
 fileprivate struct TimeoutError: Error {}
 
-fileprivate func withTimeout<T: Sendable>(_ d: Duration, code: @Sendable @escaping () async throws -> T, onTimeout: @Sendable @escaping () -> () = {}) async throws -> T {
+fileprivate func withTimeout<T: Sendable>(_ d: Duration, returning: T.Type = T.self, code: @Sendable @escaping () async throws -> T, onTimeout: @Sendable @escaping () -> () = {}) async throws -> T {
     try await withThrowingTaskGroup { group in
         group.addTask {
             try await code()
@@ -409,5 +415,20 @@ fileprivate func withTimeout<T: Sendable>(_ d: Duration, code: @Sendable @escapi
     }
 }
 
-extension Subprocess.ExecutionResult: @retroactive @unchecked Sendable where Result: Sendable {}
 
+public actor FireAndForgetTasks {
+    var tasks = [Task<Void, Error>]()
+    
+    public func add(_ code: sending @escaping @isolated(any) () async throws -> ()) {
+        tasks.append(Task.detached(operation: code))
+    }
+    public func cancelAll() {
+        for t in tasks {
+            t.cancel()
+        }
+        tasks = []
+    }
+    
+    private init() {}
+    public static let shared = FireAndForgetTasks()
+}

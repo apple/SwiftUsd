@@ -23,28 +23,32 @@ import ArgumentParser
 import Foundation
 import WorkflowDescription
 import WorkflowRunning
+import Logging
 
 /// Entry point for ci-at-desk
 @main
 struct CLIArgs: MainActorAsyncParsableCommand {
-    // todo: after making ReleaseNewVersion.yml work correctly, take workflow name as argument
-    // specified in yamlConfig so ci-at-desk can be used to run different workflows
-    
     @Argument(transform: URL.init(fileURLWithPath:)) var configFile: URL?
+    @Option var consoleLogLevel: Logger.Level = .error
     
     @Flag var ui: Bool = false
-    
+    @Flag var readOnly: Bool = false
+
     mutating func run() async throws {
+        ConsoleLogHandler.consoleLogLevel = consoleLogLevel
+        
         #if os(macOS)
         if ui {
             InProcessLogNotificationHandler.enabled = true
             ci_at_desk_UI.initialConfigFile = configFile
+            ci_at_desk_UI.readOnly = readOnly
             ci_at_desk_UI.main()
             return
         }
         #else
         if ui { throw ValidationError("--ui is only supported on macOS") }
         #endif
+        if readOnly { throw ValidationError("--read-only is only supported with --ui") }
         
         guard let configFile else {
             throw ValidationError("configFile is required if not running in UI mode")
@@ -177,12 +181,13 @@ extension CLIArgs {
                     ]),
                 
                 Job(id: "Run-Tests-Once",
-                    name: "Run tests (${{ matrix.target_platform }}, ${{ matrix.config }}, ${{ matrix.build_system }})",
+                    name: "Run tests (${{ matrix.target_platform }}, ${{ matrix.config }}, ${{ matrix.build_system }}, ${{ matrix.toolchain_provider }})",
                     needs: ["Build-SwiftUsd", "Define-Test-Matrix"],
                     env: [
                         "TARGET_PLATFORM": "${{ matrix.target_platform }}",
                         "XCODEBUILD_DESTINATION": "${{ matrix.xcodebuild_destination }}",
                         "BUILD_SYSTEM": "${{ matrix.build_system }}",
+                        "TOOLCHAIN_PROVIDER": "${{ matrix.toolchain_provider }}",
                         "CONFIG": "${{ matrix.config }}",
                         "SWIFTUSD_REF": "${{ inputs.swiftusd-ref }}",
                         "OPENUSD_REF": "${{ inputs.openusd-ref }}",
@@ -216,7 +221,7 @@ extension CLIArgs {
                              run: "python3", "-u", "./.github/scripts/compute-test-artifact-name.py"),
                         
                         Step(name: "Build Tests",
-                             timeout: .minutes(15),
+                             timeout: .minutes(20),
                              run: "python3", "-u", "./.github/scripts/run-tests-helper.py", "build-tests"),
                         
                         Step(name: "Run Tests",
@@ -292,6 +297,8 @@ extension CLIArgs {
     }
 }
 
+extension Logger.Level: @retroactive _SendableMetatype {}
+extension Logger.Level: @retroactive ExpressibleByArgument {}
 
 // MARK: MainActorAsyncParsableCommand
 
@@ -322,3 +329,4 @@ extension MainActorAsyncParsableCommand {
         await Self.main(nil)
     }
 }
+

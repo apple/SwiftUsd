@@ -252,6 +252,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/UsdResolveInfoSource``
 - ``OpenUSD/C++/pxr/UsdRelationship``
 - ``OpenUSD/C++/pxr/UsdModelAPI/KindValidation``
+- ``OpenUSD/C++/pxr/UsdNamespaceEditor/CanApplyResult``
 - ``OpenUSD/C++/pxr/UsdNotice/ObjectsChanged/PrimResyncType``
 - ``OpenUSD/C++/pxr/UsdPrimCompositionQuery/ArcTypeFilter``
 - ``OpenUSD/C++/pxr/UsdPrimCompositionQuery/DependencyTypeFilter``
@@ -297,8 +298,8 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/VdfVector/DebugPrintable``
 - ``OpenUSD/C++/pxr/VdfIndexedData<CFloat>``
 - ``OpenUSD/C++/pxr/VdfExecutionStats/EventType``
-- ``OpenUSD/C++/pxr/VdfMaskedIteratorMode``
 - ``OpenUSD/C++/pxr/VdfDataManagerDeallocationMode``
+- ``OpenUSD/C++/pxr/VdfMaskedIteratorMode``
 - ``OpenUSD/C++/pxr/VdfGrapherOptions/DisplayStyle``
 - ``OpenUSD/C++/pxr/VdfObjectPtr``
 - ``OpenUSD/C++/pxr/VdfObjectPtr/Type``
@@ -433,12 +434,10 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdRenderBuffer/DirtyBits``
 - ``OpenUSD/C++/pxr/HdRenderPassState/ColorMask``
 - ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry/InsertionOrder``
+- ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry/PluginOrderingPolicy``
 
 ###  HdGp types
 - ``OpenUSD/C++/pxr/HdGpGenerativeProcedural/AsyncState``
-
-###  Hdsi types
-- ``OpenUSD/C++/pxr/HdsiLegacyDisplayStyleOverrideSceneIndex/OptionalInt``
 
 ###  HdSt types
 - ``OpenUSD/C++/pxr/HdStBinding/Type``

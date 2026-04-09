@@ -1422,6 +1422,11 @@ extension pxr.UsdGeomPrimvar: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.UsdShadeConnectionSourceInfo: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.UsdHydraDiscoveryPlugin: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1504,6 +1509,11 @@ extension pxr.GlfDrawTargetRefPtr: Hashable {
     }
 }
 extension pxr.GlfDrawTargetPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GlfDrawTarget.Attachment: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1619,6 +1629,11 @@ extension pxr.HdMergingSceneIndexRefPtr: Hashable {
     }
 }
 extension pxr.HdFilteringSceneIndexBase: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdFilteringSceneIndexBaseRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1843,6 +1858,16 @@ extension pxr.HdsiLightLinkingSceneIndexRefPtr: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.HdsiLocatorCachingSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiLocatorCachingSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.HdsiMaterialBindingResolvingSceneIndex: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1899,6 +1924,16 @@ extension pxr.HdsiNurbsApproximatingSceneIndex: Hashable {
     }
 }
 extension pxr.HdsiNurbsApproximatingSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiParticleFieldConversionSceneIndexRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -2086,6 +2121,16 @@ extension pxr.UsdImagingExtentResolvingSceneIndexRefPtr: Hashable {
     }
 }
 extension pxr.UsdImagingExtentResolvingSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdImagingLegacyRenderSettingsSceneIndex: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }

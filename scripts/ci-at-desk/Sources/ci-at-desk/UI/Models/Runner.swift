@@ -43,10 +43,12 @@ class Runner {
     init(yamlConfig: URL) throws {
         self.loggingDirectory = try YamlConfig(configFile: yamlConfig).loggingDirectory
         
-        task = Task.detached {
-            _ = try? await WorkflowOrchestrator.run(configFile: yamlConfig, workflows: CLIArgs.workflows)
-            Task { @MainActor in
-                self.task = nil
+        if !ci_at_desk_UI.readOnly {
+            task = Task.detached {
+                _ = try? await WorkflowOrchestrator.run(configFile: yamlConfig, workflows: CLIArgs.workflows)
+                Task { @MainActor in
+                    self.task = nil
+                }
             }
         }
     }

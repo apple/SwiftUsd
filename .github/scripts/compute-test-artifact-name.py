@@ -27,13 +27,14 @@ if __name__ == "__main__":
     result = " ".join([
         "SwiftUsd-Tests",
         Environment.TestCombination.target_platform,
-        Environment.TestCombination.build_system,
         Environment.TestCombination.config,
+        Environment.TestCombination.build_system,
+        Environment.TestCombination.toolchain_provider,
         Environment.GitRef.swiftusd,
         Environment.GitRef.openusd,
         Environment.GitRef.swiftusd_tests,
         Environment.TestCombination.github_run_id,
-    ])
+    ]) + ".xcresult"
 
     for c in ":<>|*?\r\n/\\":
         result = result.replace(c, "")

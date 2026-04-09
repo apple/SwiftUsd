@@ -795,6 +795,9 @@ int64_t __Overlay::hash_value(const pxr::UsdStageCache::Id& x) {
 int64_t __Overlay::hash_value(const pxr::UsdGeomPrimvar& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::UsdShadeConnectionSourceInfo& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::UsdHydraDiscoveryPlugin& x) {
     return (int64_t) &x;
 }
@@ -846,6 +849,9 @@ int64_t __Overlay::hash_value(const pxr::GlfDrawTargetRefPtr& x) {
 }
 int64_t __Overlay::hash_value(const pxr::GlfDrawTargetPtr& x) {
     return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::GlfDrawTarget::Attachment& x) {
+    return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::GlfDrawTarget::AttachmentRefPtr& x) {
     return pxr::TfHash()(x);
@@ -915,6 +921,9 @@ int64_t __Overlay::hash_value(const pxr::HdMergingSceneIndexRefPtr& x) {
 }
 int64_t __Overlay::hash_value(const pxr::HdFilteringSceneIndexBase& x) {
     return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdFilteringSceneIndexBaseRefPtr& x) {
+    return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdFilteringSceneIndexBasePtr& x) {
     return pxr::TfHash()(x);
@@ -1048,6 +1057,12 @@ int64_t __Overlay::hash_value(const pxr::HdsiLightLinkingSceneIndex& x) {
 int64_t __Overlay::hash_value(const pxr::HdsiLightLinkingSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::HdsiLocatorCachingSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiLocatorCachingSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdsiMaterialBindingResolvingSceneIndex& x) {
     return (int64_t) &x;
 }
@@ -1082,6 +1097,12 @@ int64_t __Overlay::hash_value(const pxr::HdsiNurbsApproximatingSceneIndex& x) {
     return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::HdsiNurbsApproximatingSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::HdsiParticleFieldConversionSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiParticleFieldConversionSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdsiPrefixPathPruningSceneIndex& x) {
@@ -1195,6 +1216,12 @@ int64_t __Overlay::hash_value(const pxr::UsdImagingExtentResolvingSceneIndexRefP
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::UsdImagingExtentResolvingSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::UsdImagingLegacyRenderSettingsSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::UsdImagingLegacyRenderSettingsSceneIndex& x) {
     return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::UsdImagingStageSceneIndexRefPtr& x) {

@@ -58,11 +58,13 @@ struct LogDisplayControls: View {
         
         HStack {
             Form {
-                if !model.isRunning {
-                    openButton
-                } else {
-                    stopButton
-                }
+                Group {
+                    if !model.isRunning {
+                        openButton
+                    } else {
+                        stopButton
+                    }
+                }.disabled(ci_at_desk_UI.readOnly)
                 
                 Toggle("Raw logs", isOn: $model.rawLogs)
                 LogLevelPicker(logLevel: $model.logLevel)

@@ -44,20 +44,6 @@ namespace __Overlay {
     };
 
 
-    // For most iterators, their operator* returns their value_type (or rather const value_type&).
-    // For whatever reason, SdfSubLayerProxy, i.e. SdfListProxy<SdfSubLayerTypePolicy>, has an
-    // underlying type of std::string but should be converted to SdfAssetPath upon use. So,
-    // select what the the IteratorWrappers' value_type should be based on what the RangeType is. 
-    template <typename RangeType>
-    struct SdfProxyTypesValueTypeTraits {
-        typedef typename RangeType::value_type value_type;
-    };
-    template <>
-    struct SdfProxyTypesValueTypeTraits<pxr::SdfListProxy<pxr::SdfSubLayerTypePolicy>> {
-        typedef pxr::SdfAssetPath value_type;
-    };
-
-    
     template <typename RangeType>
     struct SdfProxyTypesIteratorWrapper {
     private:
@@ -66,7 +52,7 @@ namespace __Overlay {
         bool shouldAdvanceBeforeGettingCurrent;
 
     public:
-        typedef typename SdfProxyTypesValueTypeTraits<RangeType>::value_type value_type;
+        typedef typename RangeType::value_type value_type;
 
         SdfProxyTypesIteratorWrapper(RangeType range) :
             range(std::make_shared<RangeType>(range)),

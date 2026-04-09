@@ -22,10 +22,24 @@
 import Foundation
 import SwiftUI
 
+struct ConsoleSearchInfo {
+    var text: String
+    var linesBefore: Int
+    var linesAfter: Int
+    
+    init() {
+        text = ""
+        linesBefore = 0
+        linesAfter = 0
+    }
+}
+
 /// View showing detail about a selected workflow, job, matrix instance, or step
 struct NodeDetailView: View {
     @Environment(AppModel.self) private var model
     let node: HierarchicalTableView.Node
+    
+    @State private var searchInfo = ConsoleSearchInfo()
     
     // HierarchicalTableView.Node only compares the URLs and ignores the log contents, but we want
     // the detail view to refresh if the log contents change, so reextract the logs from the model
@@ -43,46 +57,83 @@ struct NodeDetailView: View {
     }
     
     var body: some View {
-        switch node {
-        case .none, .root:
-            SummaryView()
-            
-        case let .workflow(x):
-            if let x = extract(workflow: x.url) {
-                RunnerStatusLabel(x)
-                ScrollView {
-                    LogContentsView(logContents: x.logContents)
-                }
-            }
-        case let .job(x):
-            if let x = extract(job: x.url) {
-                RunnerStatusLabel(x)
-                ScrollView {
-                    LogContentsView(logContents: x.logContents)
-                }
-            }
-        case let .matrixInstance(x):
-            if let x = extract(matrixInstance: x.url) {
-                GeometryReader { proxy in
+        Group {
+            switch node {
+            case .none, .root:
+                SummaryView()
+                
+            case let .workflow(x):
+                if let x = extract(workflow: x.url) {
+                    HStack {
+                        RunnerStatusLabel(x)
+                        Spacer()
+                    }
+                    .padding(.top, 6)
                     ScrollView {
-                        MatrixInstanceView(matrixInstance: x)
-                            .frame(maxWidth: proxy.size.width)
+                        LogContentsView(logContents: x.logContents)
                     }
                 }
-            }
-            
-        case let .step(x):
-            if let x = extract(step: x.url) {
-                RunnerStatusLabel(x)
-                GeometryReader { proxy in
+            case let .job(x):
+                if let x = extract(job: x.url) {
+                    HStack {
+                        RunnerStatusLabel(x)
+                        Spacer()
+                    }
+                    .padding(.top, 6)
                     ScrollView {
-                        StepView(step: x)
-                            .frame(maxWidth: proxy.size.width)
+                        LogContentsView(logContents: x.logContents)
+                    }
+                }
+            case let .matrixInstance(x):
+                if let x = extract(matrixInstance: x.url) {
+                    HStack {
+                        RunnerStatusLabel(x)
+                        Spacer()
+                    }
+                    .padding(.top, 6)
+                    GeometryReader { proxy in
+                        ScrollView {
+                            MatrixInstanceView(matrixInstance: x)
+                                .frame(maxWidth: proxy.size.width)
+                        }
+                    }
+                }
+                
+            case let .step(x):
+                if let x = extract(step: x.url) {
+                    HStack {
+                        RunnerStatusLabel(x)
+                        Spacer()
+                    }
+                    .padding(.top, 6)
+                    GeometryReader { proxy in
+                        ScrollView {
+                            StepView(step: x)
+                                .frame(maxWidth: proxy.size.width)
+                        }
                     }
                 }
             }
         }
+        .environment(\.searchInfo, searchInfo)
+        .searchable(text: $searchInfo.text)
+        .toolbar {
+            ToolbarItemGroup {
+                HStack {
+                    Text("Lines before: \(searchInfo.linesBefore)")
+                    Stepper("Lines before", value: $searchInfo.linesBefore, in: 0...100)
+                }
+                HStack {
+                    Text("Lines after: \(searchInfo.linesAfter)")
+                    Stepper("Lines after", value: $searchInfo.linesAfter, in: 0...100)
+                }
+            }
+        }
     }
+}
+
+extension EnvironmentValues {
+    @Entry var searchInfo = ConsoleSearchInfo()
 }
 
 fileprivate struct MatrixInstanceView: View {

@@ -130,27 +130,39 @@ fileprivate struct SummaryRenderer: View {
 extension SummaryRenderer {
     static func parse(_ text: String) -> [Item] {
         enum Pass1: Equatable {
-            case collapsibleSection([String])
             case line(String)
+            case unclosedCollapsibleSectionStart
+            case collapsibleSection([Pass1])
         }
         
         func pass1(_ text: String) -> [Pass1] {
             var result = [Pass1]()
-
+            
             let lines = text.components(separatedBy: .newlines)
             var i = 0
-            
             while i < lines.count {
                 if lines[i] == "<details>" {
-                    let j = i
-                    while i < lines.count && lines[i] != "</details>" {
-                        i += 1
+                    result.append(.unclosedCollapsibleSectionStart)
+                } else if lines[i] == "</details>" {
+                    if let unclosedIndex = result.lastIndex(of: .unclosedCollapsibleSectionStart) {
+                        let sectionBody = result[unclosedIndex...].dropFirst()
+                        result.removeSubrange(unclosedIndex...)
+                        result.append(.collapsibleSection(Array(sectionBody)))
+                    } else {
+                        result.append(.line(lines[i]))
                     }
-                    result.append(.collapsibleSection(Array(lines[j + 1 ..< i - 1])))
-                    i += 1
+
                 } else {
                     result.append(.line(lines[i]))
-                    i += 1
+                }
+                
+                i += 1
+            }
+            
+            result = result.map {
+                switch $0 {
+                case .unclosedCollapsibleSectionStart: .line("<details>")
+                default: $0
                 }
             }
             
@@ -171,6 +183,8 @@ extension SummaryRenderer {
             var i = 0
             while i < pass1.count {
                 switch pass1[i] {
+                case .unclosedCollapsibleSectionStart: fatalError("Impossible")
+                    
                 case .line("```"):
                     i += 1
                     var blockContents = [String]()
@@ -188,16 +202,19 @@ extension SummaryRenderer {
                     i += 1
                     
                 case .collapsibleSection(let lines):
-                    let summaryIndex = lines.firstIndex(where: { $0.wholeMatch(of: #/<summary>(.*)</summary>/#) != nil })
-                    let summary = if let summaryIndex {
-                        String(lines[summaryIndex].wholeMatch(of: #/<summary>(.*)</summary>/#)!.output.1)
-                    } else { "" }
-                    
+                    let _summary = lines.lazy.enumerated().compactMap { (i, x) -> (Int, String)? in
+                        guard case let .line(l) = x else { return nil }
+                        guard let match = l.wholeMatch(of: #/<summary>(.*)</summary>/#)?.output.1 else { return nil }
+                        return (i, String(match))
+                    }.first
+                    let summary = _summary?.1 ?? ""
+                    let summaryIndex = _summary?.0
+                                        
                     var recurseLines = lines.enumerated().filter { $0.offset != summaryIndex }.map(\.element)
-                    if recurseLines.first == "" { recurseLines.removeFirst() }
-                    if recurseLines.last == "" { recurseLines.removeLast() }
+                    if recurseLines.first == .line("") { recurseLines.removeFirst() }
+                    if recurseLines.last == .line("") { recurseLines.removeLast() }
                     
-                    result.append(.collapsibleSection(summary, pass2(recurseLines.map(Pass1.line))))
+                    result.append(.collapsibleSection(summary, pass2(recurseLines)))
                     i += 1
                 }
             }

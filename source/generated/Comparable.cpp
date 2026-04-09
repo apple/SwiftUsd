@@ -438,6 +438,10 @@ bool __Overlay::operatorLess(const pxr::GlfDrawTargetPtr& l,
                              const pxr::GlfDrawTargetPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::GlfDrawTarget::Attachment& l,
+                             const pxr::GlfDrawTarget::Attachment& r) {
+    return &l < &r;
+}
 bool __Overlay::operatorLess(const pxr::GlfDrawTarget::AttachmentRefPtr& l,
                              const pxr::GlfDrawTarget::AttachmentRefPtr& r) {
     return l < r;
@@ -505,6 +509,10 @@ bool __Overlay::operatorLess(const pxr::HdMergingSceneIndexRefPtr& l,
 bool __Overlay::operatorLess(const pxr::HdFilteringSceneIndexBase& l,
                              const pxr::HdFilteringSceneIndexBase& r) {
     return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdFilteringSceneIndexBaseRefPtr& l,
+                             const pxr::HdFilteringSceneIndexBaseRefPtr& r) {
+    return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdFilteringSceneIndexBasePtr& l,
                              const pxr::HdFilteringSceneIndexBasePtr& r) {
@@ -682,6 +690,14 @@ bool __Overlay::operatorLess(const pxr::HdsiLightLinkingSceneIndexRefPtr& l,
                              const pxr::HdsiLightLinkingSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdsiLocatorCachingSceneIndex& l,
+                             const pxr::HdsiLocatorCachingSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiLocatorCachingSceneIndexRefPtr& l,
+                             const pxr::HdsiLocatorCachingSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdsiMaterialBindingResolvingSceneIndex& l,
                              const pxr::HdsiMaterialBindingResolvingSceneIndex& r) {
     return &l < &r;
@@ -728,6 +744,14 @@ bool __Overlay::operatorLess(const pxr::HdsiNurbsApproximatingSceneIndex& l,
 }
 bool __Overlay::operatorLess(const pxr::HdsiNurbsApproximatingSceneIndexRefPtr& l,
                              const pxr::HdsiNurbsApproximatingSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiParticleFieldConversionSceneIndex& l,
+                             const pxr::HdsiParticleFieldConversionSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiParticleFieldConversionSceneIndexRefPtr& l,
+                             const pxr::HdsiParticleFieldConversionSceneIndexRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdsiPrefixPathPruningSceneIndex& l,
@@ -870,6 +894,14 @@ bool __Overlay::operatorLess(const pxr::UsdImagingExtentResolvingSceneIndexRefPt
 }
 bool __Overlay::operatorLess(const pxr::UsdImagingExtentResolvingSceneIndex& l,
                              const pxr::UsdImagingExtentResolvingSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::UsdImagingLegacyRenderSettingsSceneIndexRefPtr& l,
+                             const pxr::UsdImagingLegacyRenderSettingsSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::UsdImagingLegacyRenderSettingsSceneIndex& l,
+                             const pxr::UsdImagingLegacyRenderSettingsSceneIndex& r) {
     return &l < &r;
 }
 bool __Overlay::operatorLess(const pxr::UsdImagingStageSceneIndexRefPtr& l,

@@ -21,6 +21,7 @@
 from .environment import *
 from .markdown import *
 from .subprocesses import *
+from .toolchains import *
 import json
 import os
 import random
@@ -49,12 +50,22 @@ class TestMatrixResult:
         else:
             swiftusd_tests_ref = "null"
 
+        if Environment.TestCombination.toolchain_provider is None:
+            toolchain_provider = "null"
+            swiftly_toolchain_provider = "null"
+            xcode_toolchain_provider = "null"
+        else:
+            toolchain_provider = Environment.TestCombination.toolchain_provider
+            swiftly_toolchain_provider = parseSwiftlyToolchainProvider()
+            xcode_toolchain_provider = parseXcodeToolchainProvider()
+
         self.data = {
             "action": "null",
             "matrix_instance" : {
-                "target_platform": Environment.TestCombination.target_platform,
-                "config": Environment.TestCombination.config,
+                "toolchain_provider": toolchain_provider,
                 "build_system": Environment.TestCombination.build_system,
+                "config": Environment.TestCombination.config,
+                "target_platform": Environment.TestCombination.target_platform,
             },
             "output" : {
                 "returncode": -2,
@@ -71,6 +82,8 @@ class TestMatrixResult:
                 "short_xcodebuild_version": short_xcodebuild_version,
                 "rev_parse_swiftusd_ref": swiftusd_ref,
                 "rev_parse_swiftusd_tests_ref": swiftusd_tests_ref,
+                "swiftly_toolchain_provider": swiftly_toolchain_provider,
+                "xcode_toolchain_provider": xcode_toolchain_provider,
             },
         }
 
@@ -78,12 +91,13 @@ class TestMatrixResult:
         return " ".join([v for v in self.data["matrix_instance"].values()])
 
     def setExtractedLinesToTimeout(self, action):
-        self.extracted_lines = [f"{action} timeout: {self.matrixInstanceSummary()}"]
+        self.extracted_lines = [f"{action} timeout", f"{action} timeout: {self.matrixInstanceSummary()}"]
 
     def niceAxisName(self, k):
         if k == "target_platform": return "target platform"
         if k == "config": return "config"
         if k == "build_system": return "build system"
+        if k == "toolchain_provider": return "toolchain provider"
         if k == "raw_swift_version": return "swift version"
         if k == "short_swift_version": return "swift version"
         if k == "raw_sw_vers": return "host OS"
@@ -92,6 +106,8 @@ class TestMatrixResult:
         if k == "short_xcodebuild_version": return "Xcode version"
         if k == "rev_parse_swiftusd_ref": return "SwiftUsd ref"
         if k == "rev_parse_swiftusd_tests_ref": return "SwiftUsd-Tests ref"
+        if k == "swiftly_toolchain_provider": return "Swiftly toolchain"
+        if k == "xcode_toolchain_provider": return "Active Xcode"
 
         return k
 
@@ -136,6 +152,11 @@ class TestMatrixResult:
     def build_system(self, value): self.data["matrix_instance"]["build_system"] = value
 
     @property
+    def toolchain_provider(self): return self.data["matrix_instance"]["toolchain_provider"]
+    @toolchain_provider.setter
+    def toolchain_provider(self, value): self.data["matrix_instance"]["toolchain_provider"] = value
+
+    @property
     def isFailure(self): return self.returncode != 0
 
     def write(self):
@@ -169,8 +190,9 @@ class TestMatrixResult:
         for k, v in self.data["matrix_instance"].items():
             result.append(AxisValue(k, v))
 
-        for k, v in self.data["extra_info"].items():
-            result.append(AxisValue(k, v))
+        # Removing for now, this makes hyperplane searching take a really long time
+        # for k, v in self.data["extra_info"].items():
+        #     result.append(AxisValue(k, v))
 
         return result
 

@@ -932,15 +932,15 @@ namespace Overlay {
   }
 }
 namespace Overlay {
-  namespace VdfMaskedIteratorMode {
-    extern const pxr::VdfMaskedIteratorMode VisitUnset;
-    extern const pxr::VdfMaskedIteratorMode VisitSet;
-  }
-}
-namespace Overlay {
   namespace VdfDataManagerDeallocationMode {
     extern const pxr::VdfDataManagerDeallocationMode Background;
     extern const pxr::VdfDataManagerDeallocationMode Immediate;
+  }
+}
+namespace Overlay {
+  namespace VdfMaskedIteratorMode {
+    extern const pxr::VdfMaskedIteratorMode VisitUnset;
+    extern const pxr::VdfMaskedIteratorMode VisitSet;
   }
 }
 namespace Overlay {
@@ -983,6 +983,7 @@ namespace Overlay {
       extern const pxr::ExecProviderResolution::DynamicTraversal Local;
       extern const pxr::ExecProviderResolution::DynamicTraversal RelationshipTargetedObjects;
       extern const pxr::ExecProviderResolution::DynamicTraversal ConnectionTargetedObjects;
+      extern const pxr::ExecProviderResolution::DynamicTraversal IncomingConnectionOwningAttributes;
       extern const pxr::ExecProviderResolution::DynamicTraversal NamespaceAncestor;
     }
   }
@@ -1832,6 +1833,15 @@ namespace Overlay {
   namespace HdSceneIndexPluginRegistry {
     extern const pxr::HdSceneIndexPluginRegistry::InsertionOrder InsertionOrderAtStart;
     extern const pxr::HdSceneIndexPluginRegistry::InsertionOrder InsertionOrderAtEnd;
+  }
+}
+namespace Overlay {
+  namespace HdSceneIndexPluginRegistry {
+    namespace PluginOrderingPolicy {
+      extern const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy CppRegistrationOnly;
+      extern const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy JsonMetadataOnly;
+      extern const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Hybrid;
+    }
   }
 }
 namespace Overlay {

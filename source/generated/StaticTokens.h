@@ -120,6 +120,7 @@
 #include "pxr/imaging/hd/visibilitySchema.h"
 #include "pxr/imaging/hd/volumeFieldBindingSchema.h"
 #include "pxr/imaging/hd/volumeFieldSchema.h"
+#include "pxr/imaging/hd/volumeSchema.h"
 #include "pxr/imaging/hd/xformSchema.h"
 #include "pxr/imaging/hdGp/generativeProcedural.h"
 #include "pxr/imaging/hdMtlx/tokens.h"
@@ -129,6 +130,7 @@
 #include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
 #include "pxr/imaging/hdsi/implicitSurfaceSceneIndex.h"
 #include "pxr/imaging/hdsi/lightLinkingSceneIndex.h"
+#include "pxr/imaging/hdsi/particleFieldConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/prefixPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primManagingSceneIndexObserver.h"
 #include "pxr/imaging/hdsi/primTypeAndPathPruningSceneIndex.h"
@@ -202,8 +204,6 @@
 #include "pxr/usdImaging/usdImaging/usdRenderSettingsSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderVarSchema.h"
 #include "pxr/usdImaging/usdImaging/usdSceneIndexInputArgsSchema.h"
-#include "pxr/usdImaging/usdRiPxrImaging/projectionSchema.h"
-#include "pxr/usdImaging/usdRiPxrImaging/tokens.h"
 #include "pxr/usdImaging/usdSkelImaging/animationSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/bindingSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/blendShapeSchema.h"
@@ -238,6 +238,8 @@ namespace __Overlay {
     extern const pxr::SdrPropertyTypes_StaticTokenType* const SdrPropertyTypes;
     extern const pxr::SdrNodeFieldKey_StaticTokenType* const SdrNodeFieldKey;
     extern const pxr::SdrNodeMetadata_StaticTokenType* const SdrNodeMetadata;
+    extern const pxr::SdrNodeDomain_StaticTokenType* const SdrNodeDomain;
+    extern const pxr::SdrNodeSubdomain_StaticTokenType* const SdrNodeSubdomain;
     extern const pxr::SdrNodeContext_StaticTokenType* const SdrNodeContext;
     extern const pxr::SdrNodeRole_StaticTokenType* const SdrNodeRole;
     extern const pxr::SdrPropertyMetadata_StaticTokenType* const SdrPropertyMetadata;
@@ -412,12 +414,14 @@ namespace __Overlay {
     extern const pxr::HdVisibilitySchemaTokens_StaticTokenType* const HdVisibilitySchemaTokens;
     extern const pxr::HdVolumeFieldBindingSchemaTokens_StaticTokenType* const HdVolumeFieldBindingSchemaTokens;
     extern const pxr::HdVolumeFieldSchemaTokens_StaticTokenType* const HdVolumeFieldSchemaTokens;
+    extern const pxr::HdVolumeSchemaTokens_StaticTokenType* const HdVolumeSchemaTokens;
     extern const pxr::HdXformSchemaTokens_StaticTokenType* const HdXformSchemaTokens;
     extern const pxr::HdarSystemSchemaTokens_StaticTokenType* const HdarSystemSchemaTokens;
     extern const pxr::HdGpGenerativeProceduralTokens_StaticTokenType* const HdGpGenerativeProceduralTokens;
     extern const pxr::HdsiDomeLightCameraVisibilitySceneIndexTokens_StaticTokenType* const HdsiDomeLightCameraVisibilitySceneIndexTokens;
     extern const pxr::HdsiImplicitSurfaceSceneIndexTokens_StaticTokenType* const HdsiImplicitSurfaceSceneIndexTokens;
     extern const pxr::HdsiLightLinkingSceneIndexTokens_StaticTokenType* const HdsiLightLinkingSceneIndexTokens;
+    extern const pxr::HdsiParticleFieldConversionTokens_StaticTokenType* const HdsiParticleFieldConversionTokens;
     extern const pxr::HdsiPrefixPathPruningSceneIndexTokens_StaticTokenType* const HdsiPrefixPathPruningSceneIndexTokens;
     extern const pxr::HdsiPrimManagingSceneIndexObserverTokens_StaticTokenType* const HdsiPrimManagingSceneIndexObserverTokens;
     extern const pxr::HdsiPrimTypeAndPathPruningSceneIndexTokens_StaticTokenType* const HdsiPrimTypeAndPathPruningSceneIndexTokens;
@@ -463,9 +467,6 @@ namespace __Overlay {
     extern const pxr::UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType* const UsdImagingUsdRenderSettingsSchemaTokens;
     extern const pxr::UsdImagingUsdRenderVarSchemaTokens_StaticTokenType* const UsdImagingUsdRenderVarSchemaTokens;
     extern const pxr::UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType* const UsdImagingUsdSceneIndexInputArgsSchemaTokens;
-    extern const pxr::UsdRiPxrImagingProjectionSchemaTokens_StaticTokenType* const UsdRiPxrImagingProjectionSchemaTokens;
-    extern const pxr::UsdRiPxrImagingTokens_StaticTokenType* const UsdRiPxrImagingTokens;
-    extern const pxr::UsdRiPxrImagingPrimTypeTokens_StaticTokenType* const UsdRiPxrImagingPrimTypeTokens;
     extern const pxr::UsdSkelImagingAnimationSchemaTokens_StaticTokenType* const UsdSkelImagingAnimationSchemaTokens;
     extern const pxr::UsdSkelImagingBindingSchemaTokens_StaticTokenType* const UsdSkelImagingBindingSchemaTokens;
     extern const pxr::UsdSkelImagingBlendShapeSchemaTokens_StaticTokenType* const UsdSkelImagingBlendShapeSchemaTokens;

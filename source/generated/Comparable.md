@@ -176,6 +176,7 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/GlfDrawTarget``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfDrawTarget>``
+- ``OpenUSD/C++/pxr/GlfDrawTarget/Attachment``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget.Attachment>``
 - ``OpenUSD/C++/pxr/GlfTexture``
 - ``OpenUSD/C++/pxr/GlfSimpleLightingContext``
@@ -199,6 +200,7 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/HdMergingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdMergingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdFilteringSceneIndexBase``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdFilteringSceneIndexBase>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.HdFilteringSceneIndexBase>``
 - ``OpenUSD/C++/pxr/HdSingleInputFilteringSceneIndexBase``
 - ``OpenUSD/C++/pxr/HdLegacyPrimSceneIndex``
@@ -247,6 +249,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiLegacyDisplayStyleOverrideSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiLightLinkingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiLightLinkingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiLocatorCachingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiLocatorCachingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiMaterialBindingResolvingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiMaterialBindingResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiMaterialOverrideResolvingSceneIndex``
@@ -259,6 +263,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdSiNodeIdentifierResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiNurbsApproximatingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiNurbsApproximatingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiParticleFieldConversionSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiParticleFieldConversionSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPrefixPathPruningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrefixPathPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPinnedCurveExpandingSceneIndex``
@@ -299,6 +305,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingDrawModeSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingExtentResolvingSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingExtentResolvingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingLegacyRenderSettingsSceneIndex>``
+- ``OpenUSD/C++/pxr/UsdImagingLegacyRenderSettingsSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingStageSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingStageSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSelectionSceneIndex>``

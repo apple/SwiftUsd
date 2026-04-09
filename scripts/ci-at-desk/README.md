@@ -8,7 +8,7 @@ A script for running SwiftUsd CI workflows locally
 
 ci-at-desk requires a YAML configuration file. Here is a sample YAML config file.
 ```
- workflow: Run-Tests-Once
+ workflow: Run-Tests
  
  precheckouts:
  - remote: git@github.com:apple/SwiftUsd
@@ -31,9 +31,6 @@ ci-at-desk requires a YAML configuration file. Here is a sample YAML config file
    openusd-ref: v26.03
    swiftusd-ref: local
    swiftusd-tests-ref: local
-
- optional:
-   PATH-prepend: /usr/local/bin
 ```
 
 To use it:
@@ -89,13 +86,15 @@ Paths in the YAML config are interpreted differently based on their starting cha
 
 `skips[*]`: a map of strings to ints that will get inserted into orchestrator/runner contexts under `skips`. Optional, defaults to empty map.
 
-`optional:`
-- `optional.PATH-prepend`: string that will be prepended to $PATH before running shell commands during step execution. Optional, defaults to empty string.
-- `optional.ATDESK_IOS_XCODEBUILD_DESTINATION`: string for a `-destination` xcodebuild argument for a physical iOS device to use for CI test suite runs. Optional, defaults to empty string. e.g. "platform=iOS,name=My iPad Pro".
-- `optional.ATDESK_VISIONOS_XCODEBUILD_DESTINATION`: string for a `-destination` xcodebuild argument for a physical visionOS device to use for CI test suite runs. Optional, defaults to empty string. e.g. "platform=visionOS,name=My Apple Vision Pro".
-- `optional.ATDESK_DEVELOPMENT_TEAM`: string for a `DEVELOPMENT_TEAM=` xcodebuild build setting override to use for CI test suite runs on a physical iOS or visionOS device. Optional.
+`env[*]:` a map of strings to strings that will get inserted into the environment before running shell commands during step execution. Optional, defaults to empty map. Here are some common keys:
+- `env.ATDESK_IOS_XCODEBUILD_DESTINATION`: string for a `-destination` xcodebuild argument for a physical iOS device to use for CI test suite runs. Optional, defaults to empty string. e.g. "platform=iOS,name=My iPad Pro".
+- `env.ATDESK_VISIONOS_XCODEBUILD_DESTINATION`: string for a `-destination` xcodebuild argument for a physical visionOS device to use for CI test suite runs. Optional, defaults to empty string. e.g. "platform=visionOS,name=My Apple Vision Pro".
+- `env.ATDESK_DEVELOPMENT_TEAM`: string for a `DEVELOPMENT_TEAM=` xcodebuild build setting override to use for CI test suite runs on a physical iOS or visionOS device. Optional, defaults to empty string.
+- `env.SWIFTLY_ASSUME_INSTALLED`: Comma-separated string of toolchains to assume are installed when determining test combinations. Optional, defaults to empty string.
+- `env.SWIFTLY_DENYLIST`: Denylist string for Swiftly toolchains to use when determining test combinations. Optional, defaults to `-`.
+- `env.XCODE_DENYLIST`: Denylist string for Xcodes to use when determining test combinations. Optional, defaults to `-`.
 
-### YAML Development Team:
+### Development Team:
 
 You can find a valid development team argument by running `security find-certificate -c $(security find-identity -vp codesigning | grep ')' | head -n 1 | sed -E 's/.*\((.*)\).*/\1/') -p | openssl x509 -subject | grep 'OU=' | sed -E 's/.*\/OU=([A-Za-z0-9_]+)\/.*/\1/'`
 Or as a step by step process:
@@ -106,6 +105,15 @@ Or as a step by step process:
 5. `<step-4> | openssl x509 -subject` will print out the certificate as well fields like the User ID (UID), Common Name (CN), Organizational Unit (OU), Organization (O), and Country (C).
 6. `<step-5> | sed -E 's/.*\/OU=([A-Za-z0-9_]+)\/.*/\1/` will extract the value of the OU field, i.e. the `DEVELOPMENT_TEAM` argument
 
+### Denylist String:
+
+A denylist string is a comma-separated string of rules to apply to a Swiftly toolchain or Xcode installation to control how the CI system determines test combinations. Each rule begins with either `-` to exclude or `+` to include, followed by a regex. If the regex matches somewhere in a potential toolchain/installation, the rule is applied:
+```
+env.SWIFTLY_DENYLIST: "-snapshot" # Exclude all snapshots
+env.SWIFTLY_DENYLIST: "-,+^6.2,+xcode" # Exclude all toolchains, then add in 6.2.x and the Xcode system toolchain
+env.XCODE_DENYLIST: "-" # Exclude all Xcodes. (Only the currently active Xcode will be used)
+env.XCODE_DENYLIST: "-,+26" # Exclude all Xcodes, then include any containing `26` in their name
+```
 
 
 ## Architecture

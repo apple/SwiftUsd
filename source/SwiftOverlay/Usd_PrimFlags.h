@@ -31,6 +31,7 @@ namespace Overlay {
   extern const pxr::Usd_PrimFlags Usd_PrimComponentFlag;
   extern const pxr::Usd_PrimFlags Usd_PrimAbstractFlag;
   extern const pxr::Usd_PrimFlags Usd_PrimDefinedFlag;
+  extern const pxr::Usd_PrimFlags Usd_PrimHasClassSpecifierFlag;
   extern const pxr::Usd_PrimFlags Usd_PrimHasDefiningSpecifierFlag;
   extern const pxr::Usd_PrimFlags Usd_PrimInstanceFlag;
   extern const pxr::Usd_PrimFlags Usd_PrimHasPayloadFlag;

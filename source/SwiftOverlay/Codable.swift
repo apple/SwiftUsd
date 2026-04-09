@@ -25,7 +25,7 @@ import Foundation
  If you're working with scene description data, the right way to serialize it is by
  reading/writing it as USD data using either UsdStage or SdfLayer.
 
- Last updated for v25.05.01. Note that the functionality/behavior of types can change
+ Last updated for v26.05. Note that the functionality/behavior of types can change
  between versions of OpenUSD, such as v25.05 when UsdTimeCode gained support for PreTime()
  values. SwiftUsd tries to ensure that changes in Codable conformances are handled gracefully
  between OpenUSD versions, but can't guarantee backwards/forwards compatibility.

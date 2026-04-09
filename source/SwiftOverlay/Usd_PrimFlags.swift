@@ -27,6 +27,7 @@ extension pxr.Usd_PrimFlags {
     @_documentation(visibility: internal) public static var Usd_PrimComponentFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimComponentFlag }
     @_documentation(visibility: internal) public static var Usd_PrimAbstractFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimAbstractFlag }
     @_documentation(visibility: internal) public static var Usd_PrimDefinedFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimDefinedFlag }
+    @_documentation(visibility: internal) public static var Usd_PrimHasClassSpecifierFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimHasClassSpecifierFlag }
     @_documentation(visibility: internal) public static var Usd_PrimHasDefiningSpecifierFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimHasDefiningSpecifierFlag }
     @_documentation(visibility: internal) public static var Usd_PrimInstanceFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimInstanceFlag }
     @_documentation(visibility: internal) public static var Usd_PrimHasPayloadFlag: pxr.Usd_PrimFlags { Overlay.Usd_PrimHasPayloadFlag }

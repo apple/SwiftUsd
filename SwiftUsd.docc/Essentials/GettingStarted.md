@@ -6,7 +6,7 @@ Adding SwiftUsd to your project or package
 Before you can start using SwiftUsd, you need to add it as a dependency to your Xcode project or Swift Package, and then configure a few build settings.
 
 
-> Important: Tested with OpenUSD v26.03, Xcode 26.2 (17C52) on macOS 15.6 (24G84), iPadOS 26.0 (23A341), and visionOS 26.1 (23N49).
+> Important: Tested with OpenUSD v26.05, Xcode 26.2 (17C52) on macOS 15.6 (24G84), iPadOS 26.0 (23A341), and visionOS 26.1 (23N49).
 
 ### Xcode project
 1. To use SwiftUsd in an Xcode project, select File > Add Package Dependencies..., and enter the following URL:
@@ -23,7 +23,7 @@ https://github.com/apple/SwiftUsd
 1. To use SwiftUsd in a Swift Package, first add it as a dependency:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/apple/SwiftUsd", from: "6.1.0"),
+    .package(url: "https://github.com/apple/SwiftUsd", from: "7.0.0"),
 ]
 ```
 
@@ -50,7 +50,7 @@ Once you've added SwiftUsd as a package depedency to your Xcode project or Swift
 ```swift
 import OpenUSD
 
-public typealias pxr = pxrInternal_v0_26_3__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_5__pxrReserved__
 
 func makeHelloWorldString() -> String {
     let stage = Overlay.Dereference(pxr.UsdStage.CreateInMemory())
@@ -72,7 +72,7 @@ print(makeHelloWorldString())
 **Solution**: In the Build Settings for your target, make sure that `C++ Language Dialect` is set to `GNU++17 [-std=gnu++17]`. (`CLANG_CXX_LANGUAGE_STANDARD=gnu++17` for xcconfig files.)
 
 - Building fails with `'<Some Type Here>' is not a member type of enum '__ObjC.pxr'`.  
-**Solution**: Add `public typealias pxr = pxrInternal_v0_26_3__pxrReserved__` to one of your Swift files and rebuild. 
+**Solution**: Add `public typealias pxr = pxrInternal_v0_26_5__pxrReserved__` to one of your Swift files and rebuild. 
 
 - App launches but immediately crashes, and the console says something like `dyld[84216]: Library not loaded: @rpath/Usd_UsdLux.framework/Usd_UsdLux`  
 **Solution**: In the Build Settings for your target, make sure that `Runpath Search Paths` is set to `@executable_path/Frameworks`. (`LD_RUNPATH_SEARCH_PATHS=@executable_path/Frameworks` for xcconfig files.)  

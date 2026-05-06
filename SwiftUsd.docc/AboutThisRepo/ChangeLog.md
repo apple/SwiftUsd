@@ -11,10 +11,12 @@ Changes to SwiftUsd
     ```
 }
 
-### TBD
-Released TBD, based on OpenUSD TBD
+### 7.0.0
+Released 2026-05-14, based on OpenUSD v26.05
+- Move from OpenUSD v26.03 to v26.05
+- Change `pxr.SdfLayer.GetSubLayerPaths()` to return `some Sequence<std.string>` instead of `some Sequence<pxr.SdfAssetPath>` to better match C++ behavior
 - Added ci-at-desk, an internal tool for running CI workflows locally
-
+- Add support for swift-syntax 603.0.0
 
 ### 6.1.0
 Released 2026-03-18, based on OpenUSD v26.03

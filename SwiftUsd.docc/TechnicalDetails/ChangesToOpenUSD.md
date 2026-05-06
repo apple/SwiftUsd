@@ -11,9 +11,6 @@ These changes are contained in `SwiftUsd/openusd-patch.patch`:
 
 #### Usd-specific changes to OpenUSD before building  
 These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD
-- Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/3707](https://github.com/PixarAnimationStudios/OpenUSD/pull/3707) to add support for compiling for iOS/visionOS simulators:
-  - Modified: `build_scripts/apple_utils.py`
-
 - Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/3950](https://github.com/PixarAnimationStudios/OpenUSD/pull/3950) to improve error reporting when building OpenUSD:
   - Modified: `build_scripts/build_usd.py`
 
@@ -66,8 +63,9 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.h`
 
 - [https://github.com/swiftlang/swift/pull/80344: [cxx-interop] Layout reference types that use tail padding of their bases correctly](https://github.com/swiftlang/swift/pull/80344)
-    This issue is worked around by reordering fields in derived types that use tail padding to no longer use tail padding. This issue was fixed in Swift 6.2.
+    This issue is worked around by reordering fields in derived types that use tail padding to no longer use tail padding, or by inserting aligned padding that doesn't fit in usable tail padding. This issue was fixed in Swift 6.2.
     - Modified: `pxr/base/trace/eventNode.h`
+    - Modified: `pxr/imaging/glf/drawTarget.h`
 
 ### Changes to OpenUSD while making a Swift Package
 These changes are applied by `SwiftUsd/scripts/make-swift-package`, after `build_usd.py` has finished compiling OpenUSD. (This list is non-exhaustive, see `SwiftUsd/scripts/make-swift-package` for full details)

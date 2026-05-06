@@ -1,4 +1,4 @@
-# ``/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-28red``
+# ``/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-89t45``
 
 @Metadata {
     @DocumentationExtension(mergeBehavior: override)

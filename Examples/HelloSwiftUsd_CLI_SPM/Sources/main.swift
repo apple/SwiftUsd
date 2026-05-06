@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 import OpenUSD
 
-public typealias pxr = pxrInternal_v0_26_3__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_5__pxrReserved__
 
 
 func makeHelloWorldString() -> String {

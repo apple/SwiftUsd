@@ -38,9 +38,9 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_Hf.framework/Versions/A/Usd_Hf</string>
+			<string>Usd_Hf.framework/Usd_Hf</string>
 			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
+			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_Hf.framework</string>
 			<key>SupportedArchitectures</key>
@@ -48,7 +48,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>macos</string>
+			<string>xros</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -66,9 +66,9 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_Hf.framework/Usd_Hf</string>
+			<string>Usd_Hf.framework/Versions/A/Usd_Hf</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
+			<string>macos-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_Hf.framework</string>
 			<key>SupportedArchitectures</key>
@@ -76,7 +76,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
+			<string>macos</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

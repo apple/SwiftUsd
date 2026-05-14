@@ -8,7 +8,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_Sdr.framework/Usd_Sdr</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64</string>
+			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_Sdr.framework</string>
 			<key>SupportedArchitectures</key>
@@ -16,7 +16,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>ios</string>
+			<string>xros</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -38,7 +38,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_Sdr.framework/Usd_Sdr</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
+			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_Sdr.framework</string>
 			<key>SupportedArchitectures</key>
@@ -47,6 +47,8 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -66,7 +68,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_Sdr.framework/Usd_Sdr</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>ios-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_Sdr.framework</string>
 			<key>SupportedArchitectures</key>
@@ -74,9 +76,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
+			<string>ios</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

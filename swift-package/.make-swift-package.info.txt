@@ -1,9 +1,9 @@
 Usd installs:
-- openusd-builds/iOS/
-- openusd-builds/iOSSimulator/
-- openusd-builds/macOS/
-- openusd-builds/visionOS/
-- openusd-builds/visionOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-0B6C34EA-5E81-4733-946E-2293E63360EA/workspace/openusd-builds/openusd-builds-FB6C8A14-AFCA-4BC3-BD92-5CC0E920974D-visionOS/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-0B6C34EA-5E81-4733-946E-2293E63360EA/workspace/openusd-builds/openusd-builds-FB6C8A14-AFCA-4BC3-BD92-5CC0E920974D-macOS/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-0B6C34EA-5E81-4733-946E-2293E63360EA/workspace/openusd-builds/openusd-builds-FB6C8A14-AFCA-4BC3-BD92-5CC0E920974D-visionOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-0B6C34EA-5E81-4733-946E-2293E63360EA/workspace/openusd-builds/openusd-builds-FB6C8A14-AFCA-4BC3-BD92-5CC0E920974D-iOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-0B6C34EA-5E81-4733-946E-2293E63360EA/workspace/openusd-builds/openusd-builds-FB6C8A14-AFCA-4BC3-BD92-5CC0E920974D-iOS/
 Usd install strategy: copyAndBundle
 Copied plugins:
 Symlinked plugins:
@@ -15,18 +15,9 @@ Feature flags:
   BUILD_SHARED_LIBS: ON
   Boost_NO_SYSTEM_PATHS: ON
   CMAKE_BUILD_TYPE: Release
-  CMAKE_FIND_ROOT_PATH_MODE_INCLUDE: BOTH
-  CMAKE_FIND_ROOT_PATH_MODE_LIBRARY: BOTH
-  CMAKE_FIND_ROOT_PATH_MODE_PACKAGE: BOTH
-  CMAKE_IGNORE_PATH: /opt/homebrew
-  CMAKE_IGNORE_PREFIX_PATH: /opt/homebrew
-  CMAKE_INSTALL_PREFIX: /Users/maddyadams/SwiftUsd/openusd-builds/iOS
+  CMAKE_INSTALL_PREFIX: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-4CCC93CC-757B-4544-952B-9736F414278A/workspace/openusd-builds/visionOS
   CMAKE_MACOSX_RPATH: ON
-  CMAKE_OSX_ARCHITECTURES: arm64
-  CMAKE_OSX_SYSROOT: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.4.sdk
-  CMAKE_PREFIX_PATH: /Users/maddyadams/SwiftUsd/openusd-builds/iOS
-  CMAKE_SYSTEM_NAME: iOS
-  CMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH: YES
+  CMAKE_PREFIX_PATH: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-4CCC93CC-757B-4544-952B-9736F414278A/workspace/openusd-builds/visionOS
   PXR_BUILD_ALEMBIC_PLUGIN: ON
   PXR_BUILD_ANIMX_TESTS: OFF
   PXR_BUILD_DOCUMENTATION: OFF
@@ -47,6 +38,7 @@ Feature flags:
   PXR_BUILD_USD_IMAGING: ON
   PXR_BUILD_USD_TOOLS: OFF
   PXR_BUILD_USD_VALIDATION: ON
+  PXR_ENABLE_COMPILER_CACHE: ON
   PXR_ENABLE_MATERIALX_SUPPORT: ON
   PXR_ENABLE_OPENVDB_SUPPORT: ON
   PXR_ENABLE_PTEX_SUPPORT: OFF

@@ -34,7 +34,7 @@ let package = Package(
         ])
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..<"602.0.0"),
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..."603.0.0"),
     ],
     targets: [
         .target(name: "OpenUSD",
@@ -146,7 +146,6 @@ func cppTarget_dependencies() -> [Target.Dependency] {
         .target(name: "_Usd_UsdProcImaging_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
         .target(name: "_Usd_UsdRender_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
         .target(name: "_Usd_UsdRi_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
-        .target(name: "_Usd_UsdRiPxrImaging_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
         .target(name: "_Usd_UsdSemantics_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
         .target(name: "_Usd_UsdShade_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
         .target(name: "_Usd_UsdShadeValidators_xcframework", condition: .when(platforms: [.iOS, .macOS, .visionOS])),
@@ -254,7 +253,6 @@ func xcframeworkBinaryTargets() -> [Target] {
         .binaryTarget(name: "_Usd_UsdProcImaging_xcframework", path: "swift-package/Libraries/Usd_UsdProcImaging.xcframework"),
         .binaryTarget(name: "_Usd_UsdRender_xcframework", path: "swift-package/Libraries/Usd_UsdRender.xcframework"),
         .binaryTarget(name: "_Usd_UsdRi_xcframework", path: "swift-package/Libraries/Usd_UsdRi.xcframework"),
-        .binaryTarget(name: "_Usd_UsdRiPxrImaging_xcframework", path: "swift-package/Libraries/Usd_UsdRiPxrImaging.xcframework"),
         .binaryTarget(name: "_Usd_UsdSemantics_xcframework", path: "swift-package/Libraries/Usd_UsdSemantics.xcframework"),
         .binaryTarget(name: "_Usd_UsdShade_xcframework", path: "swift-package/Libraries/Usd_UsdShade.xcframework"),
         .binaryTarget(name: "_Usd_UsdShadeValidators_xcframework", path: "swift-package/Libraries/Usd_UsdShadeValidators.xcframework"),

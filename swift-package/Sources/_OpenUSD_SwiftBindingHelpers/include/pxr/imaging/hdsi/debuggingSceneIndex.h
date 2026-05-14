@@ -77,6 +77,7 @@ struct _PrimInfo
     //
     std::optional<bool> hasDataSource;
 };
+
 using _PrimInfoSharedPtr = std::shared_ptr<_PrimInfo>;
 using _PrimMap = std::map<SdfPath, _PrimInfo>;
 

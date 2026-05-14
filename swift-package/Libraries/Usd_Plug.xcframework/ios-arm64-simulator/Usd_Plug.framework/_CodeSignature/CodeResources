@@ -30,7 +30,7 @@
 		</data>
 		<key>Resources_iOS/usd/execIr/Resources/generatedSchema.usda</key>
 		<data>
-		WNrlSTCX5U8JRdFDQfy/nt/rl+M=
+		BC7Xx1PVDEgteDvszb5yPYhA9Yo=
 		</data>
 		<key>Resources_iOS/usd/execIr/Resources/plugInfo.json</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Resources_iOS/usd/execIr/Resources/schema.usda</key>
 		<data>
-		lWjuhHpjmAqojzyKinyGIFkBjjo=
+		8L/ZIBoYN7HXj8lmzCzSUNFzPQ0=
 		</data>
 		<key>Resources_iOS/usd/execUsd/Resources/plugInfo.json</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Resources_iOS/usd/glf/Resources/shaders/simpleLighting.glslfx</key>
 		<data>
-		ec/mTe61IgkWsGM5NEfVEUSORL8=
+		/vuolFxWHZk7sUslvlFoQe9I+Dg=
 		</data>
 		<key>Resources_iOS/usd/hd/Resources/codegenTemplates/schemaClass.cpp</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>Resources_iOS/usd/hdGp/Resources/plugInfo.json</key>
 		<data>
-		YVGmyS+G8ks1N4nhKCEzuhhfMkA=
+		xfvw3LL6V3eOCIF/BbaBkdJXVV8=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/plugInfo.json</key>
 		<data>
-		pl33Bjtl1ALYPJsw1sTsjBIRLVo=
+		neoNvB1BWBkYETC4vv1N5tp2vWk=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/meshWire.glslfx</key>
 		<data>
-		kwztV17vjPjq+vP2v8I9mYi+E+U=
+		EKsQOb9WhsogOJie1pOFaCEfmsU=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/overlayShader.glslfx</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/volume.glslfx</key>
 		<data>
-		30yixzf3vlnPILdKAJLlj4ZqWEk=
+		eXg1zEmFoswlHHcWRKr2x43y3+Y=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/textures/fallbackBlackDomeLight.png</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdsi/Resources/plugInfo.json</key>
 		<data>
-		T3GZI8YuG0UkBI/g3VIRfKFA+v0=
+		0YfSmV3S9h1wztODIm3Lyt6XX2U=
 		</data>
 		<key>Resources_iOS/usd/hdx/Resources/plugInfo.json</key>
 		<data>
@@ -374,7 +374,7 @@
 		</data>
 		<key>Resources_iOS/usd/usd/Resources/generatedSchema.usda</key>
 		<data>
-		xRhm/Z6SkSWlqMEDjG2bIO/mffg=
+		x8GXih5wKLNr85vCjEg5vCyh8vA=
 		</data>
 		<key>Resources_iOS/usd/usd/Resources/plugInfo.json</key>
 		<data>
@@ -382,11 +382,11 @@
 		</data>
 		<key>Resources_iOS/usd/usd/Resources/usd/schema.usda</key>
 		<data>
-		pSEoKIyZHLY6VFD5jsDSiYCguyM=
+		aEU69vq/qCSgAAvhDAv45g/pK2g=
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<data>
-		E/5a2Uy2W9fRU2PK7BFquR83GW0=
+		c3dnRh/CqgIA1Lej9c+WarYnZCY=
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/plugInfo.json</key>
 		<data>
@@ -394,7 +394,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/usdGeom/schema.usda</key>
 		<data>
-		N3zIPnjCBDTg2LpKq5h3HciKEAM=
+		RxG89s2QMVUDza+QZhJzTgC383c=
 		</data>
 		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
 		<data>
@@ -438,7 +438,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdLux/Resources/usdLux/schema.usda</key>
 		<data>
-		wR47an+li3ptwYi8ggbx21kYtwQ=
+		5Hsw5dBI7XWkT1b2JHHE5kOE3Lk=
 		</data>
 		<key>Resources_iOS/usd/usdMedia/Resources/generatedSchema.usda</key>
 		<data>
@@ -460,9 +460,25 @@
 		<data>
 		vnUAxK3NyJudZcsird1xaxAW0Lg=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/gltf_pbr.mtlx</key>
+		<data>
+		ltyDZkh8GbK75OdSN7w4NMcEcUc=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/open_pbr_surface.mtlx</key>
+		<data>
+		tDs+0PxVrJE71R4qSXSTpV9ArB8=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/standard_surface.mtlx</key>
+		<data>
+		oKwwYxlv8tbBYRliaCRGA+ius5A=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genmdl/open_pbr_surface.mtlx</key>
+		<data>
+		a9J2iEW+kljxN3B/4f8Lw9hwEKQ=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/gltf_pbr.mtlx</key>
 		<data>
-		PJ91Vzc1NxzMdeZKbtQ6wmES1xU=
+		ywggM7fOZuGzU8bDxIdJpiKPgfA=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_add.mtlx</key>
 		<data>
@@ -530,7 +546,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_gltf_pbr.mtlx</key>
 		<data>
-		fDvqyev6ix0cq6G9EN2QVYqH31Q=
+		v/dDEhDwWppCz2bv0a82+sON4IQ=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_open_pbr.mtlx</key>
 		<data>
@@ -538,11 +554,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_usd.mtlx</key>
 		<data>
-		uTfgq7emYgxGPMMJHWy3/+hBGkA=
+		GvfbwtYKEkJSrHyo6xYgzcZzxUw=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/usd_preview_surface.mtlx</key>
 		<data>
-		YdpAT81q4fCOeK1PG3TwGMyU73Y=
+		rBEHqzq8bZBgjVfKyLtFkjipAXg=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/cmlib/cmlib_defs.mtlx</key>
 		<data>
@@ -634,7 +650,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_generate_prefilter_env.glsl</key>
 		<data>
-		6ZQn2iQNgtm7bqZvlsqSnKSuTao=
+		jNLG2xhPKRPf5n3yCXPIafwSEEI=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet.glsl</key>
 		<data>
@@ -650,7 +666,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_specular.glsl</key>
 		<data>
-		YkA0Dea/v2EQ9ra8IdKp2ekJKFc=
+		r1rtgXjs5XqH9EsuN456jgPdF3Q=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow.glsl</key>
 		<data>
@@ -666,7 +682,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_add_bsdf.glsl</key>
 		<data>
-		cwC1nkpTAvgIjv0wQSPHd81OzsU=
+		Uas1CHkzLdY+dVHfG84jWhQYmd4=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_add_edf.glsl</key>
 		<data>
@@ -718,7 +734,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_layer_bsdf.glsl</key>
 		<data>
-		vvOb3+24FER7sk6Do4zMEWREUsA=
+		d2uoYi0XtM99iBE7KeJk7J9qvQc=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_layer_vdf.glsl</key>
 		<data>
@@ -734,11 +750,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_multiply_bsdf_color3.glsl</key>
 		<data>
-		vNltWgmql1AiOVVIX1yF/CaJlXw=
+		m4e3WcVYhYJF2DTy9GBcoHm0u0c=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_multiply_bsdf_float.glsl</key>
 		<data>
-		51T/cWsVcwWVkybpnNpliJgLsd0=
+		BqesQi3IHe77OmNIze98pYRZOs0=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_multiply_edf_color3.glsl</key>
 		<data>
@@ -762,7 +778,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_sheen_bsdf.glsl</key>
 		<data>
-		JDibEl1e7TTNjZQcAe3vBRasGOQ=
+		fn4jA+GmdQx3+wkqpzAZ78QvfFA=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_subsurface_bsdf.glsl</key>
 		<data>
@@ -834,7 +850,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_subsurface_bsdf.osl</key>
 		<data>
-		oU+uhDW0gWbph9QgSpMVV0IakNU=
+		E88EBZJzwpLxoQfMz5ZuOHIXj44=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_surface.osl</key>
 		<data>
@@ -852,6 +868,14 @@
 		<data>
 		mlC+NVfPDGsQZFFMHEIbYkw2K/w=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_geometry.glsl</key>
+		<data>
+		/z3+z9gSlMYdtbiyvNPO77oGfTA=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hextile.glsl</key>
+		<data>
+		xKzEScJIY8sGjzNwOXj/kGFHEWM=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hsv.glsl</key>
 		<data>
 		zNKnSde8UKGQmNLeW2sNloSD61w=
@@ -862,11 +886,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_noise.glsl</key>
 		<data>
-		GcwSltckQk+WBqKaQ3A1dwdWYjE=
-		</data>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_sampling.glsl</key>
-		<data>
-		cd1y8sYowFd8dDIdOoI9dE1bGkw=
+		qc6JrrLZN2vOw0TPqPp6AKfoqTY=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_transform_uv.glsl</key>
 		<data>
@@ -928,21 +948,49 @@
 		<data>
 		dMzFoCDavtXD7qLdMxp5TrI/Prc=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_float.glsl</key>
+		<data>
+		C8UqITZoqow2Isoo7OwPaejFkP8=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector2.glsl</key>
+		<data>
+		7NL+CAwh5EzUEowUdxVhRNRczDA=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector3.glsl</key>
+		<data>
+		dmK7Q/n1CywLA0fi12T/k6Oo3bA=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector4.glsl</key>
+		<data>
+		DdxULAAlo+Z+aqzHFS4/gzxg/FQ=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_float.glsl</key>
 		<data>
-		9wY9U1J2Fm/DWygCoJnHyLYpVoI=
+		0jN/2oCoxj4B6LncUxmr8xny4sQ=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector2.glsl</key>
 		<data>
-		uoqsAtENa+kyR3AF9oI94iJ6s9M=
+		rbV00KpVOx1I7Fuhfh3UcaMYLfE=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector3.glsl</key>
 		<data>
-		pvH1o/E4P4zjr9QGjOBqFUdU8Vs=
+		Iabc+jVOwoEIsdKwUdxo/mJsyNU=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector4.glsl</key>
 		<data>
-		JkJj7+AtOK2u+X7DkSdhtCtHxaA=
+		STIhrAvlXRxDVHnyySkJhTHygxw=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_heighttonormal_vector3.glsl</key>
+		<data>
+		KDoABbQzNdYpTe4GGudnkXoeqmw=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextiledimage.glsl</key>
+		<data>
+		dCU65sbABqG+uQEsY8EoW2nejMA=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextilednormalmap.glsl</key>
+		<data>
+		SbtgJE3bZaE9qMtdSXOAxbZ3g10=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hsvtorgb_color3.glsl</key>
 		<data>
@@ -954,27 +1002,27 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_color3.glsl</key>
 		<data>
-		kgpcnXSpUsu6FtVDsMB5Kuksnu0=
+		ikaVZK7J/4d6eWdQ15YmZIZdMjw=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_color4.glsl</key>
 		<data>
-		h3LLiQh+UoYg1t+s3ucZVqgpsuY=
+		yIq10xOs22xzu9YesP3DNdmx8Es=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_float.glsl</key>
 		<data>
-		eHHUDbrLzG1/RqaenGKAfmpz8DA=
+		xTkVzI4QVogoxVFr0baSX4/IZko=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector2.glsl</key>
 		<data>
-		A0wAtfIsNVdpwjMc5Q2xjtVHMEM=
+		46gbhwlsteVUFzjl+w+h976InN0=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector3.glsl</key>
 		<data>
-		6e5G+1KNso20YRkBc7cE5HJNYls=
+		jYjM7ntjSeMwQCNdd/s8i6Q4jiE=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector4.glsl</key>
 		<data>
-		zTxwi/RXGq/XoXUPQxIILc23OL4=
+		+vY65DI6FcP7BueQv0mwUk0I9Os=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_luminance_color3.glsl</key>
 		<data>
@@ -1112,6 +1160,10 @@
 		<data>
 		WNnPpKjWWGzze6bPf0KKC7CRWzs=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_surface_unlit.glsl</key>
+		<data>
+		H5tIgjcUyMVbrk+iLM/8Mmipd08=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_transformmatrix_vector2M3.glsl</key>
 		<data>
 		zV/jJSHG4bew9HtWjY1H7rSi+CY=
@@ -1150,31 +1202,27 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/stdlib_genglsl_impl.mtlx</key>
 		<data>
-		TlAmQxrhh5MiWz+P1uwtfmRNDF0=
+		6NYuSTbIX/lr2GTJPc2mzzlcPVU=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmdl/stdlib_genmdl_impl.mtlx</key>
 		<data>
-		27gA3dvzgdeQ+T2D0b6JJd+XMi0=
+		epIH59rsWsKJaCcrfNTQXAwTECA=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_math.metal</key>
 		<data>
-		INLAN4zZExODb0ucr/W5iS3YZrs=
+		Jf4U1h1Y9sLFo/XFg8qgEgFZTsA=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_matscalaroperators.metal</key>
 		<data>
 		75bdp3D85CydpLzt1PMVo/D0GUo=
 		</data>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_sampling.metal</key>
-		<data>
-		BaKWVTuRWNTbht3q74GXoZpYK9o=
-		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_texture.metal</key>
 		<data>
-		4581GWus962FC1KC7BJmSB63lJU=
+		qlQ71JRsbd8tuuLzwhQLEcAA/qQ=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/stdlib_genmsl_impl.mtlx</key>
 		<data>
-		Jnukqtm8AjIy2Y6pxoVLEzysIMI=
+		2+/JG6gRKS1EeyLJWsu9EBvKGBs=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/color4.h</key>
 		<data>
@@ -1186,7 +1234,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/mx_funcs.h</key>
 		<data>
-		VZQ1iTO30mWiLXwcm87CavTQ7fI=
+		/GLLfib+VZvuBsqha23SQwEld/M=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/vector2.h</key>
 		<data>
@@ -1196,10 +1244,6 @@
 		<data>
 		9U8KJu/HwrBs6n1eGiKGaTxK4FY=
 		</data>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_sampling.osl</key>
-		<data>
-		nBZvIEOzAmmir93rNlOuh1U19wc=
-		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_transform_uv.osl</key>
 		<data>
 		b62kIY9kNDz7h8trEZ+mFrWYxGE=
@@ -1207,6 +1251,10 @@
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_transform_uv_vflip.osl</key>
 		<data>
 		K2fsuUnEitKjreL8IuBvTJTjUb0=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/vector4_extra_ops.osl</key>
+		<data>
+		W1DxuHDH01aURGTBBEa6G6HsEIU=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_burn_color3.osl</key>
 		<data>
@@ -1248,6 +1296,22 @@
 		<data>
 		8Su93Xfq06BL8mnUCGmmnNih8Q0=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_float.osl</key>
+		<data>
+		WEvLj+MhaAyZG5R3oP56pdX3pI0=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector2.osl</key>
+		<data>
+		RUZV2RG74DiWboNhDycVl32CMc4=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector3.osl</key>
+		<data>
+		5sPQurfvViBUqSmWfBmKdDPHMio=
+		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector4.osl</key>
+		<data>
+		yERRE0LzGEKdJteFmXR3B7cVa2Y=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal3d_float.osl</key>
 		<data>
 		PhbMK9X8ZsMKZN2qmqlizIXjFSY=
@@ -1266,7 +1330,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_frame_float.osl</key>
 		<data>
-		ujTDFiKmRxAb0b0LDQSrGq7/tT0=
+		Fhki7xf7fUgMXNFsfw4XKElGP30=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geomcolor_color3.osl</key>
 		<data>
@@ -1318,7 +1382,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_heighttonormal_vector3.osl</key>
 		<data>
-		lK3drRMcBUgFSgd0B1G56nAh/nE=
+		VOc47KYVTwnHMUuQ/DIVVgO6Up8=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hsvtorgb_color3.osl</key>
 		<data>
@@ -1330,11 +1394,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color3.osl</key>
 		<data>
-		3IdIE8E5Tv+5CKrHVwTmCEqjbHY=
+		dfUgalmdy1BHaoZsMJKuKcguVzQ=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color4.osl</key>
 		<data>
-		FnvDvwW/os6Jc9bo3UR0D45r8+g=
+		NMBdC3W07NzcYhCxhgOHvELNGHA=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_float.osl</key>
 		<data>
@@ -1424,9 +1488,13 @@
 		<data>
 		x2vzl+W3u05/NRejI64zB3KE38o=
 		</data>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_surfacematerial.osl</key>
+		<data>
+		wsbmFXsc3Juk1ACjhFgFIDJMCB0=
+		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_time_float.osl</key>
 		<data>
-		sY7FuGNS3MKrthV8gbK52shAfyY=
+		Mjb86wULi3BCaAUNA5eSnIXCqnM=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_transformmatrix_vector2M3.osl</key>
 		<data>
@@ -1462,15 +1530,15 @@
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/stdlib_genosl_impl.mtlx</key>
 		<data>
-		6LVVgVT/qVSXAW9fVYTDMUqj7Zo=
+		ik5hFnQVCbgice/dtvHaVvDFrX8=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/stdlib_defs.mtlx</key>
 		<data>
-		3p4vvAIBfwZTnwk/p1YyG6I1MsE=
+		xLhQqt/iag9RcXy0gqLpuzPXc28=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/stdlib_ng.mtlx</key>
 		<data>
-		kbyOMvkJRDF74iED5wTgL8FtFcg=
+		cpT97WH7SCUP1VYS2F8kquoccac=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/targets/essl.mtlx</key>
 		<data>
@@ -1556,10 +1624,6 @@
 		<data>
 		71Sm4WVK2eP2vV+LUxyqO1069iI=
 		</data>
-		<key>Resources_iOS/usd/usdRiPxrImaging/Resources/plugInfo.json</key>
-		<data>
-		ilBH/yK4kYPm/xicPFJNLLEvxuE=
-		</data>
 		<key>Resources_iOS/usd/usdSemantics/Resources/generatedSchema.usda</key>
 		<data>
 		yyr57TLWs2JtfRcZCJ2c3h0P0x4=
@@ -1582,11 +1646,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdShade/Resources/usdShade/schema.usda</key>
 		<data>
-		cEbhruL+GWLTKh5D2EW2dJ+fmfQ=
+		PCKy92dWpqpOmlLeQh7hXAxw/po=
 		</data>
 		<key>Resources_iOS/usd/usdShadeValidators/Resources/plugInfo.json</key>
 		<data>
-		EEc/Yva54YZFGtp1TWIMbYNkwWc=
+		66PCpqQSraTuH0I5JDPXJozFUSY=
 		</data>
 		<key>Resources_iOS/usd/usdSkel/Resources/generatedSchema.usda</key>
 		<data>
@@ -1634,7 +1698,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdVol/Resources/generatedSchema.usda</key>
 		<data>
-		+eHtI92ltV0WiY4Fc+K4++OFmio=
+		40n0cXWpF0GDAESIytrXQRBMJUU=
 		</data>
 		<key>Resources_iOS/usd/usdVol/Resources/plugInfo.json</key>
 		<data>
@@ -1642,7 +1706,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdVol/Resources/usdVol/schema.usda</key>
 		<data>
-		n0cyS8W7XgqOg4brlnvGN3qM8hk=
+		5QZhj7+qw7XCC+W0ZkcsfZf+8sU=
 		</data>
 		<key>Resources_iOS/usd/usdVolImaging/Resources/plugInfo.json</key>
 		<data>
@@ -1690,7 +1754,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RUmGVgf3zNM+PO9Rx/LznZD0oBovRrQtZsui3A1H+eY=
+			resINCIiHJrB0gDttqkbHK6kd201FdzOO5QPhkmLdrg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/execIr/Resources/plugInfo.json</key>
@@ -1704,7 +1768,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wb3bo2vNtFdCB2QGCoERnw+gvaH1scLohojaOtjxVsM=
+			iwbc3cIUYMn5Nr/w1w9Z3ldmpQy7ibif4jU3pJp4WRM=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/execUsd/Resources/plugInfo.json</key>
@@ -1732,7 +1796,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7oHgHNq3nVMNOA6ocTBma4jr4MDPMJeK/+YsM+j8zpc=
+			KXGUgYpMq6l2zwAvtWI3O7ld7QYQHpCfRo31linQbwo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hd/Resources/codegenTemplates/schemaClass.cpp</key>
@@ -1760,14 +1824,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MlbeGtqiwFjtDXoXB90AJWn3990WARvssAbrpCkPvjk=
+			Y37+7458Kv154nl+Zy0AqAskNgfy/7ip+/idl0sjqlg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Bjke4KDDLkoZfMhFIzrsduF6hFMrD3RXB9VspP8gYI=
+			GbDY6war3xXB3VvO9paH+d5Mq/8dYCcbssMhuehxND4=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
@@ -1879,7 +1943,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7pOcOd/wHLnu7gClQiNup7PbHJZtAzKoLoPV9c63yTI=
+			5q7N3prhdYJvWEhNsM136hYRS/mFBod5udJh4xNp+wI=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/overlayShader.glslfx</key>
@@ -1970,7 +2034,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4UUyX3zfzVBojD4CMiIJI5ANO9KMtCPGdhpWFZan2EA=
+			b4ksmnf6tJ5hg4qqZ4MpazpSqWXUlh4JWFEJjJdikG8=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/textures/fallbackBlackDomeLight.png</key>
@@ -1984,7 +2048,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9EBwwKQHAs514JfecDIhXe29ULpc8Yw7GiQXJ7li2/I=
+			iLcQIY9b6e0Wn4YPVNi3/9OjeJrnjSV3Ko1b1beUx8E=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdx/Resources/plugInfo.json</key>
@@ -2292,7 +2356,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NyyN05lcyvN/afSktDZ90AHeZKm/t74ygllpRrGmAwo=
+			oJzqtjq1SR4zBUyyqTlK81w5HLomM/pgw+83Ot3dqkw=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usd/Resources/plugInfo.json</key>
@@ -2306,14 +2370,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xo8C54MmgAGVBalhnQX4iC55OIWtG7Pl+n0wI5qLwKI=
+			/gqXxL/KaVoMpifTOgsaEA/fu3pzUf+oW8gfQDbwt5U=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S8mwwMrpIIvvDL4QbECjLr7bb87OZqDg24gahNIAhHs=
+			+SWKbKw36nDfQp35bexpE/B8pEUINMOwei4YMqk1TD8=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeom/Resources/plugInfo.json</key>
@@ -2327,7 +2391,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zi1JcDYMAm3yUMzrjnqhnfp036SZ1jysfCG240zOu0A=
+			sL4ksC8tDf18J219AqP14KcFtuOImyU7HP7FodULwsA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
@@ -2404,7 +2468,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZNk2bSG5qbQym2i/Rjh4m20wvUlckaKyAg2Wp6UoR8A=
+			1Hi1RvEaxFujvfzoPxa4jo1V/KpvzN2HlXqzAXd1+IQ=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMedia/Resources/generatedSchema.usda</key>
@@ -2442,11 +2506,39 @@
 			nLDVgfTVh4YExkXNOrE9FcwpNwJXJ7juyhIHAHotS6o=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/gltf_pbr.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q4PnenxxAFthpwlnpm20tOhsrh34aQ2QjXOXlsUwxnY=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/open_pbr_surface.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xuevdfgoJb5rgGyCres2zL3fiddTuF1D7vrLYqxt1h8=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genglsl/standard_surface.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bdWRtCjyKa6TQedxgi25GeVKcJFrSS8dLs7BmqhOISQ=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/genmdl/open_pbr_surface.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			I7TMB+EQC7Jj/zkppehuetJj+M1xjvwaB3EpZ6iD37Y=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/gltf_pbr.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jMpwSai72804zFX7BNKkiT9dg3r96up2txyi2qa8re0=
+			pOW+lArUDVk+HUSdC2ZXNRl3W6A2VX79iR/lHE8CGDs=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_add.mtlx</key>
@@ -2565,7 +2657,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			URpbK9KYYxh9B8AkjG/aH1UVvQHVHhwBFKxkYW7GxgE=
+			nz5fFpoPWK3wrAzIuwoKeG4d9UuGk+794u6usxHWW50=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_open_pbr.mtlx</key>
@@ -2579,14 +2671,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zniYaCWcc09t+tADdDDXxdrTjJtuFNy9c2hf42jhkF8=
+			cROHOYtW3TbXdfIUUdplYFGlt7WrfDto1R40PgyyXJc=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/bxdf/usd_preview_surface.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3ZqJsmsxxur6OsK42Qd61rSRm500+JxHjqZe/hh9m5s=
+			KZcQF9T01hNRz/dm0hDH1OlnkVPMOYfAnAIA1BboOIE=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/cmlib/cmlib_defs.mtlx</key>
@@ -2747,7 +2839,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dqsgjpd84yQKuyogi1q8sOyuiHrNGCjWeU+VaNT/8A0=
+			sKboz+bOjZH4XrpOaCWUbQUQ2fKTeKli+euwKrFEzz0=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet.glsl</key>
@@ -2775,7 +2867,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JHKoTOBlgkqh4ftZmN9Oag+Q1DkH+xSefLF4fYh4psk=
+			I7mk4jjKFL8VxW3oBKzv2XtNaiN/HPk9JPyqrgSto2Y=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow.glsl</key>
@@ -2803,7 +2895,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SItya5vx/7pgSx256Qio5mORAA58pH9vHkWUagvUWho=
+			lrg5Cee7NY/TzEFTcfPrPlz9ZzBno8E1n4yIHNPho+E=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_add_edf.glsl</key>
@@ -2894,7 +2986,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cGEpRsy/RFGsjGvDFuUvKU5BYhucCEBcgkgUD4d1kjo=
+			f/Ru1MTj3sQmovwit+0P1KwI+ehtedVt5lby11ud5ms=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_layer_vdf.glsl</key>
@@ -2922,14 +3014,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			skCijIYwDf2vD1fMI1E1N7IW92lg7afvhGl/EAdu7yY=
+			VZzXDQs3VkWG/3IjOyEACiyIztEh3+UYFLDWLNSkZTY=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_multiply_bsdf_float.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			djp9cL4dnA5iU9FF47FzaFTlxvUnV0GSIerBO9ZJdc0=
+			iJLFc8Gx8ozvxEkgg+L3vP9V1Esl89584TB08fSdIvg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_multiply_edf_color3.glsl</key>
@@ -2971,7 +3063,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XAVqRgg6mUmMSn2qMt7edenYbextBCptCfv9blW4Wtw=
+			sgxJUer8efQq4mtwA3wYig5/hIokeFP+12xkjSQnzfY=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_subsurface_bsdf.glsl</key>
@@ -3097,7 +3189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PoYECxVgf704uecp44Lp1ACzti3Kr1vZ5hTqoHPX4Gc=
+			dm4UVqyhQmFehznaCHVg/mev+ZtnOSb9mPjn7VEDpJw=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_surface.osl</key>
@@ -3128,6 +3220,20 @@
 			02vPiGkYRMCxsnFHpMyM9Me/MvgI4VMuaaQcPL9nfTs=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_geometry.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PqNc6nXTaB6WGKMj4WCi2xY+XNenc5YtKeUlksVIMtE=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hextile.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			o0N/avzm8EdDrjx6XSRtW+7qCkxUjvvWdFFrunDinF0=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hsv.glsl</key>
 		<dict>
 			<key>hash2</key>
@@ -3146,14 +3252,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aoFAQocQQ07S9NZfuQxje+rU8ci5rkNbXA6K270G7JM=
-			</data>
-		</dict>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_sampling.glsl</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4oEE6RdtvQtyyZ957myi1SxdZSBOInrOy/g+x/OVBnM=
+			6AHU+AEIrT0x+YnqoAc6nRI8CjCx0ISQ/kCeGfReHhI=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_transform_uv.glsl</key>
@@ -3261,32 +3360,81 @@
 			APtUfYHFXrBxD+pdgD+zgGEz4ybMpTMaD7V/B73PBEk=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_float.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GJ/qgZZiA4XPKNfo8SaKt9TStfK+fV6rOY9f5g/Ukqs=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector2.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wpj5UWX3yyS4o5+rJhZ7tHTwVZ+GcFWySz+Yy1WCcOE=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector3.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZA8yDy3D6foPNq4vmBgKnjKtsvElSoVCMkbM6xQLKXc=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_vector4.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hWn4ln34tb+i+NKdog6aJKr5Eh9R2nPxdMtAq4GyJZ4=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_float.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xeCLjc+/e2QNMqlX1CCd5HxJSmni8On/tokmg/FJcxQ=
+			hRzfzaei72O5f6FarA0Ak01gIejMPTSKVmybcjndqzg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector2.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tDQZ1uEdIcvFy7PcV8TqG2SwFepNjQ0v0yEyfAEyL64=
+			LpU7GAFPBev7eOY6TLrv8vub5yBO5lcmrBXiR1vSBZQ=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector3.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g4zzcfQHgryPcjpPnhwHtPymjE3DhnX59fRxCwpoRJA=
+			oHwfKe8WmOXMxdU0+a/OMVpha2PM0eQBFAK5BmOLd5E=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal3d_vector4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NqzjlmyT29IUXtGw4zcFOUZqclZBpcfVj2uLfKnPBrk=
+			2IwIyOkVHAErnm2WetENujB2s6/bJx5gDo7TQQxM5Ic=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_heighttonormal_vector3.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IsPeoLpmQERaVKTG6zeDeF2Gr0KtP5Oy6mbsHemN5M8=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextiledimage.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1rOEBFNBm7vE06OHFLsa1o+eB8TV+WKiFL0f92KyuBA=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextilednormalmap.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4/kK0V5xzB5vrXWvE3BOIw7cQisvYqF0cJxrQUdstJU=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hsvtorgb_color3.glsl</key>
@@ -3307,42 +3455,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2I0ZLjCvqYLOzcMmufoEUn5H1EbSMWKQg0l2XUZ3KJM=
+			uExI37ZMBDxEncBgd2J6mryZorh7993CNuTn9t9/AQM=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_color4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e0yMXhLdLXCh8eTYyYX3NttMVL5XKlNauUvEm/B8ttQ=
+			kmAQ3ENzVQTWswCfqqyfkPZBvzuuni2cDajQfa6U800=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_float.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			10JUDpm76XjYjHuUI6ia40iTl90PP4zhHeDoSjK278w=
+			zEzTpNLCuS/dbdPX7glxFhE/kcERoVYXv2C5z36+X94=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector2.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LTlbmcp4Gk3fRvurjBehMFHOoToH7Eb3YWJQz5nFBCw=
+			EBdXJlTwIuSN7QdTe7Tnk+vxMic+HXTFINzpFElkRB0=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector3.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IHgfEFzPmbeY/HVegXSSn5yF16oIIDiEBLo+nE7mVeI=
+			EyY7jn9tox3+zz+l7ROGTbXNDwVHy8NTVu/AzuaX5bU=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_vector4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RW5dzXcpry3pD923Mlt12SNgQ4bnLGFgO9OyJf2ljI8=
+			dPUx9hTP9omzWyzd1rd8gmA5z9my13WKfwRTWL/31sc=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_luminance_color3.glsl</key>
@@ -3583,6 +3731,13 @@
 			9dmCraCTYCixQz62eRWz9SX3lLchCC7rIiglQyDfYHo=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_surface_unlit.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9b+3VKs9lTnjHOoT5yOvNwzqWn30UhRmiHtsb/CrTYc=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_transformmatrix_vector2M3.glsl</key>
 		<dict>
 			<key>hash2</key>
@@ -3650,21 +3805,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4P1zE2paAe0lCoVsTSY8Jwm6lEVIhVE8Bds6gg6KDdk=
+			rqx4DGL0iIUwkVsQLmnxDJIDUdxDWuTkV2OO1z0i9b4=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmdl/stdlib_genmdl_impl.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hZblff3CKMzG3G+9gqVPDI4UucXFwf8kRv6UEudgitE=
+			b4vXtTPyIUq0n2p/dcsVlzESLhNsaz77thulW4AO9Dg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_math.metal</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E97LwFiC9AhP01WRdMQr1GPjmVtMZkziVmg0uCaDWR4=
+			hOET93g1airpIem492jZj7YcnMh/zhrz9LRsDVO3VDE=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_matscalaroperators.metal</key>
@@ -3674,25 +3829,18 @@
 			d9tpNYy6GHiZVwvs+MamDi0CQNqMmWInF4DV2l3ukQc=
 			</data>
 		</dict>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_sampling.metal</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8DJg01y+Iz3/OFmAXfrU2Ide1m0neUiSj9G0nwXhHMk=
-			</data>
-		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_texture.metal</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9BsaobIbJNC0DSgYjqKMUiDGJ1sMOxRheIBYfaXQXjI=
+			Qd1Ri1vOEkzsLjuIs569zwIadXWDkZvNdnL9HumKRqQ=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genmsl/stdlib_genmsl_impl.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jNR50AsDGGZi9FTvJwqlL13V99K7BK5QEqkAdT5bspg=
+			Dwb2WSKVg2BdbaBJJL8234k92gw6C+X9HLJrALZ1G7w=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/color4.h</key>
@@ -3713,7 +3861,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7LIC+b4GqhhQTlt46rD8p3jYdDl5wEIKLPFAdtVfQrQ=
+			K3fsedd4QsYfoQZOf74Us2yhQ16Kc5p/NKobG3xH6jA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/vector2.h</key>
@@ -3730,13 +3878,6 @@
 			nc9btqhont2GWDlU5KWyxY+OSuncALhHNPlOLJxVgWE=
 			</data>
 		</dict>
-		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_sampling.osl</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WSBXGMWhZ9TE5cgAnryl75wnCGFot7u/d4rbrdDFIfo=
-			</data>
-		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_transform_uv.osl</key>
 		<dict>
 			<key>hash2</key>
@@ -3749,6 +3890,13 @@
 			<key>hash2</key>
 			<data>
 			16sMXQf0Qb/i3b9DtmVRaoiTEJOSScoHjik4UCUv8j0=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/vector4_extra_ops.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Z1aMSgMPpnXYdcuYw1jzvH9UtpVhM6PPJYda4N6MFqA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_burn_color3.osl</key>
@@ -3821,6 +3969,34 @@
 			t6xr5Inz+E724S4qRqHAi9bAC0fE07N3j0N7E+EILvI=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_float.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Y+F4exoR8Ag8DEhq0C6E7BMAmqU8qLG5FQMUIPAdadA=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector2.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rNRaxRVSHB6thSPy0GCbozqmbRejwQoErTDCfgOEGPo=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector3.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SITQ+KYUg3+D9qMSeC7mqP5M1d4QUUJMEvdNOnRRd1M=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_vector4.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PyYvxCqS5Fv32y3iT1wtFMpN4rE5SNc26+Erlu0Lgto=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal3d_float.osl</key>
 		<dict>
 			<key>hash2</key>
@@ -3853,7 +4029,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L2lAmN0Fqtk8uvNgT4uW3xgjw1IdVstewZzGE8Db6vo=
+			w22NVHZuJIz/5/gQ6PhBn4HQ5dde3vDCgk2cpK1GNVc=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geomcolor_color3.osl</key>
@@ -3944,7 +4120,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7Kz77UbjpOVL9IxVL8gwITwG/F1NDr+6z+MO49S8d8c=
+			zUlk3885Tqux3M5Lym0KIyowwgWZIr6wrrUFwxvQ01w=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hsvtorgb_color3.osl</key>
@@ -3965,14 +4141,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yn6QwmlI2WNbh608GyHIPuB8Sx8dIJH4bhebuxr4NO4=
+			C/vb/UDqWgyJj4N3kUqA1HKvqjxyetrgYWn9IgDQ6GE=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color4.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q3fU0hbvnGn1kXnIzd2HtD7sszXcsOZZgrWXnwRsH+o=
+			LsqBvUMz2aPXFYK9PtGymLy9mMBwcwoHRfvX6fz3JX8=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_float.osl</key>
@@ -4129,11 +4305,18 @@
 			nXTSGMIZakCY6TPFTvx0OkJmtLIEKGqPhPWP8QXavL8=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_surfacematerial.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N+/90GBdTbaf15boaUCm9KP4H55e8cC2Ic4qjvkW7i0=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_time_float.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gy1Tb9h1R1O6s1rd1ynskg/4iVx3AVpJhaxpZQr4NGg=
+			/rdIv8PI79yj9iI2CgXK/uNHhmwLZVC1PCNMrPa/LAE=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_transformmatrix_vector2M3.osl</key>
@@ -4196,21 +4379,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hmq6sYCtX/ElfF+qJZRWBiI18TTGyVwsLTSXojHrcoU=
+			Lh14PLH6nRUgrml52ZmQ1aTkliVoOkLZIF+C/hK6qS8=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/stdlib_defs.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kUrRtRvqvkff8r0U4JJQJm87/RuyRh0SJtil+c46Kxk=
+			aAsPxuf+Ag8dZ1GoRWxVNPIO368dwbUrs4Nr9C9lVdc=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/stdlib/stdlib_ng.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UIipzmA3S/G+zmaY+COs0IptRddX1fd0nUMdICqA2t4=
+			pjIKsrkq5IQkEt4hYcK6gFKt8AKM/cpCB0Qckc0lOB0=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/libraries/targets/essl.mtlx</key>
@@ -4360,13 +4543,6 @@
 			JFgBNuGTmHj5Ts1bK5/fxdFB3EyeDig65opIR6LZVys=
 			</data>
 		</dict>
-		<key>Resources_iOS/usd/usdRiPxrImaging/Resources/plugInfo.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ih8XLgKOLGzZczALlDr+b6GU5cRBS2VVbGWuD1/iEv8=
-			</data>
-		</dict>
 		<key>Resources_iOS/usd/usdSemantics/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
@@ -4406,14 +4582,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zoPLuOq7GL5nIgSnrFj7W6ecXQ8/NbXzi7a3pp/FJaQ=
+			f47EFRfC8bumacoPzVDwQ1BxqLrhi6ivgOHSzh1CgDk=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdShadeValidators/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AnKcSSSmxnrU1QQ6TPps5meMyBpml9rbeL1h5u6bmag=
+			5OnrXls6Kj7OCFQCmcIRbh8GuiW6ZRZDDytXhXN98YA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdSkel/Resources/generatedSchema.usda</key>
@@ -4497,7 +4673,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fFpUGdP6HsfJKVAqL82DUjbZoxcwOvVnBnFfdQWJKak=
+			UHd/Uikrhqaa7/vT33sOeV4O2yNGrnqVTfXarzKTkqg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdVol/Resources/plugInfo.json</key>
@@ -4511,7 +4687,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UuiclD5rcExjfv+7WX+c8xqeQebwo2dpwrU3jTSq0u0=
+			4a1sEbP3hmdU3W1MzEnkLvx9WGS2WP+3H0onOanBU5c=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdVolImaging/Resources/plugInfo.json</key>

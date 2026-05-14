@@ -380,19 +380,12 @@ public:
     ///
     /// This revokes interest by the listener for the particular notice type
     /// and call-back method for which this key was created.
+    ///
     /// \c Revoke will return a bool value indicating whether or not the key
-    /// was successfully revoked. Subsequent calls to \c Revoke with the same
+    /// was successfully revoked.  Subsequent calls to \c Revoke with the same
     /// key will return false.
     TF_API
-    static bool Revoke(TfNotice::SwiftKey key);
-
-    /// Revoke interest by listeners.
-    ///
-    /// This revokes interest by the listeners for the particular
-    /// notice types and call-back methods for which the keys were
-    /// created. It then clears the keys container.
-    TF_API
-    static void Revoke(TfNotice::SwiftKeys* keys);
+    static bool Revoke(TfNotice::Key& key);
 
     /// Revoke interest by a listener.
     ///
@@ -403,7 +396,7 @@ public:
     /// was successfully revoked.  Subsequent calls to \c Revoke with the same
     /// key will return false.
     TF_API
-    static bool Revoke(TfNotice::Key& key);
+    static bool Revoke(TfNotice::SwiftKey key);
     
     /// Revoke interest by listeners.
     ///
@@ -412,6 +405,14 @@ public:
     /// created.  It then clears the keys container.
     TF_API
     static void Revoke(TfNotice::Keys* keys);
+
+    /// Revoke interest by listeners.
+    ///
+    /// This revokes interest by the listeners for the particular
+    /// notice types and call-back methods for which the keys were
+    /// created.  It then clears the keys container.
+    TF_API
+    static void Revoke(TfNotice::SwiftKeys* keys);
 
     /// Revoke interest by a listener.
     ///
@@ -424,16 +425,7 @@ public:
     /// invoking the handler.
     TF_API
     static bool RevokeAndWait(TfNotice::Key& key);
-    
-    /// Revoke interest by listeners.
-    ///
-    /// This revokes interest by the listeners for the particular
-    /// notice types and call-back methods for which the keys were
-    /// created.  It then clears the keys container.  This will not return
-    /// while any threads are invoking any handlers.
-    TF_API
-    static void RevokeAndWait(TfNotice::Keys* keys);
-    
+
     /// Revoke interest by a listener.
     ///
     /// This revokes interest by the listener for the particular notice type
@@ -445,6 +437,15 @@ public:
     /// invoking the handler.
     TF_API
     static bool RevokeAndWait(TfNotice::SwiftKey key);
+
+    /// Revoke interest by listeners.
+    ///
+    /// This revokes interest by the listeners for the particular
+    /// notice types and call-back methods for which the keys were
+    /// created.  It then clears the keys container.  This will not return
+    /// while any threads are invoking any handlers.
+    TF_API
+    static void RevokeAndWait(TfNotice::Keys* keys);
 
     /// Revoke interest by listeners.
     ///

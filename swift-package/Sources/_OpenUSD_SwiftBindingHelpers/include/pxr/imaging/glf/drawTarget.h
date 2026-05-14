@@ -124,6 +124,14 @@ public:
         void _GenTexture();
         void _DeleteTexture();
 
+        // Important: 
+        // https://github.com/swiftlang/swift/pull/80344 in Swift 6.2
+        // fixes an issue that occurs in Swift 6.1 when reference types
+        // use the tail padding of their bases. To support Swift 6.1, we
+        // work around the issue by using alignas and padding to
+        // prevent tail padding reuse.
+        alignas(8) char _PADDING;
+
         GLuint       _textureName;
         GLuint       _textureNameMS;
 

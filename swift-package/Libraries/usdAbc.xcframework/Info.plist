@@ -8,7 +8,7 @@
 			<key>BinaryPath</key>
 			<string>usdAbc.framework/usdAbc</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
+			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>usdAbc.framework</string>
 			<key>SupportedArchitectures</key>
@@ -17,6 +17,8 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -52,7 +54,7 @@
 			<key>BinaryPath</key>
 			<string>usdAbc.framework/usdAbc</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>usdAbc.framework</string>
 			<key>SupportedArchitectures</key>
@@ -61,8 +63,6 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>

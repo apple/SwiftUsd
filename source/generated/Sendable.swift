@@ -3602,7 +3602,7 @@ extension pxr.TfStackedAccess: @unchecked Sendable {}
 extension pxr.TfToken: @unchecked Sendable {}
 extension pxr.TraceAggregateTree.EventTimes: @unchecked Sendable {}
 extension pxr.UsdSchemaRegistry.TokenToTokenVectorMap: @unchecked Sendable {}
-extension pxr.TfTokenVector: @unchecked Sendable {}
+extension pxr.SdrIdentifierVec: @unchecked Sendable {}
 extension pxr.SdrOptionVec: @unchecked Sendable {}
 extension pxr.UsdGeomBasisCurves.ComputeInterpolationInfo: @unchecked Sendable {}
 extension pxr.SdrOption: @unchecked Sendable {}
@@ -3876,7 +3876,9 @@ extension pxr.HdInstancerContext: @unchecked Sendable {}
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.SdfRelocate: @unchecked Sendable {}
 extension pxr.UsdUtilsPathHashSet: @unchecked Sendable {}
-extension pxr.PcpPrimIndexInputs.PayloadSet: @unchecked Sendable {}
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.PathSet: @unchecked Sendable {}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.SdfPath.Hash: @unchecked Sendable {}
 extension pxr.PcpMapFunction.PathMap: @unchecked Sendable {}
 extension pxr.SdfPath.FastLessThan: @unchecked Sendable {}
@@ -6245,7 +6247,7 @@ extension pxr.UsdVolImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceBlendShapePrim: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceBlendShapePrimAtomicHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrim: @unchecked Sendable {}
-@available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimHandle: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimAtomicHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingResolvedSkeletonSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingResolvedSkeletonSchema.Builder: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.UsdSkelImagingDataSourceXformResolver: @unchecked Sendable {}

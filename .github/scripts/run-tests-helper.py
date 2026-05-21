@@ -44,9 +44,9 @@ def build_or_run_test_suite(name, cleanCmd, resolveCmd, buildCmd, testCmd, resol
 
     def should_extract(l):
         if action == "build":
-            return any([s in l for s in ["error:", "DESERIALIZATION FAILURE", "Stack dump:", "While deserializing SIL function"]])
+            return any([s in l for s in ["error:", "DESERIALIZATION FAILURE", "Stack dump:", "While deserializing SIL function", "SIL verification failed", "Assertion failed:"]])
         elif action == "test":
-            return any([s in l for s in ["failed:", "launchd", "crash", "exited with unexpected signal code", "skipped"]])
+            return any([s in l for s in ["failed:", "launchd", "crash", "exited with unexpected signal code", "skipped", "The test runner hung before establishing connection", "Early unexpected exit, operation never finished bootstrapping"]])
 
     def processRunResult(runResult):
         end = time.time()
@@ -148,22 +148,36 @@ def addConditionalCommonArgs(result):
                 else:
                     result += ["-Xswiftc", "-DSWIFTUSD_TESTS_SKIP_SWIFTLY_603_CRASHES"]
 
+    def handleImportCxxMembersLazily(forXcodebuild):
+        # Testing an experimental feature from https://github.com/swiftlang/swift/pull/87016.
+        # For now, don't enable this by default, but make it easy to enable for one-off attempts
+        return
+        nonlocal result
+        if forXcodebuild:
+            index = [i for (i, x) in enumerate(result) if x.startswith("OTHER_SWIFT_FLAGS")][0]
+            result[index] += " -enable-experimental-feature ImportCxxMembersLazily"
+        else:
+            result += ["-Xswiftc", "-enable-experimental-feature", "-Xswiftc", "ImportCxxMembersLazily"]
+
     if Environment.TestCombination.build_system == "xcodebuild-xcodeproj":
         handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
         handleDevelopmentTeam()
         handleSwiftly603x(True)
         handleBuildSystem(True)
+        handleImportCxxMembersLazily(True)
         
     elif Environment.TestCombination.build_system == "swiftbuild-SPM-Tests":
         handleJobs(Environment.TestCombination.at_desk_swiftbuild_jobs, False)
         handleSwiftly603x(False)
         handleBuildSystem(False)
+        handleImportCxxMembersLazily(False)
         
     elif Environment.TestCombination.build_system == "xcodebuild-SPM-Tests":
         handleJobs(Environment.TestCombination.at_desk_xcodebuild_jobs, True)
         handleDevelopmentTeam()
         handleSwiftly603x(True)
         handleBuildSystem(True)
+        handleImportCxxMembersLazily(True)
         
     else:
         print(f"Error: Unknown build system {Environment.TestCombination.build_system}")

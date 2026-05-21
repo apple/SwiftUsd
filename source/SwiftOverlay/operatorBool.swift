@@ -94,21 +94,25 @@ extension Bool {
     public init(_ x: pxr.UsdGeomXformOp) {
         self.init(__Overlay.convertToBool(x))
     }
-
+    
     /// Returns `true` if the resolved path is non-empty
     public init(_ x: pxr.ArResolvedPath) {
-        self = x.__convertToBool()
+        self.init(__Overlay.convertToBool(x))
     }
 
     /// Returns `true` if the zip file is valid
     public init(_ x: pxr.SdfZipFile) {
-        self = x.__convertToBool()
+        self.init(__Overlay.convertToBool(x))
     }
 
     #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
     /// Returns `true` if the `HioImage` is valid
     public init(_ x: Overlay.HioImageWrapper) {
-        self.init(x.__convertToBool())
+        self.init(__Overlay.convertToBool(x))
+    }
+    /// Returns `true` if the handle points to a non-null value (does not offer weak_ptr safety)
+    public init(_ x: pxr.HgiTextureHandle) {
+        self.init(__Overlay.convertToBool(x))
     }
     #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 }

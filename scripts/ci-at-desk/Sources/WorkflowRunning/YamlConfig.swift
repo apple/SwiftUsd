@@ -58,6 +58,7 @@ public struct YamlConfig: Sendable {
     public let maxMatrixParallelism: Int
     public let atDeskSwiftBuildJobs: Int
     public let atDeskXcodebuildJobs: Int
+    public let timeoutScaleFactor: Double
     
     // skips:
     public let skips: [String : Int]
@@ -153,6 +154,15 @@ public struct YamlConfig: Sendable {
         self.maxMatrixParallelism = extract("max-parallelism.matrices") ?? 0
         self.atDeskSwiftBuildJobs = extract("max-parallelism.ATDESK_SWIFTBUILD_JOBS") ?? 0
         self.atDeskXcodebuildJobs = extract("max-parallelism.ATDESK_XCODEBUILD_JOBS") ?? 0
+        var theScaleFactor = 1.0
+        if let i: Int = extract("max-parallelism.timeoutScaleFactor") {
+            theScaleFactor = Double(i)
+        }
+        if let d: Double = extract("max-parallelism.timeoutScaleFactor") {
+            theScaleFactor = d
+        }
+        if theScaleFactor <= 0 { theScaleFactor = 1 }
+        self.timeoutScaleFactor = theScaleFactor
         
         self.skips = extract("skips") ?? [:]
         

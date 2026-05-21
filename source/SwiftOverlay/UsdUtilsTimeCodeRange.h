@@ -24,7 +24,7 @@
 #include "pxr/usd/usdUtils/timeCodeRange.h"
 
 namespace __Overlay {
-    pxr::UsdTimeCode UsdUtilsTimeCodeRange_const_iterator__operatorStar(const pxr::UsdUtilsTimeCodeRange::const_iterator& x);
+    pxr::UsdUtilsTimeCodeRange::const_iterator::reference UsdUtilsTimeCodeRange_const_iterator__operatorStar(const pxr::UsdUtilsTimeCodeRange::const_iterator& x);
 }
 
 #endif /* SWIFTUSD_SWIFTOVERLAY_USDUTILSTIMECODERANGE_H */

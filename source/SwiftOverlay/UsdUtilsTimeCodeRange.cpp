@@ -20,7 +20,9 @@
 
 #include "swiftUsd/SwiftOverlay/UsdUtilsTimeCodeRange.h"
 
-pxr::UsdTimeCode __Overlay::UsdUtilsTimeCodeRange_const_iterator__operatorStar(const pxr::UsdUtilsTimeCodeRange::const_iterator& x) {
-    auto y = x;
-    return *y;
+pxr::UsdUtilsTimeCodeRange::const_iterator::reference __Overlay::UsdUtilsTimeCodeRange_const_iterator__operatorStar(const pxr::UsdUtilsTimeCodeRange::const_iterator& x) {
+    // Despite being a const_iterator, its operator* and operator-> are not marked as const
+    // when they should be, so just const cast. (We're returning a reference, so we can't
+    // make a local copy we can mutate and return the reference from that.)
+    return const_cast<pxr::UsdUtilsTimeCodeRange::const_iterator&>(x).operator*();
 }

@@ -12,10 +12,10 @@ ci-at-desk requires a YAML configuration file. Here is a sample YAML config file
  
  precheckouts:
  - remote: git@github.com:apple/SwiftUsd
-   ref: 6.1.0
+   ref: 7.0.0
    path: precheckouts/SwiftUsd
  - remote: git@github.com:apple/SwiftUsd-Tests
-   ref: 6.1.0
+   ref: 7.0.0
    path: precheckouts/SwiftUsd-Tests
  
  requiredPaths:
@@ -83,6 +83,7 @@ Paths in the YAML config are interpreted differently based on their starting cha
 - `max-parallelism.matrices`: int limiting the maximum number of matrix instances that may run in parallel under an individual job, with <=0 meaning no limit. Optional, defaults to 0.
 - `max-parallelism.ATDESK_SWIFTBUILD_JOBS`: int limiting the maximum number of jobs swift-build can spawn (passed as `--jobs N`), with <= 0 meaning no limit. Optional, defaults to 0.
 - `max-parallelism.ATDESK_XCODEBUILD_JOBS`: int limiting the maximum number of jobs xcodebuild can spawn (passed as `-jobs N`), with <= 0 meaning no limit. Optional, defaults to 0.
+- `max-parallelism.timeoutScaleFactor`: float scaling the maximum timeout for steps/jobs, with <= 0 meaning 1. Useful for systems with high load or when ci-at-desk has low scheduling priority. Optional, defaults to 1. 
 
 `skips[*]`: a map of strings to ints that will get inserted into orchestrator/runner contexts under `skips`. Optional, defaults to empty map.
 

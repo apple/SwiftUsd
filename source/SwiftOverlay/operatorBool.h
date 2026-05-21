@@ -39,6 +39,10 @@
 #include "pxr/usd/sdf/attributeSpec.h"
 #include "pxr/usd/sdf/relationshipSpec.h"
 #include "pxr/usd/sdf/pseudoRootSpec.h"
+#include "pxr/usd/sdf/zipFile.h"
+#include "pxr/usd/ar/resolvedPath.h"
+#include "pxr/imaging/hgi/texture.h"
+#include "swiftUsd/Wrappers/HioImageWrapper.h"
 
 namespace __Overlay {
     bool convertToBool(const pxr::TfRefPtr<pxr::UsdStage>& x);
@@ -58,6 +62,10 @@ namespace __Overlay {
     bool convertToBool(const pxr::SdfAttributeSpecHandle& x);
     bool convertToBool(const pxr::SdfRelationshipSpecHandle& x);
     bool convertToBool(const pxr::SdfPseudoRootSpecHandle& x);
+    bool convertToBool(const pxr::ArResolvedPath& x);
+    bool convertToBool(const pxr::SdfZipFile& x);
+    bool convertToBool(const pxr::HgiTextureHandle& x);
+    bool convertToBool(const Overlay::HioImageWrapper& x);
 }
 
 #endif /* SWIFTUSD_SWIFTOVERLAY_OPERATORBOOL_H */

@@ -353,3 +353,29 @@ extension pxr.SdfAssetPathParams {
         return result
     }
 }
+
+#if compiler(>=6.4)
+// Swift 6.4 adds a fix that rvalue ref-qualified methods are not callable when previously they were
+// Instead, we should call the const& returning methods
+extension pxr.SdfAssetPath {
+    @_documentation(visibility: internal)
+    public borrowing func GetAuthoredPath() -> std.string {
+        __GetAuthoredPathUnsafe().pointee
+    }
+    
+    @_documentation(visibility: internal)
+    public borrowing func GetEvaluatedPath() -> std.string {
+        __GetEvaluatedPathUnsafe().pointee
+    }
+    
+    @_documentation(visibility: internal)
+    public borrowing func GetAssetPath() -> std.string {
+        __GetAssetPathUnsafe().pointee
+    }
+    
+    @_documentation(visibility: internal)
+    public borrowing func GetResolvedPath() -> std.string {
+        __GetResolvedPathUnsafe().pointee
+    }
+}
+#endif // #if compiler(>=6.4)

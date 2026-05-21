@@ -28,20 +28,30 @@ import Logging
 /// Entry point for ci-at-desk
 @main
 struct CLIArgs: MainActorAsyncParsableCommand {
-    @Argument(transform: URL.init(fileURLWithPath:)) var configFile: URL?
-    @Option var consoleLogLevel: Logger.Level = .error
+    @Argument(help: "The YAML config file to use. Required unless using --ui",
+              transform: URL.init(fileURLWithPath:)) var configFile: URL?
+    @Option(help: "The minimum level of log messages to display.") var consoleLogLevel: Logger.Level = .error
     
-    @Flag var ui: Bool = false
-    @Flag var readOnly: Bool = false
+    @Flag(help: "Enables a GUI for ci-at-desk. Only supported on macOS") var ui: Bool = false
+    @Flag(help: "Actively parses logs from an existing ci-at-desk run without modifying the file system at all") var readOnly: Bool = false
+    @Flag(help: """
+        Parses logs once from an existing ci-at-desk run without modifying the file system at all. 
+        More performant than --read-only, but cannot be used to follow along in real time to an ongoing ci-at-desk run.
+    """) var noStreamingReadOnly: Bool = false
 
     mutating func run() async throws {
         ConsoleLogHandler.consoleLogLevel = consoleLogLevel
+        
+        if readOnly && noStreamingReadOnly {
+            throw ValidationError("Cannot use both --read-only and --no-streaming-read-only")
+        }
         
         #if os(macOS)
         if ui {
             InProcessLogNotificationHandler.enabled = true
             ci_at_desk_UI.initialConfigFile = configFile
-            ci_at_desk_UI.readOnly = readOnly
+            ci_at_desk_UI.readOnly = readOnly || noStreamingReadOnly
+            ci_at_desk_UI.noStreamingReadOnly = noStreamingReadOnly
             ci_at_desk_UI.main()
             return
         }
@@ -49,6 +59,7 @@ struct CLIArgs: MainActorAsyncParsableCommand {
         if ui { throw ValidationError("--ui is only supported on macOS") }
         #endif
         if readOnly { throw ValidationError("--read-only is only supported with --ui") }
+        if noStreamingReadOnly { throw ValidationError("--no-streaming-read-only is only supported with --ui") }
         
         guard let configFile else {
             throw ValidationError("configFile is required if not running in UI mode")
@@ -170,7 +181,8 @@ extension CLIArgs {
                 Job(id: "Define-Test-Matrix",
                     name: "Define Test Matrix",
                     outputs: ["matrix": "${{ steps.matrix.outputs.matrix }}",
-                              "max-parallel": "${{ steps.matrix.outputs.max-parallel }}"],
+                              "max-parallel": "${{ steps.matrix.outputs.max-parallel }}",
+                              "n-combinations": "${{ steps.matrix.outputs.n-combinations }}"],
                     steps: [
                         Step(name: "Sparse checkout repository code",
                              sparseCheckout: [".github/scripts"]),
@@ -243,9 +255,10 @@ extension CLIArgs {
                 Job(id: "Summarize-Test-Results",
                     if_: "${{ always() }}",
                     name: "Summarize Test Results",
-                    needs: ["Run-Tests-Once"],
+                    needs: ["Define-Test-Matrix", "Run-Tests-Once"],
                     env: [
-                        "MATRIX_RESULTS_PATH" : "${{ github.workspace }}/../matrix-results"
+                        "MATRIX_RESULTS_PATH" : "${{ github.workspace }}/../matrix-results",
+                        "N_COMBINATIONS" : "${{ needs.Define-Test-Matrix.outputs.n-combinations }}",
                     ],
                     steps: [
                         Step(name: "Sparse checkout repository code",

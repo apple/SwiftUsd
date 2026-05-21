@@ -28,7 +28,7 @@ def get_xcodebuild_destination(target_platform):
     elif target_platform == "iOS": return Environment.TestCombination.at_desk_iOS_xcodebuild_destination
     elif target_platform == "iOSSimulator": return "platform=iOS Simulator,name=iPhone 17 Pro"
     elif target_platform == "visionOS": return Environment.TestCombination.at_desk_visionOS_xcodebuild_destination
-    elif target_platform == "visionOSSimulator": return "platform=visionOS Simulator,name=Apple Vision Pro (at 2732x2048)"
+    elif target_platform == "visionOSSimulator": return "platform=visionOS Simulator,name=Apple Vision Pro"
     else:
         print(f"Error: Unknown target '{target_platform}'")
         exit(1)
@@ -85,6 +85,11 @@ if __name__ == "__main__":
                 if x["build_system"] in ["xcodebuild-xcodeproj", "xcodebuild-SPM-Tests"]:
                     continue
 
+            # Similar linker errors through main-snapshot-2026-05-07 and likely further
+            if swiftly.startswith("main-snapshot") and isVersionLessThanOrEqual(swiftly, "main-snapshot-2026-05-27"):
+                if x["build_system"] in ["xcodebuild-xcodeproj", "xcodebuild-SPM-Tests"]:
+                    continue
+
         if swiftly.startswith("6.2."):
             # Swiftly 6.2 runs into module deserialization failures from running up against
             # an arbitrary limit on the number of specializations of a class template
@@ -98,6 +103,11 @@ if __name__ == "__main__":
             # Swiftly 6.1 runs into various stack dumps with no clear workaround
             # besides using a newer compiler version
             continue
+        
+        if swiftly.startswith("main-snapshot") and isVersionLessThanOrEqual(swiftly, "main-snapshot-2026-05-27"):
+            if x["build_system"] == "swiftbuild-SPM-Tests":
+                # rdar://177175896 (swift build with main-snapshot-2026-05-07 not respecting CPLUS_INCLUDE_PATH; can't #include <swift/bridging> (regression))
+                continue
 
         xcodebuild_destination = get_xcodebuild_destination(x["target_platform"])
         if xcodebuild_destination is None: continue
@@ -127,6 +137,7 @@ if __name__ == "__main__":
     write(output=f"matrix={json.dumps(result)}")
     max_parallel = int(round(math.sqrt(len(result))))
     write(output=f"max-parallel={max_parallel}")
+    write(output=f"n-combinations={len(result)}")
 
     for (k, v) in axes.items():
         value_string = "\n".join(v)

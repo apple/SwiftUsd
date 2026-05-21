@@ -27,11 +27,23 @@ extension pxr.UsdUtilsTimeCodeRange: CxxSequence {
 }
 extension pxr.UsdUtilsTimeCodeRange.const_iterator: UnsafeCxxInputIterator {
     public var pointee: value_type {
-        __Overlay.UsdUtilsTimeCodeRange_const_iterator__operatorStar(self)
+        borrowing get {
+            __Overlay.UsdUtilsTimeCodeRange_const_iterator__operatorStar(self).pointee
+        }
     }
     
     public typealias Pointee = value_type
 }
+#if compiler(>=6.4)
+// Starting in Swift 6.4, UnsafeCxxInputIterator's requirements change slightly,
+// in a way where we need to help the compiler
+extension pxr.UsdUtilsTimeCodeRange.const_iterator {
+    public borrowing func __operatorStar() -> reference {
+        __Overlay.UsdUtilsTimeCodeRange_const_iterator__operatorStar(self)
+    }
+}
+#endif // #if compiler(>=6.4)
+
 extension pxr.UsdUtilsTimeCodeRange: Codable {
     public func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

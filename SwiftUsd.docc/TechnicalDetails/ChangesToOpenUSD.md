@@ -54,7 +54,7 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/imaging/hd/mergingSceneIndex.h`
     - Modified: `pxr/imaging/hd/schema.h`
 
-- [rdar://150456875: Forward declaring std::map's value causes an error for Swift but not C++ (Swift 6.1 regression)](rdar://150456875)
+- [rdar://150456875: Forward declaring std::map's value causes an error for Swift but not C++ (Swift 6.1 regression)](rdar://150456875)  
     This issue is worked around by moving the definition of a type from a source file into a header file, and by making a private header public
     - Modified: `pxr/exec/exec/CMakeLists.txt`
     - Modified: `pxr/exec/vdf/sparseInputTraverser.cpp`
@@ -62,10 +62,14 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.cpp`
     - Modified: `pxr/imaging/hdsi/debuggingSceneIndex.h`
 
-- [https://github.com/swiftlang/swift/pull/80344: [cxx-interop] Layout reference types that use tail padding of their bases correctly](https://github.com/swiftlang/swift/pull/80344)
+- [https://github.com/swiftlang/swift/pull/80344: [cxx-interop] Layout reference types that use tail padding of their bases correctly](https://github.com/swiftlang/swift/pull/80344)  
     This issue is worked around by reordering fields in derived types that use tail padding to no longer use tail padding, or by inserting aligned padding that doesn't fit in usable tail padding. This issue was fixed in Swift 6.2.
     - Modified: `pxr/base/trace/eventNode.h`
     - Modified: `pxr/imaging/glf/drawTarget.h`
+
+- [rdar://177372504 (Non-const rvalue method shouldn't be a possible overload on `let` variables)](rdar://177372504)
+    This issue is worked around by annotating methods in C++ headers instead of relying on API Notes.
+    - Modified: `pxr/base/vt/value.h`
 
 ### Changes to OpenUSD while making a Swift Package
 These changes are applied by `SwiftUsd/scripts/make-swift-package`, after `build_usd.py` has finished compiling OpenUSD. (This list is non-exhaustive, see `SwiftUsd/scripts/make-swift-package` for full details)

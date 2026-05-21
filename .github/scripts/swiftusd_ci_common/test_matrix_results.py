@@ -156,8 +156,15 @@ class TestMatrixResult:
     @toolchain_provider.setter
     def toolchain_provider(self, value): self.data["matrix_instance"]["toolchain_provider"] = value
 
-    @property
-    def isFailure(self): return self.returncode != 0
+    def matchesOutcome(self, outcome):
+        if outcome == "build failure":
+            return self.returncode != 0 and self.action == "build"
+        elif outcome == "test failure":
+            return self.returncode != 0 and self.action == "test"
+        elif outcome == "success":
+            return self.returncode == 0
+        else:
+            raise ValueError(f"Unknown outcome '{outcome}'")
 
     def write(self):
         with open(Environment.Path.matrix_result, "w") as f:
@@ -302,8 +309,8 @@ def formExtractedLinesFromResults(axes, results):
 
     return "\n".join(ans)
 
-def find_hypothesis(axes, test_cases, action):
-    print(f"Finding {action} hypothesis with axes:")
+def find_hypothesis(axes, test_cases, outcome):
+    print(f"Finding {outcome} hypothesis with axes:")
     pprint.pprint(axes)
     print("and test cases:")
     print([x.summary(axes) for x in test_cases])
@@ -311,19 +318,22 @@ def find_hypothesis(axes, test_cases, action):
 
     hyperplanes = [Hyperplane([])]
 
-    capitalizedAction = action[0].upper() + action[1:]
-    result = [
-        f"❌ {capitalizedAction} failures occurred in these combinations:",
-    ]
+    result = []
+
+    if outcome == "success":
+        result.append(f"✅ Successes occurred in these combinations:")
+    else:
+        capitalizedOutcome = outcome[0].upper() + outcome[1:]
+        result.append(f"❌ {capitalizedOutcome}s occurred in these combinations:")
 
     test_cases = copy.deepcopy(test_cases)
 
     while hyperplanes:
         h = hyperplanes.pop(0)
         intersection = h.getTestCaseIntersection(test_cases)
-        if all([not x.isFailure for x in intersection]):
+        if all([not x.matchesOutcome(outcome) for x in intersection]):
             continue
-        if all([x.isFailure and x.action == action for x in intersection]):
+        if all([x.matchesOutcome(outcome) for x in intersection]):
             title = f"{h} ({len(intersection)} instances)"
             body = formExtractedLinesFromResults(axes, intersection)
 

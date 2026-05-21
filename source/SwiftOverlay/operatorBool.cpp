@@ -20,11 +20,6 @@
 
 #include "swiftUsd/SwiftOverlay/operatorBool.h"
 
-#define BOOL_DEF(TYPE) \
-    bool Overlay::_operatorBool(const TYPE& x) {\
-        return (bool) x;\
-    }
-
 
 bool __Overlay::convertToBool(const pxr::TfRefPtr<pxr::UsdStage>& x) {
     return (bool) x;
@@ -75,5 +70,17 @@ bool __Overlay::convertToBool(const pxr::SdfRelationshipSpecHandle& x) {
     return (bool) x;
 }
 bool __Overlay::convertToBool(const pxr::SdfPseudoRootSpecHandle& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const pxr::ArResolvedPath& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const pxr::SdfZipFile& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const Overlay::HioImageWrapper& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const pxr::HgiTextureHandle& x) {
     return (bool) x;
 }

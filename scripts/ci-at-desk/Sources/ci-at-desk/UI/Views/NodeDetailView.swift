@@ -121,11 +121,11 @@ struct NodeDetailView: View {
             ToolbarItemGroup {
                 HStack {
                     Text("Lines before: \(searchInfo.linesBefore)")
-                    Stepper("Lines before", value: $searchInfo.linesBefore, in: 0...100)
+                    Stepper("Lines before", value: $searchInfo.linesBefore, in: 0...1000)
                 }
                 HStack {
                     Text("Lines after: \(searchInfo.linesAfter)")
-                    Stepper("Lines after", value: $searchInfo.linesAfter, in: 0...100)
+                    Stepper("Lines after", value: $searchInfo.linesAfter, in: 0...1000)
                 }
             }
         }

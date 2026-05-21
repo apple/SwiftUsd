@@ -2677,7 +2677,7 @@ Use this extension method sparingly!
 - `pxr.UsdSkelImagingDataSourceBlendShapePrim`
 - `pxr.UsdSkelImagingDataSourceBlendShapePrimAtomicHandle`
 - `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrim`
-- `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimHandle`
+- `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimAtomicHandle`
 - `pxr.UsdSkelImagingResolvedSkeletonSchema`
 - `pxr.UsdSkelImagingResolvedSkeletonSchema.Builder`
 - `pxr.UsdSkelImagingDataSourceXformResolver`

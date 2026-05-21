@@ -18,23 +18,28 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
-#include "swiftUsd/SwiftOverlay/VtDictionary.h"
+#ifndef SWIFTUSD_UTIL_OPERATORSTARPROXY_H
+#define SWIFTUSD_UTIL_OPERATORSTARPROXY_H
 
-std::pair<pxr::VtDictionary::iterator, bool> __Overlay::insert(pxr::VtDictionary* d, const pxr::VtDictionary::value_type& obj) {
-    return d->insert(obj);
-}
-pxr::VtDictionary::const_iterator __Overlay::find(const pxr::VtDictionary& d, const std::string& key) {
-    return d.find(key);
-}
-pxr::VtDictionary::iterator __Overlay::findMutating(pxr::VtDictionary* d, const std::string& key) {
-    return d->find(key);
-}
-pxr::VtValue __Overlay::operatorSubscript(const pxr::VtDictionary& d, const std::string& key, bool* isValid) {
-    auto it = d.find(key);
-    *isValid = it != d.end();
-    return *isValid ? it->second : pxr::VtValue();
-}
-pxr::VtDictionary::iterator __Overlay::erase(pxr::VtDictionary* d, const pxr::VtDictionary::iterator& it) {
-    return d->erase(it);
+namespace __Overlay {
+    // A proxy over an object with an `operator*()` method. Useful
+    // for providing our own protocol conformances to certain Swift-Cxx interop
+    // synthesized protocols where the compiler does the wrong thing. 
+    template <typename T>
+    struct OperatorStarProxy {
+        T impl;
+        
+        OperatorStarProxy(T impl) :
+            impl(impl) {}
+        
+        decltype(impl.operator*())  operator*() const {
+            return impl.operator*();
+        }
+        
+        decltype(impl.operator->())  operator->() const {
+            return impl.operator->();
+        }
+    };
 }
 
+#endif /* SWIFTUSD_UTIL_OPERATORSTARPROXY_H */

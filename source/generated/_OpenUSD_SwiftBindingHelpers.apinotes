@@ -215,11 +215,6 @@ Namespaces:
     SwiftRetainOp: immortal
     SwiftReleaseOp: immortal
 
-  - Name: VtValue
-    Methods:
-    - Name: Ref
-      SwiftName: __RefUnsafe()
-
   - Name: ArResolvedPath
     Methods:
     - Name: GetPathString

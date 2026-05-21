@@ -47,6 +47,7 @@ class Environment:
         swiftly_assume_installed = os.getenv("SWIFTLY_ASSUME_INSTALLED")
         swiftly_denylist = os.getenv("SWIFTLY_DENYLIST")
         xcode_denylist = os.getenv("XCODE_DENYLIST")
+        n_combinations = os.getenv("N_COMBINATIONS")
 
     class Path:
         swiftusd = _getenvpath("SWIFTUSD_PATH")

@@ -428,8 +428,7 @@ struct SwiftPackage {
             case let x where x == ".DS_Store" || x == "Package.swift.in" || x.hasSuffix(".md"):
                 continue
             default:
-                print(fileURL)
-                fatalError()
+                fatalError("\(fileURL)")
             }
             
             // Concat the ancestor directory and the relative path to the file from within the repo sources

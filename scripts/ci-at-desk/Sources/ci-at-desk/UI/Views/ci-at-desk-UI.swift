@@ -28,6 +28,7 @@ struct ci_at_desk_UI: App {
     
     static var initialConfigFile: URL?
     static var readOnly = false
+    static var noStreamingReadOnly: Bool = false
     
     var body: some Scene {
          Window("ci-at-desk", id: "MainWindow") {

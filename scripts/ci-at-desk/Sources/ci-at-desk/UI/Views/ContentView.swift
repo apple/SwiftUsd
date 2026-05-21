@@ -28,7 +28,8 @@ struct ContentView: View {
     @State private var selection: HierarchicalTableView.Node?
     
     @State private var searchText: String = ""
-    
+    @State private var autoSampler = SystemMetricsSampler.AutoSampler()
+        
     var body: some View {
         NavigationSplitView {
             VStack(alignment: .leading) {
@@ -55,5 +56,8 @@ struct ContentView: View {
             model.cancel()
         }
         .alert("Invalid YAML config file", isPresented: $model.isShowingInvalidYamlAlert) {}
+        .withSnappingVSplitView {
+            OverallSystemMetricsView(autoSampler: autoSampler)
+        }
     }
 }

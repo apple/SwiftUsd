@@ -111,8 +111,8 @@ def getVersionOfToolchainProvider(x):
     return result
 
 def isVersionLessThan(a, b):
-    a_parts = a.removesuffix("-snapshot").split(".")
-    b_parts = b.removesuffix("-snapshot").split(".")
+    a_parts = re.split(r"[-\.]", a)
+    b_parts = re.split(r"[-\.]", b)
     
     for i in range(min(len(a_parts), len(b_parts))):
         try:
@@ -128,7 +128,10 @@ def isVersionLessThan(a, b):
         if a_part < b_part: return True
         if b_part < a_part: return False
 
-    return False    
+    return False
+
+def isVersionLessThanOrEqual(a, b):
+    return a == b or isVersionLessThan(a, b)
 
 # MARK: Actions
 

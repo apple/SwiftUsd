@@ -25,12 +25,23 @@
 #include <string>
 #include "pxr/pxr.h"
 #include "pxr/base/vt/dictionary.h"
+#include "pxr/usd/usd/notice.h"
+#include "swiftUsd/Util/OperatorStarProxy.h"
 
 namespace __Overlay {
     std::pair<pxr::VtDictionary::iterator, bool> insert(pxr::VtDictionary* d, const pxr::VtDictionary::value_type& obj);
     pxr::VtDictionary::const_iterator find(const pxr::VtDictionary& d, const std::string& key);
     pxr::VtDictionary::iterator findMutating(pxr::VtDictionary* d, const std::string& key);
     pxr::VtValue operatorSubscript(const pxr::VtDictionary& d, const std::string& key, bool* isValid);
+    pxr::VtDictionary::iterator erase(pxr::VtDictionary* d, const pxr::VtDictionary::iterator& it);
+
+
+    typedef OperatorStarProxy<pxr::VtDictionary::const_iterator> VtDictionary_const_iterator__operatorStarProxy;
+    typedef OperatorStarProxy<pxr::VtDictionary::iterator> VtDictionary_iterator__operatorStarProxy;
+}
+
+namespace __Overlay {
+    typedef OperatorStarProxy<pxr::UsdNotice::ObjectsChanged::PathRange::iterator> UsdNotice_ObjectsChanged_PathRange_iterator__operatorStarProxy;
 }
 
 #endif /* SWIFTUSD_SWIFTOVERLAY_VTDICTIONARY_H */

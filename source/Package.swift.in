@@ -47,7 +47,7 @@ let package = Package(
                 path: "${generated-package-prefix}Sources/OpenUSD",
                 swiftSettings: [
                     .interoperabilityMode(.Cxx)
-                ]),
+                ] + conditionalSwiftSettings()),
 
         .macro(name: "_OpenUSD_MacroImplementations",
                dependencies: [
@@ -58,13 +58,33 @@ let package = Package(
                 
         .target(name: "_OpenUSD_SwiftBindingHelpers",
                 dependencies: cppTarget_dependencies(),
-                path: "${generated-package-prefix}Sources/_OpenUSD_SwiftBindingHelpers")
+                path: "${generated-package-prefix}Sources/_OpenUSD_SwiftBindingHelpers",
+                cxxSettings: conditionalCxxSettings()),
                 
     ] + xcframeworkBinaryTargets(),
     cxxLanguageStandard: .gnucxx17
 )
 
 
+
+// Workaround for rdar://136716355 (Clang in Swift toolchain can't find swift/bridging).
+// To use a Swiftly toolchain with SwiftUsd, clone SwiftUsd, then edit SwiftUsd/Package.swift
+// (not SwiftUsd/source/Package.swift.in) and change `swiftBridgingPath()` to return the result of running
+// `realpath $(dirname $(swiftly run which swift +main-snapshot))/../include` in a Terminal window.
+// (You can replace `+main-snapshot` with the Swiftly toolchain selector you want to use.)
+func swiftBridgingPath() -> String? {
+    nil
+}
+
+func conditionalSwiftSettings() -> [SwiftSetting] {
+    guard let p = swiftBridgingPath() else { return [] }
+    return [.unsafeFlags(["-Xcc", "-isystem\(p)"])]
+}
+
+func conditionalCxxSettings() -> [CXXSetting] {
+    guard let p = swiftBridgingPath() else { return [] }
+    return [.unsafeFlags(["-isystem\(p)"])]
+}
 
 // There are a lot of XCFrameworks that need to get wrapped,
 // so we list them after the package initializer

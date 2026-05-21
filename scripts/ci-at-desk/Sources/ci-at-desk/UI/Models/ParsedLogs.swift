@@ -248,16 +248,29 @@ fileprivate func contentsOrEmpty(at: URL) -> String {
             }
         }
         if ci_at_desk_UI.readOnly {
-            Task {
-                _ = try await Subprocess.run(
-                    .name("tail"),
-                    arguments: ["-f", "-n+0", directory.appending(path: "log.txt").absoluteURL.path(percentEncoded: false)],
-                    preferredBufferSize: 1,
-                ) { execution, output in
+            let urlToRead = directory.appending(path: "log.txt").absoluteURL
+            
+            if ci_at_desk_UI.noStreamingReadOnly {
+                _ = Task.detached {
+                    let contents = try String(contentsOf: urlToRead, encoding: .utf8)
+                    let lines = contents.components(separatedBy: .newlines)
+                    let messages = lines.map { Self.parseMessage($0) }
                     Task { @MainActor in
-                        for try await line in output.lines() {
-                            let parsedMessage = Self.parseMessage(line)
-                            self.addMessages([parsedMessage])
+                        self.addMessages(messages)
+                    }
+                }
+            } else {
+                _ = Task {
+                    _ = try await Subprocess.run(
+                        .name("tail"),
+                        arguments: ["-f", "-n+0", urlToRead.path(percentEncoded: false)],
+                        preferredBufferSize: 1,
+                    ) { execution, output in
+                        Task { @MainActor in
+                            for try await line in output.lines() {
+                                let parsedMessage = Self.parseMessage(line)
+                                self.addMessages([parsedMessage])
+                            }
                         }
                     }
                 }
@@ -265,7 +278,7 @@ fileprivate func contentsOrEmpty(at: URL) -> String {
         }
     }
     
-    private static func parseMessage(_ line: String) -> InProcessLogNotificationHandler.Message {
+    private nonisolated static func parseMessage(_ line: String) -> InProcessLogNotificationHandler.Message {
         // step-Build-Tests 2026-04-21T18:55:18.475Z DEBUG [[]]: note: Using global toolchain override 'Swift 6.3 Release 2026-04-13 (a)'. (in target 'SwiftSyntaxMacros' from project 'swift-syntax')
         // LABEL, SPACE, TIMESTAMP, SPACE, LEVEL, SPACE, LBRACE, METADATA, RBRACE, COLON, SPACE, MESSAGE
         

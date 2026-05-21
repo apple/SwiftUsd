@@ -168,7 +168,7 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
                 }
             }
         }
-        let runResult = try await withTimeout(step.timeout) { [env, workingDirectory = FilePath(fileSystemHelper.swiftUsdWorkspaceDirectory)] in
+        let runResult = try await withTimeout(step.timeout * context.yamlConfig.timeoutScaleFactor) { [env, workingDirectory = FilePath(fileSystemHelper.swiftUsdWorkspaceDirectory)] in
             try await Subprocess.run(
                 .name(evaluatedRunCommand.first!),
                 arguments: Arguments(Array(evaluatedRunCommand.dropFirst())),
@@ -177,7 +177,7 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
                 output: .fileDescriptor(writeFileDescriptor, closeAfterSpawningProcess: true),
                 error: .combinedWithOutput,
             )
-        } onTimeout: { [logger, timeout = step.timeout] in
+        } onTimeout: { [logger, timeout = step.timeout * context.yamlConfig.timeoutScaleFactor] in
             logger.error("Step timed out after \(timeout)")
         }
         
@@ -292,9 +292,10 @@ internal struct StepRunner: ~Copyable, RunnerProtocol {
                 let arguments: Subprocess.Arguments = [
                     "-r", // rsync recursively
                     "--filter=:- .gitignore", // don't copy anything in gitignore
-                    fileSystemHelper.swiftUsdSrcDirectory.absoluteURL.path(percentEncoded: false),
-                    // rsync into the workspace dir
-                    fileSystemHelper.swiftUsdWorkspaceDirectory.deletingLastPathComponent().absoluteURL.path(percentEncoded: false),
+                    // Trailing slash to tell rsync to copy the contents of the directory, not the dir itself
+                    fileSystemHelper.swiftUsdSrcDirectory.absoluteURL.path(percentEncoded: false) + "/",
+                    // copy _into_ the SwiftUsd workspace dir
+                    fileSystemHelper.swiftUsdWorkspaceDirectory.absoluteURL.path(percentEncoded: false),
                     "--exclude=.git", // don't care about git history
                     "--exclude=docs", // don't care about compiled docs
                     "--exclude=SwiftUsd.doccarchive", // don't care about compiled docs

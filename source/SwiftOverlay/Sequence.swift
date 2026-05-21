@@ -101,13 +101,36 @@ extension pxr.VtDictionary: CxxDictionary, CxxSequence {
     }
     @discardableResult
     public mutating func __eraseUnsafe(_ iter: RawMutableIterator) -> RawMutableIterator {
-        erase(iter)
+        __Overlay.erase(&self, iter)
     }
 }
 
 extension pxr.VtDictionary.const_iterator: UnsafeCxxInputIterator {}
 extension pxr.VtDictionary.iterator: UnsafeCxxMutableInputIterator {}
+#if compiler(>=6.4)
+// Starting in Swift 6.4, UnsafeCxxInputIterator's requirements change slightly,
+// in a way where we need to help the compiler
+extension pxr.VtDictionary.const_iterator {
+    public var pointee: value_type {
+        borrowing get { __operatorStar().pointee }
+    }
+    public typealias DereferenceResult = __Overlay.VtDictionary_const_iterator__operatorStarProxy
+    public borrowing func __operatorStar() -> DereferenceResult {
+        .init(self)
+    }
+}
 
+extension pxr.VtDictionary.iterator {
+    public var pointee: value_type {
+        borrowing get { __operatorStar().pointee }
+        set { __operatorStar().pointee = newValue }
+    }
+    public typealias DereferenceResult = __Overlay.VtDictionary_iterator__operatorStarProxy
+    public borrowing func __operatorStar() -> DereferenceResult {
+        .init(self)
+    }
+}
+#endif // #if compiler(>=6.4)
 
 
 
@@ -134,6 +157,20 @@ extension pxr.UsdNotice.ObjectsChanged.PathRange: CxxSequence {
     public typealias RawIterator = pxr.UsdNotice.ObjectsChanged.PathRange.iterator
 }
 extension pxr.UsdNotice.ObjectsChanged.PathRange.iterator: UnsafeCxxInputIterator {}
+#if compiler(>=6.4)
+// Starting in Swift 6.4, UnsafeCxxInputIterator's requirements change slightly,
+// in a way where we need to help the compiler
+extension pxr.UsdNotice.ObjectsChanged.PathRange.iterator {
+    public var pointee: pxr.SdfPath {
+        borrowing get { __operatorStar().pointee }
+    }
+    public typealias DereferenceResult = __Overlay.UsdNotice_ObjectsChanged_PathRange_iterator__operatorStarProxy
+    public borrowing func __operatorStar() -> DereferenceResult {
+        .init(self)
+    }
+}
+#endif // #if compiler(>=6.4)
+
 
 extension pxr.GfMultiInterval: CxxSequence {
     public typealias RawIterator = pxr.GfMultiInterval.const_iterator

@@ -22,13 +22,23 @@ from swiftusd_ci_common import *
 import argparse
 import json
 
-def explain_errors(axes, results, action):
-    if any([x for x in results if x.returncode != 0 and x.action == action]):
-        hypothesis = find_hypothesis(axes, results, action)
+def perform_high_level_breakdown(results):
+    n_build_errors = len([x for x in results if x.matchesOutcome("build failure")])
+    n_test_errors = len([x for x in results if x.matchesOutcome("test failure")])
+    n_successes = len([x for x in results if x.matchesOutcome("success")])
+    n_total = Environment.TestCombination.n_combinations
+    printAndWrite(summary=f"Build errors: {n_build_errors}, test errors: {n_test_errors}, successes: {n_successes}, total test combinations: {n_total}")
+
+def explain_outcomes(axes, results, outcome):
+    if any([x for x in results if x.matchesOutcome(outcome)]):
+        hypothesis = find_hypothesis(axes, results, outcome)
         printAndWrite(summary=hypothesis)
 
     else:
-        printAndWrite(summary=f"✅ No {action} errors occurred")
+        if outcome == "success":
+            printAndWrite(summary=f"❌ No successes occurred")
+        else:
+            printAndWrite(summary=f"✅ No {outcome}s occurred")
 
 def explain_times(axes, results, action):
     timesAndInstances = []
@@ -65,63 +75,18 @@ def explain_times(axes, results, action):
 
     printAndWrite(summary=collapsedSection(title=title, body=body))
 
-def makeFakeData():
-    """Make fake test matrix result data, for testing summarization"""
-    print("Making fake data...")
-    result = []
-    for target_platform in ["macOS", "iOSSimulator", "visionOSSimulator"]:
-        for config in ["Debug", "Release"]:
-            for build_system in ["xcodebuild-xcodeproj", "swiftbuild-SPM-Tests", "xcodebuild-SPM-Tests"]:
-                isFailure = False
-                action = "test"
-
-                if target_platform == "macOS" and config == "Release":
-                    isFailure = True
-
-                if build_system == "swiftbuild-SPM-Tests":
-                    isFailure = True
-
-                if target_platform == "macOS" and build_system == "xcodebuild-xcodeproj":
-                    continue
-
-                if build_system == "swiftbuild-SPM-Tests" and target_platform != "macOS":
-                    continue
-
-                if target_platform == "iOSSimulator" and config == "Debug" and build_system == "xcodebuild-xcodeproj":
-                    isFailure = True
-                    action = "build"
-
-                x = TestMatrixResult()
-                x.action = action
-                x.returncode =  1 if isFailure else 0
-                x.target_platform = target_platform
-                x.config = config
-                x.build_system = build_system
-                x.extracted_lines = [
-                    "err 3",
-                    "err 4"
-                ]
-                x.build_time = 301.2
-                x.test_time = 24.5
-
-                result.append(x)
-    return result
-
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--makeFakeData", action="store_true")
-    args = parser.parse_args()
-
     results = TestMatrixResult.load_all()
 
-    if args.makeFakeData:
-        results = makeFakeData()
-
     axes = Axes.fromTestMatrixResults(results)
-    explain_errors(axes, results, "build")
+    perform_high_level_breakdown(results)
     printAndWrite(summary="")
-    explain_errors(axes, results, "test")
+    explain_outcomes(axes, results, "build failure")
+    printAndWrite(summary="")
+    explain_outcomes(axes, results, "test failure")
+    printAndWrite(summary="")
+    explain_outcomes(axes, results, "success")
     printAndWrite(summary="")
 
     superTitle = f"All extracted lines: ({len(results)} combinations)"

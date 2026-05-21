@@ -56,6 +56,7 @@ jobs:
         outputs:
             matrix: ${{ steps.matrix.outputs.matrix }}
             max-parallel: ${{ steps.matrix.outputs.max-parallel }}
+            n-combinations: ${{ steps.matrix.outputs.n-combinations }}
         env:
             SWIFTLY_DENYLIST: "-"
             XCODE_DENYLIST: "-"
@@ -153,7 +154,7 @@ jobs:
     Summarize-Test-Results:
       if: ${{ !cancelled() }}
       runs-on: [self-hosted, macos]
-      needs: [Run-Tests-Once]
+      needs: [Define-Test-Matrix, Run-Tests-Once]
       name: Summarize Test Results
       steps:
         - name: Check out repository code
@@ -174,3 +175,4 @@ jobs:
             python3 ./.github/scripts/summarize-test-matrix-results.py
           env:
             MATRIX_RESULTS_PATH: ${{ github.workspace }}/../matrix-results
+            N_COMBINATIONS: ${{ needs.Define-Test-Matrix.outputs.n-combinations }}

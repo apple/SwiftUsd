@@ -11,6 +11,11 @@ Changes to SwiftUsd
     ```
 }
 
+### 7.0.1
+Released 2026-06-04, based on OpenUSD v26.05
+- Enable compatibility with Swift main-snapshot-2026-05-27
+- Small improvements to ci-at-desk
+
 ### 7.0.0
 Released 2026-05-14, based on OpenUSD v26.05
 - Move from OpenUSD v26.03 to v26.05

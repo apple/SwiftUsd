@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_UsdShadeValidators.framework/Versions/A/Usd_UsdShadeValidators</string>
+			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
 			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
+			<string>ios-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdShadeValidators.framework</string>
 			<key>SupportedArchitectures</key>
@@ -16,7 +16,9 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>macos</string>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -38,7 +40,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
+			<string>ios-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdShadeValidators.framework</string>
 			<key>SupportedArchitectures</key>
@@ -47,8 +49,20 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_UsdShadeValidators.framework/Versions/A/Usd_UsdShadeValidators</string>
+			<key>LibraryIdentifier</key>
+			<string>macos-arm64</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdShadeValidators.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>macos</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -63,20 +77,6 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdShadeValidators.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

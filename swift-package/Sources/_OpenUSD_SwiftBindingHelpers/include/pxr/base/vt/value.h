@@ -38,6 +38,7 @@
 #include <iosfwd>
 #include <typeinfo>
 #include <type_traits>
+#include <swift/bridging>
 
 PXR_NAMESPACE_OPEN_SCOPE
 
@@ -1229,12 +1230,12 @@ public:
     /// Return a VtValueRef that refers to the current object held by this
     /// VtValue.  The returned VtValueRef is invalidated and must not be used
     /// after this VtValue is modified or destroyed.
-    VT_API VtValueRef Ref() const &;
+    VT_API VtValueRef Ref() const & SWIFT_NAME(__RefUnsafe());
 
     /// Return a VtValueRef that refers to the current object held by this
     /// rvalue VtValue.  The returned VtValueRef is invalidated and must not be
     /// used after this VtValue is modified or destroyed.
-    VT_API VtValueRef Ref() &&;
+    VT_API VtValueRef Ref() && SWIFT_NAME(__RefMutatingUnsafe());
 
     /// Implicitly convert to VtValueRef.
     VT_API operator VtValueRef() const &;

@@ -1642,6 +1642,7 @@ module _OpenUSD_SwiftBindingHelpers {
     header "swiftUsd/TfNotice/Listener.h"
     header "swiftUsd/TfNotice/ListenerHolder.h"
     header "swiftUsd/TfNotice/SwiftKey.h"
+    header "swiftUsd/Util/OperatorStarProxy.h"
     header "swiftUsd/Util/TypeTraits.h"
     header "swiftUsd/Util/Util.h"
     header "swiftUsd/Work/DetachedTask.h"

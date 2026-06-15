@@ -55,6 +55,8 @@ This Swift Package provides a number of protocol conformances to make OpenUSD mo
 - <doc:SwiftCxxMacros>
 
 ### Technical details
+- <doc:WritingAndUsingOpenUSDPlugins>
+- <doc:SwiftSubclassCxx>
 - <doc:DetectingOpenUSDFeatureFlags>
 - <doc:BuildingLocally>
 - <doc:ChangesToOpenUSD>

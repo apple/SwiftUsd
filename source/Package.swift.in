@@ -31,7 +31,9 @@ let package = Package(
         .library(name: "OpenUSD", targets: [
             "_OpenUSD_SwiftBindingHelpers",
             "OpenUSD"
-        ])
+        ]),
+        .plugin(name: "build-vanilla-openusd-plugin", targets: ["build-vanilla-openusd-plugin"]),
+        .plugin(name: "generate-plug-info-json", targets: ["generate-plug-info-json"]),
     ],
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-syntax.git", "600.0.0-latest"..."603.0.0"),
@@ -60,6 +62,16 @@ let package = Package(
                 dependencies: cppTarget_dependencies(),
                 path: "${generated-package-prefix}Sources/_OpenUSD_SwiftBindingHelpers",
                 cxxSettings: conditionalCxxSettings()),
+
+        .plugin(name: "generate-plug-info-json",
+                capability: .buildTool(),
+                path: "${generated-package-prefix}Plugins/generate-plug-info-json"),
+
+        .plugin(name: "build-vanilla-openusd-plugin",
+                capability: .command(
+                    intent: .custom(verb: "build-vanilla-openusd-plugin", description: "Builds an OpenUSD plugin for use with vanilla OpenUSD installs")
+                ),
+                path: "${generated-package-prefix}Plugins/build-vanilla-openusd-plugin"),
                 
     ] + xcframeworkBinaryTargets(),
     cxxLanguageStandard: .gnucxx17

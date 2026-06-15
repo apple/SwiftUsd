@@ -126,14 +126,19 @@ struct Framework: Sendable {
             // except that we use a capital-R for macOS bundle.
             // `../../../../*.framework/Resources/` finds hydra plugin definitions
             // after Xcode has processed XCFrameworks to extract the platform's framework
-            // In both bases, `Resources_iOS` is where the resources live in an iOS bundle
+            // In both bases, `Resources_iOS` is where the resources live in an iOS bundle.
+            // To support OpenUSD plugins distributed with SPM, we bootstrap to either plugInfo_macOS.json
+            // or plugInfo_iOS.json within a bundle, because the dylibs will live in different places
+            // relative to the bundle, and there's no way to conditionalize that in USD's eyes.
             let plugInfoContents = """
             {
                 "Includes": [
                     "*/Resources/",
                     "*/Resources_iOS/",
                     "../../../../*.framework/Resources/",
-                    "../../*.framework/Resources_iOS/"
+                    "../../*.framework/Resources_iOS/",
+                    "../../../../../Resources/*.bundle/Contents/Resources/plugInfo_macOS.json",
+                    "../../../*.bundle/plugInfo_iOS.json"
                 ]
             }
             

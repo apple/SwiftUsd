@@ -43,6 +43,7 @@ Checklist for releasing new versions of SwiftUsd
         1. Links to vanilla OpenUSD source files on GitHub
         1. Default openusd-ref in .github/workflows/build-swiftusd.yml
         1. ci-at-desk sample YAML config file
+        1. `PXR_VERSION` in `source/_OpenUSD_MacroImplementations/PluginAndTfMacros.swift`
     1. Pixar namespace
         1. [Getting Started, "Using SwiftUsd"](<doc:GettingStarted#Using-SwiftUsd>)
         1. [Getting Started, "Common Issues"](<doc:GettingStarted#Common-issues>)

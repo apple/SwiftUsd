@@ -49,8 +49,10 @@ SwiftUsd is currently a work-in-progress. Here is a list of potential future imp
     - Should propagate to computed properties and function bodies in views
     - Should be able to wire up a model to observation tracking, so app models that vend wrapper types for Usd data are compatible
     - Use macros in unit tests to catch observation keypaths by tracking the same way SwiftUI does
-- Add support for custom file format plugins implemented in Swift
-    - Requires supporting static initialization in Swift via `@_section`. Could probably be wrapped in a macro
+- ~~Add support for custom file format plugins implemented in Swift~~
+    - Swift plugin support added in SwiftUsd 8.0.0
+    - ~~Requires supporting static initialization in Swift via `@_section`. Could probably be wrapped in a macro~~
+
 - ~~Investigate if SwiftUsd works on Linux~~
     - Experimental Linux support added in SwiftUsd 2.0.1
 - Add Swift function body macros for validity warning

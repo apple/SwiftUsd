@@ -54,16 +54,6 @@ struct CLIArgs: AsyncParsableCommand {
         #endif
     }()
     
-    @Option(name: .customLong("copy-plugins"),
-            help: nil, // todo
-            transform: URL.init(fileURLWithPath:))
-    var copiedPlugins: [URL] = []
-    
-    @Option(name: .customLong("symlink-plugins"),
-            help: nil, // todo
-            transform: URL.init(fileURLWithPath:))
-    var symlinkedPlugins: [URL] = []
-    
     @Option(help: "Controls whether `SwiftUsd/source` is copied or symlinked into the generated package directory.")
     var sourceStrategy: SourceStrategy = .symlink
     
@@ -103,10 +93,6 @@ struct CLIArgs: AsyncParsableCommand {
             throw ValidationError("--usd-install-strategy copy-and-bundle is only supported on Apple platforms.")
         }
 #endif
-        
-        if !copiedPlugins.isEmpty || !symlinkedPlugins.isEmpty {
-            throw ValidationError("Custom Usd plugins are not supported yet. Remove --copy-plugins and --symlink-plugins options.")
-        }
         
 #if !os(macOS)
         if checksummedArtifactsDir != nil || artifactsHostingURL != nil {

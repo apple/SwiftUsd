@@ -114,6 +114,8 @@ struct MacroPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         TF_VERIFY_Macro.self,
         TF_AXIOM_Macro.self,
-        TF_DEV_AXIOM_Macro.self
+        TF_DEV_AXIOM_Macro.self,
+        TF_REGISTRY_FUNCTION_Macro.self,
+        SWIFTUSD_PLUGIN_Macro.self
     ]
 }

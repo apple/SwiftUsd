@@ -1,0 +1,52 @@
+#usda 1.0
+(
+    upAxis = "Y"
+)
+
+def Mesh "MyMesh" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    float3[] extent = [(-3, -1, 0), (3, 1, 0)]
+    int[] faceVertexCounts = [4]
+    int[] faceVertexIndices = [0, 1, 2, 3]
+    rel material:binding = <MyMat>
+    point3f[] points = [(-3, -1, 0), (3, -1, 0), (3, 1, 0), (-3, 1, 0)]
+    texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+        interpolation = "vertex"
+    )
+    uniform token subdivisionScheme = "none"
+
+    def Material "MyMat"
+    {
+        token outputs:surface.connect = <MyPreviewSurface.outputs:surface>
+
+        def Shader "MyPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = <../diffuseTexture.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:roughness = 1
+            token outputs:surface
+        }
+
+        def Shader "stReader"
+        {
+            uniform token info:id = "UsdPrimvarReader_float2"
+            string inputs:varname = "st"
+            float2 outputs:result
+        }
+
+        def Shader "diffuseTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @myImage.ppm@
+            float2 inputs:st.connect = <../stReader.outputs:result>
+            token inputs:wrapS = "clamp"
+            token inputs:wrapT = "clamp"
+            token inputs:magFilter = "nearest"
+            token inputs:minFilter = "nearest"
+            float3 outputs:rgb
+        }
+    }
+}

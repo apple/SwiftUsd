@@ -420,8 +420,11 @@ struct SwiftPackage {
                 destParent = fsInfo.swiftUsdPackage.sources_OpenUSD_SwiftBindingHelpers
             case let x where x.hasSuffix(".swift") || x.hasSuffix(".metal") || x.hasSuffix(".usdz"):
                 let sourceMacroImplementations = fsInfo.swiftUsdPackage.repoSource.appending(path: fsInfo.swiftUsdPackage.sources_OpenUSD_MacroImplementations.lastPathComponent)
+                let sourceSPMPlugins = fsInfo.swiftUsdPackage.repoSource.appending(path: "SPMPlugins")
                 if fileURL.path(percentEncoded: false).starts(with: sourceMacroImplementations.path(percentEncoded: false)) {
                     destParent = fsInfo.swiftUsdPackage.sources_OpenUSD_MacroImplementations
+                } else if fileURL.path(percentEncoded: false).starts(with: sourceSPMPlugins.path(percentEncoded: false)) {
+                    destParent = fsInfo.swiftUsdPackage.plugins
                 } else {
                     destParent = fsInfo.swiftUsdPackage.sourcesOpenUSD
                 }
@@ -436,6 +439,8 @@ struct SwiftPackage {
             let dest: URL
             if fileURL.lastPathComponent.hasSuffix(".apinotes") {
                 dest = destParent.appending(path: fileURL.lastPathComponent)
+            } else if destParent == fsInfo.swiftUsdPackage.plugins {
+                dest = destParent.appending(path: fileURL.urlRelative(to: fsInfo.swiftUsdPackage.repoSource).relativePath.replacingOccurrences(of: "SPMPlugins/", with: ""))
             } else {
                 dest = destParent.appending(path: fileURL.urlRelative(to: fsInfo.swiftUsdPackage.repoSource).relativePath)
             }

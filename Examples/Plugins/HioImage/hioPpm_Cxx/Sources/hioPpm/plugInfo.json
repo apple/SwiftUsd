@@ -1,0 +1,20 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "HioPpm_Image" : {
+                        "bases" : ["HioImage"],
+                        "imageTypes": ["ppm"],
+                        "precedence": 15
+                    }
+                }
+            },
+            "Name": "hioPpm",
+            "LibraryPath": "@PLUG_INFO_LIBRARY_PATH@",
+            "ResourcePath": "@PLUG_INFO_RESOURCE_PATH@",
+            "Root": "@PLUG_INFO_ROOT@",
+            "Type": "library"
+        }
+    ]
+}

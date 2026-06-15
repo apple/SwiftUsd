@@ -74,14 +74,6 @@ struct FileSystemInfo {
             result.append("- \(usdInstall.url.path(percentEncoded: false))")
         }
         result.append("Usd install strategy: \(cliArgs.usdInstallStrategy)")
-        result.append("Copied plugins:")
-        for x in cliArgs.copiedPlugins {
-            result.append("- \(x.relativePath)")
-        }
-        result.append("Symlinked plugins:")
-        for x in cliArgs.symlinkedPlugins {
-            result.append("- \(x.relativePath)")
-        }
         result.append("Source strategy: \(cliArgs.sourceStrategy)")
         result.append("Checksummed artifacts dir: \(cliArgs.checksummedArtifactsDir?.relativePath ?? "nil")")
         result.append("Artifacts hosting URL: \(cliArgs.artifactsHostingURL ?? "nil")")
@@ -203,6 +195,8 @@ extension FileSystemInfo {
         var sources_OpenUSD_SwiftBindingHelpers: URL { sources.appending(path: "_OpenUSD_SwiftBindingHelpers") }
         /// `package/Sources/_OpenUSD_MacroImplementations`
         var sources_OpenUSD_MacroImplementations: URL { sources.appending(path: "_OpenUSD_MacroImplementations") }
+        /// `package/plugins`
+        var plugins: URL { generatedSwiftPackageDir.appending(path: "Plugins") }
         /// `package/Sources/_OpenUSD_SwiftBindingHelpers/include`
         var sourcesInclude: URL { sources_OpenUSD_SwiftBindingHelpers.appending(path: "include") }
         

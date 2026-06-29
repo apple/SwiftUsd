@@ -26,6 +26,7 @@ Access these types by prefixing their name with `Overlay`
 - ``OpenUSD/Overlay/UsdPrimTypeInfoWrapper``
 - ``OpenUSD/Overlay/HioImageWrapper``
 - ``OpenUSD/Overlay/HgiWrapper``
+- ``OpenUSD/Overlay/HgiGLWrapper``
 - ``OpenUSD/Overlay/HgiMetalWrapper``
 - ``OpenUSD/Overlay/UsdImagingGLEngineWrapper``
 - ``OpenUSD/Overlay/UsdAppUtilsFrameRecorderWrapper``

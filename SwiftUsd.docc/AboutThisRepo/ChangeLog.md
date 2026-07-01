@@ -14,6 +14,7 @@ Changes to SwiftUsd
 ### TBD
 Released TBD, based on OpenUSD TBD
 - Add `Overlay.HgiGLWrapper`, exposing HgiGL alongside HgiMetal in the Swift bindings
+- Add `Overlay.ExecUsdSystem`, exposing ExecUsdSystem in the Swift bindings
 
 ### 7.0.1
 Released 2026-06-04, based on OpenUSD v26.05

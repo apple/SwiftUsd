@@ -93,9 +93,7 @@ namespace Overlay {
         // closure takes it as `borrowing`. As a consequence, any non-const methods
         // can't be called on it. So, make `SetMark()` const here, even though it's non-const
         // for `pxr::TfErrorMark`
-        inline void SetMark() const {
-            _impl->SetMark();
-        }
+        void SetMark() const;
 
         /// Return true if no new errors were posted in this thread since the last
         /// call to \c SetMark(), false otherwise.
@@ -104,18 +102,14 @@ namespace Overlay {
         /// atomic integer read and comparison. Otherwise thread-specific data is
         /// accessed to make the determination. Thus, this function is fast when
         /// diagnostics are not being issued.
-        inline bool IsClean() const {
-            return _impl->IsClean();
-        }
+        bool IsClean() const;
 
         /// Remove all errors in this mark from the error system. Return true if
         /// any errors were cleared, false if there were no errors in this mark.
         ///
         /// Clear all errors contained in this mark from the error system.
         /// Subsequently, these errors will be considered handled.
-        inline bool Clear() const {
-            return _impl->Clear();
-        }
+        bool Clear() const;
 
         /// Remove all errors in this mark from the error system and return them in
         /// a TfErrorTransport.
@@ -130,9 +124,7 @@ namespace Overlay {
         /// between Swift Concurrency tasks intentionally requires using unsafe
         /// opt-outs on the `pxr.TfErrorTransport` because it can expose
         /// unsynchronized access to shared mutable state. Use with caution.
-        inline pxr::TfErrorTransport Transport() const {
-            return _impl->Transport();
-        }
+        pxr::TfErrorTransport Transport() const;
 
         /// Remove all errors in this mark from the error system and return them in
         /// a TfErrorTransport.
@@ -145,9 +137,7 @@ namespace Overlay {
         /// between Swift Concurrency tasks intentionally requires using unsafe
         /// opt-outs on the `pxr.TfErrorTransport` because it can expose
         /// unsynchronized access to shared mutable state. Use with caution.
-        inline void TransportTo(pxr::TfErrorTransport& dest) const {
-            Transport().swap(dest);
-        }
+        void TransportTo(pxr::TfErrorTransport& dest) const;
 
         /// Return an iterator to the first error added to the error list after
         /// \c SetMark().
@@ -164,39 +154,25 @@ namespace Overlay {
         ///
         /// If \c nErrors is non-NULL, then \c *nErrors is set to the number of
         /// errors between the returned iterator and the end of the list.
-        pxr::TfErrorMark::Iterator GetBegin(size_t* _Nullable nErrors = 0) const {
-            return _impl->GetBegin(nErrors);
-        }
+        pxr::TfErrorMark::Iterator GetBegin(size_t* _Nullable nErrors = 0) const;
 
         /// Return an iterator past the last error in the error system.
         ///
         /// This iterator is always equivalent to the iterator returned by \c
         /// TfDiagnosticMgr::GetErrorEnd().
-        pxr::TfErrorMark::Iterator GetEnd() const {
-            return _impl->GetEnd();
-        }
+        pxr::TfErrorMark::Iterator GetEnd() const;
 
         /// Equivalent to GetBegin()
-        pxr::TfErrorMark::Iterator begin() const {
-            return _impl->begin();
-        }
+        pxr::TfErrorMark::Iterator begin() const;
 
         /// Equivalent to GetEnd()
-        pxr::TfErrorMark::Iterator end() const {
-            return _impl->end();
-        }
+        pxr::TfErrorMark::Iterator end() const;
         
     private:
         TfErrorMarkWrapper();
         friend Overlay::TfErrorMarkWrapper __Overlay::makeTfErrorMarkWrapper_friend();
         std::unique_ptr<pxr::TfErrorMark> _impl;
     };
-}
-
-namespace __Overlay {
-    inline  Overlay::TfErrorMarkWrapper makeTfErrorMarkWrapper() {
-        return makeTfErrorMarkWrapper_friend();
-    }
 }
 
 

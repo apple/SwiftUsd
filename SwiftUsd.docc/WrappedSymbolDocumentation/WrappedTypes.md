@@ -18,6 +18,7 @@ Since Swift-Cxx interop doesn't currently support specializing class templates f
 - ``OpenUSD/Overlay/UsdRelationship_Vector``
 - ``OpenUSD/Overlay/String_Set``
 - ``OpenUSD/Overlay/SdfLayerHandle_Set``
+- ``OpenUSD/Overlay/ExecUsdValueKey_Vector``
 
 ### Namespace Overlay
 Access these types by prefixing their name with `Overlay`
@@ -30,4 +31,4 @@ Access these types by prefixing their name with `Overlay`
 - ``OpenUSD/Overlay/HgiMetalWrapper``
 - ``OpenUSD/Overlay/UsdImagingGLEngineWrapper``
 - ``OpenUSD/Overlay/UsdAppUtilsFrameRecorderWrapper``
-
+- ``OpenUSD/Overlay/ExecUsdSystemWrapper``

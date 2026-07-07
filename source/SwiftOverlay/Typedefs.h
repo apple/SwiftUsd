@@ -44,6 +44,7 @@
 #include "pxr/base/tf/diagnosticBase.h"
 #include "pxr/base/vt/array.h"
 #include "pxr/usd/sdf/assetPath.h"
+#include "pxr/exec/execUsd/valueKey.h"
 
 namespace Overlay {
     #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -66,6 +67,7 @@ namespace Overlay {
     typedef std::vector<std::unique_ptr<pxr::TfDiagnosticBase>> TfDiagnosticBase_Unique_Ptr_Vector;
     typedef std::vector<pxr::UsdShadeInput> UsdShadeInput_Vector;
     typedef std::vector<pxr::TfRefPtr<pxr::SdfLayer>> SdfLayer_RefPtr_Vector;
+    typedef std::vector<pxr::ExecUsdValueKey> ExecUsdValueKey_Vector;
 
     typedef std::set<std::string> String_Set;
     typedef std::set<pxr::SdfLayerHandle> SdfLayerHandle_Set;

@@ -341,15 +341,20 @@ enum SystemMetricsSampler {
                 }
                 func parseTime() throws -> Double {
                     let s = try parseString(stripPlusMinus: true)
-                    let components = s.components(separatedBy: ":")
                     
-                    var result = 0.0
-                    for (i, c) in components.reversed().enumerated() {
-                        guard let d = Double(c) else { throw ParseError(message: "parseTime", index: i) }
-                        result += d * pow(60.0, Double(i))
+                    if let match = s.wholeMatch(of: #/(.+) hrs/#), let i = Int(match.output.1) {
+                        return Double(i) * 60 * 60
+                    } else {
+                        let components = s.components(separatedBy: ":")
+
+                        var result = 0.0
+                        for (i, c) in components.reversed().enumerated() {
+                            guard let d = Double(c) else { throw ParseError(message: "parseTime", index: i) }
+                            result += d * pow(60.0, Double(i))
+                        }
+
+                        return result
                     }
-                    
-                    return result
                 }
                 func parseDouble() throws -> Double {
                     guard let x = Double(try parseString(stripPlusMinus: true)) else { throw ParseError(message: "parseDouble", index: i) }

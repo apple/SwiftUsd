@@ -20,8 +20,49 @@
 
 #include "swiftUsd/Wrappers/TfErrorMarkWrapper.h"
 
+void Overlay::TfErrorMarkWrapper::SetMark() const {
+    _impl->SetMark();
+}
+
+bool Overlay::TfErrorMarkWrapper::IsClean() const {
+    return _impl->IsClean();
+}
+
+bool Overlay::TfErrorMarkWrapper::Clear() const {
+    return _impl->Clear();
+}
+
+pxr::TfErrorTransport Overlay::TfErrorMarkWrapper::Transport() const {
+    return _impl->Transport();
+}
+
+void Overlay::TfErrorMarkWrapper::TransportTo(pxr::TfErrorTransport& dest) const {
+    _impl->TransportTo(dest);
+}
+
+pxr::TfErrorMark::Iterator Overlay::TfErrorMarkWrapper::GetBegin(size_t*_Nullable nErrors) const {
+    return _impl->GetBegin(nErrors);
+}
+
+pxr::TfErrorMark::Iterator Overlay::TfErrorMarkWrapper::GetEnd() const {
+    return _impl->GetEnd();
+}
+
+pxr::TfErrorMark::Iterator Overlay::TfErrorMarkWrapper::begin() const {
+    return _impl->begin();
+}
+
+pxr::TfErrorMark::Iterator Overlay::TfErrorMarkWrapper::end() const {
+    return _impl->end();
+}
+
+
 Overlay::TfErrorMarkWrapper __Overlay::makeTfErrorMarkWrapper_friend() {
     return {};
 }
 
 Overlay::TfErrorMarkWrapper::TfErrorMarkWrapper() : _impl(std::make_unique<pxr::TfErrorMark>()) {}
+
+Overlay::TfErrorMarkWrapper __Overlay::makeTfErrorMarkWrapper() {
+    return makeTfErrorMarkWrapper_friend();
+}

@@ -97,12 +97,12 @@ pxr::ArTimestamp Overlay::ArResolverWrapper::GetModificationTimestamp(const std:
     return get()->GetModificationTimestamp(assetPath, resolvedPath);
 }
 
-std::shared_ptr<pxr::ArAsset> Overlay::ArResolverWrapper::OpenAsset(const pxr::ArResolvedPath& resolvedPath) const {
-    return get()->OpenAsset(resolvedPath);
+Overlay::ArAssetWrapper Overlay::ArResolverWrapper::OpenAsset(const pxr::ArResolvedPath& resolvedPath) const {
+    return Overlay::ArAssetWrapper(get()->OpenAsset(resolvedPath));
 }
 
-std::shared_ptr<pxr::ArWritableAsset> Overlay::ArResolverWrapper::OpenAssetForWrite(const pxr::ArResolvedPath& resolvedPath, Overlay::ArResolverWrapper::WriteMode writeMode) const {
-    return get()->OpenAssetForWrite(resolvedPath, static_cast<pxr::ArResolver::WriteMode>(writeMode));
+Overlay::ArWritableAssetWrapper Overlay::ArResolverWrapper::OpenAssetForWrite(const pxr::ArResolvedPath& resolvedPath, Overlay::ArResolverWrapper::WriteMode writeMode) const {
+    return Overlay::ArWritableAssetWrapper(get()->OpenAssetForWrite(resolvedPath, static_cast<pxr::ArResolver::WriteMode>(writeMode)));
 }
 
 bool Overlay::ArResolverWrapper::CanWriteAssetToPath(const pxr::ArResolvedPath& resolvedPath,

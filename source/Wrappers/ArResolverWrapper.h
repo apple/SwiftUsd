@@ -27,6 +27,8 @@
 #include "pxr/usd/ar/resolver.h"
 #include <memory>
 #include <vector>
+#include "swiftUsd/Wrappers/ArAssetWrapper.h"
+#include "swiftUsd/Wrappers/ArWritableAssetWrapper.h"
 
 namespace Overlay {
     class ArResolverWrapper;
@@ -272,7 +274,7 @@ namespace Overlay {
         ///
         /// The returned ArAsset object provides functions for accessing the
         /// contents of the specified asset.
-        std::shared_ptr<pxr::ArAsset> OpenAsset(
+        Overlay::ArAssetWrapper OpenAsset(
             const pxr::ArResolvedPath& resolvedPath) const;
 
         /// Enumeration of write modes for OpenAssetForWrite
@@ -300,7 +302,7 @@ namespace Overlay {
         // is open for write is implementation-specific. For example, writes to
         /// an asset may or may not be immediately visible to other threads or
         /// processes depending on the implementation.
-        std::shared_ptr<pxr::ArWritableAsset> OpenAssetForWrite(
+        Overlay::ArWritableAssetWrapper OpenAssetForWrite(
             const pxr::ArResolvedPath& resolvedPath,
             WriteMode writeMode) const;
 

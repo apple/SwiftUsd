@@ -26,60 +26,11 @@
 // pxr::TfWeakPtr<void>
 // pxr::TfRefPtr<pxr::TfRefBase>
 // pxr::TfWeakPtr<pxr::PlugRegistry>
-// pxr::VtArray<pxr::GfFrustum>
-// pxr::VtArray<pxr::GfMultiInterval>
 // pxr::VtArray<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
 // pxr::VtArray<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // pxr::VtArray<std::vector<double, std::allocator<double>>>
 // pxr::VtArray<std::vector<std::string, std::allocator<std::string>>>
 // pxr::VtArray<pxr::VtArray<int>>
-// pxr::VtArray<pxr::VtArrayEdit<bool>>
-// pxr::VtArray<pxr::VtArrayEdit<char>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatd>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuatf>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfDualQuath>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfInterval>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix2f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix3f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfMatrix4f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatd>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuaternion>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuatf>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfQuath>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange1f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange2f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRange3f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfRect2i>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2h>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec2i>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3h>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec3i>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4d>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4f>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4h>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::GfVec4i>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::TfToken>>
-// pxr::VtArray<pxr::VtArrayEdit<pxr::pxr_half::half>>
-// pxr::VtArray<pxr::VtArrayEdit<double>>
-// pxr::VtArray<pxr::VtArrayEdit<float>>
-// pxr::VtArray<pxr::VtArrayEdit<int>>
-// pxr::VtArray<pxr::VtArrayEdit<long long>>
-// pxr::VtArray<pxr::VtArrayEdit<short>>
-// pxr::VtArray<pxr::VtArrayEdit<std::string>>
-// pxr::VtArray<pxr::VtArrayEdit<unsigned char>>
-// pxr::VtArray<pxr::VtArrayEdit<unsigned int>>
-// pxr::VtArray<pxr::VtArrayEdit<unsigned long long>>
-// pxr::VtArray<pxr::VtArrayEdit<unsigned short>>
 // pxr::VtArrayEdit<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
 // pxr::VtArrayEdit<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // pxr::VtArrayEdit<std::vector<double, std::allocator<double>>>
@@ -95,6 +46,7 @@
 // pxr::VtArray<pxr::SdfPath>
 // pxr::VtArray<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArray<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
+// pxr::VtArrayEdit<pxr::SdfPath>
 // pxr::VtArrayEdit<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArrayEdit<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
 // pxr::VtArray<pxr::SdfSpecifier>
@@ -115,8 +67,6 @@
 // pxr::VtArrayEdit<pxr::SdfOpaqueValue>
 // pxr::VtArray<pxr::SdfPathExpression>
 // pxr::VtArrayEdit<pxr::SdfPathExpression>
-// pxr::VtArray<pxr::SdfTimeCode>
-// pxr::VtArrayEdit<pxr::SdfTimeCode>
 // pxr::TfWeakPtr<pxr::SdfSchemaBase>
 // pxr::VtArray<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
 // pxr::VtArrayEdit<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
@@ -362,6 +312,11 @@ extension pxr.GfRect2i: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.GfTimeCode: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.TraceAggregateTreeRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -553,6 +508,11 @@ extension pxr.VtRange3fArray: Hashable {
     }
 }
 extension pxr.VtRect2iArray: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.VtTimeCodeArray: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -793,6 +753,11 @@ extension pxr.VtRange3fArrayEdit: Hashable {
     }
 }
 extension pxr.VtRect2iArrayEdit: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.VtTimeCodeArrayEdit: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1053,11 +1018,6 @@ extension pxr.SdfPredicateExpression.FnArg: Hashable {
     }
 }
 extension pxr.SdfPredicateExpression.FnCall: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.SdfTimeCode: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1427,6 +1387,11 @@ extension pxr.UsdShadeConnectionSourceInfo: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.UsdProfileRegistry: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.UsdHydraDiscoveryPlugin: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1573,6 +1538,11 @@ extension pxr.HdTupleType: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.HdDataSourceLocator: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.HdBufferSpec: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1604,11 +1574,6 @@ extension pxr.HdSceneIndexBaseRefPtr: Hashable {
     }
 }
 extension pxr.HdSceneIndexBasePtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.HdDataSourceLocator: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1708,6 +1673,16 @@ extension pxr.HdFlatteningSceneIndexRefPtr: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.HdInstanceProxyViewSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdInstanceProxyViewSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.HdLegacyGeomSubsetSceneIndex: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1774,6 +1749,16 @@ extension pxr.HdGpGenerativeProceduralResolvingSceneIndex: Hashable {
     }
 }
 extension pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiBackPlateSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiBackPlateSceneIndexRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -2221,6 +2206,31 @@ extension pxr.UsdImagingRerootingSceneIndexRefPtr: Hashable {
     }
 }
 extension pxr.UsdImagingRerootingSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdImagingSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdImagingSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdExecImagingValueKey: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdExecImagingStageSceneIndexInterface: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }

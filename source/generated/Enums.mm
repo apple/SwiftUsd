@@ -491,6 +491,13 @@ const pxr::UsdLuxLightListAPI::ComputeMode Overlay::UsdLuxLightListAPI::ComputeM
 const pxr::UsdLuxListAPI::ComputeMode Overlay::UsdLuxListAPI::ComputeModeConsultModelHierarchyCache = pxr::UsdLuxListAPI::ComputeModeConsultModelHierarchyCache;
 const pxr::UsdLuxListAPI::ComputeMode Overlay::UsdLuxListAPI::ComputeModeIgnoreCache = pxr::UsdLuxListAPI::ComputeModeIgnoreCache;
 
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::NoPath = pxr::UsdProfileRegistry::QueryStatus::NoPath;
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::ValidPath = pxr::UsdProfileRegistry::QueryStatus::ValidPath;
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::Deprecated = pxr::UsdProfileRegistry::QueryStatus::Deprecated;
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::DeprecationConflict = pxr::UsdProfileRegistry::QueryStatus::DeprecationConflict;
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::Excepted = pxr::UsdProfileRegistry::QueryStatus::Excepted;
+const pxr::UsdProfileRegistry::QueryStatus Overlay::UsdProfileRegistry::QueryStatus::CycleFound = pxr::UsdProfileRegistry::QueryStatus::CycleFound;
+
 const pxr::UsdSkelBakeSkinningParms::DeformationFlags Overlay::UsdSkelBakeSkinningParms::DeformPointsWithSkinning = pxr::UsdSkelBakeSkinningParms::DeformPointsWithSkinning;
 const pxr::UsdSkelBakeSkinningParms::DeformationFlags Overlay::UsdSkelBakeSkinningParms::DeformNormalsWithSkinning = pxr::UsdSkelBakeSkinningParms::DeformNormalsWithSkinning;
 const pxr::UsdSkelBakeSkinningParms::DeformationFlags Overlay::UsdSkelBakeSkinningParms::DeformXformWithSkinning = pxr::UsdSkelBakeSkinningParms::DeformXformWithSkinning;
@@ -756,6 +763,7 @@ const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsPrimitive
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsIndirectCommandBuffers = pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers;
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsRoundPoints = pxr::HgiDeviceCapabilitiesBitsRoundPoints;
 const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays = pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays;
+const pxr::HgiDeviceCapabilitiesBits Overlay::HgiDeviceCapabilitiesForceEarlyFragmentTest = pxr::HgiDeviceCapabilitiesForceEarlyFragmentTest;
 
 const pxr::HgiTextureType Overlay::HgiTextureType1D = pxr::HgiTextureType1D;
 const pxr::HgiTextureType Overlay::HgiTextureType2D = pxr::HgiTextureType2D;

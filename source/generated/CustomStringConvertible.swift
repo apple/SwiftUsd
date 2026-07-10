@@ -357,6 +357,11 @@ extension pxr.GfSize3: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.GfTimeCode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.GfTransform: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -523,6 +528,11 @@ extension pxr.VtRange3fArray: CustomStringConvertible {
     }
 }
 extension pxr.VtRect2iArray: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VtTimeCodeArray: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -823,11 +833,6 @@ extension pxr.SdfPredicateExpression.FnCall.Kind: CustomStringConvertible {
     }
 }
 extension pxr.SdfPredicateExpression.Op: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.SdfTimeCode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1237,12 +1242,27 @@ extension pxr.UsdShadeConnectableAPIBehavior.ConnectableNodeTypes: CustomStringC
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.UsdLodDistanceHeuristicQuery: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.UsdLodScreenSizeHeuristicQuery: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.UsdLuxLightListAPI.ComputeMode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
 }
 extension pxr.UsdLuxListAPI.ComputeMode: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.UsdProfileRegistry.QueryStatus: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1776,6 +1796,16 @@ extension pxr.HdDepthPriority: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.HdDataSourceLocator: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.HdDataSourceLocatorSet: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.HdBufferArrayUsageHintBits: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1802,21 +1832,6 @@ extension pxr.HdGeomSubset.`Type`: CustomStringConvertible {
     }
 }
 extension pxr.HdRprimCollection: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.HdSceneIndexPrim: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.HdDataSourceLocator: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.HdDataSourceLocatorSet: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }

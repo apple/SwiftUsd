@@ -72,6 +72,7 @@ extension pxr.pxr_half.half: Comparable { // differentArgumentTypes
 }
 extension pxr.GfInterval: Comparable {} // foundBySwift
 extension pxr.GfMultiInterval: Comparable {} // foundBySwift
+extension pxr.GfTimeCode: Comparable {} // foundBySwift
 extension pxr.TraceAggregateTreeRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.TraceAggregateTreeRefPtr, rhs: pxr.TraceAggregateTreeRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -183,7 +184,6 @@ extension pxr.SdfAbstractDataPtr: Comparable { // classTemplateSpecialization
 }
 extension pxr.SdfPath: Comparable {} // foundBySwift
 extension pxr.SdfAssetPath: Comparable {} // foundBySwift
-extension pxr.SdfTimeCode: Comparable {} // foundBySwift
 extension pxr.SdfAttributeSpec: Comparable { // differentArgumentTypes
     public static func <(lhs: pxr.SdfAttributeSpec, rhs: pxr.SdfAttributeSpec) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -493,6 +493,11 @@ extension pxr.UsdRelationship: Comparable { // differentArgumentTypes
 }
 extension pxr.UsdStageCache.Id: Comparable {} // friendFunction
 extension pxr.UsdGeomPrimvar: Comparable {} // friendFunction
+extension pxr.UsdProfileRegistry: Comparable { // importedAsReference
+    public static func <(lhs: pxr.UsdProfileRegistry, rhs: pxr.UsdProfileRegistry) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.UsdHydraDiscoveryPlugin: Comparable { // importedAsReference
     public static func <(lhs: pxr.UsdHydraDiscoveryPlugin, rhs: pxr.UsdHydraDiscoveryPlugin) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -614,6 +619,7 @@ extension pxr.GlfUniformBlockRefPtr: Comparable { // classTemplateSpecialization
     }
 }
 extension pxr.HdTupleType: Comparable {} // foundBySwift
+extension pxr.HdDataSourceLocator: Comparable {} // foundBySwift
 extension pxr.HdBufferSpec: Comparable {} // foundBySwift
 extension pxr.HdReprSelector: Comparable {} // foundBySwift
 extension pxr.HdPerfLog: Comparable { // importedAsReference
@@ -636,7 +642,6 @@ extension pxr.HdSceneIndexBasePtr: Comparable { // classTemplateSpecialization
         __Overlay.operatorLess(lhs, rhs)
     }
 }
-extension pxr.HdDataSourceLocator: Comparable {} // foundBySwift
 extension pxr.HdSceneIndexObserverPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdSceneIndexObserverPtr, rhs: pxr.HdSceneIndexObserverPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -732,6 +737,16 @@ extension pxr.HdFlatteningSceneIndexRefPtr: Comparable { // classTemplateSpecial
         __Overlay.operatorLess(lhs, rhs)
     }
 }
+extension pxr.HdInstanceProxyViewSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdInstanceProxyViewSceneIndex, rhs: pxr.HdInstanceProxyViewSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdInstanceProxyViewSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdInstanceProxyViewSceneIndexRefPtr, rhs: pxr.HdInstanceProxyViewSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.HdLegacyGeomSubsetSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.HdLegacyGeomSubsetSceneIndex, rhs: pxr.HdLegacyGeomSubsetSceneIndex) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
@@ -799,6 +814,16 @@ extension pxr.HdGpGenerativeProceduralResolvingSceneIndex: Comparable { // impor
 }
 extension pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
     public static func <(lhs: pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr, rhs: pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiBackPlateSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.HdsiBackPlateSceneIndex, rhs: pxr.HdsiBackPlateSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.HdsiBackPlateSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.HdsiBackPlateSceneIndexRefPtr, rhs: pxr.HdsiBackPlateSceneIndexRefPtr) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }
@@ -1237,6 +1262,26 @@ extension pxr.UsdImagingRerootingSceneIndexRefPtr: Comparable { // classTemplate
 }
 extension pxr.UsdImagingRerootingSceneIndex: Comparable { // importedAsReference
     public static func <(lhs: pxr.UsdImagingRerootingSceneIndex, rhs: pxr.UsdImagingRerootingSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingSceneIndexRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.UsdImagingSceneIndexRefPtr, rhs: pxr.UsdImagingSceneIndexRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingSceneIndex: Comparable { // importedAsReference
+    public static func <(lhs: pxr.UsdImagingSceneIndex, rhs: pxr.UsdImagingSceneIndex) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr: Comparable { // classTemplateSpecialization
+    public static func <(lhs: pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr, rhs: pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
+extension pxr.UsdExecImagingStageSceneIndexInterface: Comparable { // importedAsReference
+    public static func <(lhs: pxr.UsdExecImagingStageSceneIndexInterface, rhs: pxr.UsdExecImagingStageSceneIndexInterface) -> Bool {
         __Overlay.operatorLess(lhs, rhs)
     }
 }

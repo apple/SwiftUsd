@@ -522,6 +522,11 @@ extension __SwiftUsd_Typedef___ZN3pxr8UsdStageE_ConstWeakPtr: Overlay._TfConstWe
     public typealias _TfWeakBaseType = pxr.UsdStage
 }
 
+extension pxr.UsdProfileRegistry: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.UsdProfileRegistry
+}
+extension pxr.UsdProfileRegistry: Overlay._SwiftUsdImmortalReferenceTypeProtocol {}
+
 extension pxr.UsdHydraDiscoveryPlugin: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.UsdHydraDiscoveryPlugin
 }
@@ -895,6 +900,24 @@ extension __SwiftUsd_Typedef___ZN3pxr22HdFlatteningSceneIndexE_ConstWeakPtr: Ove
     public typealias _TfWeakBaseType = pxr.HdFlatteningSceneIndex
 }
 
+extension pxr.HdInstanceProxyViewSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.HdInstanceProxyViewSceneIndex
+}
+extension pxr.HdInstanceProxyViewSceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr29HdInstanceProxyViewSceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdInstanceProxyViewSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr29HdInstanceProxyViewSceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdInstanceProxyViewSceneIndex
+}
+extension pxr.HdInstanceProxyViewSceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr29HdInstanceProxyViewSceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdInstanceProxyViewSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr29HdInstanceProxyViewSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdInstanceProxyViewSceneIndex
+}
+
 extension pxr.HdLegacyGeomSubsetSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.HdLegacyGeomSubsetSceneIndex
 }
@@ -1016,6 +1039,24 @@ extension __SwiftUsd_Typedef___ZN3pxr43HdGpGenerativeProceduralResolvingSceneInd
 }
 extension __SwiftUsd_Typedef___ZN3pxr43HdGpGenerativeProceduralResolvingSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
     public typealias _TfWeakBaseType = pxr.HdGpGenerativeProceduralResolvingSceneIndex
+}
+
+extension pxr.HdsiBackPlateSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.HdsiBackPlateSceneIndex
+}
+extension pxr.HdsiBackPlateSceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr23HdsiBackPlateSceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiBackPlateSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr23HdsiBackPlateSceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.HdsiBackPlateSceneIndex
+}
+extension pxr.HdsiBackPlateSceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr23HdsiBackPlateSceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiBackPlateSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr23HdsiBackPlateSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.HdsiBackPlateSceneIndex
 }
 
 extension pxr.HdsiCoordSysPrimSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
@@ -1792,6 +1833,42 @@ extension __SwiftUsd_Typedef___ZN3pxr29UsdImagingRerootingSceneIndexE_WeakPtr: O
 }
 extension __SwiftUsd_Typedef___ZN3pxr29UsdImagingRerootingSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
     public typealias _TfWeakBaseType = pxr.UsdImagingRerootingSceneIndex
+}
+
+extension pxr.UsdImagingSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.UsdImagingSceneIndex
+}
+extension pxr.UsdImagingSceneIndex: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr20UsdImagingSceneIndexE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.UsdImagingSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr20UsdImagingSceneIndexE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.UsdImagingSceneIndex
+}
+extension pxr.UsdImagingSceneIndex: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr20UsdImagingSceneIndexE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.UsdImagingSceneIndex
+}
+extension __SwiftUsd_Typedef___ZN3pxr20UsdImagingSceneIndexE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.UsdImagingSceneIndex
+}
+
+extension pxr.UsdExecImagingStageSceneIndexInterface: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.UsdExecImagingStageSceneIndexInterface
+}
+extension pxr.UsdExecImagingStageSceneIndexInterface: Overlay._TfRefBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr38UsdExecImagingStageSceneIndexInterfaceE_RefPtr: Overlay._TfRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.UsdExecImagingStageSceneIndexInterface
+}
+extension __SwiftUsd_Typedef___ZN3pxr38UsdExecImagingStageSceneIndexInterfaceE_ConstRefPtr: Overlay._TfConstRefPtrProtocol {
+    public typealias _TfRefBaseType = pxr.UsdExecImagingStageSceneIndexInterface
+}
+extension pxr.UsdExecImagingStageSceneIndexInterface: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr38UsdExecImagingStageSceneIndexInterfaceE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.UsdExecImagingStageSceneIndexInterface
+}
+extension __SwiftUsd_Typedef___ZN3pxr38UsdExecImagingStageSceneIndexInterfaceE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.UsdExecImagingStageSceneIndexInterface
 }
 
 extension pxr.UsdSkelImagingPointsResolvingSceneIndex: Overlay._SwiftUsdReferenceTypeProtocol {

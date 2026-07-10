@@ -221,6 +221,13 @@ struct SwiftPackage {
                         // may be an issue that OpenUSD should fix. 
                         continue
                     }
+
+                    if relativePath == "pxr/base/vt/addExtVisitValueType.h" {
+                        // v26.08 adds this header that lacks an include guard
+                        // because its intended use is to define a macro and then
+                        // include it, which violates the modulemap model
+                        continue
+                    }
                     
                     result.append(#"header "\#(relativePath)""#)
                 }

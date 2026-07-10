@@ -20,6 +20,25 @@
 
 import Foundation
 
+// OpenUSD v26.08 renames SdfTimeCode to GfTimeCode and uses a
+// `#define` to provide some amount of backwards compatibility for C++,
+// but Swift doesn't pick that up because it's a preprocessor macro,
+// not e.g. a `typedef` or `using` declaration like OpenUSD has typically
+// used in the past. This should be removed when SwiftUsd is updated to an OpenUSD
+// version that completely removes SdfTimeCode, bypassing any normal SwiftUsd
+// source-compatibility concerns. 
+extension pxr {
+    @available(*, deprecated, renamed: "GfTimeCode")
+    public typealias SdfTimeCode = GfTimeCode
+
+    @available(*, deprecated, renamed: "VtTimeCodeArray")
+    public typealias SdfTimeCodeArray = VtTimeCodeArray
+}
+
+
+
+// MARK: SwiftUsd
+
 
 // We want to give clients at least one full Swift release cycle (about 6 months) to
 // migrate to the replacements for deprecations whenever possible.

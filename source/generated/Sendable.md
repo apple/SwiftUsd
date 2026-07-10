@@ -61,9 +61,11 @@ Use this extension method sparingly!
 - `pxr.TfStreamFloat`
 - `pxr.TfStreamDouble`
 - `pxr.TfDiagnosticMgr.Delegate`
+- `pxr.TfSmallVectorBase`
 - `pxr.TfSkipCallerFrames`
 - `pxr.TfFastCompression`
-- `pxr.TfSmallVectorBase`
+- `pxr.TfPyLock`
+- `pxr.TfPyEnsureGILUnlockedObj`
 - `pxr.TfRefPtrTracker.TraceType`
 - `pxr.TfStackedAccess`
 - `pxr.TfToken`
@@ -128,6 +130,8 @@ Use this extension method sparingly!
 - `pxr.GfRect2i`
 - `pxr.GfSize2`
 - `pxr.GfSize3`
+- `pxr.GfTimeCode`
+- `pxr.GfTimeCode.Hash`
 - `pxr.GfTransform`
 - `pxr.GfNumericCastFailureType`
 
@@ -185,6 +189,7 @@ Use this extension method sparingly!
 - `pxr.VtRange3dArray`
 - `pxr.VtRange3fArray`
 - `pxr.VtRect2iArray`
+- `pxr.VtTimeCodeArray`
 - `pxr.VtVec2dArray`
 - `pxr.VtVec2fArray`
 - `pxr.VtVec2hArray`
@@ -239,6 +244,7 @@ Use this extension method sparingly!
 - `pxr.VtRange3dArrayEdit`
 - `pxr.VtRange3fArrayEdit`
 - `pxr.VtRect2iArrayEdit`
+- `pxr.VtTimeCodeArrayEdit`
 - `pxr.VtVec2dArrayEdit`
 - `pxr.VtVec2fArrayEdit`
 - `pxr.VtVec2hArrayEdit`
@@ -270,6 +276,7 @@ Use this extension method sparingly!
 - `pxr.VtQuatdArrayEditBuilder`
 - `pxr.VtQuatfArrayEditBuilder`
 - `pxr.VtQuathArrayEditBuilder`
+- `pxr.VtTimeCodeArrayEditBuilder`
 - `pxr.VtVec2dArrayEditBuilder`
 - `pxr.VtVec2fArrayEditBuilder`
 - `pxr.VtVec2hArrayEditBuilder`
@@ -353,8 +360,6 @@ Use this extension method sparingly!
 - `pxr.SdfPathPattern.Component`
 - `pxr.SdfPredicateExpression.FnCall.Kind`
 - `pxr.SdfPredicateExpression.Op`
-- `pxr.SdfTimeCode`
-- `pxr.SdfTimeCode.Hash`
 - `pxr.SdfTupleDimensions`
 - `pxr.SdfValueTypeNameHash`
 - `pxr.SdfAllowed`
@@ -414,19 +419,27 @@ Use this extension method sparingly!
 - `pxr.SdfZipFile.FileInfo`
 - `pxr.SdfPathPatternParser.PathPatStretch`
 - `pxr.SdfPathPatternParser.PathPatSep`
+- `pxr.SdfPathPatternParser.PredExprClose`
+- `pxr.SdfPathPatternParser.BracketClassClose`
 - `pxr.SdfPathPatternParser.BracedPredExpr`
+- `pxr.SdfPathPatternParser.BracketClass`
 - `pxr.SdfPathPatternParser.PrimPathWildCard`
 - `pxr.SdfPathPatternParser.PropPathWildCard`
 - `pxr.SdfPathPatternParser.PrimPathPatternElemText`
 - `pxr.SdfPathPatternParser.PropPathPatternElemText`
 - `pxr.SdfPathPatternParser.PrimPathPatternElem`
 - `pxr.SdfPathPatternParser.PropPathPatternElem`
+- `pxr.SdfPathPatternParser.PatSepSlash`
+- `pxr.SdfPathPatternParser.PrimPatStep`
+- `pxr.SdfPathPatternParser.StretchStep`
 - `pxr.SdfPathPatternParser.PathPatternElems`
 - `pxr.SdfPathPatternParser.AbsPathPattern`
 - `pxr.SdfPathPatternParser.DotDot`
 - `pxr.SdfPathPatternParser.DotDots`
 - `pxr.SdfPathPatternParser.ReflexiveRelative`
 - `pxr.SdfPathPatternParser.AbsoluteStart`
+- `pxr.SdfPathPatternParser.DotDotsStep`
+- `pxr.SdfPathPatternParser.DotDotsStretchTail`
 - `pxr.SdfPathPatternParser.PathPattern`
 - `pxr.SdfPredicateExpressionParser.NotKW`
 - `pxr.SdfPredicateExpressionParser.AndKW`
@@ -452,17 +465,25 @@ Use this extension method sparingly!
 - `pxr.SdfPredicateExpressionParser.PredKWArg`
 - `pxr.SdfPredicateExpressionParser.PredParenPosArg`
 - `pxr.SdfPredicateExpressionParser.PredFuncName`
+- `pxr.SdfPredicateExpressionParser.PredKWArgStep`
+- `pxr.SdfPredicateExpressionParser.PredKWArgs`
 - `pxr.SdfPredicateExpressionParser.PredParenArgs`
+- `pxr.SdfPredicateExpressionParser.PredColonArgStep`
 - `pxr.SdfPredicateExpressionParser.PredColonArgs`
 - `pxr.SdfPredicateExpressionParser.PredColonCall`
+- `pxr.SdfPredicateExpressionParser.PredParenClose`
 - `pxr.SdfPredicateExpressionParser.PredParenCall`
 - `pxr.SdfPredicateExpressionParser.PredBareCall`
 - `pxr.SdfPredicateExpressionParser.PredOpenGroup`
 - `pxr.SdfPredicateExpressionParser.PredCloseGroup`
+- `pxr.SdfPredicateExpressionParser.GroupedPredExpr`
 - `pxr.SdfPredicateExpressionParser.PredAtom`
 - `pxr.SdfPredicateExpressionParser.PredFactor`
-- `pxr.SdfPredicateExpressionParser.PredOperator`
+- `pxr.SdfPredicateExpressionParser.PredExplicitOp`
+- `pxr.SdfPredicateExpressionParser.PredExprStep`
+- `pxr.SdfPredicateExpressionParser.ImpliedAndStep`
 - `pxr.SdfPredicateExpressionParser.PredExpr`
+- `pxr.SdfPredicateExpressionParser.PredExprEnd`
 
 ### Sendable Sdr types
 - `pxr.SdrVersion`
@@ -535,8 +556,8 @@ Use this extension method sparingly!
 - `pxr.UsdStageCacheContextBlockType`
 
 ### Sendable UsdGeom types
-- `pxr.UsdGeomImageable.PurposeInfo`
 - `pxr.UsdGeomTokensType`
+- `pxr.UsdGeomImageable.PurposeInfo`
 - `pxr.UsdGeomXformOpTypes_StaticTokenType`
 - `pxr.UsdGeomXformOp.`Type``
 - `pxr.UsdGeomXformOp.Precision`
@@ -567,6 +588,12 @@ Use this extension method sparingly!
 - `pxr.UsdShadeShaderDefUtils`
 - `pxr.UsdShadeUdimUtils`
 
+### Sendable UsdLod types
+- `pxr.UsdLodTokensType`
+- `pxr.UsdLodDistanceHeuristicQuery`
+- `pxr.UsdLodHeuristicQuery`
+- `pxr.UsdLodScreenSizeHeuristicQuery`
+
 ### Sendable UsdLux types
 - `pxr.UsdLuxTokensType`
 - `pxr.UsdLuxLightListAPI.ComputeMode`
@@ -574,6 +601,11 @@ Use this extension method sparingly!
 
 ### Sendable UsdProc types
 - `pxr.UsdProcTokensType`
+
+### Sendable UsdProfiles types
+- `pxr.UsdProfileRegistry.QueryStatus`
+- `pxr.UsdProfileRegistry.CapabilityResult`
+- `pxr.UsdProfilesTokensType`
 
 ### Sendable UsdRender types
 - `pxr.UsdRenderTokensType`
@@ -601,7 +633,6 @@ Use this extension method sparingly!
 - `pxr.UsdUtilsCoalescingDiagnosticDelegateSharedItem`
 - `pxr.UsdUtilsConditionalAbortDiagnosticDelegateErrorFilters`
 - `pxr.UsdUtilsExtractExternalReferencesParams`
-- `pxr.UsdUtilsDependencyInfo`
 - `pxr.UsdUtilsUsdStageStatsKeys_StaticTokenType`
 - `pxr.UsdUtilsRegisteredVariantSet`
 - `pxr.UsdUtilsRegisteredVariantSet.SelectionExportPolicy`
@@ -730,11 +761,13 @@ Use this extension method sparingly!
 - `pxr.ExecGeomXformableTokens_StaticTokenType`
 
 ### Sendable ExecIr types
-- `pxr.ExecIrTokens_StaticTokenType`
+- `pxr.ExecIrTokensType`
+- `pxr.ExecIrComputationsType`
 
 ### Sendable UsdValidation types
 - `pxr.UsdValidationErrorType`
 - `pxr.UsdValidationTimeRange`
+- `pxr.UsdValidationNotice`
 - `pxr.UsdValidatorNameTokens_StaticTokenType`
 - `pxr.UsdValidatorKeywordTokens_StaticTokenType`
 - `pxr.UsdValidationErrorNameTokens_StaticTokenType`
@@ -743,6 +776,11 @@ Use this extension method sparingly!
 - `pxr.UsdGeomValidatorNameTokens_StaticTokenType`
 - `pxr.UsdGeomValidatorKeywordTokens_StaticTokenType`
 - `pxr.UsdGeomValidationErrorNameTokens_StaticTokenType`
+
+### Sendable UsdLuxValidators types
+- `pxr.UsdLuxValidatorNameTokens_StaticTokenType`
+- `pxr.UsdLuxValidatorKeywordTokens_StaticTokenType`
+- `pxr.UsdLuxValidationErrorNameTokens_StaticTokenType`
 
 ### Sendable UsdShadeValidators types
 - `pxr.UsdShadeValidatorNameTokens_StaticTokenType`
@@ -919,6 +957,13 @@ Use this extension method sparingly!
 - `pxr.HdPointsGeomStyle`
 - `pxr.HdInterpolation`
 - `pxr.HdDepthPriority`
+- `pxr.HdBackPlateSchemaTokens_StaticTokenType`
+- `pxr.HdDataSourceBase`
+- `pxr.HdContainerDataSource`
+- `pxr.HdVectorDataSource`
+- `pxr.HdSampledDataSource`
+- `pxr.HdBlockDataSource`
+- `pxr.HdDataSourceLocatorSentinelTokens_StaticTokenType`
 - `pxr.HdBasisCurvesReprDescTokens_StaticTokenType`
 - `pxr.HdBasisCurvesReprDesc`
 - `pxr.HdBufferArrayUsageHintBits`
@@ -968,12 +1013,6 @@ Use this extension method sparingly!
 - `pxr.HdGeomSubset.`Type``
 - `pxr.HdRprimCollection`
 - `pxr.HdRprimCollection.Hash`
-- `pxr.HdDataSourceBase`
-- `pxr.HdContainerDataSource`
-- `pxr.HdVectorDataSource`
-- `pxr.HdSampledDataSource`
-- `pxr.HdBlockDataSource`
-- `pxr.HdDataSourceLocatorSentinelTokens_StaticTokenType`
 - `pxr.HdSceneIndexObserver.AddedPrimEntry`
 - `pxr.HdSceneIndexObserver.RemovedPrimEntry`
 - `pxr.HdSceneIndexObserver.RenamedPrimEntry`
@@ -1015,6 +1054,7 @@ Use this extension method sparingly!
 - `pxr.HdDependencySchemaTokens_StaticTokenType`
 - `pxr.HdDirtyBitsTranslator`
 - `pxr.HdDisplayFilterSchemaTokens_StaticTokenType`
+- `pxr.HdEnergyFilterSchemaTokens_StaticTokenType`
 - `pxr.HdExtComputationCpuCallback`
 - `pxr.HdExtComputationInputComputationSchemaTokens_StaticTokenType`
 - `pxr.HdExtComputationOutputSchemaTokens_StaticTokenType`
@@ -1042,6 +1082,7 @@ Use this extension method sparingly!
 - `pxr.HdInstanceCategoriesSchemaTokens_StaticTokenType`
 - `pxr.HdInstancedBySchemaTokens_StaticTokenType`
 - `pxr.HdInstanceIndicesSchemaTokens_StaticTokenType`
+- `pxr.HdInstanceProxySchemaTokens_StaticTokenType`
 - `pxr.HdInstancerTopologySchemaTokens_StaticTokenType`
 - `pxr.HdInstanceSchemaTokens_StaticTokenType`
 - `pxr.HdIntegratorSchemaTokens_StaticTokenType`
@@ -1071,6 +1112,7 @@ Use this extension method sparingly!
 - `pxr.HdNurbsPatchSchemaTokens_StaticTokenType`
 - `pxr.HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType`
 - `pxr.HdPlaneSchemaTokens_StaticTokenType`
+- `pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType`
 - `pxr.HdPointsReprDesc`
 - `pxr.HdPrimOriginSchemaTokens_StaticTokenType`
 - `pxr.HdPrimOriginSchema.OriginPath`
@@ -1082,7 +1124,6 @@ Use this extension method sparingly!
 - `pxr.HdRenderCapabilitiesSchemaTokens_StaticTokenType`
 - `pxr.HdRenderer`
 - `pxr.HdRenderDelegateInfo`
-- `pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType`
 - `pxr.HdRenderPassSchemaTokens_StaticTokenType`
 - `pxr.HdRenderPassState.ColorMask`
 - `pxr.HdRenderProductSchemaTokens_StaticTokenType`
@@ -1090,7 +1131,7 @@ Use this extension method sparingly!
 - `pxr.HdRenderVarSchemaTokens_StaticTokenType`
 - `pxr.HdSampleFilterSchemaTokens_StaticTokenType`
 - `pxr.HdSceneGlobalsSchemaTokens_StaticTokenType`
-- `pxr.HdSceneIndexInputArgsSchemaTokens_StaticTokenType`
+- `pxr.HdSceneIndexCreateArgsSchemaTokens_StaticTokenType`
 - `pxr.HdSceneIndexPluginRegistryTokens_StaticTokenType`
 - `pxr.HdSceneIndexPluginRegistry.InsertionOrder`
 - `pxr.HdSceneIndexPluginRegistry.PluginInsertionMetadata`
@@ -1190,6 +1231,7 @@ Use this extension method sparingly!
 - `pxr.HdxDrawTargetTaskParams`
 - `pxr.HdxHgiConversions`
 - `pxr.HdxOitResolveTaskParams`
+- `pxr.HdxPickResolveModeTokens_StaticTokenType`
 - `pxr.HdxPickTokens_StaticTokenType`
 - `pxr.HdxPickTaskParams`
 - `pxr.HdxPickHit`
@@ -1212,7 +1254,6 @@ Use this extension method sparingly!
 - `pxr.UsdImagingGeomModelSchemaTokens_StaticTokenType`
 - `pxr.UsdImagingGeomXformVectorsSchemaTokens_StaticTokenType`
 - `pxr.UsdImagingModelSchemaTokens_StaticTokenType`
-- `pxr.UsdImagingStageSceneIndexTokens_StaticTokenType`
 - `pxr.UsdImagingTokens_StaticTokenType`
 - `pxr.UsdImagingAPISchemaAdapterFactoryBase`
 - `pxr.UsdImagingFlattenedGeomModelDataSourceProvider`
@@ -1223,9 +1264,16 @@ Use this extension method sparingly!
 - `pxr.UsdImagingUsdRenderProductSchemaTokens_StaticTokenType`
 - `pxr.UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType`
 - `pxr.UsdImagingUsdRenderVarSchemaTokens_StaticTokenType`
-- `pxr.UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType`
+- `pxr.UsdImagingUsdUpAxisSchemaTokens_StaticTokenType`
+- `pxr.UsdImagingSceneIndexCreateArgsSchemaTokens_StaticTokenType`
 - `pxr.UsdImagingSceneIndexPlugin`
 - `pxr.UsdImagingSceneIndexPlugin.FactoryBase`
+
+### Sendable UsdExecImaging types
+- `pxr.UsdExecImagingRequestAccessorInterface`
+- `pxr.UsdExecImagingValueKey`
+- `pxr.UsdExecImagingPrimAdapterInterface`
+- `pxr.UsdExecImagingRequestBuilderInterface`
 
 ### Sendable UsdImagingGL types
 - `pxr.UsdImagingGLDrawMode`
@@ -1255,6 +1303,9 @@ Use this extension method sparingly!
 
 ### Sendable UsdVolImaging types
 - `pxr.UsdVolImagingTokens_StaticTokenType`
+
+### Sendable UsdIrImaging types
+- `pxr.UsdIrImagingTokens_StaticTokenType`
 
 ### Non-Sendable Arch types
 - `pxr.ArchMallocHook`
@@ -1348,6 +1399,7 @@ Use this extension method sparingly!
 - `pxr.VtDictionary`
 - `pxr.VtValue`
 - `pxr.SdfChangeList.Entry.InfoChange`
+- `pxr.VtDictionary.value_type`
 - `pxr.VtValueRef`
 - `pxr.VtMutableValueRef`
 
@@ -1636,17 +1688,18 @@ Use this extension method sparingly!
 - `pxr.UsdVariantSets`
 
 ### Non-Sendable UsdGeom types
-- `pxr.UsdGeomBasisCurves`
-- `pxr.UsdGeomCurves`
-- `pxr.UsdGeomPointBased`
-- `pxr.UsdGeomGprim`
-- `pxr.UsdGeomBoundable`
+- `pxr.UsdGeomBackPlateAPI`
+- `pxr.UsdGeomCamera`
 - `pxr.UsdGeomXformable`
 - `pxr.UsdGeomXformable.XformQuery`
 - `pxr.UsdGeomImageable`
 - `pxr.UsdGeomPrimvar`
 - `pxr.UsdGeomXformOp`
-- `pxr.UsdGeomCamera`
+- `pxr.UsdGeomBasisCurves`
+- `pxr.UsdGeomCurves`
+- `pxr.UsdGeomPointBased`
+- `pxr.UsdGeomGprim`
+- `pxr.UsdGeomBoundable`
 - `pxr.UsdGeomCapsule`
 - `pxr.UsdGeomCapsule_1`
 - `pxr.UsdGeomCone`
@@ -1717,6 +1770,13 @@ Use this extension method sparingly!
 - `pxr.UsdShadeNodeDefAPI`
 - `pxr.UsdShadeShaderDefParserPlugin`
 
+### Non-Sendable UsdLod types
+- `pxr.UsdLodDistanceHeuristic`
+- `pxr.UsdLodHeuristic`
+- `pxr.UsdLodOverrideAPI`
+- `pxr.UsdLodRootAPI`
+- `pxr.UsdLodScreenSizeHeuristic`
+
 ### Non-Sendable UsdLux types
 - `pxr.UsdLuxBoundableLightBase`
 - `pxr.UsdLuxLightAPI`
@@ -1743,6 +1803,10 @@ Use this extension method sparingly!
 ### Non-Sendable UsdProc types
 - `pxr.UsdProcGenerativeProcedural`
 
+### Non-Sendable UsdProfiles types
+- `pxr.UsdProfilesClaimsAPI`
+- `pxr.UsdProfileRegistry`
+
 ### Non-Sendable UsdRender types
 - `pxr.UsdRenderPass`
 - `pxr.UsdRenderProduct`
@@ -1755,6 +1819,7 @@ Use this extension method sparingly!
 
 ### Non-Sendable UsdHydra types
 - `pxr.UsdHydraGenerativeProceduralAPI`
+- `pxr.UsdHydraRenderPassAPI`
 - `pxr.UsdHydraDiscoveryPlugin`
 
 ### Non-Sendable UsdRi types
@@ -1795,6 +1860,7 @@ Use this extension method sparingly!
 - `pxr.UsdUtilsCoalescingDiagnosticDelegateUnsharedItem`
 - `pxr.UsdUtilsCoalescingDiagnosticDelegateItem`
 - `pxr.UsdUtilsCoalescingDiagnosticDelegate`
+- `pxr.UsdUtilsDependencyInfo`
 - `pxr.UsdUtilsSparseAttrValueWriter`
 - `pxr.UsdUtilsSparseValueWriter`
 - `pxr.UsdUtilsTimeCodeRange.const_iterator`
@@ -1889,6 +1955,13 @@ Use this extension method sparingly!
 - `pxr.ExecUsdCacheView`
 - `pxr.ExecUsdRequest`
 
+### Non-Sendable ExecIr types
+- `pxr.ExecIrController`
+- `pxr.ExecIrFkController`
+- `pxr.ExecIrJointScope`
+- `pxr.ExecIrXformable`
+- `pxr.ExecIrSwitchController`
+
 ### Non-Sendable UsdValidation types
 - `pxr.UsdValidationContext`
 - `pxr.UsdValidationErrorSite`
@@ -1897,6 +1970,8 @@ Use this extension method sparingly!
 - `pxr.UsdValidationValidator`
 - `pxr.UsdValidationValidatorSuite`
 - `pxr.UsdValidationFixer`
+- `pxr.UsdValidationNotice.DidRegisterValidator`
+- `pxr.UsdValidationNotice.DidRegisterValidatorSuite`
 - `pxr.UsdValidationRegistry`
 
 ### Non-Sendable Garch types
@@ -1980,27 +2055,18 @@ Use this extension method sparingly!
 ### Non-Sendable Hd types
 - `pxr.HdAovDescriptor`
 - `pxr.HdRenderPassAovBinding`
-- `pxr.HdRprim`
-- `pxr.HdRprimSharedData`
-- `pxr.HdBufferArrayRangeSharedPtr`
-- `pxr.HdBufferArrayRangePtr`
-- `pxr.HdBufferArrayRangeContainer`
-- `pxr.HdBufferArraySharedPtr`
-- `pxr.HdReprSharedPtr`
-- `pxr.HdDrawItem`
-- `pxr.HdPerfLog`
-- `pxr.HdMeshTopologySharedPtr`
-- `pxr.HdDirtyList`
-- `pxr.HdResourceRegistrySharedPtr`
-- `pxr.HdSceneIndexPrim`
-- `pxr.HdSceneIndexBase`
-- `pxr.HdSceneIndexBaseRefPtr`
-- `pxr.HdSceneIndexBasePtr`
-- `pxr.HdSceneIndexNameRegistry`
+- `pxr.HdBackPlateSchema`
+- `pxr.HdBackPlateSchema.Builder`
+- `pxr.HdContainerSchema`
+- `pxr.HdBackPlateContainerSchema`
+- `pxr.HdSchema`
 - `pxr.HdDataSourceBaseAtomicHandle`
 - `pxr.HdContainerDataSourceAtomicHandle`
 - `pxr.HdVectorDataSourceAtomicHandle`
+- `pxr.HdSampledDataSourceContainerContainerSchema`
+- `pxr.HdSampledDataSourceContainerSchema`
 - `pxr.HdSampledDataSourceAtomicHandle`
+- `pxr.HdTokenDataSourceContainerSchema`
 - `pxr.HdBoolDataSourceHandle`
 - `pxr.HdResolverContextDataSourceHandle`
 - `pxr.HdMatrixDataSourceHandle`
@@ -2011,7 +2077,6 @@ Use this extension method sparingly!
 - `pxr.HdVec3fDataSourceHandle`
 - `pxr.HdVec3iDataSourceHandle`
 - `pxr.HdVec4fDataSourceHandle`
-- `pxr.HdRprimCollectionDataSourceHandle`
 - `pxr.HdAssetPathDataSourceHandle`
 - `pxr.HdPathDataSourceHandle`
 - `pxr.HdPathExpressionDataSourceHandle`
@@ -2048,6 +2113,26 @@ Use this extension method sparingly!
 - `pxr.HdDataSourceLocatorSet`
 - `pxr.HdDataSourceLocatorSet.IntersectionIterator`
 - `pxr.HdDataSourceLocatorSet.IntersectionView`
+- `pxr.HdVectorSchema`
+- `pxr.HdIntArrayVectorSchema`
+- `pxr.HdRprim`
+- `pxr.HdRprimSharedData`
+- `pxr.HdBufferArrayRangeSharedPtr`
+- `pxr.HdBufferArrayRangePtr`
+- `pxr.HdBufferArrayRangeContainer`
+- `pxr.HdBufferArraySharedPtr`
+- `pxr.HdReprSharedPtr`
+- `pxr.HdDrawItem`
+- `pxr.HdPerfLog`
+- `pxr.HdMeshTopologySharedPtr`
+- `pxr.HdRprimCollectionDataSourceHandle`
+- `pxr.HdDirtyList`
+- `pxr.HdResourceRegistrySharedPtr`
+- `pxr.HdSceneIndexPrim`
+- `pxr.HdSceneIndexBase`
+- `pxr.HdSceneIndexBaseRefPtr`
+- `pxr.HdSceneIndexBasePtr`
+- `pxr.HdSceneIndexNameRegistry`
 - `pxr.HdSceneIndexObserver`
 - `pxr.HdSceneIndexObserverPtr`
 - `pxr.HdSceneIndexObserver.DirtiedPrimEntry`
@@ -2071,7 +2156,6 @@ Use this extension method sparingly!
 - `pxr.HdBasisCurvesSchema.Builder`
 - `pxr.HdBasisCurvesTopologySchema`
 - `pxr.HdBasisCurvesTopologySchema.Builder`
-- `pxr.HdSchema`
 - `pxr.HdBufferSourceSharedPtr`
 - `pxr.HdBufferSourceWeakPtr`
 - `pxr.HdBuiltinMaterialSchema`
@@ -2080,11 +2164,6 @@ Use this extension method sparingly!
 - `pxr.HdCachingSceneIndexRefPtr`
 - `pxr.HdCameraSchema`
 - `pxr.HdCameraSchema.Builder`
-- `pxr.HdContainerSchema`
-- `pxr.HdSampledDataSourceContainerSchema`
-- `pxr.HdSampledDataSourceContainerContainerSchema`
-- `pxr.HdVectorSchema`
-- `pxr.HdIntArrayVectorSchema`
 - `pxr.HdSplitDiopterSchema`
 - `pxr.HdSplitDiopterSchema.Builder`
 - `pxr.HdLensDistortionSchema`
@@ -2098,6 +2177,8 @@ Use this extension method sparingly!
 - `pxr.HdCollectionsSchema`
 - `pxr.HdCommandArgDescriptor`
 - `pxr.HdCommandDescriptor`
+- `pxr.HdConcatenatedVectorDataSource`
+- `pxr.HdConcatenatedVectorDataSourceAtomicHandle`
 - `pxr.HdConeSchema`
 - `pxr.HdConeSchema.Builder`
 - `pxr.HdContainerDataSourceEditor`
@@ -2128,6 +2209,8 @@ Use this extension method sparingly!
 - `pxr.HdDependencyForwardingSceneIndexRefPtr`
 - `pxr.HdDisplayFilterSchema`
 - `pxr.HdDisplayFilterSchema.Builder`
+- `pxr.HdEnergyFilterSchema`
+- `pxr.HdEnergyFilterSchema.Builder`
 - `pxr.HdEngine`
 - `pxr.HdTaskSharedPtr`
 - `pxr.HdDriver`
@@ -2173,9 +2256,14 @@ Use this extension method sparingly!
 - `pxr.HdInstanceIndicesSchema`
 - `pxr.HdInstanceIndicesVectorSchema`
 - `pxr.HdInstanceIndicesSchema.Builder`
+- `pxr.HdInstanceProxySchema`
+- `pxr.HdInstanceProxySchema.Builder`
 - `pxr.HdInstancerTopologySchema`
 - `pxr.HdInstancerTopologySchema.Builder`
+- `pxr.HdInstanceProxyViewSceneIndex`
+- `pxr.HdInstanceProxyViewSceneIndexRefPtr`
 - `pxr.HdInstanceSchema`
+- `pxr.HdInstanceVectorSchema`
 - `pxr.HdInstanceSchema.Builder`
 - `pxr.HdIntegratorSchema`
 - `pxr.HdIntegratorSchema.Builder`
@@ -2235,7 +2323,8 @@ Use this extension method sparingly!
 - `pxr.HdPluginRenderDelegateUniqueHandle`
 - `pxr.HdRendererPluginHandle`
 - `pxr.HdRenderSettingDescriptor`
-- `pxr.HdRendererCreateArgs`
+- `pxr.HdRendererCreateArgsSchema`
+- `pxr.HdRendererCreateArgsSchema.Builder`
 - `pxr.HdPluginRendererUniqueHandle`
 - `pxr.HdPrefixingSceneIndex`
 - `pxr.HdPrefixingSceneIndexRefPtr`
@@ -2248,8 +2337,6 @@ Use this extension method sparingly!
 - `pxr.HdRenderCapabilitiesSchema`
 - `pxr.HdRenderCapabilitiesSchema.Builder`
 - `pxr.HdRenderDelegateInfoDataSourceHandle`
-- `pxr.HdRendererCreateArgsSchema`
-- `pxr.HdRendererCreateArgsSchema.Builder`
 - `pxr.HdRendererPluginRegistry`
 - `pxr.HdRenderIndexAdapterSceneIndex`
 - `pxr.HdRenderIndexAdapterSceneIndexRefPtr`
@@ -2270,8 +2357,8 @@ Use this extension method sparingly!
 - `pxr.HdSampleFilterSchema.Builder`
 - `pxr.HdSceneGlobalsSchema`
 - `pxr.HdSceneGlobalsSchema.Builder`
-- `pxr.HdSceneIndexInputArgsSchema`
-- `pxr.HdSceneIndexInputArgsSchema.Builder`
+- `pxr.HdSceneIndexCreateArgsSchema`
+- `pxr.HdSceneIndexCreateArgsSchema.Builder`
 - `pxr.HdSceneIndexPluginRegistry`
 - `pxr.HdSceneIndexPrimView`
 - `pxr.HdSceneIndexPrimView.const_iterator`
@@ -2309,6 +2396,8 @@ Use this extension method sparingly!
 - `pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr`
 
 ### Non-Sendable Hdsi types
+- `pxr.HdsiBackPlateSceneIndex`
+- `pxr.HdsiBackPlateSceneIndexRefPtr`
 - `pxr.HdsiCoordSysPrimSceneIndex`
 - `pxr.HdsiCoordSysPrimSceneIndexRefPtr`
 - `pxr.HdsiDebuggingSceneIndex`
@@ -2417,6 +2506,7 @@ Use this extension method sparingly!
 - `pxr.HdStUdimSamplerObject`
 - `pxr.HdStSimpleLightingShaderSharedPtr`
 - `pxr.HdStSimpleLightingShaderPtr`
+- `pxr.HdStSphere`
 - `pxr.HdStStagingBuffer`
 - `pxr.HdStTextureHandle`
 - `pxr.HdStTextureHandleSharedPtr`
@@ -2574,6 +2664,7 @@ Use this extension method sparingly!
 - `pxr.UsdImagingSelectionSceneIndex`
 - `pxr.UsdImagingAPISchemaAdapter`
 - `pxr.UsdImagingAPISchemaAdapterSharedPtr`
+- `pxr.UsdImagingBackPlateAPIAdapter`
 - `pxr.UsdImagingBasisCurvesAdapter`
 - `pxr.UsdImagingGprimAdapter`
 - `pxr.UsdImagingCapsuleAdapter`
@@ -2609,6 +2700,7 @@ Use this extension method sparingly!
 - `pxr.UsdImagingMaterialBindingsResolvingSceneIndexRefPtr`
 - `pxr.UsdImagingMaterialBindingsResolvingSceneIndex`
 - `pxr.UsdImagingMeshAdapter`
+- `pxr.UsdImagingMotionAPIAdapter`
 - `pxr.UsdImagingNiPrototypePropagatingSceneIndexRefPtr`
 - `pxr.UsdImagingNiPrototypePropagatingSceneIndex`
 - `pxr.UsdImagingNurbsCurvesAdapter`
@@ -2633,8 +2725,8 @@ Use this extension method sparingly!
 - `pxr.UsdImagingUsdRenderSettingsSchema.Builder`
 - `pxr.UsdImagingUsdRenderVarSchema`
 - `pxr.UsdImagingUsdRenderVarSchema.Builder`
-- `pxr.UsdImagingUsdSceneIndexInputArgsSchema`
-- `pxr.UsdImagingUsdSceneIndexInputArgsSchema.Builder`
+- `pxr.UsdImagingUsdUpAxisSchema`
+- `pxr.UsdImagingUsdUpAxisSchema.Builder`
 - `pxr.UsdImagingRectLightAdapter`
 - `pxr.UsdImagingRenderPassAdapter`
 - `pxr.UsdImagingRenderProductAdapter`
@@ -2646,6 +2738,10 @@ Use this extension method sparingly!
 - `pxr.UsdImagingRerootingContainerDataSource.AtomicHandle`
 - `pxr.UsdImagingRerootingSceneIndexRefPtr`
 - `pxr.UsdImagingRerootingSceneIndex`
+- `pxr.UsdImagingSceneIndexRefPtr`
+- `pxr.UsdImagingSceneIndex`
+- `pxr.UsdImagingSceneIndexCreateArgsSchema`
+- `pxr.UsdImagingSceneIndexCreateArgsSchema.Builder`
 - `pxr.UsdImagingSceneIndexPrimAdapter`
 - `pxr.UsdImagingCreateSceneIndicesInfo`
 - `pxr.UsdImagingSceneIndices`
@@ -2653,6 +2749,13 @@ Use this extension method sparingly!
 - `pxr.UsdImagingSphereLightAdapter`
 - `pxr.UsdImagingTetMeshAdapter`
 - `pxr.UsdImagingVolumeAdapter`
+
+### Non-Sendable UsdExecImaging types
+- `pxr.UsdExecImagingComputedSampledDataSource`
+- `pxr.UsdExecImagingComputedSampledDataSource.AtomicHandle`
+- `pxr.UsdExecImagingRequestAccessorInterfaceSharedPtr`
+- `pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr`
+- `pxr.UsdExecImagingStageSceneIndexInterface`
 
 ### Non-Sendable UsdImagingGL types
 - `pxr.UsdImagingGLRendererSetting`
@@ -2677,7 +2780,7 @@ Use this extension method sparingly!
 - `pxr.UsdSkelImagingDataSourceBlendShapePrim`
 - `pxr.UsdSkelImagingDataSourceBlendShapePrimAtomicHandle`
 - `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrim`
-- `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimAtomicHandle`
+- `pxr.UsdSkelImagingDataSourceResolvedPointsBasedPrimHandle`
 - `pxr.UsdSkelImagingResolvedSkeletonSchema`
 - `pxr.UsdSkelImagingResolvedSkeletonSchema.Builder`
 - `pxr.UsdSkelImagingDataSourceXformResolver`
@@ -2708,3 +2811,6 @@ Use this extension method sparingly!
 - `pxr.UsdImagingField3DAssetAdapter`
 - `pxr.UsdImagingOpenVDBAssetAdapter`
 - `pxr.UsdImagingParticleFieldAdapter`
+
+### Non-Sendable UsdIrImaging types
+- `pxr.UsdIrImagingJointScopeAdapter`

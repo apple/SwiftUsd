@@ -29,14 +29,15 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdColorSpaceAPI& x) { return x.GetPrim
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdColorSpaceDefinitionAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdModelAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdTyped& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomBackPlateAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCamera& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomXformable& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomImageable& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomBasisCurves& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCurves& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomPointBased& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomGprim& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomBoundable& x) { return x.GetPrim(); }
-pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomXformable& x) { return x.GetPrim(); }
-pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomImageable& x) { return x.GetPrim(); }
-pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCamera& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCapsule& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCapsule_1& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdGeomCone& x) { return x.GetPrim(); }
@@ -89,6 +90,11 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeNodeGraph& x) { return x.GetPri
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeShader& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeMaterialBindingAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeNodeDefAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLodDistanceHeuristic& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLodHeuristic& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLodOverrideAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLodRootAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLodScreenSizeHeuristic& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxBoundableLightBase& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxLightAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxCylinderLight& x) { return x.GetPrim(); }
@@ -111,12 +117,14 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxShapingAPI& x) { return x.GetPrim
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxSphereLight& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdLuxVolumeLightAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdProcGenerativeProcedural& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdProfilesClaimsAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderPass& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderProduct& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderSettingsBase& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderSettings& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderVar& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdHydraGenerativeProceduralAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdHydraRenderPassAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRiMaterialAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRiSplineAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRiStatementsAPI& x) { return x.GetPrim(); }
@@ -150,6 +158,11 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdPhysicsSphericalJoint& x) { return x
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdMtlxMaterialXConfigAPI& x) { return x.GetPrim(); }
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+pxr::UsdPrim Overlay::GetPrim(const pxr::ExecIrController& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::ExecIrFkController& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::ExecIrJointScope& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::ExecIrXformable& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::ExecIrSwitchController& x) { return x.GetPrim(); }
 bool __Overlay::convertToBool(const pxr::UsdAPISchemaBase& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdSchemaBase& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdClipsAPI& x) { return (bool)x; }
@@ -158,14 +171,15 @@ bool __Overlay::convertToBool(const pxr::UsdColorSpaceAPI& x) { return (bool)x; 
 bool __Overlay::convertToBool(const pxr::UsdColorSpaceDefinitionAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdModelAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdTyped& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdGeomBackPlateAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdGeomCamera& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdGeomXformable& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdGeomImageable& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomBasisCurves& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomCurves& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomPointBased& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomGprim& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomBoundable& x) { return (bool)x; }
-bool __Overlay::convertToBool(const pxr::UsdGeomXformable& x) { return (bool)x; }
-bool __Overlay::convertToBool(const pxr::UsdGeomImageable& x) { return (bool)x; }
-bool __Overlay::convertToBool(const pxr::UsdGeomCamera& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomCapsule& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomCapsule_1& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdGeomCone& x) { return (bool)x; }
@@ -218,6 +232,11 @@ bool __Overlay::convertToBool(const pxr::UsdShadeNodeGraph& x) { return (bool)x;
 bool __Overlay::convertToBool(const pxr::UsdShadeShader& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdShadeMaterialBindingAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdShadeNodeDefAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdLodDistanceHeuristic& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdLodHeuristic& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdLodOverrideAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdLodRootAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdLodScreenSizeHeuristic& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdLuxBoundableLightBase& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdLuxLightAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdLuxCylinderLight& x) { return (bool)x; }
@@ -240,12 +259,14 @@ bool __Overlay::convertToBool(const pxr::UsdLuxShapingAPI& x) { return (bool)x; 
 bool __Overlay::convertToBool(const pxr::UsdLuxSphereLight& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdLuxVolumeLightAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdProcGenerativeProcedural& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdProfilesClaimsAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderPass& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderProduct& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderSettingsBase& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderSettings& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderVar& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdHydraGenerativeProceduralAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdHydraRenderPassAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRiMaterialAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRiSplineAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRiStatementsAPI& x) { return (bool)x; }
@@ -279,3 +300,8 @@ bool __Overlay::convertToBool(const pxr::UsdPhysicsSphericalJoint& x) { return (
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
 bool __Overlay::convertToBool(const pxr::UsdMtlxMaterialXConfigAPI& x) { return (bool)x; }
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+bool __Overlay::convertToBool(const pxr::ExecIrController& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::ExecIrFkController& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::ExecIrJointScope& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::ExecIrXformable& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::ExecIrSwitchController& x) { return (bool)x; }

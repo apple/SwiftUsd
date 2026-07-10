@@ -133,11 +133,17 @@ extension pxr.TfToken {
     public static var UsdShadeTokens: pxr.UsdShadeTokensType {
         __Overlay.UsdShadeTokens.pointee
     }
+    public static var UsdLodTokens: pxr.UsdLodTokensType {
+        __Overlay.UsdLodTokens.pointee
+    }
     public static var UsdLuxTokens: pxr.UsdLuxTokensType {
         __Overlay.UsdLuxTokens.pointee
     }
     public static var UsdProcTokens: pxr.UsdProcTokensType {
         __Overlay.UsdProcTokens.pointee
+    }
+    public static var UsdProfilesTokens: pxr.UsdProfilesTokensType {
+        __Overlay.UsdProfilesTokens.pointee
     }
     public static var UsdRenderTokens: pxr.UsdRenderTokensType {
         __Overlay.UsdRenderTokens.pointee
@@ -183,7 +189,7 @@ extension pxr.TfToken {
     public static var ExecGeomXformableTokens: pxr.ExecGeomXformableTokens_StaticTokenType {
         __Overlay.ExecGeomXformableTokens.pointee
     }
-    public static var ExecIrTokens: pxr.ExecIrTokens_StaticTokenType {
+    public static var ExecIrTokens: pxr.ExecIrTokensType {
         __Overlay.ExecIrTokens.pointee
     }
     public static var UsdValidatorNameTokens: pxr.UsdValidatorNameTokens_StaticTokenType {
@@ -203,6 +209,15 @@ extension pxr.TfToken {
     }
     public static var UsdGeomValidationErrorNameTokens: pxr.UsdGeomValidationErrorNameTokens_StaticTokenType {
         __Overlay.UsdGeomValidationErrorNameTokens.pointee
+    }
+    public static var UsdLuxValidatorNameTokens: pxr.UsdLuxValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdLuxValidatorNameTokens.pointee
+    }
+    public static var UsdLuxValidatorKeywordTokens: pxr.UsdLuxValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdLuxValidatorKeywordTokens.pointee
+    }
+    public static var UsdLuxValidationErrorNameTokens: pxr.UsdLuxValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdLuxValidationErrorNameTokens.pointee
     }
     public static var UsdShadeValidatorNameTokens: pxr.UsdShadeValidatorNameTokens_StaticTokenType {
         __Overlay.UsdShadeValidatorNameTokens.pointee
@@ -252,6 +267,12 @@ extension pxr.TfToken {
     }
     public static var HgiShaderKeywordTokens: pxr.HgiShaderKeywordTokens_StaticTokenType {
         __Overlay.HgiShaderKeywordTokens.pointee
+    }
+    public static var HdBackPlateSchemaTokens: pxr.HdBackPlateSchemaTokens_StaticTokenType {
+        __Overlay.HdBackPlateSchemaTokens.pointee
+    }
+    public static var HdDataSourceLocatorSentinelTokens: pxr.HdDataSourceLocatorSentinelTokens_StaticTokenType {
+        __Overlay.HdDataSourceLocatorSentinelTokens.pointee
     }
     public static var HdBasisCurvesReprDescTokens: pxr.HdBasisCurvesReprDescTokens_StaticTokenType {
         __Overlay.HdBasisCurvesReprDescTokens.pointee
@@ -340,9 +361,6 @@ extension pxr.TfToken {
     public static var HdSkinningSkelInputTokens: pxr.HdSkinningSkelInputTokens_StaticTokenType {
         __Overlay.HdSkinningSkelInputTokens.pointee
     }
-    public static var HdDataSourceLocatorSentinelTokens: pxr.HdDataSourceLocatorSentinelTokens_StaticTokenType {
-        __Overlay.HdDataSourceLocatorSentinelTokens.pointee
-    }
     public static var HdBasisCurvesSchemaTokens: pxr.HdBasisCurvesSchemaTokens_StaticTokenType {
         __Overlay.HdBasisCurvesSchemaTokens.pointee
     }
@@ -415,6 +433,9 @@ extension pxr.TfToken {
     public static var HdDisplayFilterSchemaTokens: pxr.HdDisplayFilterSchemaTokens_StaticTokenType {
         __Overlay.HdDisplayFilterSchemaTokens.pointee
     }
+    public static var HdEnergyFilterSchemaTokens: pxr.HdEnergyFilterSchemaTokens_StaticTokenType {
+        __Overlay.HdEnergyFilterSchemaTokens.pointee
+    }
     public static var HdExtComputationInputComputationSchemaTokens: pxr.HdExtComputationInputComputationSchemaTokens_StaticTokenType {
         __Overlay.HdExtComputationInputComputationSchemaTokens.pointee
     }
@@ -456,6 +477,9 @@ extension pxr.TfToken {
     }
     public static var HdInstanceIndicesSchemaTokens: pxr.HdInstanceIndicesSchemaTokens_StaticTokenType {
         __Overlay.HdInstanceIndicesSchemaTokens.pointee
+    }
+    public static var HdInstanceProxySchemaTokens: pxr.HdInstanceProxySchemaTokens_StaticTokenType {
+        __Overlay.HdInstanceProxySchemaTokens.pointee
     }
     public static var HdInstancerTopologySchemaTokens: pxr.HdInstancerTopologySchemaTokens_StaticTokenType {
         __Overlay.HdInstancerTopologySchemaTokens.pointee
@@ -526,6 +550,9 @@ extension pxr.TfToken {
     public static var HdPlaneSchemaTokens: pxr.HdPlaneSchemaTokens_StaticTokenType {
         __Overlay.HdPlaneSchemaTokens.pointee
     }
+    public static var HdRendererCreateArgsSchemaTokens: pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType {
+        __Overlay.HdRendererCreateArgsSchemaTokens.pointee
+    }
     public static var HdPrimOriginSchemaTokens: pxr.HdPrimOriginSchemaTokens_StaticTokenType {
         __Overlay.HdPrimOriginSchemaTokens.pointee
     }
@@ -540,9 +567,6 @@ extension pxr.TfToken {
     }
     public static var HdRenderCapabilitiesSchemaTokens: pxr.HdRenderCapabilitiesSchemaTokens_StaticTokenType {
         __Overlay.HdRenderCapabilitiesSchemaTokens.pointee
-    }
-    public static var HdRendererCreateArgsSchemaTokens: pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType {
-        __Overlay.HdRendererCreateArgsSchemaTokens.pointee
     }
     public static var HdRenderPassSchemaTokens: pxr.HdRenderPassSchemaTokens_StaticTokenType {
         __Overlay.HdRenderPassSchemaTokens.pointee
@@ -562,8 +586,8 @@ extension pxr.TfToken {
     public static var HdSceneGlobalsSchemaTokens: pxr.HdSceneGlobalsSchemaTokens_StaticTokenType {
         __Overlay.HdSceneGlobalsSchemaTokens.pointee
     }
-    public static var HdSceneIndexInputArgsSchemaTokens: pxr.HdSceneIndexInputArgsSchemaTokens_StaticTokenType {
-        __Overlay.HdSceneIndexInputArgsSchemaTokens.pointee
+    public static var HdSceneIndexCreateArgsSchemaTokens: pxr.HdSceneIndexCreateArgsSchemaTokens_StaticTokenType {
+        __Overlay.HdSceneIndexCreateArgsSchemaTokens.pointee
     }
     public static var HdSceneIndexPluginRegistryTokens: pxr.HdSceneIndexPluginRegistryTokens_StaticTokenType {
         __Overlay.HdSceneIndexPluginRegistryTokens.pointee
@@ -697,6 +721,9 @@ extension pxr.TfToken {
     public static var HdxSimpleLightTaskTokens: pxr.HdxSimpleLightTaskTokens_StaticTokenType {
         __Overlay.HdxSimpleLightTaskTokens.pointee
     }
+    public static var HdxPickResolveModeTokens: pxr.HdxPickResolveModeTokens_StaticTokenType {
+        __Overlay.HdxPickResolveModeTokens.pointee
+    }
     public static var HdxPickTokens: pxr.HdxPickTokens_StaticTokenType {
         __Overlay.HdxPickTokens.pointee
     }
@@ -726,9 +753,6 @@ extension pxr.TfToken {
     public static var UsdImagingModelSchemaTokens: pxr.UsdImagingModelSchemaTokens_StaticTokenType {
         __Overlay.UsdImagingModelSchemaTokens.pointee
     }
-    public static var UsdImagingStageSceneIndexTokens: pxr.UsdImagingStageSceneIndexTokens_StaticTokenType {
-        __Overlay.UsdImagingStageSceneIndexTokens.pointee
-    }
     public static var UsdImagingTokens: pxr.UsdImagingTokens_StaticTokenType {
         __Overlay.UsdImagingTokens.pointee
     }
@@ -750,8 +774,11 @@ extension pxr.TfToken {
     public static var UsdImagingUsdRenderVarSchemaTokens: pxr.UsdImagingUsdRenderVarSchemaTokens_StaticTokenType {
         __Overlay.UsdImagingUsdRenderVarSchemaTokens.pointee
     }
-    public static var UsdImagingUsdSceneIndexInputArgsSchemaTokens: pxr.UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType {
-        __Overlay.UsdImagingUsdSceneIndexInputArgsSchemaTokens.pointee
+    public static var UsdImagingUsdUpAxisSchemaTokens: pxr.UsdImagingUsdUpAxisSchemaTokens_StaticTokenType {
+        __Overlay.UsdImagingUsdUpAxisSchemaTokens.pointee
+    }
+    public static var UsdImagingSceneIndexCreateArgsSchemaTokens: pxr.UsdImagingSceneIndexCreateArgsSchemaTokens_StaticTokenType {
+        __Overlay.UsdImagingSceneIndexCreateArgsSchemaTokens.pointee
     }
     public static var UsdSkelImagingAnimationSchemaTokens: pxr.UsdSkelImagingAnimationSchemaTokens_StaticTokenType {
         __Overlay.UsdSkelImagingAnimationSchemaTokens.pointee
@@ -794,6 +821,9 @@ extension pxr.TfToken {
     }
     public static var UsdVolImagingTokens: pxr.UsdVolImagingTokens_StaticTokenType {
         __Overlay.UsdVolImagingTokens.pointee
+    }
+    public static var UsdIrImagingTokens: pxr.UsdIrImagingTokens_StaticTokenType {
+        __Overlay.UsdIrImagingTokens.pointee
     }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
 }

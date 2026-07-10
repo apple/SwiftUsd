@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::ExecUsdSystem from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/exec/execUsd/system.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/exec/execUsd/system.h
 
 #ifndef SWIFTUSD_WRAPPERS_EXECUSDSYSTEMWRAPPER_H
 #define SWIFTUSD_WRAPPERS_EXECUSDSYSTEMWRAPPER_H

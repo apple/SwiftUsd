@@ -33,6 +33,7 @@
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/geomUtil/tokens.h"
 #include "pxr/imaging/glf/texture.h"
+#include "pxr/imaging/hd/backPlateSchema.h"
 #include "pxr/imaging/hd/basisCurves.h"
 #include "pxr/imaging/hd/basisCurvesSchema.h"
 #include "pxr/imaging/hd/basisCurvesTopologySchema.h"
@@ -53,6 +54,7 @@
 #include "pxr/imaging/hd/dependenciesSchema.h"
 #include "pxr/imaging/hd/dependencySchema.h"
 #include "pxr/imaging/hd/displayFilterSchema.h"
+#include "pxr/imaging/hd/energyFilterSchema.h"
 #include "pxr/imaging/hd/extComputationInputComputationSchema.h"
 #include "pxr/imaging/hd/extComputationOutputSchema.h"
 #include "pxr/imaging/hd/extComputationPrimvarSchema.h"
@@ -65,6 +67,7 @@
 #include "pxr/imaging/hd/imageShaderSchema.h"
 #include "pxr/imaging/hd/instanceCategoriesSchema.h"
 #include "pxr/imaging/hd/instanceIndicesSchema.h"
+#include "pxr/imaging/hd/instanceProxySchema.h"
 #include "pxr/imaging/hd/instanceSchema.h"
 #include "pxr/imaging/hd/instancedBySchema.h"
 #include "pxr/imaging/hd/instancerTopologySchema.h"
@@ -105,7 +108,7 @@
 #include "pxr/imaging/hd/rendererCreateArgsSchema.h"
 #include "pxr/imaging/hd/sampleFilterSchema.h"
 #include "pxr/imaging/hd/sceneGlobalsSchema.h"
-#include "pxr/imaging/hd/sceneIndexInputArgsSchema.h"
+#include "pxr/imaging/hd/sceneIndexCreateArgsSchema.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
 #include "pxr/imaging/hd/selectionSchema.h"
 #include "pxr/imaging/hd/selectionsSchema.h"
@@ -169,6 +172,7 @@
 #include "pxr/usd/usdGeom/tokens.h"
 #include "pxr/usd/usdGeom/xformOp.h"
 #include "pxr/usd/usdHydra/tokens.h"
+#include "pxr/usd/usdLod/tokens.h"
 #include "pxr/usd/usdLux/tokens.h"
 #include "pxr/usd/usdMedia/tokens.h"
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
@@ -176,6 +180,7 @@
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
 #include "pxr/usd/usdPhysics/tokens.h"
 #include "pxr/usd/usdProc/tokens.h"
+#include "pxr/usd/usdProfiles/tokens.h"
 #include "pxr/usd/usdRender/tokens.h"
 #include "pxr/usd/usdRi/tokens.h"
 #include "pxr/usd/usdSemantics/tokens.h"
@@ -197,13 +202,14 @@
 #include "pxr/usdImaging/usdImaging/materialBindingSchema.h"
 #include "pxr/usdImaging/usdImaging/materialBindingsSchema.h"
 #include "pxr/usdImaging/usdImaging/modelSchema.h"
-#include "pxr/usdImaging/usdImaging/stageSceneIndex.h"
+#include "pxr/usdImaging/usdImaging/sceneIndexCreateArgsSchema.h"
 #include "pxr/usdImaging/usdImaging/tokens.h"
 #include "pxr/usdImaging/usdImaging/usdPrimInfoSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderProductSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderSettingsSchema.h"
 #include "pxr/usdImaging/usdImaging/usdRenderVarSchema.h"
-#include "pxr/usdImaging/usdImaging/usdSceneIndexInputArgsSchema.h"
+#include "pxr/usdImaging/usdImaging/usdUpAxisSchema.h"
+#include "pxr/usdImaging/usdIrImaging/tokens.h"
 #include "pxr/usdImaging/usdSkelImaging/animationSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/bindingSchema.h"
 #include "pxr/usdImaging/usdSkelImaging/blendShapeSchema.h"
@@ -214,6 +220,7 @@
 #include "pxr/usdImaging/usdVolImaging/tokens.h"
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 #include "pxr/usdValidation/usdGeomValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdLuxValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdShadeValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdSkelValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdUtilsValidators/validatorTokens.h"
@@ -257,8 +264,10 @@ namespace __Overlay {
     extern const pxr::UsdVolTokensType* const UsdVolTokens;
     extern const pxr::UsdMediaTokensType* const UsdMediaTokens;
     extern const pxr::UsdShadeTokensType* const UsdShadeTokens;
+    extern const pxr::UsdLodTokensType* const UsdLodTokens;
     extern const pxr::UsdLuxTokensType* const UsdLuxTokens;
     extern const pxr::UsdProcTokensType* const UsdProcTokens;
+    extern const pxr::UsdProfilesTokensType* const UsdProfilesTokens;
     extern const pxr::UsdRenderTokensType* const UsdRenderTokens;
     extern const pxr::UsdHydraTokensType* const UsdHydraTokens;
     extern const pxr::UsdRiTokensType* const UsdRiTokens;
@@ -275,13 +284,16 @@ namespace __Overlay {
     extern const pxr::VdfTokens_StaticTokenType* const VdfTokens;
     extern const pxr::EfLeafTokens_StaticTokenType* const EfLeafTokens;
     extern const pxr::ExecGeomXformableTokens_StaticTokenType* const ExecGeomXformableTokens;
-    extern const pxr::ExecIrTokens_StaticTokenType* const ExecIrTokens;
+    extern const pxr::ExecIrTokensType* const ExecIrTokens;
     extern const pxr::UsdValidatorNameTokens_StaticTokenType* const UsdValidatorNameTokens;
     extern const pxr::UsdValidatorKeywordTokens_StaticTokenType* const UsdValidatorKeywordTokens;
     extern const pxr::UsdValidationErrorNameTokens_StaticTokenType* const UsdValidationErrorNameTokens;
     extern const pxr::UsdGeomValidatorNameTokens_StaticTokenType* const UsdGeomValidatorNameTokens;
     extern const pxr::UsdGeomValidatorKeywordTokens_StaticTokenType* const UsdGeomValidatorKeywordTokens;
     extern const pxr::UsdGeomValidationErrorNameTokens_StaticTokenType* const UsdGeomValidationErrorNameTokens;
+    extern const pxr::UsdLuxValidatorNameTokens_StaticTokenType* const UsdLuxValidatorNameTokens;
+    extern const pxr::UsdLuxValidatorKeywordTokens_StaticTokenType* const UsdLuxValidatorKeywordTokens;
+    extern const pxr::UsdLuxValidationErrorNameTokens_StaticTokenType* const UsdLuxValidationErrorNameTokens;
     extern const pxr::UsdShadeValidatorNameTokens_StaticTokenType* const UsdShadeValidatorNameTokens;
     extern const pxr::UsdShadeValidatorKeywordTokens_StaticTokenType* const UsdShadeValidatorKeywordTokens;
     extern const pxr::UsdShadeValidationErrorNameTokens_StaticTokenType* const UsdShadeValidationErrorNameTokens;
@@ -299,6 +311,8 @@ namespace __Overlay {
     extern const pxr::GlfTextureTokens_StaticTokenType* const GlfTextureTokens;
     extern const pxr::HgiTokens_StaticTokenType* const HgiTokens;
     extern const pxr::HgiShaderKeywordTokens_StaticTokenType* const HgiShaderKeywordTokens;
+    extern const pxr::HdBackPlateSchemaTokens_StaticTokenType* const HdBackPlateSchemaTokens;
+    extern const pxr::HdDataSourceLocatorSentinelTokens_StaticTokenType* const HdDataSourceLocatorSentinelTokens;
     extern const pxr::HdBasisCurvesReprDescTokens_StaticTokenType* const HdBasisCurvesReprDescTokens;
     extern const pxr::HdTokens_StaticTokenType* const HdTokens;
     extern const pxr::HdInstancerTokens_StaticTokenType* const HdInstancerTokens;
@@ -328,7 +342,6 @@ namespace __Overlay {
     extern const pxr::HdCollectionEmulationTokens_StaticTokenType* const HdCollectionEmulationTokens;
     extern const pxr::HdSkinningInputTokens_StaticTokenType* const HdSkinningInputTokens;
     extern const pxr::HdSkinningSkelInputTokens_StaticTokenType* const HdSkinningSkelInputTokens;
-    extern const pxr::HdDataSourceLocatorSentinelTokens_StaticTokenType* const HdDataSourceLocatorSentinelTokens;
     extern const pxr::HdBasisCurvesSchemaTokens_StaticTokenType* const HdBasisCurvesSchemaTokens;
     extern const pxr::HdBasisCurvesTopologySchemaTokens_StaticTokenType* const HdBasisCurvesTopologySchemaTokens;
     extern const pxr::HdBuiltinMaterialSchemaTokens_StaticTokenType* const HdBuiltinMaterialSchemaTokens;
@@ -353,6 +366,7 @@ namespace __Overlay {
     extern const pxr::HdDependenciesSchemaTokens_StaticTokenType* const HdDependenciesSchemaTokens;
     extern const pxr::HdDependencySchemaTokens_StaticTokenType* const HdDependencySchemaTokens;
     extern const pxr::HdDisplayFilterSchemaTokens_StaticTokenType* const HdDisplayFilterSchemaTokens;
+    extern const pxr::HdEnergyFilterSchemaTokens_StaticTokenType* const HdEnergyFilterSchemaTokens;
     extern const pxr::HdExtComputationInputComputationSchemaTokens_StaticTokenType* const HdExtComputationInputComputationSchemaTokens;
     extern const pxr::HdExtComputationOutputSchemaTokens_StaticTokenType* const HdExtComputationOutputSchemaTokens;
     extern const pxr::HdExtComputationPrimvarSchemaTokens_StaticTokenType* const HdExtComputationPrimvarSchemaTokens;
@@ -367,6 +381,7 @@ namespace __Overlay {
     extern const pxr::HdInstanceCategoriesSchemaTokens_StaticTokenType* const HdInstanceCategoriesSchemaTokens;
     extern const pxr::HdInstancedBySchemaTokens_StaticTokenType* const HdInstancedBySchemaTokens;
     extern const pxr::HdInstanceIndicesSchemaTokens_StaticTokenType* const HdInstanceIndicesSchemaTokens;
+    extern const pxr::HdInstanceProxySchemaTokens_StaticTokenType* const HdInstanceProxySchemaTokens;
     extern const pxr::HdInstancerTopologySchemaTokens_StaticTokenType* const HdInstancerTopologySchemaTokens;
     extern const pxr::HdInstanceSchemaTokens_StaticTokenType* const HdInstanceSchemaTokens;
     extern const pxr::HdIntegratorSchemaTokens_StaticTokenType* const HdIntegratorSchemaTokens;
@@ -390,19 +405,19 @@ namespace __Overlay {
     extern const pxr::HdNurbsPatchSchemaTokens_StaticTokenType* const HdNurbsPatchSchemaTokens;
     extern const pxr::HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType* const HdNurbsPatchTrimCurveSchemaTokens;
     extern const pxr::HdPlaneSchemaTokens_StaticTokenType* const HdPlaneSchemaTokens;
+    extern const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const HdRendererCreateArgsSchemaTokens;
     extern const pxr::HdPrimOriginSchemaTokens_StaticTokenType* const HdPrimOriginSchemaTokens;
     extern const pxr::HdPrimvarsSchemaTokens_StaticTokenType* const HdPrimvarsSchemaTokens;
     extern const pxr::HdPurposeSchemaTokens_StaticTokenType* const HdPurposeSchemaTokens;
     extern const pxr::HdRenderBufferSchemaTokens_StaticTokenType* const HdRenderBufferSchemaTokens;
     extern const pxr::HdRenderCapabilitiesSchemaTokens_StaticTokenType* const HdRenderCapabilitiesSchemaTokens;
-    extern const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const HdRendererCreateArgsSchemaTokens;
     extern const pxr::HdRenderPassSchemaTokens_StaticTokenType* const HdRenderPassSchemaTokens;
     extern const pxr::HdRenderProductSchemaTokens_StaticTokenType* const HdRenderProductSchemaTokens;
     extern const pxr::HdRenderSettingsSchemaTokens_StaticTokenType* const HdRenderSettingsSchemaTokens;
     extern const pxr::HdRenderVarSchemaTokens_StaticTokenType* const HdRenderVarSchemaTokens;
     extern const pxr::HdSampleFilterSchemaTokens_StaticTokenType* const HdSampleFilterSchemaTokens;
     extern const pxr::HdSceneGlobalsSchemaTokens_StaticTokenType* const HdSceneGlobalsSchemaTokens;
-    extern const pxr::HdSceneIndexInputArgsSchemaTokens_StaticTokenType* const HdSceneIndexInputArgsSchemaTokens;
+    extern const pxr::HdSceneIndexCreateArgsSchemaTokens_StaticTokenType* const HdSceneIndexCreateArgsSchemaTokens;
     extern const pxr::HdSceneIndexPluginRegistryTokens_StaticTokenType* const HdSceneIndexPluginRegistryTokens;
     extern const pxr::HdSelectionSchemaTokens_StaticTokenType* const HdSelectionSchemaTokens;
     extern const pxr::HdSelectionsSchemaTokens_StaticTokenType* const HdSelectionsSchemaTokens;
@@ -447,6 +462,7 @@ namespace __Overlay {
     extern const pxr::HdxColorChannelTokens_StaticTokenType* const HdxColorChannelTokens;
     extern const pxr::HdxAovTokens_StaticTokenType* const HdxAovTokens;
     extern const pxr::HdxSimpleLightTaskTokens_StaticTokenType* const HdxSimpleLightTaskTokens;
+    extern const pxr::HdxPickResolveModeTokens_StaticTokenType* const HdxPickResolveModeTokens;
     extern const pxr::HdxPickTokens_StaticTokenType* const HdxPickTokens;
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
@@ -458,7 +474,6 @@ namespace __Overlay {
     extern const pxr::UsdImagingGeomModelSchemaTokens_StaticTokenType* const UsdImagingGeomModelSchemaTokens;
     extern const pxr::UsdImagingGeomXformVectorsSchemaTokens_StaticTokenType* const UsdImagingGeomXformVectorsSchemaTokens;
     extern const pxr::UsdImagingModelSchemaTokens_StaticTokenType* const UsdImagingModelSchemaTokens;
-    extern const pxr::UsdImagingStageSceneIndexTokens_StaticTokenType* const UsdImagingStageSceneIndexTokens;
     extern const pxr::UsdImagingTokens_StaticTokenType* const UsdImagingTokens;
     extern const pxr::UsdImagingMaterialBindingSchemaTokens_StaticTokenType* const UsdImagingMaterialBindingSchemaTokens;
     extern const pxr::UsdImagingMaterialBindingsSchemaTokens_StaticTokenType* const UsdImagingMaterialBindingsSchemaTokens;
@@ -466,7 +481,8 @@ namespace __Overlay {
     extern const pxr::UsdImagingUsdRenderProductSchemaTokens_StaticTokenType* const UsdImagingUsdRenderProductSchemaTokens;
     extern const pxr::UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType* const UsdImagingUsdRenderSettingsSchemaTokens;
     extern const pxr::UsdImagingUsdRenderVarSchemaTokens_StaticTokenType* const UsdImagingUsdRenderVarSchemaTokens;
-    extern const pxr::UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType* const UsdImagingUsdSceneIndexInputArgsSchemaTokens;
+    extern const pxr::UsdImagingUsdUpAxisSchemaTokens_StaticTokenType* const UsdImagingUsdUpAxisSchemaTokens;
+    extern const pxr::UsdImagingSceneIndexCreateArgsSchemaTokens_StaticTokenType* const UsdImagingSceneIndexCreateArgsSchemaTokens;
     extern const pxr::UsdSkelImagingAnimationSchemaTokens_StaticTokenType* const UsdSkelImagingAnimationSchemaTokens;
     extern const pxr::UsdSkelImagingBindingSchemaTokens_StaticTokenType* const UsdSkelImagingBindingSchemaTokens;
     extern const pxr::UsdSkelImagingBlendShapeSchemaTokens_StaticTokenType* const UsdSkelImagingBlendShapeSchemaTokens;
@@ -481,6 +497,7 @@ namespace __Overlay {
     extern const pxr::UsdSkelImagingExtComputationLegacyInputNameTokens_StaticTokenType* const UsdSkelImagingExtComputationLegacyInputNameTokens;
     extern const pxr::UsdSkelImagingExtComputationOutputNameTokens_StaticTokenType* const UsdSkelImagingExtComputationOutputNameTokens;
     extern const pxr::UsdVolImagingTokens_StaticTokenType* const UsdVolImagingTokens;
+    extern const pxr::UsdIrImagingTokens_StaticTokenType* const UsdIrImagingTokens;
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 }
 #endif /* SWIFTUSD_GENERATED_STATICTOKENS_H */

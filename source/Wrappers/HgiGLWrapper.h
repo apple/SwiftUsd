@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::HgiGL from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/imaging/hgiGL/hgi.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/imaging/hgiGL/hgi.h
 
 #ifndef SWIFTUSD_WRAPPERS_HGIGLWRAPPER_H
 #define SWIFTUSD_WRAPPERS_HGIGLWRAPPER_H

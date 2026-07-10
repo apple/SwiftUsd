@@ -583,3 +583,49 @@ extension pxr.UsdNotice.LayerMutingChanged: SwiftUsd.TfNoticeProtocol {
         return result
     }
 }
+extension pxr.UsdValidationNotice.DidRegisterValidator: SwiftUsd.TfNoticeProtocol {
+    public static func _Register(_ callback: @escaping (borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), &key, Notice: Self.self)
+        return key
+    }
+    public static func _Register(_ sender: pxr.TfAnyWeakPtr, _ callback: @escaping (borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), sender, &key, Notice: Self.self)
+        return key
+    }
+    public static func _Register(_ sender: pxr.TfAnyWeakPtr, _ callback: @escaping (pxr.TfAnyWeakPtr, borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), sender, &key, Notice: Self.self)
+        return key
+    }
+
+    public static func _dynamic_cast(_ p: UnsafePointer<pxr.TfNotice>) -> UnsafePointer<Self>? {
+        var result: UnsafePointer<Self>?
+        __SwiftUsd.TfNotice.dyn_cast(p, &result)
+        return result
+    }
+}
+extension pxr.UsdValidationNotice.DidRegisterValidatorSuite: SwiftUsd.TfNoticeProtocol {
+    public static func _Register(_ callback: @escaping (borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), &key, Notice: Self.self)
+        return key
+    }
+    public static func _Register(_ sender: pxr.TfAnyWeakPtr, _ callback: @escaping (borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), sender, &key, Notice: Self.self)
+        return key
+    }
+    public static func _Register(_ sender: pxr.TfAnyWeakPtr, _ callback: @escaping (pxr.TfAnyWeakPtr, borrowing pxr.TfNotice.NoticeCaster) -> ()) -> pxr.TfNotice.SwiftKey {
+        var key = pxr.TfNotice.SwiftKey()
+        __SwiftUsd.TfNotice.Register(_convertCallback(callback), sender, &key, Notice: Self.self)
+        return key
+    }
+
+    public static func _dynamic_cast(_ p: UnsafePointer<pxr.TfNotice>) -> UnsafePointer<Self>? {
+        var result: UnsafePointer<Self>?
+        __SwiftUsd.TfNotice.dyn_cast(p, &result)
+        return result
+    }
+}

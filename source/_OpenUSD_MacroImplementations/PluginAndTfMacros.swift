@@ -30,7 +30,7 @@ import SwiftSyntaxMacros
 // will silently fail to do anything at runtime.
 // It should be a String whose contents is a valid CUnsignedInt literal,
 // so that it can be interpolated into code produced by macros. 
-fileprivate let PXR_VERSION: String = "2605"
+fileprivate let PXR_VERSION: String = "2608"
 
 enum CustomError: Error, CustomStringConvertible {
     case message(String)

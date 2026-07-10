@@ -639,6 +639,7 @@ extension pxr.HgiDeviceCapabilitiesBits {
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsIndirectCommandBuffers: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsIndirectCommandBuffers }
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsRoundPoints: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsRoundPoints }
   @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesBitsSingleSlotResourceArrays: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesBitsSingleSlotResourceArrays }
+  @_documentation(visibility: internal) public static var HgiDeviceCapabilitiesForceEarlyFragmentTest: pxr.HgiDeviceCapabilitiesBits { Overlay.HgiDeviceCapabilitiesForceEarlyFragmentTest }
 }
 extension pxr.HgiTextureType {
   @_documentation(visibility: internal) public static var HgiTextureType1D: pxr.HgiTextureType { Overlay.HgiTextureType1D }

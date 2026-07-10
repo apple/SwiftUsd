@@ -85,24 +85,26 @@ extension pxr.VtDictionary: CxxDictionary, CxxSequence {
     public typealias InsertionResult = Overlay.VtDictionary_Iterator_Bool_Pair
     public typealias Element = pxr.VtDictionary.value_type
 
+    #if compiler(<6.3)
     public mutating func __insertUnsafe(_ element: Self.Element) -> Self.InsertionResult {
         __Overlay.insert(&self, element)
     }
+    #endif
+    
     // Starting in Swift 6.3, pxr::VtDictionary::find() is correctly imported as __findUnsafe,
     // instead of as find. This causes an error because there are multiple candidates for the
-    // protocol requirement, so hide the Swift extension candidate in Swift 6.3 and later
+    // protocol requirement, so hide the Swift extension candidate in Swift 6.3 and later.
+    // Which methods 6.3+ correctly imports seems to vary by OpenUSD version
     #if compiler(<6.3)
     public func __findUnsafe(_ key: Self.Key) -> Self.RawIterator {
         __Overlay.find(self, key)
     }
     #endif
+    #if compiler(<6.3)
     public mutating func __findMutatingUnsafe(_ key: Self.Key) -> Self.RawMutableIterator {
         __Overlay.findMutating(&self, key)
     }
-    @discardableResult
-    public mutating func __eraseUnsafe(_ iter: RawMutableIterator) -> RawMutableIterator {
-        __Overlay.erase(&self, iter)
-    }
+    #endif
 }
 
 extension pxr.VtDictionary.const_iterator: UnsafeCxxInputIterator {}

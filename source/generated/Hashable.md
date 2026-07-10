@@ -56,6 +56,7 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/GfMatrix4f``
 - ``OpenUSD/C++/pxr/GfMultiInterval``
 - ``OpenUSD/C++/pxr/GfRect2i``
+- ``OpenUSD/C++/pxr/GfTimeCode``
 
 ###  Trace types
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.TraceAggregateTree>``
@@ -101,6 +102,7 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRange3d>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRange3f>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRect2i>``
+- ``OpenUSD/C++/pxr/VtArray<pxr.GfTimeCode>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2d>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2f>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2h>``
@@ -149,6 +151,7 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange3d>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRange3f>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfRect2i>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfTimeCode>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2d>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2f>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfVec2h>``
@@ -211,7 +214,6 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/SdfPredicateExpression``
 - ``OpenUSD/C++/pxr/SdfPredicateExpression/FnArg``
 - ``OpenUSD/C++/pxr/SdfPredicateExpression/FnCall``
-- ``OpenUSD/C++/pxr/SdfTimeCode``
 - ``OpenUSD/C++/pxr/SdfValueTypeName``
 - ``OpenUSD/C++/pxr/SdfAttributeSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfAttributeSpec>``
@@ -296,6 +298,9 @@ These types conform to `Hashable` in Swift.
 ###  UsdShade types
 - ``OpenUSD/C++/pxr/UsdShadeConnectionSourceInfo``
 
+###  UsdProfiles types
+- ``OpenUSD/C++/pxr/UsdProfileRegistry``
+
 ###  UsdHydra types
 - ``OpenUSD/C++/pxr/UsdHydraDiscoveryPlugin``
 
@@ -344,6 +349,7 @@ These types conform to `Hashable` in Swift.
 ###  Hd types
 - ``OpenUSD/C++/pxr/HdRenderPassAovBinding``
 - ``OpenUSD/C++/pxr/HdTupleType``
+- ``OpenUSD/C++/pxr/HdDataSourceLocator``
 - ``OpenUSD/C++/pxr/HdBufferSpec``
 - ``OpenUSD/C++/pxr/HdReprSelector``
 - ``OpenUSD/C++/pxr/HdPerfLog``
@@ -351,7 +357,6 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/HdSceneIndexBase``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdSceneIndexBase>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.HdSceneIndexBase>``
-- ``OpenUSD/C++/pxr/HdDataSourceLocator``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.HdSceneIndexObserver>``
 - ``OpenUSD/C++/pxr/HdMergingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdMergingSceneIndex>``
@@ -371,6 +376,8 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdDependencyForwardingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdFlatteningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdFlatteningSceneIndex>``
+- ``OpenUSD/C++/pxr/HdInstanceProxyViewSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdInstanceProxyViewSceneIndex>``
 - ``OpenUSD/C++/pxr/HdLegacyGeomSubsetSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdLegacyGeomSubsetSceneIndex>``
 - ``OpenUSD/C++/pxr/HdMaterialFilteringSceneIndexBase``
@@ -389,6 +396,8 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdGpGenerativeProceduralResolvingSceneIndex>``
 
 ###  Hdsi types
+- ``OpenUSD/C++/pxr/HdsiBackPlateSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiBackPlateSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiCoordSysPrimSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiCoordSysPrimSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiDebuggingSceneIndex``
@@ -484,6 +493,13 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingRenderSettingsFlatteningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingRerootingSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingRerootingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSceneIndex>``
+- ``OpenUSD/C++/pxr/UsdImagingSceneIndex``
+
+###  UsdExecImaging types
+- ``OpenUSD/C++/pxr/UsdExecImagingValueKey``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdExecImagingStageSceneIndexInterface>``
+- ``OpenUSD/C++/pxr/UsdExecImagingStageSceneIndexInterface``
 
 ###  UsdSkelImaging types
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdSkelImagingPointsResolvingSceneIndex>``

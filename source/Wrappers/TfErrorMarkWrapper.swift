@@ -24,7 +24,7 @@ extension Overlay {
     /// Important: TfErrorMark uses thread-local storage, which is incompatible
     /// with Swift Concurrency's task execution model. Thus, the body of
     /// `withTfErrorMark` is intentionally forced to be synchronous
-    public static func withTfErrorMark<T, E>(_ code: (borrowing Overlay.TfErrorMarkWrapper) throws(E) -> T) throws(E) -> T {
+    public static func withTfErrorMark<T, E>(_ code: (borrowing Overlay.TfErrorMarkWrapper) throws(E) -> T) throws(E) -> T where T: ~Copyable {
         try withExtendedLifetime(__Overlay.makeTfErrorMarkWrapper()) { mark throws(E) -> T in
             try code(mark)
         }

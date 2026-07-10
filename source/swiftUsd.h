@@ -52,7 +52,6 @@
 #endif
 #include "swiftUsd/Wrappers/HgiWrapper.h"
 #include "swiftUsd/Wrappers/HioImageWrapper.h"
-#include "swiftUsd/Wrappers/PluginAndTfMacros.h"
 #include "swiftUsd/Wrappers/UsdAppUtilsFrameRecorderWrapper.h"
 #include "swiftUsd/Wrappers/UsdImagingGLEngineWrapper.h"
 #include "swiftUsd/Wrappers/UsdPrimTypeInfoWrapper.h"

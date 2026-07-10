@@ -22,6 +22,7 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/pxr_half/half``
 - ``OpenUSD/C++/pxr/GfInterval``
 - ``OpenUSD/C++/pxr/GfMultiInterval``
+- ``OpenUSD/C++/pxr/GfTimeCode``
 
 ###  Trace types
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.TraceAggregateTree>``
@@ -59,7 +60,6 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.SdfAbstractData>``
 - ``OpenUSD/C++/pxr/SdfPath``
 - ``OpenUSD/C++/pxr/SdfAssetPath``
-- ``OpenUSD/C++/pxr/SdfTimeCode``
 - ``OpenUSD/C++/pxr/SdfAttributeSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfAttributeSpec>``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfPropertySpec>``
@@ -144,6 +144,9 @@ These types conform to `Comparable` in Swift.
 ###  UsdGeom types
 - ``OpenUSD/C++/pxr/UsdGeomPrimvar``
 
+###  UsdProfiles types
+- ``OpenUSD/C++/pxr/UsdProfileRegistry``
+
 ###  UsdHydra types
 - ``OpenUSD/C++/pxr/UsdHydraDiscoveryPlugin``
 
@@ -189,13 +192,13 @@ These types conform to `Comparable` in Swift.
 
 ###  Hd types
 - ``OpenUSD/C++/pxr/HdTupleType``
+- ``OpenUSD/C++/pxr/HdDataSourceLocator``
 - ``OpenUSD/C++/pxr/HdBufferSpec``
 - ``OpenUSD/C++/pxr/HdReprSelector``
 - ``OpenUSD/C++/pxr/HdPerfLog``
 - ``OpenUSD/C++/pxr/HdSceneIndexBase``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdSceneIndexBase>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.HdSceneIndexBase>``
-- ``OpenUSD/C++/pxr/HdDataSourceLocator``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.HdSceneIndexObserver>``
 - ``OpenUSD/C++/pxr/HdMergingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdMergingSceneIndex>``
@@ -215,6 +218,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdDependencyForwardingSceneIndex>``
 - ``OpenUSD/C++/pxr/HdFlatteningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdFlatteningSceneIndex>``
+- ``OpenUSD/C++/pxr/HdInstanceProxyViewSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdInstanceProxyViewSceneIndex>``
 - ``OpenUSD/C++/pxr/HdLegacyGeomSubsetSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdLegacyGeomSubsetSceneIndex>``
 - ``OpenUSD/C++/pxr/HdMaterialFilteringSceneIndexBase``
@@ -233,6 +238,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdGpGenerativeProceduralResolvingSceneIndex>``
 
 ###  Hdsi types
+- ``OpenUSD/C++/pxr/HdsiBackPlateSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiBackPlateSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiCoordSysPrimSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiCoordSysPrimSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiDebuggingSceneIndex``
@@ -325,6 +332,12 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingRenderSettingsFlatteningSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingRerootingSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingRerootingSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSceneIndex>``
+- ``OpenUSD/C++/pxr/UsdImagingSceneIndex``
+
+###  UsdExecImaging types
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdExecImagingStageSceneIndexInterface>``
+- ``OpenUSD/C++/pxr/UsdExecImagingStageSceneIndexInterface``
 
 ###  UsdSkelImaging types
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdSkelImagingPointsResolvingSceneIndex>``

@@ -24,6 +24,11 @@
 
 #include "swiftUsd/defines.h"
 
+#include "pxr/exec/execIr/controller.h"
+#include "pxr/exec/execIr/fkController.h"
+#include "pxr/exec/execIr/jointScope.h"
+#include "pxr/exec/execIr/switchController.h"
+#include "pxr/exec/execIr/xformable.h"
 #include "pxr/usd/usd/apiSchemaBase.h"
 #include "pxr/usd/usd/clipsAPI.h"
 #include "pxr/usd/usd/collectionAPI.h"
@@ -32,6 +37,7 @@
 #include "pxr/usd/usd/modelAPI.h"
 #include "pxr/usd/usd/schemaBase.h"
 #include "pxr/usd/usd/typed.h"
+#include "pxr/usd/usdGeom/backPlateAPI.h"
 #include "pxr/usd/usdGeom/basisCurves.h"
 #include "pxr/usd/usdGeom/boundable.h"
 #include "pxr/usd/usdGeom/camera.h"
@@ -64,6 +70,12 @@
 #include "pxr/usd/usdGeom/xformCommonAPI.h"
 #include "pxr/usd/usdGeom/xformable.h"
 #include "pxr/usd/usdHydra/generativeProceduralAPI.h"
+#include "pxr/usd/usdHydra/renderPassAPI.h"
+#include "pxr/usd/usdLod/distanceHeuristic.h"
+#include "pxr/usd/usdLod/heuristic.h"
+#include "pxr/usd/usdLod/overrideAPI.h"
+#include "pxr/usd/usdLod/rootAPI.h"
+#include "pxr/usd/usdLod/screenSizeHeuristic.h"
 #include "pxr/usd/usdLux/boundableLightBase.h"
 #include "pxr/usd/usdLux/cylinderLight.h"
 #include "pxr/usd/usdLux/diskLight.h"
@@ -108,6 +120,7 @@
 #include "pxr/usd/usdPhysics/scene.h"
 #include "pxr/usd/usdPhysics/sphericalJoint.h"
 #include "pxr/usd/usdProc/generativeProcedural.h"
+#include "pxr/usd/usdProfiles/claimsAPI.h"
 #include "pxr/usd/usdRender/pass.h"
 #include "pxr/usd/usdRender/product.h"
 #include "pxr/usd/usdRender/settings.h"
@@ -163,14 +176,15 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdColorSpaceDefinitionAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdModelAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdTyped& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdGeomBackPlateAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdGeomCamera& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdGeomXformable& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdGeomImageable& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomBasisCurves& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomCurves& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomPointBased& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomGprim& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomBoundable& x);
-    pxr::UsdPrim GetPrim(const pxr::UsdGeomXformable& x);
-    pxr::UsdPrim GetPrim(const pxr::UsdGeomImageable& x);
-    pxr::UsdPrim GetPrim(const pxr::UsdGeomCamera& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomCapsule& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomCapsule_1& x);
     pxr::UsdPrim GetPrim(const pxr::UsdGeomCone& x);
@@ -223,6 +237,11 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdShadeShader& x);
     pxr::UsdPrim GetPrim(const pxr::UsdShadeMaterialBindingAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdShadeNodeDefAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdLodDistanceHeuristic& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdLodHeuristic& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdLodOverrideAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdLodRootAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdLodScreenSizeHeuristic& x);
     pxr::UsdPrim GetPrim(const pxr::UsdLuxBoundableLightBase& x);
     pxr::UsdPrim GetPrim(const pxr::UsdLuxLightAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdLuxCylinderLight& x);
@@ -245,12 +264,14 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdLuxSphereLight& x);
     pxr::UsdPrim GetPrim(const pxr::UsdLuxVolumeLightAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdProcGenerativeProcedural& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdProfilesClaimsAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderPass& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderProduct& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderSettingsBase& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderSettings& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderVar& x);
     pxr::UsdPrim GetPrim(const pxr::UsdHydraGenerativeProceduralAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdHydraRenderPassAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRiMaterialAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRiSplineAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRiStatementsAPI& x);
@@ -284,6 +305,11 @@ namespace Overlay {
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
     pxr::UsdPrim GetPrim(const pxr::UsdMtlxMaterialXConfigAPI& x);
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+    pxr::UsdPrim GetPrim(const pxr::ExecIrController& x);
+    pxr::UsdPrim GetPrim(const pxr::ExecIrFkController& x);
+    pxr::UsdPrim GetPrim(const pxr::ExecIrJointScope& x);
+    pxr::UsdPrim GetPrim(const pxr::ExecIrXformable& x);
+    pxr::UsdPrim GetPrim(const pxr::ExecIrSwitchController& x);
 }
 
 namespace __Overlay {
@@ -295,14 +321,15 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdColorSpaceDefinitionAPI& x);
     bool convertToBool(const pxr::UsdModelAPI& x);
     bool convertToBool(const pxr::UsdTyped& x);
+    bool convertToBool(const pxr::UsdGeomBackPlateAPI& x);
+    bool convertToBool(const pxr::UsdGeomCamera& x);
+    bool convertToBool(const pxr::UsdGeomXformable& x);
+    bool convertToBool(const pxr::UsdGeomImageable& x);
     bool convertToBool(const pxr::UsdGeomBasisCurves& x);
     bool convertToBool(const pxr::UsdGeomCurves& x);
     bool convertToBool(const pxr::UsdGeomPointBased& x);
     bool convertToBool(const pxr::UsdGeomGprim& x);
     bool convertToBool(const pxr::UsdGeomBoundable& x);
-    bool convertToBool(const pxr::UsdGeomXformable& x);
-    bool convertToBool(const pxr::UsdGeomImageable& x);
-    bool convertToBool(const pxr::UsdGeomCamera& x);
     bool convertToBool(const pxr::UsdGeomCapsule& x);
     bool convertToBool(const pxr::UsdGeomCapsule_1& x);
     bool convertToBool(const pxr::UsdGeomCone& x);
@@ -355,6 +382,11 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdShadeShader& x);
     bool convertToBool(const pxr::UsdShadeMaterialBindingAPI& x);
     bool convertToBool(const pxr::UsdShadeNodeDefAPI& x);
+    bool convertToBool(const pxr::UsdLodDistanceHeuristic& x);
+    bool convertToBool(const pxr::UsdLodHeuristic& x);
+    bool convertToBool(const pxr::UsdLodOverrideAPI& x);
+    bool convertToBool(const pxr::UsdLodRootAPI& x);
+    bool convertToBool(const pxr::UsdLodScreenSizeHeuristic& x);
     bool convertToBool(const pxr::UsdLuxBoundableLightBase& x);
     bool convertToBool(const pxr::UsdLuxLightAPI& x);
     bool convertToBool(const pxr::UsdLuxCylinderLight& x);
@@ -377,12 +409,14 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdLuxSphereLight& x);
     bool convertToBool(const pxr::UsdLuxVolumeLightAPI& x);
     bool convertToBool(const pxr::UsdProcGenerativeProcedural& x);
+    bool convertToBool(const pxr::UsdProfilesClaimsAPI& x);
     bool convertToBool(const pxr::UsdRenderPass& x);
     bool convertToBool(const pxr::UsdRenderProduct& x);
     bool convertToBool(const pxr::UsdRenderSettingsBase& x);
     bool convertToBool(const pxr::UsdRenderSettings& x);
     bool convertToBool(const pxr::UsdRenderVar& x);
     bool convertToBool(const pxr::UsdHydraGenerativeProceduralAPI& x);
+    bool convertToBool(const pxr::UsdHydraRenderPassAPI& x);
     bool convertToBool(const pxr::UsdRiMaterialAPI& x);
     bool convertToBool(const pxr::UsdRiSplineAPI& x);
     bool convertToBool(const pxr::UsdRiStatementsAPI& x);
@@ -416,5 +450,10 @@ namespace __Overlay {
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
     bool convertToBool(const pxr::UsdMtlxMaterialXConfigAPI& x);
 #endif // #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
+    bool convertToBool(const pxr::ExecIrController& x);
+    bool convertToBool(const pxr::ExecIrFkController& x);
+    bool convertToBool(const pxr::ExecIrJointScope& x);
+    bool convertToBool(const pxr::ExecIrXformable& x);
+    bool convertToBool(const pxr::ExecIrSwitchController& x);
 }
 #endif /* SWIFTUSD_GENERATED_SCHEMAUTIL_H */

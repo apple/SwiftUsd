@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::SdfZipFile::Iterator from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/usd/sdf/zipFile.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/usd/sdf/zipFile.h
 
 #ifndef SWIFTUSD_WRAPPERS_SDFZIPFILEITERATORWRAPPER_H
 #define SWIFTUSD_WRAPPERS_SDFZIPFILEITERATORWRAPPER_H

@@ -192,3 +192,5 @@ extension pxr.VtQuatdArray: __Overlay.VtArrayProtocol {}
 extension pxr.VtQuaternionArray: __Overlay.VtArrayProtocol {}
 
 extension Overlay.SdfAssetPath_VtArray: __Overlay.VtArrayProtocol {}
+
+extension pxr.VtTimeCodeArray: __Overlay.VtArrayProtocol {}

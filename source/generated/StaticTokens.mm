@@ -58,8 +58,10 @@ const pxr::UsdGeomXformOpTypes_StaticTokenType* const __Overlay::UsdGeomXformOpT
 const pxr::UsdVolTokensType* const __Overlay::UsdVolTokens = pxr::UsdVolTokens.Get();
 const pxr::UsdMediaTokensType* const __Overlay::UsdMediaTokens = pxr::UsdMediaTokens.Get();
 const pxr::UsdShadeTokensType* const __Overlay::UsdShadeTokens = pxr::UsdShadeTokens.Get();
+const pxr::UsdLodTokensType* const __Overlay::UsdLodTokens = pxr::UsdLodTokens.Get();
 const pxr::UsdLuxTokensType* const __Overlay::UsdLuxTokens = pxr::UsdLuxTokens.Get();
 const pxr::UsdProcTokensType* const __Overlay::UsdProcTokens = pxr::UsdProcTokens.Get();
+const pxr::UsdProfilesTokensType* const __Overlay::UsdProfilesTokens = pxr::UsdProfilesTokens.Get();
 const pxr::UsdRenderTokensType* const __Overlay::UsdRenderTokens = pxr::UsdRenderTokens.Get();
 const pxr::UsdHydraTokensType* const __Overlay::UsdHydraTokens = pxr::UsdHydraTokens.Get();
 const pxr::UsdRiTokensType* const __Overlay::UsdRiTokens = pxr::UsdRiTokens.Get();
@@ -76,13 +78,16 @@ const pxr::UsdMtlxTokensType* const __Overlay::UsdMtlxTokens = pxr::UsdMtlxToken
 const pxr::VdfTokens_StaticTokenType* const __Overlay::VdfTokens = pxr::VdfTokens.Get();
 const pxr::EfLeafTokens_StaticTokenType* const __Overlay::EfLeafTokens = pxr::EfLeafTokens.Get();
 const pxr::ExecGeomXformableTokens_StaticTokenType* const __Overlay::ExecGeomXformableTokens = pxr::ExecGeomXformableTokens.Get();
-const pxr::ExecIrTokens_StaticTokenType* const __Overlay::ExecIrTokens = pxr::ExecIrTokens.Get();
+const pxr::ExecIrTokensType* const __Overlay::ExecIrTokens = pxr::ExecIrTokens.Get();
 const pxr::UsdValidatorNameTokens_StaticTokenType* const __Overlay::UsdValidatorNameTokens = pxr::UsdValidatorNameTokens.Get();
 const pxr::UsdValidatorKeywordTokens_StaticTokenType* const __Overlay::UsdValidatorKeywordTokens = pxr::UsdValidatorKeywordTokens.Get();
 const pxr::UsdValidationErrorNameTokens_StaticTokenType* const __Overlay::UsdValidationErrorNameTokens = pxr::UsdValidationErrorNameTokens.Get();
 const pxr::UsdGeomValidatorNameTokens_StaticTokenType* const __Overlay::UsdGeomValidatorNameTokens = pxr::UsdGeomValidatorNameTokens.Get();
 const pxr::UsdGeomValidatorKeywordTokens_StaticTokenType* const __Overlay::UsdGeomValidatorKeywordTokens = pxr::UsdGeomValidatorKeywordTokens.Get();
 const pxr::UsdGeomValidationErrorNameTokens_StaticTokenType* const __Overlay::UsdGeomValidationErrorNameTokens = pxr::UsdGeomValidationErrorNameTokens.Get();
+const pxr::UsdLuxValidatorNameTokens_StaticTokenType* const __Overlay::UsdLuxValidatorNameTokens = pxr::UsdLuxValidatorNameTokens.Get();
+const pxr::UsdLuxValidatorKeywordTokens_StaticTokenType* const __Overlay::UsdLuxValidatorKeywordTokens = pxr::UsdLuxValidatorKeywordTokens.Get();
+const pxr::UsdLuxValidationErrorNameTokens_StaticTokenType* const __Overlay::UsdLuxValidationErrorNameTokens = pxr::UsdLuxValidationErrorNameTokens.Get();
 const pxr::UsdShadeValidatorNameTokens_StaticTokenType* const __Overlay::UsdShadeValidatorNameTokens = pxr::UsdShadeValidatorNameTokens.Get();
 const pxr::UsdShadeValidatorKeywordTokens_StaticTokenType* const __Overlay::UsdShadeValidatorKeywordTokens = pxr::UsdShadeValidatorKeywordTokens.Get();
 const pxr::UsdShadeValidationErrorNameTokens_StaticTokenType* const __Overlay::UsdShadeValidationErrorNameTokens = pxr::UsdShadeValidationErrorNameTokens.Get();
@@ -100,6 +105,8 @@ const pxr::GeomUtilInterpolationTokens_StaticTokenType* const __Overlay::GeomUti
 const pxr::GlfTextureTokens_StaticTokenType* const __Overlay::GlfTextureTokens = pxr::GlfTextureTokens.Get();
 const pxr::HgiTokens_StaticTokenType* const __Overlay::HgiTokens = pxr::HgiTokens.Get();
 const pxr::HgiShaderKeywordTokens_StaticTokenType* const __Overlay::HgiShaderKeywordTokens = pxr::HgiShaderKeywordTokens.Get();
+const pxr::HdBackPlateSchemaTokens_StaticTokenType* const __Overlay::HdBackPlateSchemaTokens = pxr::HdBackPlateSchemaTokens.Get();
+const pxr::HdDataSourceLocatorSentinelTokens_StaticTokenType* const __Overlay::HdDataSourceLocatorSentinelTokens = pxr::HdDataSourceLocatorSentinelTokens.Get();
 const pxr::HdBasisCurvesReprDescTokens_StaticTokenType* const __Overlay::HdBasisCurvesReprDescTokens = pxr::HdBasisCurvesReprDescTokens.Get();
 const pxr::HdTokens_StaticTokenType* const __Overlay::HdTokens = pxr::HdTokens.Get();
 const pxr::HdInstancerTokens_StaticTokenType* const __Overlay::HdInstancerTokens = pxr::HdInstancerTokens.Get();
@@ -129,7 +136,6 @@ const pxr::HdSceneIndexEmulationTokens_StaticTokenType* const __Overlay::HdScene
 const pxr::HdCollectionEmulationTokens_StaticTokenType* const __Overlay::HdCollectionEmulationTokens = pxr::HdCollectionEmulationTokens.Get();
 const pxr::HdSkinningInputTokens_StaticTokenType* const __Overlay::HdSkinningInputTokens = pxr::HdSkinningInputTokens.Get();
 const pxr::HdSkinningSkelInputTokens_StaticTokenType* const __Overlay::HdSkinningSkelInputTokens = pxr::HdSkinningSkelInputTokens.Get();
-const pxr::HdDataSourceLocatorSentinelTokens_StaticTokenType* const __Overlay::HdDataSourceLocatorSentinelTokens = pxr::HdDataSourceLocatorSentinelTokens.Get();
 const pxr::HdBasisCurvesSchemaTokens_StaticTokenType* const __Overlay::HdBasisCurvesSchemaTokens = pxr::HdBasisCurvesSchemaTokens.Get();
 const pxr::HdBasisCurvesTopologySchemaTokens_StaticTokenType* const __Overlay::HdBasisCurvesTopologySchemaTokens = pxr::HdBasisCurvesTopologySchemaTokens.Get();
 const pxr::HdBuiltinMaterialSchemaTokens_StaticTokenType* const __Overlay::HdBuiltinMaterialSchemaTokens = pxr::HdBuiltinMaterialSchemaTokens.Get();
@@ -154,6 +160,7 @@ const pxr::HdMaterialNodeSchemaTokens_StaticTokenType* const __Overlay::HdMateri
 const pxr::HdDependenciesSchemaTokens_StaticTokenType* const __Overlay::HdDependenciesSchemaTokens = pxr::HdDependenciesSchemaTokens.Get();
 const pxr::HdDependencySchemaTokens_StaticTokenType* const __Overlay::HdDependencySchemaTokens = pxr::HdDependencySchemaTokens.Get();
 const pxr::HdDisplayFilterSchemaTokens_StaticTokenType* const __Overlay::HdDisplayFilterSchemaTokens = pxr::HdDisplayFilterSchemaTokens.Get();
+const pxr::HdEnergyFilterSchemaTokens_StaticTokenType* const __Overlay::HdEnergyFilterSchemaTokens = pxr::HdEnergyFilterSchemaTokens.Get();
 const pxr::HdExtComputationInputComputationSchemaTokens_StaticTokenType* const __Overlay::HdExtComputationInputComputationSchemaTokens = pxr::HdExtComputationInputComputationSchemaTokens.Get();
 const pxr::HdExtComputationOutputSchemaTokens_StaticTokenType* const __Overlay::HdExtComputationOutputSchemaTokens = pxr::HdExtComputationOutputSchemaTokens.Get();
 const pxr::HdExtComputationPrimvarSchemaTokens_StaticTokenType* const __Overlay::HdExtComputationPrimvarSchemaTokens = pxr::HdExtComputationPrimvarSchemaTokens.Get();
@@ -168,6 +175,7 @@ const pxr::HdImageShaderSchemaTokens_StaticTokenType* const __Overlay::HdImageSh
 const pxr::HdInstanceCategoriesSchemaTokens_StaticTokenType* const __Overlay::HdInstanceCategoriesSchemaTokens = pxr::HdInstanceCategoriesSchemaTokens.Get();
 const pxr::HdInstancedBySchemaTokens_StaticTokenType* const __Overlay::HdInstancedBySchemaTokens = pxr::HdInstancedBySchemaTokens.Get();
 const pxr::HdInstanceIndicesSchemaTokens_StaticTokenType* const __Overlay::HdInstanceIndicesSchemaTokens = pxr::HdInstanceIndicesSchemaTokens.Get();
+const pxr::HdInstanceProxySchemaTokens_StaticTokenType* const __Overlay::HdInstanceProxySchemaTokens = pxr::HdInstanceProxySchemaTokens.Get();
 const pxr::HdInstancerTopologySchemaTokens_StaticTokenType* const __Overlay::HdInstancerTopologySchemaTokens = pxr::HdInstancerTopologySchemaTokens.Get();
 const pxr::HdInstanceSchemaTokens_StaticTokenType* const __Overlay::HdInstanceSchemaTokens = pxr::HdInstanceSchemaTokens.Get();
 const pxr::HdIntegratorSchemaTokens_StaticTokenType* const __Overlay::HdIntegratorSchemaTokens = pxr::HdIntegratorSchemaTokens.Get();
@@ -191,19 +199,19 @@ const pxr::HdNurbsCurvesSchemaTokens_StaticTokenType* const __Overlay::HdNurbsCu
 const pxr::HdNurbsPatchSchemaTokens_StaticTokenType* const __Overlay::HdNurbsPatchSchemaTokens = pxr::HdNurbsPatchSchemaTokens.Get();
 const pxr::HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType* const __Overlay::HdNurbsPatchTrimCurveSchemaTokens = pxr::HdNurbsPatchTrimCurveSchemaTokens.Get();
 const pxr::HdPlaneSchemaTokens_StaticTokenType* const __Overlay::HdPlaneSchemaTokens = pxr::HdPlaneSchemaTokens.Get();
+const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const __Overlay::HdRendererCreateArgsSchemaTokens = pxr::HdRendererCreateArgsSchemaTokens.Get();
 const pxr::HdPrimOriginSchemaTokens_StaticTokenType* const __Overlay::HdPrimOriginSchemaTokens = pxr::HdPrimOriginSchemaTokens.Get();
 const pxr::HdPrimvarsSchemaTokens_StaticTokenType* const __Overlay::HdPrimvarsSchemaTokens = pxr::HdPrimvarsSchemaTokens.Get();
 const pxr::HdPurposeSchemaTokens_StaticTokenType* const __Overlay::HdPurposeSchemaTokens = pxr::HdPurposeSchemaTokens.Get();
 const pxr::HdRenderBufferSchemaTokens_StaticTokenType* const __Overlay::HdRenderBufferSchemaTokens = pxr::HdRenderBufferSchemaTokens.Get();
 const pxr::HdRenderCapabilitiesSchemaTokens_StaticTokenType* const __Overlay::HdRenderCapabilitiesSchemaTokens = pxr::HdRenderCapabilitiesSchemaTokens.Get();
-const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const __Overlay::HdRendererCreateArgsSchemaTokens = pxr::HdRendererCreateArgsSchemaTokens.Get();
 const pxr::HdRenderPassSchemaTokens_StaticTokenType* const __Overlay::HdRenderPassSchemaTokens = pxr::HdRenderPassSchemaTokens.Get();
 const pxr::HdRenderProductSchemaTokens_StaticTokenType* const __Overlay::HdRenderProductSchemaTokens = pxr::HdRenderProductSchemaTokens.Get();
 const pxr::HdRenderSettingsSchemaTokens_StaticTokenType* const __Overlay::HdRenderSettingsSchemaTokens = pxr::HdRenderSettingsSchemaTokens.Get();
 const pxr::HdRenderVarSchemaTokens_StaticTokenType* const __Overlay::HdRenderVarSchemaTokens = pxr::HdRenderVarSchemaTokens.Get();
 const pxr::HdSampleFilterSchemaTokens_StaticTokenType* const __Overlay::HdSampleFilterSchemaTokens = pxr::HdSampleFilterSchemaTokens.Get();
 const pxr::HdSceneGlobalsSchemaTokens_StaticTokenType* const __Overlay::HdSceneGlobalsSchemaTokens = pxr::HdSceneGlobalsSchemaTokens.Get();
-const pxr::HdSceneIndexInputArgsSchemaTokens_StaticTokenType* const __Overlay::HdSceneIndexInputArgsSchemaTokens = pxr::HdSceneIndexInputArgsSchemaTokens.Get();
+const pxr::HdSceneIndexCreateArgsSchemaTokens_StaticTokenType* const __Overlay::HdSceneIndexCreateArgsSchemaTokens = pxr::HdSceneIndexCreateArgsSchemaTokens.Get();
 const pxr::HdSceneIndexPluginRegistryTokens_StaticTokenType* const __Overlay::HdSceneIndexPluginRegistryTokens = pxr::HdSceneIndexPluginRegistryTokens.Get();
 const pxr::HdSelectionSchemaTokens_StaticTokenType* const __Overlay::HdSelectionSchemaTokens = pxr::HdSelectionSchemaTokens.Get();
 const pxr::HdSelectionsSchemaTokens_StaticTokenType* const __Overlay::HdSelectionsSchemaTokens = pxr::HdSelectionsSchemaTokens.Get();
@@ -248,6 +256,7 @@ const pxr::HdxColorCorrectionTokens_StaticTokenType* const __Overlay::HdxColorCo
 const pxr::HdxColorChannelTokens_StaticTokenType* const __Overlay::HdxColorChannelTokens = pxr::HdxColorChannelTokens.Get();
 const pxr::HdxAovTokens_StaticTokenType* const __Overlay::HdxAovTokens = pxr::HdxAovTokens.Get();
 const pxr::HdxSimpleLightTaskTokens_StaticTokenType* const __Overlay::HdxSimpleLightTaskTokens = pxr::HdxSimpleLightTaskTokens.Get();
+const pxr::HdxPickResolveModeTokens_StaticTokenType* const __Overlay::HdxPickResolveModeTokens = pxr::HdxPickResolveModeTokens.Get();
 const pxr::HdxPickTokens_StaticTokenType* const __Overlay::HdxPickTokens = pxr::HdxPickTokens.Get();
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
@@ -259,7 +268,6 @@ const pxr::UsdImagingExtentsHintSchemaTokens_StaticTokenType* const __Overlay::U
 const pxr::UsdImagingGeomModelSchemaTokens_StaticTokenType* const __Overlay::UsdImagingGeomModelSchemaTokens = pxr::UsdImagingGeomModelSchemaTokens.Get();
 const pxr::UsdImagingGeomXformVectorsSchemaTokens_StaticTokenType* const __Overlay::UsdImagingGeomXformVectorsSchemaTokens = pxr::UsdImagingGeomXformVectorsSchemaTokens.Get();
 const pxr::UsdImagingModelSchemaTokens_StaticTokenType* const __Overlay::UsdImagingModelSchemaTokens = pxr::UsdImagingModelSchemaTokens.Get();
-const pxr::UsdImagingStageSceneIndexTokens_StaticTokenType* const __Overlay::UsdImagingStageSceneIndexTokens = pxr::UsdImagingStageSceneIndexTokens.Get();
 const pxr::UsdImagingTokens_StaticTokenType* const __Overlay::UsdImagingTokens = pxr::UsdImagingTokens.Get();
 const pxr::UsdImagingMaterialBindingSchemaTokens_StaticTokenType* const __Overlay::UsdImagingMaterialBindingSchemaTokens = pxr::UsdImagingMaterialBindingSchemaTokens.Get();
 const pxr::UsdImagingMaterialBindingsSchemaTokens_StaticTokenType* const __Overlay::UsdImagingMaterialBindingsSchemaTokens = pxr::UsdImagingMaterialBindingsSchemaTokens.Get();
@@ -267,7 +275,8 @@ const pxr::UsdImagingUsdPrimInfoSchemaTokens_StaticTokenType* const __Overlay::U
 const pxr::UsdImagingUsdRenderProductSchemaTokens_StaticTokenType* const __Overlay::UsdImagingUsdRenderProductSchemaTokens = pxr::UsdImagingUsdRenderProductSchemaTokens.Get();
 const pxr::UsdImagingUsdRenderSettingsSchemaTokens_StaticTokenType* const __Overlay::UsdImagingUsdRenderSettingsSchemaTokens = pxr::UsdImagingUsdRenderSettingsSchemaTokens.Get();
 const pxr::UsdImagingUsdRenderVarSchemaTokens_StaticTokenType* const __Overlay::UsdImagingUsdRenderVarSchemaTokens = pxr::UsdImagingUsdRenderVarSchemaTokens.Get();
-const pxr::UsdImagingUsdSceneIndexInputArgsSchemaTokens_StaticTokenType* const __Overlay::UsdImagingUsdSceneIndexInputArgsSchemaTokens = pxr::UsdImagingUsdSceneIndexInputArgsSchemaTokens.Get();
+const pxr::UsdImagingUsdUpAxisSchemaTokens_StaticTokenType* const __Overlay::UsdImagingUsdUpAxisSchemaTokens = pxr::UsdImagingUsdUpAxisSchemaTokens.Get();
+const pxr::UsdImagingSceneIndexCreateArgsSchemaTokens_StaticTokenType* const __Overlay::UsdImagingSceneIndexCreateArgsSchemaTokens = pxr::UsdImagingSceneIndexCreateArgsSchemaTokens.Get();
 const pxr::UsdSkelImagingAnimationSchemaTokens_StaticTokenType* const __Overlay::UsdSkelImagingAnimationSchemaTokens = pxr::UsdSkelImagingAnimationSchemaTokens.Get();
 const pxr::UsdSkelImagingBindingSchemaTokens_StaticTokenType* const __Overlay::UsdSkelImagingBindingSchemaTokens = pxr::UsdSkelImagingBindingSchemaTokens.Get();
 const pxr::UsdSkelImagingBlendShapeSchemaTokens_StaticTokenType* const __Overlay::UsdSkelImagingBlendShapeSchemaTokens = pxr::UsdSkelImagingBlendShapeSchemaTokens.Get();
@@ -282,4 +291,5 @@ const pxr::UsdSkelImagingExtComputationInputNameTokens_StaticTokenType* const __
 const pxr::UsdSkelImagingExtComputationLegacyInputNameTokens_StaticTokenType* const __Overlay::UsdSkelImagingExtComputationLegacyInputNameTokens = pxr::UsdSkelImagingExtComputationLegacyInputNameTokens.Get();
 const pxr::UsdSkelImagingExtComputationOutputNameTokens_StaticTokenType* const __Overlay::UsdSkelImagingExtComputationOutputNameTokens = pxr::UsdSkelImagingExtComputationOutputNameTokens.Get();
 const pxr::UsdVolImagingTokens_StaticTokenType* const __Overlay::UsdVolImagingTokens = pxr::UsdVolImagingTokens.Get();
+const pxr::UsdIrImagingTokens_StaticTokenType* const __Overlay::UsdIrImagingTokens = pxr::UsdIrImagingTokens.Get();
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT

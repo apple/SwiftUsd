@@ -109,6 +109,12 @@ if __name__ == "__main__":
                 # rdar://177175896 (swift build with main-snapshot-2026-05-07 not respecting CPLUS_INCLUDE_PATH; can't #include <swift/bridging> (regression))
                 continue
 
+        if (x["build_system"] == "xcodebuild-xcodeproj" or x["build_system"] == "xcodebuild-SPM-Tests") and swiftly != "xcode":
+            # SwiftUsd 8.0.0 adds OpenUSD plugin support via SPM plugins, which ends up
+            # breaking Swiftly toolchain builds that use xcodebuild:
+            # `clang: error: unable to execute command: posix_spawn failed: No such file or directory`
+            continue
+
         xcodebuild_destination = get_xcodebuild_destination(x["target_platform"])
         if xcodebuild_destination is None: continue
         x["xcodebuild_destination"] = xcodebuild_destination

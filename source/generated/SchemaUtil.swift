@@ -30,14 +30,15 @@ extension Bool {
     public init(_ x: pxr.UsdColorSpaceDefinitionAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdModelAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdTyped) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdGeomBackPlateAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdGeomCamera) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdGeomXformable) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdGeomImageable) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomBasisCurves) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomCurves) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomPointBased) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomGprim) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomBoundable) { self.init(__Overlay.convertToBool(x)) }
-    public init(_ x: pxr.UsdGeomXformable) { self.init(__Overlay.convertToBool(x)) }
-    public init(_ x: pxr.UsdGeomImageable) { self.init(__Overlay.convertToBool(x)) }
-    public init(_ x: pxr.UsdGeomCamera) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomCapsule) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomCapsule_1) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdGeomCone) { self.init(__Overlay.convertToBool(x)) }
@@ -90,6 +91,11 @@ extension Bool {
     public init(_ x: pxr.UsdShadeShader) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdShadeMaterialBindingAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdShadeNodeDefAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdLodDistanceHeuristic) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdLodHeuristic) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdLodOverrideAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdLodRootAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdLodScreenSizeHeuristic) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdLuxBoundableLightBase) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdLuxLightAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdLuxCylinderLight) { self.init(__Overlay.convertToBool(x)) }
@@ -112,12 +118,14 @@ extension Bool {
     public init(_ x: pxr.UsdLuxSphereLight) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdLuxVolumeLightAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdProcGenerativeProcedural) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdProfilesClaimsAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderPass) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderProduct) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderSettingsBase) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderSettings) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderVar) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdHydraGenerativeProceduralAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdHydraRenderPassAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRiMaterialAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRiSplineAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRiStatementsAPI) { self.init(__Overlay.convertToBool(x)) }
@@ -151,4 +159,9 @@ extension Bool {
 #if canImport(SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT)
     public init(_ x: pxr.UsdMtlxMaterialXConfigAPI) { self.init(__Overlay.convertToBool(x)) }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT)
+    public init(_ x: pxr.ExecIrController) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.ExecIrFkController) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.ExecIrJointScope) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.ExecIrXformable) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.ExecIrSwitchController) { self.init(__Overlay.convertToBool(x)) }
 }

@@ -385,6 +385,10 @@ bool __Overlay::operatorLess(const pxr::UsdGeomPrimvar& l,
                              const pxr::UsdGeomPrimvar& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::UsdProfileRegistry& l,
+                             const pxr::UsdProfileRegistry& r) {
+    return &l < &r;
+}
 bool __Overlay::operatorLess(const pxr::UsdHydraDiscoveryPlugin& l,
                              const pxr::UsdHydraDiscoveryPlugin& r) {
     return &l < &r;
@@ -570,6 +574,14 @@ bool __Overlay::operatorLess(const pxr::HdFlatteningSceneIndexRefPtr& l,
                              const pxr::HdFlatteningSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdInstanceProxyViewSceneIndex& l,
+                             const pxr::HdInstanceProxyViewSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdInstanceProxyViewSceneIndexRefPtr& l,
+                             const pxr::HdInstanceProxyViewSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdLegacyGeomSubsetSceneIndex& l,
                              const pxr::HdLegacyGeomSubsetSceneIndex& r) {
     return &l < &r;
@@ -624,6 +636,14 @@ bool __Overlay::operatorLess(const pxr::HdGpGenerativeProceduralResolvingSceneIn
 }
 bool __Overlay::operatorLess(const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& l,
                              const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiBackPlateSceneIndex& l,
+                             const pxr::HdsiBackPlateSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiBackPlateSceneIndexRefPtr& l,
+                             const pxr::HdsiBackPlateSceneIndexRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdsiCoordSysPrimSceneIndex& l,
@@ -974,6 +994,22 @@ bool __Overlay::operatorLess(const pxr::UsdImagingRerootingSceneIndexRefPtr& l,
 }
 bool __Overlay::operatorLess(const pxr::UsdImagingRerootingSceneIndex& l,
                              const pxr::UsdImagingRerootingSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::UsdImagingSceneIndexRefPtr& l,
+                             const pxr::UsdImagingSceneIndexRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::UsdImagingSceneIndex& l,
+                             const pxr::UsdImagingSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& l,
+                             const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::UsdExecImagingStageSceneIndexInterface& l,
+                             const pxr::UsdExecImagingStageSceneIndexInterface& r) {
     return &l < &r;
 }
 bool __Overlay::operatorLess(const pxr::UsdSkelImagingPointsResolvingSceneIndexRefPtr& l,

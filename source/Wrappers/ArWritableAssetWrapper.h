@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::ArWritableAsset from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/usd/ar/writableAsset.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/usd/ar/writableAsset.h
 
 #ifndef SWIFTUSD_WRAPPERS_ARWRITABLEASSETWRAPPER_H
 #define SWIFTUSD_WRAPPERS_ARWRITABLEASSETWRAPPER_H

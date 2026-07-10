@@ -123,6 +123,7 @@
 #include "pxr/usd/usdLux/lightListAPI.h"
 #include "pxr/usd/usdLux/listAPI.h"
 #include "pxr/usd/usdPhysics/parseDesc.h"
+#include "pxr/usd/usdProfiles/profileRegistry.h"
 #include "pxr/usd/usdShade/connectableAPIBehavior.h"
 #include "pxr/usd/usdShade/types.h"
 #include "pxr/usd/usdSkel/bakeSkinning.h"
@@ -830,6 +831,18 @@ namespace Overlay {
   }
 }
 namespace Overlay {
+  namespace UsdProfileRegistry {
+    namespace QueryStatus {
+      extern const pxr::UsdProfileRegistry::QueryStatus NoPath;
+      extern const pxr::UsdProfileRegistry::QueryStatus ValidPath;
+      extern const pxr::UsdProfileRegistry::QueryStatus Deprecated;
+      extern const pxr::UsdProfileRegistry::QueryStatus DeprecationConflict;
+      extern const pxr::UsdProfileRegistry::QueryStatus Excepted;
+      extern const pxr::UsdProfileRegistry::QueryStatus CycleFound;
+    }
+  }
+}
+namespace Overlay {
   namespace UsdSkelBakeSkinningParms {
     extern const pxr::UsdSkelBakeSkinningParms::DeformationFlags DeformPointsWithSkinning;
     extern const pxr::UsdSkelBakeSkinningParms::DeformationFlags DeformNormalsWithSkinning;
@@ -1195,6 +1208,7 @@ namespace Overlay {
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsIndirectCommandBuffers;
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsRoundPoints;
   extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesBitsSingleSlotResourceArrays;
+  extern const pxr::HgiDeviceCapabilitiesBits HgiDeviceCapabilitiesForceEarlyFragmentTest;
 }
 namespace Overlay {
   extern const pxr::HgiTextureType HgiTextureType1D;

@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::ArAsset from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/usd/ar/asset.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/usd/ar/asset.h
 
 #ifndef SWIFTUSD_WRAPPERS_ARASSETWRAPPER_H
 #define SWIFTUSD_WRAPPERS_ARASSETWRAPPER_H

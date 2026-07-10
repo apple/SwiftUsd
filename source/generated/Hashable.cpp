@@ -159,6 +159,9 @@ int64_t __Overlay::hash_value(const pxr::GfMultiInterval& x) {
 int64_t __Overlay::hash_value(const pxr::GfRect2i& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::GfTimeCode& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::TraceAggregateTreeRefPtr& x) {
     return pxr::TfHash()(x);
 }
@@ -274,6 +277,9 @@ int64_t __Overlay::hash_value(const pxr::VtRange3fArray& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtRect2iArray& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtTimeCodeArray& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtVec2dArray& x) {
@@ -418,6 +424,9 @@ int64_t __Overlay::hash_value(const pxr::VtRange3fArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtRect2iArrayEdit& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::VtTimeCodeArrayEdit& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::VtVec2dArrayEdit& x) {
@@ -574,9 +583,6 @@ int64_t __Overlay::hash_value(const pxr::SdfPredicateExpression::FnArg& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::SdfPredicateExpression::FnCall& x) {
-    return pxr::TfHash()(x);
-}
-int64_t __Overlay::hash_value(const pxr::SdfTimeCode& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::SdfValueTypeName& x) {
@@ -798,6 +804,9 @@ int64_t __Overlay::hash_value(const pxr::UsdGeomPrimvar& x) {
 int64_t __Overlay::hash_value(const pxr::UsdShadeConnectionSourceInfo& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::UsdProfileRegistry& x) {
+    return (int64_t) &x;
+}
 int64_t __Overlay::hash_value(const pxr::UsdHydraDiscoveryPlugin& x) {
     return (int64_t) &x;
 }
@@ -886,6 +895,9 @@ int64_t __Overlay::hash_value(const pxr::HdRenderPassAovBinding& x) {
 int64_t __Overlay::hash_value(const pxr::HdTupleType& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::HdDataSourceLocator& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdBufferSpec& x) {
     return pxr::TfHash()(x);
 }
@@ -905,9 +917,6 @@ int64_t __Overlay::hash_value(const pxr::HdSceneIndexBaseRefPtr& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdSceneIndexBasePtr& x) {
-    return pxr::TfHash()(x);
-}
-int64_t __Overlay::hash_value(const pxr::HdDataSourceLocator& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdSceneIndexObserverPtr& x) {
@@ -967,6 +976,12 @@ int64_t __Overlay::hash_value(const pxr::HdFlatteningSceneIndex& x) {
 int64_t __Overlay::hash_value(const pxr::HdFlatteningSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::HdInstanceProxyViewSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdInstanceProxyViewSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
 int64_t __Overlay::hash_value(const pxr::HdLegacyGeomSubsetSceneIndex& x) {
     return (int64_t) &x;
 }
@@ -1007,6 +1022,12 @@ int64_t __Overlay::hash_value(const pxr::HdGpGenerativeProceduralResolvingSceneI
     return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::HdsiBackPlateSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::HdsiBackPlateSceneIndexRefPtr& x) {
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::HdsiCoordSysPrimSceneIndex& x) {
@@ -1276,6 +1297,21 @@ int64_t __Overlay::hash_value(const pxr::UsdImagingRerootingSceneIndexRefPtr& x)
     return pxr::TfHash()(x);
 }
 int64_t __Overlay::hash_value(const pxr::UsdImagingRerootingSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::UsdImagingSceneIndexRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::UsdImagingSceneIndex& x) {
+    return (int64_t) &x;
+}
+int64_t __Overlay::hash_value(const pxr::UsdExecImagingValueKey& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& x) {
+    return pxr::TfHash()(x);
+}
+int64_t __Overlay::hash_value(const pxr::UsdExecImagingStageSceneIndexInterface& x) {
     return (int64_t) &x;
 }
 int64_t __Overlay::hash_value(const pxr::UsdSkelImagingPointsResolvingSceneIndexRefPtr& x) {

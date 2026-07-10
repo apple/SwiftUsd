@@ -78,6 +78,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/GfRect2i``
 - ``OpenUSD/C++/pxr/GfSize2``
 - ``OpenUSD/C++/pxr/GfSize3``
+- ``OpenUSD/C++/pxr/GfTimeCode``
 - ``OpenUSD/C++/pxr/GfTransform``
 - ``OpenUSD/C++/pxr/GfNumericCastFailureType``
 
@@ -118,6 +119,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRange3d>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRange3f>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfRect2i>``
+- ``OpenUSD/C++/pxr/VtArray<pxr.GfTimeCode>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2d>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2f>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfVec2h>``
@@ -183,7 +185,6 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/SdfPredicateExpression``
 - ``OpenUSD/C++/pxr/SdfPredicateExpression/FnCall/Kind``
 - ``OpenUSD/C++/pxr/SdfPredicateExpression/Op``
-- ``OpenUSD/C++/pxr/SdfTimeCode``
 - ``OpenUSD/C++/pxr/SdfValueTypeName``
 - ``OpenUSD/C++/pxr/SdfAttributeSpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfAttributeSpec>``
@@ -274,9 +275,16 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/UsdShadeConnectionModification``
 - ``OpenUSD/C++/pxr/UsdShadeConnectableAPIBehavior/ConnectableNodeTypes``
 
+###  UsdLod types
+- ``OpenUSD/C++/pxr/UsdLodDistanceHeuristicQuery``
+- ``OpenUSD/C++/pxr/UsdLodScreenSizeHeuristicQuery``
+
 ###  UsdLux types
 - ``OpenUSD/C++/pxr/UsdLuxLightListAPI/ComputeMode``
 - ``OpenUSD/C++/pxr/UsdLuxListAPI/ComputeMode``
+
+###  UsdProfiles types
+- ``OpenUSD/C++/pxr/UsdProfileRegistry/QueryStatus``
 
 ###  UsdSkel types
 - ``OpenUSD/C++/pxr/UsdSkelBakeSkinningParms/DeformationFlags``
@@ -411,15 +419,14 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdPointsGeomStyle``
 - ``OpenUSD/C++/pxr/HdInterpolation``
 - ``OpenUSD/C++/pxr/HdDepthPriority``
+- ``OpenUSD/C++/pxr/HdDataSourceLocator``
+- ``OpenUSD/C++/pxr/HdDataSourceLocatorSet``
 - ``OpenUSD/C++/pxr/HdBufferArrayUsageHintBits``
 - ``OpenUSD/C++/pxr/HdReprSelector``
 - ``OpenUSD/C++/pxr/HdBasisCurvesTopology``
 - ``OpenUSD/C++/pxr/HdTopology``
 - ``OpenUSD/C++/pxr/HdGeomSubset/Type``
 - ``OpenUSD/C++/pxr/HdRprimCollection``
-- ``OpenUSD/C++/pxr/HdSceneIndexPrim``
-- ``OpenUSD/C++/pxr/HdDataSourceLocator``
-- ``OpenUSD/C++/pxr/HdDataSourceLocatorSet``
 - ``OpenUSD/C++/pxr/HdCamera/DirtyBits``
 - ``OpenUSD/C++/pxr/HdCamera/Projection``
 - ``OpenUSD/C++/pxr/HdCollectionExpressionEvaluator/MatchKind``

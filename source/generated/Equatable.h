@@ -61,6 +61,7 @@
 #include "pxr/base/gf/rotation.h"
 #include "pxr/base/gf/size2.h"
 #include "pxr/base/gf/size3.h"
+#include "pxr/base/gf/timeCode.h"
 #include "pxr/base/gf/transform.h"
 #include "pxr/base/gf/vec2d.h"
 #include "pxr/base/gf/vec2f.h"
@@ -132,6 +133,7 @@
 #include "pxr/exec/vdf/object.h"
 #include "pxr/exec/vdf/output.h"
 #include "pxr/exec/vdf/outputSpec.h"
+#include "pxr/exec/vdf/readIterator.h"
 #include "pxr/exec/vdf/request.h"
 #include "pxr/exec/vdf/scheduler.h"
 #include "pxr/exec/vdf/testUtils.h"
@@ -162,6 +164,7 @@
 #include "pxr/imaging/hd/filteringSceneIndex.h"
 #include "pxr/imaging/hd/flatteningSceneIndex.h"
 #include "pxr/imaging/hd/geomSubset.h"
+#include "pxr/imaging/hd/instanceProxyViewSceneIndex.h"
 #include "pxr/imaging/hd/legacyGeomSubsetSceneIndex.h"
 #include "pxr/imaging/hd/legacyPrimSceneIndex.h"
 #include "pxr/imaging/hd/material.h"
@@ -173,7 +176,6 @@
 #include "pxr/imaging/hd/primOriginSchema.h"
 #include "pxr/imaging/hd/renderDelegateInfo.h"
 #include "pxr/imaging/hd/renderIndexAdapterSceneIndex.h"
-#include "pxr/imaging/hd/rendererCreateArgs.h"
 #include "pxr/imaging/hd/rendererPluginRegistry.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/retainedSceneIndex.h"
@@ -189,6 +191,7 @@
 #include "pxr/imaging/hdGp/generativeProceduralResolvingSceneIndex.h"
 #include "pxr/imaging/hdSt/binding.h"
 #include "pxr/imaging/hdSt/textureIdentifier.h"
+#include "pxr/imaging/hdsi/backPlateSceneIndex.h"
 #include "pxr/imaging/hdsi/coordSysPrimSceneIndex.h"
 #include "pxr/imaging/hdsi/debuggingSceneIndex.h"
 #include "pxr/imaging/hdsi/domeLightCameraVisibilitySceneIndex.h"
@@ -302,7 +305,6 @@
 #include "pxr/usd/sdf/schema.h"
 #include "pxr/usd/sdf/site.h"
 #include "pxr/usd/sdf/spec.h"
-#include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/usdFileFormat.h"
 #include "pxr/usd/sdf/usdaData.h"
@@ -338,6 +340,7 @@
 #include "pxr/usd/usdGeom/primvar.h"
 #include "pxr/usd/usdGeom/xformOp.h"
 #include "pxr/usd/usdHydra/discoveryPlugin.h"
+#include "pxr/usd/usdProfiles/profileRegistry.h"
 #include "pxr/usd/usdShade/connectableAPI.h"
 #include "pxr/usd/usdShade/input.h"
 #include "pxr/usd/usdShade/output.h"
@@ -355,6 +358,8 @@
 #include "pxr/usd/usdUtils/timeCodeRange.h"
 #include "pxr/usd/usdUtils/userProcessingFunc.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
+#include "pxr/usdImaging/usdExecImaging/stageSceneIndexInterface.h"
+#include "pxr/usdImaging/usdExecImaging/valueKey.h"
 #include "pxr/usdImaging/usdImaging/delegate.h"
 #include "pxr/usdImaging/usdImaging/drawModeSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/extentResolvingSceneIndex.h"
@@ -366,6 +371,7 @@
 #include "pxr/usdImaging/usdImaging/renderSettingsFlatteningSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/rerootingSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/rootOverridesSceneIndex.h"
+#include "pxr/usdImaging/usdImaging/sceneIndex.h"
 #include "pxr/usdImaging/usdImaging/selectionSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/stageSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/unloadedDrawModeSceneIndex.h"
@@ -486,6 +492,8 @@ namespace __Overlay {
                             const pxr::VtRange3fArray& r);
   bool operatorEqualsEquals(const pxr::VtRect2iArray& l,
                             const pxr::VtRect2iArray& r);
+  bool operatorEqualsEquals(const pxr::VtTimeCodeArray& l,
+                            const pxr::VtTimeCodeArray& r);
   bool operatorEqualsEquals(const pxr::VtVec2dArray& l,
                             const pxr::VtVec2dArray& r);
   bool operatorEqualsEquals(const pxr::VtVec2fArray& l,
@@ -582,6 +590,8 @@ namespace __Overlay {
                             const pxr::VtRange3fArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtRect2iArrayEdit& l,
                             const pxr::VtRect2iArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtTimeCodeArrayEdit& l,
+                            const pxr::VtTimeCodeArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtVec2dArrayEdit& l,
                             const pxr::VtVec2dArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtVec2fArrayEdit& l,
@@ -812,6 +822,8 @@ namespace __Overlay {
                             const pxr::UsdShadeInput& r);
   bool operatorEqualsEquals(const pxr::UsdShadeOutput& l,
                             const pxr::UsdShadeOutput& r);
+  bool operatorEqualsEquals(const pxr::UsdProfileRegistry& l,
+                            const pxr::UsdProfileRegistry& r);
   bool operatorEqualsEquals(const pxr::UsdHydraDiscoveryPlugin& l,
                             const pxr::UsdHydraDiscoveryPlugin& r);
   bool operatorEqualsEquals(const pxr::UsdSkelAnimQuery& l,
@@ -941,6 +953,10 @@ namespace __Overlay {
                             const pxr::HdFlatteningSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdFlatteningSceneIndexRefPtr& l,
                             const pxr::HdFlatteningSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdInstanceProxyViewSceneIndex& l,
+                            const pxr::HdInstanceProxyViewSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdInstanceProxyViewSceneIndexRefPtr& l,
+                            const pxr::HdInstanceProxyViewSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdLegacyGeomSubsetSceneIndex& l,
                             const pxr::HdLegacyGeomSubsetSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdLegacyGeomSubsetSceneIndexRefPtr& l,
@@ -973,6 +989,10 @@ namespace __Overlay {
                             const pxr::HdGpGenerativeProceduralResolvingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& l,
                             const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiBackPlateSceneIndex& l,
+                            const pxr::HdsiBackPlateSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiBackPlateSceneIndexRefPtr& l,
+                            const pxr::HdsiBackPlateSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiCoordSysPrimSceneIndex& l,
                             const pxr::HdsiCoordSysPrimSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiCoordSysPrimSceneIndexRefPtr& l,
@@ -1149,6 +1169,14 @@ namespace __Overlay {
                             const pxr::UsdImagingRerootingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingRerootingSceneIndex& l,
                             const pxr::UsdImagingRerootingSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingSceneIndexRefPtr& l,
+                            const pxr::UsdImagingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingSceneIndex& l,
+                            const pxr::UsdImagingSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& l,
+                            const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& r);
+  bool operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterface& l,
+                            const pxr::UsdExecImagingStageSceneIndexInterface& r);
   bool operatorEqualsEquals(const pxr::UsdImagingGLRenderParams& l,
                             const pxr::UsdImagingGLRenderParams& r);
   bool operatorEqualsEquals(const pxr::UsdSkelImagingPointsResolvingSceneIndexRefPtr& l,

@@ -19,7 +19,7 @@
 //===----------------------------------------------------------------------===//
 
 // Original documentation for pxr::UsdImagingGLEngine from
-// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.05/pxr/usdImaging/usdImagingGL/engine.h
+// https://github.com/PixarAnimationStudios/OpenUSD/blob/v26.08/pxr/usdImaging/usdImagingGL/engine.h
 
 #ifndef SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
 #define SWIFTUSD_WRAPPERS_USDIMAGINGGLENGINEWRAPPER_H
@@ -234,72 +234,66 @@ namespace Overlay {
         /// \name Picking
         /// @{
         // ---------------------------------------------------------------------
-    
-        /// Finds closest point of intersection with a frustum by rendering.
-        ///
-        /// This method uses a PickRender and a customized depth buffer to find an
-        /// approximate point of intersection by rendering. This is less accurate
-        /// than implicit methods or rendering with GL_SELECT, but leverages any
-        /// data already cached in the renderer.
-        ///
-        /// Returns whether a hit occurred and if so, \p outHitPoint will contain
-        /// the intersection point in world space (i.e. \p projectionMatrix and
-        /// \p viewMatrix factored back out of the result), and \p outHitNormal
-        /// will contain the world space normal at that point.
-        ///
-        /// \p outHitPrimPath will point to the gprim selected by the pick.
-        /// \p outHitInstancerPath will point to the point instancer (if applicable)
-        /// of that gprim. For nested instancing, outHitInstancerPath points to
-        /// the closest instancer.
-        ///
-        /// \deprecated Please use the override of TestIntersection that takes
-        /// PickParams and returns an IntersectionResultVector instead!
-        bool TestIntersection(const pxr::GfMatrix4d& viewMatrix,
-                              const pxr::GfMatrix4d& projectionMatrix,
-                              const pxr::UsdPrim& root,
-                              const pxr::UsdImagingGLRenderParams& params,
-                              pxr::GfVec3d* outHitPoint,
-                              pxr::GfVec3d* outHitNormal,
-                              pxr::SdfPath* outHitPrimPath = NULL,
-                              pxr::SdfPath* outHitInstancerPath = NULL,
-                              int* outHitInstanceIndex = NULL,
-                              pxr::HdInstancerContext* outInstancerContext = NULL);
 
-        // Pick result
+        /// Pick result
+        ///
+        /// This includes the necessary information to identify the picked instance.
+        ///
+        /// That is, if the picked prim is instanced by a point instancer, the
+        /// instancer path and the instance corresponding to the picked instance
+        /// are reported in the instancer context. If a picked prim is USD native
+        /// instance, the USD proxy path is used instead for the hitPrimPath.
+        /// Note that nested scenarios are supported. If a point instancer itself
+        /// is a native instance, its USD proxy path is reported in the instancer
+        /// context.
+        ///
         struct IntersectionResult {
+            /// Intersection point in world space (that is, given projectionMatrix
+            /// and viewMatrix are factored out of the result when picking is
+            /// using, for example, the depth buffer).
             pxr::GfVec3d hitPoint;
+            /// Normal at intersection point in world space.
             pxr::GfVec3d hitNormal;
+            /// Path to picked gprim on the USD stage.
+            /// This is a USD proxy path.
             pxr::SdfPath hitPrimPath;
+            /// \deprecated instancerContext has more complete information.
             pxr::SdfPath hitInstancerPath;
+            /// \deprecated instancerContext has more complete information.
             int hitInstanceIndex;
             pxr::HdInstancerContext instancerContext;
+            /// Paths to nested point instancers and instance indices identifying
+            /// the picked instance. This is in order from the outer most to
+            /// the inner most point instancer. The paths are USD proxy paths
+            /// to the relevant point instancers on the USD stage. Hydra instancers
+            /// created to realize USD native instancing are not included.
         };
 
-        typedef std::vector<struct IntersectionResult> IntersectionResultVector;
+        using IntersectionResultVector = std::vector<IntersectionResult>;
 
-        // Pick params
+        /// Pick params
         struct PickParams {
+            /// Resolve mode
+            ///
+            /// If resolve mode is set to resolveDeep, picking uses Deep Selection
+            /// to gather all paths within the given frustum even if obscured by
+            /// other visible objects.
+            /// If resolve mode is set to resolveNearestToCenter, picking renders
+            /// to a customized depth buffer to find all approximate points of
+            /// intersection. This is less accurate than implicit methods or
+            /// rendering with GL_SELECT, but leverages any data already cached
+            /// in the renderer.
+            ///
+            /// The tokens are defined in HdxPickResolveMode in hdx/pickTask.h.
+            ///
             pxr::TfToken resolveMode;
         };
 
-        /// Perform picking by finding the intersection of objexcts in the scene with a rendered frustum.
-        /// Depending on the resolve mode it may find all objects intersection the frustum or the closest
-        /// point of intersection within the frustum.
+        /// Perform picking by finding the intersection of objects in the scene with
+        /// a given frustum.
         ///
-        /// If resolve mode is set to resolveDeep it uses Deep Selection to gather all paths within
-        /// the frustum even if obscured by other visible objects.
-        /// If resolve mode is set to resolveNearestToCenter it uses a PickRender and
-        /// a customized depth buffer to find all approximate points of intersection by rendering.
-        /// This is less accurate than implicit methods or rendering with GL_SELECT, but leverages any
-        /// data already cached in the renderer.
-        ///
-        /// Returns whether a hit occurred and if so, \p outResults will point to all the
-        /// gprims selected by the pick as determined by the resolve mode.
-        /// \p outHitPoint will contain the intersection point in wolrd space
-        /// (i.e. \p projectionMatrix and \p viewMatrix factored back out of the result)
-        /// \p outHitNormal will contain the world space normal at that point.
-        /// \p hitPrimPath will point to the gprim selected by the pick.
-        /// \p hitInstancerPath will point to the point instancer (if applicable) of each gprim.
+        /// Depending on the resolve mode it may find all objects intersecting the
+        /// frustum or the closest point of intersection within the frustum.
         ///
         bool TestIntersection(const PickParams& pickParams,
                               const pxr::GfMatrix4d& viewMatrix,
@@ -325,6 +319,40 @@ namespace Overlay {
                                 pxr::SdfPath* outHitInstancerPath = NULL,
                                 int* outHitInstanceIndex = NULL,
                                 pxr::HdInstancerContext* outInstancerContext = NULL);
+
+        /// \deprecated Please use the override of TestIntersection that takes
+        ///
+        /// PickParams and returns an IntersectionResultVector instead!
+        /// Finds closest point of intersection with a frustum by rendering.
+        ///
+        /// This method uses a PickRender and a customized depth buffer to find an
+        /// approximate point of intersection by rendering. This is less accurate
+        /// than implicit methods or rendering with GL_SELECT, but leverages any
+        /// data already cached in the renderer.
+        ///
+        /// Returns whether a hit occurred and if so, \p outHitPoint will contain
+        /// the intersection point in world space (i.e. \p projectionMatrix and
+        /// \p viewMatrix factored back out of the result), and \p outHitNormal
+        /// will contain the world space normal at that point.
+        ///
+        /// \p outHitPrimPath will point to the gprim selected by the pick.
+        /// \p outHitInstancerPath will point to the point instancer (if applicable)
+        /// of that gprim. For nested instancing, outHitInstancerPath points to
+        /// the closest instancer.
+        ///
+        USDIMAGINGGL_API
+        bool TestIntersection(
+            const pxr::GfMatrix4d &viewMatrix,
+            const pxr::GfMatrix4d &projectionMatrix,
+            const pxr::UsdPrim& root,
+            const pxr::UsdImagingGLRenderParams &params,
+            pxr::GfVec3d *outHitPoint,
+            pxr::GfVec3d *outHitNormal,
+            pxr::SdfPath *outHitPrimPath = NULL,
+            pxr::SdfPath *outHitInstancerPath = NULL,
+            int *outHitInstanceIndex = NULL,
+            pxr::HdInstancerContext *outInstancerContext = NULL);
+        
 
         /// @}
 

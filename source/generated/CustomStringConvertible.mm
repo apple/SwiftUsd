@@ -394,6 +394,11 @@ std::string __Overlay::to_string(const pxr::GfSize3& x) {
     ss << x;
     return ss.str();
 }
+std::string __Overlay::to_string(const pxr::GfTimeCode& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::GfTransform& x) {
     std::stringstream ss;
     ss << x;
@@ -591,6 +596,11 @@ std::string __Overlay::to_string(const pxr::VtRange3fArray& x) {
     return ss.str();
 }
 std::string __Overlay::to_string(const pxr::VtRect2iArray& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VtTimeCodeArray& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -986,11 +996,6 @@ std::string __Overlay::to_string(const pxr::SdfPredicateExpression::Op& x) {
     case pxr::SdfPredicateExpression::Or: return "pxr::SdfPredicateExpression::Or";
     default: return "pxr::SdfPredicateExpression::Op(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
-}
-std::string __Overlay::to_string(const pxr::SdfTimeCode& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
 }
 std::string __Overlay::to_string(const pxr::SdfValueTypeName& x) {
     std::stringstream ss;
@@ -1618,6 +1623,16 @@ std::string __Overlay::to_string(const pxr::UsdShadeConnectableAPIBehavior::Conn
     default: return "pxr::UsdShadeConnectableAPIBehavior::ConnectableNodeTypes(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::UsdLodDistanceHeuristicQuery& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::UsdLodScreenSizeHeuristicQuery& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::UsdLuxLightListAPI::ComputeMode& x) {
     switch (x) {
     case pxr::UsdLuxLightListAPI::ComputeModeConsultModelHierarchyCache: return "pxr::UsdLuxLightListAPI::ComputeModeConsultModelHierarchyCache";
@@ -1630,6 +1645,17 @@ std::string __Overlay::to_string(const pxr::UsdLuxListAPI::ComputeMode& x) {
     case pxr::UsdLuxListAPI::ComputeModeConsultModelHierarchyCache: return "pxr::UsdLuxListAPI::ComputeModeConsultModelHierarchyCache";
     case pxr::UsdLuxListAPI::ComputeModeIgnoreCache: return "pxr::UsdLuxListAPI::ComputeModeIgnoreCache";
     default: return "pxr::UsdLuxListAPI::ComputeMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::UsdProfileRegistry::QueryStatus& x) {
+    switch (x) {
+    case pxr::UsdProfileRegistry::QueryStatus::NoPath: return "pxr::UsdProfileRegistry::QueryStatus::NoPath";
+    case pxr::UsdProfileRegistry::QueryStatus::ValidPath: return "pxr::UsdProfileRegistry::QueryStatus::ValidPath";
+    case pxr::UsdProfileRegistry::QueryStatus::Deprecated: return "pxr::UsdProfileRegistry::QueryStatus::Deprecated";
+    case pxr::UsdProfileRegistry::QueryStatus::DeprecationConflict: return "pxr::UsdProfileRegistry::QueryStatus::DeprecationConflict";
+    case pxr::UsdProfileRegistry::QueryStatus::Excepted: return "pxr::UsdProfileRegistry::QueryStatus::Excepted";
+    case pxr::UsdProfileRegistry::QueryStatus::CycleFound: return "pxr::UsdProfileRegistry::QueryStatus::CycleFound";
+    default: return "pxr::UsdProfileRegistry::QueryStatus(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 std::string __Overlay::to_string(const pxr::UsdSkelBakeSkinningParms::DeformationFlags& x) {
@@ -2081,6 +2107,7 @@ std::string __Overlay::to_string(const pxr::HgiDeviceCapabilitiesBits& x) {
     case pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers: return "pxr::HgiDeviceCapabilitiesBitsIndirectCommandBuffers";
     case pxr::HgiDeviceCapabilitiesBitsRoundPoints: return "pxr::HgiDeviceCapabilitiesBitsRoundPoints";
     case pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays: return "pxr::HgiDeviceCapabilitiesBitsSingleSlotResourceArrays";
+    case pxr::HgiDeviceCapabilitiesForceEarlyFragmentTest: return "pxr::HgiDeviceCapabilitiesForceEarlyFragmentTest";
     default: return "pxr::HgiDeviceCapabilitiesBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -2787,6 +2814,16 @@ std::string __Overlay::to_string(const pxr::HdDepthPriority& x) {
     default: return "pxr::HdDepthPriority(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::HdDataSourceLocator& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::HdDataSourceLocatorSet& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 std::string __Overlay::to_string(const pxr::HdBufferArrayUsageHintBits& x) {
     switch (x) {
     case pxr::HdBufferArrayUsageHintBitsImmutable: return "pxr::HdBufferArrayUsageHintBitsImmutable";
@@ -2820,21 +2857,6 @@ std::string __Overlay::to_string(const pxr::HdGeomSubset::Type& x) {
     }
 }
 std::string __Overlay::to_string(const pxr::HdRprimCollection& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::HdSceneIndexPrim& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::HdDataSourceLocator& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::HdDataSourceLocatorSet& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();

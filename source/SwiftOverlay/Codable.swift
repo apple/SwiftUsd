@@ -25,7 +25,7 @@ import Foundation
  If you're working with scene description data, the right way to serialize it is by
  reading/writing it as USD data using either UsdStage or SdfLayer.
 
- Last updated for v26.05. Note that the functionality/behavior of types can change
+ Last updated for v26.08. Note that the functionality/behavior of types can change
  between versions of OpenUSD, such as v25.05 when UsdTimeCode gained support for PreTime()
  values. SwiftUsd tries to ensure that changes in Codable conformances are handled gracefully
  between OpenUSD versions, but can't guarantee backwards/forwards compatibility.
@@ -986,6 +986,22 @@ extension pxr.GfSize3: Codable {
     }
 }
 
+extension pxr.GfTimeCode: Codable {
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.singleValueContainer()
+
+        let x = try container.decode(Double.self)
+
+        self.init(x)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = try encoder.singleValueContainer()
+
+        try container.encode(self.GetValue() as Double)
+    }
+}
+
 extension pxr.GfTransform: Codable {
     public enum CodingKeys: String, CodingKey {
         case translation // pxr.GfVec3d
@@ -1445,23 +1461,6 @@ extension pxr.SdfPath: Codable {
         try container.encode(x)
     }
 }
-
-extension pxr.SdfTimeCode: Codable {
-    public init(from decoder: Decoder) throws {
-        var container = try decoder.singleValueContainer()
-
-        let x = try container.decode(Double.self)
-
-        self.init(x)
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = try encoder.singleValueContainer()
-
-        try container.encode(self.GetValue() as Double)
-    }
-}
-
 
 // MARK: Usd
 

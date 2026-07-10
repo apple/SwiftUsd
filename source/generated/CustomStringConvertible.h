@@ -61,6 +61,7 @@
 #include "pxr/base/gf/rotation.h"
 #include "pxr/base/gf/size2.h"
 #include "pxr/base/gf/size3.h"
+#include "pxr/base/gf/timeCode.h"
 #include "pxr/base/gf/transform.h"
 #include "pxr/base/gf/vec2d.h"
 #include "pxr/base/gf/vec2f.h"
@@ -140,7 +141,6 @@
 #include "pxr/imaging/hd/renderPassState.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/rprimCollection.h"
-#include "pxr/imaging/hd/sceneIndex.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
 #include "pxr/imaging/hd/topology.h"
 #include "pxr/imaging/hd/types.h"
@@ -213,7 +213,6 @@
 #include "pxr/usd/sdf/reference.h"
 #include "pxr/usd/sdf/relationshipSpec.h"
 #include "pxr/usd/sdf/spec.h"
-#include "pxr/usd/sdf/timeCode.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/valueTypeName.h"
 #include "pxr/usd/sdf/variantSetSpec.h"
@@ -240,9 +239,12 @@
 #include "pxr/usd/usdGeom/pointInstancer.h"
 #include "pxr/usd/usdGeom/xformCommonAPI.h"
 #include "pxr/usd/usdGeom/xformOp.h"
+#include "pxr/usd/usdLod/distanceHeuristicQuery.h"
+#include "pxr/usd/usdLod/screenSizeHeuristicQuery.h"
 #include "pxr/usd/usdLux/lightListAPI.h"
 #include "pxr/usd/usdLux/listAPI.h"
 #include "pxr/usd/usdPhysics/parseDesc.h"
+#include "pxr/usd/usdProfiles/profileRegistry.h"
 #include "pxr/usd/usdShade/connectableAPIBehavior.h"
 #include "pxr/usd/usdShade/types.h"
 #include "pxr/usd/usdSkel/bakeSkinning.h"
@@ -324,6 +326,7 @@ namespace __Overlay {
   std::string to_string(const pxr::GfRect2i& x);
   std::string to_string(const pxr::GfSize2& x);
   std::string to_string(const pxr::GfSize3& x);
+  std::string to_string(const pxr::GfTimeCode& x);
   std::string to_string(const pxr::GfTransform& x);
   std::string to_string(const pxr::GfNumericCastFailureType& x);
   std::string to_string(const pxr::JsValue::Type& x);
@@ -358,6 +361,7 @@ namespace __Overlay {
   std::string to_string(const pxr::VtRange3dArray& x);
   std::string to_string(const pxr::VtRange3fArray& x);
   std::string to_string(const pxr::VtRect2iArray& x);
+  std::string to_string(const pxr::VtTimeCodeArray& x);
   std::string to_string(const pxr::VtVec2dArray& x);
   std::string to_string(const pxr::VtVec2fArray& x);
   std::string to_string(const pxr::VtVec2hArray& x);
@@ -418,7 +422,6 @@ namespace __Overlay {
   std::string to_string(const pxr::SdfPredicateExpression& x);
   std::string to_string(const pxr::SdfPredicateExpression::FnCall::Kind& x);
   std::string to_string(const pxr::SdfPredicateExpression::Op& x);
-  std::string to_string(const pxr::SdfTimeCode& x);
   std::string to_string(const pxr::SdfValueTypeName& x);
   std::string to_string(const pxr::SdfAttributeSpec& x);
   std::string to_string(const pxr::SdfAttributeSpecHandle& x);
@@ -500,8 +503,11 @@ namespace __Overlay {
   std::string to_string(const pxr::UsdShadeAttributeType& x);
   std::string to_string(const pxr::UsdShadeConnectionModification& x);
   std::string to_string(const pxr::UsdShadeConnectableAPIBehavior::ConnectableNodeTypes& x);
+  std::string to_string(const pxr::UsdLodDistanceHeuristicQuery& x);
+  std::string to_string(const pxr::UsdLodScreenSizeHeuristicQuery& x);
   std::string to_string(const pxr::UsdLuxLightListAPI::ComputeMode& x);
   std::string to_string(const pxr::UsdLuxListAPI::ComputeMode& x);
+  std::string to_string(const pxr::UsdProfileRegistry::QueryStatus& x);
   std::string to_string(const pxr::UsdSkelBakeSkinningParms::DeformationFlags& x);
   std::string to_string(const pxr::UsdUtilsRegisteredVariantSet::SelectionExportPolicy& x);
   std::string to_string(const pxr::UsdUtilsStitchValueStatus& x);
@@ -615,15 +621,14 @@ namespace __Overlay {
   std::string to_string(const pxr::HdPointsGeomStyle& x);
   std::string to_string(const pxr::HdInterpolation& x);
   std::string to_string(const pxr::HdDepthPriority& x);
+  std::string to_string(const pxr::HdDataSourceLocator& x);
+  std::string to_string(const pxr::HdDataSourceLocatorSet& x);
   std::string to_string(const pxr::HdBufferArrayUsageHintBits& x);
   std::string to_string(const pxr::HdReprSelector& x);
   std::string to_string(const pxr::HdBasisCurvesTopology& x);
   std::string to_string(const pxr::HdTopology& x);
   std::string to_string(const pxr::HdGeomSubset::Type& x);
   std::string to_string(const pxr::HdRprimCollection& x);
-  std::string to_string(const pxr::HdSceneIndexPrim& x);
-  std::string to_string(const pxr::HdDataSourceLocator& x);
-  std::string to_string(const pxr::HdDataSourceLocatorSet& x);
   std::string to_string(const pxr::HdCamera::DirtyBits& x);
   std::string to_string(const pxr::HdCamera::Projection& x);
   std::string to_string(const pxr::HdCollectionExpressionEvaluator::MatchKind& x);

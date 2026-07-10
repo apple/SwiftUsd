@@ -98,19 +98,20 @@ struct FileSystemInfo {
             "arch", "tf", "gf", "pegtl", "js", "trace", "work", "plug", "vt", "ts",
             // usd
             "ar", "kind", "sdf", "ndr", "sdr", "pcp", "usd", "usdGeom", "usdVol", "usdMedia",
-            "usdShade", "usdLux", "usdProc", "usdRender", "usdHydra", "usdRi", "usdSemantics",
-            "usdSkel", "usdUI", "usdUtils", "usdPhysics", "usdMtlx",
+            "usdShade", "usdLod", "usdLux", "usdProc", "usdProfiles", "usdRender", "usdHydra", "usdRi",
+            "usdSemantics", "usdSkel", "usdUI", "usdUtils", "usdPhysics", "usdMtlx",
             // exec
             "vdf", "ef", "esf", "esfUsd", "exec", "execUsd", "execGeom", "execIr",
             // usdValidation
-            "usdValidation", "usdGeomValidators", "usdPhysicsValidators", "usdShadeValidators", "usdSkelValidators", "usdUtilsValidators",
+            "usdValidation", "usdGeomValidators", "usdLuxValidators", "usdPhysicsValidators",
+            "usdShadeValidators", "usdSkelValidators", "usdUtilsValidators",
             // imaging
             "garch", "hf", "hio", "cameraUtil", "pxOsd", "geomUtil", "glf", "hgi",
             "hgiGL", "hgiMetal", "hgiInterop", "hd", "hdar", "hdGp", "hdsi", "hdMtlx", "hioOpenVDB",
             "hdSt", "hdx", "hdStorm", "hdEmbree",
             // usdImaging
-            "usdImaging", "usdImagingGL", "usdProcImaging", "usdRiPxrImaging",
-            "usdSkelImaging", "usdVolImaging", "usdAppUtils",
+            "usdImaging", "usdExecImaging", "usdImagingGL", "usdProcImaging", 
+            "usdSkelImaging", "usdVolImaging", "usdIrImaging", "usdAppUtils",
         ]
         let extra = ["CxxOnly", "generated", "SwiftOverlay", "swiftUsd.h", "TfNotice", "Util", "Work", "Wrappers"]
         

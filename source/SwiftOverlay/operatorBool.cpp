@@ -78,6 +78,12 @@ bool __Overlay::convertToBool(const pxr::ArResolvedPath& x) {
 bool __Overlay::convertToBool(const pxr::SdfZipFile& x) {
     return (bool) x;
 }
+bool __Overlay::convertToBool(const Overlay::ArAssetWrapper& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const Overlay::ArWritableAssetWrapper& x) {
+    return (bool) x;
+}
 bool __Overlay::convertToBool(const Overlay::HioImageWrapper& x) {
     return (bool) x;
 }

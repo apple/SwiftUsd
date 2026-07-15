@@ -42,6 +42,8 @@
 #include "pxr/usd/sdf/zipFile.h"
 #include "pxr/usd/ar/resolvedPath.h"
 #include "pxr/imaging/hgi/texture.h"
+#include "swiftUsd/Wrappers/ArAssetWrapper.h"
+#include "swiftUsd/Wrappers/ArWritableAssetWrapper.h"
 #include "swiftUsd/Wrappers/HioImageWrapper.h"
 
 namespace __Overlay {
@@ -65,6 +67,8 @@ namespace __Overlay {
     bool convertToBool(const pxr::ArResolvedPath& x);
     bool convertToBool(const pxr::SdfZipFile& x);
     bool convertToBool(const pxr::HgiTextureHandle& x);
+    bool convertToBool(const Overlay::ArAssetWrapper& x);
+    bool convertToBool(const Overlay::ArWritableAssetWrapper& x);
     bool convertToBool(const Overlay::HioImageWrapper& x);
 }
 

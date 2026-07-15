@@ -105,6 +105,15 @@ extension Bool {
         self.init(__Overlay.convertToBool(x))
     }
 
+    /// Returns `true` if the `ArAsset` is valid
+    public init(_ x: Overlay.ArAssetWrapper) {
+        self.init(__Overlay.convertToBool(x))
+    }
+    /// Returns `true` if the `ArAsset` is valid
+    public init(_ x: Overlay.ArWritableAssetWrapper) {
+        self.init(__Overlay.convertToBool(x))
+    }
+
     #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
     /// Returns `true` if the `HioImage` is valid
     public init(_ x: Overlay.HioImageWrapper) {

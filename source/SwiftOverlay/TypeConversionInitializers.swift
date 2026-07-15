@@ -27,6 +27,18 @@ extension Float {
 }
 // GfHalf.init(Float) provided by ilmbase_half.h
 
+extension Double {
+    public init(_ x: pxr.GfHalf) {
+        self.init(Float(x))
+    }
+}
+
+extension pxr.GfHalf {
+    public init(_ x: Double) {
+        self.init(Float(x))
+    }
+}
+
 
 extension String {
     public init(_ token: pxr.TfToken) {

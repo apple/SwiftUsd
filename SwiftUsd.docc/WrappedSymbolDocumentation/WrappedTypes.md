@@ -24,6 +24,8 @@ Since Swift-Cxx interop doesn't currently support specializing class templates f
 Access these types by prefixing their name with `Overlay`
 - ``OpenUSD/Overlay/TfErrorMarkWrapper``
 - ``OpenUSD/Overlay/ArResolverWrapper``
+- ``OpenUSD/Overlay/ArAssetWrapper``
+- ``OpenUSD/Overlay/ArWritableAssetWrapper``
 - ``OpenUSD/Overlay/UsdPrimTypeInfoWrapper``
 - ``OpenUSD/Overlay/HioImageWrapper``
 - ``OpenUSD/Overlay/HgiWrapper``

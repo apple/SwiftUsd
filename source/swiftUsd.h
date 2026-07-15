@@ -43,6 +43,8 @@
 #include "swiftUsd/CxxOnly/Deprecated.h"
 
 #include "swiftUsd/Wrappers/ArResolverWrapper.h"
+#include "swiftUsd/Wrappers/ArAssetWrapper.h"
+#include "swiftUsd/Wrappers/ArWritableAssetWrapper.h"
 #include "swiftUsd/Wrappers/ExecUsdSystemWrapper.h"
 #include "swiftUsd/Wrappers/HgiGLWrapper.h"
 #include "swiftUsd/Wrappers/HgiMetalWrapper.h"
@@ -69,6 +71,8 @@
 #includeforswiftdocc "swiftUsd/TfNotice/SwiftKey.h"
 
 #includeforswiftdocc "swiftUsd/Wrappers/ArResolverWrapper.h"
+#includeforswiftdocc "swiftUsd/Wrappers/ArAssetWrapper.h"
+#includeforswiftdocc "swiftUsd/Wrappers/ArWritableAssetWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/ExecUsdSystemWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/HgiGLWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/HgiMetalWrapper.h"

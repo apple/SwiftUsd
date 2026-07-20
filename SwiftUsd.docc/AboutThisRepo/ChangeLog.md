@@ -12,7 +12,8 @@ Changes to SwiftUsd
 }
 
 ### TBD
-Released TBD, based on OpenUSD TBD
+Released 2026-07-22, based on OpenUSD v26.08
+- Add support for writing, distributing, and using OpenUSD plugins in Swift/C++ with Swift Package Manager
 - Add `Overlay.HgiGLWrapper`, exposing HgiGL alongside HgiMetal in the Swift bindings
 - Add `Overlay.ExecUsdSystem`, exposing ExecUsdSystem in the Swift bindings
 - Add `Overlay.ArAssetWrapper`, `Overlay.ArWritableAssetWrapper`

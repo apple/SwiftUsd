@@ -11,11 +11,11 @@ SwiftUsd comes with pre-built OpenUSD binaries that make it easy to start using 
 git clone git@github.com:apple/SwiftUsd.git ~/SwiftUsd
 ```
 
-2. Clone OpenUSD v26.05
+2. Clone OpenUSD v26.08
 ```zsh
 git clone https://github.com/PixarAnimationStudios/OpenUSD.git ~/SwiftUsd/openusd-source
 cd ~/SwiftUsd/openusd-source
-git checkout v26.05
+git checkout v26.08
 ```
 
 3. Apply `openusd-source.patch` to it  
@@ -45,6 +45,7 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target iOS \
+    --no-build-apple-framework \
     ~/SwiftUsd/openusd-builds/iOS \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -55,6 +56,7 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target iOSSimulator \
+    --no-build-apple-framework \
     ~/SwiftUsd/openusd-builds/iOSSimulator \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -65,6 +67,7 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target visionOS \
+    --no-build-apple-framework \
     ~/SwiftUsd/openusd-builds/visionOS \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -75,6 +78,7 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target visionOSSimulator \
+    --no-build-apple-framework \
     ~/SwiftUsd/openusd-builds/visionOSSimulator \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 ```

@@ -1,4 +1,4 @@
-# ``/OpenUSD/C++/pxr/TfNotice/Register(_:_:_:)-35xhj``
+# ``/OpenUSD/C++/pxr/TfNotice/Register(_:_:_:)-cz8x``
 
 Register a listener as being interested in a TfNotice from a particular sender.
 

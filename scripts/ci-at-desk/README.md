@@ -12,10 +12,10 @@ ci-at-desk requires a YAML configuration file. Here is a sample YAML config file
  
  precheckouts:
  - remote: git@github.com:apple/SwiftUsd
-   ref: 7.0.1
+   ref: 8.0.0
    path: precheckouts/SwiftUsd
  - remote: git@github.com:apple/SwiftUsd-Tests
-   ref: 7.0.1
+   ref: 8.0.0
    path: precheckouts/SwiftUsd-Tests
  
  requiredPaths:
@@ -28,7 +28,7 @@ ci-at-desk requires a YAML configuration file. Here is a sample YAML config file
 
  ci-inputs:
    build-targets: ALL
-   openusd-ref: v26.03
+   openusd-ref: v26.08
    swiftusd-ref: local
    swiftusd-tests-ref: local
 ```

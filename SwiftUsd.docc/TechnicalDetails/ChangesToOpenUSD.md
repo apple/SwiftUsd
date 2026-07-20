@@ -11,9 +11,6 @@ These changes are contained in `SwiftUsd/openusd-patch.patch`:
 
 #### Usd-specific changes to OpenUSD before building  
 These changes fix bugs or add features to Usd that aren't part of vanilla OpenUSD
-- Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/3950](https://github.com/PixarAnimationStudios/OpenUSD/pull/3950) to improve error reporting when building OpenUSD:
-  - Modified: `build_scripts/build_usd.py`
-
 - Add support for usdValidation libraries when building for iOS, visionOS, or simulators:
   - Modified: `build_scripts/build_usd.py`
 

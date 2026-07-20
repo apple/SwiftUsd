@@ -20,7 +20,7 @@
 
 import OpenUSD
 
-public typealias pxr = pxrInternal_v0_26_5__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_8__pxrReserved__
 
 /// The plugin entry point for this plugin. It uses `@SWIFTUSD_PLUGIN` to register
 /// this plugin with the OpenUSD runtime, and subclass from `Overlay.HioImageSubclass`

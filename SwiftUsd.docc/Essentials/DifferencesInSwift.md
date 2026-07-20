@@ -95,7 +95,7 @@ for (iter, prim) in pxr.UsdPrim.PreAndPostVisit(stage.GetPseudoRoot()).withItera
 ```
 
 ### TfNotice
-Swift code can register for `TfNotice` callbacks by using [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-89t45). Instead of creating a C++ class or struct that inherits from `pxr::TfWeakBase`, call [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-89t45) and pass a closure:
+Swift code can register for `TfNotice` callbacks by using [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-1hdp4). Instead of creating a C++ class or struct that inherits from `pxr::TfWeakBase`, call [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-1hdp4) and pass a closure:
 
 ```swift
 func registerWithRevoking(stage: pxr.UsdStage) {

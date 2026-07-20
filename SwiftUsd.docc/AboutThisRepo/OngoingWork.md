@@ -59,4 +59,3 @@ SwiftUsd is currently a work-in-progress. Here is a list of potential future imp
 - Add Swift DSL for inline stage building
     - Should support usda -> DSL conversion
 - Find a better solution for making `pxr::Foo` work nicely in Swift
-- Add support for embedding custom OpenUSD plugins in SwiftUsd builds

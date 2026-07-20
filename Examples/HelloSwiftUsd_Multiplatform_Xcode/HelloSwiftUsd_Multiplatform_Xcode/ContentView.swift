@@ -22,7 +22,7 @@
 import SwiftUI
 import OpenUSD
 
-public typealias pxr = pxrInternal_v0_26_5__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_8__pxrReserved__
 
 
 func makeHelloWorldString() -> String {

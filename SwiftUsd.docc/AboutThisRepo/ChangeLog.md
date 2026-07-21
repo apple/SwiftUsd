@@ -11,6 +11,10 @@ Changes to SwiftUsd
     ```
 }
 
+### TBD
+Released TBD, based on OpenUSD TBD
+- Add zero-copy `VtArray` reads via `withUnsafeBufferPointer(_:)` and single-copy construction from an `UnsafeBufferPointer`
+
 ### 8.0.0
 Released 2026-07-22, based on OpenUSD v26.08
 - Add support for writing, distributing, and using OpenUSD plugins in Swift/C++ with Swift Package Manager

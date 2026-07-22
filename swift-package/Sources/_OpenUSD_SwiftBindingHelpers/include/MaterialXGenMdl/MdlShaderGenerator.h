@@ -70,13 +70,18 @@ class MX_GENMDL_API MdlShaderGenerator : public ShaderGenerator
     /// Return a unique identifier for the target this generator is for
     const string& getTarget() const override { return TARGET; }
 
+    /// Apply the default GenOptions for MDL shader generation.
+    void applyDefaultOptions(GenOptions& options) const override;
+
     /// Generate a shader starting from the given element, translating
     /// the element and all dependencies upstream into shader code.
     ShaderPtr generate(const string& name, ElementPtr element, GenContext& context) const override;
 
-    /// Return a registered shader node implementation given an implementation element.
-    /// The element must be an Implementation or a NodeGraph acting as implementation.
-    ShaderNodeImplPtr getImplementation(const NodeDef& nodedef, GenContext& context) const override;
+    /// Create the shader node implementation for a NodeGraph implementation.
+    ShaderNodeImplPtr createShaderNodeImplForNodeGraph(const NodeGraph& nodegraph) const override;
+
+    /// Create the shader node implementation for an mplementation implementation.
+    ShaderNodeImplPtr createShaderNodeImplForImplementation(const Implementation& implementation) const override;
 
     /// Return the result of an upstream connection or value for an input.
     string getUpstreamResult(const ShaderInput* input, GenContext& context) const override;

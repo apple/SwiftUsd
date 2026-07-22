@@ -28,17 +28,17 @@
 		<data>
 		zuk4ptDM3awqoVwpnHmM2vXk+I0=
 		</data>
+		<key>Resources/usd/execIr/Resources/execIr/schema.usda</key>
+		<data>
+		Dedlx5ypqqmX9EEkQeZwHZupgrA=
+		</data>
 		<key>Resources/usd/execIr/Resources/generatedSchema.usda</key>
 		<data>
-		BC7Xx1PVDEgteDvszb5yPYhA9Yo=
+		srfhtGsNTPKdd2fEdFujZBsVr5s=
 		</data>
 		<key>Resources/usd/execIr/Resources/plugInfo.json</key>
 		<data>
-		pCMd+Lel2dF7RBonYAViZqVTVqw=
-		</data>
-		<key>Resources/usd/execIr/Resources/schema.usda</key>
-		<data>
-		8L/ZIBoYN7HXj8lmzCzSUNFzPQ0=
+		yTraxyS7dRPANc6Gc7Eb3KA2GPg=
 		</data>
 		<key>Resources/usd/execUsd/Resources/plugInfo.json</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Resources/usd/hd/Resources/codegenTemplates/schemaClass.h</key>
 		<data>
-		2skieNYAIp3cHC6fn/Hm6i7FgFQ=
+		NkrSSgL+8gtfcjXJEU53mw2wpsY=
 		</data>
 		<key>Resources/usd/hd/Resources/plugInfo.json</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Resources/usd/hdSt/Resources/plugInfo.json</key>
 		<data>
-		dnrYvUyrJutW+rwX1uI6sSj2ucU=
+		yTyXxdTgym2yN2C9Ue+W7FQTacc=
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
 		<data>
-		Ydt83uM7L/LZJRv1FVLhJSm73eo=
+		Qv+HrsqhOvJhIwrshi7dDtNmSFE=
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/compute.glslfx</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/mesh.glslfx</key>
 		<data>
-		OVrOEVUiaoLJf7MItv4Kx2kYe7A=
+		6S//XeHacjuTX+H2H37u+EFMsDA=
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/meshFaceCull.glslfx</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/renderPass.glslfx</key>
 		<data>
-		6zLdnMfZvb/yFFmQ7vH5Dq/RRr4=
+		awNhalSVdGe7e9O+EqdujGrVle0=
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/renderPassShader.glslfx</key>
 		<data>
@@ -175,6 +175,18 @@
 		<key>Resources/usd/hdSt/Resources/shaders/skinning.glslfx</key>
 		<data>
 		E4gUp6RmAqZRYE0jSL+acJS+DG0=
+		</data>
+		<key>Resources/usd/hdSt/Resources/shaders/sphere.glslfx</key>
+		<data>
+		qD9jTtTnOFnGasMkxN44g0DUcAg=
+		</data>
+		<key>Resources/usd/hdSt/Resources/shaders/sphereFaceCull.glslfx</key>
+		<data>
+		I3XsnP2rOP9Xu9rT59WZbW/RF04=
+		</data>
+		<key>Resources/usd/hdSt/Resources/shaders/sphereNormal.glslfx</key>
+		<data>
+		/ma3GHNGpMO0XuKF+ox6yC1G8VE=
 		</data>
 		<key>Resources/usd/hdSt/Resources/shaders/surfaceHelpers.glslfx</key>
 		<data>
@@ -222,7 +234,7 @@
 		</data>
 		<key>Resources/usd/hdx/Resources/shaders/oitResolveImageShader.glslfx</key>
 		<data>
-		YUblZGFyDJ5QN/E3BGHjCe/IWi8=
+		viyXAP/AV++qWhAZgAMaG9yG+9U=
 		</data>
 		<key>Resources/usd/hdx/Resources/shaders/outline.glslfx</key>
 		<data>
@@ -230,7 +242,7 @@
 		</data>
 		<key>Resources/usd/hdx/Resources/shaders/renderPass.glslfx</key>
 		<data>
-		5oXG1O26mkvhSoyiKrDSA7xSviw=
+		iB+6OgDk8TzySl+D3p16B/lif2g=
 		</data>
 		<key>Resources/usd/hdx/Resources/shaders/renderPassColorAndSelectionShader.glslfx</key>
 		<data>
@@ -302,7 +314,7 @@
 		</data>
 		<key>Resources/usd/plugInfo.json</key>
 		<data>
-		YwnidWn8lXMHU+y0GVy8fD5CFs4=
+		dbtC1CCdPYs/Tbea2vOMoiXa6AY=
 		</data>
 		<key>Resources/usd/sdf/Resources/plugInfo.json</key>
 		<data>
@@ -382,23 +394,27 @@
 		</data>
 		<key>Resources/usd/usd/Resources/plugInfo.json</key>
 		<data>
-		USNabpOwxbCkbq+YaYwbqr3dbno=
+		omnCUAF4MKwLCWmaqNWeqpNaoSo=
 		</data>
 		<key>Resources/usd/usd/Resources/usd/schema.usda</key>
 		<data>
-		aEU69vq/qCSgAAvhDAv45g/pK2g=
+		Qmk58jAUWh8BLmGYfJfCf6ACNiA=
+		</data>
+		<key>Resources/usd/usdExecImaging/Resources/plugInfo.json</key>
+		<data>
+		tptMP9AgXZByyFjWscpOl97NMLU=
 		</data>
 		<key>Resources/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<data>
-		c3dnRh/CqgIA1Lej9c+WarYnZCY=
+		AIW5AIxAalXgl1+c4Pc45r/yIQ8=
 		</data>
 		<key>Resources/usd/usdGeom/Resources/plugInfo.json</key>
 		<data>
-		OaXnV5PbsliyAPUf0YGvGRI54aU=
+		NMu6gvIW7/qiOkVQyOO/bPcmfx8=
 		</data>
 		<key>Resources/usd/usdGeom/Resources/usdGeom/schema.usda</key>
 		<data>
-		RxG89s2QMVUDza+QZhJzTgC383c=
+		cNXlWQP1C7OAGrdAZpmaYRup9cg=
 		</data>
 		<key>Resources/usd/usdGeomValidators/Resources/plugInfo.json</key>
 		<data>
@@ -406,11 +422,11 @@
 		</data>
 		<key>Resources/usd/usdHydra/Resources/generatedSchema.usda</key>
 		<data>
-		KYiy5R3R/grzLyhM/r+T1IZuFd4=
+		SIrrLfAa+rMs8CnzxmElx0E49Uw=
 		</data>
 		<key>Resources/usd/usdHydra/Resources/plugInfo.json</key>
 		<data>
-		aQ7+dnMPEN86txbQoipixpXetF8=
+		f6A2ho4Qn1yaYzd4W0XJbBXnGNk=
 		</data>
 		<key>Resources/usd/usdHydra/Resources/shaders/empty.glslfx</key>
 		<data>
@@ -422,15 +438,31 @@
 		</data>
 		<key>Resources/usd/usdHydra/Resources/usdHydra/schema.usda</key>
 		<data>
-		ICrMK9FPW1oSWoF6E+jz+SucZAs=
+		Ei5IzuX2grCS+SOaUQUYkV5M9Y8=
 		</data>
 		<key>Resources/usd/usdImaging/Resources/plugInfo.json</key>
 		<data>
-		zxrs4lxK5yTc0ecSl+zPXl74YLA=
+		++JG76qiLt1gkx5udG0q3g+qNEI=
 		</data>
 		<key>Resources/usd/usdImagingGL/Resources/plugInfo.json</key>
 		<data>
 		BYNEgnJ4u72zX+WQiPDsCweOC14=
+		</data>
+		<key>Resources/usd/usdIrImaging/Resources/plugInfo.json</key>
+		<data>
+		LW9XjQr7EjiwSArkUMfzbRHndBo=
+		</data>
+		<key>Resources/usd/usdLod/Resources/generatedSchema.usda</key>
+		<data>
+		NoBKby3J4h6DgzRo19o1FMDj0WM=
+		</data>
+		<key>Resources/usd/usdLod/Resources/plugInfo.json</key>
+		<data>
+		aVJNhfcV8wv8X2uD6P4BXHb5y80=
+		</data>
+		<key>Resources/usd/usdLod/Resources/usdLod/schema.usda</key>
+		<data>
+		SCl1TodqMSeF4kaMdy0fGpzkTTE=
 		</data>
 		<key>Resources/usd/usdLux/Resources/generatedSchema.usda</key>
 		<data>
@@ -444,6 +476,10 @@
 		<data>
 		5Hsw5dBI7XWkT1b2JHHE5kOE3Lk=
 		</data>
+		<key>Resources/usd/usdLuxValidators/Resources/plugInfo.json</key>
+		<data>
+		m3Cd+3+9U5DU2Z/fi+hs+WUBrIA=
+		</data>
 		<key>Resources/usd/usdMedia/Resources/generatedSchema.usda</key>
 		<data>
 		Y5X/adUWabF9sU1B8qyur3uCSnM=
@@ -454,7 +490,7 @@
 		</data>
 		<key>Resources/usd/usdMedia/Resources/usdMedia/schema.usda</key>
 		<data>
-		dr5Uehxjyyj6DWW6+NDpnPUBWRA=
+		Qomgc7lEsAjwlUALrMkTQwf7UlA=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/generatedSchema.usda</key>
 		<data>
@@ -464,25 +500,9 @@
 		<data>
 		vnUAxK3NyJudZcsird1xaxAW0Lg=
 		</data>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/gltf_pbr.mtlx</key>
-		<data>
-		ltyDZkh8GbK75OdSN7w4NMcEcUc=
-		</data>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/open_pbr_surface.mtlx</key>
-		<data>
-		tDs+0PxVrJE71R4qSXSTpV9ArB8=
-		</data>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/standard_surface.mtlx</key>
-		<data>
-		oKwwYxlv8tbBYRliaCRGA+ius5A=
-		</data>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genmdl/open_pbr_surface.mtlx</key>
-		<data>
-		a9J2iEW+kljxN3B/4f8Lw9hwEKQ=
-		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/gltf_pbr.mtlx</key>
 		<data>
-		ywggM7fOZuGzU8bDxIdJpiKPgfA=
+		xP0CMKWsufkE/Y3D9UXHmcOzwrU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_add.mtlx</key>
 		<data>
@@ -510,7 +530,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_iridescence.mtlx</key>
 		<data>
-		Nj7hI7iR45pjgGUyUazZhpWo1Og=
+		wnD9OcogYF6q75SHnn0kcmVMvBU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_layer.mtlx</key>
 		<data>
@@ -538,7 +558,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/open_pbr_surface.mtlx</key>
 		<data>
-		fQG/WlRaRu3DoPJ1Ajr90IHTDLw=
+		y/s0qqF/QwmLyTwSs0FHAfCAHmc=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/standard_surface.mtlx</key>
 		<data>
@@ -546,15 +566,15 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/open_pbr_to_standard_surface.mtlx</key>
 		<data>
-		t8VP2RkWWNKHAfhzJzvSo8hNkKI=
+		FkKHcTToEIBfB47R+eLgS9m2k4c=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_gltf_pbr.mtlx</key>
 		<data>
-		v/dDEhDwWppCz2bv0a82+sON4IQ=
+		HXhbZ1bB/daoLeYLNjlaYZ6GU/E=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_open_pbr.mtlx</key>
 		<data>
-		Eer2sWcc/IZJZVdDs9eoiTls0w8=
+		/enLiff6bjpvyoUD7vh2M0J6MQ0=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_usd.mtlx</key>
 		<data>
@@ -562,7 +582,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/usd_preview_surface.mtlx</key>
 		<data>
-		rBEHqzq8bZBgjVfKyLtFkjipAXg=
+		VBGXyw5eeuaHs+BMhT4rwr2LJ/s=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/cmlib/cmlib_defs.mtlx</key>
 		<data>
@@ -570,7 +590,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/cmlib/cmlib_ng.mtlx</key>
 		<data>
-		55EzoMvRGyrpuCjGxIZiiFPmjU8=
+		oqeEYJqFqVDQlUqsa1/PD5FZxw0=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genglsl/lights_genglsl_impl.mtlx</key>
 		<data>
@@ -604,6 +624,22 @@
 		<data>
 		+u3o+2jk85tAjyzKW2k09zvvY0k=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/lights_genslang_impl.mtlx</key>
+		<data>
+		IrcS3kNPJ0ciWvgHMAGHTK65WkI=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_directional_light.slang</key>
+		<data>
+		qzaILCPMGHQ2IU/7djBQCri8jvY=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_point_light.slang</key>
+		<data>
+		IAfwhRhy/ZSD1vIEkUlMJW1tsVo=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_spot_light.slang</key>
+		<data>
+		SBmdzx6O8H27DMLgDMP5nJIGqhQ=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/lights/lights_defs.mtlx</key>
 		<data>
 		10ROdpEZxGk/JY2XTQ+P9GHIWgU=
@@ -612,9 +648,13 @@
 		<data>
 		b3O70JWenr/vC1JcSpaIOsCoJpk=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/flake.mdl</key>
+		<data>
+		A80O26QkvPR3r6Ps1hhDGTotmY8=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/hextile.mdl</key>
 		<data>
-		Haz+fULbykRk1WluIGUc7Fatfag=
+		d0um5A/Y0TrkaONhaiU+gDWKUyc=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/hsv.mdl</key>
 		<data>
@@ -622,7 +662,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/noise.mdl</key>
 		<data>
-		A23xlHeV3s+chjaDi7gxv/uNnXU=
+		mDfzRxihUDsnYJAnWn2zn5pibrU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib.mdl</key>
 		<data>
@@ -630,11 +670,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_10.mdl</key>
 		<data>
-		mytky8rPCUeONzg7PBf3pAMgs6k=
+		auffUT1vqqr9DWIdSjMw31HT0DE=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_6.mdl</key>
 		<data>
-		g5l94KTdlwPY+Nyw9bTdweNFs1A=
+		+gnY3IuXNRBnn7ImvGN5xZ5pAms=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_7.mdl</key>
 		<data>
@@ -646,7 +686,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_9.mdl</key>
 		<data>
-		KjGhHNwJwx8vGs6+P5woE79PN+A=
+		mJwYF+U9qA7bk5ZBE8aKiXNbfeM=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/sampling.mdl</key>
 		<data>
@@ -662,7 +702,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_6.mdl</key>
 		<data>
-		I69v5+QprHOPp/o+AvieYA9sDeM=
+		NjXveOm70tPaZUxVqEGXv9dDNfI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_7.mdl</key>
 		<data>
@@ -670,11 +710,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_8.mdl</key>
 		<data>
-		pEUSVag4aaAR08BbLaDPCgg0gPs=
+		008fcHWuzIA5yYc5qSEDIfzJDOg=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_9.mdl</key>
 		<data>
-		AE8pEQZRyMwtwuaJNZ6cy+GxcCI=
+		gzjLdW/+/BQNpsEprD+/QH6Zmjg=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/genglsl/nprlib_genglsl_impl.mtlx</key>
 		<data>
@@ -692,6 +732,10 @@
 		<data>
 		po+BzDDYq9ULCVEf7SXgYO4tzpA=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/genslang/nprlib_genslang_impl.mtlx</key>
+		<data>
+		9+IurHUbVuMX7FGp1XONz+h6kp8=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/nprlib_defs.mtlx</key>
 		<data>
 		4kERauqkeP+dv1hIoyE1tQeI29Q=
@@ -702,11 +746,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_closure_type.glsl</key>
 		<data>
-		lI0jiTQ1H/RFlaOVIs5k4ICe5kc=
+		yKJxgOkBnFIjutXIIK5BBkg7Mw8=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_environment_fis.glsl</key>
 		<data>
-		oxwzLHwudi1b2gjvRHjOL0lEF4c=
+		zszSsWDqAehCNknHynXiTQGtgHY=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_environment_none.glsl</key>
 		<data>
@@ -714,7 +758,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_environment_prefilter.glsl</key>
 		<data>
-		J5dQb0yxu36JTgQozDf8/cdZKHQ=
+		24LFw8FQFUy+ahexOkD6plqFEck=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_generate_albedo_table.glsl</key>
 		<data>
@@ -722,11 +766,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_generate_prefilter_env.glsl</key>
 		<data>
-		jNLG2xhPKRPf5n3yCXPIafwSEEI=
+		04uEAlg5rrQTA0AhbfCc8Ya7vtA=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet.glsl</key>
 		<data>
-		dOW1ahSHzpCeD98umnH+2+P2mV0=
+		VFeZo3TPzS9BMVM4kP00HLJlJqg=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_diffuse.glsl</key>
 		<data>
@@ -734,15 +778,19 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_sheen.glsl</key>
 		<data>
-		YtsxAgBrKLrIpjmrQe5Tp2FqR7Q=
+		MAD7+h4jEonokJMp1fLsKVk5wPU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_specular.glsl</key>
 		<data>
-		r1rtgXjs5XqH9EsuN456jgPdF3Q=
+		AxYT6Q16cUNBxpQWELx6OgX8xWI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow.glsl</key>
 		<data>
 		Yp5sJvbjVxU6uoq6L2JU+bCvT6c=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow_platform.glsl</key>
+		<data>
+		96C41aAmIvxeK39nrydmkt3ebZw=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_transmission_opacity.glsl</key>
 		<data>
@@ -762,7 +810,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_anisotropic_vdf.glsl</key>
 		<data>
-		gxizyr7VjVe1Fq1LQ97wgVP+4IM=
+		WJz4AY18XtCcYv9+4a5pUvH8MWs=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_artistic_ior.glsl</key>
 		<data>
@@ -770,7 +818,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_blackbody.glsl</key>
 		<data>
-		563GeII4Axo43E3xQDkV3EMmauA=
+		DS3GWk/mUgZKjUy/mEZnrWUOA5U=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_burley_diffuse_bsdf.glsl</key>
 		<data>
@@ -782,11 +830,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_conductor_bsdf.glsl</key>
 		<data>
-		pUdA7pXE0rAS9hB8uDwjO2dOZfI=
+		MSMkAsv6be71bKHDIRakdNcR9+A=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_dielectric_bsdf.glsl</key>
 		<data>
-		j4HGFaEQr3Du4KsGX2Wfjs5tjo4=
+		0ptsN/9uhfyreQhHpN4Z+9QumHo=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_displacement_float.glsl</key>
 		<data>
@@ -798,7 +846,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_generalized_schlick_bsdf.glsl</key>
 		<data>
-		5KPAGy+dKHzQSMPpBMPjjDboGfo=
+		wTDqGwbDf52Ul1FILesiU3wlATg=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_generalized_schlick_edf.glsl</key>
 		<data>
@@ -810,7 +858,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_layer_vdf.glsl</key>
 		<data>
-		n1TvPQSA2EgD3q99n0AMR0uJaX4=
+		7wQewrr5A+9+5ZD2W87flEF+fPo=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_mix_bsdf.glsl</key>
 		<data>
@@ -870,7 +918,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genmdl/pbrlib_genmdl_impl.mtlx</key>
 		<data>
-		4XziRNkPCJRXs3sO1RWcTQx9eAs=
+		5juZ6IbkHHs/H5hRIfTJCb3UfMs=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genmsl/lib/mx_shadow_platform.metal</key>
+		<data>
+		wKAmqs4bNw+sUBBLffXZZIjBNoo=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genmsl/pbrlib_genmsl_impl.mtlx</key>
 		<data>
@@ -890,11 +942,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_blackbody.osl</key>
 		<data>
-		BJXJEGZhvMvCagTewQSsN5j1e+I=
+		6CJpDp7pbOSTK3xyIsOxlwDGRLs=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_chiang_hair_bsdf.osl</key>
 		<data>
-		DcOCIuj8RJRtg4avAt4xcwbZv0Q=
+		/SLdff1fJzU6cmTtA5m2u0Mkwbg=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_chiang_hair_roughness.osl</key>
 		<data>
@@ -902,11 +954,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_dielectric_bsdf.osl</key>
 		<data>
-		j8dJ4XSfO6WRwk6PI0zzaeFne0U=
+		cOoiyoYBwxpgeEMiLw0FnRGw/vc=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_generalized_schlick_bsdf.osl</key>
 		<data>
-		vuncoU3DsFjiO/gaoi2BSKJi0hg=
+		xn96Zs5g/CBVA8vzWz7SPopW+YI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_generalized_schlick_edf.osl</key>
 		<data>
@@ -922,7 +974,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_subsurface_bsdf.osl</key>
 		<data>
-		E88EBZJzwpLxoQfMz5ZuOHIXj44=
+		m4vWrxjk5qmCmZXLtW+Zu3rvxm0=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_surface.osl</key>
 		<data>
@@ -932,13 +984,21 @@
 		<data>
 		wM65Y4W7/Raz7rPoBFE20TfV23I=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genslang/pbrlib_genslang_impl.mtlx</key>
+		<data>
+		aXfarmV3JMiIyFDUmCoH2aviKiY=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/pbrlib_defs.mtlx</key>
 		<data>
-		CN01rEK61iGOBMLFp62wZ1gpsyo=
+		zxwl75ApoZ9ZIMpjVagUYXd29GI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/pbrlib_ng.mtlx</key>
 		<data>
 		mlC+NVfPDGsQZFFMHEIbYkw2K/w=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_flake.glsl</key>
+		<data>
+		qCeT4SYOyXSJEWomGUC6ccmMIQ8=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_geometry.glsl</key>
 		<data>
@@ -946,7 +1006,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hextile.glsl</key>
 		<data>
-		xKzEScJIY8sGjzNwOXj/kGFHEWM=
+		iKF7vvH0uN4Qy3k6XcMGEHdgGGU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hsv.glsl</key>
 		<data>
@@ -954,11 +1014,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_math.glsl</key>
 		<data>
-		udchxNhqV2SLYVlo3dodc74blpg=
+		RzYx+duioId3WDM6++pr3gO7KiE=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_noise.glsl</key>
 		<data>
-		qc6JrrLZN2vOw0TPqPp6AKfoqTY=
+		MvVEVdw09zJaUk1NrHX6pZyc/M8=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_transform_uv.glsl</key>
 		<data>
@@ -1020,6 +1080,14 @@
 		<data>
 		dMzFoCDavtXD7qLdMxp5TrI/Prc=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_flake2d.glsl</key>
+		<data>
+		2p7lDliD6sbKgLLuk3Wb1GgZIg4=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_flake3d.glsl</key>
+		<data>
+		KDHwOgq9wZCMbbQs1pdiDheTTc8=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_float.glsl</key>
 		<data>
 		C8UqITZoqow2Isoo7OwPaejFkP8=
@@ -1058,11 +1126,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextiledimage.glsl</key>
 		<data>
-		dCU65sbABqG+uQEsY8EoW2nejMA=
+		G8vUG6Emij5UXNPUghVjQRaVQdc=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextilednormalmap.glsl</key>
 		<data>
-		SbtgJE3bZaE9qMtdSXOAxbZ3g10=
+		/67ctQhYyDosa+Ajs5xZLC29d/o=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hsvtorgb_color3.glsl</key>
 		<data>
@@ -1070,7 +1138,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hsvtorgb_color4.glsl</key>
 		<data>
-		ulJlihdztosuscjlF3tkJeFTcCI=
+		eTAcCPqpfY1t3nr0r5GU84XIRWs=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_color3.glsl</key>
 		<data>
@@ -1166,19 +1234,19 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_float.glsl</key>
 		<data>
-		26vq7MjaGDt7kBHbQ+LXm8CCrbg=
+		/+uy+4z2LMvOhzEXUPdt+4qg4BQ=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector2.glsl</key>
 		<data>
-		e2cUZ+QIMOpNykzwk/qwMjb1HIs=
+		4bLIp2gs6nIKRM/FF1qxRlsKRaQ=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector3.glsl</key>
 		<data>
-		m/lw0H90wfzWuQfA5vaDrA84H5w=
+		VaRgQ2rH3CCT8+Z8KI4QM51T0PM=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector4.glsl</key>
 		<data>
-		rSLOpGPYEWfRBuqcMfA6hKYVaVQ=
+		V9N5bw0gdR17NGgJpkpcKsFp3nU=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rgbtohsv_color3.glsl</key>
 		<data>
@@ -1186,7 +1254,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rgbtohsv_color4.glsl</key>
 		<data>
-		IZP+p9Z0U93vSMz5Q9t+Vw2MdyA=
+		BJ5KSPYVeo7AQbBr4jXT7QUIBqk=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rotate_vector2.glsl</key>
 		<data>
@@ -1194,7 +1262,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rotate_vector3.glsl</key>
 		<data>
-		eM5nxqjFrPkx9MWcNjH1kTJ7l3Q=
+		jTiextvZSh6uylDkYoW+oQI5QTE=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_smoothstep_float.glsl</key>
 		<data>
@@ -1218,19 +1286,19 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_float.glsl</key>
 		<data>
-		LsVAqNI9ekMuGZN2EzZgDoIPFAY=
+		udOSHxUj5djOJ4hNaD7NPao7VDk=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector2.glsl</key>
 		<data>
-		4vQx/P6at46fifgfbbuIxwz6XF0=
+		x4RMrjC4j0YXMzKzcRgDDj1Z/5U=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector3.glsl</key>
 		<data>
-		an8jplju9cErZ2r8dXmH7H2D9OQ=
+		TM3cPhnhrp7X1mYJfbYaDvkTA+Y=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector4.glsl</key>
 		<data>
-		WNnPpKjWWGzze6bPf0KKC7CRWzs=
+		OTh21wpI4qRFNXKdL46V5V7GL3Q=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_surface_unlit.glsl</key>
 		<data>
@@ -1238,11 +1306,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_transformmatrix_vector2M3.glsl</key>
 		<data>
-		zV/jJSHG4bew9HtWjY1H7rSi+CY=
+		OPoSlqP/s7poAZRsVuIlt4L/XHI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_transformmatrix_vector3M4.glsl</key>
 		<data>
-		d0RRCMeNMfbdYMbKjnA71DOYcxE=
+		3hmMs+zUXMYkVAWhw738OVOwTXQ=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_unpremult_color4.glsl</key>
 		<data>
@@ -1274,15 +1342,15 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/stdlib_genglsl_impl.mtlx</key>
 		<data>
-		6NYuSTbIX/lr2GTJPc2mzzlcPVU=
+		/Cj24YTnn1UdlLbAfCFtI0g9Lms=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmdl/stdlib_genmdl_impl.mtlx</key>
 		<data>
-		epIH59rsWsKJaCcrfNTQXAwTECA=
+		EUakz+X8F3GEr7O2+o2+/XBMadM=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_math.metal</key>
 		<data>
-		Jf4U1h1Y9sLFo/XFg8qgEgFZTsA=
+		Hd6en6uRQzjiFilBiDrqe/H6zWo=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_matscalaroperators.metal</key>
 		<data>
@@ -1306,7 +1374,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/mx_funcs.h</key>
 		<data>
-		/GLLfib+VZvuBsqha23SQwEld/M=
+		EK8T6zvwGqarHyjoonZ/ifNaNH4=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/vector2.h</key>
 		<data>
@@ -1315,6 +1383,14 @@
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/vector4.h</key>
 		<data>
 		9U8KJu/HwrBs6n1eGiKGaTxK4FY=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_flake.osl</key>
+		<data>
+		fmxZQQ31KqHTa39y1nMQ0rcQ810=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_hextile.osl</key>
+		<data>
+		v0Sir+sbQtg1Vl/rxicdYNxLRcM=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_transform_uv.osl</key>
 		<data>
@@ -1346,7 +1422,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_cellnoise3d_float.osl</key>
 		<data>
-		IbowYgT/hOiHZ5jD0sy9PMSyKC8=
+		Vt2dWPu2p+/QeDY0qjulFh+M2p0=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_creatematrix.osl</key>
 		<data>
@@ -1367,6 +1443,14 @@
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_dodge_float.osl</key>
 		<data>
 		8Su93Xfq06BL8mnUCGmmnNih8Q0=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_flake2d.osl</key>
+		<data>
+		6bKoANW5umyY/or9O3mpk9qKQoQ=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_flake3d.osl</key>
+		<data>
+		nhAlKDoNsr41cBqtrUPWz86dnI4=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_float.osl</key>
 		<data>
@@ -1428,6 +1512,10 @@
 		<data>
 		Wdqv0S6mp1kmQ/NPCrVgezVaWvc=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geompropvalue_filename.osl</key>
+		<data>
+		OhO/6DzFLbNGM0Cki/lTvOf6EsI=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geompropvalue_float.osl</key>
 		<data>
 		ijvbnDN5tYvsCWOSuJooAk7EywY=
@@ -1456,21 +1544,33 @@
 		<data>
 		VOc47KYVTwnHMUuQ/DIVVgO6Up8=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextiledimage_color3.osl</key>
+		<data>
+		oexLaNp1/xJXoTyomfUNho37yzY=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextiledimage_color4.osl</key>
+		<data>
+		t4ARC8QKEPGZsgvy9zl1J5vzajM=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextilednormalmap_vector3.osl</key>
+		<data>
+		ani3HHolyddKE3VGKld88nwpE64=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hsvtorgb_color3.osl</key>
 		<data>
 		7GQa2uJPIPK9+lHdbMcKOqGEWoY=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hsvtorgb_color4.osl</key>
 		<data>
-		dblMNp5lLp3moIeYv14/0U3ESPc=
+		l0MzGK1v1zjc8C3vKURBgr9N4w4=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color3.osl</key>
 		<data>
-		dfUgalmdy1BHaoZsMJKuKcguVzQ=
+		ccMgq92E3JvzyT4QB/xVSmpJV4w=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color4.osl</key>
 		<data>
-		NMBdC3W07NzcYhCxhgOHvELNGHA=
+		dMqBNcYBzRTn47xx7ZmzvR+yzeo=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_float.osl</key>
 		<data>
@@ -1546,7 +1646,7 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_rgbtohsv_color4.osl</key>
 		<data>
-		7i2uFRGV9calUDtIexDp6yNO9sA=
+		q5cdadLtkovCECPn5FxBAQvBbYI=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_rotate_vector2.osl</key>
 		<data>
@@ -1554,7 +1654,11 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_rotate_vector3.osl</key>
 		<data>
-		ahfnZTRctFX1NYtIGHc4LSO0/KI=
+		7S3jOBCVnKCdQFLiGoWg48LrjSQ=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_set_ci.osl</key>
+		<data>
+		Wt0LJFkMT3ZDGg1IP4ZBKIqZPrQ=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_surface_unlit.osl</key>
 		<data>
@@ -1602,15 +1706,27 @@
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/stdlib_genosl_impl.mtlx</key>
 		<data>
-		ik5hFnQVCbgice/dtvHaVvDFrX8=
+		KZNXrNLt4CYtRCk8jvLh3cALoLE=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/lib/mx_math.slang</key>
+		<data>
+		UgEVsUKGqSYCWV/SXODB+pddt2I=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/lib/mx_texture.slang</key>
+		<data>
+		beYem52+hHSxBT+DCHFnQMrYrmM=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/stdlib_genslang_impl.mtlx</key>
+		<data>
+		QjoruRVd1OXv6YX/rDo7sPRt8jw=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/stdlib_defs.mtlx</key>
 		<data>
-		xLhQqt/iag9RcXy0gqLpuzPXc28=
+		9feUQ1xJFhHJ8yxPCS14JWNm5Wk=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/stdlib_ng.mtlx</key>
 		<data>
-		cpT97WH7SCUP1VYS2F8kquoccac=
+		XT5v4bFI8W7PO5S4HmBjgQy/1e0=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/libraries/targets/essl.mtlx</key>
 		<data>
@@ -1632,9 +1748,17 @@
 		<data>
 		MoV0wikR4mvS41MxE96NUbFkt/Q=
 		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/targets/genoslnetwork.mtlx</key>
+		<data>
+		Ysz2EC6zsgG2VIhUgdZrAzztMuA=
+		</data>
+		<key>Resources/usd/usdMtlx/Resources/libraries/targets/genslangl.mtlx</key>
+		<data>
+		y4jocS0BsBopqlvMaHSItGLgfD0=
+		</data>
 		<key>Resources/usd/usdMtlx/Resources/plugInfo.json</key>
 		<data>
-		MVg0au11YmfdLoOTKNXCLPDt2kI=
+		vjpz+OtnsxEXPVVfj33vmgBOlso=
 		</data>
 		<key>Resources/usd/usdMtlx/Resources/usdMtlx/schema.usda</key>
 		<data>
@@ -1650,7 +1774,7 @@
 		</data>
 		<key>Resources/usd/usdPhysics/Resources/usdPhysics/schema.usda</key>
 		<data>
-		pt4iy2JhE1d6iD9iYWDESCKnsFM=
+		3a+anGlwxQHsi6Pl4MvWfLtjSPE=
 		</data>
 		<key>Resources/usd/usdPhysicsValidators/Resources/plugInfo.json</key>
 		<data>
@@ -1671,6 +1795,18 @@
 		<key>Resources/usd/usdProcImaging/Resources/plugInfo.json</key>
 		<data>
 		bWIl0fGrasEmHsCPUvP+l3KZ3vM=
+		</data>
+		<key>Resources/usd/usdProfiles/Resources/UsdProfiles/schema.usda</key>
+		<data>
+		sOpR5bfrjzDHsIS1i6JxPk6WU2Q=
+		</data>
+		<key>Resources/usd/usdProfiles/Resources/generatedSchema.usda</key>
+		<data>
+		54i2JHz4nMUP8k8IMqBvE51iD04=
+		</data>
+		<key>Resources/usd/usdProfiles/Resources/plugInfo.json</key>
+		<data>
+		rGlPu/nlC+D8Nrcw0+S1Oqnq/Q4=
 		</data>
 		<key>Resources/usd/usdRender/Resources/generatedSchema.usda</key>
 		<data>
@@ -1829,25 +1965,25 @@
 			LQMp/RFMWbeUK7Gle+Ckbi0Hx3mRVwqMNWSAua/TpZo=
 			</data>
 		</dict>
+		<key>Resources/usd/execIr/Resources/execIr/schema.usda</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hvDNYxJbe/laWIYUs2h5RDEgkJ/ee9A4ImmycixHIXk=
+			</data>
+		</dict>
 		<key>Resources/usd/execIr/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			resINCIiHJrB0gDttqkbHK6kd201FdzOO5QPhkmLdrg=
+			/lpW+kZ5jpWw6/NirklqqAlhaAkew3qcPM39OvOFCXE=
 			</data>
 		</dict>
 		<key>Resources/usd/execIr/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w6/C0uUY9LXUh4Zh40xrvtrgS+MX47gyfZgAHDgeRXc=
-			</data>
-		</dict>
-		<key>Resources/usd/execIr/Resources/schema.usda</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			iwbc3cIUYMn5Nr/w1w9Z3ldmpQy7ibif4jU3pJp4WRM=
+			QmXpeZc8PHNUpYc/VulnxFIvI+9SNvYizuMa3WONSvo=
 			</data>
 		</dict>
 		<key>Resources/usd/execUsd/Resources/plugInfo.json</key>
@@ -1889,7 +2025,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OdfmKtnwkCbyJRQpTioX9/J+i+o+uVHfQXI0gXBXvXA=
+			eF7HvtPCqkAmVJQp6d0juTPx00ldr1JjFhcim86NMlA=
 			</data>
 		</dict>
 		<key>Resources/usd/hd/Resources/plugInfo.json</key>
@@ -1910,14 +2046,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Lerb62d3oC2kcbn73Fr1e0NaQJAPqLCv+lOxsM0GGAY=
+			c/B6CRzAxGwoK15j6uOIc/4mEhZ5IYNwUJtL3VAmk1A=
 			</data>
 		</dict>
 		<key>Resources/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R1J9KZTlBPQGsRTRgL1M20/ybi0gbgMDlDo3qYCG88s=
+			2cEsxxTYlFIAnDcGSWkO2WOZQkJtEBHzSHE7+mBw24o=
 			</data>
 		</dict>
 		<key>Resources/usd/hdSt/Resources/shaders/compute.glslfx</key>
@@ -2001,7 +2137,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pH//kDD30igtbQZsjT+9IRveZ0sjgVV8i7Hu6RvLYdo=
+			brj7ZOqIbJdPrJHITbEpHdM8zpOnv6eITFSvtvNxjAs=
 			</data>
 		</dict>
 		<key>Resources/usd/hdSt/Resources/shaders/meshFaceCull.glslfx</key>
@@ -2064,7 +2200,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WmNyIPtLnLeZJMoMbU7tEUrTrJ56WtDTjCrF8YSuwfw=
+			i3vvswsqDcBCdAr9xixnSER1s2CtcmyJ2wEwaHH1lqE=
 			</data>
 		</dict>
 		<key>Resources/usd/hdSt/Resources/shaders/renderPassShader.glslfx</key>
@@ -2086,6 +2222,27 @@
 			<key>hash2</key>
 			<data>
 			iONl0qrnLsl+Y27ZN+1rmbuV2iX74UZzEZzHXa4j2AY=
+			</data>
+		</dict>
+		<key>Resources/usd/hdSt/Resources/shaders/sphere.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sMzj7oiSrG1wsxD3vbLb5H92wJ75khhs+pu4uHLGQ2c=
+			</data>
+		</dict>
+		<key>Resources/usd/hdSt/Resources/shaders/sphereFaceCull.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0QVaIVZqp436dcQXVM3jigLoM/W4XogprC8yrmi4fr0=
+			</data>
+		</dict>
+		<key>Resources/usd/hdSt/Resources/shaders/sphereNormal.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UptvSjeMspcobd3gwb2PH4ML/UdaO6t5orH6kX1OJQg=
 			</data>
 		</dict>
 		<key>Resources/usd/hdSt/Resources/shaders/surfaceHelpers.glslfx</key>
@@ -2169,7 +2326,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ou5O2vhHYFTQFStxKZJJGuXSCXKMGoaYkpHrVz1YB5A=
+			7G0I31Q7xHrrw2u22r0a4P1EEAmqtfCAq44apuzn3SU=
 			</data>
 		</dict>
 		<key>Resources/usd/hdx/Resources/shaders/outline.glslfx</key>
@@ -2183,7 +2340,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ALLffw6cPxzE6ybdI1Ea/WnQ+YIV9FTRP5b/+kfxpl8=
+			7wespMRnC10jLbIR0GzGnpJSsOtlk4UobtUFHCJAb3Q=
 			</data>
 		</dict>
 		<key>Resources/usd/hdx/Resources/shaders/renderPassColorAndSelectionShader.glslfx</key>
@@ -2309,7 +2466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			N2MyH0a49JQ6PSGOyXMZ15GQdTn9re/S6fBrYjVFeVE=
+			nnM6ze+l7MQu1C/AGLo+o2H6J97y60kZKGwnLD8vkO4=
 			</data>
 		</dict>
 		<key>Resources/usd/sdf/Resources/plugInfo.json</key>
@@ -2449,35 +2606,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sC2n1Nt0WkGyxppHAV1qKawDOMjFpMcIZ+W+L/yONZM=
+			xFrfS996JJKs8QeghzsN4KlXzCp6ADdSP08EHk8UCL8=
 			</data>
 		</dict>
 		<key>Resources/usd/usd/Resources/usd/schema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/gqXxL/KaVoMpifTOgsaEA/fu3pzUf+oW8gfQDbwt5U=
+			U3Bt1xfK00wFpWfDIMHsvJms8yf2X89wO1QJ5MB8jmM=
+			</data>
+		</dict>
+		<key>Resources/usd/usdExecImaging/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7rxwvJVXufQK1XwJcyMwzQHAjVSj6W8gG1nYvIQaUTQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+SWKbKw36nDfQp35bexpE/B8pEUINMOwei4YMqk1TD8=
+			9XMtrXxxKLrjCDg4IP6hCeCK/7ar0qZfp9S96PoJypQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdGeom/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tsn8K3xzxiPlxGT8Fyrsefw793GBH84e5p5zIeFAV6w=
+			uLHUe2bgwkT0Txqz0JrtLPf/FJUozHfe57+fVbuQKhA=
 			</data>
 		</dict>
 		<key>Resources/usd/usdGeom/Resources/usdGeom/schema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sL4ksC8tDf18J219AqP14KcFtuOImyU7HP7FodULwsA=
+			zx9GFbcZbVmnj0m0kKFb/gxJx42W97xWIAdTQSY8olE=
 			</data>
 		</dict>
 		<key>Resources/usd/usdGeomValidators/Resources/plugInfo.json</key>
@@ -2491,14 +2655,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fNiOTwfJgMhs1XipCkiJ3zHu+SqbBvy4CfHAPrTKYJ8=
+			t/B0Y/OVWStUfMB7uel6gWy8KqsMSGOPfsKpo35g074=
 			</data>
 		</dict>
 		<key>Resources/usd/usdHydra/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0GmR4TRzOhNY5T6WbGUw0jh0gyEZb995mEjkRy0XwSA=
+			/PkoWP6k+pcRn/PR6iGJNRoAVVFgEtkUOmWbKpFOBwc=
 			</data>
 		</dict>
 		<key>Resources/usd/usdHydra/Resources/shaders/empty.glslfx</key>
@@ -2519,14 +2683,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w1qea6yBSNNzwsYQcRGscSYswQie6FQK0o0rt3Agqbs=
+			ShNy/+hHcqjYqHQYTdDhUf0qx1eqFE+yvF7bBIqSxHI=
 			</data>
 		</dict>
 		<key>Resources/usd/usdImaging/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ILvi5yJXAEhTX0FtIMLAT4jK0hjwVVOW5AePRcWlJ/8=
+			DMufFMm1lI47z0Vvz22nOgFdS21U/UsfWONH4SrgxiQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdImagingGL/Resources/plugInfo.json</key>
@@ -2534,6 +2698,34 @@
 			<key>hash2</key>
 			<data>
 			ud+krCSRMqOHMKiBtr/+e/fCMN73pqOz3bC2EnXiDxY=
+			</data>
+		</dict>
+		<key>Resources/usd/usdIrImaging/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dlmiXiMH1C+9fT61/E3rflS/Qmhn23yw/A/LGD6GoWg=
+			</data>
+		</dict>
+		<key>Resources/usd/usdLod/Resources/generatedSchema.usda</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2pizCp5R2ZQLT0wcasndmt7kUKD5VW9aeEuNWDvIO+k=
+			</data>
+		</dict>
+		<key>Resources/usd/usdLod/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2k+8ZvpFBUX52UhMvc/sNbHycE15tr7zM83y9rR+vXY=
+			</data>
+		</dict>
+		<key>Resources/usd/usdLod/Resources/usdLod/schema.usda</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gIsT1oRHanltGpK/4RF4WHtTJbS9fK94/dRt0u5w8hM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdLux/Resources/generatedSchema.usda</key>
@@ -2557,6 +2749,13 @@
 			1Hi1RvEaxFujvfzoPxa4jo1V/KpvzN2HlXqzAXd1+IQ=
 			</data>
 		</dict>
+		<key>Resources/usd/usdLuxValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hsGAQOMg4oJlEr23b7s16abQ/hkumxvyn4caZ1WO5nk=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMedia/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
@@ -2575,7 +2774,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FDTtbGRAXXJEcyJn4GEZG0YlEsdxhV6ll2zQK3qUE4o=
+			R98CrNLL8u6J5cSrnYceCeUeTbjpXCGIj7OtB/UIJH4=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/generatedSchema.usda</key>
@@ -2592,39 +2791,11 @@
 			nLDVgfTVh4YExkXNOrE9FcwpNwJXJ7juyhIHAHotS6o=
 			</data>
 		</dict>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/gltf_pbr.mtlx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			q4PnenxxAFthpwlnpm20tOhsrh34aQ2QjXOXlsUwxnY=
-			</data>
-		</dict>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/open_pbr_surface.mtlx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xuevdfgoJb5rgGyCres2zL3fiddTuF1D7vrLYqxt1h8=
-			</data>
-		</dict>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genglsl/standard_surface.mtlx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			bdWRtCjyKa6TQedxgi25GeVKcJFrSS8dLs7BmqhOISQ=
-			</data>
-		</dict>
-		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/genmdl/open_pbr_surface.mtlx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			I7TMB+EQC7Jj/zkppehuetJj+M1xjvwaB3EpZ6iD37Y=
-			</data>
-		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/gltf_pbr.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pOW+lArUDVk+HUSdC2ZXNRl3W6A2VX79iR/lHE8CGDs=
+			kWz8YvTFOC3R7/2U8Q6HcrMYQXg9KE3NjqQftpfHJZ0=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_add.mtlx</key>
@@ -2673,7 +2844,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5VL+SebuIuxqcTid6OlPglgpvl6Bd4IeF/ZtJJ5f2vg=
+			LkkAQX1H5y9HuVEgwBrd8QHaEp8VcF8vfATx9NOVg2U=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/lama/lama_layer.mtlx</key>
@@ -2722,7 +2893,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lM0ntbMtWd/Biko4NiW+ik/8DC58nnHYTjxEizSJboc=
+			KQT2gKk5IVQJ/qkONYbbHiCHxeKQAGEcG/S+UY/GX4M=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/standard_surface.mtlx</key>
@@ -2736,21 +2907,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R+/xf0h5kC8FyCIRkLNKRmOFdgDzKmg0jRgZUkfwgEw=
+			7qfT7u3xR0EqOVxeU4+rpMDKeBlLCXeX5lrbTNVCPkQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_gltf_pbr.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nz5fFpoPWK3wrAzIuwoKeG4d9UuGk+794u6usxHWW50=
+			PpeUrr1FWf3oABvXltxr5sQTR3najqKoFjTKIcbhB3k=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_open_pbr.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			utUqI7QLvDC+iEAhOYZ3hcdFM+SaJjmVdNk4MeaQ09o=
+			FPwzs5uaRO8VdFPFauYsFFFTC1NekqU7/CAfbBWXaFc=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/bxdf/translation/standard_surface_to_usd.mtlx</key>
@@ -2764,7 +2935,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KZcQF9T01hNRz/dm0hDH1OlnkVPMOYfAnAIA1BboOIE=
+			ZvbFA0vrnqc2N9je5tdaTLmrlVCLcata/hgVUafuKPM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/cmlib/cmlib_defs.mtlx</key>
@@ -2778,7 +2949,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sJmnvq8DjDXB5XKrsyJ5wCcWTDL1nPgwb4Vqe3nioXs=
+			N9mZDIYK+XA0opTD7wO/RqNdDQb3JOHq7hlFoMgebaA=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genglsl/lights_genglsl_impl.mtlx</key>
@@ -2837,6 +3008,34 @@
 			4yfvq823cb61tg+cUQU7xe8BoNMsjxsx+5aVFbfrZxU=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/lights_genslang_impl.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZOCw1A8p7VLSRCo1fmSBZhAYKIW++qbKRGcAbuINY/s=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_directional_light.slang</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NLui4yv1P6r5wFaOssOzgrYiNJvqKlMsryXocfSkH+A=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_point_light.slang</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zdS7JFxEoT4oB1LRNa5ynB8QVYcXgzU/7xGIlJA2LTM=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/lights/genslang/mx_spot_light.slang</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BEcL5fgm8CNJT38T6qUIRbBxCyzYG66S6uPMmgJpayM=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/lights/lights_defs.mtlx</key>
 		<dict>
 			<key>hash2</key>
@@ -2851,11 +3050,18 @@
 			SE0aSgWlT5qLMBBaI6smC9PjSc18VlMcOyD/zwu0m7w=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/flake.mdl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LT6JC0SPxLp/EEHZC8IuQsSpXZva8MD1UY9D+4MwGwc=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/hextile.mdl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1PAAdEU6R4oo+dfHIv1j+FcrdmWm6WYDnyCXw+A3TCI=
+			/bmF2MiwHCx18MfmjuEaUVcHCVDr+tLOzQ4OXKFiLLk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/hsv.mdl</key>
@@ -2869,7 +3075,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GFmBqX8BixCMFTCDws438j6TeJy7D+4QRe22l9z7F9Q=
+			hu0cELiznhlIpm5kYf+vVU4gQ7ZvpABoHxuleB+NfW0=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib.mdl</key>
@@ -2883,14 +3089,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F2YzwtuA0qySIhYL3OGRQHXyG2lnb6Os1v17FO1jhkg=
+			FUZ49EKsYFfbaoyBUYlF1XWQwY5qPWSYD7eGwt0NRsU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_6.mdl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cTzWCBsh2Lwbd7Zs5D9Wi0Bh+0YoxrGCKFsSSQTRWTI=
+			cosLp3DmarqU+vxNxzOWeLVWmJcK0QWPVxKxuR23Eu8=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/pbrlib_1_7.mdl</key>
@@ -2911,7 +3117,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kApIOVIwaZ1JXhy3h0K5mFcF0kLdXApcw9G3TKkhN+g=
+			QM4xOTSFiSUlReXdwlIM8mPWV4McutqCyC4EJ5OIwK0=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/sampling.mdl</key>
@@ -2939,7 +3145,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1XTir6kzzUExD6/Z15nkrMjeLa3ni0M0HxJgGP0EPAY=
+			ZdaNOiJU+aHQFwjJxJCDx55LH1RSmRQiVPE8FQHVwkA=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_7.mdl</key>
@@ -2953,14 +3159,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tbq6BDnaypwV7vG4ggT++0xQjZZhI8CTqXxpJClen3Y=
+			bnh3tnCksc5s9B7UDhMIn6b6L7kg/7ID4lik2ahcIKs=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/mdl/materialx/stdlib_1_9.mdl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JaU9TACEqToigtm0tm/N2my6PMWYWbO9DN1u0w4IRug=
+			4uha1JpSypMeBkTN6Kpnh5dnJURGs1l6jHwIk6PUvAs=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/genglsl/nprlib_genglsl_impl.mtlx</key>
@@ -2991,6 +3197,13 @@
 			SP3Udz5LgzyznJzkgwk51s6DQPVukB9CqvSxg7BtgJA=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/genslang/nprlib_genslang_impl.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uXIupnhGg6+KsmNDVXYurbqFRvqrmR4uF+nMxoHYgns=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/nprlib/nprlib_defs.mtlx</key>
 		<dict>
 			<key>hash2</key>
@@ -3009,14 +3222,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oxSjQ0V11ED2cwyNDlpB4ukPCUNf9HLkCkcgRzj0ReA=
+			88QZIlNV3IGRnf+9jQ9ln30KPrMz6DXitpzBIo1ZVI4=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_environment_fis.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DTma4RrUPZi8ttnfAnxgfqIxr7LRpxjRwqQyG7sY/ss=
+			nYC8BMcr6I/9I4AEcF7bZIOC1+W14/ewV8uvpGKE2Xk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_environment_none.glsl</key>
@@ -3030,7 +3243,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+eCgomcsTFkaTBwU9sMacH9x6iByOZvYGrBDO1186uI=
+			yTE6Bv3MRvhndBxwXuz+OCZsD3y2EUCQosLmrSN4Ji8=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_generate_albedo_table.glsl</key>
@@ -3044,14 +3257,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sKboz+bOjZH4XrpOaCWUbQUQ2fKTeKli+euwKrFEzz0=
+			ZUyy225tmexClH0OFTL+hCwTJkuY62FW08eYbW6qh5g=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dmNp3UFAxFJUsdzWD29iIAKO8CN74QfkhX/BhGjH5i8=
+			XPoTtv9kXD6e46uOalZQcSmymuUroITQXCvGiO2IJrs=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_diffuse.glsl</key>
@@ -3065,14 +3278,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d1zrk29ETqiDVD+YcgLxULd5fVXkTsy4ha5T7U+2LS4=
+			wQXKd4j6rXiLYFlFgw1vqZikGsCFvZINskbGnYDDpUw=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_microfacet_specular.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I7mk4jjKFL8VxW3oBKzv2XtNaiN/HPk9JPyqrgSto2Y=
+			7jkMVX4aACgWlmStsKc79/M8T1md3g60ejax/jSHJAw=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow.glsl</key>
@@ -3080,6 +3293,13 @@
 			<key>hash2</key>
 			<data>
 			CN7DAXVS9+U/7voJiz6RT61Yj+jR1NOrIYbl6jAkQJM=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_shadow_platform.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UwsDfhIIqTroUCx1x6OWUT5sFHyN+b3dLRLRBsWKzZQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/lib/mx_transmission_opacity.glsl</key>
@@ -3114,7 +3334,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f7LHlbFVxnobjJc6V3il6KXHuFUwmzS3Q4xnca4CWYs=
+			OYId1ouxgrob8ZXblfXCpj5NXOReAe7Uk7yl+LCrtLE=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_artistic_ior.glsl</key>
@@ -3128,7 +3348,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6CgEcOn/rtVUfegj2qnAdEhDD0zZtEZYhqqDeOWpC+g=
+			W0llGcU7BGNgQHJlrGHNgSA1XaBwxLRHXIeHIAhu6tI=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_burley_diffuse_bsdf.glsl</key>
@@ -3149,14 +3369,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qJq9E5UMJKzYBpT0zqYaikqXPxdpSduuKCS1Vk5fvuQ=
+			N6sjjUcqqbh/M0bfq20QaZNwVRmhItzs1VUevFC4lKc=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_dielectric_bsdf.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D896dbjfTj2jTrX9QaO+q9TGA6SOFkFLP9rnW1S3auE=
+			B5ApZO7epwCt7iaR1txfUqYRS5qg6luMuye56y29l4Y=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_displacement_float.glsl</key>
@@ -3177,7 +3397,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1GvY5bCkwcVyM+8C0oDoi0DF/HfMnIVSSrS/kwNJa/A=
+			yCQLDSZGWRMC0MknCvyJepu8SfB45L8kG1t0FWTtOLU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_generalized_schlick_edf.glsl</key>
@@ -3198,7 +3418,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pk6eakvInTSGBRqykKkXO3znoTkNTDwnLDiB4OxlKYY=
+			lk8knmhqHw58r6gSi5JtuOvk+T1KXCJ49PgUnpLcuFI=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genglsl/mx_mix_bsdf.glsl</key>
@@ -3303,7 +3523,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k7rFc6Q/OH6Ope7vW2sAAOH9u49bcWzDhV/qsK54yn8=
+			fli9Ku1P7JKB0Y4wwVTVS65ViWHhuJAv9dpwmDIXXt8=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genmsl/lib/mx_shadow_platform.metal</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mMG6E2vGKKTsHTMTwnWtRUJFT4nLAJ09YL1ZIngiBXo=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genmsl/pbrlib_genmsl_impl.mtlx</key>
@@ -3338,14 +3565,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RkN4Shg/QGlxretEYtpdBYAGPiPGSRGajrcbIjjDL6c=
+			FDede6LAP9kWV7epMSYu6EGDB4+QoHQHtrZb+icdTCE=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_chiang_hair_bsdf.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zoemJgn7JlODvPhLdfNqQA5FhvZNyoFYPryqtx3FTi8=
+			Rx8/6YL7sKr9ZU2EVkGSHPm6lxq6fSPXW4QR8mlBs3M=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_chiang_hair_roughness.osl</key>
@@ -3359,14 +3586,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9OjaNe1Q2LkxeEhKchRmKT5u9+vdj6MuaE7/5pozcf0=
+			YUWu/tKn+A7NzNc3Kt/JRW5FvygdOiFFgsUeFv9q0wE=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_generalized_schlick_bsdf.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HHG+WTrz1P2/EKSoc80XgeNUqz7IdLQhRjBXfgKskgQ=
+			afBHWstcLn4+powULsB8ba1fucAQ8iug56WR+PWuJs4=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_generalized_schlick_edf.osl</key>
@@ -3394,7 +3621,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dm4UVqyhQmFehznaCHVg/mev+ZtnOSb9mPjn7VEDpJw=
+			fzvVNWJN925arnndtK3XVWNCfROU/u7ZMicAHzr7Jic=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genosl/mx_surface.osl</key>
@@ -3411,11 +3638,18 @@
 			CatXQCibTOQh4EzKKT/UKsTP+VnQJ4v0exKzl8gj9Bo=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/genslang/pbrlib_genslang_impl.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X73iIC0GxRkG3S3z/lLRxoajPb2hPqpYiDMrsHCzwHU=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/pbrlib_defs.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PT8l4RdvjBhujL3AY2NAedJs5FzM5x703YTbvrHq/8Q=
+			y6dPYrNiDxFLOm4DFre9VwijfUR91krTriiNVwqJuo4=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/pbrlib/pbrlib_ng.mtlx</key>
@@ -3423,6 +3657,13 @@
 			<key>hash2</key>
 			<data>
 			02vPiGkYRMCxsnFHpMyM9Me/MvgI4VMuaaQcPL9nfTs=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_flake.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vwVyr3OxAEXns/i1ztiboRizV1Cd/633VBCMy5wMDFU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_geometry.glsl</key>
@@ -3436,7 +3677,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			o0N/avzm8EdDrjx6XSRtW+7qCkxUjvvWdFFrunDinF0=
+			GmXZPRL8OkQS7oAG7sXZ2hWXKiyQB7q/cCdADd7xxyk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_hsv.glsl</key>
@@ -3450,14 +3691,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xQVd57nXIFFW3ctIDK8ijAQXZbxlXSFHJ2SOPj1on0I=
+			w6SlRDiM7qM2f3ojWSVWcyHlOApUO+QP7oTa20F40Mw=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_noise.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6AHU+AEIrT0x+YnqoAc6nRI8CjCx0ISQ/kCeGfReHhI=
+			XfxOwHK+SkPFTpa/+m8LaqjzR7gfIM1BJq6tmK9D+5I=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/lib/mx_transform_uv.glsl</key>
@@ -3565,6 +3806,20 @@
 			APtUfYHFXrBxD+pdgD+zgGEz4ybMpTMaD7V/B73PBEk=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_flake2d.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0c9v0uQPk7iAxOXXeFVg0AekPw7sldxmMruXRso39rI=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_flake3d.glsl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yuADNFdkn89EkuvJTsxHjoQT4bmwsqCkfNeaQT4yN0U=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_fractal2d_float.glsl</key>
 		<dict>
 			<key>hash2</key>
@@ -3632,14 +3887,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1rOEBFNBm7vE06OHFLsa1o+eB8TV+WKiFL0f92KyuBA=
+			6f1YA8rgwhR7X7oHInRrwzaONTYb6uWbeI6aANxNoOA=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hextilednormalmap.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4/kK0V5xzB5vrXWvE3BOIw7cQisvYqF0cJxrQUdstJU=
+			ojw+0VLOVRRFbl5gKmVPS6owAJ2lypiIFAjkmdxKDdM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_hsvtorgb_color3.glsl</key>
@@ -3653,7 +3908,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GCBwQ0PlIHM+c5L9iYL65musupDrb+tmOJcfr6yJ57U=
+			yto8eRTLnGUNlioCimdu93Cac8YtdiqKxxxctkAjx8g=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_image_color3.glsl</key>
@@ -3821,28 +4076,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YAmVjqBPdNmZw9J0IVfsb4dnYVLwkGjSxGLYvaX7vEs=
+			sRYxFWx0eq/rd350gutVlf+lU0YgQRqL55z5WsNM/3c=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector2.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9lMcsbH+MR2a1aXDXr2S93+Z7erW0pUVh3ajcp+5xs0=
+			2UxQCLlDtYxdmcbnl6El9iTBq+5aggbuFmt98c2QQUM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector3.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zhzfhpa0uQlTDG9g9bjohpwon97TvWoxbmuU1mgU13g=
+			p6vyxSUPXrQyoXa8xjtNKEY9q/WJtTi5MNRqKA6ovQ0=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_ramptb_vector4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ntnZfvg3Kx4oz9NGQG3ULEokG2sBe518cz3FGdE0D3c=
+			4GnBzZvFIdcaFoxKhzfXFIjb8qLf46H0eEApwuhu/+M=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rgbtohsv_color3.glsl</key>
@@ -3856,7 +4111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/LfSqx40V54qV3LvO6QNVQ9l985TromVHw1AoFFvWh4=
+			lrTVRsWgI3dI1cOs4HTVh6dDE5AtxEnAxCEiNl7WFjk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_rotate_vector2.glsl</key>
@@ -3870,7 +4125,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mfduStSKCEp3Kf4U8HHDw7ggSZPR37acOkJyZInyhpM=
+			/MHu9g5j3eRFIa/CiCfIjRzIZ6LtQThVYleoKVL2xb8=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_smoothstep_float.glsl</key>
@@ -3912,28 +4167,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qwvd9VaieWLBo86qPaBCnu5hw9DCkQhZGWp5Z9Gn0Bw=
+			kGEkJgNTB6Gld21mSteqz/l4YtSxJ/K+gsAnVWBwUfk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector2.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WZekKN6UyJA7x2TozI9nvdfVQo8MeA/WB8tjCTrmCeI=
+			zNndooUwskRuYFpYuUyUlPD7l7Q+GqAM6eucO2pIbCs=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector3.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AN/U05dezx2JKBw2wkgZPsJqnTPOv47X5vi8PVP8cUo=
+			7zsaBg9kAxd6pJ/XLi88zFQ7IH54tiF1I9b0x1S3QSc=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_splittb_vector4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9dmCraCTYCixQz62eRWz9SX3lLchCC7rIiglQyDfYHo=
+			Av9AFFAyMq2AlshD8rOeW3RQO/DaYXB7cgZYhTiwYFQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_surface_unlit.glsl</key>
@@ -3947,14 +4202,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xBzOKEZ9UOLo/VlaxYJOVqySkxVVJjYkNAHG6dadMP4=
+			FTLlocLn3hRob+/vh21n0vgZFCboDyaIlbNNr45PU2Y=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_transformmatrix_vector3M4.glsl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y9Cr2ekIukntIBbDJiIJW92AARKbA7z/eIBwNrqi7Bc=
+			duZf082Pzg4JEaoWonymAn3QjJbvsnrAaUnxpTox/KU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genglsl/mx_unpremult_color4.glsl</key>
@@ -4010,21 +4265,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rqx4DGL0iIUwkVsQLmnxDJIDUdxDWuTkV2OO1z0i9b4=
+			yqL9KZ98QDvyIz95tEsBdPavsBqPoN81kf7XCui6HDM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmdl/stdlib_genmdl_impl.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4vXtTPyIUq0n2p/dcsVlzESLhNsaz77thulW4AO9Dg=
+			SMxfOVdG+1cPF95fCSj69uufh9But+IPpaRh1JTC6bY=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_math.metal</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hOET93g1airpIem492jZj7YcnMh/zhrz9LRsDVO3VDE=
+			mXRSBtEvrUvYPBEngnE0D6UH+q6gdX+tBRdHIQvc4rU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genmsl/lib/mx_matscalaroperators.metal</key>
@@ -4066,7 +4321,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K3fsedd4QsYfoQZOf74Us2yhQ16Kc5p/NKobG3xH6jA=
+			LuRPjkZ7ZwoxnDQYC/qTttzKMs36hEJ9KdAfWZ3h6yI=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/include/vector2.h</key>
@@ -4081,6 +4336,20 @@
 			<key>hash2</key>
 			<data>
 			nc9btqhont2GWDlU5KWyxY+OSuncALhHNPlOLJxVgWE=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_flake.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			z+Bl3u9evLPXqjSK3BrrXzg/dtghj3Ocuik2Zz52y/k=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_hextile.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ulaMEUyaZzHRZaGcDs0ve+jaWJKowZlrTOtOSAIObzw=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/lib/mx_transform_uv.osl</key>
@@ -4136,7 +4405,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PwQPgGwotmhCnnNoINPt1nAs2O1J6LJjS69WjWh0y7I=
+			gCSdy5oyWAWoRbms5Uqdq47IwBgP5VbgJse9PhQ/sJQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_creatematrix.osl</key>
@@ -4172,6 +4441,20 @@
 			<key>hash2</key>
 			<data>
 			t6xr5Inz+E724S4qRqHAi9bAC0fE07N3j0N7E+EILvI=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_flake2d.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NA75kXw0H6uZzR4DDTbCdo6Y3Cut1KW+iw6L40nQbU8=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_flake3d.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NXnwSONWas659yy5Vx4APPRAEMXXGOhL36QKJNWD4Oc=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_fractal2d_float.osl</key>
@@ -4279,6 +4562,13 @@
 			83OHXQQfsA5JAMhlkWlwXDsw6+wwgHEHF2YQvw/XD2U=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geompropvalue_filename.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aOH8WILMPEwWzHG2cHHfTvaXlqv78qXOY+5eFHwgi80=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_geompropvalue_float.osl</key>
 		<dict>
 			<key>hash2</key>
@@ -4328,6 +4618,27 @@
 			zUlk3885Tqux3M5Lym0KIyowwgWZIr6wrrUFwxvQ01w=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextiledimage_color3.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AOgo2qCzMRs4dPw1x1NZHQn5VlaxbFAEYHgca+AvNQ4=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextiledimage_color4.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			keNI+YYIuWQCEHVE4GAVaHbihpVg15WhwHAgKLY9Nys=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hextilednormalmap_vector3.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eOpXX+x/4s2dH6tHGcP4PerB1YjvJkhdROLSn35fAPs=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_hsvtorgb_color3.osl</key>
 		<dict>
 			<key>hash2</key>
@@ -4339,21 +4650,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bDGn1kLIvdm/jkeszk+46v1gTlQygcd46FcibRvQdnE=
+			IBNS0h4ioGVXR4p9Ta5aUvhq9D0IrHogyYri8l6ZuxE=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color3.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C/vb/UDqWgyJj4N3kUqA1HKvqjxyetrgYWn9IgDQ6GE=
+			SJ70DyR5992kiGBtE1pNwNPIGOIw+s1YSftgLe9gn6U=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_color4.osl</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LsqBvUMz2aPXFYK9PtGymLy9mMBwcwoHRfvX6fz3JX8=
+			vdzONTnCqfGpBQGSWfuSY9az+PwqdtO67ivl2waGH98=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_image_float.osl</key>
@@ -4486,7 +4797,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fmevbjn10OVSDToOTE5koqhej1wZOqX8UzGY/dTTyg0=
+			lkgtyi8pNBHbEki6AZ4O/36FocWMSSmL297Wkr349RU=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_rotate_vector2.osl</key>
@@ -4500,7 +4811,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t2KgnEYtS0DSeGTblnxnSNxoqd0tv3U7QBgl5t0jSFI=
+			Y+Zdi2SmNz5kf9TTPwdUTZz3JKLQ0E81MQm/kaOu7GA=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_set_ci.osl</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2ikY5e8FK0GXIyHbwzhg8+EP8wsgY1GHxIedPS9blrw=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genosl/mx_surface_unlit.osl</key>
@@ -4584,21 +4902,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Lh14PLH6nRUgrml52ZmQ1aTkliVoOkLZIF+C/hK6qS8=
+			OIJIwHYzPtkkaiE3nsBZKKGy2sDWuxQs7k0JmL1BJ9k=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/lib/mx_math.slang</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lHpGscN85+eGWU5IbrQKAWa4oID7BrgsaISGA31SbsY=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/lib/mx_texture.slang</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5eHg5QmTa00R2NCyt06Bo8tWRiiI19HyBdFCPYrir/0=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/genslang/stdlib_genslang_impl.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KsJI/gwIOnaSmNis4Su2YYkd2PdaIMrf+yX+d1tz1sQ=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/stdlib_defs.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aAsPxuf+Ag8dZ1GoRWxVNPIO368dwbUrs4Nr9C9lVdc=
+			R8bA5/SjwUCSXynUvF/Jd5UOG+leGiw/YrQPQSsjRng=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/stdlib/stdlib_ng.mtlx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pjIKsrkq5IQkEt4hYcK6gFKt8AKM/cpCB0Qckc0lOB0=
+			rEJu6O8OIESGbv+PvXJuhcxZuJxeNpbBmPrjGVsAdzg=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/libraries/targets/essl.mtlx</key>
@@ -4636,11 +4975,25 @@
 			INaJhUv4WXSoG+SchjFQtK4s3tk4AujZ2XYOLnQHkbA=
 			</data>
 		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/targets/genoslnetwork.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oWyD+fMhnRYqpEVD4+zVpGEb0h2S6Gp9GTqAK8vqrFc=
+			</data>
+		</dict>
+		<key>Resources/usd/usdMtlx/Resources/libraries/targets/genslangl.mtlx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nFR979tz8Nztv1JN7JquecsjuJhlgUzMz4oIcXv+hGs=
+			</data>
+		</dict>
 		<key>Resources/usd/usdMtlx/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I4ePRmaMTP4RY4MH7J6+pw5CJukPuq9IoURGxUUpp0A=
+			Sp81XvjQVCZ95eGiJLs2reUhXK2sHsJ7F3J2rtI0/Yk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdMtlx/Resources/usdMtlx/schema.usda</key>
@@ -4668,7 +5021,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HHmDxlABsdf3rrFYj28T7t0wzxar0sj4uOGGcJW84GM=
+			DLXZGCj+ao8ELR4niZxxOVcWLVVFNw4vuPmc8aTfYMk=
 			</data>
 		</dict>
 		<key>Resources/usd/usdPhysicsValidators/Resources/plugInfo.json</key>
@@ -4704,6 +5057,27 @@
 			<key>hash2</key>
 			<data>
 			c2ucBmPy5i6CrLAiyt6mTA+2kYiX5yMyJMqQPdEtQ2w=
+			</data>
+		</dict>
+		<key>Resources/usd/usdProfiles/Resources/UsdProfiles/schema.usda</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AhQEKsCwJFgnItHeZ6tcdo8kIt9KORwBdh3/2VoB3AM=
+			</data>
+		</dict>
+		<key>Resources/usd/usdProfiles/Resources/generatedSchema.usda</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t0leLqxeDz2oV926uadA4WwZvRUeAOkG9M7L9gIgTME=
+			</data>
+		</dict>
+		<key>Resources/usd/usdProfiles/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			23Yih/qaxFYYV8SvEejIH6IgeJDc7q85DMYLdDEFBUM=
 			</data>
 		</dict>
 		<key>Resources/usd/usdRender/Resources/generatedSchema.usda</key>

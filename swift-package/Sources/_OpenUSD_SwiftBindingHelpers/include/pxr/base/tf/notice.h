@@ -425,7 +425,7 @@ public:
     /// invoking the handler.
     TF_API
     static bool RevokeAndWait(TfNotice::Key& key);
-
+    
     /// Revoke interest by a listener.
     ///
     /// This revokes interest by the listener for the particular notice type
@@ -437,7 +437,7 @@ public:
     /// invoking the handler.
     TF_API
     static bool RevokeAndWait(TfNotice::SwiftKey key);
-
+    
     /// Revoke interest by listeners.
     ///
     /// This revokes interest by the listeners for the particular

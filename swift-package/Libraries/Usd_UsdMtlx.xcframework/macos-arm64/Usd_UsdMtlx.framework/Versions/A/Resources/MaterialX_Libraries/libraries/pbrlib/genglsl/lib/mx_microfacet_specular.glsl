@@ -61,6 +61,12 @@ vec3 mx_ggx_importance_sample_VNDF(vec2 Xi, vec3 V, vec2 alpha)
     return H;
 }
 
+// PDF of a reflection direction sampled from the GGX VNDF.
+float mx_ggx_VNDF_reflection_PDF(vec3 H, vec2 alpha, float G1V, float NdotV)
+{
+    return mx_ggx_NDF(H, alpha) * G1V / (4.0 * NdotV);
+}
+
 // https://www.cs.cornell.edu/~srm/publications/EGSR07-btdf.pdf
 // Equation 34
 float mx_ggx_smith_G1(float cosTheta, float alpha)
@@ -374,7 +380,7 @@ vec3 mx_fresnel_airy(float cosTheta, FresnelData fd)
 
     // Reflectance term for m>0 (pairs of diracs)
     Cm = Rs - T121.x;
-    for (int m=1; m<=2; m++)
+    for (int m = 1; m <= AIRY_FRESNEL_ITERATIONS; m++)
     {
         Cm *= r123p;
         Sm  = 2.0 * mx_eval_sensitivity(float(m) * opd, float(m)*(phi23p+vec3(phi21.x)));
@@ -389,7 +395,7 @@ vec3 mx_fresnel_airy(float cosTheta, FresnelData fd)
 
     // Reflectance term for m>0 (pairs of diracs)
     Cm = Rp - T121.y;
-    for (int m=1; m<=2; m++)
+    for (int m = 1; m <= AIRY_FRESNEL_ITERATIONS; m++)
     {
         Cm *= r123s;
         Sm  = 2.0 * mx_eval_sensitivity(float(m) * opd, float(m)*(phi23s+vec3(phi21.y)));
@@ -400,7 +406,7 @@ vec3 mx_fresnel_airy(float cosTheta, FresnelData fd)
     I *= 0.5;
 
     // Convert back to RGB reflectance
-    I = clamp(XYZ_TO_RGB * I, 0.0, 1.0);
+    I = clamp(mx_matrix_mul(XYZ_TO_RGB, I), 0.0, 1.0);
 
     return I;
 }
@@ -470,9 +476,38 @@ vec3 mx_compute_fresnel(float cosTheta, FresnelData fd)
     {
         return mx_fresnel_conductor(cosTheta, fd.ior, fd.extinction);
     }
-    else
+    else // FRESNEL_MODEL_SCHLICK
     {
         return mx_fresnel_hoffman_schlick(cosTheta, fd);
+    }
+}
+
+// Directional albedo accounting for different Fresnel functions.
+vec3 mx_ggx_dir_albedo(float NdotV, float alpha, FresnelData fd)
+{
+    if (fd.airy)
+    {
+        // Approximation using a blend between mirror (alpha = 0)
+        // and rougher cases. This helps to maintain angular
+        // color variation at lower roughness values.
+        vec3 mirrorDirAlbedo = mx_compute_fresnel(NdotV, fd);
+        vec3 F0 = mx_fresnel_airy(1.0, fd);
+        vec3 roughDirAlbedo = mx_ggx_dir_albedo(NdotV, alpha, F0, vec3(1.0));
+        return mix(mirrorDirAlbedo, roughDirAlbedo, sqrt(alpha));
+    }
+    else if (fd.model == FRESNEL_MODEL_DIELECTRIC)
+    {
+        float F0 = mx_ior_to_f0(fd.ior.x);
+        return mx_ggx_dir_albedo(NdotV, alpha, vec3(F0), vec3(1.0));
+    }
+    else if (fd.model == FRESNEL_MODEL_CONDUCTOR)
+    {
+        vec3 F0 = mx_fresnel_conductor(1.0, fd.ior, fd.extinction);
+        return mx_ggx_dir_albedo(NdotV, alpha, F0, vec3(1.0));
+    }
+    else // FRESNEL_MODEL_SCHLICK
+    {
+        return mx_ggx_dir_albedo(NdotV, alpha, fd.F0, fd.F90);
     }
 }
 
@@ -493,7 +528,7 @@ vec2 mx_latlong_projection(vec3 dir)
 
 vec3 mx_latlong_map_lookup(vec3 dir, mat4 transform, float lod, $texSamplerSignature)
 {
-    vec3 envDir = normalize((transform * vec4(dir,0.0)).xyz);
+    vec3 envDir = normalize(mx_matrix_mul(transform, vec4(dir,0.0)).xyz);
     vec2 uv = mx_latlong_projection(envDir);
     return textureLod($texSamplerSampler2D, uv, lod).rgb;
 }

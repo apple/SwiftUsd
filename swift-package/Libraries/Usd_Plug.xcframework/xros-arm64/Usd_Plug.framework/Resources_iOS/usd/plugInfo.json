@@ -3,6 +3,8 @@
         "*/Resources/",
         "*/Resources_iOS/",
         "../../../../*.framework/Resources/",
-        "../../*.framework/Resources_iOS/"
+        "../../*.framework/Resources_iOS/",
+        "../../../../../Resources/*.bundle/Contents/Resources/plugInfo_macOS.json",
+        "../../../*.bundle/plugInfo_iOS.json"
     ]
 }

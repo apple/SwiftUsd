@@ -26,6 +26,7 @@ class Syntax;
 class ShaderGraphEdge;
 class ShaderGraphEdgeIterator;
 class GenOptions;
+class ShaderGraphRefactor;
 
 /// An internal input socket in a shader graph,
 /// used for connecting internal nodes to the outside
@@ -44,7 +45,8 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
 {
   public:
     /// Constructor.
-    ShaderGraph(const ShaderGraph* parent, const string& name, ConstDocumentPtr document, const StringSet& reservedWords);
+    ShaderGraph(const ShaderGraph* parent, const string& name, ConstDocumentPtr document,
+                GenContext& context);
 
     /// Destructor.
     virtual ~ShaderGraph() { }
@@ -61,11 +63,11 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
     /// Return true if this node is a graph.
     bool isAGraph() const override { return true; }
 
-    /// Get an internal node by name
-    ShaderNode* getNode(const string& name);
+    /// Get an internal node by its unique identifier.
+    ShaderNode* getNode(const string& uniqueId);
 
-    /// Get an internal node by name
-    const ShaderNode* getNode(const string& name) const;
+    /// Get an internal node by its unique identifier.
+    const ShaderNode* getNode(const string& uniqueId) const;
 
     /// Get a vector of all nodes in order
     const vector<ShaderNode*>& getNodes() const { return _nodeOrder; }
@@ -93,10 +95,17 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
     const vector<ShaderGraphOutputSocket*>& getOutputSockets() const { return _inputOrder; }
 
     /// Apply color and unit transforms to each input of a node.
-    void applyInputTransforms(ConstNodePtr node, ShaderNodePtr shaderNode, GenContext& context);
+    void applyInputTransforms(ConstNodePtr node, ShaderNode* shaderNode, GenContext& context);
 
     /// Create a new node in the graph
     ShaderNode* createNode(ConstNodePtr node, GenContext& context);
+
+    ShaderNode* inlineNodeBeforeOutput(ShaderGraphOutputSocket* output,
+                                        const std::string& newNodeName,
+                                        const std::string& nodeDefName,
+                                        const std::string& inputName,
+                                        const std::string& outputName,
+                                        GenContext& context);
 
     /// Add input sockets
     ShaderGraphInputSocket* addInputSocket(const string& name, TypeDesc type);
@@ -118,6 +127,23 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
     /// Return the map of unique identifiers used in the scope of this graph.
     IdentifierMap& getIdentifierMap() { return _identifiers; }
 
+    /// Return the document associated with this graph.
+    ConstDocumentPtr getDocument() const { return _document; }
+
+    /// Create a new node in the graph from a node definition.
+    ShaderNode* createNode(const string& name, const string& uniqueId, ConstNodeDefPtr nodeDef, GenContext& context);
+
+    /// Bypass a node for a particular input and output,
+    /// effectively connecting the input's upstream connection
+    /// with the output's downstream connections.
+    void bypass(ShaderNode* node, size_t inputIndex, size_t outputIndex = 0);
+
+    /// Remove nodes that are no longer connected to any output.
+    void removeUnusedNodes();
+
+    /// Rewire all downstream connections from one output to another.
+    void replaceOutput(ShaderOutput* oldOutput, ShaderOutput* newOutput);
+
   protected:
     /// Create node connections corresponding to the connection between a pair of elements.
     /// @param downstreamElement Element representing the node to connect to.
@@ -129,7 +155,7 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
                               ElementPtr connectingElement,
                               GenContext& context);
 
-    /// Add a node to the graph
+    /// Add a node to the graph, keyed by the node's unique identifier.
     void addNode(ShaderNodePtr node);
 
     /// Add input sockets from an interface element (nodedef, nodegraph or node)
@@ -157,14 +183,6 @@ class MX_GENSHADER_API ShaderGraph : public ShaderNode
 
     /// Perform all post-build operations on the graph.
     void finalize(GenContext& context);
-
-    /// Optimize the graph, removing redundant paths.
-    void optimize();
-
-    /// Bypass a node for a particular input and output,
-    /// effectively connecting the input's upstream connection
-    /// with the output's downstream connections.
-    void bypass(ShaderNode* node, size_t inputIndex, size_t outputIndex = 0);
 
     /// For inputs and outputs in the graph set the variable names to be used
     /// in generated code. Making sure variable names are valid and unique

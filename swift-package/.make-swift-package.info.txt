@@ -1,12 +1,10 @@
 Usd installs:
-- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-7D783000-4B0D-4790-9AAE-D340707BF4FC/workspace/openusd-builds/openusd-builds-F4A9EE34-2520-4841-A4EC-8E385D65873C-iOSSimulator/
-- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-7D783000-4B0D-4790-9AAE-D340707BF4FC/workspace/openusd-builds/openusd-builds-F4A9EE34-2520-4841-A4EC-8E385D65873C-iOS/
-- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-7D783000-4B0D-4790-9AAE-D340707BF4FC/workspace/openusd-builds/openusd-builds-F4A9EE34-2520-4841-A4EC-8E385D65873C-macOS/
-- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-7D783000-4B0D-4790-9AAE-D340707BF4FC/workspace/openusd-builds/openusd-builds-F4A9EE34-2520-4841-A4EC-8E385D65873C-visionOS/
-- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-7D783000-4B0D-4790-9AAE-D340707BF4FC/workspace/openusd-builds/openusd-builds-F4A9EE34-2520-4841-A4EC-8E385D65873C-visionOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-543A6C47-AE62-42A7-922A-FEB75C8FE9C0/workspace/openusd-builds/openusd-builds-77081BDC-AD86-4468-B181-F39BE893D8F4-iOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-543A6C47-AE62-42A7-922A-FEB75C8FE9C0/workspace/openusd-builds/openusd-builds-77081BDC-AD86-4468-B181-F39BE893D8F4-visionOSSimulator/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-543A6C47-AE62-42A7-922A-FEB75C8FE9C0/workspace/openusd-builds/openusd-builds-77081BDC-AD86-4468-B181-F39BE893D8F4-iOS/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-543A6C47-AE62-42A7-922A-FEB75C8FE9C0/workspace/openusd-builds/openusd-builds-77081BDC-AD86-4468-B181-F39BE893D8F4-macOS/
+- /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-543A6C47-AE62-42A7-922A-FEB75C8FE9C0/workspace/openusd-builds/openusd-builds-77081BDC-AD86-4468-B181-F39BE893D8F4-visionOS/
 Usd install strategy: copyAndBundle
-Copied plugins:
-Symlinked plugins:
 Source strategy: symlink
 Checksummed artifacts dir: nil
 Artifacts hosting URL: nil
@@ -15,11 +13,11 @@ Feature flags:
   BUILD_SHARED_LIBS: ON
   Boost_NO_SYSTEM_PATHS: ON
   CMAKE_BUILD_TYPE: Release
-  CMAKE_INSTALL_PREFIX: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-B43D7D63-116F-4472-BA95-DC42F145FCBB/workspace/openusd-builds/iOSSimulator
+  CMAKE_INSTALL_PREFIX: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-B9032AAB-FB15-42AB-87C1-7E0B8F9D0F0B/workspace/openusd-builds/iOSSimulator
   CMAKE_MACOSX_RPATH: ON
-  CMAKE_PREFIX_PATH: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-B43D7D63-116F-4472-BA95-DC42F145FCBB/workspace/openusd-builds/iOSSimulator
+  CMAKE_PREFIX_PATH: /Users/maddyadams/Desktop/ci-at-desk-runs/runnerRoot/runner-B9032AAB-FB15-42AB-87C1-7E0B8F9D0F0B/workspace/openusd-builds/iOSSimulator
   PXR_BUILD_ALEMBIC_PLUGIN: ON
-  PXR_BUILD_ANIMX_TESTS: OFF
+  PXR_BUILD_APPLE_FRAMEWORK: OFF
   PXR_BUILD_DOCUMENTATION: OFF
   PXR_BUILD_DRACO_PLUGIN: OFF
   PXR_BUILD_EMBREE_PLUGIN: ON
@@ -27,7 +25,6 @@ Feature flags:
   PXR_BUILD_HTML_DOCUMENTATION: OFF
   PXR_BUILD_IMAGEIO_PLUGIN: ON
   PXR_BUILD_IMAGING: ON
-  PXR_BUILD_MAYAPY_TESTS: OFF
   PXR_BUILD_OPENCOLORIO_PLUGIN: OFF
   PXR_BUILD_OPENIMAGEIO_PLUGIN: OFF
   PXR_BUILD_PRMAN_PLUGIN: OFF

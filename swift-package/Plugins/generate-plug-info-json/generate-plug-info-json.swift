@@ -1,0 +1,1 @@
+../../../source/SPMPlugins/generate-plug-info-json/generate-plug-info-json.swift

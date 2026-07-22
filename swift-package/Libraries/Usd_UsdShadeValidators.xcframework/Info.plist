@@ -8,22 +8,6 @@
 			<key>BinaryPath</key>
 			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdShadeValidators.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
-			<key>LibraryIdentifier</key>
 			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdShadeValidators.framework</string>
@@ -49,6 +33,22 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_UsdShadeValidators.framework/Usd_UsdShadeValidators</string>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdShadeValidators.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>

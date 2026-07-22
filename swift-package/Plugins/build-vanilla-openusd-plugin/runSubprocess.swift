@@ -1,0 +1,1 @@
+../../../source/SPMPlugins/build-vanilla-openusd-plugin/runSubprocess.swift

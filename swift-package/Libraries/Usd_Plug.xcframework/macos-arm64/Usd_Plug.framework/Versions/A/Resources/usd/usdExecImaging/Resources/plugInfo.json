@@ -1,0 +1,12 @@
+{
+    "Plugins": [
+        {
+            "Info": {},
+            "LibraryPath": "../../../../../Usd_UsdExecImaging.framework/Usd_UsdExecImaging",
+            "Name": "usdExecImaging",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "UsdIrImagingJointScopeAdapter": {
+                        "bases": [
+                            "UsdImagingSceneIndexPrimAdapter"
+                        ],
+                        "isInternal": true,
+                        "primTypeName": "IrJointScope"
+                    }
+                }
+            },
+            "LibraryPath": "../../../Usd_UsdIrImaging.framework/Usd_UsdIrImaging",
+            "Name": "usdIrImaging",
+            "ResourcePath": "Resources",
+            "Root": "..",
+            "Type": "library"
+        }
+    ]
+}

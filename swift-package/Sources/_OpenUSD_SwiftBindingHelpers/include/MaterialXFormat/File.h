@@ -188,13 +188,15 @@ class MX_FORMAT_API FilePath
     bool isDirectory() const;
 
     /// Return a vector of all files in the given directory with the given extension.
-    FilePathVec getFilesInDirectory(const string& extension) const;
+    /// If extension is empty all files are returned.
+    FilePathVec getFilesInDirectory(const string& extension = EMPTY_STRING) const;
 
     /// Return a vector of all directories at or beneath the given path.
     FilePathVec getSubDirectories() const;
 
     /// Create a directory on the file system at the given path.
-    void createDirectory() const;
+    /// If recursive is true, any missing parent directories will be created as well.
+    void createDirectory(bool recursive = false) const;
 
     /// Set the current working directory of the file system.
     bool setCurrentPath();

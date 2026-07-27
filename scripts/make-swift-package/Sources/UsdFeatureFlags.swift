@@ -51,7 +51,6 @@ extension FileSystemInfo {
         /// or nil if the module name is available on embedded platforms
         static func shortNameForFeatureUnavailableOnEmbeddedPlatforms(moduleName: String) -> String? {
             switch moduleName {
-            case "SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT": "Embree"
             case "SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT": "OpenImageIO"
             case "SwiftUsd_PXR_ENABLE_OPENVDB_SUPPORT": "OpenVDB"
             default: nil
@@ -62,7 +61,6 @@ extension FileSystemInfo {
         /// These flags use OR instead, because they're only available on certain platforms
         static func prefersOrForMergingFeatureFlag(_ flag: String) -> Bool {
             switch flag {
-            case "PXR_BUILD_EMBREE_PLUGIN": true
             case "PXR_BUILD_OPENIMAGEIO_PLUGIN": true
             case "PXR_ENABLE_OPENVDB_SUPPORT": true
             default: false

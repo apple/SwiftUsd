@@ -39,19 +39,19 @@ def get_openusd_build_flags(target):
                 "--ignore-homebrew", "--build-target", "native", openusd_build_dir("macOS"), file_prefix_map]
 
     if target == "iOS":
-        return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
+        return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
                 "--build-target", "iOS", "--no-build-apple-framework", openusd_build_dir("iOS"), file_prefix_map]
 
     if target == "iOSSimulator":
-        return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
+        return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
                 "--build-target", "iOSSimulator", "--no-build-apple-framework", openusd_build_dir("iOSSimulator"), file_prefix_map]
 
     if target == "visionOS":
-        return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
+        return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
                 "--build-target", "visionOS", "--no-build-apple-framework", openusd_build_dir("visionOS"), file_prefix_map]
 
     if target == "visionOSSimulator":
-        return ["--imageio", "--alembic", "--no-python", "--ignore-homebrew",
+        return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
                 "--build-target", "visionOSSimulator", "--no-build-apple-framework", openusd_build_dir("visionOSSimulator"), file_prefix_map]
 
     raise ValueError(f"Unknown target {target}")

@@ -40,6 +40,7 @@ python3 build_scripts/build_usd.py \
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
+    --embree \
     --imageio \
     --alembic \
     --no-python \
@@ -51,6 +52,7 @@ python3 build_scripts/build_usd.py \
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
+    --embree \
     --imageio \
     --alembic \
     --no-python \
@@ -62,6 +64,7 @@ python3 build_scripts/build_usd.py \
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
+    --embree \
     --imageio \
     --alembic \
     --no-python \
@@ -73,6 +76,7 @@ python3 build_scripts/build_usd.py \
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \
+    --embree \
     --imageio \
     --alembic \
     --no-python \

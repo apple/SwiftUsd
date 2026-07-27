@@ -14,6 +14,9 @@ These changes fix bugs or add features to Usd that aren't part of vanilla OpenUS
 - Add support for usdValidation libraries when building for iOS, visionOS, or simulators:
   - Modified: `build_scripts/build_usd.py`
 
+- Cherry pick [https://github.com/PixarAnimationStudios/OpenUSD/pull/4166](https://github.com/PixarAnimationStudios/OpenUSD/pull/4166) to add support for Embree on iOS, visionOS, and simulators:
+  - Modified: `build_scripts/build_usd.py`
+
 #### Swift-specific changes to OpenUSD before building
 These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-specific features, and work around issues in the Swift compiler.  
 - Header modularization fixes:

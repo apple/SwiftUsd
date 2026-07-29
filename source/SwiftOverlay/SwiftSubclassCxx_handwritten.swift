@@ -59,3 +59,38 @@ extension __Overlay {
         }
     }
 }
+
+
+
+
+
+
+
+extension pxr.HioImage {
+    // Note: In 9.0.0, change `deprecated` to `unavailable`. (Can't do it sooner without breaking source compatibility)
+    
+    /// Most users should use Overlay.HioImageWrapper instead of pxr.HioImage due to potential
+    /// memory safety issues. Only use pxr.HioImage if you're writing an HioImage plugin in Swift
+    @_documentation(visibility: internal)
+    @available(*, deprecated, message: "Use Overlay.HioImageWrapper.OpenForReading(_:_:_:_:_:) instead")
+    public static func OpenForReading(_ filename: std.string,
+                                      _ subimage: CInt = 0,
+                                      _ mip: CInt = 0,
+                                      _ sourceColorSpace: pxr.HioImage.SourceColorSpace = .init(rawValue: 2),
+                                      _ suppressErrors: Bool = false) -> pxr.HioImageSharedPtr {
+        // Nit: Should be `_ sourceColorSpace: pxr.HioImage.SourceColorSpace = .Auto`,
+        // but that's a nested unscoped enum case, and in ast-answerer, SwiftSubclassCxx currently bypasses Import,
+        // so FindEnums and EnumsCodeGen don't touch it. Not worth exposing by hand or via ast-answerer
+        // just for this safety diagnostic that'll become unavailable in SwiftUsd 9.0.0. 
+        
+        return __OpenForReadingUnsafe(filename, subimage, mip, sourceColorSpace, suppressErrors)
+    }
+
+    /// Most users should use Overlay.HioImageWrapper instead of pxr.HioImage due to potential
+    /// memory safety issues. Only use pxr.HioImage if you're writing an HioImage plugin in Swift
+    @_documentation(visibility: internal)
+    @available(*, deprecated, message: "Use Overlay.HioImageWrapper.OpenForWriting(_:) instead")
+    public static func OpenForWriting(_ filename: std.string) -> pxr.HioImageSharedPtr {
+        return __OpenForWritingUnsafe(filename)
+    }
+}

@@ -515,6 +515,13 @@ Namespaces:
     SwiftImportAs: reference
     SwiftRetainOp: immortal
     SwiftReleaseOp: immortal
+    # SwiftSafety: unsafe
+    Methods:
+    - Name: OpenForReading
+      SwiftName: __OpenForReadingUnsafe(_:_:_:_:_:)
+
+    - Name: OpenForWriting
+      SwiftName: __OpenForWritingUnsafe(_:)
 
   - Name: HioImageRegistry
     SwiftImportAs: reference

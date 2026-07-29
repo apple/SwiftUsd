@@ -15,6 +15,7 @@ Changes to SwiftUsd
 Released TBD, based on OpenUSD TBD
 - Add zero-copy `VtArray` reads via `withUnsafeBufferPointer(_:)` and single-copy construction from an `UnsafeBufferPointer`
 - Add Embree to the default Swift Package for iOS, visionOS, and simulators
+- Mark `pxr.HioImage.OpenForReading`/`OpenForWriting` as deprecated with the `Overlay.HioImage` versions as preferred
 
 ### 8.0.0
 Released 2026-07-22, based on OpenUSD v26.08

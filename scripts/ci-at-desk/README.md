@@ -12,10 +12,10 @@ ci-at-desk requires a YAML configuration file. Here is a sample YAML config file
  
  precheckouts:
  - remote: git@github.com:apple/SwiftUsd
-   ref: 8.0.0
+   ref: 8.1.0
    path: precheckouts/SwiftUsd
  - remote: git@github.com:apple/SwiftUsd-Tests
-   ref: 8.0.0
+   ref: 8.1.0
    path: precheckouts/SwiftUsd-Tests
  
  requiredPaths:

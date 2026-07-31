@@ -34,7 +34,7 @@ let package = Package(
         .package(path: "SwiftUsd")
         // We use a symlink to the SwiftUsd repo for this example, 
         // but typically you'd do something like this:
-        // .package(url: "https://github.com/apple/SwiftUsd", from: "8.0.0"),        
+        // .package(url: "https://github.com/apple/SwiftUsd", from: "8.1.0"),
     ],
     targets: [        
         .target(

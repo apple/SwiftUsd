@@ -6,20 +6,6 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_EsfUsd.framework/Usd_EsfUsd</string>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64</string>
-			<key>LibraryPath</key>
-			<string>Usd_EsfUsd.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
 			<string>Usd_EsfUsd.framework/Versions/A/Usd_EsfUsd</string>
 			<key>LibraryIdentifier</key>
 			<string>macos-arm64</string>
@@ -52,6 +38,22 @@
 			<key>BinaryPath</key>
 			<string>Usd_EsfUsd.framework/Usd_EsfUsd</string>
 			<key>LibraryIdentifier</key>
+			<string>xros-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>Usd_EsfUsd.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_EsfUsd.framework/Usd_EsfUsd</string>
+			<key>LibraryIdentifier</key>
 			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_EsfUsd.framework</string>
@@ -66,7 +68,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_EsfUsd.framework/Usd_EsfUsd</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>ios-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_EsfUsd.framework</string>
 			<key>SupportedArchitectures</key>
@@ -74,9 +76,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
+			<string>ios</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

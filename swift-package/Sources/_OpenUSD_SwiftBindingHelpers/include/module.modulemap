@@ -1690,6 +1690,7 @@ module _OpenUSD_SwiftBindingHelpers {
     header "swiftUsd/SwiftOverlay/UsdRelationship.h"
     header "swiftUsd/SwiftOverlay/UsdUtilsTimeCodeRange.h"
     header "swiftUsd/SwiftOverlay/Usd_PrimFlags.h"
+    header "swiftUsd/SwiftOverlay/VtArray.h"
     header "swiftUsd/SwiftOverlay/VtDictionary.h"
     header "swiftUsd/SwiftOverlay/__SwiftUsdBuildSettingsCheck.h"
     header "swiftUsd/SwiftOverlay/operatorBool.h"
@@ -1725,11 +1726,7 @@ module _OpenUSD_SwiftBindingHelpers {
 
 module SwiftUsd_PXR_ENABLE_ALEMBIC_SUPPORT {}
 // module SwiftUsd_PXR_ENABLE_DRACO_SUPPORT {}
-module SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT {
-    // Embree is not available on embedded platforms
-    requires !ios
-    requires !xros
-}
+module SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT {}
 // module SwiftUsd_PXR_ENABLE_OPENCOLORIO_SUPPORT {}
 // module SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT {
 //     // OpenImageIO is not available on embedded platforms

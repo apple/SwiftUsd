@@ -26,12 +26,7 @@
 
 #define SwiftUsd_PXR_ENABLE_ALEMBIC_SUPPORT 1
 #define SwiftUsd_PXR_ENABLE_DRACO_SUPPORT 0
-// Embree is not available on embedded platforms
-#ifdef ARCH_OS_IPHONE
-#define SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT 0
-#else
 #define SwiftUsd_PXR_ENABLE_EMBREE_SUPPORT 1
-#endif // #ifdef ARCH_OS_IPHONE
 #define SwiftUsd_PXR_ENABLE_OPENCOLORIO_SUPPORT 0
 #define SwiftUsd_PXR_ENABLE_OPENIMAGEIO_SUPPORT 0
 #define SwiftUsd_PXR_ENABLE_PRMAN_SUPPORT 0

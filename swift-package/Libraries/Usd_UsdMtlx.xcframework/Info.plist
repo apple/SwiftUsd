@@ -20,22 +20,6 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>Usd_UsdMtlx.framework/Usd_UsdMtlx</string>
-			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdMtlx.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
 			<string>Usd_UsdMtlx.framework/Versions/A/Usd_UsdMtlx</string>
 			<key>LibraryIdentifier</key>
 			<string>macos-arm64</string>
@@ -47,6 +31,22 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>macos</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_UsdMtlx.framework/Usd_UsdMtlx</string>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64-simulator</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdMtlx.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -66,7 +66,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_UsdMtlx.framework/Usd_UsdMtlx</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64-simulator</string>
+			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdMtlx.framework</string>
 			<key>SupportedArchitectures</key>
@@ -74,7 +74,7 @@
 				<string>arm64</string>
 			</array>
 			<key>SupportedPlatform</key>
-			<string>ios</string>
+			<string>xros</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>

@@ -6,9 +6,37 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
+			<string>Usd_UsdLuxValidators.framework/Versions/A/Usd_UsdLuxValidators</string>
+			<key>LibraryIdentifier</key>
+			<string>macos-arm64</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdLuxValidators.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>macos</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
 			<string>Usd_UsdLuxValidators.framework/Usd_UsdLuxValidators</string>
 			<key>LibraryIdentifier</key>
-			<string>xros-arm64-simulator</string>
+			<string>ios-arm64</string>
+			<key>LibraryPath</key>
+			<string>Usd_UsdLuxValidators.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>Usd_UsdLuxValidators.framework/Usd_UsdLuxValidators</string>
+			<key>LibraryIdentifier</key>
+			<string>xros-arm64</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdLuxValidators.framework</string>
 			<key>SupportedArchitectures</key>
@@ -17,8 +45,6 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
-			<key>SupportedPlatformVariant</key>
-			<string>simulator</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -40,35 +66,7 @@
 			<key>BinaryPath</key>
 			<string>Usd_UsdLuxValidators.framework/Usd_UsdLuxValidators</string>
 			<key>LibraryIdentifier</key>
-			<string>ios-arm64</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdLuxValidators.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_UsdLuxValidators.framework/Versions/A/Usd_UsdLuxValidators</string>
-			<key>LibraryIdentifier</key>
-			<string>macos-arm64</string>
-			<key>LibraryPath</key>
-			<string>Usd_UsdLuxValidators.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>macos</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>Usd_UsdLuxValidators.framework/Usd_UsdLuxValidators</string>
-			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
+			<string>xros-arm64-simulator</string>
 			<key>LibraryPath</key>
 			<string>Usd_UsdLuxValidators.framework</string>
 			<key>SupportedArchitectures</key>
@@ -77,6 +75,8 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

@@ -32,26 +32,34 @@ def clone_openusd(checkout=None):
         run(["git", "checkout", checkout], cwd=Environment.Path.openusd, logOutput=False)
 
 def get_openusd_build_flags(target):
-    file_prefix_map = f"--build-args=USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map={Environment.Path.openusd}=OpenUSD\""
-    
+    file_prefix_map = f"USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map={Environment.Path.openusd}=OpenUSD\""
+
     if target == "macOS":
+        # OpenVDB's default build settings produce a much larger library than
+        # necessary: it builds an unused static archive alongside the shared
+        # library, and explicitly instantiates its templates for every
+        # supported grid type, which bloats the shared library's symbol table.
+        # Disabling both shrinks the built libopenvdb.dylib from ~206MB to ~7MB.
         return ["--embree", "--imageio", "--alembic", "--openvdb", "--no-python",
-                "--ignore-homebrew", "--build-target", "native", openusd_build_dir("macOS"), file_prefix_map]
+                "--ignore-homebrew", "--build-target", "native", openusd_build_dir("macOS"),
+                "--build-args", file_prefix_map,
+                "openvdb,\"-DOPENVDB_CORE_STATIC=OFF\"",
+                "openvdb,\"-DUSE_EXPLICIT_INSTANTIATION=OFF\""]
 
     if target == "iOS":
         return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "iOS", "--no-build-apple-framework", openusd_build_dir("iOS"), file_prefix_map]
+                "--build-target", "iOS", "--no-build-apple-framework", openusd_build_dir("iOS"), "--build-args", file_prefix_map]
 
     if target == "iOSSimulator":
         return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "iOSSimulator", "--no-build-apple-framework", openusd_build_dir("iOSSimulator"), file_prefix_map]
+                "--build-target", "iOSSimulator", "--no-build-apple-framework", openusd_build_dir("iOSSimulator"), "--build-args", file_prefix_map]
 
     if target == "visionOS":
         return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "visionOS", "--no-build-apple-framework", openusd_build_dir("visionOS"), file_prefix_map]
+                "--build-target", "visionOS", "--no-build-apple-framework", openusd_build_dir("visionOS"), "--build-args", file_prefix_map]
 
     if target == "visionOSSimulator":
         return ["--embree", "--imageio", "--alembic", "--no-python", "--ignore-homebrew",
-                "--build-target", "visionOSSimulator", "--no-build-apple-framework", openusd_build_dir("visionOSSimulator"), file_prefix_map]
+                "--build-target", "visionOSSimulator", "--no-build-apple-framework", openusd_build_dir("visionOSSimulator"), "--build-args", file_prefix_map]
 
     raise ValueError(f"Unknown target {target}")

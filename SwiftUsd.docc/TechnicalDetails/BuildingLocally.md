@@ -36,7 +36,10 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target native \
     ~/SwiftUsd/openusd-builds/macOS \
-    --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
+    --build-args \
+    USD,"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD" \
+    openvdb,"-DOPENVDB_CORE_STATIC=OFF" \
+    openvdb,"-DUSE_EXPLICIT_INSTANTIATION=OFF"
 
 cd ~/SwiftUsd/openusd-source
 python3 build_scripts/build_usd.py \

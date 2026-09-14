@@ -592,6 +592,37 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfAbstractData> & p) {
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfAbstractData> & p) {
     return (bool)p;}
 
+void* _Nonnull _address(pxr::SdfSchemaBase* _Nonnull x) {
+    return reinterpret_cast<void*>(x);
+}
+pxr::TfWeakPtr<pxr::SdfSchemaBase> _asWeakPtrType(pxr::SdfSchemaBase* _Nonnull x) {
+    return pxr::TfWeakPtr<pxr::SdfSchemaBase>(x);
+}
+pxr::SdfSchemaBase * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfSchemaBase>& x) {
+    if (!x) { return nullptr; }
+    return x.operator->();
+}
+pxr::SdfSchemaBase * _Nullable _fromConstWeakPtrType(const __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_ConstWeakPtr& x) {
+    if (!x) { return nullptr; }
+    return const_cast<pxr::SdfSchemaBase *>(x.operator->());
+}
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfSchemaBase>& x) {
+    return pxr::TfAnyWeakPtr(x);
+}
+pxr::TfWeakPtr<pxr::SdfSchemaBase>_fromAnyWeakPtr__ZN3pxr13SdfSchemaBaseE(const pxr::TfAnyWeakPtr& x) {
+    if (!x) { return pxr::TfWeakPtr<pxr::SdfSchemaBase>(nullptr); }
+    pxr::SdfSchemaBase* rawPtr = static_cast<pxr::SdfSchemaBase*>(const_cast<pxr::TfWeakBase*>(x.GetWeakBase()));
+    return pxr::TfWeakPtr<pxr::SdfSchemaBase>(rawPtr);
+}
+pxr::TfWeakPtr<pxr::SdfSchemaBase>_nullWeakPtr__ZN3pxr13SdfSchemaBaseE() {
+    return pxr::TfWeakPtr<pxr::SdfSchemaBase>(nullptr);
+}
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfSchemaBase> & p) {
+    return (bool)p;
+}
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfSchemaBase> & p) {
+    return (bool)p;}
+
 void* _Nonnull _address(pxr::SdfSchema* _Nonnull x) {
     return reinterpret_cast<void*>(x);
 }

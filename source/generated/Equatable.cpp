@@ -621,6 +621,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::SdfSpecHandle& l,
                                      const pxr::SdfSpecHandle& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::SdfSchemaBase& l,
+                                     const pxr::SdfSchemaBase& r) {
+    return &l == &r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::SdfSchema& l,
                                      const pxr::SdfSchema& r) {
     return &l == &r;

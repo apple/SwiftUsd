@@ -9,6 +9,9 @@ SwiftUsd is currently a work-in-progress. Here is a list of potential future imp
 - Include tvOS binaries
 
 ### Small items
+- `pxr.SdfZipFile.Find` should return check if the underlying iterator is at the end and return nil instead of returning a non-optional `Overlay.SdfZipFileIteratorWrapper` (next major release)
+- Make `pxr.HioImage.OpenForReading/Writing` unavailable (next major release)
+- Make `Overlay.HioImageSubclass.get_cxx()` and `.new()` unavailable (next major release)
 - Add missing `SWIFT_NONMUTATING`:
     - `pxr.UsdInherits`
     - `pxr.UsdPrim.RemoveProperty`
@@ -20,6 +23,7 @@ SwiftUsd is currently a work-in-progress. Here is a list of potential future imp
 - Does API Notes support renaming extern variables, e.g. for `pxr::TfStaticData`?
 
 ### Medium items
+- ast-answerer should report "abstract value types" as not being imported and not do code-gen for them (next major release)
 - Paper over `pxr::UsdSchemaBase::GetPrim()` by renaming the method and extending each subclass to have a definition of it. 
 - Investigate adding `requires cplusplus` in the modulemap, which may or may not improve code completion
 - Why wasn't the typedef `pxr::SdfLayer::FileFormatArguments` found by ast-answerer?

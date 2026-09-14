@@ -18,22 +18,17 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
-#ifndef SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
-#define SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
+#ifndef SWIFTUSD_SWIFTOVERLAY_TSKNOT_H
+#define SWIFTUSD_SWIFTOVERLAY_TSKNOT_H
 
-#include <string>
+#include "pxr/base/ts/knot.h"
+#include "pxr/base/vt/value.h"
 
-namespace __Overlay {
-    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+namespace Overlay {
+    bool GetValue(const pxr::TsKnot& knot, pxr::VtValue* valueOut);
+    bool GetPreValue(const pxr::TsKnot& knot, pxr::VtValue* valueOut);
+    bool GetPreTanSlope(const pxr::TsKnot& knot, pxr::VtValue* valueOut);
+    bool GetPostTanSlope(const pxr::TsKnot& knot, pxr::VtValue* valueOut);
 }
 
-
-#include "swiftUsd/defines.h"
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-namespace __Overlay {
-    void setSwiftHioImagePluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
-}
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-
-
-#endif /* SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H */
+#endif /* SWIFTUSD_SWIFTOVERLAY_TSKNOT_H */

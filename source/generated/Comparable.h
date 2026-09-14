@@ -269,6 +269,8 @@ namespace __Overlay {
                     const pxr::SdfPropertySpec& r);
   bool operatorLess(const pxr::SdfSpecHandle& l,
                     const pxr::SdfSpecHandle& r);
+  bool operatorLess(const pxr::SdfSchemaBase& l,
+                    const pxr::SdfSchemaBase& r);
   bool operatorLess(const pxr::SdfSchema& l,
                     const pxr::SdfSchema& r);
   bool operatorLess(const pxr::SdfNameChildrenOrderProxy& l,

@@ -18,22 +18,25 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
-#ifndef SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
-#define SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
+#include "swiftUsd/Wrappers/StdOstreamWrapper.h"
 
-#include <string>
+#if !__swift__
+void Overlay::StdOstreamWrapper::operator<<(std::string const& s) const {
+    (*_impl) << s;
+}
+#endif // #if !__swift__
 
-namespace __Overlay {
-    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+void Overlay::StdOstreamWrapper::__operatorLessThanLessThan(std::string const& s) const {
+    (*_impl) << s;
 }
 
+Overlay::StdOstreamWrapper::StdOstreamWrapper(std::ostream& impl) : _impl(&impl) {}
 
-#include "swiftUsd/defines.h"
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-namespace __Overlay {
-    void setSwiftHioImagePluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+Overlay::StdOstreamWrapper::~StdOstreamWrapper() {
+    // Do nothing
 }
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
+std::ostream* Overlay::StdOstreamWrapper::get() const {
+    return _impl;
+}
 
-#endif /* SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H */

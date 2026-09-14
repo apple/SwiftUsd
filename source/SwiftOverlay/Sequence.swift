@@ -179,3 +179,11 @@ extension pxr.GfMultiInterval: CxxSequence {
     public typealias Element = pxr.GfInterval
 }
 extension pxr.GfMultiInterval.const_iterator: UnsafeCxxInputIterator {}
+
+
+extension pxr.TsKnotMap: CxxSequence {
+    public typealias Element = pxr.TsKnot
+    public typealias RawIterator = const_iterator
+}
+
+extension pxr.SdfTimeSampleMap: Sequence, CxxSequence, CxxDictionary {}

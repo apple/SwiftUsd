@@ -221,6 +221,7 @@ These types conform to `Hashable` in Swift.
 - ``OpenUSD/C++/pxr/SdfPropertySpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfSpec>``
 - ``OpenUSD/C++/pxr/SdfSpec``
+- ``OpenUSD/C++/pxr/SdfSchemaBase``
 - ``OpenUSD/C++/pxr/SdfSchema``
 - ``OpenUSD/C++/pxr/SdfData``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.SdfData>``

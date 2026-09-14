@@ -18,22 +18,20 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
-#ifndef SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
-#define SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
+#include "swiftUsd/SwiftOverlay/TsKnot.h"
 
-#include <string>
-
-namespace __Overlay {
-    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+bool Overlay::GetValue(const pxr::TsKnot &knot, pxr::VtValue *valueOut) {
+    return knot.GetValue(valueOut);
 }
 
-
-#include "swiftUsd/defines.h"
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-namespace __Overlay {
-    void setSwiftHioImagePluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+bool Overlay::GetPreValue(const pxr::TsKnot &knot, pxr::VtValue *valueOut) {
+    return knot.GetPreValue(valueOut);
 }
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 
+bool Overlay::GetPreTanSlope(const pxr::TsKnot &knot, pxr::VtValue *valueOut) {
+    return knot.GetPreTanSlope(valueOut);
+}
 
-#endif /* SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H */
+bool Overlay::GetPostTanSlope(const pxr::TsKnot &knot, pxr::VtValue *valueOut) {
+    return knot.GetPostTanSlope(valueOut);
+}

@@ -451,6 +451,7 @@ namespace __Overlay {
   int64_t hash_value(const pxr::SdfPropertySpec& x);
   int64_t hash_value(const pxr::SdfSpecHandle& x);
   int64_t hash_value(const pxr::SdfSpec& x);
+  int64_t hash_value(const pxr::SdfSchemaBase& x);
   int64_t hash_value(const pxr::SdfSchema& x);
   int64_t hash_value(const pxr::SdfData& x);
   int64_t hash_value(const pxr::SdfDataRefPtr& x);

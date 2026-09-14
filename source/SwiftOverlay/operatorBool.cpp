@@ -48,6 +48,9 @@ bool __Overlay::convertToBool(const pxr::UsdGeomXformOp& x) {
 bool __Overlay::convertToBool(const pxr::UsdRelationship& x) {
     return (bool) x;
 }
+bool __Overlay::convertToBool(const pxr::SdfValueTypeName &x) {
+    return (bool) x;
+}
 bool __Overlay::convertToBool(const pxr::SdfSpecHandle& x) {
     return (bool) x;
 }
@@ -76,6 +79,13 @@ bool __Overlay::convertToBool(const pxr::ArResolvedPath& x) {
     return (bool) x;
 }
 bool __Overlay::convertToBool(const pxr::SdfZipFile& x) {
+    return (bool) x;
+}
+bool __Overlay::convertToBool(const pxr::SdfVariantSetsProxy &x) {
+    return (bool) x;
+}
+
+bool __Overlay::convertToBool(const pxr::SdfVariantSelectionProxy &x) {
     return (bool) x;
 }
 bool __Overlay::convertToBool(const Overlay::ArAssetWrapper& x) {

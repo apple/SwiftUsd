@@ -18,22 +18,13 @@
 // SPDX-License-Identifier: Apache-2.0
 //===----------------------------------------------------------------------===//
 
-#ifndef SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
-#define SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H
+import Foundation
 
-#include <string>
-
-namespace __Overlay {
-    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+// Swift 6.1 crashes while compiling this function
+#if compiler(>=6.2)
+extension Overlay.StdOstreamWrapper {
+    public static func <<(lhs: borrowing Overlay.StdOstreamWrapper, rhs: some CustomStringConvertible) {
+        lhs.__operatorLessThanLessThan(std.string(String(describing: rhs)))
+    }
 }
-
-
-#include "swiftUsd/defines.h"
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-namespace __Overlay {
-    void setSwiftHioImagePluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
-}
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-
-
-#endif /* SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H */
+#endif // #if compiler(>=6.2)

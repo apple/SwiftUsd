@@ -252,6 +252,11 @@ Namespaces:
     - Name: GetName
       Availability: nonswift
 
+  - Name: SdfSchemaBase
+    SwiftImportAs: reference
+    SwiftRetainOp: immortal
+    SwiftReleaseOp: immortal
+
   - Name: SdfSchema
     SwiftImportAs: reference
     SwiftRetainOp: immortal

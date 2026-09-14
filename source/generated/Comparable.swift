@@ -210,6 +210,11 @@ extension pxr.SdfSpecHandle: Comparable { // classTemplateSpecialization
     }
 }
 extension pxr.SdfSpec: Comparable {} // foundBySwift
+extension pxr.SdfSchemaBase: Comparable { // importedAsReference
+    public static func <(lhs: pxr.SdfSchemaBase, rhs: pxr.SdfSchemaBase) -> Bool {
+        __Overlay.operatorLess(lhs, rhs)
+    }
+}
 extension pxr.SdfSchema: Comparable { // importedAsReference
     public static func <(lhs: pxr.SdfSchema, rhs: pxr.SdfSchema) -> Bool {
         __Overlay.operatorLess(lhs, rhs)

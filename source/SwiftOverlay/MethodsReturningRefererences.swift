@@ -379,3 +379,49 @@ extension pxr.SdfAssetPath {
     }
 }
 #endif // #if compiler(>=6.4)
+
+extension pxr.SdfUnregisteredValue {
+    public borrowing func GetValue() -> pxr.VtValue { __GetValueUnsafe().pointee }
+}
+
+extension pxr.SdfReference {
+    public borrowing func GetAssetPath() -> std.string { __GetAssetPathUnsafe().pointee }
+    public borrowing func GetPrimPath() -> pxr.SdfPath { __GetPrimPathUnsafe().pointee }
+    public borrowing func GetLayerOffset() -> pxr.SdfLayerOffset { __GetLayerOffsetUnsafe().pointee }
+    public borrowing func GetCustomData() -> pxr.VtDictionary { __GetCustomDataUnsafe().pointee }
+}
+
+extension pxr.SdfPayload {
+    public borrowing func GetAssetPath() -> std.string { __GetAssetPathUnsafe().pointee }
+    public borrowing func GetPrimPath() -> pxr.SdfPath { __GetPrimPathUnsafe().pointee }
+    public borrowing func GetLayerOffset() -> pxr.SdfLayerOffset { __GetLayerOffsetUnsafe().pointee }
+}
+
+// Prior to Swift 6.4, the compiler imports methods returning `const FRT&` from `SWIFT_SELF_CONTAINED`/`SwiftImportAs: owned`
+// types as `__Unsafe`, but starting in Swift 6.4, it imports them directly.
+#if compiler(<6.4)
+extension pxr.SdfSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfPropertySpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfPrimSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfVariantSetSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfVariantSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfAttributeSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfRelationshipSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+extension pxr.SdfPseudoRootSpec {
+    public borrowing func GetSchema() -> pxr.SdfSchemaBase { __GetSchemaUnsafe() }
+}
+#endif // #if compiler(<6.4)

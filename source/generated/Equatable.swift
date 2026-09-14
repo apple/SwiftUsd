@@ -961,6 +961,11 @@ extension pxr.SdfSpecHandle: Equatable { // classTemplateSpecialization
     }
 }
 extension pxr.SdfSpec: Equatable {} // foundBySwift
+extension pxr.SdfSchemaBase: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.SdfSchemaBase, rhs: pxr.SdfSchemaBase) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.SdfSchema: Equatable { // importedAsReference
     public static func ==(lhs: pxr.SdfSchema, rhs: pxr.SdfSchema) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)

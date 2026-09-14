@@ -22,8 +22,33 @@
 
 #include <memory>
 #include "pxr/base/tf/type.h"
-#include "pxr/imaging/hio/image.h"
+#include "pxr/usd/sdf/fileFormat.h"
 
+
+
+namespace __Overlay {
+    class SwiftSdfFileFormatFactory: public pxr::Sdf_FileFormatFactoryBase {
+    public:
+        void*_Nonnull(*_Nonnull newImpl)();
+
+        SwiftSdfFileFormatFactory(void*_Nonnull(*_Nonnull newImpl)()) : newImpl(newImpl) {}
+
+        pxr::SdfFileFormatRefPtr New() const {
+            void* p = newImpl();
+            return pxr::TfCreateRefPtr(static_cast<pxr::SdfFileFormat*>(p));
+        }
+    };
+
+    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)()) {
+        pxr::TfType t = pxr::TfType::Declare(typeName);
+        t.SetFactory(std::make_unique<SwiftSdfFileFormatFactory>(newImpl));
+    }
+}
+
+
+#include "swiftUsd/defines.h"
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+#include "pxr/imaging/hio/image.h"
 
 namespace __Overlay {
     class SwiftHioImageFactory: public pxr::HioImageFactoryBase {
@@ -43,3 +68,5 @@ namespace __Overlay {
         t.SetFactory(std::make_unique<SwiftHioImageFactory>(newImpl));
     }
 }
+    
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT

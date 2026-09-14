@@ -36,12 +36,7 @@ extension pxr.GfMatrix4d {
         return x
     }
 }
-extension pxr.GfMatrix4d {
-    public subscript(_ x: Int) -> UnsafePointer<Double> {
-        // Workaround for https://github.com/swiftlang/swift/issues/83112 (Calling Swift subscript across module boundary accesses uninitialized memory in Release (C++ interop))
-        return __Overlay.GfMatrix4d_subscript_workaround(self, Int32(x))
-    }
-}
+
 extension pxr.GfHalf {
     public static func +(lhs: pxr.GfHalf, rhs: pxr.GfHalf) -> pxr.GfHalf {
         return pxr.GfHalf(Float(lhs) + Float(rhs))
@@ -55,3 +50,47 @@ public func *(lhs: pxr.GfVec3f, rhs: Float) -> pxr.GfVec3f {
     pxr.GfVec3f(lhs[0] * rhs, lhs[1] * rhs, lhs[2] * rhs)
 }
 
+
+
+
+extension pxr.GfMatrix2d {
+    public subscript(_ x: Int) -> UnsafePointer<Double> {
+        borrowing get {
+            // Workaround for https://github.com/swiftlang/swift/issues/83112 (Calling Swift subscript across module boundary accesses uninitialized memory in Release (C++ interop))
+            __Overlay.GfMatrix2d_subscript_workaround(self, Int32(x))
+        }
+    }
+    
+    @_disfavoredOverload
+    public subscript(_ x: Int) -> UnsafeMutablePointer<Double> {
+        mutating get { __Overlay.GfMatrix2d_mutable_subscript_workaround(&self, Int32(x)) }
+    }
+}
+
+extension pxr.GfMatrix3d {
+    public subscript(_ x: Int) -> UnsafePointer<Double> {
+        borrowing get {
+            // Workaround for https://github.com/swiftlang/swift/issues/83112 (Calling Swift subscript across module boundary accesses uninitialized memory in Release (C++ interop))
+            __Overlay.GfMatrix3d_subscript_workaround(self, Int32(x))
+        }
+    }
+    
+    @_disfavoredOverload
+    public subscript(_ x: Int) -> UnsafeMutablePointer<Double> {
+        mutating get { __Overlay.GfMatrix3d_mutable_subscript_workaround(&self, Int32(x)) }
+    }
+}
+
+extension pxr.GfMatrix4d {
+    public subscript(_ x: Int) -> UnsafePointer<Double> {
+        borrowing get {
+            // Workaround for https://github.com/swiftlang/swift/issues/83112 (Calling Swift subscript across module boundary accesses uninitialized memory in Release (C++ interop))
+            __Overlay.GfMatrix4d_subscript_workaround(self, Int32(x))
+        }
+    }
+    
+    @_disfavoredOverload
+    public subscript(_ x: Int) -> UnsafeMutablePointer<Double> {
+        mutating get { __Overlay.GfMatrix4d_mutable_subscript_workaround(&self, Int32(x)) }
+    }
+}

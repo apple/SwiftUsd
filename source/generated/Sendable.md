@@ -364,6 +364,7 @@ Use this extension method sparingly!
 - `pxr.SdfValueTypeNameHash`
 - `pxr.SdfAllowed`
 - `pxr.SdfSpecTypeRegistration`
+- `pxr.SdfSchemaBase.SpecDefinition`
 - `pxr.SdfFieldKeys_StaticTokenType`
 - `pxr.SdfChildrenKeys_StaticTokenType`
 - `pxr.SdfNameKeyPolicy`
@@ -1437,6 +1438,8 @@ Use this extension method sparingly!
 - `pxr.SdfPropertySpec`
 - `pxr.SdfSpecHandle`
 - `pxr.SdfSpec`
+- `pxr.SdfSchemaBase`
+- `pxr.SdfSchemaBase.FieldDefinition`
 - `pxr.SdfSchema`
 - `pxr.SdfChangeBlock`
 - `pxr.SdfPathKeyPolicy`

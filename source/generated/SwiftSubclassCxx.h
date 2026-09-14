@@ -27,6 +27,195 @@
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/hio/image.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+#include "pxr/usd/sdf/fileFormat.h"
+
+#include <swift/bridging>
+#include "pxr/usd/sdf/spec.h"
+#include "pxr/usd/sdf/layerHints.h"
+#include "swiftUsd/Wrappers/StdOstreamWrapper.h"
+
+// MARK: pxr::SdfFileFormat subclassing
+namespace __Overlay {
+    namespace SdfFileFormat {
+        class CxxAdapter final: public pxr::SdfFileFormat {
+        public:
+            // Swift pointer
+            typedef void*_Nullable SwiftSubclass;
+            
+            SwiftSubclass __swiftSubclass = nullptr;
+            void (*_Nullable __releaseSwiftSubclass_FP)(SwiftSubclass) = nullptr;
+            virtual ~CxxAdapter();
+            
+            static void*_Nullable __toRaw(CxxAdapter*_Nullable);
+        
+            // Conditional downcasting
+            static inline CxxAdapter*_Nullable __dynamic_cast(pxr::SdfFileFormat*_Nullable p) {
+                return dynamic_cast<CxxAdapter*>(p);
+            }
+            
+            // Unconditional upcasting
+            static inline pxr::SdfFileFormat*_Nonnull __static_cast(CxxAdapter*_Nonnull p, pxr::SdfFileFormat*_Nullable unused) {
+                return static_cast<pxr::SdfFileFormat*>(p);
+            }
+            
+            // Non-public destructor of pxr::SdfFileFormat will not be exposed to Swift
+            
+            // Non-private constructors of pxr::SdfFileFormat will be exposed to Swift
+            CxxAdapter(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::string const & extension);
+            static __Overlay::SdfFileFormat::CxxAdapter*_Nonnull __swiftNew(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::string const & extension);
+            
+            CxxAdapter(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::string const & extension, pxr::SdfSchemaBase const & schema);
+            static __Overlay::SdfFileFormat::CxxAdapter*_Nonnull __swiftNew(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::string const & extension, pxr::SdfSchemaBase const & schema);
+            
+            CxxAdapter(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::vector<std::string, std::allocator<std::string>> const & extensions);
+            static __Overlay::SdfFileFormat::CxxAdapter*_Nonnull __swiftNew(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::vector<std::string, std::allocator<std::string>> const & extensions);
+            
+            CxxAdapter(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::vector<std::string, std::allocator<std::string>> const & extensions, pxr::SdfSchemaBase const & schema);
+            static __Overlay::SdfFileFormat::CxxAdapter*_Nonnull __swiftNew(pxr::TfToken const & formatId, pxr::TfToken const & versionString, pxr::TfToken const & target, std::vector<std::string, std::allocator<std::string>> const & extensions, pxr::SdfSchemaBase const & schema);
+            
+            // Non-private destructor of CxxAdapter will be exposed to Swift
+            void __swiftDeleteCxxAdapter();
+            
+            // Start total inheritance from pxr::SdfFileFormat
+            // Start fields from pxr::SdfFileFormat
+            // End fields from pxr::SdfFileFormat
+            
+            // Start methods from pxr::SdfFileFormat
+            pxr::SdfSchemaBase const & __GetSchema_forward() const SWIFT_NAME(__GetSchema_forward());
+            
+            pxr::TfToken const & __GetFormatId_forward() const SWIFT_NAME(__GetFormatId_forward());
+            
+            pxr::TfToken const & __GetTarget_forward() const SWIFT_NAME(__GetTarget_forward());
+            
+            std::string const & __GetFileCookie_forward() const SWIFT_NAME(__GetFileCookie_forward());
+            
+            pxr::TfToken const & __GetVersionString_forward() const SWIFT_NAME(__GetVersionString_forward());
+            
+            bool __IsPrimaryFormatForExtensions_forward() const SWIFT_NAME(__IsPrimaryFormatForExtensions_forward());
+            
+            std::vector<std::string, std::allocator<std::string>> const & __GetFileExtensions_forward() const SWIFT_NAME(__GetFileExtensions_forward());
+            
+            std::string const & __GetPrimaryFileExtension_forward() const SWIFT_NAME(__GetPrimaryFileExtension_forward());
+            
+            bool __IsSupportedExtension_forward(std::string const & extension) const SWIFT_NAME(__IsSupportedExtension_forward(_:));
+            
+            bool (*_Nullable __IsPackage_FP)(SwiftSubclass);
+            bool __IsPackage_default() const SWIFT_NAME(__IsPackage_default());
+            bool IsPackage() const override final SWIFT_NAME(IsPackage());
+            
+            std::string (*_Nullable __GetPackageRootLayerPath_FP)(SwiftSubclass, std::string const *);
+            std::string __GetPackageRootLayerPath_default(std::string const & resolvedPath) const SWIFT_NAME(__GetPackageRootLayerPath_default(_:));
+            std::string GetPackageRootLayerPath(std::string const & resolvedPath) const override final SWIFT_NAME(GetPackageRootLayerPath(_:));
+            
+            std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> (*_Nullable __GetDefaultFileFormatArguments_FP)(SwiftSubclass);
+            std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> __GetDefaultFileFormatArguments_default() const SWIFT_NAME(__GetDefaultFileFormatArguments_default());
+            std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> GetDefaultFileFormatArguments() const override final SWIFT_NAME(GetDefaultFileFormatArguments());
+            
+            pxr::TfRefPtr<pxr::SdfAbstractData> (*_Nullable __InitData_FP)(SwiftSubclass, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const *);
+            pxr::TfRefPtr<pxr::SdfAbstractData> __InitData_default(std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(__InitData_default(_:));
+            pxr::TfRefPtr<pxr::SdfAbstractData> InitData(std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const override final SWIFT_NAME(InitData(_:));
+            
+            pxr::TfRefPtr<pxr::SdfAbstractData> __InitDetachedData_forward(std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(__InitDetachedData_forward(_:));
+            
+            pxr::TfRefPtr<pxr::SdfLayer> __NewLayer_forward(pxr::TfWeakPtr<pxr::SdfFileFormat const> const & fileFormat, std::string const & identifier, std::string const & realPath, pxr::ArAssetInfo const & assetInfo, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(__NewLayer_forward(_:_:_:_:_:));
+            
+            bool __ShouldSkipAnonymousReload_forward() const SWIFT_NAME(__ShouldSkipAnonymousReload_forward());
+            
+            bool __ShouldReadAnonymousLayers_forward() const SWIFT_NAME(__ShouldReadAnonymousLayers_forward());
+            
+            bool (*_Nullable __CanRead_FP)(SwiftSubclass, std::string const *);
+            bool CanRead(std::string const & file) const final SWIFT_NAME(CanRead(_:));
+            
+            bool (*_Nullable __Read_FP)(SwiftSubclass, pxr::SdfLayer *, std::string const *, bool);
+            bool Read(pxr::SdfLayer * layer, std::string const & resolvedPath, bool metadataOnly) const final SWIFT_NAME(Read(_:_:_:));
+            
+            bool __ReadDetached_forward(pxr::SdfLayer * layer, std::string const & resolvedPath, bool metadataOnly) const SWIFT_NAME(__ReadDetached_forward(_:_:_:));
+            
+            bool (*_Nullable __WriteToFile_FP)(SwiftSubclass, pxr::SdfLayer const *, std::string const *, std::string const *, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const *);
+            bool __WriteToFile_default(pxr::SdfLayer const & layer, std::string const & filePath, std::string const & comment, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(__WriteToFile_default(_:_:_:_:));
+            bool WriteToFile(pxr::SdfLayer const & layer, std::string const & filePath, std::string const & comment, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const override final SWIFT_NAME(WriteToFile(_:_:_:_:));
+            
+            bool (*_Nullable __SaveToFile_FP)(SwiftSubclass, pxr::SdfLayer const *, std::string const *, std::string const *, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const *);
+            bool __SaveToFile_default(pxr::SdfLayer const & layer, std::string const & filePath, std::string const & comment, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(__SaveToFile_default(_:_:_:_:));
+            bool SaveToFile(pxr::SdfLayer const & layer, std::string const & filePath, std::string const & comment, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const override final SWIFT_NAME(SaveToFile(_:_:_:_:));
+            
+            bool (*_Nullable __ReadFromString_FP)(SwiftSubclass, pxr::SdfLayer *, std::string const *);
+            bool __ReadFromString_default(pxr::SdfLayer * layer, std::string const & str) const SWIFT_NAME(__ReadFromString_default(_:_:));
+            bool ReadFromString(pxr::SdfLayer * layer, std::string const & str) const override final SWIFT_NAME(ReadFromString(_:_:));
+            
+            bool (*_Nullable __WriteToStream_FP)(SwiftSubclass, pxr::SdfHandle<pxr::SdfSpec> const *, Overlay::StdOstreamWrapper const *, size_t);
+            bool __WriteToStream_default(pxr::SdfHandle<pxr::SdfSpec> const & spec, Overlay::StdOstreamWrapper const & out, size_t indent) const SWIFT_NAME(__WriteToStream_default(_:_:_:));
+            bool WriteToStream(pxr::SdfHandle<pxr::SdfSpec> const & spec, std::ostream & out, size_t indent) const override final SWIFT_NAME(WriteToStream(_:_:_:));
+            
+            bool (*_Nullable __WriteToString_FP)(SwiftSubclass, pxr::SdfLayer const *, std::string *, std::string const *);
+            bool __WriteToString_default(pxr::SdfLayer const & layer, std::string * str, std::string const & comment) const SWIFT_NAME(__WriteToString_default(_:_:_:));
+            bool WriteToString(pxr::SdfLayer const & layer, std::string * str, std::string const & comment) const override final SWIFT_NAME(WriteToString(_:_:_:));
+            
+            std::set<std::string, std::less<std::string>, std::allocator<std::string>> (*_Nullable __GetExternalAssetDependencies_FP)(SwiftSubclass, pxr::SdfLayer const *);
+            std::set<std::string, std::less<std::string>, std::allocator<std::string>> __GetExternalAssetDependencies_default(pxr::SdfLayer const & layer) const SWIFT_NAME(__GetExternalAssetDependencies_default(_:));
+            std::set<std::string, std::less<std::string>, std::allocator<std::string>> GetExternalAssetDependencies(pxr::SdfLayer const & layer) const override final SWIFT_NAME(GetExternalAssetDependencies(_:));
+            
+            bool __SupportsReading_forward() const SWIFT_NAME(__SupportsReading_forward());
+            
+            bool __SupportsWriting_forward() const SWIFT_NAME(__SupportsWriting_forward());
+            
+            bool __SupportsEditing_forward() const SWIFT_NAME(__SupportsEditing_forward());
+            
+            static std::string __GetFileExtension_forward(std::string const & s) SWIFT_NAME(__GetFileExtension_forward(_:));
+            
+            static std::set<std::string, std::less<std::string>, std::allocator<std::string>> __FindAllFileFormatExtensions_forward() SWIFT_NAME(__FindAllFileFormatExtensions_forward());
+            
+            static std::set<std::string, std::less<std::string>, std::allocator<std::string>> __FindAllDerivedFileFormatExtensions_forward(pxr::TfType const & baseType) SWIFT_NAME(__FindAllDerivedFileFormatExtensions_forward(_:));
+            
+            static bool __FormatSupportsReading_forward(std::string const & extension, std::string const & target) SWIFT_NAME(__FormatSupportsReading_forward(_:_:));
+            
+            static bool __FormatSupportsWriting_forward(std::string const & extension, std::string const & target) SWIFT_NAME(__FormatSupportsWriting_forward(_:_:));
+            
+            static bool __FormatSupportsEditing_forward(std::string const & extension, std::string const & target) SWIFT_NAME(__FormatSupportsEditing_forward(_:_:));
+            
+            static pxr::TfWeakPtr<pxr::SdfFileFormat const> __FindById_forward(pxr::TfToken const & formatId) SWIFT_NAME(__FindById_forward(_:));
+            
+            static pxr::TfWeakPtr<pxr::SdfFileFormat const> __FindByExtension_forward(std::string const & extension, std::string const & target) SWIFT_NAME(__FindByExtension_forward(_:_:));
+            
+            static pxr::TfWeakPtr<pxr::SdfFileFormat const> __FindByExtension_forward(std::string const & path, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) SWIFT_NAME(__FindByExtension_forward(_:_:));
+            
+            static void ___SetLayerData_forward(pxr::SdfLayer * layer, pxr::TfRefPtr<pxr::SdfAbstractData> & data) SWIFT_NAME(___SetLayerData_forward(_:_:));
+            
+            static void ___SetLayerData_forward(pxr::SdfLayer * layer, pxr::TfRefPtr<pxr::SdfAbstractData> & data, pxr::SdfLayerHints hints) SWIFT_NAME(___SetLayerData_forward(_:_:_:));
+            
+            static pxr::TfWeakPtr<pxr::SdfAbstractData const> ___GetLayerData_forward(pxr::SdfLayer const & layer) SWIFT_NAME(___GetLayerData_forward(_:));
+            
+            bool ___ReadAndCopyLayerDataToMemory_forward(pxr::SdfLayer * layer, std::string const & resolvedPath, bool metadataOnly, bool * didCopyData) const SWIFT_NAME(___ReadAndCopyLayerDataToMemory_forward(_:_:_:_:));
+            
+            pxr::SdfLayer * (*_Nullable ___InstantiateNewLayer_FP)(SwiftSubclass, pxr::TfWeakPtr<pxr::SdfFileFormat const> const *, std::string const *, std::string const *, pxr::ArAssetInfo const *, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const *);
+            pxr::SdfLayer * ___InstantiateNewLayer_default(pxr::TfWeakPtr<pxr::SdfFileFormat const> const & fileFormat, std::string const & identifier, std::string const & realPath, pxr::ArAssetInfo const & assetInfo, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(___InstantiateNewLayer_default(_:_:_:_:_:)) SWIFT_RETURNS_RETAINED;
+            pxr::SdfLayer * _InstantiateNewLayer(pxr::TfWeakPtr<pxr::SdfFileFormat const> const & fileFormat, std::string const & identifier, std::string const & realPath, pxr::ArAssetInfo const & assetInfo, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const override final SWIFT_NAME(_InstantiateNewLayer(_:_:_:_:_:));
+            
+            bool (*_Nullable ___ShouldSkipAnonymousReload_FP)(SwiftSubclass);
+            bool ___ShouldSkipAnonymousReload_default() const SWIFT_NAME(___ShouldSkipAnonymousReload_default());
+            bool _ShouldSkipAnonymousReload() const override final SWIFT_NAME(_ShouldSkipAnonymousReload());
+            
+            bool (*_Nullable ___ShouldReadAnonymousLayers_FP)(SwiftSubclass);
+            bool ___ShouldReadAnonymousLayers_default() const SWIFT_NAME(___ShouldReadAnonymousLayers_default());
+            bool _ShouldReadAnonymousLayers() const override final SWIFT_NAME(_ShouldReadAnonymousLayers());
+            
+            pxr::TfRefPtr<pxr::SdfAbstractData> (*_Nullable ___InitDetachedData_FP)(SwiftSubclass, std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const *);
+            pxr::TfRefPtr<pxr::SdfAbstractData> ___InitDetachedData_default(std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const SWIFT_NAME(___InitDetachedData_default(_:));
+            pxr::TfRefPtr<pxr::SdfAbstractData> _InitDetachedData(std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const & args) const override final SWIFT_NAME(_InitDetachedData(_:));
+            
+            bool (*_Nullable ___ReadDetached_FP)(SwiftSubclass, pxr::SdfLayer *, std::string const *, bool);
+            bool ___ReadDetached_default(pxr::SdfLayer * layer, std::string const & resolvedPath, bool metadataOnly) const SWIFT_NAME(___ReadDetached_default(_:_:_:));
+            bool _ReadDetached(pxr::SdfLayer * layer, std::string const & resolvedPath, bool metadataOnly) const override final SWIFT_NAME(_ReadDetached(_:_:_:));
+            
+            // End methods from pxr::SdfFileFormat
+            
+            // End total inheritance from pxr::SdfFileFormat
+        } SWIFT_UNSAFE_REFERENCE;
+    }
+}
+
+
+
 
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 // MARK: pxr::HioImage subclassing
@@ -40,6 +229,8 @@ namespace __Overlay {
             SwiftSubclass __swiftSubclass = nullptr;
             void (*_Nullable __releaseSwiftSubclass_FP)(SwiftSubclass) = nullptr;
             virtual ~CxxAdapter();
+            
+            static void*_Nullable __toRaw(CxxAdapter*_Nullable);
         
             // Conditional downcasting
             static inline CxxAdapter*_Nullable __dynamic_cast(pxr::HioImage*_Nullable p) {
@@ -58,7 +249,7 @@ namespace __Overlay {
             
             // Non-private constructors of pxr::HioImage will be exposed to Swift
             CxxAdapter();
-            static CxxAdapter*_Nonnull __swiftNew();
+            static __Overlay::HioImage::CxxAdapter*_Nonnull __swiftNew();
             
             // Non-private destructor of CxxAdapter will be exposed to Swift
             void __swiftDeleteCxxAdapter();
@@ -68,67 +259,53 @@ namespace __Overlay {
             // End fields from pxr::HioImage
             
             // Start methods from pxr::HioImage
-            static bool __IsSupportedImageFile_forward(std::string const & filename);
+            static bool __IsSupportedImageFile_forward(std::string const & filename) SWIFT_NAME(__IsSupportedImageFile_forward(_:));
             
-            static std::shared_ptr<pxr::HioImage> __OpenForReading_forward(std::string const & filename, int subimage = 0, int mip = 0, pxr::HioImage::SourceColorSpace sourceColorSpace = pxr::HioImage::Auto, bool suppressErrors = false);
+            static std::shared_ptr<pxr::HioImage> __OpenForReading_forward(std::string const & filename, int subimage, int mip, pxr::HioImage::SourceColorSpace sourceColorSpace, bool suppressErrors) SWIFT_NAME(__OpenForReading_forward(_:_:_:_:_:));
             
-            bool (*_Nullable __Read_FP)(SwiftSubclass, pxr::HioImage::StorageSpec const * storage) = nullptr;
-            bool __Read_forward(pxr::HioImage::StorageSpec const & storage);
-            bool Read(pxr::HioImage::StorageSpec const & storage) override final;
+            bool (*_Nullable __Read_FP)(SwiftSubclass, pxr::HioImage::StorageSpec const *);
+            bool Read(pxr::HioImage::StorageSpec const & storage) final SWIFT_NAME(Read(_:));
             
-            bool (*_Nullable __ReadCropped_FP)(SwiftSubclass, int const cropTop, int const cropBottom, int const cropLeft, int const cropRight, pxr::HioImage::StorageSpec const * storage) = nullptr;
-            bool __ReadCropped_forward(int const cropTop, int const cropBottom, int const cropLeft, int const cropRight, pxr::HioImage::StorageSpec const & storage);
-            bool ReadCropped(int const cropTop, int const cropBottom, int const cropLeft, int const cropRight, pxr::HioImage::StorageSpec const & storage) override final;
+            bool (*_Nullable __ReadCropped_FP)(SwiftSubclass, int const, int const, int const, int const, pxr::HioImage::StorageSpec const *);
+            bool ReadCropped(int const cropTop, int const cropBottom, int const cropLeft, int const cropRight, pxr::HioImage::StorageSpec const & storage) final SWIFT_NAME(ReadCropped(_:_:_:_:_:));
             
-            static std::shared_ptr<pxr::HioImage> __OpenForWriting_forward(std::string const & filename);
+            static std::shared_ptr<pxr::HioImage> __OpenForWriting_forward(std::string const & filename) SWIFT_NAME(__OpenForWriting_forward(_:));
             
-            bool (*_Nullable __Write_FP)(SwiftSubclass, pxr::HioImage::StorageSpec const * storage, pxr::VtDictionary const * metadata) = nullptr;
-            bool __Write_forward(pxr::HioImage::StorageSpec const & storage, pxr::VtDictionary const & metadata = pxr::VtDictionary());
-            bool Write(pxr::HioImage::StorageSpec const & storage, pxr::VtDictionary const & metadata = pxr::VtDictionary()) override final;
+            bool (*_Nullable __Write_FP)(SwiftSubclass, pxr::HioImage::StorageSpec const *, pxr::VtDictionary const *);
+            bool Write(pxr::HioImage::StorageSpec const & storage, pxr::VtDictionary const & metadata) final SWIFT_NAME(Write(_:_:));
             
-            std::string * (*_Nullable __GetFilename_FP)(SwiftSubclass) = nullptr;
-            std::string const & __GetFilename_forward() const;
-            std::string const & GetFilename() const override final;
+            std::string const * (*_Nullable __GetFilename_FP)(SwiftSubclass);
+            std::string const & GetFilename() const final SWIFT_NAME(GetFilename());
             
-            int (*_Nullable __GetWidth_FP)(SwiftSubclass) = nullptr;
-            int __GetWidth_forward() const;
-            int GetWidth() const override final;
+            int (*_Nullable __GetWidth_FP)(SwiftSubclass);
+            int GetWidth() const final SWIFT_NAME(GetWidth());
             
-            int (*_Nullable __GetHeight_FP)(SwiftSubclass) = nullptr;
-            int __GetHeight_forward() const;
-            int GetHeight() const override final;
+            int (*_Nullable __GetHeight_FP)(SwiftSubclass);
+            int GetHeight() const final SWIFT_NAME(GetHeight());
             
-            pxr::HioFormat (*_Nullable __GetFormat_FP)(SwiftSubclass) = nullptr;
-            pxr::HioFormat __GetFormat_forward() const;
-            pxr::HioFormat GetFormat() const override final;
+            pxr::HioFormat (*_Nullable __GetFormat_FP)(SwiftSubclass);
+            pxr::HioFormat GetFormat() const final SWIFT_NAME(GetFormat());
             
-            int (*_Nullable __GetBytesPerPixel_FP)(SwiftSubclass) = nullptr;
-            int __GetBytesPerPixel_forward() const;
-            int GetBytesPerPixel() const override final;
+            int (*_Nullable __GetBytesPerPixel_FP)(SwiftSubclass);
+            int GetBytesPerPixel() const final SWIFT_NAME(GetBytesPerPixel());
             
-            int (*_Nullable __GetNumMipLevels_FP)(SwiftSubclass) = nullptr;
-            int __GetNumMipLevels_forward() const;
-            int GetNumMipLevels() const override final;
+            int (*_Nullable __GetNumMipLevels_FP)(SwiftSubclass);
+            int GetNumMipLevels() const final SWIFT_NAME(GetNumMipLevels());
             
-            bool (*_Nullable __IsColorSpaceSRGB_FP)(SwiftSubclass) = nullptr;
-            bool __IsColorSpaceSRGB_forward() const;
-            bool IsColorSpaceSRGB() const override final;
+            bool (*_Nullable __IsColorSpaceSRGB_FP)(SwiftSubclass);
+            bool IsColorSpaceSRGB() const final SWIFT_NAME(IsColorSpaceSRGB());
             
-            bool (*_Nullable __GetMetadata_FP)(SwiftSubclass, pxr::TfToken const * key, pxr::VtValue * value) = nullptr;
-            bool __GetMetadata_forward(pxr::TfToken const & key, pxr::VtValue * value) const;
-            bool GetMetadata(pxr::TfToken const & key, pxr::VtValue * value) const override final;
+            bool (*_Nullable __GetMetadata_FP)(SwiftSubclass, pxr::TfToken const *, pxr::VtValue *);
+            bool GetMetadata(pxr::TfToken const & key, pxr::VtValue * value) const final SWIFT_NAME(GetMetadata(_:_:));
             
-            bool (*_Nullable __GetSamplerMetadata_FP)(SwiftSubclass, pxr::HioAddressDimension dim, pxr::HioAddressMode * param) = nullptr;
-            bool __GetSamplerMetadata_forward(pxr::HioAddressDimension dim, pxr::HioAddressMode * param) const;
-            bool GetSamplerMetadata(pxr::HioAddressDimension dim, pxr::HioAddressMode * param) const override final;
+            bool (*_Nullable __GetSamplerMetadata_FP)(SwiftSubclass, pxr::HioAddressDimension, pxr::HioAddressMode *);
+            bool GetSamplerMetadata(pxr::HioAddressDimension dim, pxr::HioAddressMode * param) const final SWIFT_NAME(GetSamplerMetadata(_:_:));
             
-            bool (*_Nullable ___OpenForReading_FP)(SwiftSubclass, std::string const * filename, int subimage, int mip, pxr::HioImage::SourceColorSpace sourceColorSpace, bool suppressErrors) = nullptr;
-            bool ___OpenForReading_forward(std::string const & filename, int subimage, int mip, pxr::HioImage::SourceColorSpace sourceColorSpace, bool suppressErrors);
-            bool _OpenForReading(std::string const & filename, int subimage, int mip, pxr::HioImage::SourceColorSpace sourceColorSpace, bool suppressErrors) override final;
+            bool (*_Nullable ___OpenForReading_FP)(SwiftSubclass, std::string const *, int, int, pxr::HioImage::SourceColorSpace, bool);
+            bool _OpenForReading(std::string const & filename, int subimage, int mip, pxr::HioImage::SourceColorSpace sourceColorSpace, bool suppressErrors) final SWIFT_NAME(_OpenForReading(_:_:_:_:_:));
             
-            bool (*_Nullable ___OpenForWriting_FP)(SwiftSubclass, std::string const * filename) = nullptr;
-            bool ___OpenForWriting_forward(std::string const & filename);
-            bool _OpenForWriting(std::string const & filename) override final;
+            bool (*_Nullable ___OpenForWriting_FP)(SwiftSubclass, std::string const *);
+            bool _OpenForWriting(std::string const & filename) final SWIFT_NAME(_OpenForWriting(_:));
             
             template <typename T>
             bool GetMetadata(pxr::TfToken const & key, T * value) const {

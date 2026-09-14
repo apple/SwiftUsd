@@ -394,3 +394,9 @@ extension pxr.VtTimeCodeArray: __Overlay.VtArrayProtocol {
         __Overlay.VtArray_assign(&self, Int(bitPattern: p.baseAddress), Int(bitPattern: p.baseAddress.map { $0 + p.count }))
     }
 }
+
+extension Overlay.SdfPathExpression_VtArray: __Overlay.VtArrayProtocol {
+    public mutating func __assign(_ p: UnsafeBufferPointer<ElementType>) {
+        __Overlay.VtArray_assign(&self, Int(bitPattern: p.baseAddress), Int(bitPattern: p.baseAddress.map { $0 + p.count }))
+    }
+}

@@ -187,6 +187,37 @@ public struct TF_REGISTRY_FUNCTION_Macro: PeerMacro {
     }
 }
 
+enum PluginKind: CaseIterable {
+    case hioImage
+    case sdfFileFormat
+
+    static func fromInheritanceClause(_ inheritanceClause: InheritanceClauseSyntax) -> PluginKind? {
+        for inheritedType in inheritanceClause.inheritedTypes {
+            for pluginKind in PluginKind.allCases {
+                if SWIFTUSD_PLUGIN_Macro.extractType(from: inheritedType.type) == pluginKind.inheritanceSpelling {
+                    return pluginKind
+                }
+            }
+        }
+        return nil
+    }
+
+    var inheritanceSpelling: [String] {
+        switch self {
+            case .hioImage: ["Overlay", "HioImageSubclass"]
+            case .sdfFileFormat: ["Overlay", "SdfFileFormatSubclass"]
+        }
+    }
+
+    var factoryName: String {
+        switch self {
+            case .hioImage: "setSwiftHioImagePluginFactory"
+            case .sdfFileFormat: "setSwiftSdfFileFormatPluginFactory"
+        }
+    }
+}
+
+
 public struct SWIFTUSD_PLUGIN_Macro: PeerMacro {
     static func extractType(from type: TypeSyntax) -> [String] {
         var result = [String]()
@@ -238,23 +269,14 @@ public struct SWIFTUSD_PLUGIN_Macro: PeerMacro {
         guard hasFinal else {
             throw CustomError.message("@SWIFTUSD_PLUGIN can only be applied to final classes")
         }
-        
-        var inheritsCorrectly = false
-        for inheritedType in inheritanceClause.inheritedTypes {
-            if extractType(from: inheritedType.type) == ["Overlay", "HioImageSubclass"] {
-                inheritsCorrectly = true
-                break
-            }
-        }
-        guard inheritsCorrectly else {
+
+        guard let pluginKind = PluginKind.fromInheritanceClause(inheritanceClause) else {
             throw CustomError.message("@SWIFTUSD_PLUGIN only works on classes that inherit from OpenUSD plugin entry classes")
         }
         
         
         // Compute identifiers
         let userClassName = classDecl.name.text
-        let factoryName = "setSwiftHioImagePluginFactory"
-        let adapterName = "__Overlay.HioImage.CxxAdapter"
 
         // Finally, form the decl to return.
         // We want to just return a `@TF_REGISTRY_FUNCTION`-annotated
@@ -266,8 +288,8 @@ public struct SWIFTUSD_PLUGIN_Macro: PeerMacro {
                                              argumentTypeText: "TfType",
                                              body:
             """
-            __Overlay.\(factoryName)("\(userClassName)") {
-                Unmanaged<\(adapterName)>.passUnretained(\(userClassName).new().get_cxx()!).toOpaque()
+            __Overlay.\(pluginKind.factoryName)("\(userClassName)") {
+                \(userClassName).init().__get_cxx_rawUnsafe()!
             }
             """
         )

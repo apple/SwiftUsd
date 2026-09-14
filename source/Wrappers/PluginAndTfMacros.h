@@ -24,7 +24,16 @@
 #include <string>
 
 namespace __Overlay {
+    void setSwiftSdfFileFormatPluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
+}
+
+
+#include "swiftUsd/defines.h"
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+namespace __Overlay {
     void setSwiftHioImagePluginFactory(std::string typeName, void*_Nonnull(*_Nonnull newImpl)());
 }
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+
 
 #endif /* SWIFTUSD_WRAPPERS_PLUGINANDTFMACROS_H */

@@ -153,6 +153,10 @@ bool __Overlay::operatorLess(const pxr::SdfSpecHandle& l,
                              const pxr::SdfSpecHandle& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::SdfSchemaBase& l,
+                             const pxr::SdfSchemaBase& r) {
+    return &l < &r;
+}
 bool __Overlay::operatorLess(const pxr::SdfSchema& l,
                              const pxr::SdfSchema& r) {
     return &l < &r;

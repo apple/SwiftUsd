@@ -55,6 +55,21 @@ extension Bool {
         self = __Overlay.convertToBool(handle)
     }
 
+    /// Returns `true` if the proxy object is valid
+    public init(_ x: pxr.SdfVariantSetsProxy) {
+        self.init(__Overlay.convertToBool(x))
+    }
+
+    /// Returns `true` if the value is valid
+    public init(_ x: pxr.SdfVariantSelectionProxy) {
+        self.init(__Overlay.convertToBool(x))
+    }
+
+    /// Returns `true` if the type name is valid and non-empty
+    public init(_ x: pxr.SdfValueTypeName) {
+        self.init(__Overlay.convertToBool(x))
+    }
+
     /// Returns `true` if the `UsdObject` is valid
     public init(_ object: pxr.UsdObject) {
         self = object.IsValid()

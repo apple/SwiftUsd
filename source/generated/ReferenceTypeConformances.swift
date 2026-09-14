@@ -216,6 +216,17 @@ extension __SwiftUsd_Typedef___ZN3pxr15SdfAbstractDataE_ConstWeakPtr: Overlay._T
     public typealias _TfWeakBaseType = pxr.SdfAbstractData
 }
 
+extension pxr.SdfSchemaBase: Overlay._SwiftUsdReferenceTypeProtocol {
+    public typealias _SelfType = pxr.SdfSchemaBase
+}
+extension pxr.SdfSchemaBase: Overlay._TfWeakBaseProtocol {}
+extension __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr: Overlay._TfWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfSchemaBase
+}
+extension __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_ConstWeakPtr: Overlay._TfConstWeakPtrProtocol {
+    public typealias _TfWeakBaseType = pxr.SdfSchemaBase
+}
+
 extension pxr.SdfSchema: Overlay._SwiftUsdReferenceTypeProtocol {
     public typealias _SelfType = pxr.SdfSchema
 }

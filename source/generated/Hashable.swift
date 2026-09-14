@@ -1057,6 +1057,11 @@ extension pxr.SdfSpec: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.SdfSchemaBase: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.SdfSchema: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))

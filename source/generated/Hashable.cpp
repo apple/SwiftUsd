@@ -606,6 +606,9 @@ int64_t __Overlay::hash_value(const pxr::SdfSpecHandle& x) {
 int64_t __Overlay::hash_value(const pxr::SdfSpec& x) {
     return pxr::TfHash()(x);
 }
+int64_t __Overlay::hash_value(const pxr::SdfSchemaBase& x) {
+    return (int64_t) &x;
+}
 int64_t __Overlay::hash_value(const pxr::SdfSchema& x) {
     return (int64_t) &x;
 }

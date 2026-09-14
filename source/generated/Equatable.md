@@ -251,6 +251,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/SdfPropertySpec``
 - ``OpenUSD/C++/pxr/SdfHandle<pxr.SdfSpec>``
 - ``OpenUSD/C++/pxr/SdfSpec``
+- ``OpenUSD/C++/pxr/SdfSchemaBase``
 - ``OpenUSD/C++/pxr/SdfSchema``
 - ``OpenUSD/C++/pxr/SdfListProxy<pxr.SdfNameTokenKeyPolicy>``
 - ``OpenUSD/C++/pxr/SdfListProxy<pxr.SdfSubLayerTypePolicy>``

@@ -39,6 +39,12 @@ extension pxr.GfHalf {
     }
 }
 
+extension Double {
+    public init(_ x: pxr.GfTimeCode) {
+        self = x.GetValue()
+    }
+}
+// GfTimeCode.init(Double) provided by timeCode.h
 
 extension String {
     public init(_ token: pxr.TfToken) {

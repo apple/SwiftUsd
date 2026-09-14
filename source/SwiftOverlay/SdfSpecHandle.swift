@@ -20,6 +20,8 @@
 
 import Foundation
 
+// MARK: SdfSpecHandle.pointee
+
 extension pxr.SdfSpecHandle {
     public var pointee: Self.SpecType {
         __Overlay.operatorArrow(self)
@@ -58,5 +60,164 @@ extension pxr.SdfRelationshipSpecHandle {
 extension pxr.SdfPseudoRootSpecHandle {
     public var pointee: Self.SpecType {
         __Overlay.operatorArrow(self)
+    }
+}
+
+// MARK: SdfSpec upcasting/downcasting
+
+extension pxr.SdfSpec {
+    // Up
+    public init(_ x: pxr.SdfPropertySpec) {
+        let oldHandle = pxr.SdfPropertySpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfPrimSpec) {
+        let oldHandle = pxr.SdfPrimSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfVariantSetSpec) {
+        let oldHandle = pxr.SdfVariantSetSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfVariantSpec) {
+        let oldHandle = pxr.SdfVariantSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfAttributeSpec) {
+        let oldHandle = pxr.SdfAttributeSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfRelationshipSpec) {
+        let oldHandle = pxr.SdfRelationshipSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfPseudoRootSpec) {
+        let oldHandle = pxr.SdfPseudoRootSpecHandle(x)
+        var newHandle = pxr.SdfSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfPropertySpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfPropertySpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+    // Up
+    public init(_ x: pxr.SdfAttributeSpec) {
+        let oldHandle = pxr.SdfAttributeSpecHandle(x)
+        var newHandle = pxr.SdfPropertySpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+    public init(_ x: pxr.SdfRelationshipSpec) {
+        let oldHandle = pxr.SdfRelationshipSpecHandle(x)
+        var newHandle = pxr.SdfPropertySpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfPrimSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfPrimSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+    // Up
+    public init(_ x: pxr.SdfPseudoRootSpec) {
+        let oldHandle = pxr.SdfPseudoRootSpecHandle(x)
+        var newHandle = pxr.SdfPrimSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfVariantSetSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfVariantSetSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfVariantSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfVariantSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfAttributeSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfAttributeSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+    public init?(_ x: pxr.SdfPropertySpec) {
+        let oldHandle = pxr.SdfPropertySpecHandle(x)
+        var newHandle = pxr.SdfAttributeSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfRelationshipSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfRelationshipSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+    public init?(_ x: pxr.SdfPropertySpec) {
+        let oldHandle = pxr.SdfPropertySpecHandle(x)
+        var newHandle = pxr.SdfRelationshipSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+}
+extension pxr.SdfPseudoRootSpec {
+    // Down
+    public init?(_ x: pxr.SdfSpec) {
+        let oldHandle = pxr.SdfSpecHandle(x)
+        var newHandle = pxr.SdfPseudoRootSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
+    }
+    public init?(_ x: pxr.SdfPrimSpec) {
+        let oldHandle = pxr.SdfPrimSpecHandle(x)
+        var newHandle = pxr.SdfPseudoRootSpecHandle()
+        __Overlay.dynamic_cast_sdf_spec_handles(oldHandle, &newHandle)
+        guard Bool(newHandle) else { return nil }
+        self = newHandle.pointee
     }
 }

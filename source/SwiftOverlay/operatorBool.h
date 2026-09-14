@@ -31,6 +31,7 @@
 #include "pxr/usd/usd/attribute.h"
 #include "pxr/usd/usdGeom/xformOp.h"
 #include "pxr/usd/usd/relationship.h"
+#include "pxr/usd/sdf/valueTypeName.h"
 #include "pxr/usd/sdf/spec.h"
 #include "pxr/usd/sdf/propertySpec.h"
 #include "pxr/usd/sdf/primSpec.h"
@@ -39,6 +40,9 @@
 #include "pxr/usd/sdf/attributeSpec.h"
 #include "pxr/usd/sdf/relationshipSpec.h"
 #include "pxr/usd/sdf/pseudoRootSpec.h"
+#include "pxr/usd/sdf/childrenProxy.h"
+#include "pxr/usd/sdf/proxyTypes.h"
+#include "pxr/usd/sdf/mapEditProxy.h"
 #include "pxr/usd/sdf/zipFile.h"
 #include "pxr/usd/ar/resolvedPath.h"
 #include "pxr/imaging/hgi/texture.h"
@@ -56,6 +60,7 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdAttribute& x);
     bool convertToBool(const pxr::UsdGeomXformOp& x);
     bool convertToBool(const pxr::UsdRelationship& x);
+    bool convertToBool(const pxr::SdfValueTypeName& x);
     bool convertToBool(const pxr::SdfSpecHandle& x);
     bool convertToBool(const pxr::SdfPropertySpecHandle& x);
     bool convertToBool(const pxr::SdfPrimSpecHandle& x);
@@ -64,6 +69,8 @@ namespace __Overlay {
     bool convertToBool(const pxr::SdfAttributeSpecHandle& x);
     bool convertToBool(const pxr::SdfRelationshipSpecHandle& x);
     bool convertToBool(const pxr::SdfPseudoRootSpecHandle& x);
+    bool convertToBool(const pxr::SdfVariantSetsProxy& x);
+    bool convertToBool(const pxr::SdfVariantSelectionProxy& x);
     bool convertToBool(const pxr::ArResolvedPath& x);
     bool convertToBool(const pxr::SdfZipFile& x);
     bool convertToBool(const pxr::HgiTextureHandle& x);

@@ -2418,7 +2418,6 @@
 // std::unique_ptr<pxr::GfMatrix3d, std::default_delete<pxr::GfMatrix3d>>
 // pxr::TfSpan<pxr::GfMatrix4f>
 // pxr::TfSpan<pxr::GfTimeCode>
-// std::vector<std::pair<pxr::TfToken, pxr::JsValue>, std::allocator<std::pair<pxr::TfToken, pxr::JsValue>>>
 // std::pair<pxr::TfToken, pxr::JsValue>
 // std::pair<std::string, pxr::JsValue>
 // std::deque<pxr::TfWeakPtr<pxr::TraceAggregateNode>, std::allocator<pxr::TfWeakPtr<pxr::TraceAggregateNode>>>
@@ -3999,6 +3998,7 @@ extension pxr.SdfTupleDimensions: @unchecked Sendable {}
 extension pxr.SdfValueTypeNameHash: @unchecked Sendable {}
 extension pxr.SdfAllowed: @unchecked Sendable {}
 extension pxr.SdfSpecTypeRegistration: @unchecked Sendable {}
+extension pxr.SdfSchemaBase.SpecDefinition: @unchecked Sendable {}
 extension pxr.SdfFieldKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfChildrenKeys_StaticTokenType: @unchecked Sendable {}
 extension pxr.SdfNameKeyPolicy: @unchecked Sendable {}
@@ -4935,6 +4935,7 @@ extension pxr.UsdIrImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.JsObject: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.JsOptionalValue: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.JsArray: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfSchemaBase.FieldDefinition.InfoVec: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceAggregateTreeRefPtr: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceAggregateTree: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.TraceAggregateNodeRefPtr: @unchecked Sendable {}
@@ -5027,6 +5028,8 @@ extension pxr.UsdIrImagingTokens_StaticTokenType: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSpecHandle: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSpec: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSpecHandleVector: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfSchemaBase: @unchecked Sendable {}
+@available(*, unavailable) extension pxr.SdfSchemaBase.FieldDefinition: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfSchema: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfChangeBlock: @unchecked Sendable {}
 @available(*, unavailable) extension pxr.SdfPathKeyPolicy: @unchecked Sendable {}

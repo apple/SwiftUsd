@@ -44,6 +44,7 @@
 #include "pxr/base/tf/diagnosticBase.h"
 #include "pxr/base/vt/array.h"
 #include "pxr/usd/sdf/assetPath.h"
+#include "pxr/usd/sdf/pathExpression.h"
 #include "pxr/exec/execUsd/valueKey.h"
 
 namespace Overlay {
@@ -75,6 +76,7 @@ namespace Overlay {
     typedef std::shared_ptr<pxr::TfDiagnosticBase> TfDiagnosticBase_Shared_Ptr;
 
     typedef pxr::VtArray<pxr::SdfAssetPath> SdfAssetPath_VtArray;
+    typedef pxr::VtArray<pxr::SdfPathExpression> SdfPathExpression_VtArray;
 }
 
 #endif /* SWIFTUSD_SWIFTOVERLAY_TYPEDEFS_H */

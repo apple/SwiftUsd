@@ -21,6 +21,26 @@
 #include "swiftUsd/SwiftOverlay/Math.h"
 
 
-const double* __Overlay::GfMatrix4d_subscript_workaround(const pxr::GfMatrix4d& x, int i) {
+const double* __Overlay::GfMatrix2d_subscript_workaround(const pxr::GfMatrix2d &x, int i) {
+    return x[i];
+}
+
+double* __Overlay::GfMatrix2d_mutable_subscript_workaround(pxr::GfMatrix2d &x, int i) {
+    return x[i];
+}
+
+const double* __Overlay::GfMatrix3d_subscript_workaround(const pxr::GfMatrix3d &x, int i) {
+    return x[i];
+}
+
+double* __Overlay::GfMatrix3d_mutable_subscript_workaround(pxr::GfMatrix3d &x, int i) {
+    return x[i];
+}
+
+const double* __Overlay::GfMatrix4d_subscript_workaround(const pxr::GfMatrix4d &x, int i) {
+    return x[i];
+}
+
+double* __Overlay::GfMatrix4d_mutable_subscript_workaround(pxr::GfMatrix4d &x, int i) {
     return x[i];
 }

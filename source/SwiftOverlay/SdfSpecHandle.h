@@ -21,6 +21,7 @@
 #ifndef SWIFTUSD_SWIFTOVERLAY_SDFSPECHANDLE_H
 #define SWIFTUSD_SWIFTOVERLAY_SDFSPECHANDLE_H
 
+#include <type_traits>
 #include "pxr/usd/sdf/spec.h"
 #include "pxr/usd/sdf/propertySpec.h"
 #include "pxr/usd/sdf/primSpec.h"
@@ -39,6 +40,13 @@ namespace __Overlay {
     pxr::SdfAttributeSpec operatorArrow(const pxr::SdfAttributeSpecHandle& x);
     pxr::SdfRelationshipSpec operatorArrow(const pxr::SdfRelationshipSpecHandle& x);
     pxr::SdfPseudoRootSpec operatorArrow(const pxr::SdfPseudoRootSpecHandle& x);
+
+    template <typename Dest, typename Src>
+    void dynamic_cast_sdf_spec_handles(Src src, Dest& out) {
+        static_assert(std::is_same_v<Src, pxr::SdfHandle<typename Src::SpecType>>);
+        static_assert(std::is_same_v<Dest, pxr::SdfHandle<typename Dest::SpecType>>);
+        out = pxr::TfDynamic_cast<Dest, typename Src::SpecType>(src);
+    }
 }
 
 #endif /* SWIFTUSD_SWIFTOVERLAY_SDFSPECHANDLE_H */

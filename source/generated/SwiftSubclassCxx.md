@@ -8,5 +8,8 @@ This page lists which Usd types can be subclassed from Swift.
 Subclassing OpenUSD types in Swift should only be done for writing an OpenUSD plugin, due to an increased risk of memory-safety issues. See <doc:WritingAndUsingOpenUSDPlugins> for more information.
 
 
+###  Sdf types
+- ``OpenUSD/C++/pxr/SdfFileFormat``
+
 ###  Hio types
 - ``OpenUSD/C++/pxr/HioImage``

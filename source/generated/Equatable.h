@@ -686,6 +686,8 @@ namespace __Overlay {
                             const pxr::SdfPropertySpec& r);
   bool operatorEqualsEquals(const pxr::SdfSpecHandle& l,
                             const pxr::SdfSpecHandle& r);
+  bool operatorEqualsEquals(const pxr::SdfSchemaBase& l,
+                            const pxr::SdfSchemaBase& r);
   bool operatorEqualsEquals(const pxr::SdfSchema& l,
                             const pxr::SdfSchema& r);
   bool operatorEqualsEquals(const pxr::SdfNameChildrenOrderProxy& l,

@@ -1462,6 +1462,24 @@ extension pxr.SdfPath: Codable {
     }
 }
 
+extension pxr.SdfPathExpression: Codable {
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.singleValueContainer()
+
+        let x = try container.decode(String.self)
+
+        self.init(std.string(x), "")
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = try encoder.singleValueContainer()
+
+        let x = String(self.GetText())
+
+        try container.encode(x)
+    }
+}
+
 // MARK: Usd
 
 extension pxr.UsdTimeCode: Codable {

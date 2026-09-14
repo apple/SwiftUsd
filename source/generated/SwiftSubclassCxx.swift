@@ -25,6 +25,389 @@ public enum __OverlaySwift{}
 
 
 
+// MARK: pxr.SdfFileFormat subclassing
+extension __Overlay.SdfFileFormat.CxxAdapter {
+    public var swift: Overlay.SdfFileFormatSubclass {
+        Unmanaged<__OverlaySwift.SdfFileFormat.SwiftAdapter>.fromOpaque(__swiftSubclass!).takeUnretainedValue() as! Overlay.SdfFileFormatSubclass
+    }
+}
+
+// Conditional downcasting
+extension pxr.SdfFileFormat {
+    public func `as`<T: Overlay.SdfFileFormatSubclass>(_ t: T.Type = T.self) -> T? {
+        __Overlay.SdfFileFormat.CxxAdapter.__dynamic_cast(self)?.swift as? T
+    }
+}
+
+
+// Non-public destructor of pxr.SdfFileFormat will not be exposed to Swift
+
+public extension __OverlaySwift {
+    public enum SdfFileFormat {
+        open class SwiftAdapter {
+            private typealias UnmanagedSelf = Unmanaged<__OverlaySwift.SdfFileFormat.SwiftAdapter>
+            
+            // Detect if we're a zombie object to avoid setting __swiftDidDeinit.pointee in deinit after __releaseSwiftSubclass_FP deallocated it
+            private var __swiftIsZombie: Bool
+            
+            // Detect whether or not a call to Unmanaged.release() deinitialized us
+            // or if there's an outstanding strong pointer, making us a zombie
+            private var __swiftDidDeinit: UnsafeMutablePointer<Bool>
+            
+            // Cxx pointer
+            private var __cxxSubclass: __Overlay.SdfFileFormat.CxxAdapter!
+            
+            public func __get_cxxUnsafe() -> __Overlay.SdfFileFormat.CxxAdapter? { __cxxSubclass }
+            public func __get_cxx_rawUnsafe() -> UnsafeMutableRawPointer? { __Overlay.SdfFileFormat.CxxAdapter.__toRaw(__cxxSubclass) }
+            
+            // Unconditional upcasting
+            public func `as`(_ t: pxr.SdfFileFormat.Type) -> pxr.SdfFileFormat {
+                __Overlay.SdfFileFormat.CxxAdapter.__static_cast(__cxxSubclass, nil)
+            }
+
+            // Pointer/ref-returning method allocations
+            
+            private func __wireToCxx(_ __cxxSubclass: __Overlay.SdfFileFormat.CxxAdapter) {
+                func slf(_ raw: UnsafeMutableRawPointer?) -> Overlay.SdfFileFormatSubclass {
+                    UnmanagedSelf.fromOpaque(raw!).takeUnretainedValue() as! Overlay.SdfFileFormatSubclass
+                }
+                
+                self.__cxxSubclass = __cxxSubclass
+                __cxxSubclass.__swiftSubclass = UnmanagedSelf.passRetained(self).toOpaque()
+                __cxxSubclass.__releaseSwiftSubclass_FP = {
+                    let swiftDidDeinitPointer = slf($0).__swiftDidDeinit
+                    let cxxSubclassPointer = slf($0).__cxxSubclass
+                    slf($0).__cxxSubclass = nil
+                    UnmanagedSelf.fromOpaque($0!).release()
+                    let isZombie = !swiftDidDeinitPointer.pointee
+                    swiftDidDeinitPointer.deallocate()
+                    if isZombie {
+                        slf($0).__swiftIsZombie = true
+                        let cppInstance: UnsafeMutableRawPointer? = __Overlay.SdfFileFormat.CxxAdapter.__toRaw(cxxSubclassPointer)
+                        __Overlay.SwiftSubclassCxx_zombieCreated(swiftInstance: $0, cppInstance: cppInstance, typeName: "pxr.SdfFileFormat")
+                    }
+                }
+                // Start wire virtual methods from pxr.SdfFileFormat
+                __cxxSubclass.__IsPackage_FP = { slf($0).IsPackage() }
+                __cxxSubclass.__GetPackageRootLayerPath_FP = { slf($0).GetPackageRootLayerPath($1!.pointee) }
+                __cxxSubclass.__GetDefaultFileFormatArguments_FP = { slf($0).GetDefaultFileFormatArguments() }
+                __cxxSubclass.__InitData_FP = { slf($0).InitData($1!.pointee) }
+                __cxxSubclass.__CanRead_FP = { slf($0).CanRead($1!.pointee) }
+                __cxxSubclass.__Read_FP = { slf($0).Read($1, $2!.pointee, $3) }
+                __cxxSubclass.__WriteToFile_FP = { slf($0).WriteToFile($1!, $2!.pointee, $3!.pointee, $4!.pointee) }
+                __cxxSubclass.__SaveToFile_FP = { slf($0).SaveToFile($1!, $2!.pointee, $3!.pointee, $4!.pointee) }
+                __cxxSubclass.__ReadFromString_FP = { slf($0).ReadFromString($1, $2!.pointee) }
+                __cxxSubclass.__WriteToStream_FP = { slf($0).WriteToStream($1!.pointee, $2!.pointee, $3) }
+                __cxxSubclass.__WriteToString_FP = { slf($0).WriteToString($1!, $2, $3!.pointee) }
+                __cxxSubclass.__GetExternalAssetDependencies_FP = { slf($0).GetExternalAssetDependencies($1!) }
+                __cxxSubclass.___InstantiateNewLayer_FP = { slf($0)._InstantiateNewLayer($1!.pointee, $2!.pointee, $3!.pointee, $4!.pointee, $5!.pointee) }
+                __cxxSubclass.___ShouldSkipAnonymousReload_FP = { slf($0)._ShouldSkipAnonymousReload() }
+                __cxxSubclass.___ShouldReadAnonymousLayers_FP = { slf($0)._ShouldReadAnonymousLayers() }
+                __cxxSubclass.___InitDetachedData_FP = { slf($0)._InitDetachedData($1!.pointee) }
+                __cxxSubclass.___ReadDetached_FP = { slf($0)._ReadDetached($1, $2!.pointee, $3) }
+                // End wire virtual methods from pxr.SdfFileFormat
+            
+            } // public func __wireToCxx
+            
+            deinit {
+                // __releaseSwiftSubclass_FP, which is run by the C++ destructor, sets __cxxSubclass to nil.
+                // CxxAdapter has a strong pointer to SwiftAdapter, so SwiftAdapter.deinit running before ~CxxAdapter is a user-induced memory-safety issue
+                if self.__cxxSubclass != nil {
+                    fatalError("Swift deinit running before C++ destructor ran violates invariants. Did you overrelease the Swift subclass instance?")
+                }
+                if !self.__swiftIsZombie {
+                    // Set the flag but don't deallocate. The releaseFP will deallocate after checking if this flag was set
+                    self.__swiftDidDeinit.pointee = true
+                }
+            } // deinit
+            
+            // Non-private constructors of pxr.SdfFileFormat will be exposed to Swift
+            
+            /// Creates a new instance of this subclass using `new pxr::SdfFileFormat(...);` in C++.
+            /// 
+            /// The caller is responsible for deleting the instance in one of the following ways:
+            /// - Using `Overlay.SdfFileFormatSubclass.delete(_:)` in Swift
+            /// - Using `pxr.SdfFileFormat.delete(_:)` on the value returned by `self.get_cxx()`
+            /// - Using `delete p;` in C++ on the value returned by `self.get_cxx()`
+            /// - Passing the value returned by `self.get_cxx()` to something that will ensure it is eventually deleted, like `std::unique_ptr` or `std::shared_ptr`
+            /// Note that Swift ARC will _not_ automatically free the returned instance. Dropping the last strong reference in user code to the instance can result in memory leaks. 
+            /// 
+            /// This constructor was originally protected in C++. Use with caution.
+            public init(_ formatId: pxr.TfToken, _ versionString: pxr.TfToken, _ target: pxr.TfToken, _ `extension`: std.string) {
+                self.__swiftIsZombie = false
+                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+                self.__swiftDidDeinit.initialize(to: false)
+            
+                if type(of: self) == __OverlaySwift.SdfFileFormat.SwiftAdapter.self {
+                    fatalError("Cannot construct instance of abstract base class Overlay.SdfFileFormatSubclass")
+                }
+                guard self is Overlay.SdfFileFormatSubclass else {
+                    fatalError("Subclass \(type(of: self)) of pxr.SdfFileFormat must inherit from Overlay.SdfFileFormatSubclass")
+                }
+                let cxxAdapter = __Overlay.SdfFileFormat.CxxAdapter.__swiftNew(formatId, versionString, target, `extension`)
+                self.__wireToCxx(cxxAdapter)
+            }
+            
+            
+            /// Creates a new instance of this subclass using `new pxr::SdfFileFormat(...);` in C++.
+            /// 
+            /// The caller is responsible for deleting the instance in one of the following ways:
+            /// - Using `Overlay.SdfFileFormatSubclass.delete(_:)` in Swift
+            /// - Using `pxr.SdfFileFormat.delete(_:)` on the value returned by `self.get_cxx()`
+            /// - Using `delete p;` in C++ on the value returned by `self.get_cxx()`
+            /// - Passing the value returned by `self.get_cxx()` to something that will ensure it is eventually deleted, like `std::unique_ptr` or `std::shared_ptr`
+            /// Note that Swift ARC will _not_ automatically free the returned instance. Dropping the last strong reference in user code to the instance can result in memory leaks. 
+            /// 
+            /// This constructor was originally protected in C++. Use with caution.
+            public init(_ formatId: pxr.TfToken, _ versionString: pxr.TfToken, _ target: pxr.TfToken, _ `extension`: std.string, _ schema: pxr.SdfSchemaBase) {
+                self.__swiftIsZombie = false
+                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+                self.__swiftDidDeinit.initialize(to: false)
+            
+                if type(of: self) == __OverlaySwift.SdfFileFormat.SwiftAdapter.self {
+                    fatalError("Cannot construct instance of abstract base class Overlay.SdfFileFormatSubclass")
+                }
+                guard self is Overlay.SdfFileFormatSubclass else {
+                    fatalError("Subclass \(type(of: self)) of pxr.SdfFileFormat must inherit from Overlay.SdfFileFormatSubclass")
+                }
+                let cxxAdapter = __Overlay.SdfFileFormat.CxxAdapter.__swiftNew(formatId, versionString, target, `extension`, schema)
+                self.__wireToCxx(cxxAdapter)
+            }
+            
+            
+            /// Creates a new instance of this subclass using `new pxr::SdfFileFormat(...);` in C++.
+            /// 
+            /// The caller is responsible for deleting the instance in one of the following ways:
+            /// - Using `Overlay.SdfFileFormatSubclass.delete(_:)` in Swift
+            /// - Using `pxr.SdfFileFormat.delete(_:)` on the value returned by `self.get_cxx()`
+            /// - Using `delete p;` in C++ on the value returned by `self.get_cxx()`
+            /// - Passing the value returned by `self.get_cxx()` to something that will ensure it is eventually deleted, like `std::unique_ptr` or `std::shared_ptr`
+            /// Note that Swift ARC will _not_ automatically free the returned instance. Dropping the last strong reference in user code to the instance can result in memory leaks. 
+            /// 
+            /// This constructor was originally protected in C++. Use with caution.
+            public init(_ formatId: pxr.TfToken, _ versionString: pxr.TfToken, _ target: pxr.TfToken, _ extensions: Overlay.String_Vector) {
+                self.__swiftIsZombie = false
+                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+                self.__swiftDidDeinit.initialize(to: false)
+            
+                if type(of: self) == __OverlaySwift.SdfFileFormat.SwiftAdapter.self {
+                    fatalError("Cannot construct instance of abstract base class Overlay.SdfFileFormatSubclass")
+                }
+                guard self is Overlay.SdfFileFormatSubclass else {
+                    fatalError("Subclass \(type(of: self)) of pxr.SdfFileFormat must inherit from Overlay.SdfFileFormatSubclass")
+                }
+                let cxxAdapter = __Overlay.SdfFileFormat.CxxAdapter.__swiftNew(formatId, versionString, target, extensions)
+                self.__wireToCxx(cxxAdapter)
+            }
+            
+            
+            /// Creates a new instance of this subclass using `new pxr::SdfFileFormat(...);` in C++.
+            /// 
+            /// The caller is responsible for deleting the instance in one of the following ways:
+            /// - Using `Overlay.SdfFileFormatSubclass.delete(_:)` in Swift
+            /// - Using `pxr.SdfFileFormat.delete(_:)` on the value returned by `self.get_cxx()`
+            /// - Using `delete p;` in C++ on the value returned by `self.get_cxx()`
+            /// - Passing the value returned by `self.get_cxx()` to something that will ensure it is eventually deleted, like `std::unique_ptr` or `std::shared_ptr`
+            /// Note that Swift ARC will _not_ automatically free the returned instance. Dropping the last strong reference in user code to the instance can result in memory leaks. 
+            /// 
+            /// This constructor was originally protected in C++. Use with caution.
+            public init(_ formatId: pxr.TfToken, _ versionString: pxr.TfToken, _ target: pxr.TfToken, _ extensions: Overlay.String_Vector, _ schema: pxr.SdfSchemaBase) {
+                self.__swiftIsZombie = false
+                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+                self.__swiftDidDeinit.initialize(to: false)
+            
+                if type(of: self) == __OverlaySwift.SdfFileFormat.SwiftAdapter.self {
+                    fatalError("Cannot construct instance of abstract base class Overlay.SdfFileFormatSubclass")
+                }
+                guard self is Overlay.SdfFileFormatSubclass else {
+                    fatalError("Subclass \(type(of: self)) of pxr.SdfFileFormat must inherit from Overlay.SdfFileFormatSubclass")
+                }
+                let cxxAdapter = __Overlay.SdfFileFormat.CxxAdapter.__swiftNew(formatId, versionString, target, extensions, schema)
+                self.__wireToCxx(cxxAdapter)
+            }
+            
+            // Non-private destructor of CxxAdapter will be exposed to Swift
+            
+            /// Deletes an instance of this subclass using `delete p;` in C++ on the pointer
+            /// returned by `self.get_cxx()`.
+            ///
+            /// The caller is responsible for ensuring that the pointer returned by
+            /// `self.get_cxx()` is not used after this function returns.
+            ///
+            /// Due to the way that SwiftUsd's mechanisms for subclassing C++ types from Swift are implemented,
+            /// this Swift instance may become a "zombie" if there is a strong reference keeping it
+            /// alive after this function returns. By default, SwiftUsd will print a warning to stdout
+            /// when this occurs. You can change this behavior by setting the environment variable
+            /// `SWIFTUSD_SWIFT_SUBCLASS_CXX_ZOMBIE_CREATION_BEHAVIOR` to `ignore` to suppress the warning,
+            /// or `terminate` to immediately exit the program.
+            /// After a zombie is created, any use of it might safely terminate the program.
+            public static func delete(_ swiftAdapter: consuming __OverlaySwift.SdfFileFormat.SwiftAdapter) {
+                let cxxAdapter = swiftAdapter.__cxxSubclass
+                _ = consume swiftAdapter
+                cxxAdapter?.__swiftDeleteCxxAdapter()
+            }
+            
+            // Start total inheritance from pxr.SdfFileFormat
+            // Start fields from pxr::SdfFileFormat
+            // End fields from pxr::SdfFileFormat
+            
+            // Start methods from pxr::SdfFileFormat
+            public func GetSchema() -> pxr.SdfSchemaBase {
+                return __cxxSubclass.__GetSchema_forward()
+            }
+            public func GetFormatId() -> pxr.TfToken {
+                return __cxxSubclass.__GetFormatId_forward().pointee
+            }
+            public func GetTarget() -> pxr.TfToken {
+                return __cxxSubclass.__GetTarget_forward().pointee
+            }
+            public func GetFileCookie() -> std.string {
+                return __cxxSubclass.__GetFileCookie_forward().pointee
+            }
+            public func GetVersionString() -> pxr.TfToken {
+                return __cxxSubclass.__GetVersionString_forward().pointee
+            }
+            public func IsPrimaryFormatForExtensions() -> CBool {
+                return __cxxSubclass.__IsPrimaryFormatForExtensions_forward()
+            }
+            public func GetFileExtensions() -> Overlay.String_Vector {
+                return __cxxSubclass.__GetFileExtensions_forward().pointee
+            }
+            public func GetPrimaryFileExtension() -> std.string {
+                return __cxxSubclass.__GetPrimaryFileExtension_forward().pointee
+            }
+            public func IsSupportedExtension(_ `extension`: std.string) -> CBool {
+                return __cxxSubclass.__IsSupportedExtension_forward(`extension`)
+            }
+            open func IsPackage() -> CBool {
+                return __cxxSubclass.__IsPackage_default()
+            }
+            open func GetPackageRootLayerPath(_ resolvedPath: std.string) -> std.string {
+                return __cxxSubclass.__GetPackageRootLayerPath_default(resolvedPath)
+            }
+            open func GetDefaultFileFormatArguments() -> pxr.SdfVariantSelectionMap {
+                return __cxxSubclass.__GetDefaultFileFormatArguments_default()
+            }
+            open func InitData(_ args: pxr.SdfVariantSelectionMap) -> pxr.SdfAbstractDataRefPtr {
+                return __cxxSubclass.__InitData_default(args)
+            }
+            public func InitDetachedData(_ args: pxr.SdfVariantSelectionMap) -> pxr.SdfAbstractDataRefPtr {
+                return __cxxSubclass.__InitDetachedData_forward(args)
+            }
+            public func NewLayer(_ fileFormat: pxr.SdfFileFormatConstPtr, _ identifier: std.string, _ realPath: std.string, _ assetInfo: pxr.ArAssetInfo, _ args: pxr.SdfVariantSelectionMap) -> pxr.SdfLayerRefPtr {
+                return __cxxSubclass.__NewLayer_forward(fileFormat, identifier, realPath, assetInfo, args)
+            }
+            public func ShouldSkipAnonymousReload() -> CBool {
+                return __cxxSubclass.__ShouldSkipAnonymousReload_forward()
+            }
+            public func ShouldReadAnonymousLayers() -> CBool {
+                return __cxxSubclass.__ShouldReadAnonymousLayers_forward()
+            }
+            public func ReadDetached(_ layer: pxr.SdfLayer?, _ resolvedPath: std.string, _ metadataOnly: CBool) -> CBool {
+                return __cxxSubclass.__ReadDetached_forward(layer, resolvedPath, metadataOnly)
+            }
+            open func WriteToFile(_ layer: pxr.SdfLayer, _ filePath: std.string, _ comment: std.string, _ args: pxr.SdfVariantSelectionMap) -> CBool {
+                return __cxxSubclass.__WriteToFile_default(layer, filePath, comment, args)
+            }
+            open func SaveToFile(_ layer: pxr.SdfLayer, _ filePath: std.string, _ comment: std.string, _ args: pxr.SdfVariantSelectionMap) -> CBool {
+                return __cxxSubclass.__SaveToFile_default(layer, filePath, comment, args)
+            }
+            open func ReadFromString(_ layer: pxr.SdfLayer?, _ str: std.string) -> CBool {
+                return __cxxSubclass.__ReadFromString_default(layer, str)
+            }
+            open func WriteToStream(_ spec: pxr.SdfSpecHandle, _ out: borrowing Overlay.StdOstreamWrapper, _ indent: Int) -> CBool {
+                return __cxxSubclass.__WriteToStream_default(spec, out, indent)
+            }
+            open func WriteToString(_ layer: pxr.SdfLayer, _ str: UnsafeMutablePointer<std.string>?, _ comment: std.string) -> CBool {
+                return __cxxSubclass.__WriteToString_default(layer, str, comment)
+            }
+            open func GetExternalAssetDependencies(_ layer: pxr.SdfLayer) -> Overlay.String_Set {
+                return __cxxSubclass.__GetExternalAssetDependencies_default(layer)
+            }
+            public func SupportsReading() -> CBool {
+                return __cxxSubclass.__SupportsReading_forward()
+            }
+            public func SupportsWriting() -> CBool {
+                return __cxxSubclass.__SupportsWriting_forward()
+            }
+            public func SupportsEditing() -> CBool {
+                return __cxxSubclass.__SupportsEditing_forward()
+            }
+            public static func GetFileExtension(_ s: std.string) -> std.string {
+                return __Overlay.SdfFileFormat.CxxAdapter.__GetFileExtension_forward(s)
+            }
+            public static func FindAllFileFormatExtensions() -> Overlay.String_Set {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FindAllFileFormatExtensions_forward()
+            }
+            public static func FindAllDerivedFileFormatExtensions(_ baseType: pxr.TfType) -> Overlay.String_Set {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FindAllDerivedFileFormatExtensions_forward(baseType)
+            }
+            public static func FormatSupportsReading(_ `extension`: std.string, _ target: std.string) -> CBool {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FormatSupportsReading_forward(`extension`, target)
+            }
+            public static func FormatSupportsWriting(_ `extension`: std.string, _ target: std.string) -> CBool {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FormatSupportsWriting_forward(`extension`, target)
+            }
+            public static func FormatSupportsEditing(_ `extension`: std.string, _ target: std.string) -> CBool {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FormatSupportsEditing_forward(`extension`, target)
+            }
+            public static func FindById(_ formatId: pxr.TfToken) -> pxr.SdfFileFormatConstPtr {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FindById_forward(formatId)
+            }
+            public static func FindByExtension(_ `extension`: std.string, _ target: std.string) -> pxr.SdfFileFormatConstPtr {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FindByExtension_forward(`extension`, target)
+            }
+            public static func FindByExtension(_ path: std.string, _ args: pxr.SdfVariantSelectionMap) -> pxr.SdfFileFormatConstPtr {
+                return __Overlay.SdfFileFormat.CxxAdapter.__FindByExtension_forward(path, args)
+            }
+            public static func _SetLayerData(_ layer: pxr.SdfLayer?, _ data: UnsafeMutablePointer<pxr.SdfAbstractDataRefPtr>) -> Void {
+                return __Overlay.SdfFileFormat.CxxAdapter.___SetLayerData_forward(layer, &data.pointee)
+            }
+            public static func _SetLayerData(_ layer: pxr.SdfLayer?, _ data: UnsafeMutablePointer<pxr.SdfAbstractDataRefPtr>, _ hints: pxr.SdfLayerHints) -> Void {
+                return __Overlay.SdfFileFormat.CxxAdapter.___SetLayerData_forward(layer, &data.pointee, hints)
+            }
+            public static func _GetLayerData(_ layer: pxr.SdfLayer) -> pxr.SdfAbstractDataConstPtr {
+                return __Overlay.SdfFileFormat.CxxAdapter.___GetLayerData_forward(layer)
+            }
+            public func _ReadAndCopyLayerDataToMemory(_ layer: pxr.SdfLayer?, _ resolvedPath: std.string, _ metadataOnly: CBool, _ didCopyData: UnsafeMutablePointer<CBool>?) -> CBool {
+                return __cxxSubclass.___ReadAndCopyLayerDataToMemory_forward(layer, resolvedPath, metadataOnly, didCopyData)
+            }
+            open func _InstantiateNewLayer(_ fileFormat: pxr.SdfFileFormatConstPtr, _ identifier: std.string, _ realPath: std.string, _ assetInfo: pxr.ArAssetInfo, _ args: pxr.SdfVariantSelectionMap) -> pxr.SdfLayer? {
+                return __cxxSubclass.___InstantiateNewLayer_default(fileFormat, identifier, realPath, assetInfo, args)
+            }
+            open func _ShouldSkipAnonymousReload() -> CBool {
+                return __cxxSubclass.___ShouldSkipAnonymousReload_default()
+            }
+            open func _ShouldReadAnonymousLayers() -> CBool {
+                return __cxxSubclass.___ShouldReadAnonymousLayers_default()
+            }
+            open func _InitDetachedData(_ args: pxr.SdfVariantSelectionMap) -> pxr.SdfAbstractDataRefPtr {
+                return __cxxSubclass.___InitDetachedData_default(args)
+            }
+            open func _ReadDetached(_ layer: pxr.SdfLayer?, _ resolvedPath: std.string, _ metadataOnly: CBool) -> CBool {
+                return __cxxSubclass.___ReadDetached_default(layer, resolvedPath, metadataOnly)
+            }
+            // End methods from pxr::SdfFileFormat
+            // End total inheritance from pxr.SdfFileFormat
+            
+            public protocol PureVirtuals {
+                // Start methods from pxr.SdfFileFormat
+                init() // Synthesized, required for plugin entry points
+                func CanRead(_ file: std.string) -> CBool
+                func Read(_ layer: pxr.SdfLayer?, _ resolvedPath: std.string, _ metadataOnly: CBool) -> CBool
+                // End methods from pxr.SdfFileFormat
+            } // public protocol PureVirtuals
+        }
+    }
+}
+
+extension Overlay {
+    public typealias SdfFileFormatSubclass = __OverlaySwift.SdfFileFormat.SwiftAdapter & __OverlaySwift.SdfFileFormat.SwiftAdapter.PureVirtuals
+}
+
+
+
+
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 // MARK: pxr.HioImage subclassing
 extension __Overlay.HioImage.CxxAdapter {
@@ -58,9 +441,6 @@ public extension __OverlaySwift {
         open class SwiftAdapter {
             private typealias UnmanagedSelf = Unmanaged<__OverlaySwift.HioImage.SwiftAdapter>
             
-            // Detect calling __wireToCxx more than once, which is against core invariants
-            private var __swiftHasWired: Bool
-            
             // Detect if we're a zombie object to avoid setting __swiftDidDeinit.pointee in deinit after __releaseSwiftSubclass_FP deallocated it
             private var __swiftIsZombie: Bool
             
@@ -68,17 +448,11 @@ public extension __OverlaySwift {
             // or if there's an outstanding strong pointer, making us a zombie
             private var __swiftDidDeinit: UnsafeMutablePointer<Bool>
             
-            public required init() {
-                self.__swiftHasWired = false
-                self.__swiftIsZombie = false
-                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
-                self.__swiftDidDeinit.initialize(to: false)
-            }
-            
             // Cxx pointer
             private var __cxxSubclass: __Overlay.HioImage.CxxAdapter!
             
-            public func get_cxx() -> __Overlay.HioImage.CxxAdapter? { __cxxSubclass }
+            public func __get_cxxUnsafe() -> __Overlay.HioImage.CxxAdapter? { __cxxSubclass }
+            public func __get_cxx_rawUnsafe() -> UnsafeMutableRawPointer? { __Overlay.HioImage.CxxAdapter.__toRaw(__cxxSubclass) }
             
             // Unconditional upcasting
             public func `as`(_ t: pxr.HioImage.Type) -> pxr.HioImage {
@@ -92,11 +466,6 @@ public extension __OverlaySwift {
                 func slf(_ raw: UnsafeMutableRawPointer?) -> Overlay.HioImageSubclass {
                     UnmanagedSelf.fromOpaque(raw!).takeUnretainedValue() as! Overlay.HioImageSubclass
                 }
-                if self.__swiftHasWired {
-                    fatalError("Cannot call __wireToCxx more than once on a given instance. Don't call this from user code.")
-                } else {
-                    self.__swiftHasWired = true
-                }
                 
                 self.__cxxSubclass = __cxxSubclass
                 __cxxSubclass.__swiftSubclass = UnmanagedSelf.passRetained(self).toOpaque()
@@ -109,14 +478,14 @@ public extension __OverlaySwift {
                     swiftDidDeinitPointer.deallocate()
                     if isZombie {
                         slf($0).__swiftIsZombie = true
-                        let cppInstance: UnsafeMutableRawPointer? = if let cxxSubclassPointer { Unmanaged<__Overlay.HioImage.CxxAdapter>.passUnretained(cxxSubclassPointer).toOpaque() } else { nil }
+                        let cppInstance: UnsafeMutableRawPointer? = __Overlay.HioImage.CxxAdapter.__toRaw(cxxSubclassPointer)
                         __Overlay.SwiftSubclassCxx_zombieCreated(swiftInstance: $0, cppInstance: cppInstance, typeName: "pxr.HioImage")
                     }
                 }
                 // Start wire virtual methods from pxr.HioImage
-                __cxxSubclass.__Read_FP = { slf($0).Read($1.pointee) }
-                __cxxSubclass.__ReadCropped_FP = { slf($0).ReadCropped($1, $2, $3, $4, $5.pointee) }
-                __cxxSubclass.__Write_FP = { slf($0).Write($1.pointee, $2.pointee) }
+                __cxxSubclass.__Read_FP = { slf($0).Read($1!.pointee) }
+                __cxxSubclass.__ReadCropped_FP = { slf($0).ReadCropped($1, $2, $3, $4, $5!.pointee) }
+                __cxxSubclass.__Write_FP = { slf($0).Write($1!.pointee, $2!.pointee) }
                 __cxxSubclass.__GetFilename_FP = {
                     let newValue = slf($0).GetFilename()
                     if slf($0).__returnIndirectionAllocation_GetFilename?.pointee != newValue {
@@ -126,7 +495,7 @@ public extension __OverlaySwift {
                         slf($0).__returnIndirectionAllocation_GetFilename = UnsafeMutablePointer<std.string>.allocate(capacity: 1)
                         slf($0).__returnIndirectionAllocation_GetFilename!.initialize(to: newValue)
                     }
-                    return slf($0).__returnIndirectionAllocation_GetFilename
+                    return UnsafePointer(slf($0).__returnIndirectionAllocation_GetFilename!)
                 }
                 __cxxSubclass.__GetWidth_FP = { slf($0).GetWidth() }
                 __cxxSubclass.__GetHeight_FP = { slf($0).GetHeight() }
@@ -134,10 +503,10 @@ public extension __OverlaySwift {
                 __cxxSubclass.__GetBytesPerPixel_FP = { slf($0).GetBytesPerPixel() }
                 __cxxSubclass.__GetNumMipLevels_FP = { slf($0).GetNumMipLevels() }
                 __cxxSubclass.__IsColorSpaceSRGB_FP = { slf($0).IsColorSpaceSRGB() }
-                __cxxSubclass.__GetMetadata_FP = { slf($0).GetMetadata($1.pointee, $2) }
+                __cxxSubclass.__GetMetadata_FP = { slf($0).GetMetadata($1!.pointee, $2) }
                 __cxxSubclass.__GetSamplerMetadata_FP = { slf($0).GetSamplerMetadata($1, $2) }
-                __cxxSubclass.___OpenForReading_FP = { slf($0)._OpenForReading($1.pointee, $2, $3, $4, $5) }
-                __cxxSubclass.___OpenForWriting_FP = { slf($0)._OpenForWriting($1.pointee) }
+                __cxxSubclass.___OpenForReading_FP = { slf($0)._OpenForReading($1!.pointee, $2, $3, $4, $5) }
+                __cxxSubclass.___OpenForWriting_FP = { slf($0)._OpenForWriting($1!.pointee) }
                 // End wire virtual methods from pxr.HioImage
             
             } // public func __wireToCxx
@@ -165,17 +534,19 @@ public extension __OverlaySwift {
             /// - Using `delete p;` in C++ on the value returned by `self.get_cxx()`
             /// - Passing the value returned by `self.get_cxx()` to something that will ensure it is eventually deleted, like `std::unique_ptr` or `std::shared_ptr`
             /// Note that Swift ARC will _not_ automatically free the returned instance. Dropping the last strong reference in user code to the instance can result in memory leaks. 
-            public static func new() -> Overlay.HioImageSubclass {
-                let swiftAdapter = Self.init()
-                if type(of: swiftAdapter) == __OverlaySwift.HioImage.SwiftAdapter.self {
+            public init() {
+                self.__swiftIsZombie = false
+                self.__swiftDidDeinit = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+                self.__swiftDidDeinit.initialize(to: false)
+            
+                if type(of: self) == __OverlaySwift.HioImage.SwiftAdapter.self {
                     fatalError("Cannot construct instance of abstract base class Overlay.HioImageSubclass")
                 }
-                guard swiftAdapter is Overlay.HioImageSubclass else {
-                    fatalError("Subclass \(type(of: swiftAdapter)) of pxr.HioImage must inherit from Overlay.HioImageSubclass")
+                guard self is Overlay.HioImageSubclass else {
+                    fatalError("Subclass \(type(of: self)) of pxr.HioImage must inherit from Overlay.HioImageSubclass")
                 }
                 let cxxAdapter = __Overlay.HioImage.CxxAdapter.__swiftNew()
-                swiftAdapter.__wireToCxx(cxxAdapter)
-                return swiftAdapter as! Overlay.HioImageSubclass
+                self.__wireToCxx(cxxAdapter)
             }
             
             // Non-private destructor of CxxAdapter will be exposed to Swift
@@ -205,19 +576,20 @@ public extension __OverlaySwift {
             
             // Start methods from pxr::HioImage
             public static func IsSupportedImageFile(_ filename: std.string) -> CBool {
-                __Overlay.HioImage.CxxAdapter.__IsSupportedImageFile_forward(filename)
+                return __Overlay.HioImage.CxxAdapter.__IsSupportedImageFile_forward(filename)
             }
             public static func OpenForReading(_ filename: std.string, _ subimage: CInt, _ mip: CInt, _ sourceColorSpace: pxr.HioImage.SourceColorSpace, _ suppressErrors: CBool) -> pxr.HioImageSharedPtr {
-                __Overlay.HioImage.CxxAdapter.__OpenForReading_forward(filename, subimage, mip, sourceColorSpace, suppressErrors)
+                return __Overlay.HioImage.CxxAdapter.__OpenForReading_forward(filename, subimage, mip, sourceColorSpace, suppressErrors)
             }
             public static func OpenForWriting(_ filename: std.string) -> pxr.HioImageSharedPtr {
-                __Overlay.HioImage.CxxAdapter.__OpenForWriting_forward(filename)
+                return __Overlay.HioImage.CxxAdapter.__OpenForWriting_forward(filename)
             }
             // End methods from pxr::HioImage
             // End total inheritance from pxr.HioImage
             
             public protocol PureVirtuals {
                 // Start methods from pxr.HioImage
+                init() // Synthesized, required for plugin entry points
                 func Read(_ storage: pxr.HioImage.StorageSpec) -> CBool
                 func ReadCropped(_ cropTop: CInt, _ cropBottom: CInt, _ cropLeft: CInt, _ cropRight: CInt, _ storage: pxr.HioImage.StorageSpec) -> CBool
                 func Write(_ storage: pxr.HioImage.StorageSpec, _ metadata: pxr.VtDictionary) -> CBool

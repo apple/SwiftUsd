@@ -57,7 +57,7 @@ PXR_NAMESPACE_CLOSE_SCOPE
 
 ## Writing plugins in Swift with SwiftUsd
 See [SwiftUsd/Examples/Plugins/HioImage/hioPpm_Swift](https://github.com/apple/SwiftUsd/tree/main/Examples/Plugins/HioImage/hioPpm_Swift) for an example plugin.
-> Note: Currently, only HioImage plugins can be written in Swift. 
+> Note: Currently, only HioImage and SdfFileFormat plugins can be written in Swift. 
 
 1. Create a Swift Package for your plugin
 

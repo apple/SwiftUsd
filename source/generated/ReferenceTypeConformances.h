@@ -636,6 +636,30 @@ bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfAbstractData> &)
 bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfAbstractData> &)
     SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr15SdfAbstractDataE_ConstWeakPtr._isNonnull(self:));
 
+typedef pxr::SdfSchemaBase __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE;
+typedef pxr::TfWeakPtr<pxr::SdfSchemaBase> __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr;
+typedef pxr::TfWeakPtr<const pxr::SdfSchemaBase> __SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_ConstWeakPtr;
+void* _Nonnull _address(pxr::SdfSchemaBase* _Nonnull)
+    SWIFT_NAME(getter:__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE._address(self:));
+pxr::TfWeakPtr<pxr::SdfSchemaBase> _asWeakPtrType(pxr::SdfSchemaBase* _Nonnull)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE._asWeakPtrType(self:));
+pxr::SdfSchemaBase * _Nullable _fromWeakPtrType(const pxr::TfWeakPtr<pxr::SdfSchemaBase>&) 
+    // SWIFT_RETURNS_RETAINED is an error on immortal types
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE._fromWeakPtrType(_:));
+pxr::SdfSchemaBase * _Nullable _fromConstWeakPtrType(const pxr::TfWeakPtr<const pxr::SdfSchemaBase> &) 
+    // SWIFT_RETURNS_RETAINED is an error on immortal types
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE._fromConstWeakPtrType(_:));
+pxr::TfAnyWeakPtr _asAnyWeakPtr(const pxr::TfWeakPtr<pxr::SdfSchemaBase>&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr._asAnyWeakPtr(self:));
+pxr::TfWeakPtr<pxr::SdfSchemaBase>_fromAnyWeakPtr__ZN3pxr13SdfSchemaBaseE(const pxr::TfAnyWeakPtr&)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr._fromAnyWeakPtr(_:));
+pxr::TfWeakPtr<pxr::SdfSchemaBase>_nullWeakPtr__ZN3pxr13SdfSchemaBaseE()
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr._nullPtr());
+bool _isNonnull(const pxr::TfWeakPtr<pxr::SdfSchemaBase> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_WeakPtr._isNonnull(self:));
+bool _isNonnull(const pxr::TfWeakPtr<const pxr::SdfSchemaBase> &)
+    SWIFT_NAME(__SwiftUsd_Typedef___ZN3pxr13SdfSchemaBaseE_ConstWeakPtr._isNonnull(self:));
+
 typedef pxr::SdfSchema __SwiftUsd_Typedef___ZN3pxr9SdfSchemaE;
 typedef pxr::TfWeakPtr<pxr::SdfSchema> __SwiftUsd_Typedef___ZN3pxr9SdfSchemaE_WeakPtr;
 typedef pxr::TfWeakPtr<const pxr::SdfSchema> __SwiftUsd_Typedef___ZN3pxr9SdfSchemaE_ConstWeakPtr;

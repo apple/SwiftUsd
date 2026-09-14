@@ -94,3 +94,20 @@ extension pxr.HioImage {
         return __OpenForWritingUnsafe(filename)
     }
 }
+
+extension __OverlaySwift.HioImage.SwiftAdapter {
+    /// Almost all users should have no need to access the CxxAdapter, because it's an
+    /// internal implementation detail of how SwiftUsd and ast-answerer allow Swift
+    /// classes to "subclass" from certain C++ types
+    @_documentation(visibility: internal)
+    @available(*, deprecated, message: "This function can be memory unsafe and should not be used")
+    public func get_cxx() -> __Overlay.HioImage.CxxAdapter? {
+        return __get_cxxUnsafe()
+    }
+
+    @_documentation(visibility: internal)
+    @available(*, deprecated, message: "Use Overlay.HioImageSubclass.init() instead")
+    public static func new() -> Overlay.HioImageSubclass {
+        return (Self.self as! Overlay.HioImageSubclass.Type).init()
+    }
+}

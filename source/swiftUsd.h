@@ -66,7 +66,8 @@
 // The headers listed above are picked up as being for C++,
 // but we need to tell DocC which headers are meant for Swift.
 // (If a header is listed twice, that just means that it's
-// meant for both Swift and C++.)
+// meant for both Swift and C++. If it's listed once, that means
+// it's either C++ only, or Swift only, depending on how its listed.)
 
 #ifdef OPENUSD_SWIFT_EMIT_SYMBOL_GRAPHS
 
@@ -81,6 +82,7 @@
 #includeforswiftdocc "swiftUsd/Wrappers/HgiWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/HioImageWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/SdfZipFileIteratorWrapper.h"
+#includeforswiftdocc "swiftUsd/Wrappers/StdOstreamWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/TfErrorMarkWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/UsdAppUtilsFrameRecorderWrapper.h"
 #includeforswiftdocc "swiftUsd/Wrappers/UsdImagingGLEngineWrapper.h"
@@ -89,6 +91,7 @@
 #includeforswiftdocc "swiftUsd/SwiftOverlay/HydraHelpers.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/Miscellaneous.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/SdfLayer.h"
+#includeforswiftdocc "swiftUsd/SwiftOverlay/TsKnot.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/TfEnum.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/Typedefs.h"
 #includeforswiftdocc "swiftUsd/SwiftOverlay/UsdAttribute.h"

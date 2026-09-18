@@ -1,0 +1,13 @@
+#usda 1.0
+
+def "Foo"
+{
+    rel bar (
+        doc = """
+        My doc
+        """
+    )
+}
+
+
+

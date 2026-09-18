@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    point3f myPoint3f = (1, 3, 3)
+}
+
+

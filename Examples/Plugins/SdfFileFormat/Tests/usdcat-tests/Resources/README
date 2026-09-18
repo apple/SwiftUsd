@@ -1,0 +1,35 @@
+These are test files for a SdfFileFormat that wants to be able to losslessly roundtrip USD files.
+
+They're loosely organized into different tiers of how essential/important/common different behavior is. If you're writing an SdfFileFormat plugin and using these files to test your plugin, focus on the earlier tiers first.
+
+1_essential: Prims, attributes, relationships.
+Pay special attention to 15_simple-prim-ordering.usda. The order that prims appear in a USD file generally doesn't matter, but because usddiff does a simple textual diff of the USDA version of files, it's a good idea to record the order prims appear somewhere in your file format if you're using these test cases.
+
+2_metadata: Metadata on specs
+
+3_common: Grab bag of various common features not covered elsewhere, or slightly harder versions of previous test cases
+
+4_composition_without_variants: Composition arcs are an important part of OpenUSD. (Variants are the most complicated composition arc, and so are handled in the test tier)
+
+5_variants: The most complicated composition arc
+
+6_comprehensive_typenames: Individual files for every valid type name
+
+7_splines: Splines
+
+8_uncommon: Some uncommon features
+
+9_edge_cases: Obscure features like SdfUnregisteredValue and the PointIndex role
+
+10_deprecated: Some features are deprecated but still supported in OpenUSD, like old listops, type names, or metadata
+
+11_losslessly_handle_invalid_files: Some USD files may be invalid (in the sense that they contain some logical error or mistake) but still can be losslessly round-tripped by SdfFileFormat plugins if they put in the effort.
+
+12_bad_json: JSON files that this file format parser should fail on. (Likely not useful for other file format plugins)
+
+
+
+
+
+Note: The specification says that listop specializations are valid for at minimum these types: int, int64, uint, uint64, string, token. It also says the following specializations may be allowed: Reference, Payload, Inherit, Specializes, ObjectPath. Not all of these are currently implemented in this file format plugin, and I haven't been able to find any USD files that use the unimplemented ones. I'm not sure if there's currently a way to create them without writing code, since listops typically appear in metadata, I can't find any registered metadata that uses the unimplemented specializations, and any unregistered metadata is parsed as SdfUnregisteredValue when in a USDA file.
+

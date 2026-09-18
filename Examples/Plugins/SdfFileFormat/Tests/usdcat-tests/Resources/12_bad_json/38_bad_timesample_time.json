@@ -1,0 +1,14 @@
+{
+    "name": "/",
+    "children": [{
+        "name": "Foo",
+        "spec": "def",
+        "attributes": [{
+            "name": "myAttr",
+            "type": "int",
+            "timesamples": {
+                "123foobar" : 0
+            }
+        }]
+    }]
+}

@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    int[] myIntArray = [6, 61]
+}
+
+

@@ -1,0 +1,10 @@
+{
+    "children": [{
+            "name": "Foo",
+            "spec": "def",
+            "variantSets": [{
+                    "name": "firstSet"
+                }]
+        }],
+    "name": "/"
+}

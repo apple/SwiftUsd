@@ -1,0 +1,22 @@
+{
+    "children": [{
+            "name": "Foo",
+            "spec": "def",
+            "variantSets": [{
+                    "contents": {
+                        "firstOption": {
+                            "children": [{
+                                    "name": "A",
+                                    "spec": "def"
+                                }, {
+                                    "name": "B",
+                                    "spec": "def"
+                                }],
+                            "name": "firstOption",
+                            "spec": "over"
+                        }
+                    }
+                }]
+        }],
+    "name": "/"
+}

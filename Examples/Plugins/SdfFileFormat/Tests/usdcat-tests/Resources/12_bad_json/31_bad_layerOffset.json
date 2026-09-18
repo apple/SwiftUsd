@@ -1,0 +1,5 @@
+{
+    "name": "/",
+    "subLayerOffsets": [[10.0, 2.0, 5.0]],
+    "subLayers": ["foo.usda"]
+}

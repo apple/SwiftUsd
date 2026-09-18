@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    vector3f[] myVector3fArray = [(1, 5, 10)]
+}
+
+

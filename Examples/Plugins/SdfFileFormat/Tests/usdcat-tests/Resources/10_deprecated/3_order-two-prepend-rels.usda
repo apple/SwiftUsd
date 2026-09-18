@@ -1,0 +1,20 @@
+#usda 1.0
+
+# pxr/usdImaging/usdImagingGL/testenv/testUsdImagingGLBasicDrawing/basicDrawing/shaders_bindings.usd
+
+def "Foo" (
+    apiSchemas = ["CollectionAPI:myCollection"]
+){
+    prepend rel collection:myCollection:includes = [
+        </Fizz1>,
+        </Fizz2>
+    ]
+}
+
+def "Fizz1" 
+{
+}
+
+def "Fizz2"
+{
+}

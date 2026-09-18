@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "A" 
+{
+    reorder properties = ["fizz", "buzz"]
+    float buzz = 0
+    float fizz = 0
+}

@@ -1,0 +1,15 @@
+{
+    "children": [{
+            "metadata": {
+                "foo": {
+                    "type": "SdfUnregisteredValue",
+                    "value": {
+                        "type": "foo"
+                    }
+                }
+            },
+            "name": "A",
+            "spec": "def"
+        }],
+    "name": "/"
+}

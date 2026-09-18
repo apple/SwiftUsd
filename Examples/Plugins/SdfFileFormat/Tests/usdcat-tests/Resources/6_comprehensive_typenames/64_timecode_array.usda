@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    timecode[] myTimecodeArray = [1.23, 4.56]
+}
+
+

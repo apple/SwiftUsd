@@ -1,0 +1,21 @@
+#usda 1.0
+
+def Xform "Root"
+{
+    def Xform "foo"
+    {
+    }
+
+    def Xform "bar"
+    {
+    }
+
+    def Xform "fizz"
+    {
+    }
+
+    def Xform "buzz"
+    {
+    }
+}
+

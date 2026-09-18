@@ -1,0 +1,16 @@
+#usda 1.0
+
+# As of OpenUSD v26.08, there's no way to get at the operations held by a VtArrayEdit
+# without breaking C++ access control or horrible hacks like reinterpret_casting a pointer
+# to a VtArrayEdit to a pointer to another type constructed to have the same layout or
+# trying to parse the result of printing it to a stream. 
+# This makes it impossible for custom file format plugins to losslessly handle VtArrayEdits
+
+def "Foo"
+{
+    double[] attr = edit [
+        write 3.0 to [5]
+    ]
+}
+
+

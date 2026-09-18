@@ -1,0 +1,38 @@
+# SdfFileFormat Json plugin (Swift)
+
+This package is an example of how to write an SdfFileFormat plugin in Swift.
+
+## Key details
+- In `plugInfo.json`, we use `@PLUG_INFO_LIBRARY_PATH@`, `@PLUG_INFO_RESOURCE_PATH@`, and `@PLUG_INFO_ROOT@` to allow our plugin to be used in both SwiftUsd-based apps and vanilla OpenUSD-based runtimes.
+- In `Package.swift`, we use `.copy("plugInfo.json")` and `.plugin(name: "generate-plug-info-json", package: "SwiftUsd")` to have the build system fill in the `@PLUG_INFO_*@` values based on the target architecture
+- In `Package.swift`, we add `.enableExperimentalFeature("SymbolLinkageMarkers")` as a Swift setting when using Swift 6.1/6.2, because Swift didn't gain official support for the `@used` and `@section` attributes until Swift 6.3. This allows us to write a plugin that can be used across as many Swift compiler versions as possible.
+- In `FileFormat.swift`, we use the `@SWIFTUSD_PLUGIN` macro to tell the OpenUSD runtime how to use our custom plugin. We also subclass from `Overlay.SdfFileFormatSubclass` and override/implement some of its methods.
+
+## Usage
+To use this plugin in a SwiftUsd-based app:
+1. Add it as a package dependency to your Swift Package/Xcode project.
+
+To use this plugin in a vanilla OpenUSD-based app:
+1. `cd` into the package directory
+2. Run `swift build`
+3. Run `swift package build-vanilla-openusd-plugin` and note the outputed plugin path
+4. Set the `PXR_PLUGINPATH_NAME` environment variable to point to your plugin. For example:
+```
+export PXR_PLUGINPATH_NAME="/Users/maddyadams/SwiftUsd/Examples/SdfFileFormat/hioJson_Swift/.build/plugins/build-vanilla-openusd-plugin/outputs/sdfJson.usdplugin/:$PXR_PLUGINPATH_NAME"
+usdcat example.usda -o example.json
+usdcat example.json -o example2.usda
+```
+
+## Code structure
+- `FileFormat.swift` contains `@SWIFTUSD_PLUGIN final class SdfJsonFileFormat: Overlay.SdfFileFormatSubclass`. It uses `JsAny` to handle Json parsing/printing, and calls into `readLayer` and `writeLayer` in `CoreSpecSerialization.swift`. 
+- `CoreSpecSerialization.swift` handles the reading and writing of layers, prims, attributes, and relationships. 
+- `LIVERPSSerialization.swift` handles the reading and writing of composition arcs. 
+- `SdfSerialization.swift` handles the reading and writing of other `Sdf` types. 
+- `TfSerialization.swift` handles the reading and writing of `Tf` types. 
+- `TsSerialization.swift` handles the reading and writing of `Ts` (spline) types. 
+- `VtSerialization.swift` handles the reading and writing of `Vt` types. Particular care is taken with `VtValue` to ensure that USD files can be losslessly converted into Json and back to USD. 
+- `JsAny.swift` defines an alternative to `pxr::JsValue`, which is not particularly ergonomic when used in Swift. 
+- `ProxyTypesSequenceWorkarounds.swift` holds workarounds for some compiler bugs that occur when trying to conform proxy types in `Sdf` to `Sequence`
+- `VtArrayTemplateErgonomics.swift` defines a protocol with specific operations on `pxr::VtArray<T>`, and conforms many specializations of `pxr::VtArray<T>` to the protocol. This lets `VtSerialization.swift` operate generically on any `pxr::VtArray<T>`, keep code duplication to a minimum. 
+- Files in `TemporaryImplementations_Cxx` add some additional minor functionality to work around compiler limitations. 
+- `TemporaryImplementations_Swift/SdfProxyTypes.swift` defines protocols with specific operations on `pxr::SdfListOp<T>`, `pxr::SdfListProxy<T>`, and `pxr::SdfListEditorProxy<T>`. Like with `VtArrayTemplateErgonomics.swift`, this lets other serialization code operate generically on any specialization of these types, keeping code duplication to a minimum. 

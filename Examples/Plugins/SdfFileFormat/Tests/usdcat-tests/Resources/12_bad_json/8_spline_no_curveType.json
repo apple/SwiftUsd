@@ -1,0 +1,52 @@
+{
+    "children": [{
+            "attributes": [{
+                    "name": "myAttr",
+                    "spline": {
+                        "innerLoopParams": {
+                            "numPostLoops": 0,
+                            "numPreLoops": 0,
+                            "protoEnd": 0.0,
+                            "protoStart": 0.0,
+                            "valueOffset": 0.0
+                        },
+                        "knots": [{
+                                "customData": {},
+                                "nextInterpolation": 3,
+                                "postTanAlgorithm": 0,
+                                "postTanSlope": 0.0,
+                                "postTanWidth": 0.0,
+                                "preTanAlgorithm": 0,
+                                "preTanSlope": 0.0,
+                                "preTanWidth": 0.0,
+                                "time": 1.0,
+                                "value": 1.0
+                            }, {
+                                "customData": {},
+                                "nextInterpolation": 0,
+                                "postTanAlgorithm": 0,
+                                "postTanSlope": 0.0,
+                                "postTanWidth": 0.0,
+                                "preTanAlgorithm": 0,
+                                "preTanSlope": 0.0,
+                                "preTanWidth": 0.0,
+                                "time": 10.0,
+                                "value": 10.0
+                            }],
+                        "postExtrapolation": {
+                            "mode": 0,
+                            "slope": 0.0
+                        },
+                        "preExtrapolation": {
+                            "mode": 1,
+                            "slope": 0.0
+                        }
+                    },
+                    "type": "Double",
+                    "variability": 0
+                }],
+            "name": "hello",
+            "spec": "def"
+        }],
+    "name": "/"
+}

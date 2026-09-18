@@ -1,0 +1,9 @@
+#usda 1.0
+
+def "Foo"
+{
+    # @pxr/usdImaging/usdImagingGL/testenv/testUsdImagingGLShadeMaterial/coloredCubes.usda@</Materials/lambera1.outputs:ri:surface> is written as a token but assigned a path value
+    token bar = </Foo>
+}
+
+

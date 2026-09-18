@@ -1,0 +1,10 @@
+#usda 1.0
+
+def "Foo" (
+    apiSchemas = ["CollectionAPI:bar"]
+) {
+    # CollectionAPI specifies that includeRoot should be uniform,
+    # but pxr/usd/usd/testenv/testUsdNamespaceEditorProperties/basic/root.usda
+    # has a non-uniform collection::includeRoot attr
+    bool collection:bar:includeRoot = true
+}

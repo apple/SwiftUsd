@@ -1,0 +1,13 @@
+#usda 1.0
+(
+    relocates = {
+        </A/B> : </A/C>
+    }
+    upAxis = "Y"
+)
+
+def "A" (
+    prepend references = [@9_one-relocates-external-ref.usda@]
+)
+{
+}

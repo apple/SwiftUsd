@@ -1,0 +1,13 @@
+{
+    "children": [{
+            "attributes": [{
+                    "default": [-1.0, -2.0],
+                    "name": "myDouble3",
+                    "type": "Double3",
+                    "variability": 0
+                }],
+            "name": "foo",
+            "spec": "def"
+        }],
+    "name": "/"
+}

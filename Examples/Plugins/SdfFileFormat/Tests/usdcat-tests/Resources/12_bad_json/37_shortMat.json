@@ -1,0 +1,13 @@
+{
+    "children": [{
+            "attributes": [{
+                    "default": [-1.0, -2.0, -3.0],
+                    "name": "bar",
+                    "type": "Matrix2d",
+                    "variability": 0
+                }],
+            "name": "foo",
+            "spec": "def"
+        }],
+    "name": "/"
+}

@@ -1,0 +1,6 @@
+{
+    "children": [{
+        "foo": "bar"
+    }],
+    "name": "/"
+}

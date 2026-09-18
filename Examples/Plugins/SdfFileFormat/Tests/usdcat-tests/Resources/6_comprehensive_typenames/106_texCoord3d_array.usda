@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    texCoord3d[] myTexCoord3dArray = [(1, 4, 9)]
+}
+
+

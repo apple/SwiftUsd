@@ -1,0 +1,9 @@
+#usda 1.0
+
+# pxr/usdImaging/usdImagingGL/testenv/testUsdImagingGLPointInstancer/pi_masking.usda
+
+def PointInstancer "Foo" (
+    inactiveIds = [3]
+)
+{
+}

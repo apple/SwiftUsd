@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    texCoord3h myTexCoord3h = (49, 64, 81)
+}
+
+

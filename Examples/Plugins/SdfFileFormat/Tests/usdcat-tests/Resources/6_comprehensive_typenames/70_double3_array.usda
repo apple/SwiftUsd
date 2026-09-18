@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    double3[] myDouble3Array = [(-1, -2, -3), (1, 2, 3)]
+}
+
+

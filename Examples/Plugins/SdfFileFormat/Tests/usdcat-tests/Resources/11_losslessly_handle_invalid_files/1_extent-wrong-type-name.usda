@@ -1,0 +1,14 @@
+#usda 1.0
+
+# pxr/usdImaging/usdImagingGL/testenv/testUsdImagingGLShadeBool/shadebool.usda
+# has two extent attributes with type `vec3f[]` when it should be `float3[]`
+
+def Scope "Geom"
+{
+    def Mesh "Foo" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        vec3f[] extent = [(-1.21273, -1.21273, -1.21273), (1.21273, 1.21273, 1.21273)]
+    }
+}

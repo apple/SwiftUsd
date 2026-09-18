@@ -1,0 +1,18 @@
+#usda 1.0
+
+# extras/usd/examples/usdRecursivePayloadsExample/params.usda
+# has an unregistered dictionary
+
+def "Foo" (
+    myUnregisteredMetadata = {
+        dictionary "Fizz" = {
+            int a = 1
+            int b = 2
+        }
+        dictionary "Buzz" = {
+            int c = 3
+        }
+    }
+)
+{   
+}

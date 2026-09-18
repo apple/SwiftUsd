@@ -1,0 +1,7 @@
+#usda 1.0
+
+def "Fizz" (
+    prepend payload = @./Foo.usda@</Bar> (scale = 0.25)
+)
+{
+}

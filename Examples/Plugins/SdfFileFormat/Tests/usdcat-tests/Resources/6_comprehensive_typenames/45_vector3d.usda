@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    vector3d myVector3d = (6, 4, 1)
+}
+
+

@@ -1,0 +1,9 @@
+#usda 1.1
+
+def "hello"
+{
+    double myAttr.spline = {
+        1: 2; pre (3, 4, autoEase); post curve (5, 6),
+        post: none
+    }
+}

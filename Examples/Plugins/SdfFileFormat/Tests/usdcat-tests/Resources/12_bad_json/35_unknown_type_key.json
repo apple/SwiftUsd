@@ -1,0 +1,14 @@
+{
+    "children": [{
+            "attributes": [{
+                    "default": 4,
+                    "name": "customInt",
+                    "type": "",
+                    "variability": 0
+                }],
+            "name": "card",
+            "spec": "def",
+            "type": "Mesh"
+        }],
+    "name": "/"
+}

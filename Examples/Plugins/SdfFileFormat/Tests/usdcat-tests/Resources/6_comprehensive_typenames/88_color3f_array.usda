@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    color3f[] myColor3fArray = [(4, 5, 6)]
+}
+
+

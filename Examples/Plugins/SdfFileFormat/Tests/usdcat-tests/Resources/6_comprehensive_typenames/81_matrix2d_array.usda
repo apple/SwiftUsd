@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    matrix2d[] myMatrix2dArray = [((26, 27), (28, 29))]
+}
+
+

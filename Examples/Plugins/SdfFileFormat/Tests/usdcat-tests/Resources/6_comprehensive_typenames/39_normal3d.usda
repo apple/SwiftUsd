@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    normal3d myNormal3d = (1, 0, 0)
+}
+
+

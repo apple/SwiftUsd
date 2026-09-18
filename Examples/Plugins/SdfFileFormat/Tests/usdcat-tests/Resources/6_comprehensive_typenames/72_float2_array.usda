@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    float2[] myFloat2Array = [(-10, -20), (7, 2)]
+}
+
+

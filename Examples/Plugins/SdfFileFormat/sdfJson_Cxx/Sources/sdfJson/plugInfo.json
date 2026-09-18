@@ -1,0 +1,25 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "SdfJsonFileFormat" : {
+                        "bases": ["SdfFileFormat"],
+                        "extensions": [
+                            "json"
+                        ],
+                        "formatId": "json",
+                        "primary": true,
+                        "target": "usd",
+                        "supportsEditing": false
+                    }
+                }
+            },
+            "Name": "sdfJson",
+            "LibraryPath": "@PLUG_INFO_LIBRARY_PATH@",
+            "ResourcePath": "@PLUG_INFO_RESOURCE_PATH@",
+            "Root": "@PLUG_INFO_ROOT@",
+            "Type": "library"
+        }
+    ]
+}

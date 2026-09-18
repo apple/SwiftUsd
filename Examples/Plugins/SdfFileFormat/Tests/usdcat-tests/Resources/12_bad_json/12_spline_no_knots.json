@@ -1,0 +1,30 @@
+{
+    "children": [{
+            "attributes": [{
+                    "name": "myAttr",
+                    "spline": {
+                        "curveType": 0,
+                        "innerLoopParams": {
+                            "numPostLoops": 0,
+                            "numPreLoops": 0,
+                            "protoEnd": 0.0,
+                            "protoStart": 0.0,
+                            "valueOffset": 0.0
+                        },
+                        "postExtrapolation": {
+                            "mode": 0,
+                            "slope": 0.0
+                        },
+                        "preExtrapolation": {
+                            "mode": 1,
+                            "slope": 0.0
+                        }
+                    },
+                    "type": "Double",
+                    "variability": 0
+                }],
+            "name": "hello",
+            "spec": "def"
+        }],
+    "name": "/"
+}

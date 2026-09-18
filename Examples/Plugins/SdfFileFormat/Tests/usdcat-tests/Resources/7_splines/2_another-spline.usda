@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "hello"
+{
+    double myAttr.spline = {
+        loop: (1, 2, 3, 4, 5)
+    }
+}

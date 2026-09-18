@@ -1,0 +1,16 @@
+#usda 1.0
+
+def Mesh "card"
+{
+    # PointIndex is a role synonym for int. Seems mostly
+    # used by usdDraco?
+    PointIndex[] customPointArray = [1, 2, 3, 4]
+    PointIndex customPoint = 5
+    
+    PointIndex animatedPoint.timeSamples = {
+        0: 0,
+        1: 1
+    }
+}
+
+

@@ -1,0 +1,11 @@
+#usda 1.0
+
+# pxr/usd/sdf/testenv/testSdfParsing.testenv/baseline/46_weirdStringContent.usda
+# contains data that (I think) ends up being parsed as invalid Unicode sequences,
+# which is not required to be supported
+
+def "foo"
+{
+    string s = "foo\x80\x81\x82\x83bar"
+}
+

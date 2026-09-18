@@ -1,0 +1,8 @@
+#usda 1.0
+
+def "foo"
+{
+    double4 myDouble4 = (-1, -2, -3, -4)
+}
+
+

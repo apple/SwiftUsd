@@ -1,0 +1,10 @@
+{
+    "name": "/",
+    "children": [{
+        "name": "A",
+        "spec": "def",
+        "relationships": [{
+            "name": ""
+        }]
+    }]
+}

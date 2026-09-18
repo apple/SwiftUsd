@@ -1,0 +1,39 @@
+#usda 1.0
+
+def Xform "Cube" (
+    variants = {
+        string color = "Blue"
+    }
+    prepend variantSets = "color"
+)
+{
+    def Xform "Geom"
+    {
+        def Cube "model"
+        {
+            rel customRel
+        }
+    }
+    variantSet "color" = {
+        "Blue" {
+            over "Geom"
+            {
+                over "model"
+                {
+                    color3f[] primvars:displayColor = [(0, 0, 1)]
+                    rel customRel = </Cube>
+                }
+            }
+        }
+        "Green" {
+            over "Geom"
+            {
+                over "model"
+                {
+                    color3f[] primvars:displayColor = [(0, 1, 0)]
+                    rel customRel = </Cube/Geom>
+                }
+            }
+        }
+    }
+}

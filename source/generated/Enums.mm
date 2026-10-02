@@ -31,10 +31,21 @@ const pxr::ArchFileAdvice Overlay::ArchFileAdviceWillNeed = pxr::ArchFileAdviceW
 const pxr::ArchFileAdvice Overlay::ArchFileAdviceDontNeed = pxr::ArchFileAdviceDontNeed;
 const pxr::ArchFileAdvice Overlay::ArchFileAdviceRandomAccess = pxr::ArchFileAdviceRandomAccess;
 
+const pxr::ArchThreadPriority Overlay::ArchThreadPriorityLowest = pxr::ArchThreadPriorityLowest;
+const pxr::ArchThreadPriority Overlay::ArchThreadPriorityLow = pxr::ArchThreadPriorityLow;
+
 const pxr::ArchMemoryProtection Overlay::ArchProtectNoAccess = pxr::ArchProtectNoAccess;
 const pxr::ArchMemoryProtection Overlay::ArchProtectReadOnly = pxr::ArchProtectReadOnly;
 const pxr::ArchMemoryProtection Overlay::ArchProtectReadWrite = pxr::ArchProtectReadWrite;
 const pxr::ArchMemoryProtection Overlay::ArchProtectReadWriteCopy = pxr::ArchProtectReadWriteCopy;
+
+const pxr::ArchPrefetchAccess Overlay::ArchPrefetchAccess::Read = pxr::ArchPrefetchAccess::Read;
+const pxr::ArchPrefetchAccess Overlay::ArchPrefetchAccess::Write = pxr::ArchPrefetchAccess::Write;
+
+const pxr::ArchPrefetchLocality Overlay::ArchPrefetchLocality::None = pxr::ArchPrefetchLocality::None;
+const pxr::ArchPrefetchLocality Overlay::ArchPrefetchLocality::L3 = pxr::ArchPrefetchLocality::L3;
+const pxr::ArchPrefetchLocality Overlay::ArchPrefetchLocality::L2 = pxr::ArchPrefetchLocality::L2;
+const pxr::ArchPrefetchLocality Overlay::ArchPrefetchLocality::L1 = pxr::ArchPrefetchLocality::L1;
 
 const pxr::TfType::LegacyFlags Overlay::TfType::ABSTRACT = pxr::TfType::ABSTRACT;
 const pxr::TfType::LegacyFlags Overlay::TfType::CONCRETE = pxr::TfType::CONCRETE;
@@ -64,6 +75,24 @@ const pxr::TfCompressedBits::ComplementTagType Overlay::TfCompressedBits::Comple
 const pxr::TfMallocTag::CallTree::PrintSetting Overlay::TfMallocTag::CallTree::TREE = pxr::TfMallocTag::CallTree::TREE;
 const pxr::TfMallocTag::CallTree::PrintSetting Overlay::TfMallocTag::CallTree::CALLSITES = pxr::TfMallocTag::CallTree::CALLSITES;
 const pxr::TfMallocTag::CallTree::PrintSetting Overlay::TfMallocTag::CallTree::BOTH = pxr::TfMallocTag::CallTree::BOTH;
+
+const pxr::ExecDispatchesOntoSchemas::DefaultInitTag Overlay::ExecDispatchesOntoSchemas::DefaultInit = pxr::ExecDispatchesOntoSchemas::DefaultInit;
+
+const pxr::UsdShadeAttributeVector::DefaultInitTag Overlay::UsdShadeAttributeVector::DefaultInit = pxr::UsdShadeAttributeVector::DefaultInit;
+
+const pxr::VdfConnectionVector::DefaultInitTag Overlay::VdfConnectionVector::DefaultInit = pxr::VdfConnectionVector::DefaultInit;
+
+const pxr::VdfConnectionConstVector::DefaultInitTag Overlay::VdfConnectionConstVector::DefaultInit = pxr::VdfConnectionConstVector::DefaultInit;
+
+const pxr::UsdShadeSourceInfoVector::DefaultInitTag Overlay::UsdShadeSourceInfoVector::DefaultInit = pxr::UsdShadeSourceInfoVector::DefaultInit;
+
+const pxr::SdfChangeList::EntryList::DefaultInitTag Overlay::SdfChangeList::EntryList::DefaultInit = pxr::SdfChangeList::EntryList::DefaultInit;
+
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+const pxr::HdDependenciesSchema::EntryVector::DefaultInitTag Overlay::HdDependenciesSchema::EntryVector::DefaultInit = pxr::HdDependenciesSchema::EntryVector::DefaultInit;
+
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+const pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInitTag Overlay::SdfChangeList::Entry::InfoChangeVec::DefaultInit = pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInit;
 
 const pxr::TfRefPtrTracker::TraceType Overlay::TfRefPtrTracker::Add = pxr::TfRefPtrTracker::Add;
 const pxr::TfRefPtrTracker::TraceType Overlay::TfRefPtrTracker::Assign = pxr::TfRefPtrTracker::Assign;
@@ -315,6 +344,7 @@ const pxr::PcpErrorType Overlay::PcpErrorType_SublayerCycle = pxr::PcpErrorType_
 const pxr::PcpErrorType Overlay::PcpErrorType_TargetPermissionDenied = pxr::PcpErrorType_TargetPermissionDenied;
 const pxr::PcpErrorType Overlay::PcpErrorType_UnresolvedPrimPath = pxr::PcpErrorType_UnresolvedPrimPath;
 const pxr::PcpErrorType Overlay::PcpErrorType_VariableExpressionError = pxr::PcpErrorType_VariableExpressionError;
+const pxr::PcpErrorType Overlay::PcpErrorType_InvalidSublayerAndOffsetCount = pxr::PcpErrorType_InvalidSublayerAndOffsetCount;
 
 const pxr::PcpErrorInvalidConflictingRelocation::ConflictReason Overlay::PcpErrorInvalidConflictingRelocation::ConflictReason::TargetIsConflictSource = pxr::PcpErrorInvalidConflictingRelocation::ConflictReason::TargetIsConflictSource;
 const pxr::PcpErrorInvalidConflictingRelocation::ConflictReason Overlay::PcpErrorInvalidConflictingRelocation::ConflictReason::SourceIsConflictTarget = pxr::PcpErrorInvalidConflictingRelocation::ConflictReason::SourceIsConflictTarget;
@@ -625,6 +655,13 @@ const pxr::GarchNSGLContextState::NullState Overlay::GarchNSGLContextState::Null
 
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT && defined(ARCH_OS_DARWIN)
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+const pxr::HioImage::ImageOriginLocation Overlay::HioImage::OriginUpperLeft = pxr::HioImage::OriginUpperLeft;
+const pxr::HioImage::ImageOriginLocation Overlay::HioImage::OriginLowerLeft = pxr::HioImage::OriginLowerLeft;
+
+const pxr::HioImage::SourceColorSpace Overlay::HioImage::Raw = pxr::HioImage::Raw;
+const pxr::HioImage::SourceColorSpace Overlay::HioImage::SRGB = pxr::HioImage::SRGB;
+const pxr::HioImage::SourceColorSpace Overlay::HioImage::Auto = pxr::HioImage::Auto;
+
 const pxr::HioFormat Overlay::HioFormatInvalid = pxr::HioFormatInvalid;
 const pxr::HioFormat Overlay::HioFormatUNorm8 = pxr::HioFormatUNorm8;
 const pxr::HioFormat Overlay::HioFormatUNorm8Vec2 = pxr::HioFormatUNorm8Vec2;
@@ -834,6 +871,8 @@ const pxr::HgiShaderStageBits Overlay::HgiShaderStageGeometry = pxr::HgiShaderSt
 const pxr::HgiShaderStageBits Overlay::HgiShaderStagePostTessellationControl = pxr::HgiShaderStagePostTessellationControl;
 const pxr::HgiShaderStageBits Overlay::HgiShaderStagePostTessellationVertex = pxr::HgiShaderStagePostTessellationVertex;
 const pxr::HgiShaderStageBits Overlay::HgiShaderStageCustomBitsBegin = pxr::HgiShaderStageCustomBitsBegin;
+const pxr::HgiShaderStageBits Overlay::HgiShaderStageAllGraphics = pxr::HgiShaderStageAllGraphics;
+const pxr::HgiShaderStageBits Overlay::HgiShaderStageAll = pxr::HgiShaderStageAll;
 
 const pxr::HgiBindResourceType Overlay::HgiBindResourceTypeSampler = pxr::HgiBindResourceTypeSampler;
 const pxr::HgiBindResourceType Overlay::HgiBindResourceTypeSampledImage = pxr::HgiBindResourceTypeSampledImage;
@@ -1219,6 +1258,12 @@ const pxr::HdBasisCurvesGeomStyle Overlay::HdBasisCurvesGeomStylePoints = pxr::H
 const pxr::HdPointsGeomStyle Overlay::HdPointsGeomStyleInvalid = pxr::HdPointsGeomStyleInvalid;
 const pxr::HdPointsGeomStyle Overlay::HdPointsGeomStylePoints = pxr::HdPointsGeomStylePoints;
 
+const pxr::HdImplicitSurfaceGeomStyle Overlay::HdImplicitSurfaceGeomStyleInvalid = pxr::HdImplicitSurfaceGeomStyleInvalid;
+const pxr::HdImplicitSurfaceGeomStyle Overlay::HdImplicitSurfaceGeomStyleSurf = pxr::HdImplicitSurfaceGeomStyleSurf;
+const pxr::HdImplicitSurfaceGeomStyle Overlay::HdImplicitSurfaceGeomStyleRingsOnly = pxr::HdImplicitSurfaceGeomStyleRingsOnly;
+const pxr::HdImplicitSurfaceGeomStyle Overlay::HdImplicitSurfaceGeomStyleRingsOnSurf = pxr::HdImplicitSurfaceGeomStyleRingsOnSurf;
+const pxr::HdImplicitSurfaceGeomStyle Overlay::HdImplicitSurfaceGeomStylePoints = pxr::HdImplicitSurfaceGeomStylePoints;
+
 const pxr::HdInterpolation Overlay::HdInterpolationConstant = pxr::HdInterpolationConstant;
 const pxr::HdInterpolation Overlay::HdInterpolationUniform = pxr::HdInterpolationUniform;
 const pxr::HdInterpolation Overlay::HdInterpolationVarying = pxr::HdInterpolationVarying;
@@ -1259,27 +1304,9 @@ const pxr::HdCoordSys::DirtyBits Overlay::HdCoordSys::DirtyName = pxr::HdCoordSy
 const pxr::HdCoordSys::DirtyBits Overlay::HdCoordSys::DirtyTransform = pxr::HdCoordSys::DirtyTransform;
 const pxr::HdCoordSys::DirtyBits Overlay::HdCoordSys::AllDirty = pxr::HdCoordSys::AllDirty;
 
-const pxr::HdField::DirtyBits Overlay::HdField::Clean = pxr::HdField::Clean;
-const pxr::HdField::DirtyBits Overlay::HdField::DirtyTransform = pxr::HdField::DirtyTransform;
-const pxr::HdField::DirtyBits Overlay::HdField::DirtyParams = pxr::HdField::DirtyParams;
-const pxr::HdField::DirtyBits Overlay::HdField::AllDirty = pxr::HdField::AllDirty;
-
-const pxr::HdLight::DirtyBits Overlay::HdLight::Clean = pxr::HdLight::Clean;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyTransform = pxr::HdLight::DirtyTransform;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyParams = pxr::HdLight::DirtyParams;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyShadowParams = pxr::HdLight::DirtyShadowParams;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyCollection = pxr::HdLight::DirtyCollection;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyResource = pxr::HdLight::DirtyResource;
-const pxr::HdLight::DirtyBits Overlay::HdLight::DirtyInstancer = pxr::HdLight::DirtyInstancer;
-const pxr::HdLight::DirtyBits Overlay::HdLight::AllDirty = pxr::HdLight::AllDirty;
-
 const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Error = pxr::HdMeshComputationResult::Error;
 const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Success = pxr::HdMeshComputationResult::Success;
 const pxr::HdMeshComputationResult Overlay::HdMeshComputationResult::Unchanged = pxr::HdMeshComputationResult::Unchanged;
-
-const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::Clean = pxr::HdRenderBuffer::Clean;
-const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::DirtyDescription = pxr::HdRenderBuffer::DirtyDescription;
-const pxr::HdRenderBuffer::DirtyBits Overlay::HdRenderBuffer::AllDirty = pxr::HdRenderBuffer::AllDirty;
 
 const pxr::HdRenderPassState::ColorMask Overlay::HdRenderPassState::ColorMaskNone = pxr::HdRenderPassState::ColorMaskNone;
 const pxr::HdRenderPassState::ColorMask Overlay::HdRenderPassState::ColorMaskRGB = pxr::HdRenderPassState::ColorMaskRGB;
@@ -1292,14 +1319,17 @@ const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneInde
 const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly = pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::JsonMetadataOnly;
 const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy Overlay::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid = pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy::Hybrid;
 
+const pxr::HdSceneIndexPrimView::Order Overlay::HdSceneIndexPrimView::ChildPrimPaths = pxr::HdSceneIndexPrimView::ChildPrimPaths;
+const pxr::HdSceneIndexPrimView::Order Overlay::HdSceneIndexPrimView::Lexicographic = pxr::HdSceneIndexPrimView::Lexicographic;
+
 const pxr::HdSelection::HighlightMode Overlay::HdSelection::HighlightModeSelect = pxr::HdSelection::HighlightModeSelect;
 const pxr::HdSelection::HighlightMode Overlay::HdSelection::HighlightModeLocate = pxr::HdSelection::HighlightModeLocate;
 const pxr::HdSelection::HighlightMode Overlay::HdSelection::HighlightModeCount = pxr::HdSelection::HighlightModeCount;
 
-const pxr::HdGpGenerativeProcedural::AsyncState Overlay::HdGpGenerativeProcedural::Continuing = pxr::HdGpGenerativeProcedural::Continuing;
-const pxr::HdGpGenerativeProcedural::AsyncState Overlay::HdGpGenerativeProcedural::Finished = pxr::HdGpGenerativeProcedural::Finished;
-const pxr::HdGpGenerativeProcedural::AsyncState Overlay::HdGpGenerativeProcedural::ContinuingWithNewChanges = pxr::HdGpGenerativeProcedural::ContinuingWithNewChanges;
-const pxr::HdGpGenerativeProcedural::AsyncState Overlay::HdGpGenerativeProcedural::FinishedWithNewChanges = pxr::HdGpGenerativeProcedural::FinishedWithNewChanges;
+const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource Overlay::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::Resolved = pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::Resolved;
+const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource Overlay::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::ApplicationOverride = pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::ApplicationOverride;
+const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource Overlay::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::InputRenderSettings = pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::InputRenderSettings;
+const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource Overlay::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::RendererDefault = pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::RendererDefault;
 
 const pxr::HdStBinding::Type Overlay::HdStBinding::UNKNOWN = pxr::HdStBinding::UNKNOWN;
 const pxr::HdStBinding::Type Overlay::HdStBinding::DISPATCH = pxr::HdStBinding::DISPATCH;
@@ -1353,10 +1383,6 @@ const pxr::HdStComputeQueue Overlay::HdStComputeQueueCount = pxr::HdStComputeQue
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 const pxr::UsdImagingPropertyInvalidationType Overlay::UsdImagingPropertyInvalidationType::Update = pxr::UsdImagingPropertyInvalidationType::Update;
 const pxr::UsdImagingPropertyInvalidationType Overlay::UsdImagingPropertyInvalidationType::Resync = pxr::UsdImagingPropertyInvalidationType::Resync;
-
-const pxr::UsdImagingPrimAdapter::PopulationMode Overlay::UsdImagingPrimAdapter::RepresentsSelf = pxr::UsdImagingPrimAdapter::RepresentsSelf;
-const pxr::UsdImagingPrimAdapter::PopulationMode Overlay::UsdImagingPrimAdapter::RepresentsSelfAndDescendents = pxr::UsdImagingPrimAdapter::RepresentsSelfAndDescendents;
-const pxr::UsdImagingPrimAdapter::PopulationMode Overlay::UsdImagingPrimAdapter::RepresentedByAncestor = pxr::UsdImagingPrimAdapter::RepresentedByAncestor;
 
 const pxr::UsdImagingGLDrawMode Overlay::UsdImagingGLDrawMode::DRAW_POINTS = pxr::UsdImagingGLDrawMode::DRAW_POINTS;
 const pxr::UsdImagingGLDrawMode Overlay::UsdImagingGLDrawMode::DRAW_WIREFRAME = pxr::UsdImagingGLDrawMode::DRAW_WIREFRAME;

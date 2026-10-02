@@ -37,7 +37,22 @@ extension pxr.ArchFileAdvice: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.ArchThreadPriority: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.ArchMemoryProtection: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.ArchPrefetchAccess: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.ArchPrefetchLocality: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -107,6 +122,48 @@ extension pxr.TfMallocTag.CallTree.PrintSetting: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.ExecDispatchesOntoSchemas.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.UsdShadeAttributeVector.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfConnectionVector.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VdfConnectionConstVector.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.UsdShadeSourceInfoVector.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.SdfChangeList.EntryList.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.HdDependenciesSchema.EntryVector.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.SdfChangeList.Entry.InfoChangeVec.DefaultInitTag: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.TfRefPtrTracker.TraceType: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -152,12 +209,27 @@ extension pxr.GfVec4i: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.GfVec3d: CustomStringConvertible {
+extension pxr.GfVec2i: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.GfVec3f: CustomStringConvertible {
+extension pxr.GfVec3i: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.GfVec2h: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.GfVec2d: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.GfVec2f: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -167,7 +239,12 @@ extension pxr.GfVec3h: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.GfVec3i: CustomStringConvertible {
+extension pxr.GfVec3d: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.GfVec3f: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -207,26 +284,6 @@ extension pxr.GfColor: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.GfVec2f: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.GfVec2d: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.GfVec2h: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.GfVec2i: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
 extension pxr.GfMatrix3f: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -258,6 +315,11 @@ extension pxr.GfDualQuath: CustomStringConvertible {
     }
 }
 extension pxr.GfQuath: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.GfDuration: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -433,6 +495,11 @@ extension pxr.VtDualQuatfArray: CustomStringConvertible {
     }
 }
 extension pxr.VtDualQuathArray: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.VtDurationArray: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -873,11 +940,6 @@ extension pxr.SdfSpec: CustomStringConvertible {
     }
 }
 extension pxr.SdfDictionaryProxy: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.SdfRelocatesMapProxy: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1417,6 +1479,16 @@ extension pxr.GarchNSGLContextState.NullState: CustomStringConvertible {
 }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT) && canImport(Darwin)
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.HioImage.ImageOriginLocation: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.HioImage.SourceColorSpace: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.HioFormat: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1786,6 +1858,11 @@ extension pxr.HdPointsGeomStyle: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
+extension pxr.HdImplicitSurfaceGeomStyle: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
 extension pxr.HdInterpolation: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1821,11 +1898,6 @@ extension pxr.HdBasisCurvesTopology: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdTopology: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
 extension pxr.HdGeomSubset.`Type`: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1856,11 +1928,6 @@ extension pxr.HdCoordSys.DirtyBits: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdField.DirtyBits: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
 extension pxr.HdMaterialNetwork: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
@@ -1876,22 +1943,12 @@ extension pxr.HdMaterialNode2: CustomStringConvertible {
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdLight.DirtyBits: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
 extension pxr.HdMeshComputationResult: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
 }
 extension pxr.HdPrimOriginSchema.OriginPath: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.HdRenderBuffer.DirtyBits: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -1911,7 +1968,12 @@ extension pxr.HdSceneIndexPluginRegistry.PluginOrderingPolicy: CustomStringConve
         Swift.String(__Overlay.to_string(self))
     }
 }
-extension pxr.HdGpGenerativeProcedural.AsyncState: CustomStringConvertible {
+extension pxr.HdSceneIndexPrimView.Order: CustomStringConvertible {
+    public var description: String {
+        Swift.String(__Overlay.to_string(self))
+    }
+}
+extension pxr.HdsiApplicationRenderSettingsSceneIndex.RenderSettingsSource: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }
@@ -2034,11 +2096,6 @@ extension pxr.HdxVisualizeAovTaskParams: CustomStringConvertible {
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
 extension pxr.UsdImagingPropertyInvalidationType: CustomStringConvertible {
-    public var description: String {
-        Swift.String(__Overlay.to_string(self))
-    }
-}
-extension pxr.UsdImagingPrimAdapter.PopulationMode: CustomStringConvertible {
     public var description: String {
         Swift.String(__Overlay.to_string(self))
     }

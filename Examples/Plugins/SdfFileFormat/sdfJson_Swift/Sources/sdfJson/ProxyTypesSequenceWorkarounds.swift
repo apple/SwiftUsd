@@ -41,43 +41,6 @@ extension pxr.SdfVariantSetsProxy.const_iterator: UnsafeCxxInputIterator {
     }
 }
 
-extension pxr.SdfRelocatesMapProxy: Sequence, CxxSequence, CxxDictionary {
-    public typealias RawIterator = const_iterator
-    public typealias RawMutableIterator = iterator
-    
-    public typealias Key = pxr.SdfPath
-    public typealias Value = pxr.SdfPath
-    public typealias Size = size_type
-    public typealias InsertionResult = Overlay.SdfRelocatesMapProxy_Iterator_Bool_Pair
-    public typealias Element = value_type
-    
-    public mutating func __insertUnsafe(_ element: Self.Element) -> Self.InsertionResult {
-        __Overlay.insert(&self, element)
-    }
-    
-    public mutating func __eraseUnsafe(_ it: Self.iterator) -> Self.iterator {
-        __Overlay.erase(&self, it)
-    }
-}
-
-extension pxr.SdfRelocatesMapProxy.const_iterator: UnsafeCxxInputIterator {
-    public static func ==(lhs: Self, _ rhs: Self) -> Bool {
-        __Overlay.manual_operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.SdfRelocatesMapProxy.iterator: UnsafeCxxMutableInputIterator {
-    public var pointee: pxr.SdfRelocatesMapProxy.Element {
-        get { __Overlay.operatorStar(self) }
-        set { __Overlay.operatorStarSet(&self, newValue) }
-    }
-    
-    public typealias Pointee = pxr.SdfRelocatesMapProxy.Element
-    
-    public static func ==(lhs: Self, _ rhs: Self) -> Bool {
-        __Overlay.manual_operatorEqualsEquals(lhs, rhs)
-    }
-}
-
 extension pxr.SdfVariantSelectionProxy: Sequence, CxxSequence, CxxDictionary {
     public typealias RawIterator = const_iterator
     public typealias RawMutableIterator = iterator

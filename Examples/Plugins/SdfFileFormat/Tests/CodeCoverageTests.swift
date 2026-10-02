@@ -25,7 +25,7 @@ import Foundation
 import Testing
 import OpenUSD
 
-public typealias pxr = pxrInternal_v0_26_8__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_11__pxrReserved__
 
 func ensurePluginLoaded() throws {
     let root = #bundle.resourceURL!

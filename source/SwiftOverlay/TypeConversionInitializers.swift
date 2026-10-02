@@ -46,6 +46,13 @@ extension Double {
 }
 // GfTimeCode.init(Double) provided by timeCode.h
 
+extension Double {
+    public init(_ x: pxr.GfDuration) {
+        self = x.GetValue()
+    }
+}
+// GfDuration.init(Double) provided by duration.h
+
 extension String {
     public init(_ token: pxr.TfToken) {
         self.init(token.GetString())

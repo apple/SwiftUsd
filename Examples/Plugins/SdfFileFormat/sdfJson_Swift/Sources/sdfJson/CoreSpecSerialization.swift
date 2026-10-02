@@ -205,8 +205,6 @@ func readPrim(_ layer: pxr.SdfLayer, _ prim: pxr.SdfPrimSpec, _ js: JsAny) throw
     
     if prim.GetPath().IsAbsoluteRootPath() {
         try extractLayerRelocates(Overlay.Dereference(prim.GetLayer()), .object(obj))
-    } else {
-        try extractPrimRelocates(.object(obj), prim)
     }
     if let x = obj["references"] {
         try extractSdfListEditorProxy(x, prim.GetReferenceList(), extractSdfReference)
@@ -288,9 +286,6 @@ func writePrim(_ prim: pxr.SdfPrimSpec) throws -> JsAny {
     }
     result.insert(at: "variantSelections", ifIsNonEmptyContainer: writeVariantSelections(prim.GetVariantSelections()))
     result.insert(at: "variantSets", ifIsNonEmptyContainer: try writeVariantSets(prim.GetVariantSets()))
-    if prim.HasRelocates() {
-        result["relocates"] = writePrimRelocates(prim.GetRelocates())
-    }
     if prim.GetSpecType() == .SdfSpecTypePseudoRoot && Overlay.Dereference(prim.GetLayer()).HasRelocates() {
         result["relocates"] = writeLayerRelocates(Overlay.Dereference(prim.GetLayer()).GetRelocates())
     }

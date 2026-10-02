@@ -25,6 +25,55 @@
 
 // pxr::TfWeakPtr<void>
 // pxr::TfRefPtr<pxr::TfRefBase>
+// pxr::TfIterator<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>, false>
+// pxr::TfIterator<std::map<unsigned long, unsigned long, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long>>>, false>
+// pxr::TfIterator<std::multimap<unsigned long, std::string const *, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, std::string const *>>>, true>
+// pxr::TfIterator<std::set<pxr::TfType, std::less<pxr::TfType>, std::allocator<pxr::TfType>>, false>
+// pxr::TfIterator<std::vector<pxr::TfType, std::allocator<pxr::TfType>>, false>
+// pxr::TfIterator<std::vector<std::vector<pxr::TfType, std::allocator<pxr::TfType>>, std::allocator<std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>, false>
+// pxr::TfIterator<std::vector<int, std::allocator<int>>, false>
+// pxr::TfIterator<std::vector<long long, std::allocator<long long>>, false>
+// pxr::TfIterator<std::vector<std::string, std::allocator<std::string>>, false>
+// pxr::TfIterator<std::vector<std::pair<unsigned long, unsigned long>, std::allocator<std::pair<unsigned long, unsigned long>>>, false>
+// pxr::TfIterator<std::vector<unsigned int, std::allocator<unsigned int>>, false>
+// pxr::TfIterator<std::vector<unsigned long long, std::allocator<unsigned long long>>, false>
+// pxr::TfIterator<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfType, std::allocator<pxr::TfType>> const, false>
+// pxr::TfIterator<std::vector<int, std::allocator<int>> const, false>
+// pxr::TfIterator<std::vector<long long, std::allocator<long long>> const, false>
+// pxr::TfIterator<std::vector<std::string, std::allocator<std::string>> const, false>
+// pxr::TfIterator<std::vector<unsigned int, std::allocator<unsigned int>> const, false>
+// pxr::TfIterator<std::vector<unsigned long long, std::allocator<unsigned long long>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::TfNotice::Probe>, std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfNotice::Key, std::allocator<pxr::TfNotice::Key>>, false>
+// pxr::TfIterator<pxr::TfSmallVector<pxr::VdfConnection *, 1U> const, false>
+// pxr::TfSmallVector<bool, 8U>
+// pxr::TfSmallVector<char, 8U>
+// pxr::TfSmallVector<pxr::HdSceneIndexBase *, 128U>
+// pxr::TfSmallVector<pxr::TfDiagnosticTrap *, 14U>
+// pxr::TfSmallVector<pxr::TfDiagnosticTrap *, 1U>
+// pxr::TfSmallVector<pxr::VdfInputSpec *, 1U>
+// pxr::TfSmallVector<pxr::VdfNetwork::EditMonitor *, 1U>
+// pxr::TfSmallVector<pxr::VdfOutputSpec *, 1U>
+// pxr::TfSmallVector<pxr::VdfInput const *, 1U>
+// pxr::TfSmallVector<pxr::VdfNode const *, 1U>
+// pxr::TfSmallVector<double, 1U>
+// pxr::TfSmallVector<double, 2U>
+// pxr::TfSmallVector<float, 1U>
+// pxr::TfSmallVector<float, 2U>
+// pxr::TfSmallVector<int, 1U>
+// pxr::TfSmallVector<int, 2U>
+// pxr::TfSmallVector<long long, 1U>
+// pxr::TfSmallVector<long, 1U>
+// pxr::TfSmallVector<std::string, 0U>
+// pxr::TfSmallVector<unsigned char, 8U>
+// pxr::TfSmallVector<unsigned int, 2U>
+// pxr::TfSmallVector<unsigned long long, 1U>
+// pxr::TfSmallVector<unsigned long long, 7U>
+// pxr::TfSmallVector<unsigned long, 1U>
+// pxr::TfSmallVector<unsigned long, 32U>
+// pxr::TfSmallVector<unsigned short, 64U>
+// pxr::TfHashMap<pxr::HdSceneIndexBase *, unsigned long, pxr::TfHash, std::equal_to<pxr::HdSceneIndexBase *>, std::allocator<std::pair<pxr::HdSceneIndexBase *, unsigned long>>>
 // pxr::TfHashMap<pxr::TfBits, pxr::TfBits, pxr::TfBits::FastHash, std::equal_to<pxr::TfBits>, std::allocator<std::pair<pxr::TfBits const, pxr::TfBits>>>
 // pxr::TfHashMap<pxr::TfType, std::vector<pxr::TfType, std::allocator<pxr::TfType>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfType, std::allocator<pxr::TfType>>>>>
 // pxr::TfHashMap<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>
@@ -43,51 +92,210 @@
 // pxr::TfHashMap<std::string, std::vector<std::string, std::allocator<std::string>>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string>>>>>
 // pxr::TfHashMap<std::string, std::type_info const *, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::type_info const *>>>
 // pxr::TfHashMap<std::string, unsigned long, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, unsigned long>>>
+// pxr::TfHashMap<unsigned int, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>>>>
 // pxr::TfHashMap<unsigned int, std::vector<unsigned int, std::allocator<unsigned int>>, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, std::vector<unsigned int, std::allocator<unsigned int>>>>>
 // pxr::TfHashMap<unsigned int, pxr::VdfInput const *, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, pxr::VdfInput const *>>>
 // pxr::TfHashMap<unsigned int, unsigned long, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned long>>>
 // pxr::TfHashMap<unsigned long long, unsigned long, pxr::TfHash, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long>>>
 // pxr::TfHashMap<unsigned long, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>, pxr::TfHash, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, std::list<std::function<void, <>>, std::allocator<std::function<void, <>>>>>>>
-// pxr::TfHashMap<unsigned int, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>, pxr::TfHash, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, pxr::TfSmallVector<pxr::VdfConnection const *, 1U>>>>
+// pxr::TfIterator<pxr::TfHashMap<pxr::TfType, unsigned long, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, unsigned long>>>, false>
+// pxr::TfIterator<pxr::TfHashMap<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>, pxr::TfHash, std::equal_to<pxr::TfErrorMark const *>, std::allocator<std::pair<pxr::TfErrorMark const *, std::vector<unsigned long, std::allocator<unsigned long>>>>>, false>
+// pxr::TfIterator<pxr::TfHashMap<pxr::TfRefBase const *, unsigned long, pxr::TfHash, std::equal_to<pxr::TfRefBase const *>, std::allocator<std::pair<pxr::TfRefBase const *, unsigned long>>> const, false>
+// pxr::TfIterator<pxr::TfHashMap<void const *, pxr::TfRefPtrTracker::Trace, pxr::TfHash, std::equal_to<void const *>, std::allocator<std::pair<void const *, pxr::TfRefPtrTracker::Trace>>> const, false>
 // pxr::TfHashSet<pxr::TfWeakPtr<pxr::TfNotice::Probe>, pxr::TfHash, std::equal_to<pxr::TfWeakPtr<pxr::TfNotice::Probe>>, std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>
 // pxr::TfHashSet<pxr::VdfExecutorObserver const *, pxr::TfHash, std::equal_to<pxr::VdfExecutorObserver const *>, std::allocator<pxr::VdfExecutorObserver const *>>
 // pxr::TfHashSet<int, std::hash<int>, std::equal_to<int>, std::allocator<int>>
 // pxr::TfHashSet<std::string, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::string>>
+// pxr::TfIterator<pxr::TfHashSet<pxr::TfWeakPtr<pxr::TfNotice::Probe>, pxr::TfHash, std::equal_to<pxr::TfWeakPtr<pxr::TfNotice::Probe>>, std::allocator<pxr::TfWeakPtr<pxr::TfNotice::Probe>>>, false>
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
 // pxr::TfHashMap<pxr::TfType, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>
 // pxr::TfHashSet<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<pxr::TfToken>>
+// pxr::TfIterator<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, false>
+// pxr::TfIterator<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>> const, false>
+// pxr::TfSmallVector<pxr::TfToken, 15U>
+// pxr::TfSmallVector<pxr::TfToken, 1U>
+// pxr::TfSmallVector<pxr::TfToken, 22U>
+// pxr::TfSmallVector<pxr::TfToken, 2U>
+// pxr::TfSmallVector<pxr::TfToken, 6U>
+// pxr::TfSmallVector<pxr::TfToken, 8U>
+// pxr::TfSmallVector<std::pair<pxr::TfToken, pxr::VdfInput *>, 1U>
+// pxr::TfSmallVector<std::pair<pxr::TfToken, pxr::VdfOutput *>, 1U>
 // pxr::TfHashMap<pxr::TfToken, pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::TfToken>>>
+// pxr::TfHashMap<pxr::TfToken, int, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, int>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned int, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned int>>>
 // pxr::TfHashMap<pxr::TfToken, unsigned long, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, unsigned long>>>
+// pxr::TfIterator<pxr::TfHashMap<pxr::TfToken, double, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, double>>>, false>
 // pxr::TfHashMap<pxr::TfToken, std::set<pxr::TfToken, pxr::TfTokenFastArbitraryLessThan, std::allocator<pxr::TfToken>>, pxr::TfHash, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::set<pxr::TfToken, pxr::TfTokenFastArbitraryLessThan, std::allocator<pxr::TfToken>>>>>
+// pxr::TfDenseHashMap<pxr::TfToken, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashMap<pxr::TfToken, unsigned long, pxr::TfHash, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashSet<pxr::HdSceneIndexBase *, pxr::TfHash, std::equal_to<pxr::HdSceneIndexBase *>, 128U>
+// pxr::TfDenseHashSet<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, 8U>
+// pxr::TfDenseHashSet<pxr::TfToken, pxr::TfHash, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashSet<pxr::TfToken, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashSet<int, pxr::TfHash, std::equal_to<int>, 128U>
+// pxr::TfDenseHashSet<long long, pxr::TfHash, std::equal_to<long long>, 128U>
+// pxr::TfDenseHashSet<std::string, pxr::TfHash, std::equal_to<std::string>, 128U>
+// pxr::TfDenseHashSet<unsigned int, pxr::TfHash, std::equal_to<unsigned int>, 128U>
+// pxr::TfDenseHashSet<unsigned long long, pxr::TfHash, std::equal_to<unsigned long long>, 128U>
+// pxr::TfSmallVector<pxr::GfMatrix4d, 0U>
+// pxr::TfSmallVector<pxr::GfMatrix4d, 1U>
+// pxr::TfSmallVector<pxr::GfMatrix4d, 4U>
+// pxr::TfIterator<std::vector<pxr::GfVec4d, std::allocator<pxr::GfVec4d>> const, false>
+// pxr::TfSmallVector<pxr::GfVec4d, 0U>
+// pxr::TfSmallVector<pxr::GfVec4f, 0U>
+// pxr::TfSmallVector<pxr::GfVec4h, 1U>
+// pxr::TfSmallVector<pxr::pxr_half::half, 4U>
+// pxr::TfSmallVector<pxr::GfVec4i, 0U>
+// pxr::TfSmallVector<pxr::GfVec2i, 1U>
+// pxr::TfSmallVector<pxr::GfVec3i, 0U>
+// pxr::TfSmallVector<pxr::GfVec2h, 2U>
+// pxr::TfSmallVector<pxr::GfVec2d, 0U>
+// pxr::TfSmallVector<pxr::GfVec2f, 1U>
+// pxr::TfSmallVector<pxr::GfVec3h, 1U>
+// pxr::TfSmallVector<pxr::GfVec3d, 0U>
+// pxr::TfSmallVector<pxr::GfVec3f, 0U>
+// pxr::TfSmallVector<pxr::GfQuatd, 0U>
+// pxr::TfSmallVector<pxr::GfQuatf, 0U>
+// pxr::TfSmallVector<pxr::GfQuath, 1U>
+// pxr::TfSmallVector<pxr::GfDuration, 1U>
+// pxr::TfIterator<std::set<pxr::GfInterval, std::less<pxr::GfInterval>, std::allocator<pxr::GfInterval>> const, false>
+// pxr::TfIterator<std::vector<pxr::GfInterval, std::allocator<pxr::GfInterval>> const, false>
+// pxr::TfSmallVector<pxr::GfMatrix2d, 0U>
+// pxr::TfSmallVector<pxr::GfMatrix3d, 0U>
+// pxr::TfIterator<pxr::GfMultiInterval, false>
+// pxr::TfIterator<pxr::GfMultiInterval const, false>
+// pxr::TfSmallVector<pxr::GfTimeCode, 1U>
+// pxr::TfIterator<std::map<std::string, pxr::JsValue, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::JsValue>>>, false>
+// pxr::TfIterator<std::map<std::string, pxr::JsValue, std::less<std::string>, std::allocator<std::pair<std::string const, pxr::JsValue>>> const, false>
+// pxr::TfSmallVector<pxr::TfRefPtr<pxr::TraceEventNode>, 1U>
 // pxr::TfHashMap<pxr::TfType, pxr::TfWeakPtr<pxr::PlugPlugin>, pxr::TfHash, std::equal_to<pxr::TfType>, std::allocator<std::pair<pxr::TfType const, pxr::TfWeakPtr<pxr::PlugPlugin>>>>
 // pxr::TfHashMap<std::string, pxr::TfWeakPtr<pxr::PlugPlugin>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfWeakPtr<pxr::PlugPlugin>>>>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::PlugPlugin>, std::allocator<pxr::TfWeakPtr<pxr::PlugPlugin>>>, false>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::PlugPlugin>, std::allocator<pxr::TfWeakPtr<pxr::PlugPlugin>>> const, false>
 // pxr::TfWeakPtr<pxr::PlugRegistry>
 // pxr::VtArray<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
 // pxr::VtArray<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // pxr::VtArray<std::vector<double, std::allocator<double>>>
 // pxr::VtArray<std::vector<std::string, std::allocator<std::string>>>
+// pxr::TfIterator<pxr::VtArray<pxr::GfDuration>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::pxr_half::half>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfMatrix2d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfMatrix3d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfMatrix4d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfQuatd>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfQuatf>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfQuath>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfTimeCode>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec2d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec2f>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec2h>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec2i>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec3d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec3f>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec3h>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec3i>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec4d>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec4f>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec4h>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec4i>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::TfToken>, false>
+// pxr::TfIterator<pxr::VtArray<bool>, false>
+// pxr::TfIterator<pxr::VtArray<double>, false>
+// pxr::TfIterator<pxr::VtArray<float>, false>
+// pxr::TfIterator<pxr::VtArray<long long>, false>
+// pxr::TfIterator<pxr::VtArray<int>, false>
+// pxr::TfIterator<pxr::VtArray<std::string>, false>
+// pxr::TfIterator<pxr::VtArray<unsigned long long>, false>
+// pxr::TfIterator<pxr::VtArray<unsigned char>, false>
+// pxr::TfIterator<pxr::VtArray<unsigned int>, false>
+// pxr::TfIterator<pxr::VtArray<pxr::GfVec3f> const, false>
+// pxr::TfIterator<pxr::VtArray<float> const, false>
+// pxr::TfIterator<pxr::VtArray<int> const, false>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfDuration>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::pxr_half::half>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfMatrix2d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfMatrix3d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfMatrix4d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfQuatd>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfQuatf>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfQuath>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfTimeCode>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec2d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec2f>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec2h>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec2i>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec3d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec3f>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec3h>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec3i>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec4d>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec4f>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec4h>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::GfVec4i>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::TfToken>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<bool>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<double>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<float>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<long long>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<int>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<int>, 1U>
+// pxr::TfSmallVector<pxr::VtArray<std::string>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<unsigned long long>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<unsigned char>, 0U>
+// pxr::TfSmallVector<pxr::VtArray<unsigned int>, 0U>
 // pxr::VtArray<pxr::VtArray<int>>
 // pxr::VtArrayEdit<std::map<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string>>>>
 // pxr::VtArrayEdit<std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>
 // pxr::VtArrayEdit<std::vector<double, std::allocator<double>>>
 // pxr::VtArrayEdit<std::vector<std::string, std::allocator<std::string>>>
+// pxr::TfIterator<pxr::VtDictionary const, false>
 // pxr::VtArray<pxr::VtDictionary>
 // pxr::VtArrayEdit<pxr::VtDictionary>
+// pxr::TfIterator<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>, false>
+// pxr::TfIterator<pxr::TfSmallVector<std::pair<pxr::TfToken, std::pair<pxr::VtValue, pxr::VtValue>>, 3U> const, false>
+// pxr::TfIterator<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>> const, false>
+// pxr::TfIterator<std::vector<pxr::VtValue, std::allocator<pxr::VtValue>> const, false>
+// pxr::TfSmallVector<pxr::TfDenseHashMap<pxr::TfToken, pxr::VtValue, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>, 0U>
+// pxr::TfSmallVector<pxr::VtValue, 1U>
 // pxr::VtArray<pxr::VtValue>
 // pxr::VtArray<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
 // pxr::VtArrayEdit<pxr::VtValue>
 // pxr::VtArrayEdit<std::map<double, pxr::VtValue, std::less<double>, std::allocator<std::pair<double const, pxr::VtValue>>>>
+// pxr::TfIterator<std::vector<pxr::VtValueRef, std::allocator<pxr::VtValueRef>> const, false>
 // pxr::VtArray<pxr::TsSpline>
 // pxr::VtArrayEdit<pxr::TsSpline>
+// pxr::TfDenseHashMap<pxr::SdfPath, pxr::TfDenseHashSet<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
+// pxr::TfDenseHashMap<pxr::SdfPath, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
+// pxr::TfDenseHashSet<pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
+// pxr::TfIterator<std::map<pxr::PcpCache *, std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>, std::less<pxr::PcpCache *>, std::allocator<std::pair<pxr::PcpCache *, std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>>>>, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, bool, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, bool>>>, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, int, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, int>>>, false>
+// pxr::TfIterator<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, false>
+// pxr::TfIterator<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>>, true>
+// pxr::TfIterator<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::PcpPrimIndex const *, pxr::SdfPath>, std::allocator<std::pair<pxr::PcpPrimIndex const *, pxr::SdfPath>>>, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::SdfPath const, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>> const, false>
+// pxr::TfIterator<std::set<pxr::SdfPath, std::less<pxr::SdfPath>, std::allocator<pxr::SdfPath>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>> const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>> const, false>
+// pxr::TfSmallVector<pxr::SdfPath, 1U>
+// pxr::TfSmallVector<pxr::SdfPath, 5U>
+// pxr::TfSmallVector<pxr::SdfPath, 8U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::SdfPath>, 0U>
+// pxr::TfSmallVector<std::pair<pxr::SdfPath, pxr::TfToken>, 1U>
 // pxr::VtArray<pxr::SdfPath>
 // pxr::VtArray<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArray<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
 // pxr::VtArrayEdit<pxr::SdfPath>
 // pxr::VtArrayEdit<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>
 // pxr::VtArrayEdit<std::vector<std::pair<pxr::SdfPath, pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath, pxr::SdfPath>>>>
+// pxr::TfDenseHashMap<pxr::SdfPath, unsigned long, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, 128U>
+// pxr::TfDenseHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, 32U>
+// pxr::TfDenseHashSet<pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, 128U>
 // pxr::TfHashMap<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::HdInstancer *, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::HdInstancer *>>>
 // pxr::TfHashMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
@@ -100,63 +308,205 @@
 // pxr::TfHashMap<pxr::SdfPath, unsigned int, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned int>>>
 // pxr::TfHashMap<pxr::SdfPath, unsigned long, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned long>>>
 // pxr::TfHashMultiMap<pxr::SdfPath, pxr::SdfPath, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::SdfPath>>>
+// pxr::TfIterator<pxr::TfHashMap<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>>, false>
+// pxr::TfIterator<pxr::TfHashMap<pxr::SdfPath, unsigned int, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, unsigned int>>>, false>
+// pxr::TfIterator<std::unordered_map<pxr::SdfPath, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, std::vector<pxr::TfToken, std::allocator<pxr::TfToken>>>>>, false>
+// pxr::TfIterator<pxr::TfHashMap<pxr::SdfPath, pxr::GfMatrix4d, pxr::SdfPath::Hash, std::equal_to<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::GfMatrix4d>>> const, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, std::vector<std::string, std::allocator<std::string>>, pxr::SdfPath::FastLessThan, std::allocator<std::pair<pxr::SdfPath const, std::vector<std::string, std::allocator<std::string>>>>>, false>
 // pxr::VtArray<pxr::SdfSpecifier>
 // pxr::VtArrayEdit<pxr::SdfSpecifier>
 // pxr::VtArray<pxr::SdfPermission>
 // pxr::VtArrayEdit<pxr::SdfPermission>
 // pxr::VtArray<pxr::SdfVariability>
 // pxr::VtArrayEdit<pxr::SdfVariability>
+// pxr::TfDenseHashSet<pxr::SdfUnregisteredValue, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, 128U>
 // pxr::TfHashMap<pxr::SdfUnregisteredValue, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfUnregisteredValue>, std::allocator<std::pair<pxr::SdfUnregisteredValue const, unsigned long>>>
+// pxr::TfIterator<std::vector<pxr::SdfUnregisteredValue, std::allocator<pxr::SdfUnregisteredValue>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfUnregisteredValue, std::allocator<pxr::SdfUnregisteredValue>> const, false>
 // pxr::VtArray<pxr::SdfUnregisteredValue>
 // pxr::VtArrayEdit<pxr::SdfUnregisteredValue>
 // pxr::VtArray<pxr::SdfValueBlock>
 // pxr::VtArrayEdit<pxr::SdfValueBlock>
 // pxr::VtArray<pxr::SdfAnimationBlock>
 // pxr::VtArrayEdit<pxr::SdfAnimationBlock>
+// pxr::TfIterator<pxr::VtArray<pxr::SdfAssetPath>, false>
+// pxr::TfSmallVector<pxr::SdfAssetPath, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::SdfAssetPath>, 0U>
 // pxr::VtArray<pxr::SdfAssetPath>
 // pxr::VtArrayEdit<pxr::SdfAssetPath>
+// pxr::TfSmallVector<pxr::SdfOpaqueValue, 8U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::SdfOpaqueValue>, 0U>
 // pxr::VtArray<pxr::SdfOpaqueValue>
 // pxr::VtArrayEdit<pxr::SdfOpaqueValue>
+// pxr::TfIterator<pxr::VtArray<pxr::SdfPathExpression>, false>
+// pxr::TfSmallVector<pxr::SdfPathExpression, 0U>
+// pxr::TfSmallVector<pxr::VtArray<pxr::SdfPathExpression>, 0U>
 // pxr::VtArray<pxr::SdfPathExpression>
 // pxr::VtArrayEdit<pxr::SdfPathExpression>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfAttributeSpec>, std::allocator<pxr::SdfHandle<pxr::SdfAttributeSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfAttributeSpec>, std::allocator<pxr::SdfHandle<pxr::SdfAttributeSpec>>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfPropertySpec>, std::allocator<pxr::SdfHandle<pxr::SdfPropertySpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfPropertySpec>, std::allocator<pxr::SdfHandle<pxr::SdfPropertySpec>>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfSpec>, std::allocator<pxr::SdfHandle<pxr::SdfSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfSpec, std::allocator<pxr::SdfSpec>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfSpec>, std::allocator<pxr::SdfHandle<pxr::SdfSpec>>> const, false>
 // pxr::TfWeakPtr<pxr::SdfSchemaBase>
 // pxr::TfHashMap<pxr::TfToken, pxr::SdfSchemaBase::FieldDefinition, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::SdfSchemaBase::FieldDefinition>>>
 // pxr::SdfListProxy<pxr::SdfNameKeyPolicy>
 // pxr::SdfListProxy<pxr::SdfPathKeyPolicy>
 // pxr::SdfListProxy<pxr::SdfReferenceTypePolicy>
+// pxr::TfIterator<pxr::SdfListProxy<pxr::SdfPathKeyPolicy> const, false>
+// pxr::TfIterator<std::vector<std::pair<std::string, pxr::SdfChangeList::SubLayerChangeType>, std::allocator<std::pair<std::string, pxr::SdfChangeList::SubLayerChangeType>>> const, false>
+// pxr::TfIterator<pxr::TfSmallVector<std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>, 1U> const, false>
 // pxr::TfHashMap<std::string, pxr::TfRefPtr<pxr::SdfLayer>, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::TfRefPtr<pxr::SdfLayer>>>>
+// pxr::TfIterator<std::set<pxr::TfWeakPtr<pxr::SdfLayer>, std::less<pxr::TfWeakPtr<pxr::SdfLayer>>, std::allocator<pxr::TfWeakPtr<pxr::SdfLayer>>>, false>
+// pxr::TfIterator<std::vector<pxr::TfRefPtr<pxr::SdfLayer>, std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>>, false>
+// pxr::TfIterator<std::set<pxr::TfWeakPtr<pxr::SdfLayer>, std::less<pxr::TfWeakPtr<pxr::SdfLayer>>, std::allocator<pxr::TfWeakPtr<pxr::SdfLayer>>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfRefPtr<pxr::SdfLayer>, std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfRefPtr<pxr::SdfLayer>, std::allocator<pxr::TfRefPtr<pxr::SdfLayer>>> const, true>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::SdfLayer>, std::allocator<pxr::TfWeakPtr<pxr::SdfLayer>>> const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfWeakPtr<pxr::SdfLayer>, pxr::SdfChangeList>, std::allocator<std::pair<pxr::TfWeakPtr<pxr::SdfLayer>, pxr::SdfChangeList>>> const, false>
 // pxr::VtArray<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
 // pxr::VtArrayEdit<std::vector<pxr::SdfLayerOffset, std::allocator<pxr::SdfLayerOffset>>>
+// pxr::TfIterator<std::vector<pxr::TfRefPtr<pxr::SdfLayerTree>, std::allocator<pxr::TfRefPtr<pxr::SdfLayerTree>>> const, false>
+// pxr::TfDenseHashSet<pxr::SdfPayload, pxr::TfHash, std::equal_to<pxr::SdfPayload>, 128U>
 // pxr::TfHashMap<pxr::SdfPayload, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfPayload>, std::allocator<std::pair<pxr::SdfPayload const, unsigned long>>>
+// pxr::TfIterator<std::vector<pxr::SdfPayload, std::allocator<pxr::SdfPayload>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfPayload, std::allocator<pxr::SdfPayload>> const, false>
 // pxr::VtArray<pxr::SdfPayload>
 // pxr::VtArrayEdit<pxr::SdfPayload>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfPrimSpec>, std::allocator<pxr::SdfHandle<pxr::SdfPrimSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfPrimSpec>, std::allocator<pxr::SdfHandle<pxr::SdfPrimSpec>>> const, false>
+// pxr::TfDenseHashSet<pxr::SdfReference, pxr::TfHash, std::equal_to<pxr::SdfReference>, 128U>
 // pxr::TfHashMap<pxr::SdfReference, unsigned long, pxr::TfHash, std::equal_to<pxr::SdfReference>, std::allocator<std::pair<pxr::SdfReference const, unsigned long>>>
+// pxr::TfIterator<std::vector<pxr::SdfReference, std::allocator<pxr::SdfReference>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfReference, std::allocator<pxr::SdfReference>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfRelationshipSpec>, std::allocator<pxr::SdfHandle<pxr::SdfRelationshipSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfRelationshipSpec>, std::allocator<pxr::SdfHandle<pxr::SdfRelationshipSpec>>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfSite, std::allocator<pxr::SdfSite>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfVariantSetSpec>, std::allocator<pxr::SdfHandle<pxr::SdfVariantSetSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfVariantSetSpec>, std::allocator<pxr::SdfHandle<pxr::SdfVariantSetSpec>>> const, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfVariantSpec>, std::allocator<pxr::SdfHandle<pxr::SdfVariantSpec>>>, false>
+// pxr::TfIterator<std::vector<pxr::SdfHandle<pxr::SdfVariantSpec>, std::allocator<pxr::SdfHandle<pxr::SdfVariantSpec>>> const, false>
+// pxr::TfIterator<std::map<pxr::SdfPath, pxr::PcpNodeRef, std::less<pxr::SdfPath>, std::allocator<std::pair<pxr::SdfPath const, pxr::PcpNodeRef>>>, false>
+// pxr::TfIterator<std::vector<pxr::PcpNodeRef, std::allocator<pxr::PcpNodeRef>>, true>
+// pxr::TfIterator<std::map<pxr::PcpLayerStackSite, unsigned long, std::less<pxr::PcpLayerStackSite>, std::allocator<std::pair<pxr::PcpLayerStackSite const, unsigned long>>>, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::PcpErrorBase>, std::allocator<std::shared_ptr<pxr::PcpErrorBase>>>, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::PcpErrorBase>, std::allocator<std::shared_ptr<pxr::PcpErrorBase>>> const, false>
+// pxr::TfIterator<pxr::SdfPathTable<pxr::PcpPrimIndex>, false>
+// pxr::TfIterator<pxr::SdfPathTable<pxr::PcpPrimIndex> const, false>
+// pxr::TfIterator<std::pair<pxr::PcpNodeIterator, pxr::PcpNodeIterator>, false>
+// pxr::TfIterator<std::pair<pxr::PcpNodeIterator, pxr::PcpNodeIterator>, true>
+// pxr::TfIterator<std::pair<pxr::PcpPrimIterator, pxr::PcpPrimIterator>, false>
+// pxr::TfIterator<std::pair<pxr::PcpPrimIterator, pxr::PcpPrimIterator>, true>
+// pxr::TfIterator<std::pair<pxr::PcpPropertyIterator, pxr::PcpPropertyIterator> const, true>
+// pxr::TfIterator<pxr::SdfPathTable<pxr::PcpPropertyIndex> const, false>
+// pxr::TfIterator<std::map<pxr::PcpCache *, pxr::PcpCacheChanges, std::less<pxr::PcpCache *>, std::allocator<std::pair<pxr::PcpCache *, pxr::PcpCacheChanges>>>, false>
+// pxr::TfIterator<std::map<pxr::PcpCache *, pxr::PcpCacheChanges, std::less<pxr::PcpCache *>, std::allocator<std::pair<pxr::PcpCache *, pxr::PcpCacheChanges>>> const, false>
+// pxr::TfIterator<std::unordered_map<pxr::PcpLayerStackIdentifier, pxr::TfWeakPtr<pxr::PcpLayerStack>, pxr::TfHash, std::equal_to<pxr::PcpLayerStackIdentifier>, std::allocator<std::pair<pxr::PcpLayerStackIdentifier const, pxr::TfWeakPtr<pxr::PcpLayerStack>>>>, false>
+// pxr::TfIterator<std::unordered_map<pxr::TfRefPtr<pxr::PcpLayerStack>, pxr::SdfPathTable<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>, pxr::TfHash, std::equal_to<pxr::TfRefPtr<pxr::PcpLayerStack>>, std::allocator<std::pair<pxr::TfRefPtr<pxr::PcpLayerStack> const, pxr::SdfPathTable<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>>, false>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::PcpLayerStack>, std::allocator<pxr::TfWeakPtr<pxr::PcpLayerStack>>>, false>
+// pxr::TfIterator<std::map<pxr::TfWeakPtr<pxr::PcpLayerStack>, pxr::PcpLayerStackChanges, std::less<pxr::TfWeakPtr<pxr::PcpLayerStack>>, std::allocator<std::pair<pxr::TfWeakPtr<pxr::PcpLayerStack> const, pxr::PcpLayerStackChanges>>> const, false>
+// pxr::TfIterator<std::unordered_map<pxr::TfRefPtr<pxr::PcpLayerStack>, pxr::SdfPathTable<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>, pxr::TfHash, std::equal_to<pxr::TfRefPtr<pxr::PcpLayerStack>>, std::allocator<std::pair<pxr::TfRefPtr<pxr::PcpLayerStack> const, pxr::SdfPathTable<std::vector<pxr::SdfPath, std::allocator<pxr::SdfPath>>>>>> const, false>
+// pxr::TfIterator<std::vector<pxr::TfWeakPtr<pxr::PcpLayerStack>, std::allocator<pxr::TfWeakPtr<pxr::PcpLayerStack>>> const, false>
+// pxr::TfIterator<std::vector<pxr::PcpNamespaceEdits::CacheSite, std::allocator<pxr::PcpNamespaceEdits::CacheSite>>, false>
+// pxr::TfIterator<std::vector<pxr::PcpNamespaceEdits::LayerStackSite, std::allocator<pxr::PcpNamespaceEdits::LayerStackSite>>, false>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::GfMatrix4d, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::SdfPath, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::SdfPath>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::TfToken, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::VtArray<pxr::VtArray<int>>, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::VtArray<pxr::VtArray<int>>>>>
 // pxr::TfHashMap<pxr::UsdPrim, int, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, int>>>
+// pxr::TfIterator<pxr::TfHashMap<pxr::UsdPrim, pxr::GfMatrix4d, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>>, false>
+// pxr::TfIterator<pxr::TfHashMap<pxr::UsdPrim, pxr::GfMatrix4d, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::GfMatrix4d>>> const, false>
+// pxr::TfIterator<std::vector<pxr::UsdPrim, std::allocator<pxr::UsdPrim>> const, false>
+// pxr::TfIterator<std::vector<pxr::UsdAttribute, std::allocator<pxr::UsdAttribute>> const, false>
+// pxr::TfIterator<pxr::UsdNotice::ObjectsChanged::PathRange const, false>
 // pxr::TfHashMap<pxr::UsdPrim, pxr::UsdGeomImageable::PurposeInfo, pxr::TfHash, std::equal_to<pxr::UsdPrim>, std::allocator<std::pair<pxr::UsdPrim const, pxr::UsdGeomImageable::PurposeInfo>>>
+// pxr::TfIterator<std::vector<pxr::UsdGeomXformOp, std::allocator<pxr::UsdGeomXformOp>> const, false>
 // pxr::TfHashSet<pxr::UsdShadeConnectionSourceInfo, pxr::TfHash, std::equal_to<pxr::UsdShadeConnectionSourceInfo>, std::allocator<pxr::UsdShadeConnectionSourceInfo>>
 // pxr::TfRefPtr<pxr::UsdHydraDiscoveryPlugin>
 // pxr::VtArray<pxr::UsdSkelSkinningQuery>
+// pxr::TfIterator<pxr::VdfConnectorMap<pxr::VdfInput>, false>
+// pxr::TfIterator<pxr::VdfConnectorMap<pxr::VdfInput> const, false>
 // pxr::VdfConnectorMap<pxr::VdfInput>
 // pxr::TfHashMap<pxr::VdfOutput *, pxr::VdfMask, pxr::TfHash, std::equal_to<pxr::VdfOutput *>, std::allocator<std::pair<pxr::VdfOutput *, pxr::VdfMask>>>
+// pxr::TfIterator<pxr::TfHashMap<pxr::VdfOutput *, pxr::VdfMask, pxr::TfHash, std::equal_to<pxr::VdfOutput *>, std::allocator<std::pair<pxr::VdfOutput *, pxr::VdfMask>>>, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::VdfConnection *, pxr::VdfMask>, std::allocator<std::pair<pxr::VdfConnection *, pxr::VdfMask>>>, false>
+// pxr::TfIterator<std::unordered_map<pxr::VdfOutput const *, pxr::VdfMask, pxr::TfHash, std::equal_to<pxr::VdfOutput const *>, std::allocator<std::pair<pxr::VdfOutput const *, pxr::VdfMask>>> const, false>
+// pxr::TfDenseHashMap<pxr::VdfMask, pxr::TfBits, pxr::VdfMask::HashFunctor, std::equal_to<pxr::VdfMask>, 128U>
 // pxr::TfHashMap<pxr::VdfMask, unsigned long, pxr::VdfMask::HashFunctor, std::equal_to<pxr::VdfMask>, std::allocator<std::pair<pxr::VdfMask const, unsigned long>>>
+// pxr::TfIterator<pxr::TfDenseHashMap<pxr::VdfMask, pxr::TfBits, pxr::VdfMask::HashFunctor, std::equal_to<pxr::VdfMask>, 128U> const, false>
+// pxr::TfIterator<std::vector<pxr::VdfMaskedOutput, std::allocator<pxr::VdfMaskedOutput>>, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::VdfMaskedOutput, pxr::VdfVector *>, std::allocator<std::pair<pxr::VdfMaskedOutput, pxr::VdfVector *>>>, false>
+// pxr::TfIterator<std::vector<pxr::VdfMaskedOutput, std::allocator<pxr::VdfMaskedOutput>> const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::VdfMaskedOutput, pxr::VdfVector *>, std::allocator<std::pair<pxr::VdfMaskedOutput, pxr::VdfVector *>>> const, false>
+// pxr::TfSmallVector<pxr::TfSmallVector<pxr::VdfMaskedOutput, 1U>, 1U>
+// pxr::TfSmallVector<pxr::VdfMaskedOutput, 1U>
+// pxr::TfDenseHashMap<pxr::VdfMaskedOutput, unsigned int, pxr::VdfMaskedOutput::Hash, std::equal_to<pxr::VdfMaskedOutput>, 128U>
 // pxr::TfHashMap<pxr::VdfMaskedOutput, unsigned long, pxr::VdfMaskedOutput::Hash, std::equal_to<pxr::VdfMaskedOutput>, std::allocator<std::pair<pxr::VdfMaskedOutput const, unsigned long>>>
+// pxr::TfIterator<pxr::VdfNode::InputMapIterator const, false>
+// pxr::TfIterator<pxr::VdfNode::OutputMapIterator const, false>
+// pxr::TfSmallVector<pxr::VdfIndexedData<float>, 0U>
 // pxr::VdfIndexedDataIterator<int>
+// pxr::TfIterator<pxr::VdfConnectorMap<pxr::VdfOutput>, false>
+// pxr::TfIterator<pxr::VdfConnectorMap<pxr::VdfOutput> const, false>
 // pxr::VdfConnectorMap<pxr::VdfOutput>
+// pxr::TfIterator<pxr::VdfRequest const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::VdfPoolChainIndex, pxr::VdfOutput const *>, std::allocator<std::pair<pxr::VdfPoolChainIndex, pxr::VdfOutput const *>>> const, false>
+// pxr::TfIterator<std::vector<pxr::VdfScheduleOutput, std::allocator<pxr::VdfScheduleOutput>>, false>
+// pxr::TfIterator<std::vector<pxr::VdfScheduleNode, std::allocator<pxr::VdfScheduleNode>>, false>
 // pxr::VdfReadIterator<pxr::GfMatrix4d>
 // pxr::VdfReadIterator<pxr::TfToken>
 // pxr::VdfReadIterator<double>
 // pxr::TfHashMap<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle, pxr::TfHash, std::equal_to<pxr::VdfNode const *>, std::allocator<std::pair<pxr::VdfNode const *, pxr::VdfGrapherOptions::DisplayStyle>>>
+// pxr::TfIterator<std::vector<pxr::VdfGrapherOptions::NodeLimit, std::allocator<pxr::VdfGrapherOptions::NodeLimit>> const, false>
 // pxr::TfHashMap<pxr::VdfObjectPtr, pxr::TfToken, pxr::VdfObjectPtr::HashFunctor, std::equal_to<pxr::VdfObjectPtr>, std::allocator<std::pair<pxr::VdfObjectPtr const, pxr::TfToken>>>
 // pxr::TfHashMap<pxr::VdfObjectPtr, std::string, pxr::VdfObjectPtr::HashFunctor, std::equal_to<pxr::VdfObjectPtr>, std::allocator<std::pair<pxr::VdfObjectPtr const, std::string>>>
+// pxr::TfIterator<std::vector<pxr::VdfIndexedWeightsOperand, std::allocator<pxr::VdfIndexedWeightsOperand>> const, false>
 // pxr::TfHashMap<std::string, pxr::VdfTestUtils::Node, pxr::TfHash, std::equal_to<std::string>, std::allocator<std::pair<std::string const, pxr::VdfTestUtils::Node>>>
-// pxr::TfRefPtr<pxr::GlfDrawTarget::AttachmentsContainer>
+// pxr::TfSmallVector<pxr::EfTime, 0U>
+// pxr::TfSmallVector<pxr::EsfJournal, 1U>
+// pxr::TfDenseHashMap<pxr::SdfPath, pxr::EsfEditReason, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
 // pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::TfDenseHashMap<pxr::TfToken, pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 8U>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashMap<pxr::TfToken, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::TfToken>, 128U>
+// pxr::TfDenseHashMap<pxr::TfToken, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, 32U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 2U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 32U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdDataSourceBase>, 8U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdContainerDataSource>, 4U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdContainerDataSource>, 8U>
+// pxr::TfSmallVector<std::shared_ptr<pxr::HdVectorDataSource>, 8U>
+// pxr::TfDenseHashMap<pxr::HdDataSourceLocator, std::shared_ptr<pxr::HdDataSourceBase>, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, 128U>
 // pxr::TfHashMap<pxr::HdDataSourceLocator, unsigned long, pxr::TfHash, std::equal_to<pxr::HdDataSourceLocator>, std::allocator<std::pair<pxr::HdDataSourceLocator const, unsigned long>>>
+// pxr::TfSmallVector<pxr::HdDataSourceLocator, 4U>
+// pxr::TfSmallVector<pxr::HdDataSourceLocator, 8U>
+// pxr::TfDenseHashMap<pxr::SdfPath, pxr::HdDataSourceLocatorSet, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
+// pxr::TfDenseHashMap<pxr::SdfPath, pxr::TfDenseHashMap<pxr::SdfPath, pxr::HdDataSourceLocatorSet, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>, pxr::TfHash, std::equal_to<pxr::SdfPath>, 128U>
+// pxr::TfSmallVector<pxr::HdDataSourceLocatorSet, 9U>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfToken, std::array<pxr::HdBasisCurvesReprDesc, 1UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdBasisCurvesReprDesc, 1UL>>>> const, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::HdBufferArrayRange>, std::allocator<std::shared_ptr<pxr::HdBufferArrayRange>>> const, false>
+// pxr::TfIterator<std::list<std::shared_ptr<pxr::HdBufferArray>, std::allocator<std::shared_ptr<pxr::HdBufferArray>>> const, false>
+// pxr::TfIterator<std::vector<pxr::HdBufferSpec, std::allocator<pxr::HdBufferSpec>> const, false>
+// pxr::TfSmallVector<pxr::HdSceneIndexObserver::AddedPrimEntry, 16U>
+// pxr::TfSmallVector<pxr::HdSceneIndexObserver::RemovedPrimEntry, 16U>
+// pxr::TfSmallVector<pxr::HdSceneIndexObserver::DirtiedPrimEntry, 16U>
+// pxr::TfSmallVector<pxr::HdSceneIndexObserver::RenamedPrimEntry, 16U>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::HdBufferSource>, std::allocator<std::shared_ptr<pxr::HdBufferSource>>>, false>
+// pxr::TfSmallVector<pxr::HdMaterialNetworkInterface::InputConnection, 4U>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfToken, std::array<pxr::HdImplicitSurfaceReprDesc, 1UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdImplicitSurfaceReprDesc, 1UL>>>> const, false>
+// pxr::TfWeakPtr<pxr::HdInstanceProxyViewSceneIndex>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfToken, std::array<pxr::HdMeshReprDesc, 2UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdMeshReprDesc, 2UL>>>> const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfToken, std::array<pxr::HdPointsReprDesc, 1UL>>, std::allocator<std::pair<pxr::TfToken, std::array<pxr::HdPointsReprDesc, 1UL>>>> const, false>
+// pxr::TfIterator<std::map<pxr::TfToken, pxr::HdStBindingRequest, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::HdStBindingRequest>>>, false>
+// pxr::TfIterator<std::map<pxr::TfToken, pxr::HdStBindingRequest, std::less<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, pxr::HdStBindingRequest>>> const, false>
+// pxr::TfIterator<std::vector<pxr::HdStBindingRequest, std::allocator<pxr::HdStBindingRequest>> const, false>
+// pxr::TfIterator<std::vector<std::pair<pxr::TfToken, std::shared_ptr<pxr::HdStBufferResource>>, std::allocator<std::pair<pxr::TfToken, std::shared_ptr<pxr::HdStBufferResource>>>> const, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::HdStShaderCode>, std::allocator<std::shared_ptr<pxr::HdStShaderCode>>>, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::HdStShaderCode>, std::allocator<std::shared_ptr<pxr::HdStShaderCode>>> const, false>
+// pxr::TfIterator<std::vector<std::shared_ptr<pxr::HdStRenderPassState>, std::allocator<std::shared_ptr<pxr::HdStRenderPassState>>>, false>
 // pxr::TfHashMap<pxr::TfToken, std::shared_ptr<pxr::UsdImagingPrimAdapter>, pxr::TfToken::HashFunctor, std::equal_to<pxr::TfToken>, std::allocator<std::pair<pxr::TfToken const, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>
+// pxr::TfIterator<std::vector<std::pair<pxr::UsdPrim, std::shared_ptr<pxr::UsdImagingPrimAdapter>>, std::allocator<std::pair<pxr::UsdPrim, std::shared_ptr<pxr::UsdImagingPrimAdapter>>>>, false>
 // pxr::TfWeakPtr<pxr::UsdImagingStageSceneIndex>
 // pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
 
@@ -176,9 +526,44 @@ extension pxr.TfSimpleRefBase: Equatable { // importedAsReference
     }
 }
 extension pxr.TfBits: Equatable {} // foundBySwift
+extension pxr.TfBits.AllSetView.const_iterator: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.TfCompressedBits: Equatable {} // foundBySwift
+extension pxr.TfCompressedBits.AllSetView.const_iterator: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.TfCompressedBits.PlatformsView.const_iterator: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.TfEnum: Equatable {} // foundBySwift
 extension pxr.TfNotice.WeakProbePtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.TfDiagnosticMgr: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.TfDiagnosticMgr, rhs: pxr.TfDiagnosticMgr) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.ExecDispatchesOntoSchemas: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VdfConnectionVector: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VdfConnectionConstVector: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -190,11 +575,6 @@ extension pxr.TfRefPtrTracker.WatchedCounts: Equatable { // classTemplateSpecial
 }
 extension pxr.VdfNodeToInputPtrVectorMap: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.TfDiagnosticMgr: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.TfDiagnosticMgr, rhs: pxr.TfDiagnosticMgr) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
@@ -219,13 +599,6 @@ extension pxr.TraceAggregateTree.CounterMap: Equatable { // classTemplateSpecial
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
-#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
-extension pxr.GlfBindingMap.BindingMap: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.TfToken.HashSet: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -243,10 +616,14 @@ extension pxr.pxr_half.half: Equatable { // differentArgumentTypes
     }
 }
 extension pxr.GfVec4i: Equatable {} // foundBySwift
+extension pxr.GfVec2i: Equatable {} // foundBySwift
+extension pxr.GfVec3i: Equatable {} // foundBySwift
+extension pxr.GfVec2h: Equatable {} // foundBySwift
+extension pxr.GfVec2d: Equatable {} // foundBySwift
+extension pxr.GfVec2f: Equatable {} // foundBySwift
+extension pxr.GfVec3h: Equatable {} // foundBySwift
 extension pxr.GfVec3d: Equatable {} // foundBySwift
 extension pxr.GfVec3f: Equatable {} // foundBySwift
-extension pxr.GfVec3h: Equatable {} // foundBySwift
-extension pxr.GfVec3i: Equatable {} // foundBySwift
 extension pxr.GfRange3d: Equatable {} // foundBySwift
 extension pxr.GfRange3f: Equatable {} // foundBySwift
 extension pxr.GfCamera: Equatable {} // foundBySwift
@@ -254,10 +631,6 @@ extension pxr.GfRange1f: Equatable {} // foundBySwift
 extension pxr.GfRange1d: Equatable {} // foundBySwift
 extension pxr.GfColor: Equatable {} // foundBySwift
 extension pxr.GfColorSpace: Equatable {} // foundBySwift
-extension pxr.GfVec2f: Equatable {} // foundBySwift
-extension pxr.GfVec2d: Equatable {} // foundBySwift
-extension pxr.GfVec2h: Equatable {} // foundBySwift
-extension pxr.GfVec2i: Equatable {} // foundBySwift
 extension pxr.GfMatrix3f: Equatable {} // foundBySwift
 extension pxr.GfDualQuatd: Equatable {} // foundBySwift
 extension pxr.GfQuatd: Equatable {} // foundBySwift
@@ -265,6 +638,7 @@ extension pxr.GfDualQuatf: Equatable {} // foundBySwift
 extension pxr.GfQuatf: Equatable {} // foundBySwift
 extension pxr.GfDualQuath: Equatable {} // foundBySwift
 extension pxr.GfQuath: Equatable {} // foundBySwift
+extension pxr.GfDuration: Equatable {} // friendFunction
 extension pxr.GfFrustum: Equatable {} // foundBySwift
 extension pxr.GfPlane: Equatable {} // foundBySwift
 extension pxr.GfRay: Equatable {} // foundBySwift
@@ -388,6 +762,11 @@ extension pxr.VtDualQuatfArray: Equatable { // classTemplateSpecialization
     }
 }
 extension pxr.VtDualQuathArray: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.VtDurationArray: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -642,6 +1021,11 @@ extension pxr.VtDualQuathArrayEdit: Equatable { // classTemplateSpecialization
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.VtDurationArrayEdit: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.VtIntervalArrayEdit: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -858,6 +1242,11 @@ extension pxr.VtUShortArrayEdit: Equatable { // classTemplateSpecialization
     }
 }
 extension pxr.VtDictionary: Equatable {} // foundBySwift
+extension pxr.ExecIrResult: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 extension pxr.HdAovSettingsMap: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
@@ -865,6 +1254,11 @@ extension pxr.HdAovSettingsMap: Equatable { // classTemplateSpecialization
     }
 }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.SdfChangeList.Entry.InfoChangeVec: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.VtDictionary.iterator: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -883,7 +1277,6 @@ extension pxr.VtMutableValueRef: Equatable { // differentArgumentTypes
     }
 }
 extension pxr.TsSpline: Equatable {} // foundBySwift
-extension pxr.TsLoopParams: Equatable {} // foundBySwift
 extension pxr.TsExtrapolation: Equatable {} // foundBySwift
 extension pxr.TsKnotMap: Equatable {} // foundBySwift
 extension pxr.TsKnot: Equatable {} // foundBySwift
@@ -982,11 +1375,6 @@ extension pxr.SdfSubLayerProxy: Equatable { // classTemplateSpecialization
     }
 }
 extension pxr.SdfDictionaryProxy: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.SdfRelocatesMapProxy: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -1271,6 +1659,11 @@ extension pxr.UsdStage: Equatable { // importedAsReference
 extension pxr.UsdEditTarget: Equatable {} // foundBySwift
 extension pxr.UsdStageLoadRules: Equatable {} // foundBySwift
 extension pxr.UsdStagePopulationMask: Equatable {} // foundBySwift
+extension pxr.UsdShadeAttributeVector: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.UsdAttribute: Equatable { // differentArgumentTypes
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1298,6 +1691,11 @@ extension pxr.UsdPrimRange.iterator: Equatable {} // foundBySwift
 extension pxr.UsdStageCache.Id: Equatable {} // friendFunction
 extension pxr.UsdGeomPrimvar: Equatable {} // friendFunction
 extension pxr.UsdGeomXformOp: Equatable {} // friendFunction
+extension pxr.UsdShadeSourceInfoVector: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.UsdShadeConnectionSourceInfo: Equatable {} // foundBySwift
 extension pxr.UsdShadeInput: Equatable {} // friendFunction
 extension pxr.UsdShadeOutput: Equatable {} // friendFunction
@@ -1391,6 +1789,11 @@ extension pxr.GarchGLPlatformDebugContextRefPtr: Equatable { // classTemplateSpe
 extension pxr.GarchNSGLContextState: Equatable {} // foundBySwift
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT) && canImport(Darwin)
 #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.HioImage: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HioImage, rhs: pxr.HioImage) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.HioImageRegistry: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HioImageRegistry, rhs: pxr.HioImageRegistry) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1399,48 +1802,8 @@ extension pxr.HioImageRegistry: Equatable { // importedAsReference
 extension pxr.CameraUtilFraming: Equatable {} // foundBySwift
 extension pxr.PxOsdMeshTopology: Equatable {} // foundBySwift
 extension pxr.PxOsdSubdivTags: Equatable {} // foundBySwift
-extension pxr.GlfBindingMap: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.GlfBindingMap, rhs: pxr.GlfBindingMap) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfBindingMapPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
 extension pxr.GlfContextCaps: Equatable { // importedAsReference
     public static func ==(lhs: pxr.GlfContextCaps, rhs: pxr.GlfContextCaps) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfDrawTarget: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.GlfDrawTarget, rhs: pxr.GlfDrawTarget) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfDrawTargetRefPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfDrawTargetPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfDrawTarget.Attachment: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.GlfDrawTarget.Attachment, rhs: pxr.GlfDrawTarget.Attachment) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfDrawTarget.AttachmentRefPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfTexture: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.GlfTexture, rhs: pxr.GlfTexture) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
@@ -1467,16 +1830,6 @@ extension pxr.GlfSimpleShadowArray: Equatable { // importedAsReference
     }
 }
 extension pxr.GlfSimpleShadowArrayRefPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfUniformBlock: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.GlfUniformBlock, rhs: pxr.GlfUniformBlock) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.GlfUniformBlockRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -1794,6 +2147,16 @@ extension pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr: Equatable { // 
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.HdsiApplicationRenderSettingsSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiApplicationRenderSettingsSceneIndex, rhs: pxr.HdsiApplicationRenderSettingsSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiApplicationRenderSettingsSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.HdsiBackPlateSceneIndex: Equatable { // importedAsReference
     public static func ==(lhs: pxr.HdsiBackPlateSceneIndex, rhs: pxr.HdsiBackPlateSceneIndex) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -1980,6 +2343,16 @@ extension pxr.HdsiPinnedCurveExpandingSceneIndex: Equatable { // importedAsRefer
     }
 }
 extension pxr.HdsiPinnedCurveExpandingSceneIndexRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiPrimIdSceneIndex: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.HdsiPrimIdSceneIndex, rhs: pxr.HdsiPrimIdSceneIndex) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.HdsiPrimIdSceneIndexRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
@@ -2182,6 +2555,16 @@ extension pxr.UsdImagingStageSceneIndex: Equatable { // importedAsReference
         __Overlay.operatorEqualsEquals(lhs, rhs)
     }
 }
+extension pxr.UsdImagingStageSceneIndexInterfaceRefPtr: Equatable { // classTemplateSpecialization
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
+extension pxr.UsdImagingStageSceneIndexInterface: Equatable { // importedAsReference
+    public static func ==(lhs: pxr.UsdImagingStageSceneIndexInterface, rhs: pxr.UsdImagingStageSceneIndexInterface) -> Bool {
+        __Overlay.operatorEqualsEquals(lhs, rhs)
+    }
+}
 extension pxr.UsdImagingSelectionSceneIndexRefPtr: Equatable { // classTemplateSpecialization
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)
@@ -2273,16 +2656,6 @@ extension pxr.UsdImagingSceneIndex: Equatable { // importedAsReference
     }
 }
 extension pxr.UsdExecImagingValueKey: Equatable {} // foundBySwift
-extension pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr: Equatable { // classTemplateSpecialization
-    public static func ==(lhs: Self, rhs: Self) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
-extension pxr.UsdExecImagingStageSceneIndexInterface: Equatable { // importedAsReference
-    public static func ==(lhs: pxr.UsdExecImagingStageSceneIndexInterface, rhs: pxr.UsdExecImagingStageSceneIndexInterface) -> Bool {
-        __Overlay.operatorEqualsEquals(lhs, rhs)
-    }
-}
 extension pxr.UsdImagingGLRenderParams: Equatable { // inlineMethodDefinedAfterDeclaration
     public static func ==(lhs: Self, rhs: Self) -> Bool {
         __Overlay.operatorEqualsEquals(lhs, rhs)

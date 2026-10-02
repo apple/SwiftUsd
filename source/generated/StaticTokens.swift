@@ -219,6 +219,15 @@ extension pxr.TfToken {
     public static var UsdLuxValidationErrorNameTokens: pxr.UsdLuxValidationErrorNameTokens_StaticTokenType {
         __Overlay.UsdLuxValidationErrorNameTokens.pointee
     }
+    public static var UsdMediaValidatorNameTokens: pxr.UsdMediaValidatorNameTokens_StaticTokenType {
+        __Overlay.UsdMediaValidatorNameTokens.pointee
+    }
+    public static var UsdMediaValidatorKeywordTokens: pxr.UsdMediaValidatorKeywordTokens_StaticTokenType {
+        __Overlay.UsdMediaValidatorKeywordTokens.pointee
+    }
+    public static var UsdMediaValidationErrorNameTokens: pxr.UsdMediaValidationErrorNameTokens_StaticTokenType {
+        __Overlay.UsdMediaValidationErrorNameTokens.pointee
+    }
     public static var UsdShadeValidatorNameTokens: pxr.UsdShadeValidatorNameTokens_StaticTokenType {
         __Overlay.UsdShadeValidatorNameTokens.pointee
     }
@@ -258,9 +267,6 @@ extension pxr.TfToken {
     }
     public static var GeomUtilInterpolationTokens: pxr.GeomUtilInterpolationTokens_StaticTokenType {
         __Overlay.GeomUtilInterpolationTokens.pointee
-    }
-    public static var GlfTextureTokens: pxr.GlfTextureTokens_StaticTokenType {
-        __Overlay.GlfTextureTokens.pointee
     }
     public static var HgiTokens: pxr.HgiTokens_StaticTokenType {
         __Overlay.HgiTokens.pointee
@@ -469,6 +475,9 @@ extension pxr.TfToken {
     public static var HdImageShaderSchemaTokens: pxr.HdImageShaderSchemaTokens_StaticTokenType {
         __Overlay.HdImageShaderSchemaTokens.pointee
     }
+    public static var HdImplicitSurfaceReprDescTokens: pxr.HdImplicitSurfaceReprDescTokens_StaticTokenType {
+        __Overlay.HdImplicitSurfaceReprDescTokens.pointee
+    }
     public static var HdInstanceCategoriesSchemaTokens: pxr.HdInstanceCategoriesSchemaTokens_StaticTokenType {
         __Overlay.HdInstanceCategoriesSchemaTokens.pointee
     }
@@ -547,11 +556,17 @@ extension pxr.TfToken {
     public static var HdNurbsPatchTrimCurveSchemaTokens: pxr.HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType {
         __Overlay.HdNurbsPatchTrimCurveSchemaTokens.pointee
     }
+    public static var HdParticleFieldSchemaTokens: pxr.HdParticleFieldSchemaTokens_StaticTokenType {
+        __Overlay.HdParticleFieldSchemaTokens.pointee
+    }
     public static var HdPlaneSchemaTokens: pxr.HdPlaneSchemaTokens_StaticTokenType {
         __Overlay.HdPlaneSchemaTokens.pointee
     }
     public static var HdRendererCreateArgsSchemaTokens: pxr.HdRendererCreateArgsSchemaTokens_StaticTokenType {
         __Overlay.HdRendererCreateArgsSchemaTokens.pointee
+    }
+    public static var HdPrimIdSchemaTokens: pxr.HdPrimIdSchemaTokens_StaticTokenType {
+        __Overlay.HdPrimIdSchemaTokens.pointee
     }
     public static var HdPrimOriginSchemaTokens: pxr.HdPrimOriginSchemaTokens_StaticTokenType {
         __Overlay.HdPrimOriginSchemaTokens.pointee
@@ -573,6 +588,9 @@ extension pxr.TfToken {
     }
     public static var HdRenderProductSchemaTokens: pxr.HdRenderProductSchemaTokens_StaticTokenType {
         __Overlay.HdRenderProductSchemaTokens.pointee
+    }
+    public static var HdRenderSettingDescriptorSchemaTokens: pxr.HdRenderSettingDescriptorSchemaTokens_StaticTokenType {
+        __Overlay.HdRenderSettingDescriptorSchemaTokens.pointee
     }
     public static var HdRenderSettingsSchemaTokens: pxr.HdRenderSettingsSchemaTokens_StaticTokenType {
         __Overlay.HdRenderSettingsSchemaTokens.pointee
@@ -691,6 +709,9 @@ extension pxr.TfToken {
     public static var HdStRenderSettingsTokens: pxr.HdStRenderSettingsTokens_StaticTokenType {
         __Overlay.HdStRenderSettingsTokens.pointee
     }
+    public static var HdStDefaultTransparencyModeTokens: pxr.HdStDefaultTransparencyModeTokens_StaticTokenType {
+        __Overlay.HdStDefaultTransparencyModeTokens.pointee
+    }
     public static var HdStMaterialTagTokens: pxr.HdStMaterialTagTokens_StaticTokenType {
         __Overlay.HdStMaterialTagTokens.pointee
     }
@@ -699,6 +720,9 @@ extension pxr.TfToken {
     }
     public static var HdStPerfTokens: pxr.HdStPerfTokens_StaticTokenType {
         __Overlay.HdStPerfTokens.pointee
+    }
+    public static var HdStNativeImplicitsTokens: pxr.HdStNativeImplicitsTokens_StaticTokenType {
+        __Overlay.HdStNativeImplicitsTokens.pointee
     }
     public static var HdxTokens: pxr.HdxTokens_StaticTokenType {
         __Overlay.HdxTokens.pointee

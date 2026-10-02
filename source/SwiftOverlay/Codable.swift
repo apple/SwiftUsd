@@ -282,6 +282,24 @@ extension pxr.GfDualQuath: Codable {
     }
 }
 
+extension pxr.GfDuration: Codable {
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.singleValueContainer()
+
+        let x = try container.decode(Double.self)
+
+        self.init(x)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = try encoder.singleValueContainer()
+
+        let x = Double(self)
+
+        try container.encode(x)
+    }
+}
+
 extension pxr.GfFrustum.ProjectionType: Codable {}
 
 extension pxr.GfFrustum: Codable {

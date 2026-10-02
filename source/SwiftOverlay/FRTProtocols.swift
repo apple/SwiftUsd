@@ -41,6 +41,13 @@ extension Overlay {
    }
 }
 
+extension Overlay {
+    /// Protocol representing unsafe reference types in OpenUSD. Don't use this unless you know what you're doing
+    @_documentation(visibility: public)
+    public protocol _SwiftUsdUnsafeReferenceTypeProtocol: _SwiftUsdReferenceTypeProtocol {
+    }
+}
+
 // MARK: TfRefBaseProtocol, TfRefPtrProtocol definition
 
 extension Overlay {

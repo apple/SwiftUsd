@@ -103,8 +103,8 @@ struct FileSystemInfo {
             // exec
             "vdf", "ef", "esf", "esfUsd", "exec", "execUsd", "execGeom", "execIr",
             // usdValidation
-            "usdValidation", "usdGeomValidators", "usdLuxValidators", "usdPhysicsValidators",
-            "usdShadeValidators", "usdSkelValidators", "usdUtilsValidators",
+            "usdValidation", "usdGeomValidators", "usdLuxValidators", "usdMediaValidators",
+            "usdPhysicsValidators", "usdShadeValidators", "usdSkelValidators", "usdUtilsValidators",
             // imaging
             "garch", "hf", "hio", "cameraUtil", "pxOsd", "geomUtil", "glf", "hgi",
             "hgiGL", "hgiMetal", "hgiInterop", "hd", "hdar", "hdGp", "hdsi", "hdMtlx", "hioOpenVDB",
@@ -351,14 +351,7 @@ extension FileSystemInfo {
                 let indexFive = result.index(after: indexFour)
                 result = "Usd_" + result[indexFour].uppercased() + result[indexFive...]
             }
-            
-            if result == "tbb" {
-                result = "TBB"
-            }
-            if result == "tbb_debug" {
-                result = "TBB_debug"
-            }
-            
+                        
             if result.hasPrefix("osd") {
                 result = "O" + result.dropFirst()
             }
@@ -374,6 +367,13 @@ extension FileSystemInfo {
 
             if result == "openvdb" {
                 result = "OpenVDB"
+            }
+
+            if result == "tbb" {
+                result = "TBB"
+            }
+            if result == "tbb_debug" {
+                result = "TBB_debug"
             }
             
             return result

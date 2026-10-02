@@ -82,6 +82,7 @@ func extractTypeHint(_ js: JsAny) throws -> TypedValue {
     else if s == "Float" { return .init(typeName: .Float) }
     else if s == "Double" { return .init(typeName: .Double) }
     else if s == "TimeCode" { return .init(typeName: .TimeCode) }
+    else if s == "Duration" { return .init(typeName: .Duration) }
     else if s == "String" { return .init(typeName: .String) }
     else if s == "Token" { return .init(typeName: .Token) }
     else if s == "Asset" { return .init(typeName: .Asset) }
@@ -138,6 +139,7 @@ func extractTypeHint(_ js: JsAny) throws -> TypedValue {
     else if s == "FloatArray" { return .init(typeName: .FloatArray) }
     else if s == "DoubleArray" { return .init(typeName: .DoubleArray) }
     else if s == "TimeCodeArray" { return .init(typeName: .TimeCodeArray) }
+    else if s == "DurationArray" { return .init(typeName: .DurationArray) }
     else if s == "StringArray" { return .init(typeName: .StringArray) }
     else if s == "TokenArray" { return .init(typeName: .TokenArray) }
     else if s == "AssetArray" { return .init(typeName: .AssetArray) }
@@ -217,6 +219,7 @@ func writeTypeHint(_ value: TypedValue) -> JsAny {
     else if value.valueTypeName == .Float { return "Float" }
     else if value.valueTypeName == .Double { return "Double" }
     else if value.valueTypeName == .TimeCode { return "TimeCode" }
+    else if value.valueTypeName == .Duration { return "Duration" }
     else if value.valueTypeName == .String { return "String" }
     else if value.valueTypeName == .Token { return "Token" }
     else if value.valueTypeName == .Asset { return "Asset" }
@@ -273,6 +276,7 @@ func writeTypeHint(_ value: TypedValue) -> JsAny {
     else if value.valueTypeName == .FloatArray { return "FloatArray" }
     else if value.valueTypeName == .DoubleArray { return "DoubleArray" }
     else if value.valueTypeName == .TimeCodeArray { return "TimeCodeArray" }
+    else if value.valueTypeName == .DurationArray { return "DurationArray" }
     else if value.valueTypeName == .StringArray { return "StringArray" }
     else if value.valueTypeName == .TokenArray { return "TokenArray" }
     else if value.valueTypeName == .AssetArray { return "AssetArray" }
@@ -390,6 +394,9 @@ func extractValueWithTypeHint(_ out: inout TypedValue, _ js: JsAny) throws {
     } else if out.valueTypeName == .TimeCode {
         let x = try js.castAsNumber()
         out.value = pxr.VtValue(pxr.GfTimeCode(x))
+    } else if out.valueTypeName == .Duration {
+        let x = try js.castAsNumber()
+        out.value = pxr.VtValue(pxr.GfDuration(x))
     } else if out.valueTypeName == .String {
         let x = try js.castAsString()
         out.value = pxr.VtValue(std.string(x))
@@ -787,6 +794,8 @@ func extractValueWithTypeHint(_ out: inout TypedValue, _ js: JsAny) throws {
         try _extractArray(&out, js, pxr.VtDoubleArray.self)
     } else if out.valueTypeName == .TimeCodeArray {
         try _extractArray(&out, js, pxr.VtTimeCodeArray.self)
+    } else if out.valueTypeName == .DurationArray {
+        try _extractArray(&out, js, pxr.VtDurationArray.self)
     } else if out.valueTypeName == .StringArray {
         try _extractArray(&out, js, pxr.VtStringArray.self)
     } else if out.valueTypeName == .TokenArray {
@@ -955,6 +964,8 @@ func writeValueWithoutTypeHint(_ value: TypedValue) throws -> JsAny {
         return .number(Double(copy.Get() as Double))
     } else if copy.IsHolding(T: pxr.GfTimeCode.self) {
         return .number(Double(copy.Get() as pxr.GfTimeCode))
+    } else if copy.IsHolding(T: pxr.GfDuration.self) {
+        return .number(Double(copy.Get() as pxr.GfDuration))
     } else if copy.IsHolding(T: std.string.self) {
          return .string(String(copy.Get() as std.string))
     } else if copy.IsHolding(T: pxr.TfToken.self) {
@@ -1136,6 +1147,8 @@ func writeValueWithoutTypeHint(_ value: TypedValue) throws -> JsAny {
         return try _writeArray(copy.Get() as pxr.VtDoubleArray, value)
     } else if (copy.IsHolding(T: pxr.VtTimeCodeArray.self)) {
         return try _writeArray(copy.Get() as pxr.VtTimeCodeArray, value)
+    } else if (copy.IsHolding(T: pxr.VtDurationArray.self)) {
+        return try _writeArray(copy.Get() as pxr.VtDurationArray, value)
     } else if (copy.IsHolding(T: pxr.VtStringArray.self)) {
         return try _writeArray(copy.Get() as pxr.VtStringArray, value)
     } else if (copy.IsHolding(T: pxr.VtTokenArray.self)) {

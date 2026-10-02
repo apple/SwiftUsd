@@ -35,6 +35,7 @@ python3 build_scripts/build_usd.py \
     --no-python \
     --ignore-homebrew \
     --build-target native \
+    --no-onetbb \
     ~/SwiftUsd/openusd-builds/macOS \
     --build-args \
     USD,"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD" \
@@ -50,6 +51,7 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target iOS \
     --no-build-apple-framework \
+    --no-onetbb \
     ~/SwiftUsd/openusd-builds/iOS \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -62,6 +64,7 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target iOSSimulator \
     --no-build-apple-framework \
+    --no-onetbb \
     ~/SwiftUsd/openusd-builds/iOSSimulator \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -74,6 +77,7 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target visionOS \
     --no-build-apple-framework \
+    --no-onetbb \
     ~/SwiftUsd/openusd-builds/visionOS \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 
@@ -86,6 +90,7 @@ python3 build_scripts/build_usd.py \
     --ignore-homebrew \
     --build-target visionOSSimulator \
     --no-build-apple-framework \
+    --no-onetbb \
     ~/SwiftUsd/openusd-builds/visionOSSimulator \
     --build-args="USD,\"-DCMAKE_CXX_FLAGS_INIT=-ffile-prefix-map=$(realpath .)=OpenUSD\""
 ```

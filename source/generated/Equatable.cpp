@@ -29,8 +29,36 @@ bool __Overlay::operatorEqualsEquals(const pxr::TfSimpleRefBase& l,
                                      const pxr::TfSimpleRefBase& r) {
     return &l == &r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::TfBits::AllSetView::const_iterator& l,
+                                     const pxr::TfBits::AllSetView::const_iterator& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::TfCompressedBits::AllSetView::const_iterator& l,
+                                     const pxr::TfCompressedBits::AllSetView::const_iterator& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::TfCompressedBits::PlatformsView::const_iterator& l,
+                                     const pxr::TfCompressedBits::PlatformsView::const_iterator& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::TfNotice::WeakProbePtr& l,
                                      const pxr::TfNotice::WeakProbePtr& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::TfDiagnosticMgr& l,
+                                     const pxr::TfDiagnosticMgr& r) {
+    return &l == &r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::ExecDispatchesOntoSchemas& l,
+                                     const pxr::ExecDispatchesOntoSchemas& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::VdfConnectionVector& l,
+                                     const pxr::VdfConnectionVector& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::VdfConnectionConstVector& l,
+                                     const pxr::VdfConnectionConstVector& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::TfRefPtrTracker::WatchedCounts& l,
@@ -40,10 +68,6 @@ bool __Overlay::operatorEqualsEquals(const pxr::TfRefPtrTracker::WatchedCounts& 
 bool __Overlay::operatorEqualsEquals(const pxr::VdfNodeToInputPtrVectorMap& l,
                                      const pxr::VdfNodeToInputPtrVectorMap& r) {
     return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::TfDiagnosticMgr& l,
-                                     const pxr::TfDiagnosticMgr& r) {
-    return &l == &r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::TfRefPtrTracker& l,
                                      const pxr::TfRefPtrTracker& r) {
@@ -61,18 +85,16 @@ bool __Overlay::operatorEqualsEquals(const pxr::TraceAggregateTree::CounterMap& 
                                      const pxr::TraceAggregateTree::CounterMap& r) {
     return l == r;
 }
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-bool __Overlay::operatorEqualsEquals(const pxr::GlfBindingMap::BindingMap& l,
-                                     const pxr::GlfBindingMap::BindingMap& r) {
-    return l == r;
-}
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 bool __Overlay::operatorEqualsEquals(const pxr::TfToken::HashSet& l,
                                      const pxr::TfToken::HashSet& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::pxr_half::half& l,
                                      const pxr::pxr_half::half& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::GfDuration& l,
+                                     const pxr::GfDuration& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::GfRect2i& l,
@@ -157,6 +179,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::VtDualQuatfArray& l,
 }
 bool __Overlay::operatorEqualsEquals(const pxr::VtDualQuathArray& l,
                                      const pxr::VtDualQuathArray& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::VtDurationArray& l,
+                                     const pxr::VtDurationArray& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::VtHalfArray& l,
@@ -359,6 +385,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::VtDualQuathArrayEdit& l,
                                      const pxr::VtDualQuathArrayEdit& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::VtDurationArrayEdit& l,
+                                     const pxr::VtDurationArrayEdit& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::VtIntervalArrayEdit& l,
                                      const pxr::VtIntervalArrayEdit& r) {
     return l == r;
@@ -531,12 +561,20 @@ bool __Overlay::operatorEqualsEquals(const pxr::VtUShortArrayEdit& l,
                                      const pxr::VtUShortArrayEdit& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::ExecIrResult& l,
+                                     const pxr::ExecIrResult& r) {
+    return l == r;
+}
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 bool __Overlay::operatorEqualsEquals(const pxr::HdAovSettingsMap& l,
                                      const pxr::HdAovSettingsMap& r) {
     return l == r;
 }
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+bool __Overlay::operatorEqualsEquals(const pxr::SdfChangeList::Entry::InfoChangeVec& l,
+                                     const pxr::SdfChangeList::Entry::InfoChangeVec& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::VtDictionary::iterator& l,
                                      const pxr::VtDictionary::iterator& r) {
     return l == r;
@@ -639,10 +677,6 @@ bool __Overlay::operatorEqualsEquals(const pxr::SdfSubLayerProxy& l,
 }
 bool __Overlay::operatorEqualsEquals(const pxr::SdfDictionaryProxy& l,
                                      const pxr::SdfDictionaryProxy& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::SdfRelocatesMapProxy& l,
-                                     const pxr::SdfRelocatesMapProxy& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::SdfVariantSelectionProxy& l,
@@ -861,6 +895,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::UsdStage& l,
                                      const pxr::UsdStage& r) {
     return &l == &r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::UsdShadeAttributeVector& l,
+                                     const pxr::UsdShadeAttributeVector& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::UsdAttribute& l,
                                      const pxr::UsdAttribute& r) {
     return l == r;
@@ -887,6 +925,10 @@ bool __Overlay::operatorEqualsEquals(const pxr::UsdGeomPrimvar& l,
 }
 bool __Overlay::operatorEqualsEquals(const pxr::UsdGeomXformOp& l,
                                      const pxr::UsdGeomXformOp& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::UsdShadeSourceInfoVector& l,
+                                     const pxr::UsdShadeSourceInfoVector& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::UsdShadeInput& l,
@@ -958,44 +1000,16 @@ bool __Overlay::operatorEqualsEquals(const pxr::GarchGLPlatformDebugContextRefPt
                                      const pxr::GarchGLPlatformDebugContextRefPtr& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::HioImage& l,
+                                     const pxr::HioImage& r) {
+    return &l == &r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::HioImageRegistry& l,
                                      const pxr::HioImageRegistry& r) {
     return &l == &r;
 }
-bool __Overlay::operatorEqualsEquals(const pxr::GlfBindingMap& l,
-                                     const pxr::GlfBindingMap& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfBindingMapPtr& l,
-                                     const pxr::GlfBindingMapPtr& r) {
-    return l == r;
-}
 bool __Overlay::operatorEqualsEquals(const pxr::GlfContextCaps& l,
                                      const pxr::GlfContextCaps& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfDrawTarget& l,
-                                     const pxr::GlfDrawTarget& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfDrawTargetRefPtr& l,
-                                     const pxr::GlfDrawTargetRefPtr& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfDrawTargetPtr& l,
-                                     const pxr::GlfDrawTargetPtr& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfDrawTarget::Attachment& l,
-                                     const pxr::GlfDrawTarget::Attachment& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfDrawTarget::AttachmentRefPtr& l,
-                                     const pxr::GlfDrawTarget::AttachmentRefPtr& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfTexture& l,
-                                     const pxr::GlfTexture& r) {
     return &l == &r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::GlfSimpleLightingContext& l,
@@ -1016,14 +1030,6 @@ bool __Overlay::operatorEqualsEquals(const pxr::GlfSimpleShadowArray& l,
 }
 bool __Overlay::operatorEqualsEquals(const pxr::GlfSimpleShadowArrayRefPtr& l,
                                      const pxr::GlfSimpleShadowArrayRefPtr& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfUniformBlock& l,
-                                     const pxr::GlfUniformBlock& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::GlfUniformBlockRefPtr& l,
-                                     const pxr::GlfUniformBlockRefPtr& r) {
     return l == r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::HgiBufferHandle& l,
@@ -1230,6 +1236,14 @@ bool __Overlay::operatorEqualsEquals(const pxr::HdGpGenerativeProceduralResolvin
                                      const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::HdsiApplicationRenderSettingsSceneIndex& l,
+                                     const pxr::HdsiApplicationRenderSettingsSceneIndex& r) {
+    return &l == &r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& l,
+                                     const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::HdsiBackPlateSceneIndex& l,
                                      const pxr::HdsiBackPlateSceneIndex& r) {
     return &l == &r;
@@ -1382,6 +1396,14 @@ bool __Overlay::operatorEqualsEquals(const pxr::HdsiPinnedCurveExpandingSceneInd
                                      const pxr::HdsiPinnedCurveExpandingSceneIndexRefPtr& r) {
     return l == r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::HdsiPrimIdSceneIndex& l,
+                                     const pxr::HdsiPrimIdSceneIndex& r) {
+    return &l == &r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::HdsiPrimIdSceneIndexRefPtr& l,
+                                     const pxr::HdsiPrimIdSceneIndexRefPtr& r) {
+    return l == r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::HdsiPrimManagingSceneIndexObserver& l,
                                      const pxr::HdsiPrimManagingSceneIndexObserver& r) {
     return &l == &r;
@@ -1524,6 +1546,14 @@ bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingStageSceneIndex& l,
                                      const pxr::UsdImagingStageSceneIndex& r) {
     return &l == &r;
 }
+bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& l,
+                                     const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& r) {
+    return l == r;
+}
+bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingStageSceneIndexInterface& l,
+                                     const pxr::UsdImagingStageSceneIndexInterface& r) {
+    return &l == &r;
+}
 bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingSelectionSceneIndexRefPtr& l,
                                      const pxr::UsdImagingSelectionSceneIndexRefPtr& r) {
     return l == r;
@@ -1594,14 +1624,6 @@ bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingSceneIndexRefPtr& l,
 }
 bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingSceneIndex& l,
                                      const pxr::UsdImagingSceneIndex& r) {
-    return &l == &r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& l,
-                                     const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& r) {
-    return l == r;
-}
-bool __Overlay::operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterface& l,
-                                     const pxr::UsdExecImagingStageSceneIndexInterface& r) {
     return &l == &r;
 }
 bool __Overlay::operatorEqualsEquals(const pxr::UsdImagingGLRenderParams& l,

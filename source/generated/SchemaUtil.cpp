@@ -82,6 +82,7 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdVolParticleFieldKernelConstantSurfle
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdVolVolume& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdMediaAssetPreviewsAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdMediaAuthorshipAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdMediaSpatialAudio& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeConnectableAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdShadeCoordSysAPI& x) { return x.GetPrim(); }
@@ -124,6 +125,7 @@ pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderSettingsBase& x) { return x.Ge
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderSettings& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRenderVar& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdHydraGenerativeProceduralAPI& x) { return x.GetPrim(); }
+pxr::UsdPrim Overlay::GetPrim(const pxr::UsdHydraPrimAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdHydraRenderPassAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRiMaterialAPI& x) { return x.GetPrim(); }
 pxr::UsdPrim Overlay::GetPrim(const pxr::UsdRiSplineAPI& x) { return x.GetPrim(); }
@@ -224,6 +226,7 @@ bool __Overlay::convertToBool(const pxr::UsdVolParticleFieldKernelConstantSurfle
 bool __Overlay::convertToBool(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdVolVolume& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdMediaAssetPreviewsAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdMediaAuthorshipAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdMediaSpatialAudio& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdShadeConnectableAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdShadeCoordSysAPI& x) { return (bool)x; }
@@ -266,6 +269,7 @@ bool __Overlay::convertToBool(const pxr::UsdRenderSettingsBase& x) { return (boo
 bool __Overlay::convertToBool(const pxr::UsdRenderSettings& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRenderVar& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdHydraGenerativeProceduralAPI& x) { return (bool)x; }
+bool __Overlay::convertToBool(const pxr::UsdHydraPrimAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdHydraRenderPassAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRiMaterialAPI& x) { return (bool)x; }
 bool __Overlay::convertToBool(const pxr::UsdRiSplineAPI& x) { return (bool)x; }

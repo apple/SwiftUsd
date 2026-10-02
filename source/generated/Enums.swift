@@ -33,6 +33,10 @@ extension pxr.ArchFileAdvice {
   @_documentation(visibility: internal) public static var ArchFileAdviceDontNeed: pxr.ArchFileAdvice { Overlay.ArchFileAdviceDontNeed }
   @_documentation(visibility: internal) public static var ArchFileAdviceRandomAccess: pxr.ArchFileAdvice { Overlay.ArchFileAdviceRandomAccess }
 }
+extension pxr.ArchThreadPriority {
+  @_documentation(visibility: internal) public static var ArchThreadPriorityLowest: pxr.ArchThreadPriority { Overlay.ArchThreadPriorityLowest }
+  @_documentation(visibility: internal) public static var ArchThreadPriorityLow: pxr.ArchThreadPriority { Overlay.ArchThreadPriorityLow }
+}
 extension pxr.ArchMemoryProtection {
   @_documentation(visibility: internal) public static var ArchProtectNoAccess: pxr.ArchMemoryProtection { Overlay.ArchProtectNoAccess }
   @_documentation(visibility: internal) public static var ArchProtectReadOnly: pxr.ArchMemoryProtection { Overlay.ArchProtectReadOnly }
@@ -67,6 +71,32 @@ extension pxr.TfMallocTag.CallTree.PrintSetting {
   @_documentation(visibility: internal) public static var TREE: pxr.TfMallocTag.CallTree.PrintSetting { Overlay.TfMallocTag.CallTree.TREE }
   @_documentation(visibility: internal) public static var CALLSITES: pxr.TfMallocTag.CallTree.PrintSetting { Overlay.TfMallocTag.CallTree.CALLSITES }
   @_documentation(visibility: internal) public static var BOTH: pxr.TfMallocTag.CallTree.PrintSetting { Overlay.TfMallocTag.CallTree.BOTH }
+}
+extension pxr.ExecDispatchesOntoSchemas.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.ExecDispatchesOntoSchemas.DefaultInitTag { Overlay.ExecDispatchesOntoSchemas.DefaultInit }
+}
+extension pxr.UsdShadeAttributeVector.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.UsdShadeAttributeVector.DefaultInitTag { Overlay.UsdShadeAttributeVector.DefaultInit }
+}
+extension pxr.VdfConnectionVector.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.VdfConnectionVector.DefaultInitTag { Overlay.VdfConnectionVector.DefaultInit }
+}
+extension pxr.VdfConnectionConstVector.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.VdfConnectionConstVector.DefaultInitTag { Overlay.VdfConnectionConstVector.DefaultInit }
+}
+extension pxr.UsdShadeSourceInfoVector.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.UsdShadeSourceInfoVector.DefaultInitTag { Overlay.UsdShadeSourceInfoVector.DefaultInit }
+}
+extension pxr.SdfChangeList.EntryList.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.SdfChangeList.EntryList.DefaultInitTag { Overlay.SdfChangeList.EntryList.DefaultInit }
+}
+#if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.HdDependenciesSchema.EntryVector.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.HdDependenciesSchema.EntryVector.DefaultInitTag { Overlay.HdDependenciesSchema.EntryVector.DefaultInit }
+}
+#endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
+extension pxr.SdfChangeList.Entry.InfoChangeVec.DefaultInitTag {
+  @_documentation(visibility: internal) public static var DefaultInit: pxr.SdfChangeList.Entry.InfoChangeVec.DefaultInitTag { Overlay.SdfChangeList.Entry.InfoChangeVec.DefaultInit }
 }
 extension pxr.TfRefPtrTracker.TraceType {
   @_documentation(visibility: internal) public static var Add: pxr.TfRefPtrTracker.TraceType { Overlay.TfRefPtrTracker.Add }
@@ -331,6 +361,7 @@ extension pxr.PcpErrorType {
   @_documentation(visibility: internal) public static var PcpErrorType_TargetPermissionDenied: pxr.PcpErrorType { Overlay.PcpErrorType_TargetPermissionDenied }
   @_documentation(visibility: internal) public static var PcpErrorType_UnresolvedPrimPath: pxr.PcpErrorType { Overlay.PcpErrorType_UnresolvedPrimPath }
   @_documentation(visibility: internal) public static var PcpErrorType_VariableExpressionError: pxr.PcpErrorType { Overlay.PcpErrorType_VariableExpressionError }
+  @_documentation(visibility: internal) public static var PcpErrorType_InvalidSublayerAndOffsetCount: pxr.PcpErrorType { Overlay.PcpErrorType_InvalidSublayerAndOffsetCount }
 }
 extension pxr.PcpPrimIndexOutputs.PayloadState {
   @_documentation(visibility: internal) public static var NoPayload: pxr.PcpPrimIndexOutputs.PayloadState { Overlay.PcpPrimIndexOutputs.NoPayload }
@@ -532,6 +563,15 @@ extension pxr.GarchGLDebugWindow.ModifierKeys {
   @_documentation(visibility: internal) public static var Alt: pxr.GarchGLDebugWindow.ModifierKeys { Overlay.GarchGLDebugWindow.Alt }
   @_documentation(visibility: internal) public static var Ctrl: pxr.GarchGLDebugWindow.ModifierKeys { Overlay.GarchGLDebugWindow.Ctrl }
 }
+extension pxr.HioImage.ImageOriginLocation {
+  @_documentation(visibility: internal) public static var OriginUpperLeft: pxr.HioImage.ImageOriginLocation { Overlay.HioImage.OriginUpperLeft }
+  @_documentation(visibility: internal) public static var OriginLowerLeft: pxr.HioImage.ImageOriginLocation { Overlay.HioImage.OriginLowerLeft }
+}
+extension pxr.HioImage.SourceColorSpace {
+  @_documentation(visibility: internal) public static var Raw: pxr.HioImage.SourceColorSpace { Overlay.HioImage.Raw }
+  @_documentation(visibility: internal) public static var SRGB: pxr.HioImage.SourceColorSpace { Overlay.HioImage.SRGB }
+  @_documentation(visibility: internal) public static var Auto: pxr.HioImage.SourceColorSpace { Overlay.HioImage.Auto }
+}
 extension pxr.HioFormat {
   @_documentation(visibility: internal) public static var HioFormatInvalid: pxr.HioFormat { Overlay.HioFormatInvalid }
   @_documentation(visibility: internal) public static var HioFormatUNorm8: pxr.HioFormat { Overlay.HioFormatUNorm8 }
@@ -721,6 +761,8 @@ extension pxr.HgiShaderStageBits {
   @_documentation(visibility: internal) public static var HgiShaderStagePostTessellationControl: pxr.HgiShaderStageBits { Overlay.HgiShaderStagePostTessellationControl }
   @_documentation(visibility: internal) public static var HgiShaderStagePostTessellationVertex: pxr.HgiShaderStageBits { Overlay.HgiShaderStagePostTessellationVertex }
   @_documentation(visibility: internal) public static var HgiShaderStageCustomBitsBegin: pxr.HgiShaderStageBits { Overlay.HgiShaderStageCustomBitsBegin }
+  @_documentation(visibility: internal) public static var HgiShaderStageAllGraphics: pxr.HgiShaderStageBits { Overlay.HgiShaderStageAllGraphics }
+  @_documentation(visibility: internal) public static var HgiShaderStageAll: pxr.HgiShaderStageBits { Overlay.HgiShaderStageAll }
 }
 extension pxr.HgiBindResourceType {
   @_documentation(visibility: internal) public static var HgiBindResourceTypeSampler: pxr.HgiBindResourceType { Overlay.HgiBindResourceTypeSampler }
@@ -1125,6 +1167,13 @@ extension pxr.HdPointsGeomStyle {
   @_documentation(visibility: internal) public static var HdPointsGeomStyleInvalid: pxr.HdPointsGeomStyle { Overlay.HdPointsGeomStyleInvalid }
   @_documentation(visibility: internal) public static var HdPointsGeomStylePoints: pxr.HdPointsGeomStyle { Overlay.HdPointsGeomStylePoints }
 }
+extension pxr.HdImplicitSurfaceGeomStyle {
+  @_documentation(visibility: internal) public static var HdImplicitSurfaceGeomStyleInvalid: pxr.HdImplicitSurfaceGeomStyle { Overlay.HdImplicitSurfaceGeomStyleInvalid }
+  @_documentation(visibility: internal) public static var HdImplicitSurfaceGeomStyleSurf: pxr.HdImplicitSurfaceGeomStyle { Overlay.HdImplicitSurfaceGeomStyleSurf }
+  @_documentation(visibility: internal) public static var HdImplicitSurfaceGeomStyleRingsOnly: pxr.HdImplicitSurfaceGeomStyle { Overlay.HdImplicitSurfaceGeomStyleRingsOnly }
+  @_documentation(visibility: internal) public static var HdImplicitSurfaceGeomStyleRingsOnSurf: pxr.HdImplicitSurfaceGeomStyle { Overlay.HdImplicitSurfaceGeomStyleRingsOnSurf }
+  @_documentation(visibility: internal) public static var HdImplicitSurfaceGeomStylePoints: pxr.HdImplicitSurfaceGeomStyle { Overlay.HdImplicitSurfaceGeomStylePoints }
+}
 extension pxr.HdInterpolation {
   @_documentation(visibility: internal) public static var HdInterpolationConstant: pxr.HdInterpolation { Overlay.HdInterpolationConstant }
   @_documentation(visibility: internal) public static var HdInterpolationUniform: pxr.HdInterpolation { Overlay.HdInterpolationUniform }
@@ -1173,27 +1222,6 @@ extension pxr.HdCoordSys.DirtyBits {
   @_documentation(visibility: internal) public static var DirtyTransform: pxr.HdCoordSys.DirtyBits { Overlay.HdCoordSys.DirtyTransform }
   @_documentation(visibility: internal) public static var AllDirty: pxr.HdCoordSys.DirtyBits { Overlay.HdCoordSys.AllDirty }
 }
-extension pxr.HdField.DirtyBits {
-  @_documentation(visibility: internal) public static var Clean: pxr.HdField.DirtyBits { Overlay.HdField.Clean }
-  @_documentation(visibility: internal) public static var DirtyTransform: pxr.HdField.DirtyBits { Overlay.HdField.DirtyTransform }
-  @_documentation(visibility: internal) public static var DirtyParams: pxr.HdField.DirtyBits { Overlay.HdField.DirtyParams }
-  @_documentation(visibility: internal) public static var AllDirty: pxr.HdField.DirtyBits { Overlay.HdField.AllDirty }
-}
-extension pxr.HdLight.DirtyBits {
-  @_documentation(visibility: internal) public static var Clean: pxr.HdLight.DirtyBits { Overlay.HdLight.Clean }
-  @_documentation(visibility: internal) public static var DirtyTransform: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyTransform }
-  @_documentation(visibility: internal) public static var DirtyParams: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyParams }
-  @_documentation(visibility: internal) public static var DirtyShadowParams: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyShadowParams }
-  @_documentation(visibility: internal) public static var DirtyCollection: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyCollection }
-  @_documentation(visibility: internal) public static var DirtyResource: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyResource }
-  @_documentation(visibility: internal) public static var DirtyInstancer: pxr.HdLight.DirtyBits { Overlay.HdLight.DirtyInstancer }
-  @_documentation(visibility: internal) public static var AllDirty: pxr.HdLight.DirtyBits { Overlay.HdLight.AllDirty }
-}
-extension pxr.HdRenderBuffer.DirtyBits {
-  @_documentation(visibility: internal) public static var Clean: pxr.HdRenderBuffer.DirtyBits { Overlay.HdRenderBuffer.Clean }
-  @_documentation(visibility: internal) public static var DirtyDescription: pxr.HdRenderBuffer.DirtyBits { Overlay.HdRenderBuffer.DirtyDescription }
-  @_documentation(visibility: internal) public static var AllDirty: pxr.HdRenderBuffer.DirtyBits { Overlay.HdRenderBuffer.AllDirty }
-}
 extension pxr.HdRenderPassState.ColorMask {
   @_documentation(visibility: internal) public static var ColorMaskNone: pxr.HdRenderPassState.ColorMask { Overlay.HdRenderPassState.ColorMaskNone }
   @_documentation(visibility: internal) public static var ColorMaskRGB: pxr.HdRenderPassState.ColorMask { Overlay.HdRenderPassState.ColorMaskRGB }
@@ -1203,16 +1231,14 @@ extension pxr.HdSceneIndexPluginRegistry.InsertionOrder {
   @_documentation(visibility: internal) public static var InsertionOrderAtStart: pxr.HdSceneIndexPluginRegistry.InsertionOrder { Overlay.HdSceneIndexPluginRegistry.InsertionOrderAtStart }
   @_documentation(visibility: internal) public static var InsertionOrderAtEnd: pxr.HdSceneIndexPluginRegistry.InsertionOrder { Overlay.HdSceneIndexPluginRegistry.InsertionOrderAtEnd }
 }
+extension pxr.HdSceneIndexPrimView.Order {
+  @_documentation(visibility: internal) public static var ChildPrimPaths: pxr.HdSceneIndexPrimView.Order { Overlay.HdSceneIndexPrimView.ChildPrimPaths }
+  @_documentation(visibility: internal) public static var Lexicographic: pxr.HdSceneIndexPrimView.Order { Overlay.HdSceneIndexPrimView.Lexicographic }
+}
 extension pxr.HdSelection.HighlightMode {
   @_documentation(visibility: internal) public static var HighlightModeSelect: pxr.HdSelection.HighlightMode { Overlay.HdSelection.HighlightModeSelect }
   @_documentation(visibility: internal) public static var HighlightModeLocate: pxr.HdSelection.HighlightMode { Overlay.HdSelection.HighlightModeLocate }
   @_documentation(visibility: internal) public static var HighlightModeCount: pxr.HdSelection.HighlightMode { Overlay.HdSelection.HighlightModeCount }
-}
-extension pxr.HdGpGenerativeProcedural.AsyncState {
-  @_documentation(visibility: internal) public static var Continuing: pxr.HdGpGenerativeProcedural.AsyncState { Overlay.HdGpGenerativeProcedural.Continuing }
-  @_documentation(visibility: internal) public static var Finished: pxr.HdGpGenerativeProcedural.AsyncState { Overlay.HdGpGenerativeProcedural.Finished }
-  @_documentation(visibility: internal) public static var ContinuingWithNewChanges: pxr.HdGpGenerativeProcedural.AsyncState { Overlay.HdGpGenerativeProcedural.ContinuingWithNewChanges }
-  @_documentation(visibility: internal) public static var FinishedWithNewChanges: pxr.HdGpGenerativeProcedural.AsyncState { Overlay.HdGpGenerativeProcedural.FinishedWithNewChanges }
 }
 extension pxr.HdStBinding.`Type` {
   @_documentation(visibility: internal) public static var UNKNOWN: pxr.HdStBinding.`Type` { Overlay.HdStBinding.UNKNOWN }
@@ -1261,11 +1287,6 @@ extension pxr.HdStComputeQueue {
 }
 #endif // #if canImport(SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT)
 #if canImport(SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT)
-extension pxr.UsdImagingPrimAdapter.PopulationMode {
-  @_documentation(visibility: internal) public static var RepresentsSelf: pxr.UsdImagingPrimAdapter.PopulationMode { Overlay.UsdImagingPrimAdapter.RepresentsSelf }
-  @_documentation(visibility: internal) public static var RepresentsSelfAndDescendents: pxr.UsdImagingPrimAdapter.PopulationMode { Overlay.UsdImagingPrimAdapter.RepresentsSelfAndDescendents }
-  @_documentation(visibility: internal) public static var RepresentedByAncestor: pxr.UsdImagingPrimAdapter.PopulationMode { Overlay.UsdImagingPrimAdapter.RepresentedByAncestor }
-}
 extension pxr.UsdImagingGLRendererSetting.`Type` {
   @_documentation(visibility: internal) public static var TYPE_FLAG: pxr.UsdImagingGLRendererSetting.`Type` { Overlay.UsdImagingGLRendererSetting.TYPE_FLAG }
   @_documentation(visibility: internal) public static var TYPE_INT: pxr.UsdImagingGLRendererSetting.`Type` { Overlay.UsdImagingGLRendererSetting.TYPE_INT }

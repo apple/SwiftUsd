@@ -70,6 +70,7 @@
 #include "pxr/usd/usdGeom/xformCommonAPI.h"
 #include "pxr/usd/usdGeom/xformable.h"
 #include "pxr/usd/usdHydra/generativeProceduralAPI.h"
+#include "pxr/usd/usdHydra/primAPI.h"
 #include "pxr/usd/usdHydra/renderPassAPI.h"
 #include "pxr/usd/usdLod/distanceHeuristic.h"
 #include "pxr/usd/usdLod/heuristic.h"
@@ -98,6 +99,7 @@
 #include "pxr/usd/usdLux/sphereLight.h"
 #include "pxr/usd/usdLux/volumeLightAPI.h"
 #include "pxr/usd/usdMedia/assetPreviewsAPI.h"
+#include "pxr/usd/usdMedia/authorshipAPI.h"
 #include "pxr/usd/usdMedia/spatialAudio.h"
 #if SwiftUsd_PXR_ENABLE_MATERIALX_SUPPORT
 #include "pxr/usd/usdMtlx/materialXConfigAPI.h"
@@ -229,6 +231,7 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdVolVolume& x);
     pxr::UsdPrim GetPrim(const pxr::UsdMediaAssetPreviewsAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdMediaAuthorshipAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdMediaSpatialAudio& x);
     pxr::UsdPrim GetPrim(const pxr::UsdShadeConnectableAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdShadeCoordSysAPI& x);
@@ -271,6 +274,7 @@ namespace Overlay {
     pxr::UsdPrim GetPrim(const pxr::UsdRenderSettings& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRenderVar& x);
     pxr::UsdPrim GetPrim(const pxr::UsdHydraGenerativeProceduralAPI& x);
+    pxr::UsdPrim GetPrim(const pxr::UsdHydraPrimAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdHydraRenderPassAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRiMaterialAPI& x);
     pxr::UsdPrim GetPrim(const pxr::UsdRiSplineAPI& x);
@@ -374,6 +378,7 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdVolParticleFieldKernelGaussianSurfletAPI& x);
     bool convertToBool(const pxr::UsdVolVolume& x);
     bool convertToBool(const pxr::UsdMediaAssetPreviewsAPI& x);
+    bool convertToBool(const pxr::UsdMediaAuthorshipAPI& x);
     bool convertToBool(const pxr::UsdMediaSpatialAudio& x);
     bool convertToBool(const pxr::UsdShadeConnectableAPI& x);
     bool convertToBool(const pxr::UsdShadeCoordSysAPI& x);
@@ -416,6 +421,7 @@ namespace __Overlay {
     bool convertToBool(const pxr::UsdRenderSettings& x);
     bool convertToBool(const pxr::UsdRenderVar& x);
     bool convertToBool(const pxr::UsdHydraGenerativeProceduralAPI& x);
+    bool convertToBool(const pxr::UsdHydraPrimAPI& x);
     bool convertToBool(const pxr::UsdHydraRenderPassAPI& x);
     bool convertToBool(const pxr::UsdRiMaterialAPI& x);
     bool convertToBool(const pxr::UsdRiSplineAPI& x);

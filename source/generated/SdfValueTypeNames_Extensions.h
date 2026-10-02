@@ -38,6 +38,7 @@ namespace Overlay {
     extern const pxr::SdfValueTypeName Float;
     extern const pxr::SdfValueTypeName Double;
     extern const pxr::SdfValueTypeName TimeCode;
+    extern const pxr::SdfValueTypeName Duration;
     extern const pxr::SdfValueTypeName String;
     extern const pxr::SdfValueTypeName Token;
     extern const pxr::SdfValueTypeName Asset;
@@ -94,6 +95,7 @@ namespace Overlay {
     extern const pxr::SdfValueTypeName FloatArray;
     extern const pxr::SdfValueTypeName DoubleArray;
     extern const pxr::SdfValueTypeName TimeCodeArray;
+    extern const pxr::SdfValueTypeName DurationArray;
     extern const pxr::SdfValueTypeName StringArray;
     extern const pxr::SdfValueTypeName TokenArray;
     extern const pxr::SdfValueTypeName AssetArray;

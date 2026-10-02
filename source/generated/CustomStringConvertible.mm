@@ -39,6 +39,13 @@ std::string __Overlay::to_string(const pxr::ArchFileAdvice& x) {
     default: return "pxr::ArchFileAdvice(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::ArchThreadPriority& x) {
+    switch (x) {
+    case pxr::ArchThreadPriorityLowest: return "pxr::ArchThreadPriorityLowest";
+    case pxr::ArchThreadPriorityLow: return "pxr::ArchThreadPriorityLow";
+    default: return "pxr::ArchThreadPriority(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::ArchMemoryProtection& x) {
     switch (x) {
     case pxr::ArchProtectNoAccess: return "pxr::ArchProtectNoAccess";
@@ -46,6 +53,22 @@ std::string __Overlay::to_string(const pxr::ArchMemoryProtection& x) {
     case pxr::ArchProtectReadWrite: return "pxr::ArchProtectReadWrite";
     case pxr::ArchProtectReadWriteCopy: return "pxr::ArchProtectReadWriteCopy";
     default: return "pxr::ArchMemoryProtection(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::ArchPrefetchAccess& x) {
+    switch (x) {
+    case pxr::ArchPrefetchAccess::Read: return "pxr::ArchPrefetchAccess::Read";
+    case pxr::ArchPrefetchAccess::Write: return "pxr::ArchPrefetchAccess::Write";
+    default: return "pxr::ArchPrefetchAccess(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::ArchPrefetchLocality& x) {
+    switch (x) {
+    case pxr::ArchPrefetchLocality::None: return "pxr::ArchPrefetchLocality::None";
+    case pxr::ArchPrefetchLocality::L3: return "pxr::ArchPrefetchLocality::L3";
+    case pxr::ArchPrefetchLocality::L2: return "pxr::ArchPrefetchLocality::L2";
+    case pxr::ArchPrefetchLocality::L1: return "pxr::ArchPrefetchLocality::L1";
+    default: return "pxr::ArchPrefetchLocality(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 std::string __Overlay::to_string(const pxr::TfAnyWeakPtr& x) {
@@ -136,6 +159,56 @@ std::string __Overlay::to_string(const pxr::TfMallocTag::CallTree::PrintSetting&
     default: return "pxr::TfMallocTag::CallTree::PrintSetting(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::ExecDispatchesOntoSchemas::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::ExecDispatchesOntoSchemas::DefaultInit: return "pxr::ExecDispatchesOntoSchemas::DefaultInit";
+    default: return "pxr::ExecDispatchesOntoSchemas::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::UsdShadeAttributeVector::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::UsdShadeAttributeVector::DefaultInit: return "pxr::UsdShadeAttributeVector::DefaultInit";
+    default: return "pxr::UsdShadeAttributeVector::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfConnectionVector::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::VdfConnectionVector::DefaultInit: return "pxr::VdfConnectionVector::DefaultInit";
+    default: return "pxr::VdfConnectionVector::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::VdfConnectionConstVector::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::VdfConnectionConstVector::DefaultInit: return "pxr::VdfConnectionConstVector::DefaultInit";
+    default: return "pxr::VdfConnectionConstVector::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::UsdShadeSourceInfoVector::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::UsdShadeSourceInfoVector::DefaultInit: return "pxr::UsdShadeSourceInfoVector::DefaultInit";
+    default: return "pxr::UsdShadeSourceInfoVector::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::SdfChangeList::EntryList::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::SdfChangeList::EntryList::DefaultInit: return "pxr::SdfChangeList::EntryList::DefaultInit";
+    default: return "pxr::SdfChangeList::EntryList::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+std::string __Overlay::to_string(const pxr::HdDependenciesSchema::EntryVector::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::HdDependenciesSchema::EntryVector::DefaultInit: return "pxr::HdDependenciesSchema::EntryVector::DefaultInit";
+    default: return "pxr::HdDependenciesSchema::EntryVector::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+std::string __Overlay::to_string(const pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInitTag& x) {
+    switch (x) {
+    case pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInit: return "pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInit";
+    default: return "pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInitTag(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::TfRefPtrTracker::TraceType& x) {
     switch (x) {
     case pxr::TfRefPtrTracker::Add: return "pxr::TfRefPtrTracker::Add";
@@ -183,12 +256,27 @@ std::string __Overlay::to_string(const pxr::GfVec4i& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::GfVec3d& x) {
+std::string __Overlay::to_string(const pxr::GfVec2i& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::GfVec3f& x) {
+std::string __Overlay::to_string(const pxr::GfVec3i& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::GfVec2h& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::GfVec2d& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::GfVec2f& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -198,7 +286,12 @@ std::string __Overlay::to_string(const pxr::GfVec3h& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::GfVec3i& x) {
+std::string __Overlay::to_string(const pxr::GfVec3d& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::GfVec3f& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -242,26 +335,6 @@ std::string __Overlay::to_string(const pxr::GfColor& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::GfVec2f& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::GfVec2d& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::GfVec2h& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
-std::string __Overlay::to_string(const pxr::GfVec2i& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
 std::string __Overlay::to_string(const pxr::GfMatrix3f& x) {
     std::stringstream ss;
     ss << x;
@@ -293,6 +366,11 @@ std::string __Overlay::to_string(const pxr::GfDualQuath& x) {
     return ss.str();
 }
 std::string __Overlay::to_string(const pxr::GfQuath& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::GfDuration& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -501,6 +579,11 @@ std::string __Overlay::to_string(const pxr::VtDualQuatfArray& x) {
     return ss.str();
 }
 std::string __Overlay::to_string(const pxr::VtDualQuathArray& x) {
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
+std::string __Overlay::to_string(const pxr::VtDurationArray& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
@@ -1043,11 +1126,6 @@ std::string __Overlay::to_string(const pxr::SdfDictionaryProxy& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::SdfRelocatesMapProxy& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
 std::string __Overlay::to_string(const pxr::SdfBooleanExpression& x) {
     std::stringstream ss;
     ss << x;
@@ -1283,6 +1361,7 @@ std::string __Overlay::to_string(const pxr::PcpErrorType& x) {
     case pxr::PcpErrorType_TargetPermissionDenied: return "pxr::PcpErrorType_TargetPermissionDenied";
     case pxr::PcpErrorType_UnresolvedPrimPath: return "pxr::PcpErrorType_UnresolvedPrimPath";
     case pxr::PcpErrorType_VariableExpressionError: return "pxr::PcpErrorType_VariableExpressionError";
+    case pxr::PcpErrorType_InvalidSublayerAndOffsetCount: return "pxr::PcpErrorType_InvalidSublayerAndOffsetCount";
     default: return "pxr::PcpErrorType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -1907,6 +1986,21 @@ std::string __Overlay::to_string(const pxr::GarchNSGLContextState::NullState& x)
 }
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT && defined(ARCH_OS_DARWIN)
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+std::string __Overlay::to_string(const pxr::HioImage::ImageOriginLocation& x) {
+    switch (x) {
+    case pxr::HioImage::OriginUpperLeft: return "pxr::HioImage::OriginUpperLeft";
+    case pxr::HioImage::OriginLowerLeft: return "pxr::HioImage::OriginLowerLeft";
+    default: return "pxr::HioImage::ImageOriginLocation(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::HioImage::SourceColorSpace& x) {
+    switch (x) {
+    case pxr::HioImage::Raw: return "pxr::HioImage::Raw";
+    case pxr::HioImage::SRGB: return "pxr::HioImage::SRGB";
+    case pxr::HioImage::Auto: return "pxr::HioImage::Auto";
+    default: return "pxr::HioImage::SourceColorSpace(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::HioFormat& x) {
     switch (x) {
     case pxr::HioFormatInvalid: return "pxr::HioFormatInvalid";
@@ -2222,6 +2316,8 @@ std::string __Overlay::to_string(const pxr::HgiShaderStageBits& x) {
     case pxr::HgiShaderStagePostTessellationControl: return "pxr::HgiShaderStagePostTessellationControl";
     case pxr::HgiShaderStagePostTessellationVertex: return "pxr::HgiShaderStagePostTessellationVertex";
     case pxr::HgiShaderStageCustomBitsBegin: return "pxr::HgiShaderStageCustomBitsBegin";
+    case pxr::HgiShaderStageAllGraphics: return "pxr::HgiShaderStageAllGraphics";
+    case pxr::HgiShaderStageAll: return "pxr::HgiShaderStageAll";
     default: return "pxr::HgiShaderStageBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
@@ -2794,6 +2890,16 @@ std::string __Overlay::to_string(const pxr::HdPointsGeomStyle& x) {
     default: return "pxr::HdPointsGeomStyle(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
+std::string __Overlay::to_string(const pxr::HdImplicitSurfaceGeomStyle& x) {
+    switch (x) {
+    case pxr::HdImplicitSurfaceGeomStyleInvalid: return "pxr::HdImplicitSurfaceGeomStyleInvalid";
+    case pxr::HdImplicitSurfaceGeomStyleSurf: return "pxr::HdImplicitSurfaceGeomStyleSurf";
+    case pxr::HdImplicitSurfaceGeomStyleRingsOnly: return "pxr::HdImplicitSurfaceGeomStyleRingsOnly";
+    case pxr::HdImplicitSurfaceGeomStyleRingsOnSurf: return "pxr::HdImplicitSurfaceGeomStyleRingsOnSurf";
+    case pxr::HdImplicitSurfaceGeomStylePoints: return "pxr::HdImplicitSurfaceGeomStylePoints";
+    default: return "pxr::HdImplicitSurfaceGeomStyle(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
 std::string __Overlay::to_string(const pxr::HdInterpolation& x) {
     switch (x) {
     case pxr::HdInterpolationConstant: return "pxr::HdInterpolationConstant";
@@ -2845,11 +2951,6 @@ std::string __Overlay::to_string(const pxr::HdBasisCurvesTopology& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::HdTopology& x) {
-    std::stringstream ss;
-    ss << x;
-    return ss.str();
-}
 std::string __Overlay::to_string(const pxr::HdGeomSubset::Type& x) {
     switch (x) {
     case pxr::HdGeomSubset::TypeFaceSet: return "pxr::HdGeomSubset::TypeFaceSet";
@@ -2896,15 +2997,6 @@ std::string __Overlay::to_string(const pxr::HdCoordSys::DirtyBits& x) {
     default: return "pxr::HdCoordSys::DirtyBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
-std::string __Overlay::to_string(const pxr::HdField::DirtyBits& x) {
-    switch (x) {
-    case pxr::HdField::Clean: return "pxr::HdField::Clean";
-    case pxr::HdField::DirtyTransform: return "pxr::HdField::DirtyTransform";
-    case pxr::HdField::DirtyParams: return "pxr::HdField::DirtyParams";
-    case pxr::HdField::AllDirty: return "pxr::HdField::AllDirty";
-    default: return "pxr::HdField::DirtyBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
-}
 std::string __Overlay::to_string(const pxr::HdMaterialNetwork& x) {
     std::stringstream ss;
     ss << x;
@@ -2920,19 +3012,6 @@ std::string __Overlay::to_string(const pxr::HdMaterialNode2& x) {
     ss << x;
     return ss.str();
 }
-std::string __Overlay::to_string(const pxr::HdLight::DirtyBits& x) {
-    switch (x) {
-    case pxr::HdLight::Clean: return "pxr::HdLight::Clean";
-    case pxr::HdLight::DirtyTransform: return "pxr::HdLight::DirtyTransform";
-    case pxr::HdLight::DirtyParams: return "pxr::HdLight::DirtyParams";
-    case pxr::HdLight::DirtyShadowParams: return "pxr::HdLight::DirtyShadowParams";
-    case pxr::HdLight::DirtyCollection: return "pxr::HdLight::DirtyCollection";
-    case pxr::HdLight::DirtyResource: return "pxr::HdLight::DirtyResource";
-    case pxr::HdLight::DirtyInstancer: return "pxr::HdLight::DirtyInstancer";
-    case pxr::HdLight::AllDirty: return "pxr::HdLight::AllDirty";
-    default: return "pxr::HdLight::DirtyBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
-}
 std::string __Overlay::to_string(const pxr::HdMeshComputationResult& x) {
     switch (x) {
     case pxr::HdMeshComputationResult::Error: return "pxr::HdMeshComputationResult::Error";
@@ -2945,13 +3024,6 @@ std::string __Overlay::to_string(const pxr::HdPrimOriginSchema::OriginPath& x) {
     std::stringstream ss;
     ss << x;
     return ss.str();
-}
-std::string __Overlay::to_string(const pxr::HdRenderBuffer::DirtyBits& x) {
-    switch (x) {
-    case pxr::HdRenderBuffer::Clean: return "pxr::HdRenderBuffer::Clean";
-    case pxr::HdRenderBuffer::DirtyDescription: return "pxr::HdRenderBuffer::DirtyDescription";
-    default: return "pxr::HdRenderBuffer::DirtyBits(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
 }
 std::string __Overlay::to_string(const pxr::HdRenderPassState::ColorMask& x) {
     switch (x) {
@@ -2976,13 +3048,20 @@ std::string __Overlay::to_string(const pxr::HdSceneIndexPluginRegistry::PluginOr
     default: return "pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
-std::string __Overlay::to_string(const pxr::HdGpGenerativeProcedural::AsyncState& x) {
+std::string __Overlay::to_string(const pxr::HdSceneIndexPrimView::Order& x) {
     switch (x) {
-    case pxr::HdGpGenerativeProcedural::Continuing: return "pxr::HdGpGenerativeProcedural::Continuing";
-    case pxr::HdGpGenerativeProcedural::Finished: return "pxr::HdGpGenerativeProcedural::Finished";
-    case pxr::HdGpGenerativeProcedural::ContinuingWithNewChanges: return "pxr::HdGpGenerativeProcedural::ContinuingWithNewChanges";
-    case pxr::HdGpGenerativeProcedural::FinishedWithNewChanges: return "pxr::HdGpGenerativeProcedural::FinishedWithNewChanges";
-    default: return "pxr::HdGpGenerativeProcedural::AsyncState(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    case pxr::HdSceneIndexPrimView::ChildPrimPaths: return "pxr::HdSceneIndexPrimView::ChildPrimPaths";
+    case pxr::HdSceneIndexPrimView::Lexicographic: return "pxr::HdSceneIndexPrimView::Lexicographic";
+    default: return "pxr::HdSceneIndexPrimView::Order(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
+    }
+}
+std::string __Overlay::to_string(const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource& x) {
+    switch (x) {
+    case pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::Resolved: return "pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::Resolved";
+    case pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::ApplicationOverride: return "pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::ApplicationOverride";
+    case pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::InputRenderSettings: return "pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::InputRenderSettings";
+    case pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::RendererDefault: return "pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource::RendererDefault";
+    default: return "pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 std::string __Overlay::to_string(const pxr::HdStBinding::Type& x) {
@@ -3151,14 +3230,6 @@ std::string __Overlay::to_string(const pxr::UsdImagingPropertyInvalidationType& 
     case pxr::UsdImagingPropertyInvalidationType::Update: return "pxr::UsdImagingPropertyInvalidationType::Update";
     case pxr::UsdImagingPropertyInvalidationType::Resync: return "pxr::UsdImagingPropertyInvalidationType::Resync";
     default: return "pxr::UsdImagingPropertyInvalidationType(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
-    }
-}
-std::string __Overlay::to_string(const pxr::UsdImagingPrimAdapter::PopulationMode& x) {
-    switch (x) {
-    case pxr::UsdImagingPrimAdapter::RepresentsSelf: return "pxr::UsdImagingPrimAdapter::RepresentsSelf";
-    case pxr::UsdImagingPrimAdapter::RepresentsSelfAndDescendents: return "pxr::UsdImagingPrimAdapter::RepresentsSelfAndDescendents";
-    case pxr::UsdImagingPrimAdapter::RepresentedByAncestor: return "pxr::UsdImagingPrimAdapter::RepresentedByAncestor";
-    default: return "pxr::UsdImagingPrimAdapter::PopulationMode(rawValue: " + std::to_string(static_cast<int64_t>(x)) + ")";
     }
 }
 std::string __Overlay::to_string(const pxr::UsdImagingGLDrawMode& x) {

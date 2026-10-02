@@ -181,8 +181,6 @@ void readPrim(const pxr::SdfLayerRefPtr& layer, const pxr::SdfPrimSpecHandle& ha
 
     if (handle->GetPath().IsAbsoluteRootPath()) {
         extractLayerRelocates(handle->GetLayer(), obj);
-    } else {
-        extractPrimRelocates(obj, handle);
     }
     ifValueExists(obj, "references", [&](const auto& x){
         extractSdfListEditorProxy(x, handle->GetReferenceList(), extractSdfReference);
@@ -273,9 +271,6 @@ void writePrim(pxr::JsObject& js, const pxr::SdfPrimSpecHandle& prim) {
     }
     writeVariantSelectionsIfNeeded(js, prim->GetVariantSelections());
     writeVariantSetsIfNeeded(js, prim->GetVariantSets());
-    if (prim->HasRelocates()) {
-        js["relocates"] = writePrimRelocates(prim->GetRelocates());
-    }
     if (prim->GetSpecType() == pxr::SdfSpecTypePseudoRoot && prim->GetLayer()->HasRelocates()) {
         js["relocates"] = writeLayerRelocates(prim->GetLayer()->GetRelocates());
     }

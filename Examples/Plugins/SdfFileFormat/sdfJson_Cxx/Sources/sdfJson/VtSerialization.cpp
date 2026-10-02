@@ -99,6 +99,7 @@ TypedValue extractTypeHint(const pxr::JsValue &js) {
     EXTRACT_TYPE_HINT(Float)
     EXTRACT_TYPE_HINT(Double)
     EXTRACT_TYPE_HINT(TimeCode)
+    EXTRACT_TYPE_HINT(Duration)
     EXTRACT_TYPE_HINT(String)
     EXTRACT_TYPE_HINT(Token)
     EXTRACT_TYPE_HINT(Asset)
@@ -155,6 +156,7 @@ TypedValue extractTypeHint(const pxr::JsValue &js) {
     EXTRACT_TYPE_HINT(FloatArray)
     EXTRACT_TYPE_HINT(DoubleArray)
     EXTRACT_TYPE_HINT(TimeCodeArray)
+    EXTRACT_TYPE_HINT(DurationArray)
     EXTRACT_TYPE_HINT(StringArray)
     EXTRACT_TYPE_HINT(TokenArray)
     EXTRACT_TYPE_HINT(AssetArray)
@@ -237,6 +239,7 @@ pxr::JsValue writeTypeHint(const TypedValue& value) {
     WRITE_TYPE_HINT(Float)
     WRITE_TYPE_HINT(Double)
     WRITE_TYPE_HINT(TimeCode)
+    WRITE_TYPE_HINT(Duration)
     WRITE_TYPE_HINT(String)
     WRITE_TYPE_HINT(Token)
     WRITE_TYPE_HINT(Asset)
@@ -293,6 +296,7 @@ pxr::JsValue writeTypeHint(const TypedValue& value) {
     WRITE_TYPE_HINT(FloatArray)
     WRITE_TYPE_HINT(DoubleArray)
     WRITE_TYPE_HINT(TimeCodeArray)
+    WRITE_TYPE_HINT(DurationArray)
     WRITE_TYPE_HINT(StringArray)
     WRITE_TYPE_HINT(TokenArray)
     WRITE_TYPE_HINT(AssetArray)
@@ -459,6 +463,9 @@ void extractValueWithTypeHint(TypedValue* out, const pxr::JsValue& js) {
     } else if (out->valueTypeName == pxr::SdfValueTypeNames->TimeCode) {
         double x = js.GetReal();
         out->value = pxr::VtValue(pxr::GfTimeCode(x));
+    } else if (out->valueTypeName == pxr::SdfValueTypeNames->Duration) {
+        double x = js.GetReal();
+        out->value = pxr::VtValue(pxr::GfDuration(x));
     } else if (out->valueTypeName == pxr::SdfValueTypeNames->String) {
         std::string x = js.GetString();
         out->value = pxr::VtValue(x);
@@ -585,6 +592,7 @@ void extractValueWithTypeHint(TypedValue* out, const pxr::JsValue& js) {
     EXTRACT_ARRAY(FloatArray, VtFloatArray)
     EXTRACT_ARRAY(DoubleArray, VtDoubleArray)
     EXTRACT_ARRAY(TimeCodeArray, VtTimeCodeArray)
+    EXTRACT_ARRAY(DurationArray, VtDurationArray)
     EXTRACT_ARRAY(StringArray, VtStringArray)
     EXTRACT_ARRAY(TokenArray, VtTokenArray)
     EXTRACT_ARRAY(AssetArray, VtArray<pxr::SdfAssetPath>)
@@ -730,6 +738,8 @@ pxr::JsValue writeValueWithoutTypeHint(const TypedValue& value) {
         return pxr::JsValue(value.value.Get<double>());
     } else if (value.value.IsHolding<pxr::GfTimeCode>()) {
         return pxr::JsValue(value.value.Get<pxr::GfTimeCode>().GetValue());
+    } else if (value.value.IsHolding<pxr::GfDuration>()) {
+        return pxr::JsValue(value.value.Get<pxr::GfDuration>().GetValue());
     } else if (value.value.IsHolding<std::string>()) {
         return pxr::JsValue(value.value.Get<std::string>());
     } else if (value.value.IsHolding<pxr::TfToken>()) {
@@ -798,6 +808,7 @@ pxr::JsValue writeValueWithoutTypeHint(const TypedValue& value) {
     WRITE_ARRAY(FloatArray, VtFloatArray)
     WRITE_ARRAY(DoubleArray, VtDoubleArray)
     WRITE_ARRAY(TimeCodeArray, VtTimeCodeArray)
+    WRITE_ARRAY(DurationArray, VtDurationArray)
     WRITE_ARRAY(StringArray, VtStringArray)
     WRITE_ARRAY(TokenArray, VtTokenArray)
     WRITE_ARRAY(AssetArray, VtArray<pxr::SdfAssetPath>)

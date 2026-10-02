@@ -64,29 +64,6 @@ void writeSubLayerOffsetsIfNeeded(pxr::JsObject& js, const pxr::SdfLayerOffsetVe
     }
 }
 
-void extractPrimRelocates(const pxr::JsValue& js, const pxr::SdfPrimSpecHandle& prim) {
-    const pxr::JsObject& obj = js.GetJsObject();
-
-    pxr::SdfRelocatesMapProxy proxy = prim->GetRelocates();
-    
-    ifValueExists(obj, "relocates", [&](const auto& x){
-        for (const auto& it : x.GetJsObject()) {
-            proxy.insert({pxr::SdfPath(it.first), pxr::SdfPath(it.second.GetString())});
-        }
-        if (x.GetJsObject().empty()) {
-            prim->SetField(pxr::SdfFieldKeys->Relocates, pxr::VtValue(pxr::SdfRelocatesMap()));
-        }
-    });
-}
-
-pxr::JsValue writePrimRelocates(const pxr::SdfRelocatesMapProxy& list) {
-    pxr::JsObject result;
-    for (const auto& it : list) {
-        result[it.first.GetString()] = pxr::JsValue(it.second.GetString());
-    }
-    return result;
-}
-
 void extractLayerRelocates(const pxr::SdfLayerRefPtr& layer, const pxr::JsValue& js) {
     
     const pxr::JsObject& obj = js.GetJsObject();
@@ -101,9 +78,7 @@ void extractLayerRelocates(const pxr::SdfLayerRefPtr& layer, const pxr::JsValue&
                 relocates.push_back({pxr::SdfPath(subArr[0].GetString()), pxr::SdfPath(subArr[1].GetString())});
             }
         }
-        if (!relocates.empty()) {
-            layer->SetRelocates(relocates);
-        }
+        layer->SetRelocates(relocates);
     });
 }
 pxr::JsValue writeLayerRelocates(const pxr::SdfRelocates& list) {

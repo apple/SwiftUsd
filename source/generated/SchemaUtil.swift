@@ -83,6 +83,7 @@ extension Bool {
     public init(_ x: pxr.UsdVolParticleFieldKernelGaussianSurfletAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdVolVolume) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdMediaAssetPreviewsAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdMediaAuthorshipAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdMediaSpatialAudio) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdShadeConnectableAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdShadeCoordSysAPI) { self.init(__Overlay.convertToBool(x)) }
@@ -125,6 +126,7 @@ extension Bool {
     public init(_ x: pxr.UsdRenderSettings) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRenderVar) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdHydraGenerativeProceduralAPI) { self.init(__Overlay.convertToBool(x)) }
+    public init(_ x: pxr.UsdHydraPrimAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdHydraRenderPassAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRiMaterialAPI) { self.init(__Overlay.convertToBool(x)) }
     public init(_ x: pxr.UsdRiSplineAPI) { self.init(__Overlay.convertToBool(x)) }

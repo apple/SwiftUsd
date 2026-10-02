@@ -10,7 +10,10 @@ These types conform to `CustomStringConvertible` in Swift.
 ###  Arch types
 - ``OpenUSD/C++/pxr/ArchMemAdvice``
 - ``OpenUSD/C++/pxr/ArchFileAdvice``
+- ``OpenUSD/C++/pxr/ArchThreadPriority``
 - ``OpenUSD/C++/pxr/ArchMemoryProtection``
+- ``OpenUSD/C++/pxr/ArchPrefetchAccess``
+- ``OpenUSD/C++/pxr/ArchPrefetchLocality``
 
 ###  Tf types
 - ``OpenUSD/C++/pxr/TfAnyWeakPtr``
@@ -26,6 +29,12 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/TfStopwatch``
 - ``OpenUSD/C++/pxr/TfNotice/Key``
 - ``OpenUSD/C++/pxr/TfMallocTag/CallTree/PrintSetting``
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.TfType, _CUnsignedInt_1>/DefaultInitTag``
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.UsdAttribute, _CUnsignedInt_1>/DefaultInitTag``
+- ``OpenUSD/C++/pxr/TfSmallVector<UnsafeMutablePointer<pxr.VdfConnection>, _CUnsignedInt_1>/DefaultInitTag``
+- ``OpenUSD/C++/pxr/TfSmallVector<UnsafePointer<pxr.VdfConnection>, _CUnsignedInt_1>/DefaultInitTag``
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.UsdShadeConnectionSourceInfo, _CUnsignedInt_1>/DefaultInitTag``
+- ``OpenUSD/C++/pxr/TfSmallVector<std.__1.pair<pxr.TfToken, pxr.HdDependencySchema>, _CUnsignedInt_8>/DefaultInitTag``
 - ``OpenUSD/C++/pxr/TfRefPtrTracker/TraceType``
 - ``OpenUSD/C++/pxr/TfToken``
 
@@ -37,10 +46,14 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/GfVec4h``
 - ``OpenUSD/C++/pxr/pxr_half/half``
 - ``OpenUSD/C++/pxr/GfVec4i``
+- ``OpenUSD/C++/pxr/GfVec2i``
+- ``OpenUSD/C++/pxr/GfVec3i``
+- ``OpenUSD/C++/pxr/GfVec2h``
+- ``OpenUSD/C++/pxr/GfVec2d``
+- ``OpenUSD/C++/pxr/GfVec2f``
+- ``OpenUSD/C++/pxr/GfVec3h``
 - ``OpenUSD/C++/pxr/GfVec3d``
 - ``OpenUSD/C++/pxr/GfVec3f``
-- ``OpenUSD/C++/pxr/GfVec3h``
-- ``OpenUSD/C++/pxr/GfVec3i``
 - ``OpenUSD/C++/pxr/GfRange3d``
 - ``OpenUSD/C++/pxr/GfRange3f``
 - ``OpenUSD/C++/pxr/GfCamera/Projection``
@@ -48,10 +61,6 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/GfRange1f``
 - ``OpenUSD/C++/pxr/GfRange1d``
 - ``OpenUSD/C++/pxr/GfColor``
-- ``OpenUSD/C++/pxr/GfVec2f``
-- ``OpenUSD/C++/pxr/GfVec2d``
-- ``OpenUSD/C++/pxr/GfVec2h``
-- ``OpenUSD/C++/pxr/GfVec2i``
 - ``OpenUSD/C++/pxr/GfMatrix3f``
 - ``OpenUSD/C++/pxr/GfDualQuatd``
 - ``OpenUSD/C++/pxr/GfQuatd``
@@ -59,6 +68,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/GfQuatf``
 - ``OpenUSD/C++/pxr/GfDualQuath``
 - ``OpenUSD/C++/pxr/GfQuath``
+- ``OpenUSD/C++/pxr/GfDuration``
 - ``OpenUSD/C++/pxr/GfFrustum``
 - ``OpenUSD/C++/pxr/GfFrustum/ProjectionType``
 - ``OpenUSD/C++/pxr/GfPlane``
@@ -100,6 +110,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuatd>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuatf>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuath>``
+- ``OpenUSD/C++/pxr/VtArray<pxr.GfDuration>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.pxr_half.half>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfInterval>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfMatrix2d>``
@@ -332,6 +343,8 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/GarchNSGLContextState/NullState``
 
 ###  Hio types
+- ``OpenUSD/C++/pxr/HioImage/ImageOriginLocation``
+- ``OpenUSD/C++/pxr/HioImage/SourceColorSpace``
 - ``OpenUSD/C++/pxr/HioFormat``
 - ``OpenUSD/C++/pxr/HioAddressDimension``
 - ``OpenUSD/C++/pxr/HioAddressMode``
@@ -417,6 +430,7 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdMeshGeomStyle``
 - ``OpenUSD/C++/pxr/HdBasisCurvesGeomStyle``
 - ``OpenUSD/C++/pxr/HdPointsGeomStyle``
+- ``OpenUSD/C++/pxr/HdImplicitSurfaceGeomStyle``
 - ``OpenUSD/C++/pxr/HdInterpolation``
 - ``OpenUSD/C++/pxr/HdDepthPriority``
 - ``OpenUSD/C++/pxr/HdDataSourceLocator``
@@ -424,27 +438,24 @@ These types conform to `CustomStringConvertible` in Swift.
 - ``OpenUSD/C++/pxr/HdBufferArrayUsageHintBits``
 - ``OpenUSD/C++/pxr/HdReprSelector``
 - ``OpenUSD/C++/pxr/HdBasisCurvesTopology``
-- ``OpenUSD/C++/pxr/HdTopology``
 - ``OpenUSD/C++/pxr/HdGeomSubset/Type``
 - ``OpenUSD/C++/pxr/HdRprimCollection``
 - ``OpenUSD/C++/pxr/HdCamera/DirtyBits``
 - ``OpenUSD/C++/pxr/HdCamera/Projection``
 - ``OpenUSD/C++/pxr/HdCollectionExpressionEvaluator/MatchKind``
 - ``OpenUSD/C++/pxr/HdCoordSys/DirtyBits``
-- ``OpenUSD/C++/pxr/HdField/DirtyBits``
 - ``OpenUSD/C++/pxr/HdMaterialNetwork``
 - ``OpenUSD/C++/pxr/HdMaterialNetworkMap``
 - ``OpenUSD/C++/pxr/HdMaterialNode2``
-- ``OpenUSD/C++/pxr/HdLight/DirtyBits``
 - ``OpenUSD/C++/pxr/HdMeshComputationResult``
 - ``OpenUSD/C++/pxr/HdPrimOriginSchema/OriginPath``
-- ``OpenUSD/C++/pxr/HdRenderBuffer/DirtyBits``
 - ``OpenUSD/C++/pxr/HdRenderPassState/ColorMask``
 - ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry/InsertionOrder``
 - ``OpenUSD/C++/pxr/HdSceneIndexPluginRegistry/PluginOrderingPolicy``
+- ``OpenUSD/C++/pxr/HdSceneIndexPrimView/Order``
 
-###  HdGp types
-- ``OpenUSD/C++/pxr/HdGpGenerativeProcedural/AsyncState``
+###  Hdsi types
+- ``OpenUSD/C++/pxr/HdsiApplicationRenderSettingsSceneIndex/RenderSettingsSource``
 
 ###  HdSt types
 - ``OpenUSD/C++/pxr/HdStBinding/Type``
@@ -475,7 +486,6 @@ These types conform to `CustomStringConvertible` in Swift.
 
 ###  UsdImaging types
 - ``OpenUSD/C++/pxr/UsdImagingPropertyInvalidationType``
-- ``OpenUSD/C++/pxr/UsdImagingPrimAdapter/PopulationMode``
 
 ###  UsdImagingGL types
 - ``OpenUSD/C++/pxr/UsdImagingGLDrawMode``

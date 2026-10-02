@@ -268,6 +268,21 @@ bool Overlay::UsdImagingGLEngineWrapper::DecodeIntersection(int primIdx,
                                      outInstancerContext);
 }
 
+Overlay::UsdImagingGLEngineWrapper::DecodeResultVector Overlay::UsdImagingGLEngineWrapper::DecodeIntersections(const Overlay::UsdImagingGLEngineWrapper::PickIdVector& pickIds) {
+    ASSERT_SIZES_MATCH(pxr::UsdImagingGLEngine::DecodeResult, Overlay::UsdImagingGLEngineWrapper::DecodeResult);
+    ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::DecodeResult, Overlay::UsdImagingGLEngineWrapper::DecodeResult, primPath);
+    ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::DecodeResult, Overlay::UsdImagingGLEngineWrapper::DecodeResult, instancerContext);
+
+    ASSERT_SIZES_MATCH(pxr::UsdImagingGLEngine::PickId, Overlay::UsdImagingGLEngineWrapper::PickId);
+    ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::PickId, Overlay::UsdImagingGLEngineWrapper::PickId, primId);
+    ASSERT_FIELDS_MATCH(pxr::UsdImagingGLEngine::PickId, Overlay::UsdImagingGLEngineWrapper::PickId, instanceId);
+
+    pxr::UsdImagingGLEngine::PickIdVector implPickIds = *reinterpret_cast<const pxr::UsdImagingGLEngine::PickIdVector*>(&pickIds);
+    pxr::UsdImagingGLEngine::DecodeResultVector implResult =  _impl->DecodeIntersections(implPickIds);
+    Overlay::UsdImagingGLEngineWrapper::DecodeResultVector result = *reinterpret_cast<const Overlay::UsdImagingGLEngineWrapper::DecodeResultVector*>(&implResult);
+    return result;
+}
+
 
 /* static */
 pxr::TfTokenVector Overlay::UsdImagingGLEngineWrapper::GetRendererPlugins() {

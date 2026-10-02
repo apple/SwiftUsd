@@ -33,7 +33,6 @@
 // to the right Swift protocols
 
 namespace Overlay {
-    typedef std::pair<pxr::SdfRelocatesMapProxy::iterator, bool> SdfRelocatesMapProxy_Iterator_Bool_Pair;
     typedef std::pair<pxr::SdfVariantSelectionProxy::iterator, bool> SdfVariantSelectionProxy_Iterator_Bool_Pair;
     typedef std::pair<pxr::SdfTimeSampleMap::iterator, bool> SdfTimeSampleMap_Iterator_Bool_Pair;
 }
@@ -47,13 +46,6 @@ namespace __Overlay {
     
     bool manual_operatorEqualsEquals(pxr::SdfVariantSetsProxy::const_iterator const& a, pxr::SdfVariantSetsProxy::const_iterator const& b);
     
-    bool manual_operatorEqualsEquals(pxr::SdfRelocatesMapProxy::const_iterator const& a, pxr::SdfRelocatesMapProxy::const_iterator const& b);
-    bool manual_operatorEqualsEquals(pxr::SdfRelocatesMapProxy::iterator const& a, pxr::SdfRelocatesMapProxy::iterator const& b);
-        
-    std::pair<pxr::SdfRelocatesMapProxy::iterator, bool> insert(pxr::SdfRelocatesMapProxy&, pxr::SdfRelocatesMapProxy::value_type const&);
-    pxr::SdfRelocatesMapProxy::iterator erase(pxr::SdfRelocatesMapProxy&, pxr::SdfRelocatesMapProxy::iterator const&);
-    pxr::SdfRelocatesMapProxy::value_type operatorStar(pxr::SdfRelocatesMapProxy::iterator const&);
-    void operatorStarSet(pxr::SdfRelocatesMapProxy::iterator&, pxr::SdfRelocatesMapProxy::value_type const&);
     
     bool manual_operatorEqualsEquals(pxr::SdfVariantSelectionProxy::const_iterator const& a, pxr::SdfVariantSelectionProxy::const_iterator const& b);
     bool manual_operatorEqualsEquals(pxr::SdfVariantSelectionProxy::iterator const& a, pxr::SdfVariantSelectionProxy::iterator const& b);

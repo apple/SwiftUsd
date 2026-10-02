@@ -176,28 +176,6 @@ func writeSubLayerOffsets(_ offsets: pxr.SdfLayerOffsetVector) -> JsAny? {
     return hadNonIdentity ? .array(result) : nil
 }
 
-func extractPrimRelocates(_ js: JsAny, _ prim: pxr.SdfPrimSpec) throws {
-    var prim = prim
-    let obj = try js.castAsObject()
-    
-    var proxy = prim.GetRelocates()
-    guard let x = obj["relocates"] else { return }
-    for (k, v) in try x.castAsObject() {
-        proxy.insert(.init(first: pxr.SdfPath(k), second: pxr.SdfPath(try v.castAsString())))
-    }
-    if try x.castAsObject().isEmpty {
-        prim.SetField(.SdfFieldKeys.Relocates, pxr.VtValue(pxr.SdfRelocatesMap()))
-    }
-}
-
-func writePrimRelocates(_ list: pxr.SdfRelocatesMapProxy) -> JsAny {
-    var result = [String : JsAny]()
-    for x in list {
-        result[String(x.first)] = .string(String(x.second))
-    }
-    return .object(result)
-}
-
 func extractLayerRelocates(_ layer: pxr.SdfLayer, _ js: JsAny) throws {
     let obj = try js.castAsObject()
     guard let x = obj["relocates"] else { return }
@@ -211,9 +189,7 @@ func extractLayerRelocates(_ layer: pxr.SdfLayer, _ js: JsAny) throws {
         relocates.push_back(.init(first: pxr.SdfPath(try subArr[0].castAsString()),
                                   second: pxr.SdfPath(try subArr[1].castAsString())))
     }
-    if !relocates.empty() {
-        layer.SetRelocates(relocates)
-    }
+    layer.SetRelocates(relocates)
 }
 func writeLayerRelocates(_ list: pxr.SdfRelocates) -> JsAny {
     var result = [JsAny]()

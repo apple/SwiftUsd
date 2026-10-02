@@ -144,6 +144,9 @@ func computeKnownInvalidOpenUSDFiles() -> [String] {
         "pxr/usd/sdf/testenv/testSdfParsing.testenv/221_bad_spline_type.usda",
         "pxr/usd/sdf/testenv/testSdfParsing.testenv/223_bad_spline_post_shaping_spacing.usda",
         "pxr/usd/sdf/testenv/testSdfParsing.testenv/229_bad_spline_extrap_loop_boundary.usda",
+        "pxr/usd/sdf/testenv/testSdfParsing.testenv/230_bad_layer_with_utf8_BOM.usda",
+        "pxr/usd/sdf/testenv/testSdfParsing.testenv/231_bad_layer_with_utf16_BOM.usda",
+        "pxr/usd/sdf/testenv/testSdfParsing.testenv/232_bad_layer_with_utf32_BOM.usda",
         
         // This file claims to test the __END__ facility that stops the parser from proceeding,
         // but usdcat fails on it. Maybe it's old behavior that was removed?
@@ -157,6 +160,7 @@ func computeKnownInvalidOpenUSDFiles() -> [String] {
         "pxr/usd/sdf/testenv/testSdfUsdcMalformed/bad_str_oversize.usdc",
         "pxr/usd/sdf/testenv/testSdfUsdcMalformed/bad_oversize_zerocopy.usdc",
         "pxr/usd/sdf/testenv/testSdfUsdcMalformed/bad_moderate_oversize.usdc",
+        "pxr/usd/sdf/testenv/testSdfUsdcMalformed/bad_obsolete_version.usdc",
         "pxr/usd/sdf/testenv/testSdfUsdcInvalidPrimChildren.testenv/duplicate_prim_children.usdc",
         "pxr/usd/sdf/testenv/testSdfUsdcInvalidPrimChildren.testenv/root.usdc",
         

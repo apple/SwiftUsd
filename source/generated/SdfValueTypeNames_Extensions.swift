@@ -52,6 +52,9 @@ extension pxr.SdfValueTypeName {
     public static var TimeCode: pxr.SdfValueTypeName {
         Overlay.SdfValueTypeNames.TimeCode
     }
+    public static var Duration: pxr.SdfValueTypeName {
+        Overlay.SdfValueTypeNames.Duration
+    }
     public static var String: pxr.SdfValueTypeName {
         Overlay.SdfValueTypeNames.String
     }
@@ -219,6 +222,9 @@ extension pxr.SdfValueTypeName {
     }
     public static var TimeCodeArray: pxr.SdfValueTypeName {
         Overlay.SdfValueTypeNames.TimeCodeArray
+    }
+    public static var DurationArray: pxr.SdfValueTypeName {
+        Overlay.SdfValueTypeNames.DurationArray
     }
     public static var StringArray: pxr.SdfValueTypeName {
         Overlay.SdfValueTypeNames.StringArray

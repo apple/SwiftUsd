@@ -45,6 +45,10 @@ bool __Overlay::operatorLess(const pxr::pxr_half::half& l,
                              const pxr::pxr_half::half& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::GfDuration& l,
+                             const pxr::GfDuration& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::TraceAggregateTreeRefPtr& l,
                              const pxr::TraceAggregateTreeRefPtr& r) {
     return l < r;
@@ -167,10 +171,6 @@ bool __Overlay::operatorLess(const pxr::SdfNameChildrenOrderProxy& l,
 }
 bool __Overlay::operatorLess(const pxr::SdfSubLayerProxy& l,
                              const pxr::SdfSubLayerProxy& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::SdfRelocatesMapProxy& l,
-                             const pxr::SdfRelocatesMapProxy& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::SdfVariantSelectionProxy& l,
@@ -418,44 +418,16 @@ bool __Overlay::operatorLess(const pxr::GarchGLPlatformDebugContextRefPtr& l,
                              const pxr::GarchGLPlatformDebugContextRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HioImage& l,
+                             const pxr::HioImage& r) {
+    return &l < &r;
+}
 bool __Overlay::operatorLess(const pxr::HioImageRegistry& l,
                              const pxr::HioImageRegistry& r) {
     return &l < &r;
 }
-bool __Overlay::operatorLess(const pxr::GlfBindingMap& l,
-                             const pxr::GlfBindingMap& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::GlfBindingMapPtr& l,
-                             const pxr::GlfBindingMapPtr& r) {
-    return l < r;
-}
 bool __Overlay::operatorLess(const pxr::GlfContextCaps& l,
                              const pxr::GlfContextCaps& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::GlfDrawTarget& l,
-                             const pxr::GlfDrawTarget& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::GlfDrawTargetRefPtr& l,
-                             const pxr::GlfDrawTargetRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::GlfDrawTargetPtr& l,
-                             const pxr::GlfDrawTargetPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::GlfDrawTarget::Attachment& l,
-                             const pxr::GlfDrawTarget::Attachment& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::GlfDrawTarget::AttachmentRefPtr& l,
-                             const pxr::GlfDrawTarget::AttachmentRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::GlfTexture& l,
-                             const pxr::GlfTexture& r) {
     return &l < &r;
 }
 bool __Overlay::operatorLess(const pxr::GlfSimpleLightingContext& l,
@@ -476,14 +448,6 @@ bool __Overlay::operatorLess(const pxr::GlfSimpleShadowArray& l,
 }
 bool __Overlay::operatorLess(const pxr::GlfSimpleShadowArrayRefPtr& l,
                              const pxr::GlfSimpleShadowArrayRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::GlfUniformBlock& l,
-                             const pxr::GlfUniformBlock& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::GlfUniformBlockRefPtr& l,
-                             const pxr::GlfUniformBlockRefPtr& r) {
     return l < r;
 }
 bool __Overlay::operatorLess(const pxr::HdPerfLog& l,
@@ -642,6 +606,14 @@ bool __Overlay::operatorLess(const pxr::HdGpGenerativeProceduralResolvingSceneIn
                              const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdsiApplicationRenderSettingsSceneIndex& l,
+                             const pxr::HdsiApplicationRenderSettingsSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& l,
+                             const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdsiBackPlateSceneIndex& l,
                              const pxr::HdsiBackPlateSceneIndex& r) {
     return &l < &r;
@@ -794,6 +766,14 @@ bool __Overlay::operatorLess(const pxr::HdsiPinnedCurveExpandingSceneIndexRefPtr
                              const pxr::HdsiPinnedCurveExpandingSceneIndexRefPtr& r) {
     return l < r;
 }
+bool __Overlay::operatorLess(const pxr::HdsiPrimIdSceneIndex& l,
+                             const pxr::HdsiPrimIdSceneIndex& r) {
+    return &l < &r;
+}
+bool __Overlay::operatorLess(const pxr::HdsiPrimIdSceneIndexRefPtr& l,
+                             const pxr::HdsiPrimIdSceneIndexRefPtr& r) {
+    return l < r;
+}
 bool __Overlay::operatorLess(const pxr::HdsiPrimManagingSceneIndexObserver& l,
                              const pxr::HdsiPrimManagingSceneIndexObserver& r) {
     return &l < &r;
@@ -936,6 +916,14 @@ bool __Overlay::operatorLess(const pxr::UsdImagingStageSceneIndex& l,
                              const pxr::UsdImagingStageSceneIndex& r) {
     return &l < &r;
 }
+bool __Overlay::operatorLess(const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& l,
+                             const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& r) {
+    return l < r;
+}
+bool __Overlay::operatorLess(const pxr::UsdImagingStageSceneIndexInterface& l,
+                             const pxr::UsdImagingStageSceneIndexInterface& r) {
+    return &l < &r;
+}
 bool __Overlay::operatorLess(const pxr::UsdImagingSelectionSceneIndexRefPtr& l,
                              const pxr::UsdImagingSelectionSceneIndexRefPtr& r) {
     return l < r;
@@ -1006,14 +994,6 @@ bool __Overlay::operatorLess(const pxr::UsdImagingSceneIndexRefPtr& l,
 }
 bool __Overlay::operatorLess(const pxr::UsdImagingSceneIndex& l,
                              const pxr::UsdImagingSceneIndex& r) {
-    return &l < &r;
-}
-bool __Overlay::operatorLess(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& l,
-                             const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& r) {
-    return l < r;
-}
-bool __Overlay::operatorLess(const pxr::UsdExecImagingStageSceneIndexInterface& l,
-                             const pxr::UsdExecImagingStageSceneIndexInterface& r) {
     return &l < &r;
 }
 bool __Overlay::operatorLess(const pxr::UsdSkelImagingPointsResolvingSceneIndexRefPtr& l,

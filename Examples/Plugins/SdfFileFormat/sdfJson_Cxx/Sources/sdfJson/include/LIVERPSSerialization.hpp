@@ -164,10 +164,6 @@ pxr::JsValue writeSdfLayerOffset(const pxr::SdfLayerOffset& x);
 pxr::SdfLayerOffsetVector extractSdfLayerOffsetVector(const pxr::JsValue& js);
 void writeSubLayerOffsetsIfNeeded(pxr::JsObject& js, const pxr::SdfLayerOffsetVector& offsets);
 
-
-void extractPrimRelocates(const pxr::JsValue& js, const pxr::SdfPrimSpecHandle& prim);
-pxr::JsValue writePrimRelocates(const pxr::SdfRelocatesMapProxy& list);
-
 void extractLayerRelocates(const pxr::SdfLayerRefPtr& layer, const pxr::JsValue& js);
 pxr::JsValue writeLayerRelocates(const pxr::SdfRelocates& list);
 

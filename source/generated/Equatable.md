@@ -13,10 +13,16 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefBase``
 - ``OpenUSD/C++/pxr/TfSimpleRefBase``
 - ``OpenUSD/C++/pxr/TfBits``
+- ``OpenUSD/C++/pxr/TfBits/View<_1>/const_iterator``
 - ``OpenUSD/C++/pxr/TfCompressedBits``
+- ``OpenUSD/C++/pxr/TfCompressedBits/View<_1>/const_iterator``
+- ``OpenUSD/C++/pxr/TfCompressedBits/View<_3>/const_iterator``
 - ``OpenUSD/C++/pxr/TfEnum``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.TfNotice.Probe>``
 - ``OpenUSD/C++/pxr/TfDiagnosticMgr``
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.TfType, _CUnsignedInt_1>``
+- ``OpenUSD/C++/pxr/TfSmallVector<UnsafeMutablePointer<pxr.VdfConnection>, _CUnsignedInt_1>``
+- ``OpenUSD/C++/pxr/TfSmallVector<UnsafePointer<pxr.VdfConnection>, _CUnsignedInt_1>``
 - ``OpenUSD/C++/pxr/TfRefPtrTracker``
 - ``OpenUSD/C++/pxr/TfToken``
 - ``OpenUSD/C++/pxr/TfUtf8CodePointIterator``
@@ -29,10 +35,14 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/GfVec4h``
 - ``OpenUSD/C++/pxr/pxr_half/half``
 - ``OpenUSD/C++/pxr/GfVec4i``
+- ``OpenUSD/C++/pxr/GfVec2i``
+- ``OpenUSD/C++/pxr/GfVec3i``
+- ``OpenUSD/C++/pxr/GfVec2h``
+- ``OpenUSD/C++/pxr/GfVec2d``
+- ``OpenUSD/C++/pxr/GfVec2f``
+- ``OpenUSD/C++/pxr/GfVec3h``
 - ``OpenUSD/C++/pxr/GfVec3d``
 - ``OpenUSD/C++/pxr/GfVec3f``
-- ``OpenUSD/C++/pxr/GfVec3h``
-- ``OpenUSD/C++/pxr/GfVec3i``
 - ``OpenUSD/C++/pxr/GfRange3d``
 - ``OpenUSD/C++/pxr/GfRange3f``
 - ``OpenUSD/C++/pxr/GfCamera``
@@ -40,10 +50,6 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/GfRange1d``
 - ``OpenUSD/C++/pxr/GfColor``
 - ``OpenUSD/C++/pxr/GfColorSpace``
-- ``OpenUSD/C++/pxr/GfVec2f``
-- ``OpenUSD/C++/pxr/GfVec2d``
-- ``OpenUSD/C++/pxr/GfVec2h``
-- ``OpenUSD/C++/pxr/GfVec2i``
 - ``OpenUSD/C++/pxr/GfMatrix3f``
 - ``OpenUSD/C++/pxr/GfDualQuatd``
 - ``OpenUSD/C++/pxr/GfQuatd``
@@ -51,6 +57,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/GfQuatf``
 - ``OpenUSD/C++/pxr/GfDualQuath``
 - ``OpenUSD/C++/pxr/GfQuath``
+- ``OpenUSD/C++/pxr/GfDuration``
 - ``OpenUSD/C++/pxr/GfFrustum``
 - ``OpenUSD/C++/pxr/GfPlane``
 - ``OpenUSD/C++/pxr/GfRay``
@@ -106,6 +113,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuatd>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuatf>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfDualQuath>``
+- ``OpenUSD/C++/pxr/VtArray<pxr.GfDuration>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.pxr_half.half>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfInterval>``
 - ``OpenUSD/C++/pxr/VtArray<pxr.GfMatrix2d>``
@@ -156,6 +164,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatd>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuatf>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDualQuath>``
+- ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfDuration>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfInterval>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2d>``
 - ``OpenUSD/C++/pxr/VtArrayEdit<pxr.GfMatrix2f>``
@@ -208,7 +217,6 @@ These types conform to `Equatable` in Swift.
 
 ###  Ts types
 - ``OpenUSD/C++/pxr/TsSpline``
-- ``OpenUSD/C++/pxr/TsLoopParams``
 - ``OpenUSD/C++/pxr/TsExtrapolation``
 - ``OpenUSD/C++/pxr/TsKnotMap``
 - ``OpenUSD/C++/pxr/TsKnot``
@@ -344,6 +352,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/UsdEditTarget``
 - ``OpenUSD/C++/pxr/UsdStageLoadRules``
 - ``OpenUSD/C++/pxr/UsdStagePopulationMask``
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.UsdAttribute, _CUnsignedInt_1>``
 - ``OpenUSD/C++/pxr/UsdAttribute``
 - ``OpenUSD/C++/pxr/UsdProperty``
 - ``OpenUSD/C++/pxr/UsdRelationship``
@@ -359,6 +368,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/UsdGeomXformOp``
 
 ###  UsdShade types
+- ``OpenUSD/C++/pxr/TfSmallVector<pxr.UsdShadeConnectionSourceInfo, _CUnsignedInt_1>``
 - ``OpenUSD/C++/pxr/UsdShadeConnectionSourceInfo``
 - ``OpenUSD/C++/pxr/UsdShadeInput``
 - ``OpenUSD/C++/pxr/UsdShadeOutput``
@@ -422,6 +432,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/GarchNSGLContextState``
 
 ###  Hio types
+- ``OpenUSD/C++/pxr/HioImage``
 - ``OpenUSD/C++/pxr/HioImageRegistry``
 
 ###  CameraUtil types
@@ -432,15 +443,7 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/PxOsdSubdivTags``
 
 ###  Glf types
-- ``OpenUSD/C++/pxr/GlfBindingMap``
-- ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfBindingMap>``
 - ``OpenUSD/C++/pxr/GlfContextCaps``
-- ``OpenUSD/C++/pxr/GlfDrawTarget``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget>``
-- ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfDrawTarget>``
-- ``OpenUSD/C++/pxr/GlfDrawTarget/Attachment``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget.Attachment>``
-- ``OpenUSD/C++/pxr/GlfTexture``
 - ``OpenUSD/C++/pxr/GlfSimpleLight``
 - ``OpenUSD/C++/pxr/GlfSimpleLightingContext``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfSimpleLightingContext>``
@@ -448,8 +451,6 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/GlfSimpleMaterial``
 - ``OpenUSD/C++/pxr/GlfSimpleShadowArray``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfSimpleShadowArray>``
-- ``OpenUSD/C++/pxr/GlfUniformBlock``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfUniformBlock>``
 
 ###  Hgi types
 - ``OpenUSD/C++/pxr/HgiAttachmentDesc``
@@ -569,6 +570,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdGpGenerativeProceduralResolvingSceneIndex>``
 
 ###  Hdsi types
+- ``OpenUSD/C++/pxr/HdsiApplicationRenderSettingsSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiApplicationRenderSettingsSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiBackPlateSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiBackPlateSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiCoordSysPrimSceneIndex``
@@ -607,6 +610,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrefixPathPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPinnedCurveExpandingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPinnedCurveExpandingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiPrimIdSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimIdSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPrimManagingSceneIndexObserver``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimManagingSceneIndexObserver>``
 - ``OpenUSD/C++/pxr/HdsiPrimTypeAndPathPruningSceneIndex``
@@ -669,6 +674,8 @@ These types conform to `Equatable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingLegacyRenderSettingsSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingStageSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingStageSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingStageSceneIndexInterface>``
+- ``OpenUSD/C++/pxr/UsdImagingStageSceneIndexInterface``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSelectionSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingSelectionSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingMaterialBindingsResolvingSceneIndex>``
@@ -690,8 +697,6 @@ These types conform to `Equatable` in Swift.
 
 ###  UsdExecImaging types
 - ``OpenUSD/C++/pxr/UsdExecImagingValueKey``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdExecImagingStageSceneIndexInterface>``
-- ``OpenUSD/C++/pxr/UsdExecImagingStageSceneIndexInterface``
 
 ###  UsdImagingGL types
 - ``OpenUSD/C++/pxr/UsdImagingGLRenderParams``

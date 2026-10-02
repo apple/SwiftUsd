@@ -31,6 +31,7 @@
 #include "pxr/base/gf/dualQuatd.h"
 #include "pxr/base/gf/dualQuatf.h"
 #include "pxr/base/gf/dualQuath.h"
+#include "pxr/base/gf/duration.h"
 #include "pxr/base/gf/frustum.h"
 #include "pxr/base/gf/ilmbase_half.h"
 #include "pxr/base/gf/interval.h"
@@ -82,10 +83,13 @@
 #include "pxr/base/tf/anyWeakPtr.h"
 #include "pxr/base/tf/bits.h"
 #include "pxr/base/tf/compressedBits.h"
+#include "pxr/base/tf/denseHashMap.h"
+#include "pxr/base/tf/denseHashSet.h"
 #include "pxr/base/tf/diagnosticMgr.h"
 #include "pxr/base/tf/enum.h"
 #include "pxr/base/tf/hashmap.h"
 #include "pxr/base/tf/hashset.h"
+#include "pxr/base/tf/iterator.h"
 #include "pxr/base/tf/notice.h"
 #include "pxr/base/tf/refBase.h"
 #include "pxr/base/tf/refPtrTracker.h"
@@ -118,23 +122,30 @@
 #include "pxr/base/vt/valueRef.h"
 #include "pxr/exec/ef/time.h"
 #include "pxr/exec/ef/timeInterval.h"
+#include "pxr/exec/esf/editReason.h"
 #include "pxr/exec/esf/journal.h"
 #include "pxr/exec/exec/typeRegistry.h"
+#include "pxr/exec/exec/types.h"
+#include "pxr/exec/execIr/types.h"
 #include "pxr/exec/vdf/connectorSpecs.h"
 #include "pxr/exec/vdf/executionTypeRegistry.h"
 #include "pxr/exec/vdf/grapherOptions.h"
 #include "pxr/exec/vdf/indexedData.h"
 #include "pxr/exec/vdf/indexedDataIterator.h"
 #include "pxr/exec/vdf/indexedWeights.h"
+#include "pxr/exec/vdf/indexedWeightsOperand.h"
 #include "pxr/exec/vdf/input.h"
 #include "pxr/exec/vdf/inputSpec.h"
 #include "pxr/exec/vdf/mask.h"
 #include "pxr/exec/vdf/maskedOutput.h"
+#include "pxr/exec/vdf/node.h"
 #include "pxr/exec/vdf/object.h"
 #include "pxr/exec/vdf/output.h"
 #include "pxr/exec/vdf/outputSpec.h"
+#include "pxr/exec/vdf/poolChainIndex.h"
 #include "pxr/exec/vdf/readIterator.h"
 #include "pxr/exec/vdf/request.h"
+#include "pxr/exec/vdf/scheduleNode.h"
 #include "pxr/exec/vdf/scheduler.h"
 #include "pxr/exec/vdf/testUtils.h"
 #include "pxr/exec/vdf/types.h"
@@ -146,32 +157,37 @@
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT && defined(ARCH_OS_DARWIN)
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/garch/glPlatformDebugContext.h"
-#include "pxr/imaging/glf/bindingMap.h"
 #include "pxr/imaging/glf/contextCaps.h"
-#include "pxr/imaging/glf/drawTarget.h"
 #include "pxr/imaging/glf/simpleLight.h"
 #include "pxr/imaging/glf/simpleLightingContext.h"
 #include "pxr/imaging/glf/simpleMaterial.h"
 #include "pxr/imaging/glf/simpleShadowArray.h"
-#include "pxr/imaging/glf/texture.h"
-#include "pxr/imaging/glf/uniformBlock.h"
 #include "pxr/imaging/hd/aov.h"
+#include "pxr/imaging/hd/basisCurves.h"
 #include "pxr/imaging/hd/basisCurvesTopology.h"
+#include "pxr/imaging/hd/bufferArray.h"
+#include "pxr/imaging/hd/bufferArrayRange.h"
+#include "pxr/imaging/hd/bufferSource.h"
 #include "pxr/imaging/hd/bufferSpec.h"
 #include "pxr/imaging/hd/cachingSceneIndex.h"
+#include "pxr/imaging/hd/dataSource.h"
 #include "pxr/imaging/hd/dataSourceLocator.h"
 #include "pxr/imaging/hd/dependencyForwardingSceneIndex.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
 #include "pxr/imaging/hd/flatteningSceneIndex.h"
 #include "pxr/imaging/hd/geomSubset.h"
+#include "pxr/imaging/hd/implicitSurface.h"
 #include "pxr/imaging/hd/instanceProxyViewSceneIndex.h"
 #include "pxr/imaging/hd/legacyGeomSubsetSceneIndex.h"
 #include "pxr/imaging/hd/legacyPrimSceneIndex.h"
 #include "pxr/imaging/hd/material.h"
 #include "pxr/imaging/hd/materialFilteringSceneIndexBase.h"
+#include "pxr/imaging/hd/materialNetworkInterface.h"
 #include "pxr/imaging/hd/mergingSceneIndex.h"
+#include "pxr/imaging/hd/mesh.h"
 #include "pxr/imaging/hd/noticeBatchingSceneIndex.h"
 #include "pxr/imaging/hd/perfLog.h"
+#include "pxr/imaging/hd/points.h"
 #include "pxr/imaging/hd/prefixingSceneIndex.h"
 #include "pxr/imaging/hd/primOriginSchema.h"
 #include "pxr/imaging/hd/renderDelegateInfo.h"
@@ -190,7 +206,11 @@
 #include "pxr/imaging/hdGp/generativeProceduralPluginRegistry.h"
 #include "pxr/imaging/hdGp/generativeProceduralResolvingSceneIndex.h"
 #include "pxr/imaging/hdSt/binding.h"
+#include "pxr/imaging/hdSt/bufferResource.h"
+#include "pxr/imaging/hdSt/renderPassState.h"
+#include "pxr/imaging/hdSt/shaderCode.h"
 #include "pxr/imaging/hdSt/textureIdentifier.h"
+#include "pxr/imaging/hdsi/applicationRenderSettingsSceneIndex.h"
 #include "pxr/imaging/hdsi/backPlateSceneIndex.h"
 #include "pxr/imaging/hdsi/coordSysPrimSceneIndex.h"
 #include "pxr/imaging/hdsi/debuggingSceneIndex.h"
@@ -210,6 +230,7 @@
 #include "pxr/imaging/hdsi/particleFieldConversionSceneIndex.h"
 #include "pxr/imaging/hdsi/pinnedCurveExpandingSceneIndex.h"
 #include "pxr/imaging/hdsi/prefixPathPruningSceneIndex.h"
+#include "pxr/imaging/hdsi/primIdSceneIndex.h"
 #include "pxr/imaging/hdsi/primManagingSceneIndexObserver.h"
 #include "pxr/imaging/hdsi/primTypeAndPathPruningSceneIndex.h"
 #include "pxr/imaging/hdsi/primTypeNoticeBatchingSceneIndex.h"
@@ -254,6 +275,7 @@
 #include "pxr/imaging/hgi/texture.h"
 #include "pxr/imaging/hgiGL/contextArena.h"
 #include "pxr/imaging/hgiGL/hgi.h"
+#include "pxr/imaging/hio/image.h"
 #include "pxr/imaging/hio/imageRegistry.h"
 #include "pxr/imaging/pxOsd/meshTopology.h"
 #include "pxr/imaging/pxOsd/subdivTags.h"
@@ -264,7 +286,9 @@
 #include "pxr/usd/ar/resolverContext.h"
 #include "pxr/usd/ar/timestamp.h"
 #include "pxr/usd/kind/registry.h"
+#include "pxr/usd/pcp/changes.h"
 #include "pxr/usd/pcp/dependency.h"
+#include "pxr/usd/pcp/errors.h"
 #include "pxr/usd/pcp/expressionVariables.h"
 #include "pxr/usd/pcp/expressionVariablesSource.h"
 #include "pxr/usd/pcp/instanceKey.h"
@@ -272,12 +296,16 @@
 #include "pxr/usd/pcp/layerStack.h"
 #include "pxr/usd/pcp/layerStackIdentifier.h"
 #include "pxr/usd/pcp/mapFunction.h"
+#include "pxr/usd/pcp/namespaceEdits.h"
 #include "pxr/usd/pcp/node.h"
+#include "pxr/usd/pcp/primIndex.h"
+#include "pxr/usd/pcp/propertyIndex.h"
 #include "pxr/usd/pcp/site.h"
 #include "pxr/usd/sdf/abstractData.h"
 #include "pxr/usd/sdf/allowed.h"
 #include "pxr/usd/sdf/assetPath.h"
 #include "pxr/usd/sdf/attributeSpec.h"
+#include "pxr/usd/sdf/changeList.h"
 #include "pxr/usd/sdf/copyUtils.h"
 #include "pxr/usd/sdf/data.h"
 #include "pxr/usd/sdf/declareHandles.h"
@@ -344,6 +372,7 @@
 #include "pxr/usd/usdShade/connectableAPI.h"
 #include "pxr/usd/usdShade/input.h"
 #include "pxr/usd/usdShade/output.h"
+#include "pxr/usd/usdShade/types.h"
 #include "pxr/usd/usdSkel/animMapper.h"
 #include "pxr/usd/usdSkel/animQuery.h"
 #include "pxr/usd/usdSkel/inbetweenShape.h"
@@ -358,7 +387,6 @@
 #include "pxr/usd/usdUtils/timeCodeRange.h"
 #include "pxr/usd/usdUtils/userProcessingFunc.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
-#include "pxr/usdImaging/usdExecImaging/stageSceneIndexInterface.h"
 #include "pxr/usdImaging/usdExecImaging/valueKey.h"
 #include "pxr/usdImaging/usdImaging/delegate.h"
 #include "pxr/usdImaging/usdImaging/drawModeSceneIndex.h"
@@ -374,6 +402,7 @@
 #include "pxr/usdImaging/usdImaging/sceneIndex.h"
 #include "pxr/usdImaging/usdImaging/selectionSceneIndex.h"
 #include "pxr/usdImaging/usdImaging/stageSceneIndex.h"
+#include "pxr/usdImaging/usdImaging/stageSceneIndexInterface.h"
 #include "pxr/usdImaging/usdImaging/unloadedDrawModeSceneIndex.h"
 #include "pxr/usdImaging/usdImagingGL/renderParams.h"
 #include "pxr/usdImaging/usdSkelImaging/animationSchema.h"
@@ -388,14 +417,26 @@ namespace __Overlay {
                             const pxr::TfRefBase& r);
   bool operatorEqualsEquals(const pxr::TfSimpleRefBase& l,
                             const pxr::TfSimpleRefBase& r);
+  bool operatorEqualsEquals(const pxr::TfBits::AllSetView::const_iterator& l,
+                            const pxr::TfBits::AllSetView::const_iterator& r);
+  bool operatorEqualsEquals(const pxr::TfCompressedBits::AllSetView::const_iterator& l,
+                            const pxr::TfCompressedBits::AllSetView::const_iterator& r);
+  bool operatorEqualsEquals(const pxr::TfCompressedBits::PlatformsView::const_iterator& l,
+                            const pxr::TfCompressedBits::PlatformsView::const_iterator& r);
   bool operatorEqualsEquals(const pxr::TfNotice::WeakProbePtr& l,
                             const pxr::TfNotice::WeakProbePtr& r);
+  bool operatorEqualsEquals(const pxr::TfDiagnosticMgr& l,
+                            const pxr::TfDiagnosticMgr& r);
+  bool operatorEqualsEquals(const pxr::ExecDispatchesOntoSchemas& l,
+                            const pxr::ExecDispatchesOntoSchemas& r);
+  bool operatorEqualsEquals(const pxr::VdfConnectionVector& l,
+                            const pxr::VdfConnectionVector& r);
+  bool operatorEqualsEquals(const pxr::VdfConnectionConstVector& l,
+                            const pxr::VdfConnectionConstVector& r);
   bool operatorEqualsEquals(const pxr::TfRefPtrTracker::WatchedCounts& l,
                             const pxr::TfRefPtrTracker::WatchedCounts& r);
   bool operatorEqualsEquals(const pxr::VdfNodeToInputPtrVectorMap& l,
                             const pxr::VdfNodeToInputPtrVectorMap& r);
-  bool operatorEqualsEquals(const pxr::TfDiagnosticMgr& l,
-                            const pxr::TfDiagnosticMgr& r);
   bool operatorEqualsEquals(const pxr::TfRefPtrTracker& l,
                             const pxr::TfRefPtrTracker& r);
   bool operatorEqualsEquals(const pxr::VdfNodePtrSet& l,
@@ -404,14 +445,12 @@ namespace __Overlay {
                             const pxr::VdfOutputPtrSet& r);
   bool operatorEqualsEquals(const pxr::TraceAggregateTree::CounterMap& l,
                             const pxr::TraceAggregateTree::CounterMap& r);
-#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
-  bool operatorEqualsEquals(const pxr::GlfBindingMap::BindingMap& l,
-                            const pxr::GlfBindingMap::BindingMap& r);
-#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorEqualsEquals(const pxr::TfToken::HashSet& l,
                             const pxr::TfToken::HashSet& r);
   bool operatorEqualsEquals(const pxr::pxr_half::half& l,
                             const pxr::pxr_half::half& r);
+  bool operatorEqualsEquals(const pxr::GfDuration& l,
+                            const pxr::GfDuration& r);
   bool operatorEqualsEquals(const pxr::GfRect2i& l,
                             const pxr::GfRect2i& r);
   bool operatorEqualsEquals(const pxr::TraceAggregateTreeRefPtr& l,
@@ -454,6 +493,8 @@ namespace __Overlay {
                             const pxr::VtDualQuatfArray& r);
   bool operatorEqualsEquals(const pxr::VtDualQuathArray& l,
                             const pxr::VtDualQuathArray& r);
+  bool operatorEqualsEquals(const pxr::VtDurationArray& l,
+                            const pxr::VtDurationArray& r);
   bool operatorEqualsEquals(const pxr::VtHalfArray& l,
                             const pxr::VtHalfArray& r);
   bool operatorEqualsEquals(const pxr::VtIntervalArray& l,
@@ -554,6 +595,8 @@ namespace __Overlay {
                             const pxr::VtDualQuatfArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtDualQuathArrayEdit& l,
                             const pxr::VtDualQuathArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::VtDurationArrayEdit& l,
+                            const pxr::VtDurationArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtIntervalArrayEdit& l,
                             const pxr::VtIntervalArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtMatrix2dArrayEdit& l,
@@ -640,10 +683,14 @@ namespace __Overlay {
                             const pxr::VtUInt64ArrayEdit& r);
   bool operatorEqualsEquals(const pxr::VtUShortArrayEdit& l,
                             const pxr::VtUShortArrayEdit& r);
+  bool operatorEqualsEquals(const pxr::ExecIrResult& l,
+                            const pxr::ExecIrResult& r);
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
   bool operatorEqualsEquals(const pxr::HdAovSettingsMap& l,
                             const pxr::HdAovSettingsMap& r);
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+  bool operatorEqualsEquals(const pxr::SdfChangeList::Entry::InfoChangeVec& l,
+                            const pxr::SdfChangeList::Entry::InfoChangeVec& r);
   bool operatorEqualsEquals(const pxr::VtDictionary::iterator& l,
                             const pxr::VtDictionary::iterator& r);
   bool operatorEqualsEquals(const pxr::VtDictionary::const_iterator& l,
@@ -696,8 +743,6 @@ namespace __Overlay {
                             const pxr::SdfSubLayerProxy& r);
   bool operatorEqualsEquals(const pxr::SdfDictionaryProxy& l,
                             const pxr::SdfDictionaryProxy& r);
-  bool operatorEqualsEquals(const pxr::SdfRelocatesMapProxy& l,
-                            const pxr::SdfRelocatesMapProxy& r);
   bool operatorEqualsEquals(const pxr::SdfVariantSelectionProxy& l,
                             const pxr::SdfVariantSelectionProxy& r);
   bool operatorEqualsEquals(const pxr::SdfData& l,
@@ -806,6 +851,8 @@ namespace __Overlay {
                             const pxr::UsdStagePtr& r);
   bool operatorEqualsEquals(const pxr::UsdStage& l,
                             const pxr::UsdStage& r);
+  bool operatorEqualsEquals(const pxr::UsdShadeAttributeVector& l,
+                            const pxr::UsdShadeAttributeVector& r);
   bool operatorEqualsEquals(const pxr::UsdAttribute& l,
                             const pxr::UsdAttribute& r);
   bool operatorEqualsEquals(const pxr::UsdProperty& l,
@@ -820,6 +867,8 @@ namespace __Overlay {
                             const pxr::UsdGeomPrimvar& r);
   bool operatorEqualsEquals(const pxr::UsdGeomXformOp& l,
                             const pxr::UsdGeomXformOp& r);
+  bool operatorEqualsEquals(const pxr::UsdShadeSourceInfoVector& l,
+                            const pxr::UsdShadeSourceInfoVector& r);
   bool operatorEqualsEquals(const pxr::UsdShadeInput& l,
                             const pxr::UsdShadeInput& r);
   bool operatorEqualsEquals(const pxr::UsdShadeOutput& l,
@@ -855,26 +904,12 @@ namespace __Overlay {
                             const pxr::GarchGLPlatformDebugContext& r);
   bool operatorEqualsEquals(const pxr::GarchGLPlatformDebugContextRefPtr& l,
                             const pxr::GarchGLPlatformDebugContextRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HioImage& l,
+                            const pxr::HioImage& r);
   bool operatorEqualsEquals(const pxr::HioImageRegistry& l,
                             const pxr::HioImageRegistry& r);
-  bool operatorEqualsEquals(const pxr::GlfBindingMap& l,
-                            const pxr::GlfBindingMap& r);
-  bool operatorEqualsEquals(const pxr::GlfBindingMapPtr& l,
-                            const pxr::GlfBindingMapPtr& r);
   bool operatorEqualsEquals(const pxr::GlfContextCaps& l,
                             const pxr::GlfContextCaps& r);
-  bool operatorEqualsEquals(const pxr::GlfDrawTarget& l,
-                            const pxr::GlfDrawTarget& r);
-  bool operatorEqualsEquals(const pxr::GlfDrawTargetRefPtr& l,
-                            const pxr::GlfDrawTargetRefPtr& r);
-  bool operatorEqualsEquals(const pxr::GlfDrawTargetPtr& l,
-                            const pxr::GlfDrawTargetPtr& r);
-  bool operatorEqualsEquals(const pxr::GlfDrawTarget::Attachment& l,
-                            const pxr::GlfDrawTarget::Attachment& r);
-  bool operatorEqualsEquals(const pxr::GlfDrawTarget::AttachmentRefPtr& l,
-                            const pxr::GlfDrawTarget::AttachmentRefPtr& r);
-  bool operatorEqualsEquals(const pxr::GlfTexture& l,
-                            const pxr::GlfTexture& r);
   bool operatorEqualsEquals(const pxr::GlfSimpleLightingContext& l,
                             const pxr::GlfSimpleLightingContext& r);
   bool operatorEqualsEquals(const pxr::GlfSimpleLightingContextRefPtr& l,
@@ -885,10 +920,6 @@ namespace __Overlay {
                             const pxr::GlfSimpleShadowArray& r);
   bool operatorEqualsEquals(const pxr::GlfSimpleShadowArrayRefPtr& l,
                             const pxr::GlfSimpleShadowArrayRefPtr& r);
-  bool operatorEqualsEquals(const pxr::GlfUniformBlock& l,
-                            const pxr::GlfUniformBlock& r);
-  bool operatorEqualsEquals(const pxr::GlfUniformBlockRefPtr& l,
-                            const pxr::GlfUniformBlockRefPtr& r);
   bool operatorEqualsEquals(const pxr::HgiBufferHandle& l,
                             const pxr::HgiBufferHandle& r);
   bool operatorEqualsEquals(const pxr::HgiTextureHandle& l,
@@ -991,6 +1022,10 @@ namespace __Overlay {
                             const pxr::HdGpGenerativeProceduralResolvingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& l,
                             const pxr::HdGpGenerativeProceduralResolvingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiApplicationRenderSettingsSceneIndex& l,
+                            const pxr::HdsiApplicationRenderSettingsSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& l,
+                            const pxr::HdsiApplicationRenderSettingsSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiBackPlateSceneIndex& l,
                             const pxr::HdsiBackPlateSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiBackPlateSceneIndexRefPtr& l,
@@ -1067,6 +1102,10 @@ namespace __Overlay {
                             const pxr::HdsiPinnedCurveExpandingSceneIndex& r);
   bool operatorEqualsEquals(const pxr::HdsiPinnedCurveExpandingSceneIndexRefPtr& l,
                             const pxr::HdsiPinnedCurveExpandingSceneIndexRefPtr& r);
+  bool operatorEqualsEquals(const pxr::HdsiPrimIdSceneIndex& l,
+                            const pxr::HdsiPrimIdSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::HdsiPrimIdSceneIndexRefPtr& l,
+                            const pxr::HdsiPrimIdSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::HdsiPrimManagingSceneIndexObserver& l,
                             const pxr::HdsiPrimManagingSceneIndexObserver& r);
   bool operatorEqualsEquals(const pxr::HdsiPrimManagingSceneIndexObserverRefPtr& l,
@@ -1139,6 +1178,10 @@ namespace __Overlay {
                             const pxr::UsdImagingStageSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingStageSceneIndex& l,
                             const pxr::UsdImagingStageSceneIndex& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& l,
+                            const pxr::UsdImagingStageSceneIndexInterfaceRefPtr& r);
+  bool operatorEqualsEquals(const pxr::UsdImagingStageSceneIndexInterface& l,
+                            const pxr::UsdImagingStageSceneIndexInterface& r);
   bool operatorEqualsEquals(const pxr::UsdImagingSelectionSceneIndexRefPtr& l,
                             const pxr::UsdImagingSelectionSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingSelectionSceneIndex& l,
@@ -1175,10 +1218,6 @@ namespace __Overlay {
                             const pxr::UsdImagingSceneIndexRefPtr& r);
   bool operatorEqualsEquals(const pxr::UsdImagingSceneIndex& l,
                             const pxr::UsdImagingSceneIndex& r);
-  bool operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& l,
-                            const pxr::UsdExecImagingStageSceneIndexInterfaceRefPtr& r);
-  bool operatorEqualsEquals(const pxr::UsdExecImagingStageSceneIndexInterface& l,
-                            const pxr::UsdExecImagingStageSceneIndexInterface& r);
   bool operatorEqualsEquals(const pxr::UsdImagingGLRenderParams& l,
                             const pxr::UsdImagingGLRenderParams& r);
   bool operatorEqualsEquals(const pxr::UsdSkelImagingPointsResolvingSceneIndexRefPtr& l,

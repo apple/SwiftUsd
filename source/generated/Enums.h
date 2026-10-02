@@ -25,6 +25,8 @@
 #include "swiftUsd/defines.h"
 
 #include "pxr/base/arch/fileSystem.h"
+#include "pxr/base/arch/prefetch.h"
+#include "pxr/base/arch/threads.h"
 #include "pxr/base/arch/virtualMemory.h"
 #include "pxr/base/gf/camera.h"
 #include "pxr/base/gf/frustum.h"
@@ -35,11 +37,14 @@
 #include "pxr/base/tf/diagnosticLite.h"
 #include "pxr/base/tf/mallocTag.h"
 #include "pxr/base/tf/refPtrTracker.h"
+#include "pxr/base/tf/smallVector.h"
 #include "pxr/base/tf/type.h"
 #include "pxr/base/trace/event.h"
 #include "pxr/base/ts/regressionPreventer.h"
 #include "pxr/base/ts/types.h"
+#include "pxr/base/vt/value.h"
 #include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/exec/types.h"
 #include "pxr/exec/exec/validationError.h"
 #include "pxr/exec/vdf/dataManagerVector.h"
 #include "pxr/exec/vdf/executionStats.h"
@@ -50,6 +55,7 @@
 #include "pxr/exec/vdf/object.h"
 #include "pxr/exec/vdf/sparseInputTraverser.h"
 #include "pxr/exec/vdf/sparseVectorizedInputTraverser.h"
+#include "pxr/exec/vdf/types.h"
 #include "pxr/exec/vdf/vector.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/cameraUtil/conformWindow.h"
@@ -63,20 +69,20 @@
 #include "pxr/imaging/hd/camera.h"
 #include "pxr/imaging/hd/collectionExpressionEvaluator.h"
 #include "pxr/imaging/hd/coordSys.h"
+#include "pxr/imaging/hd/dependenciesSchema.h"
+#include "pxr/imaging/hd/dependencySchema.h"
 #include "pxr/imaging/hd/enums.h"
-#include "pxr/imaging/hd/field.h"
 #include "pxr/imaging/hd/geomSubset.h"
-#include "pxr/imaging/hd/light.h"
 #include "pxr/imaging/hd/meshUtil.h"
-#include "pxr/imaging/hd/renderBuffer.h"
 #include "pxr/imaging/hd/renderPassState.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
+#include "pxr/imaging/hd/sceneIndexPrimView.h"
 #include "pxr/imaging/hd/selection.h"
 #include "pxr/imaging/hd/types.h"
-#include "pxr/imaging/hdGp/generativeProcedural.h"
 #include "pxr/imaging/hdSt/binding.h"
 #include "pxr/imaging/hdSt/enums.h"
 #include "pxr/imaging/hdSt/resourceRegistry.h"
+#include "pxr/imaging/hdsi/applicationRenderSettingsSceneIndex.h"
 #include "pxr/imaging/hgi/enums.h"
 #include "pxr/imaging/hgi/graphicsPipeline.h"
 #include "pxr/imaging/hgi/shaderFunctionDesc.h"
@@ -88,6 +94,7 @@
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/hio/glslfxConfig.h"
 #include "pxr/imaging/hio/glslfxResourceLayout.h"
+#include "pxr/imaging/hio/image.h"
 #include "pxr/imaging/hio/types.h"
 #include "pxr/imaging/pxOsd/meshTopologyValidation.h"
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
@@ -106,6 +113,7 @@
 #include "pxr/usd/sdf/predicateLibrary.h"
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdr/declare.h"
+#include "pxr/usd/usd/attribute.h"
 #include "pxr/usd/usd/common.h"
 #include "pxr/usd/usd/interpolation.h"
 #include "pxr/usd/usd/modelAPI.h"
@@ -124,13 +132,13 @@
 #include "pxr/usd/usdLux/listAPI.h"
 #include "pxr/usd/usdPhysics/parseDesc.h"
 #include "pxr/usd/usdProfiles/profileRegistry.h"
+#include "pxr/usd/usdShade/connectableAPI.h"
 #include "pxr/usd/usdShade/connectableAPIBehavior.h"
 #include "pxr/usd/usdShade/types.h"
 #include "pxr/usd/usdSkel/bakeSkinning.h"
 #include "pxr/usd/usdUtils/registeredVariantSet.h"
 #include "pxr/usd/usdUtils/stitch.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
-#include "pxr/usdImaging/usdImaging/primAdapter.h"
 #include "pxr/usdImaging/usdImaging/types.h"
 #include "pxr/usdImaging/usdImagingGL/renderParams.h"
 #include "pxr/usdImaging/usdImagingGL/rendererSettings.h"
@@ -150,10 +158,28 @@ namespace Overlay {
   extern const pxr::ArchFileAdvice ArchFileAdviceRandomAccess;
 }
 namespace Overlay {
+  extern const pxr::ArchThreadPriority ArchThreadPriorityLowest;
+  extern const pxr::ArchThreadPriority ArchThreadPriorityLow;
+}
+namespace Overlay {
   extern const pxr::ArchMemoryProtection ArchProtectNoAccess;
   extern const pxr::ArchMemoryProtection ArchProtectReadOnly;
   extern const pxr::ArchMemoryProtection ArchProtectReadWrite;
   extern const pxr::ArchMemoryProtection ArchProtectReadWriteCopy;
+}
+namespace Overlay {
+  namespace ArchPrefetchAccess {
+    extern const pxr::ArchPrefetchAccess Read;
+    extern const pxr::ArchPrefetchAccess Write;
+  }
+}
+namespace Overlay {
+  namespace ArchPrefetchLocality {
+    extern const pxr::ArchPrefetchLocality None;
+    extern const pxr::ArchPrefetchLocality L3;
+    extern const pxr::ArchPrefetchLocality L2;
+    extern const pxr::ArchPrefetchLocality L1;
+  }
 }
 namespace Overlay {
   namespace TfType {
@@ -201,6 +227,56 @@ namespace Overlay {
       extern const pxr::TfMallocTag::CallTree::PrintSetting TREE;
       extern const pxr::TfMallocTag::CallTree::PrintSetting CALLSITES;
       extern const pxr::TfMallocTag::CallTree::PrintSetting BOTH;
+    }
+  }
+}
+namespace Overlay {
+  namespace ExecDispatchesOntoSchemas {
+    extern const pxr::ExecDispatchesOntoSchemas::DefaultInitTag DefaultInit;
+  }
+}
+namespace Overlay {
+  namespace UsdShadeAttributeVector {
+    extern const pxr::UsdShadeAttributeVector::DefaultInitTag DefaultInit;
+  }
+}
+namespace Overlay {
+  namespace VdfConnectionVector {
+    extern const pxr::VdfConnectionVector::DefaultInitTag DefaultInit;
+  }
+}
+namespace Overlay {
+  namespace VdfConnectionConstVector {
+    extern const pxr::VdfConnectionConstVector::DefaultInitTag DefaultInit;
+  }
+}
+namespace Overlay {
+  namespace UsdShadeSourceInfoVector {
+    extern const pxr::UsdShadeSourceInfoVector::DefaultInitTag DefaultInit;
+  }
+}
+namespace Overlay {
+  namespace SdfChangeList {
+    namespace EntryList {
+      extern const pxr::SdfChangeList::EntryList::DefaultInitTag DefaultInit;
+    }
+  }
+}
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+namespace Overlay {
+  namespace HdDependenciesSchema {
+    namespace EntryVector {
+      extern const pxr::HdDependenciesSchema::EntryVector::DefaultInitTag DefaultInit;
+    }
+  }
+}
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+namespace Overlay {
+  namespace SdfChangeList {
+    namespace Entry {
+      namespace InfoChangeVec {
+        extern const pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInitTag DefaultInit;
+      }
     }
   }
 }
@@ -554,6 +630,7 @@ namespace Overlay {
   extern const pxr::PcpErrorType PcpErrorType_TargetPermissionDenied;
   extern const pxr::PcpErrorType PcpErrorType_UnresolvedPrimPath;
   extern const pxr::PcpErrorType PcpErrorType_VariableExpressionError;
+  extern const pxr::PcpErrorType PcpErrorType_InvalidSublayerAndOffsetCount;
 }
 namespace Overlay {
   namespace PcpErrorInvalidConflictingRelocation {
@@ -1042,6 +1119,19 @@ namespace Overlay {
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT && defined(ARCH_OS_DARWIN)
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 namespace Overlay {
+  namespace HioImage {
+    extern const pxr::HioImage::ImageOriginLocation OriginUpperLeft;
+    extern const pxr::HioImage::ImageOriginLocation OriginLowerLeft;
+  }
+}
+namespace Overlay {
+  namespace HioImage {
+    extern const pxr::HioImage::SourceColorSpace Raw;
+    extern const pxr::HioImage::SourceColorSpace SRGB;
+    extern const pxr::HioImage::SourceColorSpace Auto;
+  }
+}
+namespace Overlay {
   extern const pxr::HioFormat HioFormatInvalid;
   extern const pxr::HioFormat HioFormatUNorm8;
   extern const pxr::HioFormat HioFormatUNorm8Vec2;
@@ -1290,6 +1380,8 @@ namespace Overlay {
   extern const pxr::HgiShaderStageBits HgiShaderStagePostTessellationControl;
   extern const pxr::HgiShaderStageBits HgiShaderStagePostTessellationVertex;
   extern const pxr::HgiShaderStageBits HgiShaderStageCustomBitsBegin;
+  extern const pxr::HgiShaderStageBits HgiShaderStageAllGraphics;
+  extern const pxr::HgiShaderStageBits HgiShaderStageAll;
 }
 namespace Overlay {
   extern const pxr::HgiBindResourceType HgiBindResourceTypeSampler;
@@ -1745,6 +1837,13 @@ namespace Overlay {
   extern const pxr::HdPointsGeomStyle HdPointsGeomStylePoints;
 }
 namespace Overlay {
+  extern const pxr::HdImplicitSurfaceGeomStyle HdImplicitSurfaceGeomStyleInvalid;
+  extern const pxr::HdImplicitSurfaceGeomStyle HdImplicitSurfaceGeomStyleSurf;
+  extern const pxr::HdImplicitSurfaceGeomStyle HdImplicitSurfaceGeomStyleRingsOnly;
+  extern const pxr::HdImplicitSurfaceGeomStyle HdImplicitSurfaceGeomStyleRingsOnSurf;
+  extern const pxr::HdImplicitSurfaceGeomStyle HdImplicitSurfaceGeomStylePoints;
+}
+namespace Overlay {
   extern const pxr::HdInterpolation HdInterpolationConstant;
   extern const pxr::HdInterpolation HdInterpolationUniform;
   extern const pxr::HdInterpolation HdInterpolationVarying;
@@ -1803,37 +1902,10 @@ namespace Overlay {
   }
 }
 namespace Overlay {
-  namespace HdField {
-    extern const pxr::HdField::DirtyBits Clean;
-    extern const pxr::HdField::DirtyBits DirtyTransform;
-    extern const pxr::HdField::DirtyBits DirtyParams;
-    extern const pxr::HdField::DirtyBits AllDirty;
-  }
-}
-namespace Overlay {
-  namespace HdLight {
-    extern const pxr::HdLight::DirtyBits Clean;
-    extern const pxr::HdLight::DirtyBits DirtyTransform;
-    extern const pxr::HdLight::DirtyBits DirtyParams;
-    extern const pxr::HdLight::DirtyBits DirtyShadowParams;
-    extern const pxr::HdLight::DirtyBits DirtyCollection;
-    extern const pxr::HdLight::DirtyBits DirtyResource;
-    extern const pxr::HdLight::DirtyBits DirtyInstancer;
-    extern const pxr::HdLight::DirtyBits AllDirty;
-  }
-}
-namespace Overlay {
   namespace HdMeshComputationResult {
     extern const pxr::HdMeshComputationResult Error;
     extern const pxr::HdMeshComputationResult Success;
     extern const pxr::HdMeshComputationResult Unchanged;
-  }
-}
-namespace Overlay {
-  namespace HdRenderBuffer {
-    extern const pxr::HdRenderBuffer::DirtyBits Clean;
-    extern const pxr::HdRenderBuffer::DirtyBits DirtyDescription;
-    extern const pxr::HdRenderBuffer::DirtyBits AllDirty;
   }
 }
 namespace Overlay {
@@ -1859,6 +1931,12 @@ namespace Overlay {
   }
 }
 namespace Overlay {
+  namespace HdSceneIndexPrimView {
+    extern const pxr::HdSceneIndexPrimView::Order ChildPrimPaths;
+    extern const pxr::HdSceneIndexPrimView::Order Lexicographic;
+  }
+}
+namespace Overlay {
   namespace HdSelection {
     extern const pxr::HdSelection::HighlightMode HighlightModeSelect;
     extern const pxr::HdSelection::HighlightMode HighlightModeLocate;
@@ -1866,11 +1944,13 @@ namespace Overlay {
   }
 }
 namespace Overlay {
-  namespace HdGpGenerativeProcedural {
-    extern const pxr::HdGpGenerativeProcedural::AsyncState Continuing;
-    extern const pxr::HdGpGenerativeProcedural::AsyncState Finished;
-    extern const pxr::HdGpGenerativeProcedural::AsyncState ContinuingWithNewChanges;
-    extern const pxr::HdGpGenerativeProcedural::AsyncState FinishedWithNewChanges;
+  namespace HdsiApplicationRenderSettingsSceneIndex {
+    namespace RenderSettingsSource {
+      extern const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource Resolved;
+      extern const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource ApplicationOverride;
+      extern const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource InputRenderSettings;
+      extern const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource RendererDefault;
+    }
   }
 }
 namespace Overlay {
@@ -1937,13 +2017,6 @@ namespace Overlay {
   namespace UsdImagingPropertyInvalidationType {
     extern const pxr::UsdImagingPropertyInvalidationType Update;
     extern const pxr::UsdImagingPropertyInvalidationType Resync;
-  }
-}
-namespace Overlay {
-  namespace UsdImagingPrimAdapter {
-    extern const pxr::UsdImagingPrimAdapter::PopulationMode RepresentsSelf;
-    extern const pxr::UsdImagingPrimAdapter::PopulationMode RepresentsSelfAndDescendents;
-    extern const pxr::UsdImagingPrimAdapter::PopulationMode RepresentedByAncestor;
   }
 }
 namespace Overlay {

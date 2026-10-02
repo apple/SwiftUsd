@@ -25,6 +25,8 @@
 #include "swiftUsd/defines.h"
 
 #include "pxr/base/arch/fileSystem.h"
+#include "pxr/base/arch/prefetch.h"
+#include "pxr/base/arch/threads.h"
 #include "pxr/base/arch/virtualMemory.h"
 #include "pxr/base/gf/bbox3d.h"
 #include "pxr/base/gf/camera.h"
@@ -32,6 +34,7 @@
 #include "pxr/base/gf/dualQuatd.h"
 #include "pxr/base/gf/dualQuatf.h"
 #include "pxr/base/gf/dualQuath.h"
+#include "pxr/base/gf/duration.h"
 #include "pxr/base/gf/frustum.h"
 #include "pxr/base/gf/ilmbase_half.h"
 #include "pxr/base/gf/interval.h"
@@ -84,6 +87,7 @@
 #include "pxr/base/tf/mallocTag.h"
 #include "pxr/base/tf/notice.h"
 #include "pxr/base/tf/refPtrTracker.h"
+#include "pxr/base/tf/smallVector.h"
 #include "pxr/base/tf/stopwatch.h"
 #include "pxr/base/tf/token.h"
 #include "pxr/base/tf/type.h"
@@ -100,6 +104,7 @@
 #include "pxr/exec/ef/time.h"
 #include "pxr/exec/ef/timeInterval.h"
 #include "pxr/exec/exec/providerResolution.h"
+#include "pxr/exec/exec/types.h"
 #include "pxr/exec/exec/validationError.h"
 #include "pxr/exec/vdf/dataManagerVector.h"
 #include "pxr/exec/vdf/executionStats.h"
@@ -113,6 +118,7 @@
 #include "pxr/exec/vdf/object.h"
 #include "pxr/exec/vdf/sparseInputTraverser.h"
 #include "pxr/exec/vdf/sparseVectorizedInputTraverser.h"
+#include "pxr/exec/vdf/types.h"
 #include "pxr/exec/vdf/vector.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/cameraUtil/conformWindow.h"
@@ -130,24 +136,23 @@
 #include "pxr/imaging/hd/collectionExpressionEvaluator.h"
 #include "pxr/imaging/hd/coordSys.h"
 #include "pxr/imaging/hd/dataSourceLocator.h"
+#include "pxr/imaging/hd/dependenciesSchema.h"
+#include "pxr/imaging/hd/dependencySchema.h"
 #include "pxr/imaging/hd/enums.h"
-#include "pxr/imaging/hd/field.h"
 #include "pxr/imaging/hd/geomSubset.h"
-#include "pxr/imaging/hd/light.h"
 #include "pxr/imaging/hd/material.h"
 #include "pxr/imaging/hd/meshUtil.h"
 #include "pxr/imaging/hd/primOriginSchema.h"
-#include "pxr/imaging/hd/renderBuffer.h"
 #include "pxr/imaging/hd/renderPassState.h"
 #include "pxr/imaging/hd/repr.h"
 #include "pxr/imaging/hd/rprimCollection.h"
 #include "pxr/imaging/hd/sceneIndexPluginRegistry.h"
-#include "pxr/imaging/hd/topology.h"
+#include "pxr/imaging/hd/sceneIndexPrimView.h"
 #include "pxr/imaging/hd/types.h"
-#include "pxr/imaging/hdGp/generativeProcedural.h"
 #include "pxr/imaging/hdSt/binding.h"
 #include "pxr/imaging/hdSt/enums.h"
 #include "pxr/imaging/hdSt/resourceRegistry.h"
+#include "pxr/imaging/hdsi/applicationRenderSettingsSceneIndex.h"
 #include "pxr/imaging/hdx/aovInputTask.h"
 #include "pxr/imaging/hdx/boundingBoxTask.h"
 #include "pxr/imaging/hdx/colorChannelTask.h"
@@ -177,6 +182,7 @@
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/hio/glslfxConfig.h"
 #include "pxr/imaging/hio/glslfxResourceLayout.h"
+#include "pxr/imaging/hio/image.h"
 #include "pxr/imaging/hio/types.h"
 #include "pxr/imaging/pxOsd/meshTopology.h"
 #include "pxr/imaging/pxOsd/meshTopologyValidation.h"
@@ -245,6 +251,7 @@
 #include "pxr/usd/usdLux/listAPI.h"
 #include "pxr/usd/usdPhysics/parseDesc.h"
 #include "pxr/usd/usdProfiles/profileRegistry.h"
+#include "pxr/usd/usdShade/connectableAPI.h"
 #include "pxr/usd/usdShade/connectableAPIBehavior.h"
 #include "pxr/usd/usdShade/types.h"
 #include "pxr/usd/usdSkel/bakeSkinning.h"
@@ -252,7 +259,6 @@
 #include "pxr/usd/usdUtils/stitch.h"
 #include "pxr/usd/usdUtils/timeCodeRange.h"
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
-#include "pxr/usdImaging/usdImaging/primAdapter.h"
 #include "pxr/usdImaging/usdImaging/types.h"
 #include "pxr/usdImaging/usdImagingGL/renderParams.h"
 #include "pxr/usdImaging/usdImagingGL/rendererSettings.h"
@@ -262,7 +268,10 @@
 namespace __Overlay {
   std::string to_string(const pxr::ArchMemAdvice& x);
   std::string to_string(const pxr::ArchFileAdvice& x);
+  std::string to_string(const pxr::ArchThreadPriority& x);
   std::string to_string(const pxr::ArchMemoryProtection& x);
+  std::string to_string(const pxr::ArchPrefetchAccess& x);
+  std::string to_string(const pxr::ArchPrefetchLocality& x);
   std::string to_string(const pxr::TfAnyWeakPtr& x);
   std::string to_string(const pxr::TfType& x);
   std::string to_string(const pxr::TfType::LegacyFlags& x);
@@ -276,6 +285,16 @@ namespace __Overlay {
   std::string to_string(const pxr::TfStopwatch& x);
   std::string to_string(const pxr::TfNotice::Key& x);
   std::string to_string(const pxr::TfMallocTag::CallTree::PrintSetting& x);
+  std::string to_string(const pxr::ExecDispatchesOntoSchemas::DefaultInitTag& x);
+  std::string to_string(const pxr::UsdShadeAttributeVector::DefaultInitTag& x);
+  std::string to_string(const pxr::VdfConnectionVector::DefaultInitTag& x);
+  std::string to_string(const pxr::VdfConnectionConstVector::DefaultInitTag& x);
+  std::string to_string(const pxr::UsdShadeSourceInfoVector::DefaultInitTag& x);
+  std::string to_string(const pxr::SdfChangeList::EntryList::DefaultInitTag& x);
+#if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+  std::string to_string(const pxr::HdDependenciesSchema::EntryVector::DefaultInitTag& x);
+#endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+  std::string to_string(const pxr::SdfChangeList::Entry::InfoChangeVec::DefaultInitTag& x);
   std::string to_string(const pxr::TfRefPtrTracker::TraceType& x);
   std::string to_string(const pxr::TfToken& x);
   std::string to_string(const pxr::GfBBox3d& x);
@@ -285,10 +304,14 @@ namespace __Overlay {
   std::string to_string(const pxr::GfVec4h& x);
   std::string to_string(const pxr::pxr_half::half& x);
   std::string to_string(const pxr::GfVec4i& x);
+  std::string to_string(const pxr::GfVec2i& x);
+  std::string to_string(const pxr::GfVec3i& x);
+  std::string to_string(const pxr::GfVec2h& x);
+  std::string to_string(const pxr::GfVec2d& x);
+  std::string to_string(const pxr::GfVec2f& x);
+  std::string to_string(const pxr::GfVec3h& x);
   std::string to_string(const pxr::GfVec3d& x);
   std::string to_string(const pxr::GfVec3f& x);
-  std::string to_string(const pxr::GfVec3h& x);
-  std::string to_string(const pxr::GfVec3i& x);
   std::string to_string(const pxr::GfRange3d& x);
   std::string to_string(const pxr::GfRange3f& x);
   std::string to_string(const pxr::GfCamera::Projection& x);
@@ -296,10 +319,6 @@ namespace __Overlay {
   std::string to_string(const pxr::GfRange1f& x);
   std::string to_string(const pxr::GfRange1d& x);
   std::string to_string(const pxr::GfColor& x);
-  std::string to_string(const pxr::GfVec2f& x);
-  std::string to_string(const pxr::GfVec2d& x);
-  std::string to_string(const pxr::GfVec2h& x);
-  std::string to_string(const pxr::GfVec2i& x);
   std::string to_string(const pxr::GfMatrix3f& x);
   std::string to_string(const pxr::GfDualQuatd& x);
   std::string to_string(const pxr::GfQuatd& x);
@@ -307,6 +326,7 @@ namespace __Overlay {
   std::string to_string(const pxr::GfQuatf& x);
   std::string to_string(const pxr::GfDualQuath& x);
   std::string to_string(const pxr::GfQuath& x);
+  std::string to_string(const pxr::GfDuration& x);
   std::string to_string(const pxr::GfFrustum& x);
   std::string to_string(const pxr::GfFrustum::ProjectionType& x);
   std::string to_string(const pxr::GfPlane& x);
@@ -342,6 +362,7 @@ namespace __Overlay {
   std::string to_string(const pxr::VtDualQuatdArray& x);
   std::string to_string(const pxr::VtDualQuatfArray& x);
   std::string to_string(const pxr::VtDualQuathArray& x);
+  std::string to_string(const pxr::VtDurationArray& x);
   std::string to_string(const pxr::VtHalfArray& x);
   std::string to_string(const pxr::VtIntervalArray& x);
   std::string to_string(const pxr::VtMatrix2dArray& x);
@@ -430,7 +451,6 @@ namespace __Overlay {
   std::string to_string(const pxr::SdfSpecHandle& x);
   std::string to_string(const pxr::SdfSpec& x);
   std::string to_string(const pxr::SdfDictionaryProxy& x);
-  std::string to_string(const pxr::SdfRelocatesMapProxy& x);
   std::string to_string(const pxr::SdfBooleanExpression& x);
   std::string to_string(const pxr::SdfBooleanExpression::BinaryOperator& x);
   std::string to_string(const pxr::SdfBooleanExpression::UnaryOperator& x);
@@ -542,6 +562,8 @@ namespace __Overlay {
   std::string to_string(const pxr::GarchNSGLContextState::NullState& x);
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT && defined(ARCH_OS_DARWIN)
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
+  std::string to_string(const pxr::HioImage::ImageOriginLocation& x);
+  std::string to_string(const pxr::HioImage::SourceColorSpace& x);
   std::string to_string(const pxr::HioFormat& x);
   std::string to_string(const pxr::HioAddressDimension& x);
   std::string to_string(const pxr::HioAddressMode& x);
@@ -619,6 +641,7 @@ namespace __Overlay {
   std::string to_string(const pxr::HdMeshGeomStyle& x);
   std::string to_string(const pxr::HdBasisCurvesGeomStyle& x);
   std::string to_string(const pxr::HdPointsGeomStyle& x);
+  std::string to_string(const pxr::HdImplicitSurfaceGeomStyle& x);
   std::string to_string(const pxr::HdInterpolation& x);
   std::string to_string(const pxr::HdDepthPriority& x);
   std::string to_string(const pxr::HdDataSourceLocator& x);
@@ -626,25 +649,22 @@ namespace __Overlay {
   std::string to_string(const pxr::HdBufferArrayUsageHintBits& x);
   std::string to_string(const pxr::HdReprSelector& x);
   std::string to_string(const pxr::HdBasisCurvesTopology& x);
-  std::string to_string(const pxr::HdTopology& x);
   std::string to_string(const pxr::HdGeomSubset::Type& x);
   std::string to_string(const pxr::HdRprimCollection& x);
   std::string to_string(const pxr::HdCamera::DirtyBits& x);
   std::string to_string(const pxr::HdCamera::Projection& x);
   std::string to_string(const pxr::HdCollectionExpressionEvaluator::MatchKind& x);
   std::string to_string(const pxr::HdCoordSys::DirtyBits& x);
-  std::string to_string(const pxr::HdField::DirtyBits& x);
   std::string to_string(const pxr::HdMaterialNetwork& x);
   std::string to_string(const pxr::HdMaterialNetworkMap& x);
   std::string to_string(const pxr::HdMaterialNode2& x);
-  std::string to_string(const pxr::HdLight::DirtyBits& x);
   std::string to_string(const pxr::HdMeshComputationResult& x);
   std::string to_string(const pxr::HdPrimOriginSchema::OriginPath& x);
-  std::string to_string(const pxr::HdRenderBuffer::DirtyBits& x);
   std::string to_string(const pxr::HdRenderPassState::ColorMask& x);
   std::string to_string(const pxr::HdSceneIndexPluginRegistry::InsertionOrder& x);
   std::string to_string(const pxr::HdSceneIndexPluginRegistry::PluginOrderingPolicy& x);
-  std::string to_string(const pxr::HdGpGenerativeProcedural::AsyncState& x);
+  std::string to_string(const pxr::HdSceneIndexPrimView::Order& x);
+  std::string to_string(const pxr::HdsiApplicationRenderSettingsSceneIndex::RenderSettingsSource& x);
   std::string to_string(const pxr::HdStBinding::Type& x);
   std::string to_string(const pxr::HdStBinding::Location& x);
   std::string to_string(const pxr::HdStTextureType& x);
@@ -671,7 +691,6 @@ namespace __Overlay {
 #endif // #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
   std::string to_string(const pxr::UsdImagingPropertyInvalidationType& x);
-  std::string to_string(const pxr::UsdImagingPrimAdapter::PopulationMode& x);
   std::string to_string(const pxr::UsdImagingGLDrawMode& x);
   std::string to_string(const pxr::UsdImagingGLCullStyle& x);
   std::string to_string(const pxr::UsdImagingGLRendererSetting::Type& x);

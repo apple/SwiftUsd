@@ -117,6 +117,13 @@ extension pxr.VtTimeCodeArray: _VtArrayExtractionWritingProtocol {
     }
     static func scalarAsVtValue(_ x: Element) -> pxr.VtValue { pxr.VtValue(x) }
 }
+extension pxr.VtDurationArray: _VtArrayExtractionWritingProtocol {
+    var asVtValue: pxr.VtValue { pxr.VtValue(self) }
+    static func scalarFromVtValue(_ x: pxr.VtValue) -> value_type {
+        var copy = x; return copy.Get()
+    }
+    static func scalarAsVtValue(_ x: Element) -> pxr.VtValue { pxr.VtValue(x) }
+}
 extension pxr.VtStringArray: _VtArrayExtractionWritingProtocol {
     var asVtValue: pxr.VtValue { pxr.VtValue(self) }
     static func scalarFromVtValue(_ x: pxr.VtValue) -> value_type {

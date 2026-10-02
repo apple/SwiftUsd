@@ -74,8 +74,8 @@
 // pxr::VtArrayEdit<pxr::SdfPayload>
 // pxr::TfRefPtr<pxr::UsdHydraDiscoveryPlugin>
 // pxr::VtArray<pxr::UsdSkelSkinningQuery>
-// pxr::TfRefPtr<pxr::GlfDrawTarget::AttachmentsContainer>
 // pxr::VtArray<pxr::HdVec4f_2_10_10_10_REV>
+// pxr::TfWeakPtr<pxr::HdInstanceProxyViewSceneIndex>
 // pxr::TfWeakPtr<pxr::UsdImagingStageSceneIndex>
 // pxr::VtArray<pxr::UsdSkelImagingAnimationSchema>
 
@@ -157,12 +157,27 @@ extension pxr.GfVec4i: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
-extension pxr.GfVec3d: Hashable {
+extension pxr.GfVec2i: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
-extension pxr.GfVec3f: Hashable {
+extension pxr.GfVec3i: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GfVec2h: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GfVec2d: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GfVec2f: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -172,7 +187,12 @@ extension pxr.GfVec3h: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
-extension pxr.GfVec3i: Hashable {
+extension pxr.GfVec3d: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GfVec3f: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -193,26 +213,6 @@ extension pxr.GfRange1f: Hashable {
     }
 }
 extension pxr.GfRange1d: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GfVec2f: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GfVec2d: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GfVec2h: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GfVec2i: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -248,6 +248,11 @@ extension pxr.GfDualQuath: Hashable {
     }
 }
 extension pxr.GfQuath: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.GfDuration: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -413,6 +418,11 @@ extension pxr.VtDualQuatfArray: Hashable {
     }
 }
 extension pxr.VtDualQuathArray: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.VtDurationArray: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -663,6 +673,11 @@ extension pxr.VtDualQuatfArrayEdit: Hashable {
     }
 }
 extension pxr.VtDualQuathArrayEdit: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.VtDurationArrayEdit: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1448,52 +1463,17 @@ extension pxr.GarchGLPlatformDebugContextRefPtr: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.HioImage: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.HioImageRegistry: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
-extension pxr.GlfBindingMap: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfBindingMapPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
 extension pxr.GlfContextCaps: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfDrawTarget: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfDrawTargetRefPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfDrawTargetPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfDrawTarget.Attachment: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfDrawTarget.AttachmentRefPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfTexture: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1519,16 +1499,6 @@ extension pxr.GlfSimpleShadowArray: Hashable {
     }
 }
 extension pxr.GlfSimpleShadowArrayRefPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfUniformBlock: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.GlfUniformBlockRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -1758,6 +1728,16 @@ extension pxr.HdGpGenerativeProceduralResolvingSceneIndexRefPtr: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.HdsiApplicationRenderSettingsSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiApplicationRenderSettingsSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.HdsiBackPlateSceneIndex: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -1944,6 +1924,16 @@ extension pxr.HdsiPinnedCurveExpandingSceneIndex: Hashable {
     }
 }
 extension pxr.HdsiPinnedCurveExpandingSceneIndexRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiPrimIdSceneIndex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.HdsiPrimIdSceneIndexRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }
@@ -2135,6 +2125,16 @@ extension pxr.UsdImagingStageSceneIndex: Hashable {
         hasher.combine(__Overlay.hash_value(self))
     }
 }
+extension pxr.UsdImagingStageSceneIndexInterfaceRefPtr: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
+extension pxr.UsdImagingStageSceneIndexInterface: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(__Overlay.hash_value(self))
+    }
+}
 extension pxr.UsdImagingSelectionSceneIndexRefPtr: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
@@ -2226,16 +2226,6 @@ extension pxr.UsdImagingSceneIndex: Hashable {
     }
 }
 extension pxr.UsdExecImagingValueKey: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.UsdExecImagingStageSceneIndexInterfaceRefPtr: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(__Overlay.hash_value(self))
-    }
-}
-extension pxr.UsdExecImagingStageSceneIndexInterface: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(__Overlay.hash_value(self))
     }

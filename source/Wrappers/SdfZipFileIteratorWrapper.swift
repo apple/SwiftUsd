@@ -24,9 +24,10 @@ import CxxStdlib
 
 extension pxr.SdfZipFile {
     /// Returns iterator to the file with the given \p path in this zip
-    /// archive, or end() if no such file exists.
-    public func Find(_ path: std.string) -> Overlay.SdfZipFileIteratorWrapper {
-        __Overlay.SdfZipFileIteratorWrapper(self, self.__FindUnsafe(path))
+    /// archive, or nil if no such file exists.
+    public func Find(_ path: std.string) -> Overlay.SdfZipFileIteratorWrapper? {
+        if self.__FindUnsafe(path) == self.__endUnsafe() { return nil }
+        return __Overlay.SdfZipFileIteratorWrapper(self, self.__FindUnsafe(path))
     }        
 }
 

@@ -20,6 +20,7 @@ These types conform to `Comparable` in Swift.
 
 ###  Gf types
 - ``OpenUSD/C++/pxr/pxr_half/half``
+- ``OpenUSD/C++/pxr/GfDuration``
 - ``OpenUSD/C++/pxr/GfInterval``
 - ``OpenUSD/C++/pxr/GfMultiInterval``
 - ``OpenUSD/C++/pxr/GfTimeCode``
@@ -171,25 +172,16 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GarchGLPlatformDebugContext>``
 
 ###  Hio types
+- ``OpenUSD/C++/pxr/HioImage``
 - ``OpenUSD/C++/pxr/HioImageRegistry``
 
 ###  Glf types
-- ``OpenUSD/C++/pxr/GlfBindingMap``
-- ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfBindingMap>``
 - ``OpenUSD/C++/pxr/GlfContextCaps``
-- ``OpenUSD/C++/pxr/GlfDrawTarget``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget>``
-- ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfDrawTarget>``
-- ``OpenUSD/C++/pxr/GlfDrawTarget/Attachment``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfDrawTarget.Attachment>``
-- ``OpenUSD/C++/pxr/GlfTexture``
 - ``OpenUSD/C++/pxr/GlfSimpleLightingContext``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfSimpleLightingContext>``
 - ``OpenUSD/C++/pxr/TfWeakPtr<pxr.GlfSimpleLightingContext>``
 - ``OpenUSD/C++/pxr/GlfSimpleShadowArray``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfSimpleShadowArray>``
-- ``OpenUSD/C++/pxr/GlfUniformBlock``
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.GlfUniformBlock>``
 
 ###  Hd types
 - ``OpenUSD/C++/pxr/HdTupleType``
@@ -239,6 +231,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdGpGenerativeProceduralResolvingSceneIndex>``
 
 ###  Hdsi types
+- ``OpenUSD/C++/pxr/HdsiApplicationRenderSettingsSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiApplicationRenderSettingsSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiBackPlateSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiBackPlateSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiCoordSysPrimSceneIndex``
@@ -277,6 +271,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrefixPathPruningSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPinnedCurveExpandingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPinnedCurveExpandingSceneIndex>``
+- ``OpenUSD/C++/pxr/HdsiPrimIdSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimIdSceneIndex>``
 - ``OpenUSD/C++/pxr/HdsiPrimManagingSceneIndexObserver``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.HdsiPrimManagingSceneIndexObserver>``
 - ``OpenUSD/C++/pxr/HdsiPrimTypeAndPathPruningSceneIndex``
@@ -317,6 +313,8 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingLegacyRenderSettingsSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingStageSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingStageSceneIndex``
+- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingStageSceneIndexInterface>``
+- ``OpenUSD/C++/pxr/UsdImagingStageSceneIndexInterface``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSelectionSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingSelectionSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingMaterialBindingsResolvingSceneIndex>``
@@ -335,10 +333,6 @@ These types conform to `Comparable` in Swift.
 - ``OpenUSD/C++/pxr/UsdImagingRerootingSceneIndex``
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdImagingSceneIndex>``
 - ``OpenUSD/C++/pxr/UsdImagingSceneIndex``
-
-###  UsdExecImaging types
-- ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdExecImagingStageSceneIndexInterface>``
-- ``OpenUSD/C++/pxr/UsdExecImagingStageSceneIndexInterface``
 
 ###  UsdSkelImaging types
 - ``OpenUSD/C++/pxr/TfRefPtr<pxr.UsdSkelImagingPointsResolvingSceneIndex>``

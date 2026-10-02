@@ -22,7 +22,7 @@ import Foundation
 import OpenUSD
 import TemporaryImplementations_Cxx
 
-public typealias pxr = pxrInternal_v0_26_8__pxrReserved__
+public typealias pxr = pxrInternal_v0_26_11__pxrReserved__
 
 // Prior to Swift 6.3, there's no way to directly create a non-empty
 // std::optional in Swift, so we add a way to do that.

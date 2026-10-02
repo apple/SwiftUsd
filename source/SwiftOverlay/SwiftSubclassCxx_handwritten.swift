@@ -67,12 +67,10 @@ extension __Overlay {
 
 
 extension pxr.HioImage {
-    // Note: In 9.0.0, change `deprecated` to `unavailable`. (Can't do it sooner without breaking source compatibility)
-    
     /// Most users should use Overlay.HioImageWrapper instead of pxr.HioImage due to potential
     /// memory safety issues. Only use pxr.HioImage if you're writing an HioImage plugin in Swift
     @_documentation(visibility: internal)
-    @available(*, deprecated, message: "Use Overlay.HioImageWrapper.OpenForReading(_:_:_:_:_:) instead")
+    @available(*, unavailable, message: "Use Overlay.HioImageWrapper.OpenForReading(_:_:_:_:_:) instead")
     public static func OpenForReading(_ filename: std.string,
                                       _ subimage: CInt = 0,
                                       _ mip: CInt = 0,
@@ -89,7 +87,7 @@ extension pxr.HioImage {
     /// Most users should use Overlay.HioImageWrapper instead of pxr.HioImage due to potential
     /// memory safety issues. Only use pxr.HioImage if you're writing an HioImage plugin in Swift
     @_documentation(visibility: internal)
-    @available(*, deprecated, message: "Use Overlay.HioImageWrapper.OpenForWriting(_:) instead")
+    @available(*, unavailable, message: "Use Overlay.HioImageWrapper.OpenForWriting(_:) instead")
     public static func OpenForWriting(_ filename: std.string) -> pxr.HioImageSharedPtr {
         return __OpenForWritingUnsafe(filename)
     }
@@ -100,13 +98,13 @@ extension __OverlaySwift.HioImage.SwiftAdapter {
     /// internal implementation detail of how SwiftUsd and ast-answerer allow Swift
     /// classes to "subclass" from certain C++ types
     @_documentation(visibility: internal)
-    @available(*, deprecated, message: "This function can be memory unsafe and should not be used")
+    @available(*, unavailable, message: "This function can be memory unsafe and should not be used")
     public func get_cxx() -> __Overlay.HioImage.CxxAdapter? {
         return __get_cxxUnsafe()
     }
 
     @_documentation(visibility: internal)
-    @available(*, deprecated, message: "Use Overlay.HioImageSubclass.init() instead")
+    @available(*, unavailable, message: "Use Overlay.HioImageSubclass.init() instead")
     public static func new() -> Overlay.HioImageSubclass {
         return (Self.self as! Overlay.HioImageSubclass.Type).init()
     }

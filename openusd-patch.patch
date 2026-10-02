@@ -1,7 +1,7 @@
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/build_scripts/build_usd.py ./build_scripts/build_usd.py
---- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2026-07-24 12:11:44
-+++ ./build_scripts/build_usd.py	2026-07-27 10:36:40
-@@ -1756,6 +1756,19 @@
+--- /Users/maddyadams/OpenUSD/build_scripts/build_usd.py	2026-10-23 11:31:57
++++ ./build_scripts/build_usd.py	2026-10-23 16:03:10
+@@ -1723,6 +1723,19 @@
                  "target_compile_options(embree PRIVATE -Wno-unused-but-set-variable)\n")],
                  multiLineMatches=True,
              )
@@ -21,7 +21,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
              if context.targetUniversal:
                  extraArgs += [
                      '-DEMBREE_MAX_ISA=NEON',
-@@ -2524,7 +2537,6 @@
+@@ -2522,7 +2535,6 @@
                             not embedded and 
                             not self.targetWasm)
          self.buildUsdValidation = (args.build_usd_validation and 
@@ -31,7 +31,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          # - Documentation
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h ./pxr/base/arch/fileSystem.h
 --- /Users/maddyadams/OpenUSD/pxr/base/arch/fileSystem.h	2026-07-20 09:43:19
-+++ ./pxr/base/arch/fileSystem.h	2026-07-20 10:07:31
++++ ./pxr/base/arch/fileSystem.h	2026-10-23 15:54:17
 @@ -37,8 +37,6 @@
  #include <io.h>
  #endif
@@ -51,9 +51,9 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if defined(ARCH_OS_WINDOWS)
      #define ARCH_GLOB_NOCHECK   1
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt ./pxr/base/tf/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2026-07-20 09:43:19
-+++ ./pxr/base/tf/CMakeLists.txt	2026-07-20 10:07:49
-@@ -233,6 +233,7 @@
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/CMakeLists.txt	2026-10-23 11:31:57
++++ ./pxr/base/tf/CMakeLists.txt	2026-10-23 15:54:17
+@@ -234,6 +234,7 @@
          pxrTslRobinMap/robin_map.h
          pxrTslRobinMap/robin_set.h
          preprocessorUtilsLite.h
@@ -63,7 +63,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
          staticData.h
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h ./pxr/base/tf/iterator.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/iterator.h	2026-01-07 16:15:59
-+++ ./pxr/base/tf/iterator.h	2026-07-20 10:08:12
++++ ./pxr/base/tf/iterator.h	2026-10-23 15:54:17
 @@ -418,6 +418,7 @@
      using pointer = typename ReverseIterator::pointer;
      using difference_type = typename ReverseIterator::difference_type;
@@ -82,7 +82,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      explicit Tf_ProxyReferenceReverseIterator(UnderlyingIterator it) :
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h ./pxr/base/tf/notice.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/notice.h	2026-02-24 15:23:58
-+++ ./pxr/base/tf/notice.h	2026-07-20 10:10:24
++++ ./pxr/base/tf/notice.h	2026-10-23 15:54:17
 @@ -266,6 +266,7 @@
  
          friend class Tf_NoticeRegistry;
@@ -189,7 +189,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h ./pxr/base/tf/refBase.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/refBase.h	2026-01-07 16:15:59
-+++ ./pxr/base/tf/refBase.h	2026-07-20 10:10:39
++++ ./pxr/base/tf/refBase.h	2026-10-23 15:54:17
 @@ -125,6 +125,8 @@
  
      template <typename T> friend TfRefPtr<T>
@@ -201,7 +201,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  /// \class TfSimpleRefBase
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h ./pxr/base/tf/refPtr.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/refPtr.h	2026-01-07 16:15:59
-+++ ./pxr/base/tf/refPtr.h	2026-07-20 10:11:48
++++ ./pxr/base/tf/refPtr.h	2026-10-23 15:54:17
 @@ -423,6 +423,7 @@
  #include <typeinfo>
  #include <type_traits>
@@ -256,7 +256,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  #if !defined(doxygen)
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h ./pxr/base/tf/retainReleaseHelper.h
 --- /Users/maddyadams/OpenUSD/pxr/base/tf/retainReleaseHelper.h	1969-12-31 16:00:00
-+++ ./pxr/base/tf/retainReleaseHelper.h	2026-07-20 10:12:09
++++ ./pxr/base/tf/retainReleaseHelper.h	2026-10-23 15:54:17
 @@ -0,0 +1,47 @@
 +#ifndef retainReleaseHelper_hpp
 +#define retainReleaseHelper_hpp
@@ -306,8 +306,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +
 +#endif /* retainReleaseHelper_h */
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h ./pxr/base/tf/weakPtrFacade.h
---- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2026-01-07 16:15:59
-+++ ./pxr/base/tf/weakPtrFacade.h	2026-07-20 10:12:55
+--- /Users/maddyadams/OpenUSD/pxr/base/tf/weakPtrFacade.h	2026-10-23 11:31:57
++++ ./pxr/base/tf/weakPtrFacade.h	2026-10-23 15:54:17
 @@ -17,6 +17,7 @@
  #include "pxr/base/arch/demangle.h"
  
@@ -327,7 +327,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/trace/eventNode.h ./pxr/base/trace/eventNode.h
 --- /Users/maddyadams/OpenUSD/pxr/base/trace/eventNode.h	2026-04-27 10:10:52
-+++ ./pxr/base/trace/eventNode.h	2026-07-20 10:13:26
++++ ./pxr/base/trace/eventNode.h	2026-10-23 15:54:17
 @@ -135,9 +135,8 @@
      {
      }
@@ -341,7 +341,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // Empirical results show ~85% of nodes have < 2 children.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h ./pxr/base/vt/dictionary.h
 --- /Users/maddyadams/OpenUSD/pxr/base/vt/dictionary.h	2026-07-20 09:43:19
-+++ ./pxr/base/vt/dictionary.h	2026-07-20 10:13:58
++++ ./pxr/base/vt/dictionary.h	2026-10-23 15:54:17
 @@ -502,8 +502,8 @@
  {
      VtDictionary::const_iterator i = dictionary.find(key);
@@ -355,7 +355,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      return i->second.Get<T>();
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/base/vt/value.h ./pxr/base/vt/value.h
 --- /Users/maddyadams/OpenUSD/pxr/base/vt/value.h	2026-07-20 09:43:19
-+++ ./pxr/base/vt/value.h	2026-07-20 10:14:29
++++ ./pxr/base/vt/value.h	2026-10-23 15:54:17
 @@ -38,6 +38,7 @@
  #include <iosfwd>
  #include <typeinfo>
@@ -380,8 +380,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      /// Implicitly convert to VtValueRef.
      VT_API operator VtValueRef() const &;
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt ./pxr/exec/exec/CMakeLists.txt
---- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2026-04-27 10:10:52
-+++ ./pxr/exec/exec/CMakeLists.txt	2026-07-20 10:14:53
+--- /Users/maddyadams/OpenUSD/pxr/exec/exec/CMakeLists.txt	2026-10-23 11:31:57
++++ ./pxr/exec/exec/CMakeLists.txt	2026-10-23 15:54:17
 @@ -33,6 +33,7 @@
          systemChangeProcessor
          systemDiagnostics
@@ -399,8 +399,8 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      RESOURCE_FILES
          plugInfo.json
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h ./pxr/exec/vdf/parallelExecutorEngineBase.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2026-02-24 15:23:51
-+++ ./pxr/exec/vdf/parallelExecutorEngineBase.h	2026-07-20 10:16:03
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/parallelExecutorEngineBase.h	2026-10-23 11:31:57
++++ ./pxr/exec/vdf/parallelExecutorEngineBase.h	2026-10-23 15:54:17
 @@ -1893,9 +1893,9 @@
          if (!privateBuffer->GetExecutorCache()) {
              // No output value: Spit out a warning.
@@ -416,7 +416,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
              VdfExecutionTypeRegistry::FillVector(
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/poolChainIndex.h ./pxr/exec/vdf/poolChainIndex.h
 --- /Users/maddyadams/OpenUSD/pxr/exec/vdf/poolChainIndex.h	2026-01-22 09:56:22
-+++ ./pxr/exec/vdf/poolChainIndex.h	2026-07-20 10:15:35
++++ ./pxr/exec/vdf/poolChainIndex.h	2026-10-23 15:54:17
 @@ -53,6 +53,9 @@
          return !(*this == rhs);
      }
@@ -428,9 +428,9 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      friend class VdfPoolChainIndexer;
      VdfPoolChainIndex(int poolChainIndex, uint32_t outputIndex)
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h ./pxr/exec/vdf/pullBasedExecutorEngine.h
---- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2026-02-24 15:23:53
-+++ ./pxr/exec/vdf/pullBasedExecutorEngine.h	2026-07-20 10:15:50
-@@ -1020,9 +1020,9 @@
+--- /Users/maddyadams/OpenUSD/pxr/exec/vdf/pullBasedExecutorEngine.h	2026-10-23 11:31:57
++++ ./pxr/exec/vdf/pullBasedExecutorEngine.h	2026-10-23 15:54:17
+@@ -1021,9 +1021,9 @@
              // requested because otherwise, it wouldn't be in the schedule,
              // because of VdfScheduler::_RemoveTrivialNodes.)
              TF_WARN(
@@ -445,7 +445,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
              //     element to hold multiple values (as we do for shaped
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.cpp ./pxr/exec/vdf/sparseInputTraverser.cpp
 --- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.cpp	2026-01-22 09:56:22
-+++ ./pxr/exec/vdf/sparseInputTraverser.cpp	2026-07-20 10:16:30
++++ ./pxr/exec/vdf/sparseInputTraverser.cpp	2026-10-23 15:54:17
 @@ -28,70 +28,6 @@
  
  ////////////////////////////////////////////////////////////////////////////////
@@ -519,7 +519,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  public:
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.h ./pxr/exec/vdf/sparseInputTraverser.h
 --- /Users/maddyadams/OpenUSD/pxr/exec/vdf/sparseInputTraverser.h	2026-01-22 09:56:22
-+++ ./pxr/exec/vdf/sparseInputTraverser.h	2026-07-20 10:17:06
++++ ./pxr/exec/vdf/sparseInputTraverser.h	2026-10-23 15:54:17
 @@ -169,7 +169,69 @@
  private:
  
@@ -591,27 +591,9 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
      // A map from pool chain index to prioritized output, used to ensure that we
      // process outputs in their order in the pool chain.
-diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/glf/drawTarget.h ./pxr/imaging/glf/drawTarget.h
---- /Users/maddyadams/OpenUSD/pxr/imaging/glf/drawTarget.h	2025-08-26 10:20:00
-+++ ./pxr/imaging/glf/drawTarget.h	2026-07-20 10:17:29
-@@ -124,6 +124,14 @@
-         void _GenTexture();
-         void _DeleteTexture();
- 
-+        // Important: 
-+        // https://github.com/swiftlang/swift/pull/80344 in Swift 6.2
-+        // fixes an issue that occurs in Swift 6.1 when reference types
-+        // use the tail padding of their bases. To support Swift 6.1, we
-+        // work around the issue by using alignas and padding to
-+        // prevent tail padding reuse.
-+        alignas(8) char _PADDING;
-+
-         GLuint       _textureName;
-         GLuint       _textureNameMS;
- 
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h ./pxr/imaging/hd/dependencySchema.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hd/dependencySchema.h	2026-02-24 15:23:51
-+++ ./pxr/imaging/hd/dependencySchema.h	2026-07-20 10:18:03
++++ ./pxr/imaging/hd/dependencySchema.h	2026-10-23 15:54:17
 @@ -54,6 +54,9 @@
      HdDependencySchema(HdContainerDataSourceHandle container)
        : HdSchema(container) {}
@@ -631,7 +613,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
 +#endif
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h ./pxr/imaging/hd/mergingSceneIndex.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hd/mergingSceneIndex.h	2026-02-24 15:23:53
-+++ ./pxr/imaging/hd/mergingSceneIndex.h	2026-07-20 10:18:17
++++ ./pxr/imaging/hd/mergingSceneIndex.h	2026-10-23 15:54:17
 @@ -163,6 +163,9 @@
          , sceneRoot(sceneRoot)
          {
@@ -644,7 +626,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // We observe that most merging scene indexes have few inputs, such as 2.
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h ./pxr/imaging/hd/schema.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hd/schema.h	2026-02-24 15:23:51
-+++ ./pxr/imaging/hd/schema.h	2026-07-20 10:18:33
++++ ./pxr/imaging/hd/schema.h	2026-10-23 15:54:17
 @@ -28,6 +28,8 @@
      HdSchema(HdContainerDataSourceHandle container)
       : _container(std::move(container)) {}
@@ -656,7 +638,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      HD_API
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp ./pxr/imaging/hdsi/debuggingSceneIndex.cpp
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.cpp	2026-01-22 09:56:22
-+++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2026-07-20 10:18:54
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.cpp	2026-10-23 15:54:17
 @@ -29,62 +29,6 @@
  // It does produce a non-trivial data source for /foo.
  const bool implicitlyAddedAncestorsHaveEmptyType = true;
@@ -722,7 +704,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
      // Future work might throw an error/show a stack trace/...
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h ./pxr/imaging/hdsi/debuggingSceneIndex.h
 --- /Users/maddyadams/OpenUSD/pxr/imaging/hdsi/debuggingSceneIndex.h	2026-01-22 09:56:22
-+++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2026-07-20 10:19:21
++++ ./pxr/imaging/hdsi/debuggingSceneIndex.h	2026-10-23 15:54:17
 @@ -22,7 +22,62 @@
  namespace HdsiDebuggingSceneIndex_Impl
  {
@@ -789,7 +771,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h ./pxr/usd/sdf/predicateProgram.h
 --- /Users/maddyadams/OpenUSD/pxr/usd/sdf/predicateProgram.h	2026-01-07 16:15:59
-+++ ./pxr/usd/sdf/predicateProgram.h	2026-07-20 10:19:41
++++ ./pxr/usd/sdf/predicateProgram.h	2026-10-23 15:54:17
 @@ -208,7 +208,7 @@
  
      if (!errs.empty()) {
@@ -801,7 +783,7 @@ diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /
  }
 diff -Nura --exclude .git --exclude *.orig --exclude .DS_Store --exclude *.pyc /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp ./pxr/usd/usdMtlx/utils.cpp
 --- /Users/maddyadams/OpenUSD/pxr/usd/usdMtlx/utils.cpp	2026-07-20 09:43:19
-+++ ./pxr/usd/usdMtlx/utils.cpp	2026-07-20 10:21:02
++++ ./pxr/usd/usdMtlx/utils.cpp	2026-10-23 15:54:17
 @@ -185,6 +185,20 @@
      stdlibSearchPaths =
          _MergeSearchPaths(stdlibSearchPaths, { PXR_MATERIALX_STDLIB_DIR });

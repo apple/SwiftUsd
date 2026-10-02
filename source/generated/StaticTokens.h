@@ -32,7 +32,6 @@
 #include "pxr/exec/vdf/tokens.h"
 #if SwiftUsd_PXR_ENABLE_IMAGING_SUPPORT
 #include "pxr/imaging/geomUtil/tokens.h"
-#include "pxr/imaging/glf/texture.h"
 #include "pxr/imaging/hd/backPlateSchema.h"
 #include "pxr/imaging/hd/basisCurves.h"
 #include "pxr/imaging/hd/basisCurvesSchema.h"
@@ -65,6 +64,7 @@
 #include "pxr/imaging/hd/geomSubsetSchema.h"
 #include "pxr/imaging/hd/imageShader.h"
 #include "pxr/imaging/hd/imageShaderSchema.h"
+#include "pxr/imaging/hd/implicitSurface.h"
 #include "pxr/imaging/hd/instanceCategoriesSchema.h"
 #include "pxr/imaging/hd/instanceIndicesSchema.h"
 #include "pxr/imaging/hd/instanceProxySchema.h"
@@ -94,7 +94,9 @@
 #include "pxr/imaging/hd/nurbsCurvesSchema.h"
 #include "pxr/imaging/hd/nurbsPatchSchema.h"
 #include "pxr/imaging/hd/nurbsPatchTrimCurveSchema.h"
+#include "pxr/imaging/hd/particleFieldSchema.h"
 #include "pxr/imaging/hd/planeSchema.h"
+#include "pxr/imaging/hd/primIdSchema.h"
 #include "pxr/imaging/hd/primOriginSchema.h"
 #include "pxr/imaging/hd/primvarSchema.h"
 #include "pxr/imaging/hd/primvarsSchema.h"
@@ -103,6 +105,7 @@
 #include "pxr/imaging/hd/renderCapabilitiesSchema.h"
 #include "pxr/imaging/hd/renderPassSchema.h"
 #include "pxr/imaging/hd/renderProductSchema.h"
+#include "pxr/imaging/hd/renderSettingDescriptorSchema.h"
 #include "pxr/imaging/hd/renderSettingsSchema.h"
 #include "pxr/imaging/hd/renderVarSchema.h"
 #include "pxr/imaging/hd/rendererCreateArgsSchema.h"
@@ -221,6 +224,7 @@
 #endif // #if SwiftUsd_PXR_ENABLE_USD_IMAGING_SUPPORT
 #include "pxr/usdValidation/usdGeomValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdLuxValidators/validatorTokens.h"
+#include "pxr/usdValidation/usdMediaValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdShadeValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdSkelValidators/validatorTokens.h"
 #include "pxr/usdValidation/usdUtilsValidators/validatorTokens.h"
@@ -294,6 +298,9 @@ namespace __Overlay {
     extern const pxr::UsdLuxValidatorNameTokens_StaticTokenType* const UsdLuxValidatorNameTokens;
     extern const pxr::UsdLuxValidatorKeywordTokens_StaticTokenType* const UsdLuxValidatorKeywordTokens;
     extern const pxr::UsdLuxValidationErrorNameTokens_StaticTokenType* const UsdLuxValidationErrorNameTokens;
+    extern const pxr::UsdMediaValidatorNameTokens_StaticTokenType* const UsdMediaValidatorNameTokens;
+    extern const pxr::UsdMediaValidatorKeywordTokens_StaticTokenType* const UsdMediaValidatorKeywordTokens;
+    extern const pxr::UsdMediaValidationErrorNameTokens_StaticTokenType* const UsdMediaValidationErrorNameTokens;
     extern const pxr::UsdShadeValidatorNameTokens_StaticTokenType* const UsdShadeValidatorNameTokens;
     extern const pxr::UsdShadeValidatorKeywordTokens_StaticTokenType* const UsdShadeValidatorKeywordTokens;
     extern const pxr::UsdShadeValidationErrorNameTokens_StaticTokenType* const UsdShadeValidationErrorNameTokens;
@@ -308,7 +315,6 @@ namespace __Overlay {
     extern const pxr::HioGlslfxResourceLayoutTokens_StaticTokenType* const HioGlslfxResourceLayoutTokens;
     extern const pxr::PxOsdOpenSubdivTokens_StaticTokenType* const PxOsdOpenSubdivTokens;
     extern const pxr::GeomUtilInterpolationTokens_StaticTokenType* const GeomUtilInterpolationTokens;
-    extern const pxr::GlfTextureTokens_StaticTokenType* const GlfTextureTokens;
     extern const pxr::HgiTokens_StaticTokenType* const HgiTokens;
     extern const pxr::HgiShaderKeywordTokens_StaticTokenType* const HgiShaderKeywordTokens;
     extern const pxr::HdBackPlateSchemaTokens_StaticTokenType* const HdBackPlateSchemaTokens;
@@ -378,6 +384,7 @@ namespace __Overlay {
     extern const pxr::HdGeomSubsetSchemaTokens_StaticTokenType* const HdGeomSubsetSchemaTokens;
     extern const pxr::HdImageShaderTokens_StaticTokenType* const HdImageShaderTokens;
     extern const pxr::HdImageShaderSchemaTokens_StaticTokenType* const HdImageShaderSchemaTokens;
+    extern const pxr::HdImplicitSurfaceReprDescTokens_StaticTokenType* const HdImplicitSurfaceReprDescTokens;
     extern const pxr::HdInstanceCategoriesSchemaTokens_StaticTokenType* const HdInstanceCategoriesSchemaTokens;
     extern const pxr::HdInstancedBySchemaTokens_StaticTokenType* const HdInstancedBySchemaTokens;
     extern const pxr::HdInstanceIndicesSchemaTokens_StaticTokenType* const HdInstanceIndicesSchemaTokens;
@@ -404,8 +411,10 @@ namespace __Overlay {
     extern const pxr::HdNurbsCurvesSchemaTokens_StaticTokenType* const HdNurbsCurvesSchemaTokens;
     extern const pxr::HdNurbsPatchSchemaTokens_StaticTokenType* const HdNurbsPatchSchemaTokens;
     extern const pxr::HdNurbsPatchTrimCurveSchemaTokens_StaticTokenType* const HdNurbsPatchTrimCurveSchemaTokens;
+    extern const pxr::HdParticleFieldSchemaTokens_StaticTokenType* const HdParticleFieldSchemaTokens;
     extern const pxr::HdPlaneSchemaTokens_StaticTokenType* const HdPlaneSchemaTokens;
     extern const pxr::HdRendererCreateArgsSchemaTokens_StaticTokenType* const HdRendererCreateArgsSchemaTokens;
+    extern const pxr::HdPrimIdSchemaTokens_StaticTokenType* const HdPrimIdSchemaTokens;
     extern const pxr::HdPrimOriginSchemaTokens_StaticTokenType* const HdPrimOriginSchemaTokens;
     extern const pxr::HdPrimvarsSchemaTokens_StaticTokenType* const HdPrimvarsSchemaTokens;
     extern const pxr::HdPurposeSchemaTokens_StaticTokenType* const HdPurposeSchemaTokens;
@@ -413,6 +422,7 @@ namespace __Overlay {
     extern const pxr::HdRenderCapabilitiesSchemaTokens_StaticTokenType* const HdRenderCapabilitiesSchemaTokens;
     extern const pxr::HdRenderPassSchemaTokens_StaticTokenType* const HdRenderPassSchemaTokens;
     extern const pxr::HdRenderProductSchemaTokens_StaticTokenType* const HdRenderProductSchemaTokens;
+    extern const pxr::HdRenderSettingDescriptorSchemaTokens_StaticTokenType* const HdRenderSettingDescriptorSchemaTokens;
     extern const pxr::HdRenderSettingsSchemaTokens_StaticTokenType* const HdRenderSettingsSchemaTokens;
     extern const pxr::HdRenderVarSchemaTokens_StaticTokenType* const HdRenderVarSchemaTokens;
     extern const pxr::HdSampleFilterSchemaTokens_StaticTokenType* const HdSampleFilterSchemaTokens;
@@ -452,9 +462,11 @@ namespace __Overlay {
     extern const pxr::HdStTextureTokens_StaticTokenType* const HdStTextureTokens;
     extern const pxr::HdStRenderBufferTokens_StaticTokenType* const HdStRenderBufferTokens;
     extern const pxr::HdStRenderSettingsTokens_StaticTokenType* const HdStRenderSettingsTokens;
+    extern const pxr::HdStDefaultTransparencyModeTokens_StaticTokenType* const HdStDefaultTransparencyModeTokens;
     extern const pxr::HdStMaterialTagTokens_StaticTokenType* const HdStMaterialTagTokens;
     extern const pxr::HdStSdrMetadataTokens_StaticTokenType* const HdStSdrMetadataTokens;
     extern const pxr::HdStPerfTokens_StaticTokenType* const HdStPerfTokens;
+    extern const pxr::HdStNativeImplicitsTokens_StaticTokenType* const HdStNativeImplicitsTokens;
     extern const pxr::HdxTokens_StaticTokenType* const HdxTokens;
     extern const pxr::HdxPrimitiveTokens_StaticTokenType* const HdxPrimitiveTokens;
     extern const pxr::HdxRenderTagTokens_StaticTokenType* const HdxRenderTagTokens;

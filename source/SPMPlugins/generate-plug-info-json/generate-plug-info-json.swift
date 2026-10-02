@@ -34,12 +34,12 @@ func makeShellSource(templateUrl: URL, outputDirectory: URL, packageName: String
     environment["SWIFTUSD_GPIJ_MACOS_FILE"] = outputDirectory.appending(path: "plugInfo_macOS.json").path(percentEncoded: false)
     environment["SWIFTUSD_GPIJ_MACOS_LIBRARY"] = ""
     environment["SWIFTUSD_GPIJ_MACOS_RESOURCE"] = escapeSlashes("\(packageName)_\(targetName).bundle/Contents/Resources")
-    environment["SWIFTUSD_GPIJ_MACOS_ROOT"] = escapeSlashes("../../..")
+    environment["SWIFTUSD_GPIJ_MACOS_ROOT"] = escapeSlashes("../..")
     
     environment["SWIFTUSD_GPIJ_IOS_FILE"] = outputDirectory.appending(path: "plugInfo_iOS.json").path(percentEncoded: false)
     environment["SWIFTUSD_GPIJ_IOS_LIBRARY"] = ""
     environment["SWIFTUSD_GPIJ_IOS_RESOURCE"] = escapeSlashes("\(packageName)_\(targetName).bundle")
-    environment["SWIFTUSD_GPIJ_IOS_ROOT"] = escapeSlashes("..")
+    environment["SWIFTUSD_GPIJ_IOS_ROOT"] = escapeSlashes(".")
     
     environment["SWIFTUSD_GPIJ_VANILLA_FILE"] = outputDirectory.appending(path: "plugInfo_vanilla.json").path(percentEncoded: false)
     environment["SWIFTUSD_GPIJ_VANILLA_LIBRARY"] = escapeSlashes("lib\(targetName).dylib")

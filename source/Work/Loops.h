@@ -68,6 +68,7 @@ namespace _Overlay {
 template <> struct std::iterator_traits<_Overlay::WorkParallelForEachFunctor::Iterator> {
     using iterator_category = std::input_iterator_tag;
     using reference = _Overlay::WorkParallelForEachFunctor::Iterator&;
+    using value_type = _Overlay::WorkParallelForEachFunctor::Iterator;
 };
 
 #endif /* SWIFTUSD_WORK_LOOPS_H */

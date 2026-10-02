@@ -32,7 +32,7 @@ Checklist for releasing new versions of SwiftUsd
 1. Run `SwiftUsdTests` in Debug mode on current compiler
 1. Run `SwiftUsdTests` in Release mode on pre-release compiler
 1. Run `SwiftUsdTests` in Debug mode on pre-release compiler
-1. If major changes have been made, test all sample projects
+1. If major changes have been made, test all sample projects/plugins
 
 
 ## 6. Documentation, manual

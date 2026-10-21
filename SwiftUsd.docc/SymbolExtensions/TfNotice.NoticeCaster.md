@@ -2,7 +2,7 @@
 
 ## Overview
 
-Use this type's ``callAsFunction(_:)`` or ``cast(to:)`` functions to conditionally downcast notices in a [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-1hdp4) callback. 
+Use this type's ``callAsFunction(_:)`` or ``cast(to:)`` functions to conditionally downcast notices in a [`pxr.TfNotice.Register`](doc:/OpenUSD/C++/pxr/TfNotice/Register(_:_:)-70l8s) callback. 
 
 ```swift
 func registerWithDowncasting() {

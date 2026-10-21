@@ -48,8 +48,6 @@ Checklist for releasing new versions of SwiftUsd
         1. [Getting Started, "Using SwiftUsd"](<doc:GettingStarted#Using-SwiftUsd>)
         1. [Getting Started, "Common Issues"](<doc:GettingStarted#Common-issues>)
         1. Typealias in each Xcode project/Swift Package in Examples
-    1. Xcode, OS
-        1. [Getting Started](<doc:GettingStarted>). Include build numbers as well
     1. SwiftUsd
         1. README.md, "Swift Package"
         1. [Getting Started, "Swift Package"](<doc:GettingStarted#Swift-Package>)

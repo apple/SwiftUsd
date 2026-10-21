@@ -11,6 +11,16 @@ Changes to SwiftUsd
     ```
 }
 
+### 9.0.0
+Released 2026-11-02, based on OpenUSD v26.11.1
+- Add support for writing SdfFileFormat plugins in Swift
+- Blocked ast-answerer analysis of "abstract value types" that will no longer be imported into Swift in Swift 6.5
+- Add SdfSpec upcasting/downcasting initializers
+- Change `pxr.SdfZipFile.Find(_:)` to return nil instead of `end()` if the requested file doesn't exist
+- Fixed a plugin root collision issue when adding multiple OpenUSD plugins to a project/package
+- Reduce OpenVDB build size by disabling explicit template instantiation
+- Change deprecated unsafe methods on pxr.HioImage/Overlay.HioImageSubclass to be unavailable
+
 ### 8.1.0
 Released 2026-08-03, based on OpenUSD v26.08
 - Add zero-copy `VtArray` reads via `withUnsafeBufferPointer(_:)` and single-copy construction from an `UnsafeBufferPointer`

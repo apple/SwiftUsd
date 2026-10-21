@@ -6,7 +6,7 @@ Checklist for upgrading SwiftUsd to be based on a new OpenUSD version
 1. Update source repo
 ```
 cd ~/OpenUSD
-git switch release
+git switch <latest tag>
 git pull
 ```
 Verify that `git log` shows the expected tag and the working tree is clean
@@ -39,7 +39,7 @@ Make sure the working tree is clean
 
 2. Update the source repo
 ```
-git switch release
+git switch <latest tag>
 git pull
 ```
 Verify that `git log` shows the expected tag and the working tree is clean

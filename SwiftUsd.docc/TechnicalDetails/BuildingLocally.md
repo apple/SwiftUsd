@@ -11,11 +11,11 @@ SwiftUsd comes with pre-built OpenUSD binaries that make it easy to start using 
 git clone git@github.com:apple/SwiftUsd.git ~/SwiftUsd
 ```
 
-2. Clone OpenUSD v26.08
+2. Clone OpenUSD v26.11.1
 ```zsh
 git clone https://github.com/PixarAnimationStudios/OpenUSD.git ~/SwiftUsd/openusd-source
 cd ~/SwiftUsd/openusd-source
-git checkout v26.08
+git checkout v26.11.1
 ```
 
 3. Apply `openusd-source.patch` to it  
@@ -34,6 +34,7 @@ python3 build_scripts/build_usd.py \
     --openvdb \
     --no-python \
     --ignore-homebrew \
+    --ignore-paths='/opt/local/OpenUSD' \
     --build-target native \
     --no-onetbb \
     ~/SwiftUsd/openusd-builds/macOS \
@@ -49,6 +50,7 @@ python3 build_scripts/build_usd.py \
     --alembic \
     --no-python \
     --ignore-homebrew \
+    --ignore-paths='/opt/local/OpenUSD' \
     --build-target iOS \
     --no-build-apple-framework \
     --no-onetbb \
@@ -62,6 +64,7 @@ python3 build_scripts/build_usd.py \
     --alembic \
     --no-python \
     --ignore-homebrew \
+    --ignore-paths='/opt/local/OpenUSD' \
     --build-target iOSSimulator \
     --no-build-apple-framework \
     --no-onetbb \
@@ -75,6 +78,7 @@ python3 build_scripts/build_usd.py \
     --alembic \
     --no-python \
     --ignore-homebrew \
+    --ignore-paths='/opt/local/OpenUSD' \
     --build-target visionOS \
     --no-build-apple-framework \
     --no-onetbb \
@@ -88,6 +92,7 @@ python3 build_scripts/build_usd.py \
     --alembic \
     --no-python \
     --ignore-homebrew \
+    --ignore-paths='/opt/local/OpenUSD' \
     --build-target visionOSSimulator \
     --no-build-apple-framework \
     --no-onetbb \

@@ -65,7 +65,6 @@ These changes work around Swift-specific issues in vanilla OpenUSD, add Swift-sp
 - [https://github.com/swiftlang/swift/pull/80344: [cxx-interop] Layout reference types that use tail padding of their bases correctly](https://github.com/swiftlang/swift/pull/80344)  
     This issue is worked around by reordering fields in derived types that use tail padding to no longer use tail padding, or by inserting aligned padding that doesn't fit in usable tail padding. This issue was fixed in Swift 6.2.
     - Modified: `pxr/base/trace/eventNode.h`
-    - Modified: `pxr/imaging/glf/drawTarget.h`
 
 - [rdar://177372504 (Non-const rvalue method shouldn't be a possible overload on `let` variables)](rdar://177372504)
     This issue is worked around by annotating methods in C++ headers instead of relying on API Notes.

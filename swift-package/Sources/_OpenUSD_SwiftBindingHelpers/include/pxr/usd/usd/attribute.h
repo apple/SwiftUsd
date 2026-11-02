@@ -397,8 +397,14 @@ public:
     /// If this function returns false, it is certain that this attribute's
     /// value remains constant over time.
     ///
+    /// Note that this function determines whether this attribute's value may
+    /// change in response to changes in numeric time values, but it may return
+    /// false when resolving at a numeric time and resolving at the default time
+    /// might result in different values. In that regard, this function differs
+    /// from UsdResolveInfo::ValueSourceMightBeTimeVarying.
+    ///
     /// This function checks if the attribute either has more than 1 time
-    /// samples or is spline valued. Which is more efficient than actually
+    /// samples or is spline valued, which is more efficient than actually
     /// counting the time samples or evaluating the spline, both of which
     /// are potentially expensive operations.
     USD_API
@@ -797,6 +803,8 @@ public:
     /// be the combination of all its entries as specified across all relevant
     /// opinions. Overrides occur per-entry rather than the dictionary as a
     /// whole.
+    ///
+    /// Dictionary values that are empty VtValue are invalid.
     ///
     /// \sa GetSoftLimits(), GetHardLimits() for more convenient validation,
     /// editing, and look-up API

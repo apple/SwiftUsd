@@ -11,6 +11,7 @@
 #include "pxr/pxr.h"
 #include "pxr/base/ts/api.h"
 
+#include "pxr/base/gf/duration.h"
 #include "pxr/base/gf/interval.h"
 #include "pxr/base/gf/timeCode.h"
 #include "pxr/base/gf/vec2d.h"
@@ -28,12 +29,14 @@ PXR_NAMESPACE_OPEN_SCOPE
 /// \li <b>float</b>
 /// \li <b>GfHalf</b>
 /// \li <b>GfTimeCode</b>
+/// \li <b>GfDuration</b>
 /// \hideinitializer
 #define TS_SPLINE_SUPPORTED_VALUE_TYPES         \
     ((Double,   double))                        \
     ((Float,    float))                         \
     ((Half,     GfHalf))                        \
-    ((TimeCode, GfTimeCode))
+    ((TimeCode, GfTimeCode))                    \
+    ((Duration, GfDuration))
 
 #define TS_SPLINE_STORAGE_VALUE_TYPES           \
     ((Double,   double))                        \
@@ -168,7 +171,18 @@ enum TsTangentAlgorithm
     TsTangentAlgorithmAutoEase
 };
 
+#if !defined(doxygen)
+// TsLoopParams is deprecated. Declare an non-deprecated replacement
+// we can use internally to avoid compiler warnings when building
+// our own code.
+class Ts_LoopParams;
+using TsLoopParams [[deprecated("TsSpline inner looping is deprecated")]] =
+    Ts_LoopParams;
+#endif
+
 /// Inner-loop parameters.
+///
+/// \deprecated Inner looping has been deprecated and will be removed.
 ///
 /// At most one inner-loop region can be specified per spline.  Only whole
 /// numbers of pre- and post-iterations are supported.
@@ -200,7 +214,11 @@ enum TsTangentAlgorithm
 /// zero counts.  These quantities are signed only so that accidental underflow
 /// does not result in huge loop counts.
 ///
+#if defined(doxygen)
 class TsLoopParams
+#else
+class Ts_LoopParams
+#endif // doxygen
 {
 public:
     TsTime protoStart = 0.0;
@@ -211,10 +229,10 @@ public:
 
 public:
     TS_API
-    bool operator==(const TsLoopParams &other) const;
+    bool operator==(const Ts_LoopParams &other) const;
 
     TS_API
-    bool operator!=(const TsLoopParams &other) const;
+    bool operator!=(const Ts_LoopParams &other) const;
 
     /// Returns the prototype region, [protoStart, protoEnd).
     TS_API

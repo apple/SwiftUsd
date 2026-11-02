@@ -13,11 +13,13 @@
 
 #include "pxr/exec/exec/api.h"
 #include "pxr/exec/exec/valueExtractorFunction.h"
+
 #include "pxr/exec/vdf/executionTypeRegistry.h"
 #include "pxr/exec/vdf/mask.h"
 #include "pxr/exec/vdf/typeDispatchTable.h"
 #include "pxr/exec/vdf/vector.h"
 
+#include "pxr/base/tf/refPtr.h"
 #include "pxr/base/tf/singleton.h"
 #include "pxr/base/tf/type.h"
 #include "pxr/base/vt/array.h"
@@ -28,6 +30,8 @@
 #include <tbb/concurrent_unordered_map.h>
 
 #include <algorithm>
+#include <memory>
+#include <type_traits>
 
 PXR_NAMESPACE_OPEN_SCOPE
 
@@ -56,27 +60,47 @@ public:
     EXEC_API
     static const ExecTypeRegistry &GetInstance();
 
-    /// Registers \p ValueType as a value type that exec computations can use
-    /// for input and output values, with the fallback value \p fallback.
+    /// Registers \p ValueType as a type that exec computations can use for
+    /// input and output values, with the fallback value \p fallback.
     ///
-    /// In any circumstance that requires a fallback value, i.e., when an
-    /// arbitrary value of type \p ValueType must be produced, \p fallback will
-    /// be used.
+    /// In any circumstance that requires an arbitrary value of type \p
+    /// ValueType must be produced, \p fallback will be used.
     ///
     /// All types that can be used to author attribute and metadata values in
-    /// USD are known to exec by default. User-defined types must be registered
-    /// using this function.
-    ///
-    /// \note
-    /// Exec value types must be equality comparable. 
+    /// USD are available as exec value types by default. User-defined types
+    /// must be registered using this function.
     ///
     /// \warning
     /// If a given \p ValueType is registered more than once, all calls must
-    /// specify the same \p fallback; otherwise, which fallback value wins is
-    /// indeterminate. If an equality operator is defined for \p ValueType, that
-    /// operator will be used to verify that all fallback values have the same
-    /// value. Otherwise, multiple registrations are allowed, with no
-    /// verification that the fallback values match.
+    /// specify the same \p fallback; the equality operator for the type is used
+    /// to verify that all fallback values have the same value.
+    ///
+    /// # Value Type Requirements
+    ///
+    /// Values produced by computations will, in general, be copied, cached, and
+    /// made available to computation callbacks that are evaluated in
+    /// parallel. Therefore, care must be taken when choosing exec value
+    /// types. Types that strictly obey value semantics are safe to use as exec
+    /// value types and it is preferable to use such types whenever possible.
+    ///
+    /// When computations produce large data that would be inefficient to copy,
+    /// it is appealing to have the computation return a pointer. But many
+    /// pointer types are not safe to use as exec value types: Parallel
+    /// evalution makes it unsafe for computation callbacks to mutate pointed-to
+    /// data. Additionally, doing so could modify data that is held in a cache,
+    /// which would thwart the exec system's ability to correctly invalidate
+    /// caches. Therefore, pointer types are generally unsafe to use, other than
+    /// strong shared references to const data. In particular,
+    /// `std::shared_ptr<const T>` and `TfRefPtr<const T>` are recommended for
+    /// use as exec value types, when a pointer type is required. (Though using
+    /// these types doesn't, of course, guaranty safety, since the pointed-to
+    /// type could have const methods that mutate data, etc.)
+    ///
+    /// \note
+    /// - Exec value types must be copyable, as mentioned above.
+    /// - Exec value types must also be equality comparable, e.g., so that we
+    ///   can compare fallback values to ensure that multiple registrations are
+    ///   consistent (as mentioned above).
     ///
     /// # Example
     ///
@@ -98,15 +122,7 @@ public:
     /// ```
     ///
     template <typename ValueType>
-    static void RegisterType(const ValueType &fallback) {
-        static_assert(
-            !VtIsArray<ValueType>::value,
-            "VtArray is not a supported execution value type.");
-        static_assert(
-            VdfIsEqualityComparable<ValueType>,
-            "Equality comparison is required for execution value types.");
-        _GetInstanceForRegistration()._RegisterType(fallback);
-    }
+    static void RegisterType(const ValueType &fallback);
 
     /// Confirms that \p ValueType has been registered.
     ///
@@ -177,6 +193,34 @@ private:
         TfType type,
         Exec_ValueExtractorFunction &extractor);
 
+    // Type trait that evaluates to true if T is a pointer type that is safe to
+    // use as an exec value type, but that points to non-const data (which is
+    // not safe).
+    //
+    // This isn't intended to be a general purpose trait, and it isn't intended
+    // to guarantee that unsafe pointer types can't be used as value types. This
+    // is used to provide compile time feedback for _some_ pointer types that
+    // aren't / safe to use as exec value types.
+    //
+    // Note that many pointer types are disallowed regardless of the type they
+    // point to for other reasons (e.g., std::unique_ptr isn't copyable and
+    // std::weak_ptr doesn't support equality comparison).
+    //
+    // TODO: We should be able to use inline constexpr variable templates, but
+    // gcc 11.5 incorrectly rejects class-scope partial specializations:
+    // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=71954
+
+    template <typename T>
+    struct _IsPointerToNonConst : std::false_type {};
+
+    template <typename T>
+    struct _IsPointerToNonConst<std::shared_ptr<T>> :
+        std::negation<std::is_const<T>> {};
+
+    template <typename T>
+    struct _IsPointerToNonConst<TfRefPtr<T>> :
+        std::negation<std::is_const<T>> {};
+
 private:
 
     VdfTypeDispatchTable<_CreateVector> _createVector;
@@ -198,6 +242,31 @@ private:
     tbb::concurrent_unordered_map<TfType, Exec_ValueExtractor, TfHash>
         _extractors;
 };
+
+template <typename ValueType>
+void
+ExecTypeRegistry::RegisterType(const ValueType &fallback)
+{
+    using T = std::decay_t<ValueType>;
+    static_assert(
+        std::is_copy_constructible_v<T> && std::is_copy_assignable_v<T>,
+        "Execution value types must be copyable.");
+    static_assert(
+        VdfIsEqualityComparable<T>,
+        "Execution value types must support equality comparison.");
+    static_assert(
+        !std::is_pointer_v<T>,
+        "Raw pointers are not supported execution value types.");
+    static_assert(
+        !_IsPointerToNonConst<T>::value,
+        "Pointers to non-const data are not supported execution value "
+        "types.");
+    static_assert(
+        !VtIsArray<T>::value,
+        "VtArray is not a supported execution value type.");
+
+    _GetInstanceForRegistration()._RegisterType(fallback);
+}
 
 template <typename ValueType>
 void

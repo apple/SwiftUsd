@@ -120,15 +120,19 @@ public:
     }
 
     /// Return true if the resolve info value source might be time-varying;
-    /// false otherwise.  A return of true means that the value may or may not
-    /// actually be time-varying.  A return of false means the the value is
-    /// definitely not time-varying.  This is meant to enable optimizations for
-    /// scene-data consumers like renderers, when they can handle non-varying
-    /// values more efficiently.
+    /// false otherwise.
     ///
-    /// Note that this is different from UsdAttribute::ValueMightBeTimeVarying()
-    /// which provides more granular answer since it has additional context from
-    /// the attribute itself.
+    /// A return of true means that the value may or may not actually be
+    /// time-varying. A return of false means the value is definitely not
+    /// time-varying. This is meant to enable optimizations for scene-data
+    /// consumers like renderers, when they can handle non-varying values more
+    /// efficiently.
+    ///
+    /// Note that this is different from the more granular answer provided by
+    /// UsdAttribute::ValueMightBeTimeVarying(), since this function has
+    /// additional context from the attribute itself. In particular, this
+    /// function will return true if resolving at a numeric time and resolving
+    /// at the default time may result in different values.
     bool ValueSourceMightBeTimeVarying() const {
         if (_source == UsdResolveInfoSourceTimeSamples ||
             _source == UsdResolveInfoSourceSpline ||

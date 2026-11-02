@@ -9,6 +9,7 @@
 #include "pxr/pxr.h"
 #if PXR_VERSION >= 2408
 #include "pxr/imaging/hd/collectionExpressionEvaluator.h"
+#include "pxr/imaging/hd/collectionPredicateLibrary.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
 #include "pxr/imaging/hdsi/api.h"
 #include "pxr/usd/sdf/pathTable.h"
@@ -29,6 +30,16 @@ class HdsiRenderPassPruneSceneIndex :
     public HdSingleInputFilteringSceneIndexBase
 {
 public:
+    // New signature that takes a predicate library to use for evaluating
+    // the collection path expressions.
+    HDSI_API
+    static HdsiRenderPassPruneSceneIndexRefPtr
+    New(const HdSceneIndexBaseRefPtr& inputSceneIndex,
+        const HdCollectionPredicateLibrary &predicateLibrary);
+
+    /// \deprecated
+    /// Legacy signature that does not take a predicate library. This will
+    /// use an empty predicate library.
     HDSI_API
     static HdsiRenderPassPruneSceneIndexRefPtr
     New(const HdSceneIndexBaseRefPtr& inputSceneIndex);
@@ -41,7 +52,9 @@ public:
 protected:
     HDSI_API
     HdsiRenderPassPruneSceneIndex(
-        const HdSceneIndexBaseRefPtr& inputSceneIndex);
+        const HdSceneIndexBaseRefPtr& inputSceneIndex,
+        const HdCollectionPredicateLibrary &predicateLibrary);
+
     HDSI_API
     ~HdsiRenderPassPruneSceneIndex() override;
 
@@ -77,6 +90,8 @@ private:
     void _UpdateActiveRenderPassState(
         HdSceneIndexObserver::AddedPrimEntries *addedEntries,
         HdSceneIndexObserver::RemovedPrimEntries *removedEntries);
+
+    HdCollectionPredicateLibrary _predicateLibrary;
 
     // Prune state for the active render pass.
     _RenderPassPruneState _activeRenderPass;

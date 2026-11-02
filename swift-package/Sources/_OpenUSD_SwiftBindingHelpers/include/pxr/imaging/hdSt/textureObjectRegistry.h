@@ -11,6 +11,7 @@
 #include "pxr/imaging/hdSt/api.h"
 #include "pxr/imaging/hdSt/enums.h"
 #include "pxr/imaging/hd/instanceRegistry.h"
+#include "pxr/base/vt/dictionary.h"
 
 #include <tbb/concurrent_vector.h>
 #include <vector>
@@ -97,6 +98,12 @@ public:
     size_t GetNumberOfTextureObjects() const {
         return _textureObjectRegistry.size();
     }
+
+    /// Returns a list of all allocated textures form this registry
+    /// along with various parameters related to their creation.
+    ///
+    HDST_API
+    std::vector<VtDictionary> GetAllocInfo() const;
 
 private:
     HdStTextureObjectSharedPtr _MakeTextureObject(

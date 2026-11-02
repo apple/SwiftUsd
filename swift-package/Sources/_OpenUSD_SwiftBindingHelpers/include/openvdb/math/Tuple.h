@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file Tuple.h
 /// @author Ben Kwa
@@ -8,6 +8,7 @@
 #define OPENVDB_MATH_TUPLE_HAS_BEEN_INCLUDED
 
 #include "Math.h"
+#include <openvdb/util/Assert.h>
 #include <cmath>
 #include <sstream>
 #include <string>
@@ -62,7 +63,7 @@ public:
     template <typename IdxT,
         typename std::enable_if<std::is_integral<IdxT>::value, bool>::type = true>
     T operator[](IdxT i) const {
-        assert(i >= IdxT(0) && i < IdxT(SIZE));
+        OPENVDB_ASSERT(i >= IdxT(0) && i < IdxT(SIZE));
         return mm[i];
     }
 
@@ -71,7 +72,7 @@ public:
     template <typename IdxT,
         typename std::enable_if<std::is_integral<IdxT>::value, bool>::type = true>
     T& operator[](IdxT i) {
-        assert(i >= IdxT(0) && i < IdxT(SIZE));
+        OPENVDB_ASSERT(i >= IdxT(0) && i < IdxT(SIZE));
         return mm[i];
     }
 

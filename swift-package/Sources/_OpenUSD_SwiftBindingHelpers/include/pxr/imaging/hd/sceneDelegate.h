@@ -174,21 +174,27 @@ struct HdPrimvarDescriptor {
     /// Optional bool, true if primvar is indexed. This value should be checked
     /// before calling "GetIndexedPrimvar"
     bool indexed;
+    /// The number of values in the value array that must be aggregated for
+    /// each element in the primitive.
+    int elementSize;
 
     HdPrimvarDescriptor()
     : interpolation(HdInterpolationConstant)
     , role(HdPrimvarRoleTokens->none)
     , indexed(false)
+    , elementSize(1)
     {}
     HdPrimvarDescriptor(TfToken const& name_,
                         HdInterpolation interp_,
                         TfToken const& role_=HdPrimvarRoleTokens->none,
-                        bool indexed_=false)
-        : name(name_), interpolation(interp_), role(role_), indexed(indexed_)
+                        bool indexed_=false, int elementSize_=1)
+        : name(name_), interpolation(interp_), role(role_), indexed(indexed_),
+          elementSize(elementSize_)
     { }
     bool operator==(HdPrimvarDescriptor const& rhs) const {
         return name == rhs.name && role == rhs.role
-            && interpolation == rhs.interpolation;
+            && interpolation == rhs.interpolation
+            && elementSize == rhs.elementSize;
     }
     bool operator!=(HdPrimvarDescriptor const& rhs) const {
         return !(*this == rhs);
@@ -997,6 +1003,12 @@ public:
     // -----------------------------------------------------------------------//
     HD_API
     virtual TfTokenVector GetTaskRenderTags(SdfPath const& taskId);
+
+    // -----------------------------------------------------------------------//
+    /// \name Prim Id - for plumbing prim id from HdsiPrimIdSceneIndex to rprim.
+    // -----------------------------------------------------------------------//
+    HD_API
+    virtual int32_t GetPrimId(SdfPath const &id);
 
 private:
     HdRenderIndex *_index;

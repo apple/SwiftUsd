@@ -63,7 +63,7 @@
                         # phase=3, InsertionOrderAtStart
                         "tags": ["hdSt:phase3"],
                         "ordering": {
-                            "after": ["hdSt:phase1", "hdGp:proceduralResolution"],
+                            "after": ["hdSt:phase0", "hdGp:proceduralResolution"],
                             "position": "firstAfter"
                         }
                     },
@@ -74,7 +74,7 @@
                         "displayName": "Scene Index to resolve nodeIdentifier from glslfx sourceAsset.",
 
                         # phase=0, InsertionOrderAtStart
-                        "tags": ["hdSt:phase0"],
+                        "tags": ["hdSt:phase0", "hdSt:NodeIdentifierResolving"],
                         "ordering": {
                             "after": "hd:sceneAssembly",
                             "position": "firstAfter"
@@ -103,20 +103,6 @@
                         "tags": ["hdSt:phase0"],
                         "ordering": {
                             "after": "hd:sceneAssembly",
-                            "position": "firstAfter"
-                        }
-                    },
-                    "HdSt_RenderPassPruneSceneIndexPlugin" : {
-                        "bases": ["HdSceneIndexPlugin"],
-                        "loadWithRenderer" : "GL",
-                        "priority": 0,
-                        "displayName": "Scene Index to resolve render pass prune rules.",
-
-                        # phase=1, InsertionOrderAtStart
-                        "tags": ["hdSt:phase1"],
-                        "ordering": {
-                            "after": ["hdSt:phase0", "hd:sceneAssembly", "hd:sceneGlobals"],
-                            "before": "hdGp:proceduralResolution",
                             "position": "firstAfter"
                         }
                     },
@@ -165,11 +151,11 @@
                         "priority": 0,
                         "displayName": "Scene index to convert back plates to meshes and materials",
 
-                        # phase=4, InsertionOrderAtStart
-                        "tags": ["hdSt:phase4", "hdSt:backPlate"],
+                        # phase=0, InsertionOrderAtStart
+                        "tags": ["hdSt:phase0", "hdSt:backPlate"],
                         "ordering": {
-                            "before": "hdSt:dependencyForwarding",
-                            "after": ["hdSt:phase3", "hdGp:proceduralResolution", "hd:sceneGlobals"],
+                            "after": "hd:sceneAssembly",
+                            "before": ["hdSt:NodeIdentifierResolving", "hdSt:dependencyForwarding"],
                             "position": "firstAfter"
                         }
                     },
@@ -183,7 +169,7 @@
                         "tags": ["hdSt:phase0"],
                         "ordering": {
                             "after": "hd:sceneAssembly",
-                            "before": "hdSt:phase1",
+                            "before": "hdSt:phase4",
                             "position": "lastBefore"
                         }
                     }

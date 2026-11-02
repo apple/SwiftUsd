@@ -154,6 +154,23 @@ public:
         return _contexts.empty();
     }
 
+    /// Returns true if this resolver context contains all of the context
+    /// objects in the given \p ctx.
+    AR_API
+    bool Contains(const ArResolverContext& ctx) const;
+
+    /// Returns true if this resolver context contains the given context
+    /// object \p contextObj.
+    template <
+        class ContextObj,
+        std::enable_if_t<ArIsContextObject<ContextObj>::value>* = nullptr
+    >
+    bool Contains(const ContextObj& contextObj) const
+    {
+        const ContextObj* testObj = Get<ContextObj>();
+        return testObj && *testObj == contextObj;
+    }
+
     /// Returns pointer to the context object of the given type
     /// held in this resolver context. Returns NULL if this resolver
     /// context is not holding an object of the requested type.

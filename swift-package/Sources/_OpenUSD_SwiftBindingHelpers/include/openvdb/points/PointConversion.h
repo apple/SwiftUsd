@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Dan Bailey, Nick Avramoussis
 ///
@@ -15,6 +15,7 @@
 #include <openvdb/tools/PointIndexGrid.h>
 #include <openvdb/tools/PointsToMask.h>
 #include <openvdb/util/NullInterrupter.h>
+#include <openvdb/util/Assert.h>
 
 #include "AttributeArrayString.h"
 #include "AttributeSet.h"

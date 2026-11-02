@@ -125,6 +125,9 @@ public:
     HDST_API
     VtDictionary GetResourceAllocation() const override;
 
+    HDST_API
+    VtDictionary GetDetailedResourceAllocation() const override;
+
     /// Returns Hgi used to create/destroy GPU resources.
     HDST_API
     Hgi* GetHgi();

@@ -13,6 +13,8 @@
 #include "pxr/imaging/hgi/types.h"
 #include "pxr/imaging/hgi/enums.h"
 
+#include "pxr/base/tf/token.h"
+
 PXR_NAMESPACE_OPEN_SCOPE
 
 ///
@@ -53,6 +55,9 @@ public:
 
     HDST_API
     static HgiStencilOp GetHgiStencilOp(HdStencilOp hdStencilOp);
+
+    HDST_API
+    static HgiShaderStage GetHgiShaderStage(const TfToken& hdShaderStage);
 };
 
 

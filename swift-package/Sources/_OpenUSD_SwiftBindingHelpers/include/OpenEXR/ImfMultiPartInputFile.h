@@ -8,58 +8,75 @@
 
 #include "ImfForward.h"
 
-#include "ImfGenericInputFile.h"
 #include "ImfThreading.h"
+
+#include "ImfContext.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 
-
-class IMF_EXPORT_TYPE MultiPartInputFile : public GenericInputFile
+/// \brief
+///
+/// TODO: Document this
+class IMF_EXPORT_TYPE MultiPartInputFile
 {
-  public:
+public:
     IMF_EXPORT
-    MultiPartInputFile(const char fileName[],
-                       int numThreads = globalThreadCount(),
-                       bool reconstructChunkOffsetTable = true);
+    MultiPartInputFile (
+        const char fileName[],
+        int        numThreads                  = globalThreadCount (),
+        bool       reconstructChunkOffsetTable = true);
 
     IMF_EXPORT
-    MultiPartInputFile(IStream& is,
-                       int numThreads = globalThreadCount(),
-                       bool reconstructChunkOffsetTable = true);
+    MultiPartInputFile (
+        IStream& is,
+        int      numThreads                  = globalThreadCount (),
+        bool     reconstructChunkOffsetTable = true);
+
+    //-----------------------------------------------------------
+    // A constructor that opens the file with the specified name
+    // and context initialization routines
+    // Destroying the InputFile object will close the file.
+    //-----------------------------------------------------------
+    IMF_EXPORT
+    MultiPartInputFile (
+        const char*               filename,
+        const ContextInitializer& ctxtinit,
+        int                       numThreads  = globalThreadCount (),
+        bool                      autoAddType = true);
+
+    //------------------------
+    // Access to the file name
+    //------------------------
 
     IMF_EXPORT
-    virtual ~MultiPartInputFile();
-
-    // ----------------------
-    // Count of number of parts in file
-    // ---------------------
-    IMF_EXPORT
-    int parts() const;
-    
-    
-    //----------------------
-    // Access to the headers
-    //----------------------
-
-    IMF_EXPORT
-    const Header &  header(int n) const;
-    
+    const char* fileName () const;
 
     //----------------------------------
     // Access to the file format version
     //----------------------------------
 
     IMF_EXPORT
-    int			    version () const;
+    int version () const;
 
+    // ----------------------
+    // Count of number of parts in file
+    // ---------------------
+    IMF_EXPORT
+    int parts () const;
+
+    //----------------------
+    // Access to the headers
+    //----------------------
+
+    IMF_EXPORT
+    const Header& header (int partNumber) const;
 
     // =----------------------------------------
     // Check whether the entire chunk offset
     // table for the part is written correctly
     // -----------------------------------------
     IMF_EXPORT
-    bool partComplete(int part) const;
-
+    bool partComplete (int partNumber) const;
 
     // ----------------------------------------
     // Flush internal part cache
@@ -72,29 +89,21 @@ class IMF_EXPORT_TYPE MultiPartInputFile : public GenericInputFile
     // ----------------------------------------
 
     IMF_EXPORT
-    void flushPartCache();
-    struct IMF_HIDDEN Data;
+    void              flushPartCache ();
 
+private:
+    Context _ctxt;
+    struct Data;
+    std::shared_ptr<Data> _data;
 
-  private:
-    Data*                           _data;
-
-    MultiPartInputFile(const MultiPartInputFile &) = delete;
-    MultiPartInputFile& operator = (const MultiPartInputFile &) = delete;
-    MultiPartInputFile(MultiPartInputFile &&) = delete;
-    MultiPartInputFile& operator = (MultiPartInputFile &&) = delete;
-
-    
     //
     // used internally by 'Part' types to access individual parts of the multipart file
     //
-    template<class T> IMF_HIDDEN T*    getInputPart(int partNumber);
-    IMF_HIDDEN InputPartData*          getPart(int);
-    
-    IMF_HIDDEN void                    initialize();
+    // TODO: change these to value / reference semantics (smart ptr)
+    template <class T> IMF_HIDDEN T* getInputPart (int partNumber);
+    IMF_HIDDEN InputPartData*  getPart (int) const;
 
-
-    
+    IMF_HIDDEN void initialize ();
 
     friend class InputPart;
     friend class ScanLineInputPart;
@@ -112,7 +121,6 @@ class IMF_EXPORT_TYPE MultiPartInputFile : public GenericInputFile
     friend class DeepScanLineInputFile;
     friend class DeepTiledInputFile;
 };
-
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_EXIT
 

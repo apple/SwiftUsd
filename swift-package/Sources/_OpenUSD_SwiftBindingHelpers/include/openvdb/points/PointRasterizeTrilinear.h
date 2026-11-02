@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @author Nick Avramoussis
 ///
@@ -18,6 +18,7 @@
 #include <openvdb/math/Transform.h>
 #include <openvdb/tools/Morphology.h>
 #include <openvdb/tree/ValueAccessor.h>
+#include <openvdb/util/Assert.h>
 
 #include "PointDataGrid.h"
 #include "PointMask.h"

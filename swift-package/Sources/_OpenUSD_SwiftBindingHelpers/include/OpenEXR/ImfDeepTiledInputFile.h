@@ -14,20 +14,19 @@
 
 #include "ImfForward.h"
 
+#include "ImfContext.h"
+
 #include "ImfThreading.h"
-#include "ImfGenericInputFile.h"
 
 #include "ImfTileDescription.h"
 
-#include <cstdint>
 #include <ImathBox.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 
-class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
+class IMF_EXPORT_TYPE DeepTiledInputFile
 {
-  public:
-
+public:
     //--------------------------------------------------------------------
     // A constructor that opens the file with the specified name, and
     // reads the file header.  The constructor throws an IEX_NAMESPACE::ArgExc
@@ -39,9 +38,8 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //--------------------------------------------------------------------
 
     IMF_EXPORT
-    DeepTiledInputFile (const char fileName[],
-                    int numThreads = globalThreadCount ());
-
+    DeepTiledInputFile (
+        const char fileName[], int numThreads = globalThreadCount ());
 
     // ----------------------------------------------------------
     // A constructor that attaches the new TiledInputFile object
@@ -52,40 +50,36 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     // ----------------------------------------------------------
 
     IMF_EXPORT
-    DeepTiledInputFile (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &is, int numThreads = globalThreadCount ());
-
-
-    //-----------
-    // Destructor
-    //-----------
+    DeepTiledInputFile (
+        OPENEXR_IMF_INTERNAL_NAMESPACE::IStream& is,
+        int numThreads = globalThreadCount ());
 
     IMF_EXPORT
-    virtual ~DeepTiledInputFile ();
-
+    DeepTiledInputFile (
+        const char*               filename,
+        const ContextInitializer& ctxtinit,
+        int                       numThreads = globalThreadCount ());
 
     //------------------------
     // Access to the file name
     //------------------------
 
     IMF_EXPORT
-    const char *        fileName () const;
-
+    const char* fileName () const;
 
     //--------------------------
     // Access to the file header
     //--------------------------
 
     IMF_EXPORT
-    const Header &      header () const;
-
+    const Header& header () const;
 
     //----------------------------------
     // Access to the file format version
     //----------------------------------
 
     IMF_EXPORT
-    int                 version () const;
-
+    int version () const;
 
     //-----------------------------------------------------------
     // Set the current frame buffer -- copies the FrameBuffer
@@ -99,16 +93,14 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //-----------------------------------------------------------
 
     IMF_EXPORT
-    void                setFrameBuffer (const DeepFrameBuffer &frameBuffer);
-
+    void setFrameBuffer (const DeepFrameBuffer& frameBuffer);
 
     //-----------------------------------
     // Access to the current frame buffer
     //-----------------------------------
 
     IMF_EXPORT
-    const DeepFrameBuffer & frameBuffer () const;
-
+    const DeepFrameBuffer& frameBuffer () const;
 
     //------------------------------------------------------------
     // Check if the file is complete:
@@ -121,8 +113,7 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //------------------------------------------------------------
 
     IMF_EXPORT
-    bool                isComplete () const;
-
+    bool isComplete () const;
 
     //--------------------------------------------------
     // Utility functions:
@@ -135,14 +126,13 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //---------------------------------------------------------
 
     IMF_EXPORT
-    unsigned int        tileXSize () const;
+    unsigned int tileXSize () const;
     IMF_EXPORT
-    unsigned int        tileYSize () const;
+    unsigned int tileYSize () const;
     IMF_EXPORT
-    LevelMode           levelMode () const;
+    LevelMode levelMode () const;
     IMF_EXPORT
-    LevelRoundingMode   levelRoundingMode () const;
-
+    LevelRoundingMode levelRoundingMode () const;
 
     //--------------------------------------------------------------------
     // Number of levels:
@@ -190,15 +180,15 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //--------------------------------------------------------------------
 
     IMF_EXPORT
-    int                 numLevels () const;
+    int numLevels () const;
     IMF_EXPORT
-    int                 numXLevels () const;
+    int numXLevels () const;
     IMF_EXPORT
-    int                 numYLevels () const;
+    int numYLevels () const;
     IMF_EXPORT
-    bool                isValidLevel (int lx, int ly) const;
+    bool isValidLevel (int lx, int ly) const;
     IMF_EXPORT
-    size_t              totalTiles() const;
+    size_t totalTiles () const;
 
     //----------------------------------------------------------
     // Dimensions of a level:
@@ -219,10 +209,9 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //----------------------------------------------------------
 
     IMF_EXPORT
-    int                 levelWidth  (int lx) const;
+    int levelWidth (int lx) const;
     IMF_EXPORT
-    int                 levelHeight (int ly) const;
-
+    int levelHeight (int ly) const;
 
     //--------------------------------------------------------------
     // Number of tiles:
@@ -245,10 +234,9 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //--------------------------------------------------------------
 
     IMF_EXPORT
-    int                 numXTiles (int lx = 0) const;
+    int numXTiles (int lx = 0) const;
     IMF_EXPORT
-    int                 numYTiles (int ly = 0) const;
-
+    int numYTiles (int ly = 0) const;
 
     //---------------------------------------------------------------
     // Level pixel ranges:
@@ -270,10 +258,9 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //---------------------------------------------------------------
 
     IMF_EXPORT
-    IMATH_NAMESPACE::Box2i        dataWindowForLevel (int l = 0) const;
+    IMATH_NAMESPACE::Box2i dataWindowForLevel (int l = 0) const;
     IMF_EXPORT
-    IMATH_NAMESPACE::Box2i        dataWindowForLevel (int lx, int ly) const;
-
+    IMATH_NAMESPACE::Box2i dataWindowForLevel (int lx, int ly) const;
 
     //-------------------------------------------------------------------
     // Tile pixel ranges:
@@ -297,11 +284,11 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //-------------------------------------------------------------------
 
     IMF_EXPORT
-    IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy, int l = 0) const;
+    IMATH_NAMESPACE::Box2i dataWindowForTile (int dx, int dy, int l = 0) const;
 
     IMF_EXPORT
-    IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
-                                           int lx, int ly) const;
+    IMATH_NAMESPACE::Box2i
+    dataWindowForTile (int dx, int dy, int lx, int ly) const;
 
     //------------------------------------------------------------
     // Read pixel data:
@@ -333,18 +320,15 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //------------------------------------------------------------
 
     IMF_EXPORT
-    void                readTile  (int dx, int dy, int l = 0);
+    void readTile (int dx, int dy, int l = 0);
     IMF_EXPORT
-    void                readTile  (int dx, int dy, int lx, int ly);
+    void readTile (int dx, int dy, int lx, int ly);
 
     IMF_EXPORT
-    void                readTiles (int dx1, int dx2, int dy1, int dy2,
-                                   int lx, int ly);
+    void readTiles (int dx1, int dx2, int dy1, int dy2, int lx, int ly);
 
     IMF_EXPORT
-    void                readTiles (int dx1, int dx2, int dy1, int dy2,
-                                   int l = 0);
-
+    void readTiles (int dx1, int dx2, int dy1, int dy2, int l = 0);
 
     //--------------------------------------------------
     // Read a tile of raw pixel data from the file,
@@ -353,10 +337,9 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //--------------------------------------------------
 
     IMF_EXPORT
-    void                rawTileData (int &dx, int &dy,
-                                     int &lx, int &ly,
-                                     char *pixelData,
-                                     uint64_t &dataSize) const;
+    void rawTileData (
+        int& dx, int& dy, int& lx, int& ly, char* pixelData, uint64_t& dataSize)
+        const;
 
     //------------------------------------------------------------------
     // Read pixel sample counts into a slice in the frame buffer.
@@ -383,55 +366,33 @@ class IMF_EXPORT_TYPE DeepTiledInputFile : public GenericInputFile
     //------------------------------------------------------------------
 
     IMF_EXPORT
-    void                readPixelSampleCount  (int dx, int dy, int l = 0);
+    void readPixelSampleCount (int dx, int dy, int l = 0);
     IMF_EXPORT
-    void                readPixelSampleCount  (int dx, int dy, int lx, int ly);
-
-    IMF_EXPORT
-    void                readPixelSampleCounts (int dx1, int dx2,
-                                              int dy1, int dy2,
-                                              int lx, int ly);
+    void readPixelSampleCount (int dx, int dy, int lx, int ly);
 
     IMF_EXPORT
-    void                readPixelSampleCounts (int dx1, int dx2,
-                                              int dy1, int dy2,
-                                              int l = 0);
+    void
+    readPixelSampleCounts (int dx1, int dx2, int dy1, int dy2, int lx, int ly);
 
-    struct Data;
+    IMF_EXPORT
+    void readPixelSampleCounts (int dx1, int dx2, int dy1, int dy2, int l = 0);
 
-    
-    
-  private:
+private:
+    Context _ctxt;
+    struct IMF_HIDDEN Data;
+    std::shared_ptr<Data> _data;
+
+    IMF_HIDDEN
+    DeepTiledInputFile (InputPartData* part);
+
+    bool isValidTile (int dx, int dy, int lx, int ly) const;
+
+    size_t bytesPerLineForTile (int dx, int dy, int lx, int ly) const;
+
+    void getTileOrder (int dx[], int dy[], int lx[], int ly[]) const;
 
     friend class InputFile;
     friend class MultiPartInputFile;
-
-    DeepTiledInputFile (InputPartData* part);
-
-    DeepTiledInputFile (const DeepTiledInputFile &) = delete;
-    DeepTiledInputFile & operator = (const DeepTiledInputFile &) = delete;
-    DeepTiledInputFile (DeepTiledInputFile &&) = delete;
-    DeepTiledInputFile & operator = (DeepTiledInputFile &&) = delete;
-
-    DeepTiledInputFile (const Header &header, OPENEXR_IMF_INTERNAL_NAMESPACE::IStream *is, int version,
-                    int numThreads);
-
-    void                initialize ();
-    void                multiPartInitialize(InputPartData* part);
-    void                compatibilityInitialize(OPENEXR_IMF_INTERNAL_NAMESPACE::IStream& is);
-
-    bool                isValidTile (int dx, int dy,
-                                     int lx, int ly) const;
-
-    size_t              bytesPerLineForTile (int dx, int dy,
-                                             int lx, int ly) const;
-           
-                                                
-    void                getTileOrder(int dx[],int dy[],int lx[],int ly[]) const;
-                                             
-    
-    Data *              _data;
-
 
     // needed for copyPixels
     friend class DeepTiledOutputFile;

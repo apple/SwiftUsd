@@ -213,6 +213,8 @@ public:
                               HdExtComputationContext *context) override;
 
     TfTokenVector GetTaskRenderTags(SdfPath const &taskId) override;
+
+    int32_t GetPrimId(SdfPath const &id) override;
     
     void Sync(HdSyncRequestVector* request) override;
     void PostSyncCleanup() override;
@@ -282,6 +284,7 @@ private:
         _ComputeExtCmpPrimvarDescriptors(
             const HdContainerDataSourceHandle &primDataSource);
 
+    bool _didAddOrRemovePrimsSinceLastSync;
     bool _sceneDelegatesBuilt;
     std::vector<HdSceneDelegate*> _sceneDelegates;
 

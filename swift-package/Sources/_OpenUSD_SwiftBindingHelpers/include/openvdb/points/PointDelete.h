@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Nick Avramoussis, Francisco Gochez, Dan Bailey
 ///
@@ -17,6 +17,7 @@
 
 #include <openvdb/tools/Prune.h>
 #include <openvdb/tree/LeafManager.h>
+#include <openvdb/util/Assert.h>
 
 #include <memory>
 #include <string>

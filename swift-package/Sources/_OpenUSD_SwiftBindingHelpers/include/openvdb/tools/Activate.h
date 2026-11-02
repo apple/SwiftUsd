@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file   Activate.h
 ///
@@ -87,6 +87,10 @@ public:
         // only iterate if there are inactive tiles
         if (!node.isValueMaskOn()) {
             for (auto it = node.beginValueOff(); it; ++it) {
+                // Skip child nodes, they'll be processed separately
+                // (InteralNode ValueOff iterators don't automatically
+                // skip these).
+                if (node.isChildMaskOn(it.pos())) continue;
                 if (check(*it))     it.setValueOn(/*on=*/true);
             }
         }

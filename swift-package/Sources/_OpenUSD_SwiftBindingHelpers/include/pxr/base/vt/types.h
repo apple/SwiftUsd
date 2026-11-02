@@ -16,6 +16,7 @@
 #include "pxr/base/arch/inttypes.h"
 #include "pxr/base/gf/declare.h"
 #include "pxr/base/gf/half.h"
+#include "pxr/base/gf/duration.h"
 #include "pxr/base/gf/timeCode.h"
 #include "pxr/base/tf/meta.h"
 #include "pxr/base/tf/preprocessorUtilsLite.h"
@@ -31,8 +32,9 @@ PXR_NAMESPACE_OPEN_SCOPE
 // cheap to copy (just refcount operations).
 VT_TYPE_IS_CHEAP_TO_COPY(TfToken);
 
-// GfTimeCode supports value transformations.
+// GfTimeCode and GfDuration support value transformations.
 VT_VALUE_TYPE_CAN_TRANSFORM(GfTimeCode);
+VT_VALUE_TYPE_CAN_TRANSFORM(GfDuration);
 
 // Value types.
 
@@ -42,7 +44,8 @@ VT_VALUE_TYPE_CAN_TRANSFORM(GfTimeCode);
 ((      GfHalf,                Half   ))
 
 #define VT_TIMECODE_VALUE_TYPES \
-((      GfTimeCode,            TimeCode ))
+((      GfTimeCode,            TimeCode )) \
+((      GfDuration,            Duration ))
 
 #define VT_INTEGRAL_BUILTIN_VALUE_TYPES     \
 ((      bool,                  Bool   ))    \
@@ -229,33 +232,24 @@ namespace Vt_KnownValueTypeDetail
 {
 
 // Implement compile-time value type indexes.
-// Base case -- unknown types get index -1.
-template <typename T>
+template <typename T, typename... Ts, size_t... Is>
 constexpr int
-GetIndexImpl(TfMetaList<>) {
-    return -1;
-}
-
-template <typename T, typename Typelist>
-constexpr int
-GetIndexImpl(Typelist) {
-    if (std::is_same_v<T, TfMetaApply<TfMetaHead, Typelist>>) {
-        return 0;
-    }
-    else if (const int indexOfTail =
-             GetIndexImpl<T>(TfMetaApply<TfMetaTail, Typelist>{});
-             indexOfTail >= 0) {
-        return 1 + indexOfTail;
-    }
-    else {
-        return -1;
-    }
+GetIndexImpl(TfMetaList<Ts...>, std::index_sequence<Is...>)
+{
+    int index = -1;
+    TF_UNUSED(((std::is_same_v<T, Ts> ? (index = Is, false) : true) && ...));
+    return index;
 }
 
 template <typename T>
 constexpr int
 GetIndex() {
-    return GetIndexImpl<T>(Vt_ValueTypeList{});
+    return GetIndexImpl<T>(
+        Vt_ValueTypeList{}, 
+        std::make_index_sequence<
+            TfMetaApply<TfMetaLength, Vt_ValueTypeList>::value
+        >()
+    );
 }
 
 } // Vt_KnownValueTypeDetail
@@ -319,8 +313,8 @@ Vt_IsTypeAllowedToRegisterTransforms()
 {
     return !VtIsKnownValueType<T>()
         || std::is_same_v<T, GfTimeCode>
-        // || std::is_same_v<T, GfDuration>
-        ; 
+        || std::is_same_v<T, GfDuration>
+        ;
 }
 
 // None of the VT_VALUE_TYPES are value proxies.  We want to specialize these

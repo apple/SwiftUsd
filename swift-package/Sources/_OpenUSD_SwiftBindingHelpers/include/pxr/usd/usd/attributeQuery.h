@@ -287,9 +287,34 @@ public:
     /// Return true if it is possible, but not certain, that this attribute's
     /// value changes over time, false otherwise. 
     ///
+    /// Note that this function determines whether this attribute's value may
+    /// change in response to changes in numeric time values, but it may return
+    /// false when resolving at a numeric time and resolving at the default time
+    /// might result in different values. In that regard, this function differs
+    /// from ValueSourceMightBeTimeVarying().
+    ///
     /// \sa UsdAttribute::ValueMightBeTimeVarying
     USD_API
     bool ValueMightBeTimeVarying() const;
+
+    /// Return true if the resolve info value source might be time-varying;
+    /// false otherwise.
+    ///
+    /// A return of true means that the value may or may not actually be
+    /// time-varying. A return of false means the value is definitely not
+    /// time-varying. This is meant to enable optimizations for scene-data
+    /// consumers like renderers, when they can handle non-varying values more
+    /// efficiently.
+    ///
+    /// Note that this is different from the more granular answer provided by
+    /// ValueMightBeTimeVarying(), since this function has additional context
+    /// from the attribute itself. In particular, this function will return true
+    /// if resolving at a numeric time and resolving at the default time may
+    /// result in different values.
+    /// 
+    /// \sa UsdResolveInfo::ValueMightBeTimeVarying
+    USD_API
+    bool ValueSourceMightBeTimeVarying() const;
 
     /// @}
 

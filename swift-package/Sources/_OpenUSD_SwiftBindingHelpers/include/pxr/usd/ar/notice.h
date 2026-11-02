@@ -18,14 +18,6 @@
 
 PXR_NAMESPACE_OPEN_SCOPE
 
-template <class ContextObj>
-bool Ar_ContextIsHolding(
-    const ContextObj& contextObj, const ArResolverContext& ctx)
-{
-    const ContextObj* testObj = ctx.Get<ContextObj>();
-    return testObj && *testObj == contextObj;
-}
-
 /// \class ArNotice
 ///
 class ArNotice
@@ -65,20 +57,28 @@ public:
             const std::function<bool(const ArResolverContext&)>& affectsFn);
 
         /// Create a notice indicating that the results of asset resolution when
+        /// any ArResolverContext containing \p ctx is bound might have changed.
+        ResolverChanged(const ArResolverContext& ctx)
+            : _affects(
+                [ctx](const ArResolverContext& otherCtx) {
+                    return otherCtx.Contains(ctx);
+                })
+        {
+        }
+
+        /// Create a notice indicating that the results of asset resolution when
         /// any ArResolverContext containing \p contextObj is bound might have
         /// changed.
         template <
             class ContextObj,
-            typename std::enable_if<ArIsContextObject<ContextObj>::value>::type*
-                = nullptr>
+            std::enable_if_t<ArIsContextObject<ContextObj>::value>* = nullptr
+        >
         ResolverChanged(
             const ContextObj& contextObj)
-            // XXX: Ideally this would just use a lambda and forward it to
-            // the other c'tor. Both of those cause issues in MSVC 2015; the
-            // first causes an unspecified type error and the second causes
-            // odd linker errors.
-            : _affects(std::bind(&Ar_ContextIsHolding<ContextObj>, contextObj, 
-                    std::placeholders::_1))
+            : _affects(
+                [contextObj](const ArResolverContext& ctx) {
+                    return ctx.Contains(contextObj);
+                })
         {
         }
  

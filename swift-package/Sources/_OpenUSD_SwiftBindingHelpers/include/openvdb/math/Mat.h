@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file Mat.h
 /// @author Joshua Schpok
@@ -213,8 +213,8 @@ MatType
 rotation(Axis axis, typename MatType::value_type angle)
 {
     using T = typename MatType::value_type;
-    T c = static_cast<T>(cos(angle));
-    T s = static_cast<T>(sin(angle));
+    T c = static_cast<T>(std::cos(angle));
+    T s = static_cast<T>(std::sin(angle));
 
     MatType result;
     result.setIdentity();
@@ -256,9 +256,9 @@ rotation(const Vec3<typename MatType::value_type> &_axis, typename MatType::valu
     Vec3<T> axis(_axis.unit());
 
     // compute trig properties of angle:
-    T c(cos(double(angle)));
-    T s(sin(double(angle)));
-    T t(1 - c);
+    const T c = static_cast<T>(std::cos(double(angle)));
+    const T s = static_cast<T>(std::sin(double(angle)));
+    const T t = T(1) - c;
 
     MatType result;
     // handle diagonal elements

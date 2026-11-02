@@ -43,12 +43,12 @@
 //
 // Version information
 //
-#define IMATH_VERSION_STRING "3.1.9"
-#define IMATH_PACKAGE_STRING "Imath 3.1.9"
+#define IMATH_VERSION_STRING "3.1.12"
+#define IMATH_PACKAGE_STRING "Imath 3.1.12"
 
 #define IMATH_VERSION_MAJOR 3
 #define IMATH_VERSION_MINOR 1
-#define IMATH_VERSION_PATCH 9
+#define IMATH_VERSION_PATCH 12
 #define IMATH_VERSION_RELEASE_TYPE ""
 
 #define IMATH_VERSION_HEX ((uint32_t(IMATH_VERSION_MAJOR) << 24) | \
@@ -56,7 +56,7 @@
                              (uint32_t(IMATH_VERSION_PATCH) <<  8))
 
 // IMATH_LIB_VERSION is the library API version: SOCURRENT.SOAGE.SOREVISION
-#define IMATH_LIB_VERSION_STRING "29.8.0"
+#define IMATH_LIB_VERSION_STRING "29.11.0"
 
 //
 // Code that depends on the v2 ExcMath mechanism of signal handlers

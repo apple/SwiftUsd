@@ -30,7 +30,7 @@
 		</data>
 		<key>Resources_iOS/usd/execIr/Resources/execIr/schema.usda</key>
 		<data>
-		Dedlx5ypqqmX9EEkQeZwHZupgrA=
+		kApY+Xl6/RHEmpCfnL+j4Vr964s=
 		</data>
 		<key>Resources_iOS/usd/execIr/Resources/generatedSchema.usda</key>
 		<data>
@@ -47,14 +47,6 @@
 		<key>Resources_iOS/usd/glf/Resources/plugInfo.json</key>
 		<data>
 		3j+E5AR5KK6Ngs/YkihognaoZkg=
-		</data>
-		<key>Resources_iOS/usd/glf/Resources/shaders/pcfShader.glslfx</key>
-		<data>
-		mQqOHhBBJdOypHRe9ns9mtAnsTQ=
-		</data>
-		<key>Resources_iOS/usd/glf/Resources/shaders/simpleLighting.glslfx</key>
-		<data>
-		/vuolFxWHZk7sUslvlFoQe9I+Dg=
 		</data>
 		<key>Resources_iOS/usd/hd/Resources/codegenTemplates/schemaClass.cpp</key>
 		<data>
@@ -74,15 +66,27 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/plugInfo.json</key>
 		<data>
-		N16LmGKmvRS325gCccOupWuFVIo=
+		5z+Bbn4bU7WDUdcCgNNrahwxLXE=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
 		<data>
-		Qv+HrsqhOvJhIwrshi7dDtNmSFE=
+		UMzJXsrDNx6UVVM40IK6WRPmxTo=
+		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/capsule.glslfx</key>
+		<data>
+		IY0zHowh5Oi+GiEK7uvaijsNXrY=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/compute.glslfx</key>
 		<data>
 		JnJleyijtUvB3N5+5SNppcKnCx4=
+		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/conicalFrustum.glslfx</key>
+		<data>
+		zcrj7YqBq1Ypzvro2QgZNmd8hVU=
+		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/coordUtils.glslfx</key>
+		<data>
+		bkNAB45HhodwK2ebvR6TDmxsVRc=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/domeLight.glslfx</key>
 		<data>
@@ -116,9 +120,21 @@
 		<data>
 		h0fr/BosplyxEXC+Dc5CgzVqOsQ=
 		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurface.glslfx</key>
+		<data>
+		hq6eSK+a8dZZ0A2y+A5AODWClvE=
+		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurfaceFaceCull.glslfx</key>
+		<data>
+		D7Sfa82aDkvEfSXVezyGrrPAQ0k=
+		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurfaceNormal.glslfx</key>
+		<data>
+		9R2D12i4LqWP5vBag0zjbQzb5xU=
+		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/instancing.glslfx</key>
 		<data>
-		rBSXwLfsBwe6KmhmLCJl9ONc5vA=
+		qsSMo5bw5apyc+7GJ5VeqRTVAc4=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/invalidMaterialNetwork.glslfx</key>
 		<data>
@@ -144,6 +160,10 @@
 		<data>
 		yoL23vyILr53t5snYyF0xfNt6G0=
 		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/pcfShader.glslfx</key>
+		<data>
+		mQqOHhBBJdOypHRe9ns9mtAnsTQ=
+		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/pointDisk.glslfx</key>
 		<data>
 		gEY9+bCGPszzI6VS57n5mgDE2Kc=
@@ -162,15 +182,19 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/renderPass.glslfx</key>
 		<data>
-		awNhalSVdGe7e9O+EqdujGrVle0=
+		RrSboyW0AtRdbbknXERd0/Dc0hE=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/renderPassShader.glslfx</key>
 		<data>
 		LnkLnSf55YLrdNS5DIgJqS7R7M0=
 		</data>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/simpleLighting.glslfx</key>
+		<data>
+		AakOsSqy964Guq+Vniylae9qdg4=
+		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/simpleLightingShader.glslfx</key>
 		<data>
-		MrukINElmkfphNhIMrUykMKCbrg=
+		jNqwp8DA6URCFdn9kq/affXUnbk=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/skinning.glslfx</key>
 		<data>
@@ -178,15 +202,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/sphere.glslfx</key>
 		<data>
-		qD9jTtTnOFnGasMkxN44g0DUcAg=
-		</data>
-		<key>Resources_iOS/usd/hdSt/Resources/shaders/sphereFaceCull.glslfx</key>
-		<data>
-		I3XsnP2rOP9Xu9rT59WZbW/RF04=
-		</data>
-		<key>Resources_iOS/usd/hdSt/Resources/shaders/sphereNormal.glslfx</key>
-		<data>
-		/ma3GHNGpMO0XuKF+ox6yC1G8VE=
+		vBSpRr0R9wtskboEkq6sLv08NWs=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/surfaceHelpers.glslfx</key>
 		<data>
@@ -202,7 +218,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/volume.glslfx</key>
 		<data>
-		eXg1zEmFoswlHHcWRKr2x43y3+Y=
+		NmFfGphh54o8C6nhm/XWAeT0iqs=
 		</data>
 		<key>Resources_iOS/usd/hdSt/Resources/textures/fallbackBlackDomeLight.png</key>
 		<data>
@@ -210,7 +226,11 @@
 		</data>
 		<key>Resources_iOS/usd/hdsi/Resources/plugInfo.json</key>
 		<data>
-		0YfSmV3S9h1wztODIm3Lyt6XX2U=
+		grWJjF7FVyGxETptr8QBSpe79bE=
+		</data>
+		<key>Resources_iOS/usd/hdsi/Resources/shaders/unlitShader.glslfx</key>
+		<data>
+		dVj47iryw+aa2AWBbKJssmL0ELg=
 		</data>
 		<key>Resources_iOS/usd/hdx/Resources/plugInfo.json</key>
 		<data>
@@ -242,7 +262,7 @@
 		</data>
 		<key>Resources_iOS/usd/hdx/Resources/shaders/renderPass.glslfx</key>
 		<data>
-		iB+6OgDk8TzySl+D3p16B/lif2g=
+		O5Jgzmru9C4p6URqj44yXkTpgEY=
 		</data>
 		<key>Resources_iOS/usd/hdx/Resources/shaders/renderPassColorAndSelectionShader.glslfx</key>
 		<data>
@@ -358,7 +378,7 @@
 		</data>
 		<key>Resources_iOS/usd/usd/Resources/codegenTemplates/schemaClass.cpp</key>
 		<data>
-		58cgJcMjZxoRr4vi8klYIAT+H3w=
+		xn7Kr6BJnROPnyu5rsPpniqAAsU=
 		</data>
 		<key>Resources_iOS/usd/usd/Resources/codegenTemplates/schemaClass.h</key>
 		<data>
@@ -398,11 +418,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdExecImaging/Resources/plugInfo.json</key>
 		<data>
-		OAczlUmVu8uAMTAJbhTJq27FgLU=
+		zkWES9sfVv5kbWFdnP8CsdOu/a8=
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<data>
-		AIW5AIxAalXgl1+c4Pc45r/yIQ8=
+		J970s+2r5Ln4/v3j8yDuFKjYLps=
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/plugInfo.json</key>
 		<data>
@@ -410,7 +430,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdGeom/Resources/usdGeom/schema.usda</key>
 		<data>
-		cNXlWQP1C7OAGrdAZpmaYRup9cg=
+		LinRLlmiKb31IUjHxBiV5leS8bw=
 		</data>
 		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
 		<data>
@@ -418,11 +438,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdHydra/Resources/generatedSchema.usda</key>
 		<data>
-		SIrrLfAa+rMs8CnzxmElx0E49Uw=
+		UztN8VgSgmSRVuZtbmVK+3D3jBo=
 		</data>
 		<key>Resources_iOS/usd/usdHydra/Resources/plugInfo.json</key>
 		<data>
-		7iVE5APPOsMsUxrsRE7tWh+9qos=
+		G4h9muXdKmZLOqfmf+TdU78vH2c=
 		</data>
 		<key>Resources_iOS/usd/usdHydra/Resources/shaders/empty.glslfx</key>
 		<data>
@@ -434,11 +454,11 @@
 		</data>
 		<key>Resources_iOS/usd/usdHydra/Resources/usdHydra/schema.usda</key>
 		<data>
-		Ei5IzuX2grCS+SOaUQUYkV5M9Y8=
+		IgnEGcpY0dfDj6pTBvcVl3yMGfY=
 		</data>
 		<key>Resources_iOS/usd/usdImaging/Resources/plugInfo.json</key>
 		<data>
-		MReE+Tek1hNGlLGNPOJcOSZeoRg=
+		8EJdy7AZIueYt4ex0A4JgUM2sGo=
 		</data>
 		<key>Resources_iOS/usd/usdImagingGL/Resources/plugInfo.json</key>
 		<data>
@@ -470,7 +490,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdLux/Resources/usdLux/schema.usda</key>
 		<data>
-		5Hsw5dBI7XWkT1b2JHHE5kOE3Lk=
+		CMMOP4us/Ek8iJRwpNV1ReKBuQI=
 		</data>
 		<key>Resources_iOS/usd/usdLuxValidators/Resources/plugInfo.json</key>
 		<data>
@@ -478,15 +498,19 @@
 		</data>
 		<key>Resources_iOS/usd/usdMedia/Resources/generatedSchema.usda</key>
 		<data>
-		Y5X/adUWabF9sU1B8qyur3uCSnM=
+		qngQ/aKoerNcQ+z0YaNB0O7rXmw=
 		</data>
 		<key>Resources_iOS/usd/usdMedia/Resources/plugInfo.json</key>
 		<data>
-		4rsk6em9+hznegArIyFR240BQRM=
+		YgtKEmTy4XjlaQyOMN6bcJl5Mrw=
 		</data>
 		<key>Resources_iOS/usd/usdMedia/Resources/usdMedia/schema.usda</key>
 		<data>
-		Qomgc7lEsAjwlUALrMkTQwf7UlA=
+		JIorD00lRaLJ+8cMpxFszEWVyyk=
+		</data>
+		<key>Resources_iOS/usd/usdMediaValidators/Resources/plugInfo.json</key>
+		<data>
+		VwHlZcQerVc3WGVnXhSV8CDa9B8=
 		</data>
 		<key>Resources_iOS/usd/usdMtlx/Resources/generatedSchema.usda</key>
 		<data>
@@ -1698,7 +1722,7 @@
 		</data>
 		<key>Resources_iOS/usd/usdPhysics/Resources/usdPhysics/schema.usda</key>
 		<data>
-		3a+anGlwxQHsi6Pl4MvWfLtjSPE=
+		gRwCs2NLF1uyyslObQQMZcKx0z8=
 		</data>
 		<key>Resources_iOS/usd/usdPhysicsValidators/Resources/plugInfo.json</key>
 		<data>
@@ -1886,7 +1910,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hvDNYxJbe/laWIYUs2h5RDEgkJ/ee9A4ImmycixHIXk=
+			X/AXxg6jXWtGXZuSSfvA+xlUCAEClm4Fl4NDxSW87Vo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/execIr/Resources/generatedSchema.usda</key>
@@ -1915,20 +1939,6 @@
 			<key>hash2</key>
 			<data>
 			tlLJJnsoFOVFUzt7G06CuQYY3kl/TTZSplYFfUJNdCA=
-			</data>
-		</dict>
-		<key>Resources_iOS/usd/glf/Resources/shaders/pcfShader.glslfx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ddOg7EsPOgOeNqEQkjzK8izRwQjdHKc2rZLabeLY5K4=
-			</data>
-		</dict>
-		<key>Resources_iOS/usd/glf/Resources/shaders/simpleLighting.glslfx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KXGUgYpMq6l2zwAvtWI3O7ld7QYQHpCfRo31linQbwo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hd/Resources/codegenTemplates/schemaClass.cpp</key>
@@ -1963,14 +1973,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gJ/DWQWD20f1R4YGnPP9I4NnwiY8In76oz9HJQId9us=
+			u/l3PBebm1UmX4QzqX9F5yFFUGcgFY+ptx7Lgz30Uyg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/basisCurves.glslfx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2cEsxxTYlFIAnDcGSWkO2WOZQkJtEBHzSHE7+mBw24o=
+			FiflmR9FA6ynLR1w5d008nAJahnpela146FnyJopIyk=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/capsule.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ufG1q59fnyuitfw52h5cR3/he9aEN+33h8OZ5bfZtMM=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/compute.glslfx</key>
@@ -1978,6 +1995,20 @@
 			<key>hash2</key>
 			<data>
 			DSi5gvwqvROZMjyIn+kaJDopksCRaqCogw8Trnmbeag=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/conicalFrustum.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1XNF2cX6PEshLkN84w0inxRvtJD/nw+FHe251U2zXt4=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/coordUtils.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4iyvuws+fut9I+pz36X38v0jrZoPV13GKNLthKV7myM=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/domeLight.glslfx</key>
@@ -2036,11 +2067,32 @@
 			5DQWs7oNpinFkvVblrT4GIj5s0nTTZtbB632mS7vkZg=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurface.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CZ6bQivfwkM5kxqT6FF3ZRAShu3kRFcM1IqJoy97wvY=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurfaceFaceCull.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6t7cq2Oth8IHJ+TuwDxdpS/Pyoa5urw8TolH3LEqxNc=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/implicitSurfaceNormal.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eG3njWZEYhLvRi4wiSnlb3sqXYAt19AOHvJqZeEMcU0=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/instancing.glslfx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mMVjK5KP5w9Ph4zI9N/MFvdBLtu7IQY2rJU82dX/xD4=
+			1YwPlObOqkHXLjEAFuyPG+NtjGxl13IOt5J9AbQyOlo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/invalidMaterialNetwork.glslfx</key>
@@ -2085,6 +2137,13 @@
 			pReOBu2kKUsrQd+08Nv9Fi2LNbIUq5nMij2TFZOuOcc=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/pcfShader.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ddOg7EsPOgOeNqEQkjzK8izRwQjdHKc2rZLabeLY5K4=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/pointDisk.glslfx</key>
 		<dict>
 			<key>hash2</key>
@@ -2117,7 +2176,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i3vvswsqDcBCdAr9xixnSER1s2CtcmyJ2wEwaHH1lqE=
+			MwMnRrx0/2krsCy09RhCaBaGo7VdwIBIkTYPzDaPLpg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/renderPassShader.glslfx</key>
@@ -2127,11 +2186,18 @@
 			laVjdmTcM1m3bnlt0Z1/Xp/HKNzuPA3MFDujeDKd5/I=
 			</data>
 		</dict>
+		<key>Resources_iOS/usd/hdSt/Resources/shaders/simpleLighting.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			th3toemO2uUm8iTm223wsN3oG1SLZCwSmHSUSc4bAXE=
+			</data>
+		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/simpleLightingShader.glslfx</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mxw+jIibOonVJvh3XXiUdFuT6saawYpvPZwAHz+gP3E=
+			q7vMLxDSpxKMnmzrA9I1yrT9MpEOsrif5nAEs+gULlI=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/skinning.glslfx</key>
@@ -2145,21 +2211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sMzj7oiSrG1wsxD3vbLb5H92wJ75khhs+pu4uHLGQ2c=
-			</data>
-		</dict>
-		<key>Resources_iOS/usd/hdSt/Resources/shaders/sphereFaceCull.glslfx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			0QVaIVZqp436dcQXVM3jigLoM/W4XogprC8yrmi4fr0=
-			</data>
-		</dict>
-		<key>Resources_iOS/usd/hdSt/Resources/shaders/sphereNormal.glslfx</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			UptvSjeMspcobd3gwb2PH4ML/UdaO6t5orH6kX1OJQg=
+			zMOtmWYALvbXE6ET4FsG04cdmF+WK+UkeQLd0otHP6U=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/shaders/surfaceHelpers.glslfx</key>
@@ -2187,7 +2239,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b4ksmnf6tJ5hg4qqZ4MpazpSqWXUlh4JWFEJjJdikG8=
+			lQNHDGhBo5uU5Vb8dBR+3P0QbHg+rNKXreAKjB1CN5k=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdSt/Resources/textures/fallbackBlackDomeLight.png</key>
@@ -2201,7 +2253,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iLcQIY9b6e0Wn4YPVNi3/9OjeJrnjSV3Ko1b1beUx8E=
+			rd4XfoBxfbor8Y+EgvEbCkih4lO+5+JgVujHmLDIFxI=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/hdsi/Resources/shaders/unlitShader.glslfx</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/vPRISsiXq5gcS8zVysmXn7md1p02sQKllpHmahiXN4=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdx/Resources/plugInfo.json</key>
@@ -2257,7 +2316,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7wespMRnC10jLbIR0GzGnpJSsOtlk4UobtUFHCJAb3Q=
+			2KSf+UKG6oclgEHWUJPwZCHDlJiIYEewLXSIoAFYqpg=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/hdx/Resources/shaders/renderPassColorAndSelectionShader.glslfx</key>
@@ -2460,7 +2519,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LCL8zFJnXUK2oZiR/oGtBEyDexBxhYv0R3yJ4T2JpZQ=
+			V8k5McNRlfyIvYSYLVJA+H1j7xNPAjaRaUN62mR1IQo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usd/Resources/codegenTemplates/schemaClass.h</key>
@@ -2530,14 +2589,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			puTIDpXnZL3cpsriCTuPz40bJzFBBEcI7Tl4txR4Gg4=
+			D8juPOSxpz4EUXoYJqWeGgr9eetyZzff36+NAWryZi4=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeom/Resources/generatedSchema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9XMtrXxxKLrjCDg4IP6hCeCK/7ar0qZfp9S96PoJypQ=
+			ZFCGi+pNX+qqsCG8TbQPh4W+RyxKLuelM7TOT7j3KPA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeom/Resources/plugInfo.json</key>
@@ -2551,7 +2610,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zx9GFbcZbVmnj0m0kKFb/gxJx42W97xWIAdTQSY8olE=
+			fdMnzfHyMXdwpABzCo8kSEwyoX2tjDeRAmE/SNr7XPk=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdGeomValidators/Resources/plugInfo.json</key>
@@ -2565,14 +2624,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t/B0Y/OVWStUfMB7uel6gWy8KqsMSGOPfsKpo35g074=
+			NV1yO4dw4dIpvCxMdY+d6Jb3gxXchTfVu659iQVJE2g=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdHydra/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JuqsxCteNIEWtmdaCfqaVn1KDiAhUGlnEussJIcNOJQ=
+			osX/HVzJKuDKOXxqXef0YURJzQiqeNOt7DN8PeqhfzI=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdHydra/Resources/shaders/empty.glslfx</key>
@@ -2593,14 +2652,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ShNy/+hHcqjYqHQYTdDhUf0qx1eqFE+yvF7bBIqSxHI=
+			5C/jThpvtKAQhpd3Yz7LES5lHp2mw/eZkfey5IeY4rE=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdImaging/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zVF/UNOnm0xFLxA9RxX+c9DuIsxXCww0V0ZA8HFnVjs=
+			89MU1AZxKD9ybwV2s1hy12xpByiU8Awmzh3aY+T0S30=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdImagingGL/Resources/plugInfo.json</key>
@@ -2656,7 +2715,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Hi1RvEaxFujvfzoPxa4jo1V/KpvzN2HlXqzAXd1+IQ=
+			GIhvCS73lpSljGHVK4e39rcrk8B9KJ3l0bR28MOPQzQ=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdLuxValidators/Resources/plugInfo.json</key>
@@ -2670,21 +2729,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eiiJ6Z8ZxxeEbRZfqGp6l3JrFd4H3OatTqptM9dkI7s=
+			2JnTI7eBMB0pxQUkPhqiOXX8zdUyFYZ6VkcFl+Xdhp4=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMedia/Resources/plugInfo.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g64hMeQ+4OanTNHtJ2b6/65YzlCMSKjvVPn9HxmPcGU=
+			gJjKb9rtnsATebyfqMCfQYSDadg76JUU6n5N9HxIPOo=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMedia/Resources/usdMedia/schema.usda</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R98CrNLL8u6J5cSrnYceCeUeTbjpXCGIj7OtB/UIJH4=
+			Do6M2xGtP+iskCLIgB2Ka3H5raGA7bwFA2f8eyFhDbM=
+			</data>
+		</dict>
+		<key>Resources_iOS/usd/usdMediaValidators/Resources/plugInfo.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fH0GZQGoP99jPZ/afV2vH4S5McSu4gwxtqcLIE2dIjA=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdMtlx/Resources/generatedSchema.usda</key>
@@ -4805,7 +4871,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DLXZGCj+ao8ELR4niZxxOVcWLVVFNw4vuPmc8aTfYMk=
+			huGJu07rhTOU+u42Es7M+uGeblMnvg+JIV8/2xpg35A=
 			</data>
 		</dict>
 		<key>Resources_iOS/usd/usdPhysicsValidators/Resources/plugInfo.json</key>

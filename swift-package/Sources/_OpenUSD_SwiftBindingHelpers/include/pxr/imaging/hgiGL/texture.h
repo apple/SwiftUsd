@@ -9,6 +9,7 @@
 
 #include "pxr/pxr.h"
 #include "pxr/imaging/hgiGL/api.h"
+#include "pxr/imaging/hgiGL/hgi.h"
 #include "pxr/imaging/hgi/texture.h"
 
 #include "pxr/base/tf/declarePtrs.h"
@@ -18,6 +19,8 @@
 PXR_NAMESPACE_OPEN_SCOPE
 
 TF_DECLARE_WEAK_PTRS(HgiGLTexture);
+class FramebufferCacheItem;
+class HgiGLContextArena;
 
 /// \class HgiGLTexture
 ///
@@ -52,6 +55,11 @@ public:
     HGIGL_API
     HgiTextureUsage SubmitLayoutChange(HgiTextureUsage newLayout) override;
 
+    HGIGL_API
+    void AddFramebuffer(
+        std::weak_ptr<FramebufferCacheItem> cacheItem,
+        HgiGLContextArena* arena);
+
 protected:
     friend class HgiGL;
 
@@ -68,6 +76,9 @@ private:
 
     uint32_t _textureId;
     uint64_t _bindlessHandle;
+    std::vector<
+        std::pair<std::weak_ptr<FramebufferCacheItem>, HgiGLContextArena*>>
+            _framebuffers;
 };
 
 

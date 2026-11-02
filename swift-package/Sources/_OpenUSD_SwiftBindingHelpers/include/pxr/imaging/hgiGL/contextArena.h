@@ -17,6 +17,7 @@
 PXR_NAMESPACE_OPEN_SCOPE
 
 struct HgiGraphicsCmdsDesc;
+class FramebufferCacheItem;
 
 /// \class HgiGLContextArena
 ///
@@ -32,6 +33,8 @@ public:
     HGIGL_API
     ~HgiGLContextArena();
 
+    void InvalidateCacheItem(std::shared_ptr<FramebufferCacheItem>& item);
+
 private:
     friend class HgiGL;
     friend class HgiGLDevice;
@@ -43,8 +46,6 @@ private:
     uint32_t _AcquireFramebuffer(
         HgiGraphicsCmdsDesc const& desc,
         bool resolved = false);
-
-    void _GarbageCollect();
     
     HgiGLContextArena & operator=(const HgiGLContextArena&) = delete;
     HgiGLContextArena(const HgiGLContextArena&) = delete;

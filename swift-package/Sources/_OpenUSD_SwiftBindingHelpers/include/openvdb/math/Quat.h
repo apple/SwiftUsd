@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 #ifndef OPENVDB_MATH_QUAT_H_HAS_BEEN_INCLUDED
 #define OPENVDB_MATH_QUAT_H_HAS_BEEN_INCLUDED
@@ -9,6 +9,7 @@
 #include "Math.h"
 #include "Vec3.h"
 #include <openvdb/Exceptions.h>
+#include <openvdb/util/Assert.h>
 #include <cmath>
 #include <iostream>
 #include <sstream>
@@ -111,7 +112,7 @@ public:
     /// unit vector
     Quat(const Vec3<T> &axis, T angle)
     {
-        // assert( REL_EQ(axis.length(), 1.) );
+        OPENVDB_ASSERT(isApproxEqual(axis.length(), T(1)));
 
         T s = T(sin(angle*T(0.5)));
 

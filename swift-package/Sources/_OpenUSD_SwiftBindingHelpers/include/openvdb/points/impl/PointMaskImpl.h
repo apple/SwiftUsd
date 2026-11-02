@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file PointMaskImpl.h
 ///
@@ -94,7 +94,7 @@ struct PointsToScalarOp
         // assumes matching topology
         const auto* const pointLeaf =
             mPointDataAccessor.probeConstLeaf(leaf.origin());
-        assert(pointLeaf);
+        OPENVDB_ASSERT(pointLeaf);
 
         for (auto value = leaf.beginValueOn(); value; ++value) {
             const auto iter = pointLeaf->beginIndexVoxel(value.getCoord(), mFilter);
@@ -173,7 +173,7 @@ struct PointsToTransformedScalarOp
             // increment count in target voxel
 
             auto* newLeaf = accessor.touchLeaf(ijk);
-            assert(newLeaf);
+            OPENVDB_ASSERT(newLeaf);
             voxelSum(*newLeaf, newLeaf->coordToOffset(ijk), ValueT(1));
         }
     }

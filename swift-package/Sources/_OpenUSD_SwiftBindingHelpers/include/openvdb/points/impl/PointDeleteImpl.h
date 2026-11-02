@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Nick Avramoussis, Francisco Gochez, Dan Bailey
 ///
@@ -25,8 +25,8 @@ struct VectorWrapper
     VectorWrapper(const T& _data) : data(_data) { }
     operator bool() const { return index < data.size(); }
     VectorWrapper& operator++() { index++; return *this; }
-    Index sourceIndex() const { assert(*this); return data[index].first; }
-    Index targetIndex() const { assert(*this); return data[index].second; }
+    Index sourceIndex() const { OPENVDB_ASSERT(*this); return data[index].first; }
+    Index targetIndex() const { OPENVDB_ASSERT(*this); return data[index].second; }
 
 private:
     const T& data;

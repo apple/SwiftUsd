@@ -327,8 +327,14 @@ imath_half_to_float (imath_half_bits_t h)
         // other compilers may provide count-leading-zeros primitives,
         // but we need the community to inform us of the variants
         uint32_t lc;
-#    if defined(_MSC_VER) && (_M_IX86 || _M_X64)
-        lc = __lzcnt (hexpmant);
+#    if defined(_MSC_VER)
+        // The direct intrinsic for this is __lznct, but that is not supported
+        // on older x86_64 hardware or ARM. Instead uses the bsr instruction
+        // and one additional subtraction. This assumes hexpmant != 0, for 0
+        // bsr and lznct would behave differently.
+        unsigned long bsr;
+        _BitScanReverse (&bsr, hexpmant);
+        lc = (31 - bsr);
 #    elif defined(__GNUC__) || defined(__clang__)
         lc = (uint32_t) __builtin_clz (hexpmant);
 #    else
@@ -979,11 +985,13 @@ IMATH_EXPORT void printBits (std::ostream& os, float f);
 IMATH_EXPORT void printBits (char c[19], IMATH_INTERNAL_NAMESPACE::half h);
 IMATH_EXPORT void printBits (char c[35], float f);
 
-#    if !defined(__CUDACC__) && !defined(__CUDA_FP16_HPP__)
+#if !defined(__CUDACC__) && !defined(__CUDA_FP16_HPP__) && !defined(__HIP__)
 using half = IMATH_INTERNAL_NAMESPACE::half;
-#    else
-#        include <cuda_fp16.h>
-#    endif
+#elif defined(__CUDACC__) || defined(__CUDA_FP16_HPP__)
+#include <cuda_fp16.h>
+#elif defined(__HIP__)
+#include <hip/amd_detail/amd_hip_fp16.h>
+#endif
 
 #endif // __cplusplus
 

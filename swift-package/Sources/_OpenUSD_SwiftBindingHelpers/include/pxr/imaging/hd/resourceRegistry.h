@@ -72,6 +72,11 @@ public:
     HD_API
     virtual VtDictionary GetResourceAllocation() const;
 
+    /// May return a more detailed report than GetResourceAllocation, at the
+    /// expense of runtime.
+    HD_API
+    virtual VtDictionary GetDetailedResourceAllocation() const;
+
 protected:
     /// A hook for derived registries to perform additional resource commits.
     HD_API

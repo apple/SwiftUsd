@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Dan Bailey, Khang Ngo
 ///
@@ -11,6 +11,7 @@
 #define OPENVDB_POINTS_POINT_ATTRIBUTE_HAS_BEEN_INCLUDED
 
 #include <openvdb/openvdb.h>
+#include <openvdb/util/Assert.h>
 
 #include "AttributeArrayString.h"
 #include "AttributeSet.h"

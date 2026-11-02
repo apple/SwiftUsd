@@ -51,8 +51,11 @@ PXR_NAMESPACE_OPEN_SCOPE
 //              dropping UsdImagingStageSceneIndexTokens.
 // Version 25 - Renaming UsdImagingUsdSceneIndexInputArgsSchema to
 //              UsdImagingSceneIndexCreateArgsSchema.
+// Version 26 - Added UsdImagingRenderPassPruneSceneIndexPlugin that is
+//              registered for all renderers.
+// Version 27 - Added UsdImagingSceneIndex::SceneIndexAppendCallbacks.
 
-#define USD_IMAGING_API_VERSION 25
+#define USD_IMAGING_API_VERSION 27
 
 
 PXR_NAMESPACE_CLOSE_SCOPE

@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file Math.h
 /// @brief General-purpose arithmetic and comparison routines, most of which
@@ -10,7 +10,7 @@
 
 #include <openvdb/Platform.h>
 #include <openvdb/version.h>
-#include <boost/numeric/conversion/conversion_traits.hpp>
+#include <openvdb/util/Assert.h>
 #include <algorithm> // for std::max()
 #include <cassert>
 #include <cmath>     // for std::ceil(), std::fabs(), std::pow(), std::sqrt(), etc.
@@ -260,7 +260,7 @@ template<typename Type>
 inline Type
 Clamp(Type x, Type min, Type max)
 {
-    assert( !(min>max) );
+    OPENVDB_ASSERT( !(min>max) );
     return x > min ? x < max ? x : max : min;
 }
 
@@ -295,7 +295,7 @@ template<typename Type>
 inline Type
 SmoothUnitStep(Type x, Type min, Type max)
 {
-    assert(min < max);
+    OPENVDB_ASSERT(min < max);
     return SmoothUnitStep((x-min)/(max-min));
 }
 
@@ -574,14 +574,14 @@ Pow(Type x, int n)
 inline float
 Pow(float b, float e)
 {
-    assert( b >= 0.0f && "Pow(float,float): base is negative" );
+    OPENVDB_ASSERT( b >= 0.0f && "Pow(float,float): base is negative" );
     return powf(b,e);
 }
 
 inline double
 Pow(double b, double e)
 {
-    assert( b >= 0.0 && "Pow(double,double): base is negative" );
+    OPENVDB_ASSERT( b >= 0.0 && "Pow(double,double): base is negative" );
     return std::pow(b,e);
 }
 //@}
@@ -893,7 +893,7 @@ template<typename Type>
 inline Type
 Inv(Type x)
 {
-    assert(x);
+    OPENVDB_ASSERT(x);
     return Type(1)/x;
 }
 
@@ -916,10 +916,9 @@ enum RotationOrder {
     ZXZ_ROTATION
 };
 
-
-template <typename S, typename T>
+template <typename S, typename T, typename = std::enable_if_t<std::is_arithmetic_v<S>&& std::is_arithmetic_v<T>>>
 struct promote {
-    using type = typename boost::numeric::conversion_traits<S, T>::supertype;
+    using type = typename std::common_type_t<S,T>;
 };
 
 /// @brief Return the index [0,1,2] of the smallest value in a 3D vector.

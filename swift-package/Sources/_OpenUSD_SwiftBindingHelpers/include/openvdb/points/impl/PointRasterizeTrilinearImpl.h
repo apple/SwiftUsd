@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @author Nick Avramoussis
 ///
@@ -21,10 +21,14 @@ namespace rasterize_trilinear_internal {
 template <typename TreeType,
           typename PositionCodecT,
           typename SourceValueT,
-          typename SourceCodecT>
-struct TrilinearTransfer : public VolumeTransfer<TreeType>
+          typename SourceCodecT,
+          typename FilterT>
+struct TrilinearTransfer :
+    public VolumeTransfer<TreeType>,
+    public FilteredTransfer<FilterT>
 {
     using BaseT = VolumeTransfer<TreeType>;
+    using FilterTransferT = FilteredTransfer<FilterT>;
     using WeightT = typename TreeType::ValueType;
     using PositionHandleT = points::AttributeHandle<Vec3f, PositionCodecT>;
     using SourceHandleT = points::AttributeHandle<SourceValueT, SourceCodecT>;
@@ -40,8 +44,11 @@ struct TrilinearTransfer : public VolumeTransfer<TreeType>
     static const Index NUM_VALUES = TreeType::LeafNodeType::NUM_VALUES;
 
     TrilinearTransfer(const size_t pidx,
-        const size_t sidx, TreeType& tree)
+        const size_t sidx,
+        const FilterT& filter,
+        TreeType& tree)
         : BaseT(tree)
+        , FilterTransferT(filter)
         , mPIdx(pidx)
         , mSIdx(sidx)
         , mPHandle()
@@ -50,6 +57,7 @@ struct TrilinearTransfer : public VolumeTransfer<TreeType>
 
     TrilinearTransfer(const TrilinearTransfer& other)
         : BaseT(other)
+        , FilterTransferT(other)
         , mPIdx(other.mPIdx)
         , mSIdx(other.mSIdx)
         , mPHandle()
@@ -70,11 +78,13 @@ struct TrilinearTransfer : public VolumeTransfer<TreeType>
     inline void initialize(const Coord& origin, const size_t idx, const CoordBBox& bounds)
     {
         this->BaseT::initialize(origin, idx, bounds);
+        this->FilterTransferT::initialize(origin, idx, bounds);
         mWeights.fill(openvdb::zeroVal<WeightT>());
     }
 
     inline bool startPointLeaf(const PointDataTree::LeafNodeType& leaf)
     {
+        this->FilterTransferT::startPointLeaf(leaf);
         mPHandle.reset(new PositionHandleT(leaf.constAttributeArray(mPIdx)));
         mSHandle.reset(new SourceHandleT(leaf.constAttributeArray(mSIdx)));
         return true;
@@ -93,11 +103,12 @@ protected:
 template <typename TreeType,
           typename PositionCodecT,
           typename SourceValueT,
-          typename SourceCodecT>
+          typename SourceCodecT,
+          typename FilterT>
 struct StaggeredTransfer :
-    public TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT>
+    public TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT, FilterT>
 {
-    using BaseT = TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT>;
+    using BaseT = TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT, FilterT>;
     using RealT = typename BaseT::RealT;
     using BaseT::value;
 
@@ -108,13 +119,17 @@ struct StaggeredTransfer :
     static const Index LOG2DIM = TreeType::LeafNodeType::LOG2DIM;
 
     StaggeredTransfer(const size_t pidx,
-        const size_t sidx, TreeType& tree)
-        : BaseT(pidx, sidx, tree) {}
+        const size_t sidx,
+        const FilterT& filter,
+        TreeType& tree)
+        : BaseT(pidx, sidx, filter, tree) {}
 
     void rasterizePoint(const Coord& ijk,
                     const Index id,
                     const CoordBBox& bounds)
     {
+        if (!BaseT::filter(id)) return;
+
         CoordBBox intersectBox(ijk.offsetBy(-1), ijk.offsetBy(1));
         intersectBox.intersect(bounds);
         if (intersectBox.empty()) return;
@@ -143,7 +158,7 @@ struct StaggeredTransfer :
                 macw.y() = value(P.y() - (y-RealT(0.5)));
 
                 for (c.z() = a.z(); c.z() <= b.z(); ++c.z()) {
-                    assert(bounds.isInside(c));
+                    OPENVDB_ASSERT(bounds.isInside(c));
                     const Index offset = ij + /*k*/(c.z() & (DIM-1u));
                     if (!mask.isOn(offset)) continue;
                     const RealT z = static_cast<RealT>(c.z()-ijk.z());
@@ -184,11 +199,12 @@ struct StaggeredTransfer :
 template <typename TreeType,
           typename PositionCodecT,
           typename SourceValueT,
-          typename SourceCodecT>
+          typename SourceCodecT,
+          typename FilterT>
 struct CellCenteredTransfer :
-    public TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT>
+    public TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT, FilterT>
 {
-    using BaseT = TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT>;
+    using BaseT = TrilinearTransfer<TreeType, PositionCodecT, SourceValueT, SourceCodecT, FilterT>;
     using RealT = typename BaseT::RealT;
     using BaseT::value;
 
@@ -196,13 +212,17 @@ struct CellCenteredTransfer :
     static const Index LOG2DIM = TreeType::LeafNodeType::LOG2DIM;
 
     CellCenteredTransfer(const size_t pidx,
-        const size_t sidx, TreeType& tree)
-        : BaseT(pidx, sidx, tree) {}
+        const size_t sidx,
+        const FilterT& filter,
+        TreeType& tree)
+        : BaseT(pidx, sidx, filter, tree) {}
 
     void rasterizePoint(const Coord& ijk,
                     const Index id,
                     const CoordBBox& bounds)
     {
+        if (!BaseT::filter(id)) return;
+
         const Vec3f P(this->mPHandle->get(id));
 
         // build area of influence depending on point position
@@ -213,7 +233,7 @@ struct CellCenteredTransfer :
         else              intersectBox.max().y() += 1;
         if (P.z() < 0.0f) intersectBox.min().z() -= 1;
         else              intersectBox.max().z() += 1;
-        assert(intersectBox.volume() == 8);
+        OPENVDB_ASSERT(intersectBox.volume() == 8);
 
         intersectBox.intersect(bounds);
         if (intersectBox.empty()) return;
@@ -237,15 +257,15 @@ struct CellCenteredTransfer :
                 centerw[1] = value(P.y() - y);
 
                 for (c.z() = a.z(); c.z() <= b.z(); ++c.z()) {
-                    assert(bounds.isInside(c));
+                    OPENVDB_ASSERT(bounds.isInside(c));
                     const Index offset = ij + /*k*/(c.z() & (DIM-1u));
                     if (!mask.isOn(offset)) continue;
                     const RealT z = static_cast<RealT>(c.z()-ijk.z());
                     centerw[2] = value(P.z() - z);
 
-                    assert(centerw[0] >= 0.0f && centerw[0] <= 1.0f);
-                    assert(centerw[1] >= 0.0f && centerw[1] <= 1.0f);
-                    assert(centerw[2] >= 0.0f && centerw[2] <= 1.0f);
+                    OPENVDB_ASSERT(centerw[0] >= 0.0f && centerw[0] <= 1.0f);
+                    OPENVDB_ASSERT(centerw[1] >= 0.0f && centerw[1] <= 1.0f);
+                    OPENVDB_ASSERT(centerw[2] >= 0.0f && centerw[2] <= 1.0f);
 
                     const RealT weight = centerw.product();
                     data[offset] += s * weight;
@@ -294,11 +314,11 @@ rasterizeTrilinear(const PointDataTreeT& points,
     using TraitsT = TrilinearTraits<ValueT, Staggered>;
     using TargetTreeT = typename TraitsT::template TreeT<PointDataTree>;
     using TransferT = typename std::conditional<Staggered,
-            StaggeredTransfer<TargetTreeT, PositionCodecT, ValueT, CodecT>,
-            CellCenteredTransfer<TargetTreeT, PositionCodecT, ValueT, CodecT>
+            StaggeredTransfer<TargetTreeT, PositionCodecT, ValueT, CodecT, FilterT>,
+            CellCenteredTransfer<TargetTreeT, PositionCodecT, ValueT, CodecT, FilterT>
         >::type;
 
-    typename TargetTreeT::Ptr tree(new TargetTreeT);
+    typename TargetTreeT::Ptr tree = std::make_shared<TargetTreeT>();
     if (std::is_same<FilterT, NullFilter>::value) {
         tree->topologyUnion(points);
     }
@@ -308,11 +328,11 @@ rasterizeTrilinear(const PointDataTreeT& points,
         tree->topologyUnion(*mask);
     }
 
-    TransferT transfer(pidx, sidx, *tree);
+    TransferT transfer(pidx, sidx, filter, *tree);
     tools::dilateActiveValues(*tree, transfer.range(),
         tools::NN_FACE_EDGE_VERTEX, tools::EXPAND_TILES);
 
-    rasterize<PointDataTreeT, TransferT>(points, transfer, filter);
+    rasterize<PointDataTreeT, TransferT>(points, transfer);
     return tree;
 }
 

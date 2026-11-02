@@ -24,6 +24,9 @@ class UsdImagingDataSourceParticleFieldPrim : public UsdImagingDataSourceGprim {
     HdDataSourceBaseHandle Get(const TfToken& name) override;
 
     USDVOLIMAGING_API
+    TfTokenVector GetNames() override;
+
+    USDVOLIMAGING_API
     static HdDataSourceLocatorSet Invalidate(
         UsdPrim const& prim, const TfToken& subprim,
         const TfTokenVector& properties,

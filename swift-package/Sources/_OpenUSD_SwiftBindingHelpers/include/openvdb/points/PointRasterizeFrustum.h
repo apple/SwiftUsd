@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Dan Bailey, Rick Hankins
 ///
@@ -13,6 +13,7 @@
 #include <openvdb/math/Ray.h>
 #include <openvdb/math/DDA.h>
 #include <openvdb/util/NullInterrupter.h>
+#include <openvdb/util/Assert.h>
 #include <openvdb/thread/Threading.h>
 #include <openvdb/tools/GridTransformer.h> // for tools::resampleToMatch()
 #include <openvdb/tools/Interpolation.h>

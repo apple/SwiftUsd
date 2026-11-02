@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file points/PointMask.h
 ///
@@ -12,6 +12,7 @@
 
 #include <openvdb/openvdb.h>
 #include <openvdb/tools/ValueTransformer.h> // valxform::SumOp
+#include <openvdb/util/Assert.h>
 
 #include "PointDataGrid.h"
 #include "IndexFilter.h"

@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file points/StreamCompression.h
 ///
@@ -20,6 +20,7 @@
 #define OPENVDB_TOOLS_STREAM_COMPRESSION_HAS_BEEN_INCLUDED
 
 #include <openvdb/io/io.h>
+#include <openvdb/util/Assert.h>
 #include <tbb/spin_mutex.h>
 #include <memory>
 #include <string>
@@ -217,7 +218,7 @@ public:
     bool sizeOnly() const { return mSizeOnly; }
 
     // @brief Set and get the input stream
-    std::istream& getInputStream() { assert(mIs); return *mIs; }
+    std::istream& getInputStream() { OPENVDB_ASSERT(mIs); return *mIs; }
     void setInputStream(std::istream& is) { mIs = &is; }
 
     /// @brief Creates a PageHandle to access the next @param n bytes of the Page.
@@ -254,7 +255,7 @@ public:
     bool sizeOnly() const { return mSizeOnly; }
 
     /// @brief Set and get the output stream
-    std::ostream& getOutputStream() { assert(mOs); return *mOs; }
+    std::ostream& getOutputStream() { OPENVDB_ASSERT(mOs); return *mOs; }
     void setOutputStream(std::ostream& os) { mOs = &os; }
 
     /// @brief Writes the given @param str buffer of size @param n

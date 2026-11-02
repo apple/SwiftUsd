@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Nick Avramoussis, Francisco Gochez, Dan Bailey
 ///
@@ -13,6 +13,7 @@
 #include <openvdb/util/NullInterrupter.h>
 #include <openvdb/thread/Threading.h>
 #include <openvdb/tools/Interpolation.h>
+#include <openvdb/util/Assert.h>
 
 #include "PointDataGrid.h"
 #include "PointAttribute.h"

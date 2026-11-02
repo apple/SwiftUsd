@@ -43,6 +43,9 @@ public:
     /// The default arena is used if a valid handle isn't provided.
     HGIGL_API
     void SetCurrentArena(HgiGLContextArenaHandle const& arenaHandle);
+
+    HGIGL_API
+    HgiGLContextArena* GetCurrentArena() const;
  
     /// Returns a framebuffer object id that is managed by the active arena.
     HGIGL_API

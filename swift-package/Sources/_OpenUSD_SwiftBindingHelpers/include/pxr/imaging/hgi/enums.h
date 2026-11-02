@@ -268,7 +268,7 @@ enum HgiAttachmentLoadOp
     HgiAttachmentLoadOpDontCare = 0,
     HgiAttachmentLoadOpClear,
     HgiAttachmentLoadOpLoad,
-    
+
     HgiAttachmentLoadOpCount
 };
 
@@ -287,7 +287,7 @@ enum HgiAttachmentStoreOp
 {
     HgiAttachmentStoreOpDontCare = 0,
     HgiAttachmentStoreOpStore,
-    
+
     HgiAttachmentStoreOpCount
 };
 
@@ -349,21 +349,30 @@ using HgiBufferUsage = HgiBits;
 ///   Metal specific stage which computes tess factors
 ///   and modifies user post tess vertex data.</li>
 /// <li>HgiShaderStagePostTessellationVertex:
-///   Metal specific stage which performs tessellation and 
+///   Metal specific stage which performs tessellation and
 ///   vertex processing.</li>
 /// </ul>
 ///
 enum HgiShaderStageBits : HgiBits
 {
-    HgiShaderStageVertex                 = 1 << 0,
-    HgiShaderStageFragment               = 1 << 1,
-    HgiShaderStageCompute                = 1 << 2,
-    HgiShaderStageTessellationControl    = 1 << 3,
-    HgiShaderStageTessellationEval       = 1 << 4,
-    HgiShaderStageGeometry               = 1 << 5,
+    HgiShaderStageVertex                  = 1 << 0,
+    HgiShaderStageFragment                = 1 << 1,
+    HgiShaderStageCompute                 = 1 << 2,
+    HgiShaderStageTessellationControl     = 1 << 3,
+    HgiShaderStageTessellationEval        = 1 << 4,
+    HgiShaderStageGeometry                = 1 << 5,
     HgiShaderStagePostTessellationControl = 1 << 6,
-    HgiShaderStagePostTessellationVertex = 1 << 7,
-    HgiShaderStageCustomBitsBegin        = 1 << 8,
+    HgiShaderStagePostTessellationVertex  = 1 << 7,
+    HgiShaderStageCustomBitsBegin         = 1 << 8,
+    HgiShaderStageAllGraphics             = HgiShaderStageVertex
+                                          | HgiShaderStageFragment
+                                          | HgiShaderStageTessellationControl
+                                          | HgiShaderStageTessellationEval
+                                          | HgiShaderStageGeometry
+                                          | HgiShaderStagePostTessellationControl
+                                          | HgiShaderStagePostTessellationVertex,
+    HgiShaderStageAll                     = 0xFFFFFFFF
+
 };
 using HgiShaderStage = HgiBits;
 

@@ -124,6 +124,7 @@ public:
 private:
 
     template <class T> friend class Vdf_VectorImplCompressed;
+    template <typename> friend class VdfVectorIterator;
 
     typedef std::vector<Vdf_IndexBlockMapping> _BlockMappings;
     _BlockMappings _blockMappings;

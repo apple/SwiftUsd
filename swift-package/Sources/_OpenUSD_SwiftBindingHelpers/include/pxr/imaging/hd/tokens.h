@@ -197,6 +197,8 @@ PXR_NAMESPACE_OPEN_SCOPE
     (sourcesCommitted)                          \
     (subdivisionRefineCPU)                      \
     (subdivisionRefineGPU)                      \
+    (stats)                                     \
+    (textureAllocations)                        \
     (textureMemory)                             \
     (triangulateFaceVarying)                    \
     (uboSize)                                   \

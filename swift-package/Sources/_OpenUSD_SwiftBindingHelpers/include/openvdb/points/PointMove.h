@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Dan Bailey
 ///
@@ -33,6 +33,7 @@
 #define OPENVDB_POINTS_POINT_MOVE_HAS_BEEN_INCLUDED
 
 #include <openvdb/openvdb.h>
+#include <openvdb/util/Assert.h>
 
 #include "PointDataGrid.h"
 #include "PointMask.h"

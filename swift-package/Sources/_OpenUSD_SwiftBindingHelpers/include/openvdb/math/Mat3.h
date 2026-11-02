@@ -1,14 +1,14 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 #ifndef OPENVDB_MATH_MAT3_H_HAS_BEEN_INCLUDED
 #define OPENVDB_MATH_MAT3_H_HAS_BEEN_INCLUDED
 
 #include <openvdb/Exceptions.h>
+#include <openvdb/util/Assert.h>
 #include "Vec3.h"
 #include "Mat.h"
 #include <algorithm> // for std::copy()
-#include <cassert>
 #include <cmath>
 #include <iomanip>
 
@@ -140,7 +140,7 @@ public:
     /// Set ith row to vector v
     void setRow(int i, const Vec3<T> &v)
     {
-        // assert(i>=0 && i<3);
+        OPENVDB_ASSERT(i>=0 && i<3);
         int i3 = i * 3;
 
         MyBase::mm[i3+0] = v[0];
@@ -151,14 +151,14 @@ public:
     /// Get ith row, e.g.    Vec3d v = m.row(1);
     Vec3<T> row(int i) const
     {
-        // assert(i>=0 && i<3);
+        OPENVDB_ASSERT(i>=0 && i<3);
         return Vec3<T>((*this)(i,0), (*this)(i,1), (*this)(i,2));
     } // rowColumnTest
 
     /// Set jth column to vector v
     void setCol(int j, const Vec3<T>& v)
     {
-        // assert(j>=0 && j<3);
+        OPENVDB_ASSERT(j>=0 && j<3);
         MyBase::mm[0+j] = v[0];
         MyBase::mm[3+j] = v[1];
         MyBase::mm[6+j] = v[2];
@@ -167,7 +167,7 @@ public:
     /// Get jth column, e.g.    Vec3d v = m.col(0);
     Vec3<T> col(int j) const
     {
-        // assert(j>=0 && j<3);
+        OPENVDB_ASSERT(j>=0 && j<3);
         return Vec3<T>((*this)(0,j), (*this)(1,j), (*this)(2,j));
     } // rowColumnTest
 
@@ -176,8 +176,8 @@ public:
     /// e.g.    m(0,0) = 1;
     T& operator()(int i, int j)
     {
-        // assert(i>=0 && i<3);
-        // assert(j>=0 && j<3);
+        OPENVDB_ASSERT(i>=0 && i<3);
+        OPENVDB_ASSERT(j>=0 && j<3);
         return MyBase::mm[3*i+j];
     } // trivial
 
@@ -186,8 +186,8 @@ public:
     /// e.g.    float f = m(1,0);
     T operator()(int i, int j) const
     {
-        // assert(i>=0 && i<3);
-        // assert(j>=0 && j<3);
+        OPENVDB_ASSERT(i>=0 && i<3);
+        OPENVDB_ASSERT(j>=0 && j<3);
         return MyBase::mm[3*i+j];
     } // trivial
 
@@ -420,7 +420,7 @@ public:
     }
 
     /// @brief Return the cofactor matrix of this matrix.
-    Mat3 cofactor() const
+    [[nodiscard]] Mat3 cofactor() const
     {
         return Mat3<T>(
           MyBase::mm[4] * MyBase::mm[8] - MyBase::mm[5] * MyBase::mm[7],
@@ -435,7 +435,7 @@ public:
     }
 
     /// Return the adjoint of this matrix, i.e., the transpose of its cofactor.
-    Mat3 adjoint() const
+    [[nodiscard]] Mat3 adjoint() const
     {
         return Mat3<T>(
           MyBase::mm[4] * MyBase::mm[8] - MyBase::mm[5] * MyBase::mm[7],
@@ -462,7 +462,7 @@ public:
 
     /// returns inverse of this
     /// @throws ArithmeticError if singular
-    Mat3 inverse(T tolerance = 0) const
+    [[nodiscard]] Mat3 inverse(T tolerance = 0) const
     {
         Mat3<T> inv(this->adjoint());
 
@@ -518,7 +518,7 @@ public:
 
     /// @brief Treat @a diag as a diagonal matrix and return the product
     /// of this matrix with @a diag (from the right).
-    Mat3 timesDiagonal(const Vec3<T>& diag) const
+    [[nodiscard]] Mat3 timesDiagonal(const Vec3<T>& diag) const
     {
         Mat3 ret(*this);
 
@@ -680,7 +680,7 @@ pivot(int i, int j, Mat3<T>& S, Vec3<T>& D, Mat3<T>& Q)
 
     double Sjj_minus_Sii = D[j] - D[i];
 
-    if (fabs(Sjj_minus_Sii) * (10*math::Tolerance<T>::value()) > fabs(Sij)) {
+    if (std::abs(Sjj_minus_Sii) * (10*math::Tolerance<T>::value()) > std::abs(Sij)) {
         tan_of_theta = Sij / Sjj_minus_Sii;
     } else {
         /// pivot on Sij
@@ -688,40 +688,39 @@ pivot(int i, int j, Mat3<T>& S, Vec3<T>& D, Mat3<T>& Q)
 
         if (cotan_of_2_theta < 0.) {
             tan_of_theta =
-                -1./(sqrt(1. + cotan_of_2_theta*cotan_of_2_theta) - cotan_of_2_theta);
+                -1./(std::sqrt(1. + cotan_of_2_theta*cotan_of_2_theta) - cotan_of_2_theta);
         } else {
             tan_of_theta =
-                1./(sqrt(1. + cotan_of_2_theta*cotan_of_2_theta) + cotan_of_2_theta);
+                1./(std::sqrt(1. + cotan_of_2_theta*cotan_of_2_theta) + cotan_of_2_theta);
         }
     }
 
-    cosin_of_theta = 1./sqrt( 1. + tan_of_theta * tan_of_theta);
+    cosin_of_theta = 1./std::sqrt( 1. + tan_of_theta * tan_of_theta);
     sin_of_theta = cosin_of_theta * tan_of_theta;
     z = tan_of_theta * Sij;
     S(i,j) = 0;
-    D[i] -= z;
-    D[j] += z;
+    D[i] -= T(z);
+    D[j] += T(z);
     for (int k = 0; k < i; ++k) {
         temp = S(k,i);
-        S(k,i) = cosin_of_theta * temp - sin_of_theta * S(k,j);
-        S(k,j)= sin_of_theta * temp + cosin_of_theta * S(k,j);
+        S(k,i) = T(cosin_of_theta * temp - sin_of_theta * S(k,j));
+        S(k,j) = T(sin_of_theta * temp + cosin_of_theta * S(k,j));
     }
     for (int k = i+1; k < j; ++k) {
         temp = S(i,k);
-        S(i,k) = cosin_of_theta * temp - sin_of_theta * S(k,j);
-        S(k,j) = sin_of_theta * temp + cosin_of_theta * S(k,j);
+        S(i,k) = T(cosin_of_theta * temp - sin_of_theta * S(k,j));
+        S(k,j) = T(sin_of_theta * temp + cosin_of_theta * S(k,j));
     }
     for (int k = j+1; k < n; ++k) {
         temp = S(i,k);
-        S(i,k) = cosin_of_theta * temp - sin_of_theta * S(j,k);
-        S(j,k) = sin_of_theta * temp + cosin_of_theta * S(j,k);
+        S(i,k) = T(cosin_of_theta * temp - sin_of_theta * S(j,k));
+        S(j,k) = T(sin_of_theta * temp + cosin_of_theta * S(j,k));
     }
-    for (int k = 0; k < n; ++k)
-        {
-            temp = Q(k,i);
-            Q(k,i) = cosin_of_theta * temp - sin_of_theta*Q(k,j);
-            Q(k,j) = sin_of_theta * temp + cosin_of_theta*Q(k,j);
-        }
+    for (int k = 0; k < n; ++k) {
+        temp = Q(k,i);
+        Q(k,i) = T(cosin_of_theta * temp - sin_of_theta * Q(k,j));
+        Q(k,j) = T(sin_of_theta * temp + cosin_of_theta * Q(k,j));
+    }
 }
 
 } // namespace mat3_internal
@@ -758,7 +757,7 @@ diagonalizeSymmetricMatrix(const Mat3<T>& input, Mat3<T>& Q, Vec3<T>& D,
         double er = 0;
         for (int i = 0; i < n; ++i) {
             for (int j = i+1; j < n; ++j) {
-                er += fabs(S(i,j));
+                er += std::abs(S(i,j));
             }
         }
         if (std::abs(er) < math::Tolerance<T>::value()) {
@@ -773,12 +772,12 @@ diagonalizeSymmetricMatrix(const Mat3<T>& input, Mat3<T>& Q, Vec3<T>& D,
         for (int i = 0; i < n; ++i) {
             for (int j = i+1; j < n; ++j){
 
-                if ( fabs(D[i]) * (10*math::Tolerance<T>::value()) > fabs(S(i,j))) {
+                if ( std::abs(D[i]) * (10*math::Tolerance<T>::value()) > std::abs(S(i,j))) {
                     /// value too small to pivot on
                     S(i,j) = 0;
                 }
-                if (fabs(S(i,j)) > max_element) {
-                    max_element = fabs(S(i,j));
+                if (std::abs(S(i,j)) > max_element) {
+                    max_element = std::abs(S(i,j));
                     ip = i;
                     jp = j;
                 }

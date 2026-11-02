@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file Stats.h
 ///
@@ -13,6 +13,7 @@
 #include <iosfwd> // for ostringstream
 #include <openvdb/version.h>
 #include <openvdb/Exceptions.h>
+#include <openvdb/util/Assert.h>
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -156,7 +157,7 @@ protected:
 
     inline void join(const Extrema& other)
     {
-        assert(other.mSize > 0);
+        OPENVDB_ASSERT(other.mSize > 0);
         mSize += other.mSize;
         mMin   = std::min<double>(mMin, other.mMin);
         mMax   = std::max<double>(mMax, other.mMax);

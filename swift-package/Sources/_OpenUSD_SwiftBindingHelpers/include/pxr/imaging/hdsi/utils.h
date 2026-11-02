@@ -8,6 +8,7 @@
 #define PXR_IMAGING_HDSI_UTILS_H
 
 #include "pxr/pxr.h"
+#include "pxr/imaging/hd/collectionPredicateLibrary.h"
 #include "pxr/imaging/hdsi/api.h"
 #include "pxr/usd/sdf/path.h"
 #include "pxr/base/tf/declarePtrs.h"
@@ -28,15 +29,29 @@ struct HdSceneIndexPrim;
 /// General use collection utilities.
 /// --------------------------------------------------------------------------
 
-/// Extracts and compiles the membership expression of the collection
-/// with the given \p collectionName, if it exists.
+/// If the collection with the given \p collectionName exists in \p collections
+/// and has a membership expression, extract and return its expression and an
+/// evaluator that uses the provided \p predicateLibrary.
 ///
 HDSI_API
 void
 HdsiUtilsCompileCollection(
-    HdCollectionsSchema &collections,
-    TfToken const& collectionName,
-    HdSceneIndexBaseRefPtr const& sceneIndex,
+    const HdCollectionsSchema &collections,
+    const TfToken &collectionName,
+    const HdSceneIndexBaseRefPtr &sceneIndex,
+    const HdCollectionPredicateLibrary &predicateLibrary,
+    SdfPathExpression *expr,
+    std::optional<HdCollectionExpressionEvaluator> *eval);
+
+/// Similar to the function above, but uses the predicate library returned by
+/// HdGetCollectionPredicateLibrary().
+///
+HDSI_API
+void
+HdsiUtilsCompileCollection(
+    const HdCollectionsSchema &collections,
+    const TfToken &collectionName,
+    const HdSceneIndexBaseRefPtr &sceneIndex,
     SdfPathExpression *expr,
     std::optional<HdCollectionExpressionEvaluator> *eval);
 

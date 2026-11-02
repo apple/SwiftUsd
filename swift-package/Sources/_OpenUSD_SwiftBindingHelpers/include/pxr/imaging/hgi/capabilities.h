@@ -60,6 +60,11 @@ public:
         return _pageSizeAlignment;
     }
 
+    HGI_API
+    size_t GetMaxSamplersPerShaderStage() const {
+        return _maxSamplersPerShaderStage;
+    }
+
 protected:
     HgiCapabilities()
         : _maxUniformBlockSize(0)
@@ -67,6 +72,7 @@ protected:
         , _uniformBufferOffsetAlignment(0)
         , _maxClipDistances(0)
         , _pageSizeAlignment(1)
+        , _maxSamplersPerShaderStage(0)
         , _flags(0)
     {}
 
@@ -83,6 +89,7 @@ protected:
     size_t _uniformBufferOffsetAlignment;
     size_t _maxClipDistances;
     size_t _pageSizeAlignment;
+    size_t _maxSamplersPerShaderStage;
 
 private:
     HgiCapabilities & operator=(const HgiCapabilities&) = delete;

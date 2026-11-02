@@ -163,7 +163,13 @@
 //             HdRendererCreateArgs (or bool) in favor of overloads taking
 //             HdRendererCreateArgsSchema.
 //             Removing HdRenderSettingsTokens->renderCreateArgs.
-#define HD_API_VERSION 103
+// 103 -> 104: Added elementSize to HdPrimvarDescriptor.
+// 104 -> 105: Added HdLegacyRenderControlInterface::RemoveTaskContextData and
+//             ClearTaskContextData().
+// 105 -> 106: Add HdCachingSampledDataSource and HdCachingTypedSampledDataSource
+// 106 -> 107: HdStRenderDelegate::IsEnabledNativeSphereRenderingSupport renamed
+//             to IsEnabledNativeImplicitsRenderingSupport.
+#define HD_API_VERSION 107
 
 // 1  ->  2: SimpleLighting -> FallbackLighting
 // 2  ->  3: Use GetLightCount() instead of NUM_LIGHTS to get light count.

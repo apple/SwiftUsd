@@ -107,7 +107,9 @@ public:
     }
 
     HD_API
-    const std::string& GetGpuKernelSource() const { return _gpuKernelSource; }
+    const std::string& GetGpuKernelSource() const {
+        return _gpuKernelSource.GetString();
+    }
 
     HD_API
     bool IsInputAggregation() const;
@@ -128,7 +130,7 @@ private:
     TfTokenVector                          _sceneInputNames;
     HdExtComputationInputDescriptorVector  _computationInputs;
     HdExtComputationOutputDescriptorVector _computationOutputs;
-    std::string                            _gpuKernelSource;
+    TfToken                                _gpuKernelSource;
 
     // No default construction or copying
     HdExtComputation() = delete;

@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file openvdb/version.h
 /// @brief Library and file format version numbers
@@ -56,11 +56,11 @@
 ///@{
 /// @brief Library major, minor and patch version numbers
 /// @hideinitializer
-#define OPENVDB_LIBRARY_MAJOR_VERSION_NUMBER 10
+#define OPENVDB_LIBRARY_MAJOR_VERSION_NUMBER 12
 /// @hideinitializer
 #define OPENVDB_LIBRARY_MINOR_VERSION_NUMBER 1
 /// @hideinitializer
-#define OPENVDB_LIBRARY_PATCH_VERSION_NUMBER 0
+#define OPENVDB_LIBRARY_PATCH_VERSION_NUMBER 1
 ///@}
 
 /// @note  This ifndef exists for compatibility with older versions of OpenVDB.
@@ -71,7 +71,7 @@
 #ifndef OPENVDB_ABI_VERSION_NUMBER
 /// @brief The ABI version that OpenVDB was built with
 /// @hideinitializer
-#define OPENVDB_ABI_VERSION_NUMBER 10
+#define OPENVDB_ABI_VERSION_NUMBER 12
 #endif
 
 /// @brief Library version number string of the form "<major>.<minor>.<patch>"
@@ -79,18 +79,18 @@
 /// want the compile-time version number, not the runtime version number
 /// (although the two are usually the same).
 /// @hideinitializer
-#define OPENVDB_LIBRARY_VERSION_STRING "10.1.0"
+#define OPENVDB_LIBRARY_VERSION_STRING "12.1.1"
 
 /// @brief Library version number string of the form "<major>.<minor>.<patch>abi<abi>"
 /// @details This is a macro rather than a static constant because we typically
 /// want the compile-time version number, not the runtime version number
 /// (although the two are usually the same).
 /// @hideinitializer
-#define OPENVDB_LIBRARY_ABI_VERSION_STRING "10.1.0abi10"
+#define OPENVDB_LIBRARY_ABI_VERSION_STRING "12.1.1abi12"
 
 /// @brief Library version number as a packed integer ("%02x%02x%04x", major, minor, patch)
 /// @hideinitializer
-#define OPENVDB_LIBRARY_VERSION_NUMBER 167837696
+#define OPENVDB_LIBRARY_VERSION_NUMBER 201392129
 
 /// @brief Where this version was compiled from if it comes from a
 /// git repo.
@@ -116,9 +116,9 @@
 ///
 /// where X, Y and N are the major, minor and ABI version numbers, respectively.
 #if OPENVDB_ABI_VERSION_NUMBER == OPENVDB_LIBRARY_MAJOR_VERSION_NUMBER
-    #define OPENVDB_VERSION_NAME v10_1
+    #define OPENVDB_VERSION_NAME v12_1
 #else
-    #define OPENVDB_VERSION_NAME v10_1abi10
+    #define OPENVDB_VERSION_NAME v12_1abi12
 #endif
 
 /* Denotes whether VDB was built with IMath Half support */
@@ -143,9 +143,14 @@
 #define OPENVDB_USE_DELAYED_LOADING
 #endif
 
+/* Denotes whether VDB was built asserts enabled in VDB code */
+#ifndef OPENVDB_ENABLE_ASSERTS
+/* #undef OPENVDB_ENABLE_ASSERTS */
+#endif
+
 /* Denotes whether VDB was built with explicit template instantiation */
 #ifndef OPENVDB_USE_EXPLICIT_INSTANTIATION
-#define OPENVDB_USE_EXPLICIT_INSTANTIATION
+/* #undef OPENVDB_USE_EXPLICIT_INSTANTIATION */
 #endif
 
 /* Defines the macros for explicit template declarations. */
@@ -154,38 +159,12 @@
 #define OPENVDB_INSTANTIATE_STRUCT extern template struct OPENVDB_TEMPLATE_IMPORT
 
 /* Defines the macros for explicit template instantiations. */
-#define OPENVDB_REAL_TREE_INSTANTIATE(Function)      \
-    OPENVDB_INSTANTIATE Function(FloatTree); \
-    OPENVDB_INSTANTIATE Function(DoubleTree);
-#define OPENVDB_NUMERIC_TREE_INSTANTIATE(Function)   \
-    OPENVDB_INSTANTIATE Function(Int32Tree); \
-    OPENVDB_INSTANTIATE Function(Int64Tree); \
-    OPENVDB_INSTANTIATE Function(FloatTree); \
-    OPENVDB_INSTANTIATE Function(DoubleTree);
-#define OPENVDB_VEC3_TREE_INSTANTIATE(Function)      \
-    OPENVDB_INSTANTIATE Function(Vec3STree); \
-    OPENVDB_INSTANTIATE Function(Vec3DTree); \
-    OPENVDB_INSTANTIATE Function(Vec3ITree);
-#define OPENVDB_VOLUME_TREE_INSTANTIATE(Function)    \
-    OPENVDB_INSTANTIATE Function(BoolTree); \
-    OPENVDB_INSTANTIATE Function(Int32Tree); \
-    OPENVDB_INSTANTIATE Function(Int64Tree); \
-    OPENVDB_INSTANTIATE Function(FloatTree); \
-    OPENVDB_INSTANTIATE Function(DoubleTree); \
-    OPENVDB_INSTANTIATE Function(Vec3STree); \
-    OPENVDB_INSTANTIATE Function(Vec3DTree); \
-    OPENVDB_INSTANTIATE Function(Vec3ITree);
-#define OPENVDB_ALL_TREE_INSTANTIATE(Function)       \
-    OPENVDB_INSTANTIATE Function(MaskTree); \
-    OPENVDB_INSTANTIATE Function(points::PointDataTree); \
-    OPENVDB_INSTANTIATE Function(BoolTree); \
-    OPENVDB_INSTANTIATE Function(Int32Tree); \
-    OPENVDB_INSTANTIATE Function(Int64Tree); \
-    OPENVDB_INSTANTIATE Function(FloatTree); \
-    OPENVDB_INSTANTIATE Function(DoubleTree); \
-    OPENVDB_INSTANTIATE Function(Vec3STree); \
-    OPENVDB_INSTANTIATE Function(Vec3DTree); \
-    OPENVDB_INSTANTIATE Function(Vec3ITree);
+#define OPENVDB_REAL_TREE_INSTANTIATE(Function)     
+#define OPENVDB_NUMERIC_TREE_INSTANTIATE(Function)  
+#define OPENVDB_VEC3_TREE_INSTANTIATE(Function)     
+#define OPENVDB_VOLUME_TREE_INSTANTIATE(Function)   
+#define OPENVDB_ALL_TREE_INSTANTIATE(Function)      
+
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -196,10 +175,10 @@
     // This can be suppressed by defining OPENVDB_USE_FUTURE_ABI_<VERSION>=ON.
     // Note that, whilst the VDB CMake does not allow this option to be hit,
     // it exists to propagate this message to downstream targets
-    #if OPENVDB_ABI_VERSION_NUMBER == 11
-        #ifndef OPENVDB_USE_FUTURE_ABI_11
-            PRAGMA(message("NOTE: ABI = 11 is still in active development and has not been finalized, "
-                "define OPENVDB_USE_FUTURE_ABI_11 to suppress this message"))
+    #if OPENVDB_ABI_VERSION_NUMBER == 13
+        #ifndef OPENVDB_USE_FUTURE_ABI_13
+            PRAGMA(message("NOTE: ABI = 13 is still in active development and has not been finalized, "
+                "define OPENVDB_USE_FUTURE_ABI_13 to suppress this message"))
         #endif
     #else
         #error expected OPENVDB_ABI_VERSION_NUMBER <= OPENVDB_LIBRARY_MAJOR_VERSION_NUMBER
@@ -210,15 +189,15 @@
 // directive. This can be suppressed by defining OPENVDB_USE_DEPRECATED_ABI_<VERSION>.
 // Note that, whilst the VDB CMake does not allow this option to be hit,
 // it exists to propagate this message to downstream targets
-#ifndef OPENVDB_USE_DEPRECATED_ABI_8
-    #if OPENVDB_ABI_VERSION_NUMBER == 8
-        PRAGMA(message("NOTE: ABI = 8 is deprecated, define OPENVDB_USE_DEPRECATED_ABI_7 "
+#ifndef OPENVDB_USE_DEPRECATED_ABI_10
+    #if OPENVDB_ABI_VERSION_NUMBER == 10
+        PRAGMA(message("NOTE: ABI = 10 is deprecated, define OPENVDB_USE_DEPRECATED_ABI_10 "
             "to suppress this message"))
     #endif
 #endif
-#ifndef OPENVDB_USE_DEPRECATED_ABI_9
-    #if OPENVDB_ABI_VERSION_NUMBER == 9
-        PRAGMA(message("NOTE: ABI = 9 is deprecated, define OPENVDB_USE_DEPRECATED_ABI_8 "
+#ifndef OPENVDB_USE_DEPRECATED_ABI_11
+    #if OPENVDB_ABI_VERSION_NUMBER == 11
+        PRAGMA(message("NOTE: ABI = 11 is deprecated, define OPENVDB_USE_DEPRECATED_ABI_11 "
             "to suppress this message"))
     #endif
 #endif

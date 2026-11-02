@@ -29,6 +29,9 @@
                     }
                 },
                 "Types": {
+                    #
+                    # Adapters for USD prim types and API schemas.
+                    #
                     "UsdImagingBackPlateAPIAdapter" : {
                         "bases": ["UsdImagingAPISchemaAdapter"],
                         "isInternal": true,
@@ -337,6 +340,33 @@
                         ],
                         "isInternal": true,
                         "apiSchemaName": "GeomModelAPI"
+                    },
+
+                    #
+                    # Scene index plugins that are registered for all
+                    # renderers.
+                    #
+                    "UsdImaging_RenderPassPruneSceneIndexPlugin": {
+                        "bases": ["HdSceneIndexPlugin"],
+                        "loadWithRenderer" : "",
+                        "priority": 0,
+                        "displayName": "Render Pass Prune Scene Index",
+
+                        # This needs to ordered after the scene globals
+                        # scene index (which provides API to set the "active" 
+                        # (i.e. driving) render pass prim).
+                        # The sooner we prune, the better. For now, order it
+                        # before procedural resolution.
+                        #
+                        # XXX The scene globals scene index is typically
+                        # added via the callback registration API (and not
+                        # as a plugin), so the after tag below doesn't
+                        # have any effect currently.
+                        "tags": ["usdImaging:renderPassPrune"],
+                        "ordering": {
+                            "after": ["hd:sceneAssembly", "hd:sceneGlobals"],
+                            "before": "hdGp:proceduralResolution"
+                        }
                     }
                 }
             },

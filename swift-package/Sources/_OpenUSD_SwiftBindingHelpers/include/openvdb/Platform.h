@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 ///
 /// @file Platform.h
 
@@ -67,12 +67,6 @@
     #if defined(_DLL) && !defined(OPENVDB_STATICLIB) && !defined(OPENVDB_DLL)
         #define OPENVDB_DLL
     #endif
-
-    // By default, assume that we're dynamically linking OpenEXR, unless
-    // OPENVDB_OPENEXR_STATICLIB is defined.
-    #if !defined(OPENVDB_OPENEXR_STATICLIB) && !defined(OPENEXR_DLL)
-        #define OPENEXR_DLL
-    #endif
 #endif
 
 /// Macros to suppress undefined behaviour sanitizer warnings. Should be used
@@ -96,6 +90,29 @@
 #else
 #define OPENVDB_LIKELY(x) (x)
 #define OPENVDB_UNLIKELY(x) (x)
+#endif
+
+/// Macros for assume builtins. Note that we currently don't simply apply these
+/// in place of asserts (when asserts are disabled) - they should be only be
+/// applied with an assert once profiled
+#ifdef __has_cpp_attribute
+  #if __has_cpp_attribute(assume) >= 202207L
+    #define OPENVDB_ASSUME(...) [[assume(__VA_ARGS__)]]
+  #endif
+#endif
+#ifndef OPENVDB_ASSUME
+  #if defined(__clang__)
+    #define OPENVDB_ASSUME(...)  __builtin_assume(__VA_ARGS__);
+  #elif defined(_MSC_VER)
+    #define OPENVDB_ASSUME(...) __assume(__VA_ARGS__);
+  #elif defined(__GNUC__)
+    #if __GNUC__ >= 13
+      #define OPENVDB_ASSUME(...) __attribute__((__assume__(__VA_ARGS__)))
+    #endif
+  #endif
+#endif
+#ifndef OPENVDB_ASSUME
+  #define OPENVDB_ASSUME(...)
 #endif
 
 /// Force inline function macros. These macros do not necessary guarantee that
@@ -217,16 +234,10 @@
     #define OPENVDB_NO_TYPE_CONVERSION_WARNING_END
 #elif defined __GNUC__
     // -Wfloat-conversion was only introduced in GCC 4.9
-    #if OPENVDB_CHECK_GCC(4, 9)
-        #define OPENVDB_NO_TYPE_CONVERSION_WARNING_BEGIN \
-            _Pragma("GCC diagnostic push") \
-            _Pragma("GCC diagnostic ignored \"-Wconversion\"") \
-            _Pragma("GCC diagnostic ignored \"-Wfloat-conversion\"")
-    #else
-        #define OPENVDB_NO_TYPE_CONVERSION_WARNING_BEGIN \
-            _Pragma("GCC diagnostic push") \
-            _Pragma("GCC diagnostic ignored \"-Wconversion\"")
-    #endif
+    #define OPENVDB_NO_TYPE_CONVERSION_WARNING_BEGIN \
+        _Pragma("GCC diagnostic push") \
+        _Pragma("GCC diagnostic ignored \"-Wconversion\"") \
+        _Pragma("GCC diagnostic ignored \"-Wfloat-conversion\"")
     #define OPENVDB_NO_TYPE_CONVERSION_WARNING_END \
         _Pragma("GCC diagnostic pop")
 #else

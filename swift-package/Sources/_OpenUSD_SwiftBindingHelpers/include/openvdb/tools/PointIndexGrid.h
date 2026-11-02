@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file   PointIndexGrid.h
 ///
@@ -27,6 +27,7 @@
 #include <openvdb/tree/LeafManager.h>
 #include <openvdb/tree/LeafNode.h>
 #include <openvdb/tree/Tree.h>
+#include <openvdb/util/Assert.h>
 
 #include <tbb/blocked_range.h>
 #include <tbb/parallel_for.h>
@@ -1499,7 +1500,7 @@ public:
     // to the point-array offsets.
 
     void assertNonmodifiable() {
-        assert(false && "Cannot modify voxel values in a PointIndexTree.");
+        OPENVDB_ASSERT(false && "Cannot modify voxel values in a PointIndexTree.");
     }
 
     void setActiveState(const Coord&, bool) { assertNonmodifiable(); }

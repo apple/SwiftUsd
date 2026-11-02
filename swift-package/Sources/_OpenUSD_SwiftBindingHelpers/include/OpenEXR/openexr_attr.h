@@ -17,7 +17,7 @@ extern "C" {
 
 /** @file */
 
-/** 
+/**
  * @defgroup AttributeTypes Attribute/metadata value types and struct declarations
  *
  * @brief These are a group of enum values defining valid values for
@@ -72,7 +72,8 @@ typedef enum
     EXR_STORAGE_TILED,         /**< Corresponds to type of \c tiledimage. */
     EXR_STORAGE_DEEP_SCANLINE, /**< Corresponds to type of \c deepscanline. */
     EXR_STORAGE_DEEP_TILED,    /**< Corresponds to type of \c deeptile. */
-    EXR_STORAGE_LAST_TYPE      /**< Invalid value, provided for range checking. */
+    EXR_STORAGE_LAST_TYPE, /**< Invalid value, provided for range checking. */
+    EXR_STORAGE_UNKNOWN /**< An unknown type, provided for future proofing. */
 } exr_storage_t;
 
 /** @brief Enum representing what type of tile information is contained. */
@@ -81,7 +82,7 @@ typedef enum
     EXR_TILE_ONE_LEVEL     = 0, /**< Single level of image data. */
     EXR_TILE_MIPMAP_LEVELS = 1, /**< Mipmapped image data. */
     EXR_TILE_RIPMAP_LEVELS = 2, /**< Ripmapped image data. */
-    EXR_TILE_LAST_TYPE          /**< Invalid value, provided for range checking. */
+    EXR_TILE_LAST_TYPE /**< Invalid value, provided for range checking. */
 } exr_tile_level_mode_t;
 
 /** @brief Enum representing how to scale positions between levels. */
@@ -100,6 +101,16 @@ typedef enum
     EXR_PIXEL_FLOAT = 2,
     EXR_PIXEL_LAST_TYPE
 } exr_pixel_type_t;
+
+/** Enum declaring allowed values for \c uint8_t value stored in \c deepImageState type. */
+typedef enum
+{
+    EXR_DIS_MESSY           = 0,
+    EXR_DIS_SORTED          = 1,
+    EXR_DIS_NON_OVERLAPPING = 2,
+    EXR_DIS_TIDY            = 3,
+    EXR_DIS_LAST_TYPE /**< Invalid value, provided for range checking. */
+} exr_deep_image_state_t;
 
 /* /////////////////////////////////////// */
 /* First set of structs are data where we can read directly with no allocation needed... */
@@ -175,79 +186,37 @@ typedef struct
 /** @brief Struct to hold a 2-element integer vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            int32_t x, y;
-        };
-        int32_t arr[2];
-    };
+  int32_t x, y;
 } exr_attr_v2i_t;
 
 /** @brief Struct to hold a 2-element 32-bit float vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            float x, y;
-        };
-        float arr[2];
-    };
+  float x, y;
 } exr_attr_v2f_t;
 
 /** @brief Struct to hold a 2-element 64-bit float vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            double x, y;
-        };
-        double arr[2];
-    };
+  double x, y;
 } exr_attr_v2d_t;
 
 /** @brief Struct to hold a 3-element integer vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            int32_t x, y, z;
-        };
-        int32_t arr[3];
-    };
+  int32_t x, y, z;
 } exr_attr_v3i_t;
 
 /** @brief Struct to hold a 3-element 32-bit float vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            float x, y, z;
-        };
-        float arr[3];
-    };
+  float x, y, z;
 } exr_attr_v3f_t;
 
 /** @brief Struct to hold a 3-element 64-bit float vector. */
 typedef struct
 {
-    union
-    {
-        struct
-        {
-            double x, y, z;
-        };
-        double arr[3];
-    };
+  double x, y, z;
 } exr_attr_v3d_t;
 
 /** @brief Struct to hold an integer box/region definition. */
@@ -284,7 +253,7 @@ typedef struct
     ((exr_tile_round_mode_t) ((((tiledesc).level_and_round) >> 4) & 0xF))
 /** @brief Macro to pack the tiling type and rounding mode into packed structure. */
 #define EXR_PACK_TILE_LEVEL_ROUND(lvl, mode)                                   \
-    ((uint8_t) ((((uint8_t) ((mode) &0xF) << 4)) | ((uint8_t) ((lvl) &0xF))))
+    ((uint8_t) ((((uint8_t) ((mode) & 0xF) << 4)) | ((uint8_t) ((lvl) & 0xF))))
 
 #pragma pack(pop)
 
@@ -329,8 +298,8 @@ typedef struct
  */
 typedef enum
 {
-    EXR_PERCEPTUALLY_LOGARITHMIC  = 0,
-    EXR_PERCEPTUALLY_LINEAR   = 1
+    EXR_PERCEPTUALLY_LOGARITHMIC = 0,
+    EXR_PERCEPTUALLY_LINEAR      = 1
 } exr_perceptual_treatment_t;
 
 /** Individual channel information. */
@@ -382,7 +351,7 @@ typedef struct
     int32_t packed_alloc_size;
     uint8_t pad[4];
 
-    void*   packed_data;
+    void* packed_data;
 
     /** When an application wants to have custom data, they can store
      * an unpacked form here which will be requested to be destroyed
@@ -421,9 +390,9 @@ typedef struct
 typedef enum
 {
     EXR_ATTR_UNKNOWN =
-        0,           /**< Type indicating an error or uninitialized attribute. */
-    EXR_ATTR_BOX2I,  /**< Integer region definition. @see exr_attr_box2i_t. */
-    EXR_ATTR_BOX2F,  /**< Float region definition. @see exr_attr_box2f_t. */
+        0,          /**< Type indicating an error or uninitialized attribute. */
+    EXR_ATTR_BOX2I, /**< Integer region definition. @see exr_attr_box2i_t. */
+    EXR_ATTR_BOX2F, /**< Float region definition. @see exr_attr_box2f_t. */
     EXR_ATTR_CHLIST, /**< Definition of channels in file @see exr_chlist_entry. */
     EXR_ATTR_CHROMATICITIES, /**< Values to specify color space of colors in file @see exr_attr_chromaticities_t. */
     EXR_ATTR_COMPRESSION,    /**< ``uint8_t`` declaring compression present. */
@@ -450,6 +419,7 @@ typedef enum
     EXR_ATTR_V3I,      /**< Set of 3 32-bit integers. */
     EXR_ATTR_V3F,      /**< Set of 3 32-bit floats. */
     EXR_ATTR_V3D,      /**< Set of 3 64-bit floats. */
+    EXR_ATTR_DEEP_IMAGE_STATE, /**< ``uint8_t`` declaring deep image state. */
     EXR_ATTR_OPAQUE,   /**< User/unknown provided type. */
     EXR_ATTR_LAST_KNOWN_TYPE
 } exr_attribute_type_t;
@@ -466,7 +436,7 @@ typedef enum
  * for those as necessary with the pointers pointing to static strings
  * (not to be freed). Finally, small values are optimized for.
  */
-typedef struct 
+typedef struct
 {
     /** Name of the attribute. */
     const char* name;

@@ -1,10 +1,11 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 #ifndef OPENVDB_MATH_VEC3_HAS_BEEN_INCLUDED
 #define OPENVDB_MATH_VEC3_HAS_BEEN_INCLUDED
 
 #include <openvdb/Exceptions.h>
+#include <openvdb/util/Assert.h>
 #include "Math.h"
 #include "Tuple.h"
 #include <algorithm>
@@ -228,8 +229,8 @@ public:
     /// this = v1 cross v2, v1 and v2 must be distinct objects than "this"
     const Vec3<T>& cross(const Vec3<T> &v1, const Vec3<T> &v2)
     {
-        // assert(this!=&v1);
-        // assert(this!=&v2);
+        OPENVDB_ASSERT(this!=&v1);
+        OPENVDB_ASSERT(this!=&v2);
         this->mm[0] = v1.mm[1]*v2.mm[2] - v1.mm[2]*v2.mm[1];
         this->mm[1] = v1.mm[2]*v2.mm[0] - v1.mm[0]*v2.mm[2];
         this->mm[2] = v1.mm[0]*v2.mm[1] - v1.mm[1]*v2.mm[0];
@@ -390,8 +391,8 @@ public:
     /// return normalized this, or (1, 0, 0) if this is null vector
     Vec3<T> unitSafe() const
     {
-        T l2 = lengthSqr();
-        return l2 ? *this / static_cast<T>(sqrt(l2)) : Vec3<T>(1, 0 ,0);
+        const T l2 = lengthSqr();
+        return !isApproxZero(l2) ? *this / static_cast<T>(sqrt(l2)) : Vec3<T>(1, 0 ,0);
     }
 
     // Number of cols, rows, elements

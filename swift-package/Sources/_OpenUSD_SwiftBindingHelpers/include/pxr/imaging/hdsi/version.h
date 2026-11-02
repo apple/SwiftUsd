@@ -19,7 +19,9 @@
 // 17 -> 18: Introducing ComposeFn in HdsiMaterialPrimvarTransferSceneIndex.
 // 18 -> 19: Introducing HdsiLocatorCachingSceneIndex
 // 19 -> 20: Updated LegacyDisplayStyleOverrideSceneIndex refineLevelFallback
+// 20 -> 21: Update HdsiLightLinkingSceneIndex and HdsiRenderPassPruneSceneIndex
+//           to take the predicate library as an input argument.
 
-#define HDSI_API_VERSION 20
+#define HDSI_API_VERSION 21
 
 #endif // PXR_IMAGING_HDSI_VERSION_H

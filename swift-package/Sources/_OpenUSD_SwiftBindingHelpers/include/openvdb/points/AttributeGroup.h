@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @file points/AttributeGroup.h
 ///
@@ -12,6 +12,7 @@
 
 #include "AttributeArray.h"
 #include "AttributeSet.h"
+#include <openvdb/util/Assert.h>
 #include <memory>
 
 namespace openvdb {
@@ -153,7 +154,7 @@ public:
 
     template <typename IterT>
     bool valid(const IterT& iter) const {
-        assert(mHandle);
+        OPENVDB_ASSERT(mHandle);
         return mHandle->getUnsafe(*iter);
     }
 

@@ -38,6 +38,7 @@ PXR_NAMESPACE_OPEN_SCOPE
     (assetIdentifier) \
     (assetName) \
     (assetVersion) \
+    ((modelPathPrimvarName, "model:modelPath")) \
 
 TF_DECLARE_PUBLIC_TOKENS(UsdImagingModelSchemaTokens, USDIMAGING_API,
     USD_IMAGING_MODEL_SCHEMA_TOKENS);
@@ -45,6 +46,8 @@ TF_DECLARE_PUBLIC_TOKENS(UsdImagingModelSchemaTokens, USDIMAGING_API,
 //-----------------------------------------------------------------------------
 
 
+/// \class UsdImagingModelSchema
+///
 class UsdImagingModelSchema : public HdSchema
 {
 public:

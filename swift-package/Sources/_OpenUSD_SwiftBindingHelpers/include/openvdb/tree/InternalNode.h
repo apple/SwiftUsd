@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 //
 /// @file InternalNode.h
 ///
@@ -10,6 +10,7 @@
 
 #include <openvdb/Platform.h>
 #include <openvdb/util/NodeMasks.h>
+#include <openvdb/util/Assert.h>
 #include <openvdb/io/Compression.h> // for io::readCompressedValues(), etc.
 #include <openvdb/math/Math.h> // for math::isExactlyEqual(), etc.
 #include <openvdb/version.h>
@@ -133,7 +134,7 @@ protected:
 
         ChildT& getItem(Index pos) const
         {
-            assert(this->parent().isChildMaskOn(pos));
+            OPENVDB_ASSERT(this->parent().isChildMaskOn(pos));
             return *(this->parent().getChildNode(pos));
         }
 
@@ -268,16 +269,16 @@ public:
     /// Set the grid index coordinates of this node's local origin.
     void setOrigin(const Coord& origin) { mOrigin = origin; }
 
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     /// Return the transient data value.
     Index32 transientData() const { return mTransientData; }
     /// Set the transient data value.
     void setTransientData(Index32 transientData) { mTransientData = transientData; }
-#endif
 
-    Index32 leafCount() const;
+    Index64 leafCount() const;
+    Index64 nonLeafCount() const;
+    void nodeCount(std::vector<Index64> &vec) const;
+    OPENVDB_DEPRECATED_MESSAGE("Use input type std::vector<Index64> for nodeCount.")
     void nodeCount(std::vector<Index32> &vec) const;
-    Index32 nonLeafCount() const;
     Index32 childCount() const;
     Index64 onVoxelCount() const;
     Index64 offVoxelCount() const;
@@ -332,7 +333,11 @@ public:
     /// Return @c true if the voxel at the given coordinates is active.
     bool isValueOn(const Coord& xyz) const;
     /// Return @c true if the voxel at the given offset is active.
-    bool isValueOn(Index offset) const { return mValueMask.isOn(offset); }
+    bool isValueOn(Index offset) const { OPENVDB_ASSERT(offset < NUM_VALUES); return mValueMask.isOn(offset); }
+    /// Return @c true if the voxel at the given coordinates is inactive.
+    bool isValueOff(const Coord& xyz) const;
+    /// Return @c true if the voxel at the given offset is inactive.
+    bool isValueOff(Index offset) const { OPENVDB_ASSERT(offset < NUM_VALUES); return mValueMask.isOff(offset); }
 
     /// Return @c true if this node or any of its child nodes have any active tiles.
     bool hasActiveTiles() const;
@@ -458,6 +463,79 @@ public:
     void readBuffers(std::istream&, bool fromHalf = false);
     void readBuffers(std::istream&, const CoordBBox&, bool fromHalf = false);
 
+
+    //
+    // Unsafe methods
+    //
+    // WARNING: For improved performance, these unsafe methods do not check the value or
+    // child masks. If used incorrectly, at best they will leave the InternalNode in an
+    // invalid state and at worst cause the application to crash. Always use the safer
+    // alternative method(s) unless you really know what you're doing.
+    // Enabling OpenVDB asserts will catch where assumptions are incorrectly invalidated.
+
+    /// @brief Return the tile value at offset.
+    /// @note Use getValue(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    const ValueType& getValueUnsafe(Index offset) const;
+    /// @brief Return the tile value and active state at offset.
+    /// @note Use probeValue(const Coord&, ValueType&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    bool getValueUnsafe(Index offset, ValueType& value) const;
+
+    /// @brief Return the child node at offset.
+    /// @note Use probeChild(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    ChildNodeType* getChildUnsafe(Index offset);
+    /// @brief Return the child node at offset.
+    /// @note Use probeConstChild(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    const ChildNodeType* getConstChildUnsafe(Index offset) const;
+    /// @brief Return the child node at offset.
+    /// @note Use probeChild(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    const ChildNodeType* getChildUnsafe(Index offset) const;
+
+    /// @brief Set the tile active state at offset but don't change its value.
+    /// @note Use setActiveState(const Coord&, bool) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setActiveStateUnsafe(Index offset, bool on);
+    /// @brief Set the tile value at offset but don't change its value.
+    /// @note Use setValueOnly(const Coord&, const ValueType&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setValueOnlyUnsafe(Index offset, const ValueType& value);
+    /// @brief Mark the tile active at offset but don't change its value.
+    /// @note Use setValueOn(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setValueOnUnsafe(Index offset);
+    /// @brief Set the tile value at offset and mark the voxel as active.
+    /// @note Use setValueOn(const Coord&, const ValueType&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setValueOnUnsafe(Index offset, const ValueType& value);
+    /// @brief Mark the tile inactive at offset but don't change its value.
+    /// @note Use setValueOff(const Coord&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setValueOffUnsafe(Index offset);
+    /// @brief Set the tile value at offset and mark the voxel as inactive.
+    /// @note Use setValueOff(const Coord&, const ValueType&) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setValueOffUnsafe(Index offset, const ValueType& value);
+
+    /// @brief Replace a tile at offset with the given child node.
+    /// @note Use addChild(ChildNodeType*) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void setChildUnsafe(Index offset, ChildNodeType* child);
+    /// @brief Replace a child node at offset with the given child node.
+    /// @note Use addChild(ChildNodeType*) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void resetChildUnsafe(Index offset, ChildNodeType* child);
+    /// @brief Replace a child node at offset with the given value and active state.
+    /// @note Use addChild(ChildNodeType*) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    ChildNodeType* stealChildUnsafe(Index offset, const ValueType& value, bool active);
+    /// @brief Delete a child node at offset and replace with the given value and active state.
+    /// @note Use addTile(Index, const ValueType&, bool) for a safer alternative.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    void deleteChildUnsafe(Index offset, const ValueType& value, bool active);
 
     //
     // Aux methods
@@ -621,6 +699,43 @@ public:
     /// If no such node exists, return nullptr.
     template<typename NodeType> NodeType* probeNode(const Coord& xyz);
     template<typename NodeType> const NodeType* probeConstNode(const Coord& xyz) const;
+    template<typename NodeType> const NodeType* probeNode(const Coord& xyz) const { return this->probeConstNode<NodeType>(xyz); }
+    //@}
+
+    //@{
+    /// @brief Return a pointer to the child node that contains voxel (x, y, z).
+    /// If no such node exists, return nullptr.
+    ChildNodeType* probeChild(const Coord& xyz);
+    const ChildNodeType* probeConstChild(const Coord& xyz) const;
+    const ChildNodeType* probeChild(const Coord& xyz) const { return this->probeConstChild(xyz); }
+    //@}
+
+    //@{
+    /// @brief Return a pointer to the child node that contains voxel (x, y, z).
+    /// If no such node exists, return nullptr.
+    ChildNodeType* probeChild(const Coord& xyz, ValueType& value, bool& active);
+    const ChildNodeType* probeConstChild(const Coord& xyz, ValueType& value, bool& active) const;
+    const ChildNodeType* probeChild(const Coord& xyz, ValueType& value, bool& active) const  { return this->probeConstChild(xyz, value, active); }
+    //@}
+
+    //@{
+    /// @brief Return a pointer to the child node for a specific offset.
+    /// If no such node exists, return nullptr.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    /// @note Out-of-bounds memory access attempts will wrap around using modulo indexing.
+    ChildNodeType* probeChildUnsafe(Index offset);
+    const ChildNodeType* probeConstChildUnsafe(Index offset) const;
+    const ChildNodeType* probeChildUnsafe(Index offset) const { return this->probeConstChildUnsafe(offset); }
+    //@}
+
+    //@{
+    /// @brief Return a pointer to the child node for a specific offset.
+    /// If no such node exists, return nullptr.
+    /// @warning This method should only be used by experts seeking low-level optimizations.
+    /// @note Out-of-bounds memory access attempts will wrap around using modulo indexing.
+    ChildNodeType* probeChildUnsafe(Index offset, ValueType& value, bool& active);
+    const ChildNodeType* probeConstChildUnsafe(Index offset, ValueType& value, bool& active) const;
+    const ChildNodeType* probeChildUnsafe(Index offset, ValueType& value, bool& active) const { return this->probeConstChildUnsafe(offset, value, active); }
     //@}
 
     //@{
@@ -795,10 +910,8 @@ protected:
     NodeMaskType mChildMask, mValueMask;
     /// Global grid index coordinates (x,y,z) of the local origin of this node
     Coord mOrigin;
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     /// Transient data (not serialized)
     Index32 mTransientData = 0;
-#endif
 }; // class InternalNode
 
 
@@ -882,9 +995,7 @@ InternalNode<ChildT, Log2Dim>::InternalNode(const InternalNode& other)
     : mChildMask(other.mChildMask)
     , mValueMask(other.mValueMask)
     , mOrigin(other.mOrigin)
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     , mTransientData(other.mTransientData)
-#endif
 {
     DeepCopy<InternalNode<ChildT, Log2Dim> > tmp(&other, this);
 }
@@ -898,9 +1009,7 @@ InternalNode<ChildT, Log2Dim>::InternalNode(const InternalNode<OtherChildNodeTyp
     : mChildMask(other.mChildMask)
     , mValueMask(other.mValueMask)
     , mOrigin(other.mOrigin)
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     , mTransientData(other.mTransientData)
-#endif
 {
     DeepCopy<InternalNode<OtherChildNodeType, Log2Dim> > tmp(&other, this);
 }
@@ -937,9 +1046,7 @@ InternalNode<ChildT, Log2Dim>::InternalNode(const InternalNode<OtherChildNodeTyp
     : mChildMask(other.mChildMask)
     , mValueMask(other.mValueMask)
     , mOrigin(other.mOrigin)
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     , mTransientData(other.mTransientData)
-#endif
 {
     TopologyCopy1<InternalNode<OtherChildNodeType, Log2Dim> > tmp(&other, this, background);
 }
@@ -977,9 +1084,7 @@ InternalNode<ChildT, Log2Dim>::InternalNode(const InternalNode<OtherChildNodeTyp
     : mChildMask(other.mChildMask)
     , mValueMask(other.mValueMask)
     , mOrigin(other.mOrigin)
-#if OPENVDB_ABI_VERSION_NUMBER >= 9
     , mTransientData(other.mTransientData)
-#endif
 {
     TopologyCopy2<InternalNode<OtherChildNodeType, Log2Dim> > tmp(&other, this, offValue, onValue);
 }
@@ -999,11 +1104,11 @@ InternalNode<ChildT, Log2Dim>::~InternalNode()
 
 
 template<typename ChildT, Index Log2Dim>
-inline Index32
+inline Index64
 InternalNode<ChildT, Log2Dim>::leafCount() const
 {
     if (ChildNodeType::getLevel() == 0) return mChildMask.countOn();
-    Index32 sum = 0;
+    Index64 sum = 0;
     for (ChildOnCIter iter = this->cbeginChildOn(); iter; ++iter) {
         sum += iter->leafCount();
     }
@@ -1012,9 +1117,9 @@ InternalNode<ChildT, Log2Dim>::leafCount() const
 
 template<typename ChildT, Index Log2Dim>
 inline void
-InternalNode<ChildT, Log2Dim>::nodeCount(std::vector<Index32> &vec) const
+InternalNode<ChildT, Log2Dim>::nodeCount(std::vector<Index64> &vec) const
 {
-    assert(vec.size() > ChildNodeType::LEVEL);
+    OPENVDB_ASSERT(vec.size() > ChildNodeType::LEVEL);
     const auto count = mChildMask.countOn();
     if (ChildNodeType::LEVEL > 0 && count > 0) {
         for (auto iter = this->cbeginChildOn(); iter; ++iter) iter->nodeCount(vec);
@@ -1022,12 +1127,28 @@ InternalNode<ChildT, Log2Dim>::nodeCount(std::vector<Index32> &vec) const
     vec[ChildNodeType::LEVEL] += count;
 }
 
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::nodeCount(std::vector<Index32> &vec) const
+{
+    OPENVDB_ASSERT(vec.size() > ChildNodeType::LEVEL);
+    const auto count = mChildMask.countOn();
+    if (ChildNodeType::LEVEL > 0 && count > 0) {
+        for (auto iter = this->cbeginChildOn(); iter; ++iter) {
+            OPENVDB_NO_DEPRECATION_WARNING_BEGIN
+            iter->nodeCount(vec);
+            OPENVDB_NO_DEPRECATION_WARNING_END
+        }
+    }
+    vec[ChildNodeType::LEVEL] += count;
+}
+
 
 template<typename ChildT, Index Log2Dim>
-inline Index32
+inline Index64
 InternalNode<ChildT, Log2Dim>::nonLeafCount() const
 {
-    Index32 sum = 1;
+    Index64 sum = 1;
     if (ChildNodeType::getLevel() == 0) return sum;
     for (ChildOnCIter iter = this->cbeginChildOn(); iter; ++iter) {
         sum += iter->nonLeafCount();
@@ -1260,6 +1381,82 @@ InternalNode<ChildT, Log2Dim>::probeConstNodeAndCache(const Coord& xyz, Accessor
 
 
 template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::probeChild(const Coord& xyz)
+{
+    const Index n = this->coordToOffset(xyz);
+    return this->probeChildUnsafe(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::probeConstChild(const Coord& xyz) const
+{
+    const Index n = this->coordToOffset(xyz);
+    return this->probeConstChildUnsafe(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::probeChild(const Coord& xyz, ValueType& value, bool& active)
+{
+    const Index n = this->coordToOffset(xyz);
+    return this->probeChildUnsafe(n, value, active);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::probeConstChild(const Coord& xyz, ValueType& value, bool& active) const
+{
+    const Index n = this->coordToOffset(xyz);
+    return this->probeConstChildUnsafe(n, value, active);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::probeChildUnsafe(Index offset)
+{
+    OPENVDB_ASSERT(offset < NUM_VALUES);
+    if (mChildMask.isOn(offset))    return mNodes[offset].getChild();
+    return nullptr;
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::probeConstChildUnsafe(Index offset) const
+{
+    OPENVDB_ASSERT(offset < NUM_VALUES);
+    if (mChildMask.isOn(offset))    return mNodes[offset].getChild();
+    return nullptr;
+}
+
+template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::probeChildUnsafe(Index offset, ValueType& value, bool& active)
+{
+    OPENVDB_ASSERT(offset < NUM_VALUES);
+    if (mChildMask.isOn(offset))    return mNodes[offset].getChild();
+    value = mNodes[offset].getValue();
+    active = mValueMask.isOn(offset);
+    return nullptr;
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::probeConstChildUnsafe(Index offset, ValueType& value, bool& active) const
+{
+    OPENVDB_ASSERT(offset < NUM_VALUES);
+    if (mChildMask.isOn(offset))    return mNodes[offset].getChild();
+    value = mNodes[offset].getValue();
+    active = mValueMask.isOn(offset);
+    return nullptr;
+}
+
+
+////////////////////////////////////////
+
+
+template<typename ChildT, Index Log2Dim>
 inline typename ChildT::LeafNodeType*
 InternalNode<ChildT, Log2Dim>::probeLeaf(const Coord& xyz)
 {
@@ -1309,7 +1506,7 @@ template<typename ChildT, Index Log2Dim>
 inline void
 InternalNode<ChildT, Log2Dim>::addLeaf(LeafNodeType* leaf)
 {
-    assert(leaf != nullptr);
+    OPENVDB_ASSERT(leaf != nullptr);
     const Coord& xyz = leaf->origin();
     const Index n = this->coordToOffset(xyz);
     ChildT* child = nullptr;
@@ -1338,7 +1535,7 @@ template<typename AccessorT>
 inline void
 InternalNode<ChildT, Log2Dim>::addLeafAndCache(LeafNodeType* leaf, AccessorT& acc)
 {
-    assert(leaf != nullptr);
+    OPENVDB_ASSERT(leaf != nullptr);
     const Coord& xyz = leaf->origin();
     const Index n = this->coordToOffset(xyz);
     ChildT* child = nullptr;
@@ -1371,7 +1568,7 @@ template<typename ChildT, Index Log2Dim>
 inline bool
 InternalNode<ChildT, Log2Dim>::addChild(ChildT* child)
 {
-    assert(child);
+    OPENVDB_ASSERT(child);
     const Coord& xyz = child->origin();
     // verify that the child belongs in this internal node
     if (Coord((xyz & ~(DIM-1))) != this->origin())  return false;
@@ -1387,7 +1584,7 @@ template<typename ChildT, Index Log2Dim>
 inline void
 InternalNode<ChildT, Log2Dim>::addTile(Index n, const ValueType& value, bool state)
 {
-    assert(n < NUM_VALUES);
+    OPENVDB_ASSERT(n < NUM_VALUES);
     this->makeChildNodeEmpty(n, value);
     mValueMask.set(n, state);
 }
@@ -1561,8 +1758,17 @@ inline bool
 InternalNode<ChildT, Log2Dim>::isValueOn(const Coord& xyz) const
 {
     const Index n = this->coordToOffset(xyz);
-    if (this->isChildMaskOff(n)) return this->isValueMaskOn(n);
-    return mNodes[n].getChild()->isValueOn(xyz);
+    return this->isChildMaskOff(n) ? this->isValueMaskOn(n)
+        : mNodes[n].getChild()->isValueOn(xyz);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline bool
+InternalNode<ChildT, Log2Dim>::isValueOff(const Coord& xyz) const
+{
+    const Index n = this->coordToOffset(xyz);
+    return this->isChildMaskOff(n) ? this->isValueMaskOn(n)
+        : mNodes[n].getChild()->isValueOff(xyz);
 }
 
 template<typename ChildT, Index Log2Dim>
@@ -2243,7 +2449,7 @@ InternalNode<ChildT, Log2Dim>::readTopology(std::istream& is, bool fromHalf)
                 for (ValueAllIter iter = this->beginValueAll(); iter; ++iter) {
                     mNodes[iter.pos()].setValue(values[n++]);
                 }
-                assert(n == numValues);
+                OPENVDB_ASSERT(n == numValues);
             } else {
                 for (ValueAllIter iter = this->beginValueAll(); iter; ++iter) {
                     mNodes[iter.pos()].setValue(values[iter.pos()]);
@@ -2277,6 +2483,156 @@ InternalNode<ChildT, Log2Dim>::getLastValue() const
 {
     const Index n = NUM_VALUES - 1;
     return (this->isChildMaskOn(n) ? mNodes[n].getChild()->getLastValue() : mNodes[n].getValue());
+}
+
+
+////////////////////////////////////////
+
+
+template<typename ChildT, Index Log2Dim>
+inline const typename ChildT::ValueType&
+InternalNode<ChildT, Log2Dim>::getValueUnsafe(Index n) const
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    return mNodes[n].getValue();
+}
+
+template<typename ChildT, Index Log2Dim>
+inline bool
+InternalNode<ChildT, Log2Dim>::getValueUnsafe(Index n, ValueType& value) const
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    value = mNodes[n].getValue();
+    return mValueMask.isOn(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::getChildUnsafe(Index n)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOn(n));
+    return mNodes[n].getChild();
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::getConstChildUnsafe(Index n) const
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOn(n));
+    return mNodes[n].getChild();
+}
+
+template<typename ChildT, Index Log2Dim>
+inline const ChildT*
+InternalNode<ChildT, Log2Dim>::getChildUnsafe(Index n) const
+{
+    return this->getConstChildUnsafe(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setActiveStateUnsafe(Index n, bool on)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mValueMask.set(n, on);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setValueOnlyUnsafe(Index n, const ValueType& value)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mNodes[n].setValue(value);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setValueOnUnsafe(Index n)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mValueMask.setOn(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setValueOnUnsafe(Index n, const ValueType& value)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mNodes[n].setValue(value);
+    mValueMask.setOn(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setValueOffUnsafe(Index n)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mValueMask.setOff(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setValueOffUnsafe(Index n, const ValueType& value)
+{
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mNodes[n].setValue(value);
+    mValueMask.setOff(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::setChildUnsafe(Index n, ChildNodeType* child)
+{
+    // replace tile with child
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOff(n));
+    mNodes[n].setChild(child);
+    mChildMask.setOn(n);
+    mValueMask.setOff(n);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::resetChildUnsafe(Index n, ChildNodeType* child)
+{
+    // replace child with child
+    OPENVDB_ASSERT(child);
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOn(n));
+    delete mNodes[n].getChild();
+    mNodes[n].setChild(child);
+}
+
+template<typename ChildT, Index Log2Dim>
+inline ChildT*
+InternalNode<ChildT, Log2Dim>::stealChildUnsafe(Index n, const ValueType& value, bool active)
+{
+    // replace child with tile (and return child)
+    OPENVDB_ASSERT(n < NUM_VALUES);
+    OPENVDB_ASSERT(mChildMask.isOn(n));
+    auto* child = mNodes[n].getChild();
+    mChildMask.setOff(n);
+    mValueMask.set(n, active);
+    mNodes[n].setValue(value);
+    return child;
+}
+
+template<typename ChildT, Index Log2Dim>
+inline void
+InternalNode<ChildT, Log2Dim>::deleteChildUnsafe(Index n, const ValueType& value, bool active)
+{
+    // replace child with tile (and delete child)
+    delete this->stealChildUnsafe(n, value, active);
 }
 
 
@@ -2506,7 +2862,7 @@ struct InternalNode<ChildT, Log2Dim>::TopologyUnion
 
         A op;
         t->mValueMask.foreach(s->mValueMask, t->mChildMask, op);
-        assert((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
+        OPENVDB_ASSERT((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
     }
     void operator()(const tbb::blocked_range<Index> &r) const {
         for (Index i = r.begin(), end=r.end(); i!=end; ++i) {
@@ -2557,7 +2913,7 @@ struct InternalNode<ChildT, Log2Dim>::TopologyIntersection
         t->mChildMask.foreach(s->mChildMask, s->mValueMask, t->mValueMask, op);
 
         t->mValueMask &= s->mValueMask;
-        assert((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
+        OPENVDB_ASSERT((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
     }
     void operator()(const tbb::blocked_range<Index> &r) const {
         for (Index i = r.begin(), end=r.end(); i!=end; ++i) {
@@ -2612,7 +2968,7 @@ struct InternalNode<ChildT, Log2Dim>::TopologyDifference
 
         B op2;
         t->mValueMask.foreach(t->mChildMask, s->mValueMask, oldChildMask, op2);
-        assert((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
+        OPENVDB_ASSERT((t->mValueMask & t->mChildMask).isOff());//no overlapping active tiles or child nodes
     }
     void operator()(const tbb::blocked_range<Index> &r) const {
         for (Index i = r.begin(), end=r.end(); i!=end; ++i) {
@@ -2675,14 +3031,14 @@ InternalNode<ChildT, Log2Dim>::combine(InternalNode& other, CombineOp& op)
         } else if (this->isChildMaskOn(i) && other.isChildMaskOff(i)) {
             // Combine this node's child with the other node's constant value.
             ChildNodeType* child = mNodes[i].getChild();
-            assert(child);
+            OPENVDB_ASSERT(child);
             if (child) {
                 child->combine(other.mNodes[i].getValue(), other.isValueMaskOn(i), op);
             }
         } else if (this->isChildMaskOff(i) && other.isChildMaskOn(i)) {
             // Combine this node's constant value with the other node's child.
             ChildNodeType* child = other.mNodes[i].getChild();
-            assert(child);
+            OPENVDB_ASSERT(child);
             if (child) {
                 // Combine this node's constant value with the other node's child,
                 // but use a new functor in which the A and B values are swapped,
@@ -2701,8 +3057,8 @@ InternalNode<ChildT, Log2Dim>::combine(InternalNode& other, CombineOp& op)
             ChildNodeType
                 *child = mNodes[i].getChild(),
                 *otherChild = other.mNodes[i].getChild();
-            assert(child);
-            assert(otherChild);
+            OPENVDB_ASSERT(child);
+            OPENVDB_ASSERT(otherChild);
             if (child && otherChild) {
                 child->combine(*otherChild, op);
             }
@@ -2730,7 +3086,7 @@ InternalNode<ChildT, Log2Dim>::combine(const ValueType& value, bool valueIsActiv
         } else /*if (isChildMaskOn(i))*/ {
             // Combine this node's child with the given constant value.
             ChildNodeType* child = mNodes[i].getChild();
-            assert(child);
+            OPENVDB_ASSERT(child);
             if (child) child->combine(value, valueIsActive, op);
         }
     }
@@ -2806,7 +3162,7 @@ InternalNode<ChildT, Log2Dim>::combine2(const ValueType& value, const OtherNodeT
             mValueMask.set(i, args.resultIsActive());
         } else {
             typename OtherNodeType::ChildNodeType* otherChild = other.mNodes[i].getChild();
-            assert(otherChild);
+            OPENVDB_ASSERT(otherChild);
             if (this->isChildMaskOff(i)) {
                 // Add a new child with the same coordinates, etc.
                 // as the other node's child.
@@ -2839,7 +3195,7 @@ InternalNode<ChildT, Log2Dim>::combine2(const InternalNode& other, const OtherVa
             mValueMask.set(i, args.resultIsActive());
         } else {
             ChildNodeType* otherChild = other.mNodes[i].getChild();
-            assert(otherChild);
+            OPENVDB_ASSERT(otherChild);
             if (this->isChildMaskOff(i)) {
                 // Add a new child with the same coordinates, etc. as the other node's child.
                 this->setChildNode(i,
@@ -2914,7 +3270,7 @@ template<typename ChildT, Index Log2Dim>
 inline void
 InternalNode<ChildT, Log2Dim>::offsetToLocalCoord(Index n, Coord &xyz)
 {
-    assert(n<(1<<3*Log2Dim));
+    OPENVDB_ASSERT(n<(1<<3*Log2Dim));
     xyz.setX(n >> 2*Log2Dim);
     n &= ((1<<2*Log2Dim)-1);
     xyz.setY(n >> Log2Dim);
@@ -3056,7 +3412,7 @@ template<typename ChildT, Index Log2Dim>
 inline void
 InternalNode<ChildT, Log2Dim>::resetChildNode(Index i, ChildNodeType* child)
 {
-    assert(child);
+    OPENVDB_ASSERT(child);
     if (this->isChildMaskOn(i)) {
         delete mNodes[i].getChild();
     } else {
@@ -3070,8 +3426,8 @@ template<typename ChildT, Index Log2Dim>
 inline void
 InternalNode<ChildT, Log2Dim>::setChildNode(Index i, ChildNodeType* child)
 {
-    assert(child);
-    assert(mChildMask.isOff(i));
+    OPENVDB_ASSERT(child);
+    OPENVDB_ASSERT(mChildMask.isOff(i));
     mChildMask.setOn(i);
     mValueMask.setOff(i);
     mNodes[i].setChild(child);
@@ -3104,7 +3460,7 @@ template<typename ChildT, Index Log2Dim>
 inline ChildT*
 InternalNode<ChildT, Log2Dim>::getChildNode(Index n)
 {
-    assert(this->isChildMaskOn(n));
+    OPENVDB_ASSERT(this->isChildMaskOn(n));
     return mNodes[n].getChild();
 }
 
@@ -3113,7 +3469,7 @@ template<typename ChildT, Index Log2Dim>
 inline const ChildT*
 InternalNode<ChildT, Log2Dim>::getChildNode(Index n) const
 {
-    assert(this->isChildMaskOn(n));
+    OPENVDB_ASSERT(this->isChildMaskOn(n));
     return mNodes[n].getChild();
 }
 

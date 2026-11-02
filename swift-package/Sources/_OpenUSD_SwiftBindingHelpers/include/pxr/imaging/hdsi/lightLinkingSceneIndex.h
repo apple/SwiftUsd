@@ -10,6 +10,8 @@
 #include "pxr/pxr.h"
 #include "pxr/imaging/hdsi/api.h"
 
+#include "pxr/imaging/hd/collectionExpressionEvaluator.h"
+#include "pxr/imaging/hd/collectionPredicateLibrary.h"
 #include "pxr/imaging/hd/filteringSceneIndex.h"
 #include "pxr/usd/sdf/path.h"
 #include "pxr/base/tf/staticTokens.h"
@@ -54,7 +56,8 @@ TF_DECLARE_REF_PTRS(HdsiLightLinkingSceneIndex);
 ///   token.
 ///
 /// - invalidating the categories locator on prims targeted (i.e. matched) by
-///   the expression,
+///   evaluating the expression using either the provided predicate library or
+///   an empty HdCollectionPredicateLibrary if none was provided.
 ///
 /// - invalidating the light/light filter prim when the category ID for its
 ///   linking collection has changed, and
@@ -80,6 +83,14 @@ public:
     HDSI_API
     static HdSceneIndexBaseRefPtr
     New(const HdSceneIndexBaseRefPtr &inputSceneIndex,
+        const HdContainerDataSourceHandle &inputArgs,
+        const HdCollectionPredicateLibrary &predicateLibrary);
+
+    // Old signature that doesn't provide a predicate library. An empty
+    // library will be used in this case.
+    HDSI_API
+    static HdSceneIndexBaseRefPtr
+    New(const HdSceneIndexBaseRefPtr &inputSceneIndex,
         const HdContainerDataSourceHandle &inputArgs);
 
     HDSI_API
@@ -88,12 +99,17 @@ public:
     HDSI_API
     SdfPathVector GetChildPrimPaths(const SdfPath &primPath) const override;
 
+    HDSI_API
+    HdCollectionExpressionEvaluator MakeEvaluator(
+        const SdfPathExpression &expr) const;
+
 protected:
 
     HDSI_API
     HdsiLightLinkingSceneIndex(
         const HdSceneIndexBaseRefPtr &inputSceneIndex,
-        const HdContainerDataSourceHandle &inputArgs);
+        const HdContainerDataSourceHandle &inputArgs,
+        const HdCollectionPredicateLibrary &predicateLibrary);
 
     HDSI_API
     void _PrimsAdded(
@@ -129,6 +145,8 @@ private:
     const VtArray<TfToken> _lightPrimTypes;
     const VtArray<TfToken> _lightFilterPrimTypes;
     const VtArray<TfToken> _geometryPrimTypes;
+
+    const HdCollectionPredicateLibrary _predicateLibrary;
 
     // Flag tracking first population.
     bool _wasPopulated;

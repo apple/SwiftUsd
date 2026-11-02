@@ -38,6 +38,9 @@ PXR_NAMESPACE_OPEN_SCOPE
 template <typename T>
 class Vdf_VectorSubrangeAccessor;
 
+template <typename>
+class VdfVectorIterator;
+
 /// \class VdfVector
 ///
 /// This class is used to abstract away knowledge of the cache data used for
@@ -535,6 +538,10 @@ public:
             _data.Get(), _data.Get()->GetInfo());
     }
 
+    /// Returns a read-only iterator over values held by this vector.
+    template <typename TYPE>
+    VdfVectorIterator<TYPE> GetIterator() const;
+
     /// Checks if a vector holds a specific type.
     ///
     template<typename TYPE>
@@ -726,6 +733,21 @@ protected:
     // our only derived class VdfTypedVector.
     mutable Vdf_VectorData::DataHolder _data;
 };
+
+template <typename TYPE>
+VdfVectorIterator<TYPE>
+VdfVector::GetIterator() const
+{
+    const std::type_info &haveType = _GetTypeInfo();
+    if (!TF_VERIFY(TfSafeTypeCompare(haveType, typeid(TYPE)),
+                   "Invalid type.  Vector is holding %s, tried to use as %s",
+                   ArchGetDemangled(haveType).c_str(),
+                   ArchGetDemangled(typeid(TYPE)).c_str())) {
+        return VdfVectorIterator<TYPE>();
+    }
+
+    return VdfVectorIterator<TYPE>(_data.Get()->GetInfo());
+}
 
 PXR_NAMESPACE_CLOSE_SCOPE
 

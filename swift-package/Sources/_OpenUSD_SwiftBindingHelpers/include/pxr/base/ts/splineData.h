@@ -151,17 +151,12 @@ public:
     // we have been presumptively created as TypedSplineData<double>.
     bool isTyped : 1;
 
-    // Deprecated in favor of valueType for full type specification. This bit
-    // currently exists solely to ensure double values and not GfTimeCode
-    // values are extracted when the legacy TsSpline::SetTimeValued is invoked.
-    bool timeValued : 1;
-
     // Overall spline parameters.
     TsCurveType curveType : 2;
     TfType valueType;
     TsExtrapolation preExtrapolation;
     TsExtrapolation postExtrapolation;
-    TsLoopParams loopParams;
+    Ts_LoopParams loopParams;
 
     // A duplicate of the knot times, so that we can maximize locality while
     // performing binary searches for knots.  This is part of the evaluation hot
@@ -293,9 +288,6 @@ bool Ts_TypedSplineData<T>::operator==(
 {
     // Compare non-templated data.
     if (isTyped != other.isTyped
-        || ((timeValued || valueType == Ts_GetType<GfTimeCode>())
-            != (other.timeValued ||
-                other.valueType == Ts_GetType<GfTimeCode>()))
         || curveType != other.curveType
         || preExtrapolation != other.preExtrapolation
         || postExtrapolation != other.postExtrapolation
@@ -723,8 +715,7 @@ void Ts_TypedSplineData<T>::ApplyOffsetAndScale(
     // Scale and offset knot fields.  Duplicate the logic that is applied
     // unconditionally, so that we can rip through the entire vector just
     // once, and we don't have to do the if-check on each iteration.
-    if (timeValued || valueType == Ts_GetType<GfTimeCode>())
-    {
+    if (valueType == Ts_GetType<GfTimeCode>()) {
         for (Ts_TypedKnotData<T> &knotData : knots)
         {
             _ApplyOffsetAndScaleToKnot(&knotData, offset, scale);
@@ -735,9 +726,18 @@ void Ts_TypedSplineData<T>::ApplyOffsetAndScale(
             knotData.preValue =
                 static_cast<T>(knotData.preValue * scale + offset);
         }
-    }
-    else
-    {
+    } else if (valueType == Ts_GetType<GfDuration>()) {
+        for (Ts_TypedKnotData<T> &knotData : knots)
+        {
+            _ApplyOffsetAndScaleToKnot(&knotData, offset, scale);
+
+            // Process duration values (relative).
+            knotData.value =
+                static_cast<T>(knotData.value * scale);
+            knotData.preValue =
+                static_cast<T>(knotData.preValue * scale);
+        }
+    } else {
         // Note that we scale slopes only for value types that are not
         // time valued, because the units for time valued slopes are
         // GfTimeCode over GfTimeCode, which reduces to 1 for any valid scale.

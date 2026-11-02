@@ -26,7 +26,8 @@ PXR_NAMESPACE_OPEN_SCOPE
 
 #define HDSCENEINDEXPLUGINREGISTRY_TOKENS \
     ((rendererDisplayName, "__rendererDisplayName")) \
-    ((allRenderers, ""))
+    ((allRenderers, "")) \
+    ((allApps, ""))
 
 TF_DECLARE_PUBLIC_TOKENS(HdSceneIndexPluginRegistryTokens, HD_API,
     HDSCENEINDEXPLUGINREGISTRY_TOKENS);
@@ -79,12 +80,20 @@ public:
     /// for. Providing an empty app name here (the default) means this will not
     /// auto-load any application-specific plugin libraries.
     ///
+    /// \p sceneIndexCreateArgs (which is typically provided by
+    /// HdRendererPlugin::CreateSceneIndexArgs to communicate capabilities of
+    /// the renderer to input scenes such as descriptors of supported render
+    /// settings) is forwarded as \p inputArgs when invoking each plugin's _AppendSceneIndex call, overlaid between the
+    /// plugin's own registered args (strongest) and a container data source
+    /// containing the renderer name.
+    ///
     HD_API
     HdSceneIndexBaseRefPtr AppendSceneIndicesForRenderer(
         const std::string &rendererDisplayName,
         const HdSceneIndexBaseRefPtr &inputScene,
         const std::string &renderInstanceId=std::string(),
-        const std::string &appName=std::string());
+        const std::string &appName=std::string(),
+        const HdContainerDataSourceHandle &sceneIndexCreateArgs=nullptr);
 
     enum InsertionOrder
     {

@@ -1,5 +1,5 @@
 // Copyright Contributors to the OpenVDB Project
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: Apache-2.0
 
 /// @author Dan Bailey
 ///
@@ -17,6 +17,7 @@
 #include <openvdb/tree/Tree.h>
 #include <openvdb/tree/LeafNode.h>
 #include <openvdb/tools/PointIndexGrid.h>
+#include <openvdb/util/Assert.h>
 #include "AttributeArray.h"
 #include "AttributeArrayString.h"
 #include "AttributeGroup.h"
@@ -503,9 +504,7 @@ public:
 
 
     Index64 memUsage() const;
-#if OPENVDB_ABI_VERSION_NUMBER >= 10
     Index64 memUsageIfLoaded() const;
-#endif
 
     void evalActiveBoundingBox(CoordBBox& bbox, bool visitVoxels = true) const;
 
@@ -519,7 +518,7 @@ public:
     // to the point-array offsets.
 
     void assertNonmodifiable() {
-        assert(false && "Cannot modify voxel values in a PointDataTree.");
+        OPENVDB_ASSERT(false && "Cannot modify voxel values in a PointDataTree.");
     }
 
     // some methods silently ignore attempts to modify the
@@ -960,7 +959,7 @@ inline GroupHandle
 PointDataLeafNode<T, Log2Dim>::groupHandle(const AttributeSet::Descriptor::GroupIndex& index) const
 {
     const AttributeArray& array = this->attributeArray(index.first);
-    assert(isGroup(array));
+    OPENVDB_ASSERT(isGroup(array));
 
     const GroupAttributeArray& groupArray = GroupAttributeArray::cast(array);
 
@@ -980,7 +979,7 @@ inline GroupWriteHandle
 PointDataLeafNode<T, Log2Dim>::groupWriteHandle(const AttributeSet::Descriptor::GroupIndex& index)
 {
     AttributeArray& array = this->attributeArray(index.first);
-    assert(isGroup(array));
+    OPENVDB_ASSERT(isGroup(array));
 
     GroupAttributeArray& groupArray = GroupAttributeArray::cast(array);
 
@@ -1025,7 +1024,7 @@ inline ValueVoxelCIter
 PointDataLeafNode<T, Log2Dim>::beginValueVoxel(const Coord& ijk) const
 {
     const Index index = LeafNodeType::coordToOffset(ijk);
-    assert(index < BaseLeaf::SIZE);
+    OPENVDB_ASSERT(index < BaseLeaf::SIZE);
     const ValueType end = this->getValue(index);
     const ValueType start = (index == 0) ? ValueType(0) : this->getValue(index - 1);
     return ValueVoxelCIter(start, end);
@@ -1172,7 +1171,7 @@ PointDataLeafNode<T, Log2Dim>::readBuffers(std::istream& is, const CoordBBox& /*
             std::string key("paged:" + std::to_string(index));
             auto it = auxData.find(key);
             if (it != auxData.end()) {
-                return *(boost::any_cast<compression::PagedInputStream::Ptr>(it->second));
+                return *(std::any_cast<compression::PagedInputStream::Ptr>(it->second));
             }
             else {
                 compression::PagedInputStream::Ptr pagedStream = std::make_shared<compression::PagedInputStream>();
@@ -1215,8 +1214,8 @@ PointDataLeafNode<T, Log2Dim>::readBuffers(std::istream& is, const CoordBBox& /*
         {
             std::string descriptorKey("descriptorPtr");
             auto itDescriptor = auxData.find(descriptorKey);
-            assert(itDescriptor != auxData.end());
-            const Descriptor::Ptr descriptor = boost::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
+            OPENVDB_ASSERT(itDescriptor != auxData.end());
+            const Descriptor::Ptr descriptor = std::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
             return descriptor;
         }
     };
@@ -1338,7 +1337,7 @@ PointDataLeafNode<T, Log2Dim>::writeBuffers(std::ostream& os, bool toHalf) const
             std::string key("paged:" + std::to_string(index));
             auto it = auxData.find(key);
             if (it != auxData.end()) {
-                compression::PagedOutputStream& stream = *(boost::any_cast<compression::PagedOutputStream::Ptr>(it->second));
+                compression::PagedOutputStream& stream = *(std::any_cast<compression::PagedOutputStream::Ptr>(it->second));
                 stream.flush();
                 (const_cast<io::StreamMetadata::AuxDataMap&>(auxData)).erase(it);
             }
@@ -1350,7 +1349,7 @@ PointDataLeafNode<T, Log2Dim>::writeBuffers(std::ostream& os, bool toHalf) const
             std::string key("paged:" + std::to_string(index));
             auto it = auxData.find(key);
             if (it != auxData.end()) {
-                return *(boost::any_cast<compression::PagedOutputStream::Ptr>(it->second));
+                return *(std::any_cast<compression::PagedOutputStream::Ptr>(it->second));
             }
             else {
                 compression::PagedOutputStream::Ptr pagedStream = std::make_shared<compression::PagedOutputStream>();
@@ -1369,17 +1368,17 @@ PointDataLeafNode<T, Log2Dim>::writeBuffers(std::ostream& os, bool toHalf) const
             if (itMatching == auxData.end()) {
                 // if matching bool is not found, insert "true" and the descriptor
                 (const_cast<io::StreamMetadata::AuxDataMap&>(auxData))[matchingKey] = true;
-                assert(itDescriptor == auxData.end());
+                OPENVDB_ASSERT(itDescriptor == auxData.end());
                 (const_cast<io::StreamMetadata::AuxDataMap&>(auxData))[descriptorKey] = descriptor;
             }
             else {
                 // if matching bool is found and is false, early exit (a previous descriptor did not match)
-                bool matching = boost::any_cast<bool>(itMatching->second);
+                bool matching = std::any_cast<bool>(itMatching->second);
                 if (!matching)    return;
-                assert(itDescriptor != auxData.end());
+                OPENVDB_ASSERT(itDescriptor != auxData.end());
                 // if matching bool is true, check whether the existing descriptor matches the current one and set
                 // matching bool to false if not
-                const Descriptor::Ptr existingDescriptor = boost::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
+                const Descriptor::Ptr existingDescriptor = std::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
                 if (*existingDescriptor != *descriptor) {
                     (const_cast<io::StreamMetadata::AuxDataMap&>(auxData))[matchingKey] = false;
                 }
@@ -1393,7 +1392,7 @@ PointDataLeafNode<T, Log2Dim>::writeBuffers(std::ostream& os, bool toHalf) const
             // if matching key is not found, no matching descriptor
             if (itMatching == auxData.end())                return false;
             // if matching key is found and is false, no matching descriptor
-            if (!boost::any_cast<bool>(itMatching->second)) return false;
+            if (!std::any_cast<bool>(itMatching->second)) return false;
             return true;
         }
 
@@ -1404,7 +1403,7 @@ PointDataLeafNode<T, Log2Dim>::writeBuffers(std::ostream& os, bool toHalf) const
             // if matching key is true, however descriptor is not found, it has already been retrieved
             if (itDescriptor == auxData.end())              return nullptr;
             // otherwise remove it and return it
-            const Descriptor::Ptr descriptor = boost::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
+            const Descriptor::Ptr descriptor = std::any_cast<AttributeSet::Descriptor::Ptr>(itDescriptor->second);
             (const_cast<io::StreamMetadata::AuxDataMap&>(auxData)).erase(itDescriptor);
             return descriptor;
         }
@@ -1523,14 +1522,12 @@ PointDataLeafNode<T, Log2Dim>::memUsage() const
     return BaseLeaf::memUsage() + mAttributeSet->memUsage();
 }
 
-#if OPENVDB_ABI_VERSION_NUMBER >= 10
 template<typename T, Index Log2Dim>
 inline Index64
 PointDataLeafNode<T, Log2Dim>::memUsageIfLoaded() const
 {
     return BaseLeaf::memUsageIfLoaded() + mAttributeSet->memUsageIfLoaded();
 }
-#endif
 
 template<typename T, Index Log2Dim>
 inline void
@@ -1638,7 +1635,7 @@ prefetch(PointDataTreeT& tree, bool position, bool otherAttributes)
 
     if (position && positionIndex != AttributeSet::INVALID_POS) {
         for (leaf = tree.cbeginLeaf(); leaf; ++leaf) {
-            assert(leaf->hasAttribute(positionIndex));
+            OPENVDB_ASSERT(leaf->hasAttribute(positionIndex));
             leaf->constAttributeArray(positionIndex).loadData();
         }
     }
@@ -1650,7 +1647,7 @@ prefetch(PointDataTreeT& tree, bool position, bool otherAttributes)
         for (size_t attributeIndex = 0; attributeIndex < attributes; attributeIndex++) {
             if (attributeIndex == positionIndex)     continue;
             for (leaf = tree.cbeginLeaf(); leaf; ++leaf) {
-                assert(leaf->hasAttribute(attributeIndex));
+                OPENVDB_ASSERT(leaf->hasAttribute(attributeIndex));
                 leaf->constAttributeArray(attributeIndex).loadData();
             }
         }

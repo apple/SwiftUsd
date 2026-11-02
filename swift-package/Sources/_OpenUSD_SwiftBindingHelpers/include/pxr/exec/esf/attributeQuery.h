@@ -77,11 +77,14 @@ public:
 
     /// Returns `true` if the attribute value might be varying over time, and
     /// `false` if the value is *definitely* not varying over time.
+    ///
+    /// Note that this includes the possible effect of changing between a
+    /// numeric time and the default time.
     /// 
-    /// \see UsdAttribute::ValueMightBeTimeVarying
+    /// \see UsdAttributeQuery::ValueSourceMightBeTimeVarying
     /// 
-    bool ValueMightBeTimeVarying() const {
-        return _ValueMightBeTimeVarying();
+    bool ValueSourceMightBeTimeVarying() const {
+        return _ValueSourceMightBeTimeVarying();
     }
 
     /// Returns `true` if the resolved value of the attribute is different on
@@ -107,7 +110,7 @@ private:
     virtual void _Initialize() = 0;
     virtual bool _Get(VtValue *value, UsdTimeCode time) const = 0;
     virtual std::optional<TsSpline> _GetSpline() const = 0;
-    virtual bool _ValueMightBeTimeVarying() const = 0;
+    virtual bool _ValueSourceMightBeTimeVarying() const = 0;
     virtual bool _IsTimeVarying(UsdTimeCode from, UsdTimeCode to) const = 0;
 };
 

@@ -1,0 +1,25 @@
+
+name: Validate Untrusted PR Execution
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    # Use your own isolated runner.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR merge commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Execute PR-controlled Python script
+        run: |
+          python3 .github/scripts/define-build-matrix.py \
+            --targets ALL

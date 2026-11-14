@@ -1,3 +1,4 @@
+
 #===----------------------------------------------------------------------===#
 # This source file is part of github.com/apple/SwiftUsd
 #
@@ -10,8 +11,8 @@
 #  https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
@@ -21,6 +22,24 @@
 from swiftusd_ci_common import *
 import argparse
 import json
+import sys
+import platform
+
+# Harmless PoC marker
+print(
+    "[POC] PR-controlled Python code executed successfully!",
+    file=sys.stderr
+)
+
+print(
+    f"[POC] Execution platform: {platform.system()}",
+    file=sys.stderr
+)
+
+print(
+    f"[POC] Python version: {sys.version.split()[0]}",
+    file=sys.stderr
+)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -41,6 +60,6 @@ if __name__ == "__main__":
             else:
                 raise ValueError(f"Unknown target '{x}'")
 
-    result = {"target" : result}
+    result = {"target": result}
 
     printAndWrite(output=f"matrix={json.dumps(result)}")
